@@ -1,0 +1,1862 @@
+[
+  {
+    "id": "w0",
+    "text": "Imagine",
+    "start": 0,
+    "end": 0.48
+  },
+  {
+    "id": "w1",
+    "text": "que",
+    "start": 0.48,
+    "end": 0.64
+  },
+  {
+    "id": "w2",
+    "text": "tu",
+    "start": 0.64,
+    "end": 0.8
+  },
+  {
+    "id": "w3",
+    "text": "sois",
+    "start": 0.8,
+    "end": 1.04
+  },
+  {
+    "id": "w4",
+    "text": "convaincu",
+    "start": 1.04,
+    "end": 1.44
+  },
+  {
+    "id": "w5",
+    "text": "d'avoir",
+    "start": 1.52,
+    "end": 1.84
+  },
+  {
+    "id": "w6",
+    "text": "raison",
+    "start": 2,
+    "end": 2.32
+  },
+  {
+    "id": "w7",
+    "text": "sur",
+    "start": 2.32,
+    "end": 2.48
+  },
+  {
+    "id": "w8",
+    "text": "quelque",
+    "start": 2.48,
+    "end": 2.8
+  },
+  {
+    "id": "w9",
+    "text": "chose.",
+    "start": 2.8,
+    "end": 3.2
+  },
+  {
+    "id": "w10",
+    "text": "Tu",
+    "start": 3.2,
+    "end": 3.44
+  },
+  {
+    "id": "w11",
+    "text": "demandes",
+    "start": 3.44,
+    "end": 3.68
+  },
+  {
+    "id": "w12",
+    "text": "à",
+    "start": 3.68,
+    "end": 3.76
+  },
+  {
+    "id": "w13",
+    "text": "ChadGPT",
+    "start": 3.76,
+    "end": 4.64
+  },
+  {
+    "id": "w14",
+    "text": "ce",
+    "start": 4.64,
+    "end": 4.72
+  },
+  {
+    "id": "w15",
+    "text": "qu'il",
+    "start": 4.72,
+    "end": 4.96
+  },
+  {
+    "id": "w16",
+    "text": "en",
+    "start": 4.96,
+    "end": 5.04
+  },
+  {
+    "id": "w17",
+    "text": "pense,",
+    "start": 5.04,
+    "end": 5.52
+  },
+  {
+    "id": "w18",
+    "text": "et",
+    "start": 5.52,
+    "end": 5.68
+  },
+  {
+    "id": "w19",
+    "text": "il",
+    "start": 5.68,
+    "end": 5.92
+  },
+  {
+    "id": "w20",
+    "text": "te",
+    "start": 5.92,
+    "end": 6.08
+  },
+  {
+    "id": "w21",
+    "text": "répond",
+    "start": 6.08,
+    "end": 6.56
+  },
+  {
+    "id": "w22",
+    "text": "exactement",
+    "start": 6.56,
+    "end": 7.12
+  },
+  {
+    "id": "w23",
+    "text": "dans",
+    "start": 7.12,
+    "end": 7.36
+  },
+  {
+    "id": "w24",
+    "text": "ton",
+    "start": 7.36,
+    "end": 7.6
+  },
+  {
+    "id": "w25",
+    "text": "sens.",
+    "start": 7.6,
+    "end": 8.16
+  },
+  {
+    "id": "w26",
+    "text": "Tu",
+    "start": 8.16,
+    "end": 8.4
+  },
+  {
+    "id": "w27",
+    "text": "te",
+    "start": 8.4,
+    "end": 8.56
+  },
+  {
+    "id": "w28",
+    "text": "dis",
+    "start": 8.56,
+    "end": 8.8
+  },
+  {
+    "id": "w29",
+    "text": "alors,",
+    "start": 8.8,
+    "end": 9.2
+  },
+  {
+    "id": "w30",
+    "text": "tu",
+    "start": 9.28,
+    "end": 9.52
+  },
+  {
+    "id": "w31",
+    "text": "vois,",
+    "start": 9.52,
+    "end": 9.92
+  },
+  {
+    "id": "w32",
+    "text": "même",
+    "start": 9.92,
+    "end": 10.16
+  },
+  {
+    "id": "w33",
+    "text": "l'intelligence",
+    "start": 10.16,
+    "end": 10.88
+  },
+  {
+    "id": "w34",
+    "text": "artificielle",
+    "start": 10.88,
+    "end": 11.36
+  },
+  {
+    "id": "w35",
+    "text": "est",
+    "start": 11.36,
+    "end": 11.52
+  },
+  {
+    "id": "w36",
+    "text": "d'accord",
+    "start": 11.52,
+    "end": 11.92
+  },
+  {
+    "id": "w37",
+    "text": "avec",
+    "start": 11.92,
+    "end": 12.16
+  },
+  {
+    "id": "w38",
+    "text": "moi.",
+    "start": 12.16,
+    "end": 12.72
+  },
+  {
+    "id": "w39",
+    "text": "Sauf",
+    "start": 12.72,
+    "end": 13.2
+  },
+  {
+    "id": "w40",
+    "text": "que",
+    "start": 13.2,
+    "end": 13.36
+  },
+  {
+    "id": "w41",
+    "text": "tu",
+    "start": 13.36,
+    "end": 13.6
+  },
+  {
+    "id": "w42",
+    "text": "viens",
+    "start": 13.6,
+    "end": 13.92
+  },
+  {
+    "id": "w43",
+    "text": "peut-être",
+    "start": 13.92,
+    "end": 14.32
+  },
+  {
+    "id": "w44",
+    "text": "de",
+    "start": 14.32,
+    "end": 14.48
+  },
+  {
+    "id": "w45",
+    "text": "tomber",
+    "start": 14.48,
+    "end": 14.88
+  },
+  {
+    "id": "w46",
+    "text": "dans",
+    "start": 14.88,
+    "end": 15.04
+  },
+  {
+    "id": "w47",
+    "text": "un",
+    "start": 15.04,
+    "end": 15.2
+  },
+  {
+    "id": "w48",
+    "text": "piège.",
+    "start": 15.2,
+    "end": 15.92
+  },
+  {
+    "id": "w49",
+    "text": "Regarde.",
+    "start": 15.92,
+    "end": 16.56
+  },
+  {
+    "id": "w50",
+    "text": "Imagine",
+    "start": 16.8,
+    "end": 17.28
+  },
+  {
+    "id": "w51",
+    "text": "que",
+    "start": 17.28,
+    "end": 17.44
+  },
+  {
+    "id": "w52",
+    "text": "tu",
+    "start": 17.44,
+    "end": 17.6
+  },
+  {
+    "id": "w53",
+    "text": "demandes",
+    "start": 17.6,
+    "end": 17.84
+  },
+  {
+    "id": "w54",
+    "text": "à",
+    "start": 17.84,
+    "end": 17.92
+  },
+  {
+    "id": "w55",
+    "text": "Chad",
+    "start": 17.92,
+    "end": 18.24
+  },
+  {
+    "id": "w56",
+    "text": "GPT,",
+    "start": 18.32,
+    "end": 19.2
+  },
+  {
+    "id": "w57",
+    "text": "Je",
+    "start": 19.2,
+    "end": 19.44
+  },
+  {
+    "id": "w58",
+    "text": "pense",
+    "start": 19.44,
+    "end": 19.68
+  },
+  {
+    "id": "w59",
+    "text": "que",
+    "start": 19.68,
+    "end": 19.84
+  },
+  {
+    "id": "w60",
+    "text": "travailler",
+    "start": 19.84,
+    "end": 20.32
+  },
+  {
+    "id": "w61",
+    "text": "15",
+    "start": 20.32,
+    "end": 20.56
+  },
+  {
+    "id": "w62",
+    "text": "heures",
+    "start": 20.56,
+    "end": 20.8
+  },
+  {
+    "id": "w63",
+    "text": "par",
+    "start": 20.8,
+    "end": 20.96
+  },
+  {
+    "id": "w64",
+    "text": "jour",
+    "start": 20.96,
+    "end": 21.28
+  },
+  {
+    "id": "w65",
+    "text": "est",
+    "start": 21.28,
+    "end": 21.44
+  },
+  {
+    "id": "w66",
+    "text": "le",
+    "start": 21.44,
+    "end": 21.6
+  },
+  {
+    "id": "w67",
+    "text": "meilleur",
+    "start": 21.6,
+    "end": 21.92
+  },
+  {
+    "id": "w68",
+    "text": "moyen",
+    "start": 21.92,
+    "end": 22.24
+  },
+  {
+    "id": "w69",
+    "text": "de",
+    "start": 22.24,
+    "end": 22.4
+  },
+  {
+    "id": "w70",
+    "text": "réussir.",
+    "start": 22.4,
+    "end": 23.04
+  },
+  {
+    "id": "w71",
+    "text": "Explique-moi",
+    "start": 23.04,
+    "end": 23.68
+  },
+  {
+    "id": "w72",
+    "text": "pourquoi",
+    "start": 23.68,
+    "end": 24
+  },
+  {
+    "id": "w73",
+    "text": "j'ai",
+    "start": 24,
+    "end": 24.32
+  },
+  {
+    "id": "w74",
+    "text": "raison.",
+    "start": 24.32,
+    "end": 24.96
+  },
+  {
+    "id": "w75",
+    "text": "L'IA",
+    "start": 24.96,
+    "end": 25.6
+  },
+  {
+    "id": "w76",
+    "text": "peut",
+    "start": 25.6,
+    "end": 25.76
+  },
+  {
+    "id": "w77",
+    "text": "te",
+    "start": 25.76,
+    "end": 25.84
+  },
+  {
+    "id": "w78",
+    "text": "fournir",
+    "start": 25.84,
+    "end": 26.24
+  },
+  {
+    "id": "w79",
+    "text": "plusieurs",
+    "start": 26.24,
+    "end": 26.64
+  },
+  {
+    "id": "w80",
+    "text": "arguments",
+    "start": 26.64,
+    "end": 27.04
+  },
+  {
+    "id": "w81",
+    "text": "convaincants",
+    "start": 27.04,
+    "end": 27.68
+  },
+  {
+    "id": "w82",
+    "text": "pour",
+    "start": 27.68,
+    "end": 27.84
+  },
+  {
+    "id": "w83",
+    "text": "défendre",
+    "start": 27.84,
+    "end": 28.32
+  },
+  {
+    "id": "w84",
+    "text": "cette",
+    "start": 28.32,
+    "end": 28.56
+  },
+  {
+    "id": "w85",
+    "text": "idée.",
+    "start": 28.56,
+    "end": 29.2
+  },
+  {
+    "id": "w86",
+    "text": "Maintenant,",
+    "start": 29.2,
+    "end": 29.76
+  },
+  {
+    "id": "w87",
+    "text": "pose",
+    "start": 29.76,
+    "end": 30.16
+  },
+  {
+    "id": "w88",
+    "text": "lui",
+    "start": 30.16,
+    "end": 30.32
+  },
+  {
+    "id": "w89",
+    "text": "une",
+    "start": 30.48,
+    "end": 30.64
+  },
+  {
+    "id": "w90",
+    "text": "autre",
+    "start": 30.64,
+    "end": 30.88
+  },
+  {
+    "id": "w91",
+    "text": "question.",
+    "start": 30.88,
+    "end": 31.36
+  },
+  {
+    "id": "w92",
+    "text": "Pourquoi",
+    "start": 31.68,
+    "end": 32.16
+  },
+  {
+    "id": "w93",
+    "text": "travailler",
+    "start": 32.16,
+    "end": 32.64
+  },
+  {
+    "id": "w94",
+    "text": "15",
+    "start": 32.64,
+    "end": 32.88
+  },
+  {
+    "id": "w95",
+    "text": "heures",
+    "start": 32.88,
+    "end": 33.12
+  },
+  {
+    "id": "w96",
+    "text": "par",
+    "start": 33.12,
+    "end": 33.28
+  },
+  {
+    "id": "w97",
+    "text": "jour",
+    "start": 33.28,
+    "end": 33.52
+  },
+  {
+    "id": "w98",
+    "text": "est-il",
+    "start": 33.52,
+    "end": 33.84
+  },
+  {
+    "id": "w99",
+    "text": "une",
+    "start": 34,
+    "end": 34.16
+  },
+  {
+    "id": "w100",
+    "text": "mauvaise",
+    "start": 34.16,
+    "end": 34.56
+  },
+  {
+    "id": "w101",
+    "text": "stratégie",
+    "start": 34.56,
+    "end": 35.04
+  },
+  {
+    "id": "w102",
+    "text": "pour",
+    "start": 35.04,
+    "end": 35.2
+  },
+  {
+    "id": "w103",
+    "text": "réussir",
+    "start": 35.2,
+    "end": 35.76
+  },
+  {
+    "id": "w104",
+    "text": "?",
+    "start": 35.76,
+    "end": 35.84
+  },
+  {
+    "id": "w105",
+    "text": "Et",
+    "start": 36.08,
+    "end": 36.32
+  },
+  {
+    "id": "w106",
+    "text": "là,",
+    "start": 36.32,
+    "end": 36.72
+  },
+  {
+    "id": "w107",
+    "text": "elle",
+    "start": 36.72,
+    "end": 37.04
+  },
+  {
+    "id": "w108",
+    "text": "peut",
+    "start": 37.04,
+    "end": 37.28
+  },
+  {
+    "id": "w109",
+    "text": "aussi",
+    "start": 37.28,
+    "end": 37.52
+  },
+  {
+    "id": "w110",
+    "text": "te",
+    "start": 37.52,
+    "end": 37.68
+  },
+  {
+    "id": "w111",
+    "text": "donner",
+    "start": 37.68,
+    "end": 38
+  },
+  {
+    "id": "w112",
+    "text": "des",
+    "start": 38,
+    "end": 38.16
+  },
+  {
+    "id": "w113",
+    "text": "arguments",
+    "start": 38.16,
+    "end": 38.48
+  },
+  {
+    "id": "w114",
+    "text": "qui",
+    "start": 38.48,
+    "end": 38.72
+  },
+  {
+    "id": "w115",
+    "text": "semblent",
+    "start": 38.72,
+    "end": 39.12
+  },
+  {
+    "id": "w116",
+    "text": "tout",
+    "start": 39.12,
+    "end": 39.36
+  },
+  {
+    "id": "w117",
+    "text": "aussi",
+    "start": 39.36,
+    "end": 39.6
+  },
+  {
+    "id": "w118",
+    "text": "convaincant",
+    "start": 39.6,
+    "end": 40.24
+  },
+  {
+    "id": "w119",
+    "text": "dans",
+    "start": 40.24,
+    "end": 40.4
+  },
+  {
+    "id": "w120",
+    "text": "le",
+    "start": 40.4,
+    "end": 40.56
+  },
+  {
+    "id": "w121",
+    "text": "sens",
+    "start": 40.56,
+    "end": 40.88
+  },
+  {
+    "id": "w122",
+    "text": "opposé.",
+    "start": 40.88,
+    "end": 41.76
+  },
+  {
+    "id": "w123",
+    "text": "Alors,",
+    "start": 41.76,
+    "end": 42.16
+  },
+  {
+    "id": "w124",
+    "text": "est-ce",
+    "start": 42.16,
+    "end": 42.4
+  },
+  {
+    "id": "w125",
+    "text": "que",
+    "start": 42.4,
+    "end": 42.56
+  },
+  {
+    "id": "w126",
+    "text": "ChadGPT",
+    "start": 42.56,
+    "end": 43.36
+  },
+  {
+    "id": "w127",
+    "text": "cherche",
+    "start": 43.52,
+    "end": 43.92
+  },
+  {
+    "id": "w128",
+    "text": "simplement",
+    "start": 43.92,
+    "end": 44.24
+  },
+  {
+    "id": "w129",
+    "text": "à",
+    "start": 44.24,
+    "end": 44.4
+  },
+  {
+    "id": "w130",
+    "text": "te",
+    "start": 44.4,
+    "end": 44.56
+  },
+  {
+    "id": "w131",
+    "text": "faire",
+    "start": 44.56,
+    "end": 44.72
+  },
+  {
+    "id": "w132",
+    "text": "plaisir?",
+    "start": 44.72,
+    "end": 45.28
+  },
+  {
+    "id": "w133",
+    "text": "Pas",
+    "start": 45.52,
+    "end": 45.84
+  },
+  {
+    "id": "w134",
+    "text": "exactement.",
+    "start": 45.84,
+    "end": 46.72
+  },
+  {
+    "id": "w135",
+    "text": "Les",
+    "start": 46.72,
+    "end": 46.88
+  },
+  {
+    "id": "w136",
+    "text": "modèles",
+    "start": 46.88,
+    "end": 47.28
+  },
+  {
+    "id": "w137",
+    "text": "d'IA",
+    "start": 47.28,
+    "end": 47.84
+  },
+  {
+    "id": "w138",
+    "text": "sont",
+    "start": 47.84,
+    "end": 48
+  },
+  {
+    "id": "w139",
+    "text": "entraînés",
+    "start": 48,
+    "end": 48.48
+  },
+  {
+    "id": "w140",
+    "text": "à",
+    "start": 48.48,
+    "end": 48.56
+  },
+  {
+    "id": "w141",
+    "text": "produire",
+    "start": 48.56,
+    "end": 48.88
+  },
+  {
+    "id": "w142",
+    "text": "des",
+    "start": 48.88,
+    "end": 49.04
+  },
+  {
+    "id": "w143",
+    "text": "réponses",
+    "start": 49.04,
+    "end": 49.92
+  },
+  {
+    "id": "w144",
+    "text": "et",
+    "start": 49.92,
+    "end": 50.08
+  },
+  {
+    "id": "w145",
+    "text": "à",
+    "start": 50.08,
+    "end": 50.24
+  },
+  {
+    "id": "w146",
+    "text": "suivre",
+    "start": 50.24,
+    "end": 50.56
+  },
+  {
+    "id": "w147",
+    "text": "les",
+    "start": 50.56,
+    "end": 50.72
+  },
+  {
+    "id": "w148",
+    "text": "instructions",
+    "start": 50.72,
+    "end": 51.2
+  },
+  {
+    "id": "w149",
+    "text": "qu'on",
+    "start": 51.2,
+    "end": 51.44
+  },
+  {
+    "id": "w150",
+    "text": "leur",
+    "start": 51.44,
+    "end": 51.68
+  },
+  {
+    "id": "w151",
+    "text": "donne.",
+    "start": 51.68,
+    "end": 52.24
+  },
+  {
+    "id": "w152",
+    "text": "Mais",
+    "start": 52.24,
+    "end": 52.48
+  },
+  {
+    "id": "w153",
+    "text": "certains",
+    "start": 52.48,
+    "end": 52.96
+  },
+  {
+    "id": "w154",
+    "text": "peuvent",
+    "start": 52.96,
+    "end": 53.2
+  },
+  {
+    "id": "w155",
+    "text": "devenir",
+    "start": 53.2,
+    "end": 53.76
+  },
+  {
+    "id": "w156",
+    "text": "excessivement",
+    "start": 53.76,
+    "end": 54.48
+  },
+  {
+    "id": "w157",
+    "text": "complaisants.",
+    "start": 54.48,
+    "end": 55.28
+  },
+  {
+    "id": "w158",
+    "text": "Au",
+    "start": 55.28,
+    "end": 55.44
+  },
+  {
+    "id": "w159",
+    "text": "lieu",
+    "start": 55.44,
+    "end": 55.6
+  },
+  {
+    "id": "w160",
+    "text": "de",
+    "start": 55.6,
+    "end": 55.76
+  },
+  {
+    "id": "w161",
+    "text": "remettre",
+    "start": 55.76,
+    "end": 56.16
+  },
+  {
+    "id": "w162",
+    "text": "en",
+    "start": 56.16,
+    "end": 56.24
+  },
+  {
+    "id": "w163",
+    "text": "question",
+    "start": 56.24,
+    "end": 56.56
+  },
+  {
+    "id": "w164",
+    "text": "une",
+    "start": 56.56,
+    "end": 56.72
+  },
+  {
+    "id": "w165",
+    "text": "idée",
+    "start": 56.72,
+    "end": 57.04
+  },
+  {
+    "id": "w166",
+    "text": "discutable,",
+    "start": 57.04,
+    "end": 57.76
+  },
+  {
+    "id": "w167",
+    "text": "ils",
+    "start": 57.76,
+    "end": 57.92
+  },
+  {
+    "id": "w168",
+    "text": "risquent",
+    "start": 58,
+    "end": 58.4
+  },
+  {
+    "id": "w169",
+    "text": "de",
+    "start": 58.4,
+    "end": 58.56
+  },
+  {
+    "id": "w170",
+    "text": "trop",
+    "start": 58.56,
+    "end": 58.8
+  },
+  {
+    "id": "w171",
+    "text": "valider",
+    "start": 58.8,
+    "end": 59.28
+  },
+  {
+    "id": "w172",
+    "text": "le",
+    "start": 59.28,
+    "end": 59.36
+  },
+  {
+    "id": "w173",
+    "text": "point",
+    "start": 59.36,
+    "end": 59.52
+  },
+  {
+    "id": "w174",
+    "text": "de",
+    "start": 59.52,
+    "end": 59.6
+  },
+  {
+    "id": "w175",
+    "text": "vue",
+    "start": 59.6,
+    "end": 59.84
+  },
+  {
+    "id": "w176",
+    "text": "de",
+    "start": 59.84,
+    "end": 59.92
+  },
+  {
+    "id": "w177",
+    "text": "l'utilisateur.",
+    "start": 59.92,
+    "end": 60.96
+  },
+  {
+    "id": "w178",
+    "text": "Ce",
+    "start": 60.96,
+    "end": 61.2
+  },
+  {
+    "id": "w179",
+    "text": "comportement",
+    "start": 61.2,
+    "end": 61.84
+  },
+  {
+    "id": "w180",
+    "text": "a",
+    "start": 61.84,
+    "end": 62.08
+  },
+  {
+    "id": "w181",
+    "text": "même",
+    "start": 62.08,
+    "end": 62.24
+  },
+  {
+    "id": "w182",
+    "text": "été",
+    "start": 62.24,
+    "end": 62.48
+  },
+  {
+    "id": "w183",
+    "text": "observé",
+    "start": 62.48,
+    "end": 62.96
+  },
+  {
+    "id": "w184",
+    "text": "dans",
+    "start": 62.96,
+    "end": 63.04
+  },
+  {
+    "id": "w185",
+    "text": "des",
+    "start": 63.04,
+    "end": 63.2
+  },
+  {
+    "id": "w186",
+    "text": "versions",
+    "start": 63.2,
+    "end": 63.44
+  },
+  {
+    "id": "w187",
+    "text": "de",
+    "start": 63.44,
+    "end": 63.52
+  },
+  {
+    "id": "w188",
+    "text": "ChadGPT.",
+    "start": 63.52,
+    "end": 64.56
+  },
+  {
+    "id": "w189",
+    "text": "Le",
+    "start": 64.65,
+    "end": 64.97
+  },
+  {
+    "id": "w190",
+    "text": "véritable",
+    "start": 64.97,
+    "end": 65.53
+  },
+  {
+    "id": "w191",
+    "text": "danger,",
+    "start": 65.53,
+    "end": 66.01
+  },
+  {
+    "id": "w192",
+    "text": "c'est",
+    "start": 66.01,
+    "end": 66.25
+  },
+  {
+    "id": "w193",
+    "text": "que",
+    "start": 66.25,
+    "end": 66.49
+  },
+  {
+    "id": "w194",
+    "text": "plus",
+    "start": 66.49,
+    "end": 66.73
+  },
+  {
+    "id": "w195",
+    "text": "une",
+    "start": 66.73,
+    "end": 66.89
+  },
+  {
+    "id": "w196",
+    "text": "réponse",
+    "start": 66.89,
+    "end": 67.29
+  },
+  {
+    "id": "w197",
+    "text": "est",
+    "start": 67.29,
+    "end": 67.45
+  },
+  {
+    "id": "w198",
+    "text": "bien",
+    "start": 67.45,
+    "end": 67.69
+  },
+  {
+    "id": "w199",
+    "text": "formulée,",
+    "start": 67.69,
+    "end": 68.41
+  },
+  {
+    "id": "w200",
+    "text": "plus",
+    "start": 68.41,
+    "end": 68.65
+  },
+  {
+    "id": "w201",
+    "text": "tu",
+    "start": 68.65,
+    "end": 68.81
+  },
+  {
+    "id": "w202",
+    "text": "risques",
+    "start": 68.81,
+    "end": 69.21
+  },
+  {
+    "id": "w203",
+    "text": "de",
+    "start": 69.21,
+    "end": 69.29
+  },
+  {
+    "id": "w204",
+    "text": "la",
+    "start": 69.29,
+    "end": 69.45
+  },
+  {
+    "id": "w205",
+    "text": "confondre",
+    "start": 69.45,
+    "end": 69.93
+  },
+  {
+    "id": "w206",
+    "text": "avec",
+    "start": 69.93,
+    "end": 70.17
+  },
+  {
+    "id": "w207",
+    "text": "une",
+    "start": 70.17,
+    "end": 70.33
+  },
+  {
+    "id": "w208",
+    "text": "preuve.",
+    "start": 70.33,
+    "end": 70.97
+  },
+  {
+    "id": "w209",
+    "text": "Pourtant,",
+    "start": 70.97,
+    "end": 71.61
+  },
+  {
+    "id": "w210",
+    "text": "une",
+    "start": 71.61,
+    "end": 71.77
+  },
+  {
+    "id": "w211",
+    "text": "réponse",
+    "start": 71.77,
+    "end": 72.25
+  },
+  {
+    "id": "w212",
+    "text": "convaincante",
+    "start": 72.25,
+    "end": 72.97
+  },
+  {
+    "id": "w213",
+    "text": "n'est",
+    "start": 72.97,
+    "end": 73.21
+  },
+  {
+    "id": "w214",
+    "text": "pas",
+    "start": 73.21,
+    "end": 73.37
+  },
+  {
+    "id": "w215",
+    "text": "forcé.",
+    "start": 73.37,
+    "end": 74.41
+  },
+  {
+    "id": "w216",
+    "text": "Alors,",
+    "start": 74.41,
+    "end": 74.81
+  },
+  {
+    "id": "w217",
+    "text": "pour",
+    "start": 74.81,
+    "end": 74.97
+  },
+  {
+    "id": "w218",
+    "text": "éviter",
+    "start": 74.97,
+    "end": 75.37
+  },
+  {
+    "id": "w219",
+    "text": "ce",
+    "start": 75.37,
+    "end": 75.53
+  },
+  {
+    "id": "w220",
+    "text": "piège,",
+    "start": 75.53,
+    "end": 76.17
+  },
+  {
+    "id": "w221",
+    "text": "change",
+    "start": 76.17,
+    "end": 76.49
+  },
+  {
+    "id": "w222",
+    "text": "simplement",
+    "start": 76.65,
+    "end": 77.13
+  },
+  {
+    "id": "w223",
+    "text": "ta",
+    "start": 77.13,
+    "end": 77.37
+  },
+  {
+    "id": "w224",
+    "text": "manière",
+    "start": 77.37,
+    "end": 77.69
+  },
+  {
+    "id": "w225",
+    "text": "de",
+    "start": 77.69,
+    "end": 77.85
+  },
+  {
+    "id": "w226",
+    "text": "poser",
+    "start": 77.85,
+    "end": 78.17
+  },
+  {
+    "id": "w227",
+    "text": "tes",
+    "start": 78.17,
+    "end": 78.41
+  },
+  {
+    "id": "w228",
+    "text": "questions.",
+    "start": 78.41,
+    "end": 78.89
+  },
+  {
+    "id": "w229",
+    "text": "Au",
+    "start": 78.89,
+    "end": 79.05
+  },
+  {
+    "id": "w230",
+    "text": "lieu",
+    "start": 79.05,
+    "end": 79.29
+  },
+  {
+    "id": "w231",
+    "text": "de",
+    "start": 79.29,
+    "end": 79.37
+  },
+  {
+    "id": "w232",
+    "text": "demander",
+    "start": 79.37,
+    "end": 79.69
+  },
+  {
+    "id": "w233",
+    "text": "à",
+    "start": 79.69,
+    "end": 79.85
+  },
+  {
+    "id": "w234",
+    "text": "l'IA",
+    "start": 79.85,
+    "end": 80.41
+  },
+  {
+    "id": "w235",
+    "text": "de",
+    "start": 80.41,
+    "end": 80.49
+  },
+  {
+    "id": "w236",
+    "text": "te",
+    "start": 80.49,
+    "end": 80.57
+  },
+  {
+    "id": "w237",
+    "text": "donner",
+    "start": 80.57,
+    "end": 80.89
+  },
+  {
+    "id": "w238",
+    "text": "raison,",
+    "start": 80.89,
+    "end": 81.37
+  },
+  {
+    "id": "w239",
+    "text": "demande",
+    "start": 81.37,
+    "end": 81.77
+  },
+  {
+    "id": "w240",
+    "text": "lui,",
+    "start": 81.77,
+    "end": 82.09
+  },
+  {
+    "id": "w241",
+    "text": "quels",
+    "start": 82.25,
+    "end": 82.57
+  },
+  {
+    "id": "w242",
+    "text": "sont",
+    "start": 82.57,
+    "end": 82.73
+  },
+  {
+    "id": "w243",
+    "text": "les",
+    "start": 82.73,
+    "end": 82.89
+  },
+  {
+    "id": "w244",
+    "text": "arguments",
+    "start": 82.89,
+    "end": 83.37
+  },
+  {
+    "id": "w245",
+    "text": "contre",
+    "start": 83.37,
+    "end": 83.69
+  },
+  {
+    "id": "w246",
+    "text": "mon",
+    "start": 83.69,
+    "end": 83.93
+  },
+  {
+    "id": "w247",
+    "text": "idée",
+    "start": 83.93,
+    "end": 84.17
+  },
+  {
+    "id": "w248",
+    "text": "?",
+    "start": 84.17,
+    "end": 84.25
+  },
+  {
+    "id": "w249",
+    "text": "Quelles",
+    "start": 84.41,
+    "end": 84.73
+  },
+  {
+    "id": "w250",
+    "text": "sont",
+    "start": 84.73,
+    "end": 84.89
+  },
+  {
+    "id": "w251",
+    "text": "mes",
+    "start": 84.89,
+    "end": 85.05
+  },
+  {
+    "id": "w252",
+    "text": "erreurs",
+    "start": 85.05,
+    "end": 85.37
+  },
+  {
+    "id": "w253",
+    "text": "de",
+    "start": 85.37,
+    "end": 85.53
+  },
+  {
+    "id": "w254",
+    "text": "raisonnement",
+    "start": 85.53,
+    "end": 86.01
+  },
+  {
+    "id": "w255",
+    "text": "?",
+    "start": 86.01,
+    "end": 86.09
+  },
+  {
+    "id": "w256",
+    "text": "Et",
+    "start": 86.17,
+    "end": 86.41
+  },
+  {
+    "id": "w257",
+    "text": "quelles",
+    "start": 86.41,
+    "end": 86.73
+  },
+  {
+    "id": "w258",
+    "text": "preuves",
+    "start": 86.73,
+    "end": 87.05
+  },
+  {
+    "id": "w259",
+    "text": "pourrait",
+    "start": 87.05,
+    "end": 87.29
+  },
+  {
+    "id": "w260",
+    "text": "me",
+    "start": 87.37,
+    "end": 87.53
+  },
+  {
+    "id": "w261",
+    "text": "montrer",
+    "start": 87.53,
+    "end": 87.77
+  },
+  {
+    "id": "w262",
+    "text": "que",
+    "start": 87.77,
+    "end": 87.93
+  },
+  {
+    "id": "w263",
+    "text": "j'ai",
+    "start": 87.93,
+    "end": 88.17
+  },
+  {
+    "id": "w264",
+    "text": "tort",
+    "start": 88.17,
+    "end": 88.49
+  },
+  {
+    "id": "w265",
+    "text": "?",
+    "start": 88.49,
+    "end": 88.57
+  },
+  {
+    "id": "w266",
+    "text": "Parce",
+    "start": 88.81,
+    "end": 89.05
+  },
+  {
+    "id": "w267",
+    "text": "que",
+    "start": 89.05,
+    "end": 89.21
+  },
+  {
+    "id": "w268",
+    "text": "si",
+    "start": 89.21,
+    "end": 89.37
+  },
+  {
+    "id": "w269",
+    "text": "tu",
+    "start": 89.37,
+    "end": 89.53
+  },
+  {
+    "id": "w270",
+    "text": "utilises",
+    "start": 89.53,
+    "end": 89.77
+  },
+  {
+    "id": "w271",
+    "text": "l'IA",
+    "start": 89.93,
+    "end": 90.57
+  },
+  {
+    "id": "w272",
+    "text": "uniquement",
+    "start": 90.57,
+    "end": 90.97
+  },
+  {
+    "id": "w273",
+    "text": "pour",
+    "start": 90.97,
+    "end": 91.21
+  },
+  {
+    "id": "w274",
+    "text": "confirmer",
+    "start": 91.21,
+    "end": 91.61
+  },
+  {
+    "id": "w275",
+    "text": "ce",
+    "start": 91.61,
+    "end": 91.69
+  },
+  {
+    "id": "w276",
+    "text": "que",
+    "start": 91.69,
+    "end": 91.77
+  },
+  {
+    "id": "w277",
+    "text": "tu",
+    "start": 91.77,
+    "end": 91.93
+  },
+  {
+    "id": "w278",
+    "text": "crois",
+    "start": 91.93,
+    "end": 92.25
+  },
+  {
+    "id": "w279",
+    "text": "déjà,",
+    "start": 92.25,
+    "end": 92.73
+  },
+  {
+    "id": "w280",
+    "text": "tu",
+    "start": 92.73,
+    "end": 92.97
+  },
+  {
+    "id": "w281",
+    "text": "ne",
+    "start": 92.97,
+    "end": 93.05
+  },
+  {
+    "id": "w282",
+    "text": "l'utilises",
+    "start": 93.05,
+    "end": 93.45
+  },
+  {
+    "id": "w283",
+    "text": "pas",
+    "start": 93.53,
+    "end": 93.69
+  },
+  {
+    "id": "w284",
+    "text": "pour",
+    "start": 93.69,
+    "end": 93.85
+  },
+  {
+    "id": "w285",
+    "text": "réfléchir.",
+    "start": 93.85,
+    "end": 94.65
+  },
+  {
+    "id": "w286",
+    "text": "Tu",
+    "start": 94.65,
+    "end": 94.89
+  },
+  {
+    "id": "w287",
+    "text": "l'utilises",
+    "start": 94.89,
+    "end": 95.37
+  },
+  {
+    "id": "w288",
+    "text": "pour",
+    "start": 95.45,
+    "end": 95.61
+  },
+  {
+    "id": "w289",
+    "text": "renforcer",
+    "start": 95.61,
+    "end": 96.25
+  },
+  {
+    "id": "w290",
+    "text": "tes",
+    "start": 96.25,
+    "end": 96.41
+  },
+  {
+    "id": "w291",
+    "text": "certitudes.",
+    "start": 96.41,
+    "end": 97.29
+  },
+  {
+    "id": "w292",
+    "text": "Et",
+    "start": 97.29,
+    "end": 97.53
+  },
+  {
+    "id": "w293",
+    "text": "toi,",
+    "start": 97.53,
+    "end": 97.85
+  },
+  {
+    "id": "w294",
+    "text": "est-ce",
+    "start": 98.01,
+    "end": 98.25
+  },
+  {
+    "id": "w295",
+    "text": "que",
+    "start": 98.25,
+    "end": 98.33
+  },
+  {
+    "id": "w296",
+    "text": "tu",
+    "start": 98.33,
+    "end": 98.57
+  },
+  {
+    "id": "w297",
+    "text": "as",
+    "start": 98.57,
+    "end": 98.65
+  },
+  {
+    "id": "w298",
+    "text": "déjà",
+    "start": 98.65,
+    "end": 98.89
+  },
+  {
+    "id": "w299",
+    "text": "demandé",
+    "start": 98.89,
+    "end": 99.29
+  },
+  {
+    "id": "w300",
+    "text": "à",
+    "start": 99.29,
+    "end": 99.37
+  },
+  {
+    "id": "w301",
+    "text": "une",
+    "start": 99.37,
+    "end": 99.61
+  },
+  {
+    "id": "w302",
+    "text": "IA",
+    "start": 99.61,
+    "end": 100.09
+  },
+  {
+    "id": "w303",
+    "text": "de",
+    "start": 100.09,
+    "end": 100.25
+  },
+  {
+    "id": "w304",
+    "text": "vérifier",
+    "start": 100.25,
+    "end": 100.65
+  },
+  {
+    "id": "w305",
+    "text": "si",
+    "start": 100.65,
+    "end": 100.81
+  },
+  {
+    "id": "w306",
+    "text": "tu",
+    "start": 100.81,
+    "end": 100.97
+  },
+  {
+    "id": "w307",
+    "text": "avais",
+    "start": 100.97,
+    "end": 101.29
+  },
+  {
+    "id": "w308",
+    "text": "t",
+    "start": 101.29,
+    "end": 101.45
+  },
+  {
+    "id": "w309",
+    "text": "?",
+    "start": 101.45,
+    "end": 101.53
+  }
+]

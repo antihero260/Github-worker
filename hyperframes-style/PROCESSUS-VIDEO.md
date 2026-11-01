@@ -22,11 +22,16 @@ mot à mot. `assets/mots.json` sert ensuite à caler chaque animation sur son mo
 ## 3. Scènes
 
 - Une scène par idée (6 à 16 s), un **changement visuel toutes les ~2 s**.
-- Partir de `videos/examen-demain/tools/construire-scenes.py` (générateur), qui contient :
-  - `toi(...)` : **pictogramme articulé** (tête, tronc, bras, jambes) ;
-  - les gestes `marche`, `pose`, `tape`, `non`, `oui`, `saut`, `panique`, `gratte`, `haussement`, `vertiges`, `dort` ;
+- Écrire `tools/construire-scenes.py` avec la bibliothèque [`outils/projecteur.py`](outils/projecteur.py)
+  (exemple complet : `videos/ia-te-donne-raison/tools/construire-scenes.py`). Elle contient :
+  - `perso(id, x, pieds, taille, "toi" | "ia")` : **pictogrammes articulés** (tête, tronc, bras, jambes) ;
+  - les gestes `vit` (rebond continu, à mettre partout), `parle`, `acquiesce`, `marche`, `court`, `chute`, `remonte`,
+    `pose`, `tape`, `non`, `saut`, `victoire`, `pouce`, `bras_croises`, `grossit`, `panique`, `gratte`, `haussement`,
+    `vertiges`, `dort` ; et `bulle`, `tampon`, `confettis` ;
   - `s.recadre(...)` : gros plan filé sur un détail, puis retour au plan large.
 - **Le personnage doit jouer chaque phrase** : il marche vers ce dont on parle, pointe, réagit (tête, bras, saut).
+  Jamais figé : `vit` sur toute la scène, un geste à chaque groupe de mots, et un deuxième personnage (l'IA) qui
+  répond quand le sujet s'y prête.
 - Identifiants : préfixés par la scène, et **jamais égaux à l'identifiant de la scène elle-même**.
 - Ne pas utiliser de caractère absent d'Anton (ex. « ≠ ») : le dessiner.
 
