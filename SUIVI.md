@@ -1,6 +1,6 @@
 # Suivi du travail
 
-Dernière mise à jour : 1er novembre 2026, 16 h 10 UTC.
+Dernière mise à jour : 1er novembre 2026, 16 h 25 UTC.
 
 ## État actuel
 
@@ -9,14 +9,15 @@ Dernière mise à jour : 1er novembre 2026, 16 h 10 UTC.
 | Installation de HyperFrames | Faite (dans le conteneur cloud, temporaire). Script permanent : `scripts/install-hyperframes.sh`. |
 | Charte de style « Projecteur » | Faite : `hyperframes-style/frame.md` + `ANALYSE.md`. |
 | Projets modèles | Faits : `hyperframes-style/modele/` (film 16:9) et `modele-vertical/` (titre + bandeau). |
-| Vidéo « Réviser en une nuit avec ChatGPT » | Personnages animés, musiques remontées, bruitages. **Rendu final en cours** (lancé à 16 h 05). |
+| Vidéo « Réviser en une nuit avec ChatGPT » | Version 3 (personnage animé, musiques remontées, bruitages) **rendue, vérifiée et envoyée** à 16 h 25. En attente des retours de l'utilisateur. |
 | Pull request | [#2](https://github.com/antihero260/Github-worker/pull/2) ouverte vers `main`, surveillée. Branche : `ccr-e6530603-mcler7`. |
 
 ## Prochaines étapes
 
-1. Quand le rendu finit : vérifier le fichier vertical (son, images clés), puis l'envoyer à l'utilisateur.
-   Fichier : `videos/examen-demain-vertical/renders/reviser-en-une-nuit-avec-chatgpt.mp4` (non versionné).
-2. Recueillir ses retours et corriger (en suivant `hyperframes-style/PROCESSUS-VIDEO.md`).
+1. Recueillir les retours de l'utilisateur sur la version 3
+   (`videos/examen-demain-vertical/renders/reviser-en-une-nuit-avec-chatgpt.mp4`, non versionné : 1080×1920, 120 s,
+   −15,5 LUFS, crête −1,6 dBFS).
+2. Corriger et corriger (en suivant `hyperframes-style/PROCESSUS-VIDEO.md`).
 3. Mettre à jour `hyperframes-style/frame.md`, `ANALYSE.md` et les modèles avec ce qui a été appris sur cette
    vidéo (personnage articulé, recadrages, niveaux de musique) : les modèles n'ont pas encore ces améliorations.
 4. Rendre l'installation permanente : l'utilisateur doit fusionner la PR #2 puis ajouter
