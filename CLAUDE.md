@@ -15,7 +15,7 @@ production de vidéos avec HyperFrames (`hyperframes-style/`, `videos/`, `script
 - Style « Projecteur » : [`hyperframes-style/frame.md`](hyperframes-style/frame.md).
 - **Les personnages doivent bouger** (marcher, pointer, lever les bras, réagir) et la caméra doit recadrer
   pendant les scènes. Des pictogrammes figés ne sont pas acceptables.
-- **Musique bien audible** : 3 morceaux (un par partie), environ 6–7 dB sous la voix, jamais 12 dB.
+- **Musique bien audible** : 3 morceaux (un par partie), environ 3–4 dB sous la voix (demandé après la version 3), jamais 12 dB.
 - **Bruitages obligatoires** : transitions, impacts, clavier, clics, apparitions…
 - **Tout vérifier et corriger avant de lancer un rendu** : `hyperframes check` sans erreur, puis regarder les
   images clés. Ne jamais lancer le rendu dans la même commande que le contrôle.

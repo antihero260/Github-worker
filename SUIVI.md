@@ -1,6 +1,6 @@
 # Suivi du travail
 
-Dernière mise à jour : 1er novembre 2026, 16 h 25 UTC.
+Dernière mise à jour : 1er novembre 2026, 16 h 40 UTC.
 
 ## État actuel
 
@@ -9,7 +9,7 @@ Dernière mise à jour : 1er novembre 2026, 16 h 25 UTC.
 | Installation de HyperFrames | Faite (dans le conteneur cloud, temporaire). Script permanent : `scripts/install-hyperframes.sh`. |
 | Charte de style « Projecteur » | Faite : `hyperframes-style/frame.md` + `ANALYSE.md`. |
 | Projets modèles | Faits : `hyperframes-style/modele/` (film 16:9) et `modele-vertical/` (titre + bandeau). |
-| Vidéo « Réviser en une nuit avec ChatGPT » | Version 3 (personnage animé, musiques remontées, bruitages) **rendue, vérifiée et envoyée** à 16 h 25. En attente des retours de l'utilisateur. |
+| Vidéo « Réviser en une nuit avec ChatGPT » | Version 3 envoyée à 16 h 25. Retour : « augmenter encore un peu la musique ». **Version 4 (musique +3 dB) en rendu.** |
 | Pull request | [#2](https://github.com/antihero260/Github-worker/pull/2) ouverte vers `main`, surveillée. Branche : `ccr-e6530603-mcler7`. |
 
 ## Prochaines étapes
@@ -32,7 +32,8 @@ Dernière mise à jour : 1er novembre 2026, 16 h 25 UTC.
   - Partie 1 « tension » : `bgm_002` (nappe tendue avec tic-tac), temps fort sur « tu ouvres ChatGPT ».
   - Partie 2 « méthode » : `bgm_005` (enquête rythmée, 128 BPM), bouclé sur 14 mesures.
   - Partie 3 « élan » : `bgm_007` (montée cinématique), à partir de 83,3 s.
-  - Niveaux : musiques −20/−22 LUFS sous une voix à −16 ; creusées dans les fréquences de la voix (carve 0,5).
+  - Niveaux (version 4) : musiques −18/−19 LUFS sous une voix à −16 (3–4 dB dessous) ; creusées dans les
+    fréquences de la voix (carve 0,5) ; limiteur à −4 dB en fin de chaîne pour éviter la saturation.
 - **Bruitages** : bibliothèque Pixabay de HyperFrames (pas de crédit obligatoire) + battement de cœur et
   frappe continue fabriqués avec ffmpeg.
 - **Voix off** : fournie par l'utilisateur (ElevenLabs, « Nicolas – Narrator »).
@@ -41,7 +42,7 @@ Dernière mise à jour : 1er novembre 2026, 16 h 25 UTC.
 
 - Modèle construit d'abord en vertical plein écran au lieu du format 16:9 + titre des références.
 - Personnages statiques alors que ceux des références marchent et gesticulent.
-- Musique réglée 12–14 dB sous la voix : inaudible pour l'utilisateur.
+- Musique réglée 12–14 dB sous la voix : inaudible pour l'utilisateur. Même 6–7 dB était encore trop bas pour lui.
 - Rendu lancé alors que le contrôle signalait un chevauchement (« REC » sur « 23:17 » pendant un zoom).
 - Identifiant d'élément égal à l'identifiant de sa scène (`s5-carte`, `s11-prof`) : masquait toute la scène.
 - Le signe « ≠ » n'existe pas dans la police Anton : il faut le dessiner.

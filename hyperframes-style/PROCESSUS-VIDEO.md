@@ -34,7 +34,7 @@ mot à mot. `assets/mots.json` sert ensuite à caler chaque animation sur son mo
 
 - **3 musiques, une par partie** (catalogue HeyGen : `hyperframes media-use resolve --type bgm --intent "..."`),
   choisies d'après leur description et leur courbe d'énergie, coupées et bouclées sur des mesures entières.
-- **Niveaux** : voix −15/−16 LUFS ; musiques **−20 à −22 LUFS** (6–7 dB dessous) ; puis carve sur chaque musique :
+- **Niveaux** : voix −15/−16 LUFS ; musiques **−18 à −19 LUFS** (3–4 dB dessous, limiteur à −4 dB en fin de chaîne) ; puis carve sur chaque musique :
   `node <skill media-use>/audio/scripts/carve.mjs --comp index.html --bed musique-N --strength 0.5 --core <core>`.
 - **Bruitages** (volume 0,2–0,4) : souffle à chaque transition, impact grave sur les mots-chocs, montée avant un
   mot-choc, clavier pendant un texte tapé, clic par case cochée, pop par apparition, son « barré », ping sur les chiffres.
