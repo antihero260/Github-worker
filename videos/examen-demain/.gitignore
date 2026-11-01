@@ -2,3 +2,4 @@ renders/
 .hyperframes/
 assets/audio/voix.wav
 assets/audio/musique.wav
+__pycache__/
