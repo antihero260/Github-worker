@@ -1,6 +1,6 @@
 # Suivi du travail
 
-Dernière mise à jour : 1er novembre 2026, 20 h 50 UTC.
+Dernière mise à jour : 1er novembre 2026, 21 h 00 UTC.
 
 ## État actuel
 
@@ -11,20 +11,22 @@ Dernière mise à jour : 1er novembre 2026, 20 h 50 UTC.
 | Projets modèles | Faits : `hyperframes-style/modele/` (film 16:9) et `modele-vertical/` (titre + bandeau). |
 | Vidéo « Réviser en une nuit avec ChatGPT » | Version 4 envoyée à 17 h 45 (musique +3 dB). Pas encore de retour. |
 | Vidéo « ChatGPT te donne toujours raison ? » | Demandée « beaucoup plus dynamique, surtout le perso ». 15 scènes, 2 personnages animés, 3 musiques, 68 bruitages. **Envoyée** à 19 h 40 (1080×1920, 103 s, −16,5 LUFS, crête −1,5 dBTP). Titre proposé, à valider. En attente des retours. |
-| Vidéo « L’IA cachée dans ton clavier » (vidéo 3) | Voix off sur le clavier prédictif (le script fourni parlait de n8n : **la voix fait foi**, confirmé par l'utilisateur). 16 scènes, vraies vidéos et logos, téléphone animé, 3 musiques et 58 bruitages Mixkit (155 placés). Contrôle réussi (0 erreur), images revues. Rendu 16:9 en cours, puis version verticale. Titre proposé, à valider. |
+| Vidéo « L’IA cachée dans ton clavier » (vidéo 3) | Voix off sur le clavier prédictif (le script fourni parlait de n8n : **la voix fait foi**, confirmé par l'utilisateur). 16 scènes, vraies vidéos et logos, téléphone animé, 3 musiques et 58 bruitages Mixkit (155 placés). Contrôle réussi (0 erreur), images revues. **Envoyée** à 21 h (`videos/clavier-ia-vertical/renders/L-IA-cachee-dans-ton-clavier.mp4`, non versionné : 1080×1920, 96 s, −13,9 LUFS, crête −1,4 dBFS ; volume final monté avec ffmpeg, image copiée telle quelle). Titre proposé, à valider. En attente des retours. |
 | Pull request | [#2](https://github.com/antihero260/Github-worker/pull/2) ouverte vers `main`, surveillée. Branche : `ccr-e6530603-mcler7`. |
 
 ## Prochaines étapes
 
-1. Recueillir les retours sur « ChatGPT te donne toujours raison ? »
+1. Recueillir les retours sur « L’IA cachée dans ton clavier » (niveau de la musique sans la baisse automatique, nombre de
+   bruitages, vraies vidéos) et faire valider le titre.
+2. Recueillir les retours sur « ChatGPT te donne toujours raison ? »
    (`videos/ia-te-donne-raison-vertical/renders/chatgpt-te-donne-toujours-raison.mp4`, non versionné) et faire valider le titre.
-2. Recueillir les retours de l'utilisateur sur la version 4 de « Réviser… »
+3. Recueillir les retours de l'utilisateur sur la version 4 de « Réviser… »
    (`videos/examen-demain-vertical/renders/reviser-en-une-nuit-avec-chatgpt.mp4`, non versionné : 1080×1920, 120 s,
    −15,6 LUFS, crête −1,5 dBFS).
-3. Corriger d'après ses retours (en suivant `hyperframes-style/PROCESSUS-VIDEO.md`).
-4. Mettre à jour `hyperframes-style/frame.md`, `ANALYSE.md` et les modèles avec ce qui a été appris sur cette
+4. Corriger d'après ses retours (en suivant `hyperframes-style/PROCESSUS-VIDEO.md`).
+5. Mettre à jour `hyperframes-style/frame.md`, `ANALYSE.md` et les modèles avec ce qui a été appris sur cette
    vidéo (personnage articulé, recadrages, niveaux de musique) : les modèles n'ont pas encore ces améliorations.
-5. Rendre l'installation permanente : l'utilisateur doit fusionner la PR #2 puis ajouter
+6. Rendre l'installation permanente : l'utilisateur doit fusionner la PR #2 puis ajouter
    `cd Github-worker && bash scripts/install-hyperframes.sh` au script de démarrage de l'environnement cloud.
 
 ## Décisions prises
@@ -78,6 +80,9 @@ Dernière mise à jour : 1er novembre 2026, 20 h 50 UTC.
   Utiliser l'apostrophe typographique `’`.
 
 ## À savoir sur le son
+
+- Volume final : après le rendu, monter le fichier livré vers −14 LUFS sans toucher l'image :
+  `ffmpeg -i in.mp4 -c:v copy -af "volume=<gain>dB,alimiter=limit=0.83:attack=3:release=60:level=false" -c:a aac -b:a 256k out.mp4`.
 
 - À la fin du rendu, HyperFrames baisse **tout** le mixage pour que les crêtes restent sous −1 dBTP (2,5 dB sur la
   version 4, voir « lowered by … dB » dans le journal du rendu). Le volume global reste donc vers −15,6 LUFS même si
