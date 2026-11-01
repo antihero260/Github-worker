@@ -1,0 +1,71 @@
+<!-- Scène 5 · « Retiens ça : si ça ne tourne que chez toi, ça ne tourne pas. » (10,6 → 13,3 s) -->
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+    }
+    #s5-noir {
+      position: absolute;
+      inset: 0;
+      background: #000;
+    }
+    #s5-titre {
+      position: absolute;
+      left: 0;
+      width: 1080px;
+      top: 700px;
+      text-align: center;
+      transform-origin: 50% 0;
+    }
+    #s5-serif {
+      left: 84px;
+      top: 760px;
+      font-size: 112px;
+    }
+    #s5-souligne {
+      position: absolute;
+      left: 84px;
+      top: 1112px;
+      width: 725px;
+      height: 10px;
+      background: var(--color-accent);
+      transform-origin: 0 50%;
+    }
+  </style>
+  <div id="root" data-composition-id="s5-retiens" data-width="1080" data-height="1920">
+    <div class="pj-scene">
+      <div id="s5-cam" class="pj-cam">
+        <div class="pj-horizon" style="top: 1300px"></div>
+        <div id="s5-noir"></div>
+        <div id="s5-titre">
+          <div class="pj-label" style="position: static"><span class="pj-k">Règle n° 1</span></div>
+          <div id="s5-mot" class="pj-impact" style="font-size: 196px; margin-top: 18px">Retiens ça.</div>
+        </div>
+        <div id="s5-serif" class="pj-serif">
+          <div><span>si</span> <span>ça</span> <span>ne</span> <span>tourne</span></div>
+          <div><span>que</span> <span>chez</span> <span>toi,</span></div>
+          <div><span>ça</span> <span>ne</span> <span>tourne</span> <span>pas.</span></div>
+        </div>
+        <div id="s5-souligne"></div>
+      </div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#s5-cam", { scale: 1 }, { scale: 1.05, duration: 2.5, ease: "none" }, 0);
+    // « retiens ça » : carte plein écran
+    tl.fromTo("#s5-mot", { opacity: 0, scale: 1.45 }, { opacity: 1, scale: 1, duration: 0.14, ease: "power4.out" }, 0.04);
+    tl.fromTo("#s5-titre .pj-label", { opacity: 0 }, { opacity: 1, duration: 0.1 }, 0.1);
+    // « si ça ne tourne… » : la carte monte, le décor revient, la règle s'écrit mot à mot
+    tl.to("#s5-titre", { y: -390, scale: 0.6, duration: 0.3, ease: "power3.inOut" }, 0.68);
+    tl.to("#s5-noir", { opacity: 0, duration: 0.3 }, 0.68);
+    tl.to("#s5-titre .pj-label", { opacity: 0, duration: 0.15 }, 0.68);
+    const temps = [0.68, 0.84, 1.0, 1.08, 1.4, 1.48, 1.64, 1.88, 2.12, 2.2, 2.44];
+    document.querySelectorAll("#s5-serif span").forEach((mot, i) => tl.set(mot, { opacity: 1 }, temps[i]));
+    tl.fromTo("#s5-souligne", { scaleX: 0 }, { scaleX: 1, duration: 0.2, ease: "power2.out" }, 2.44);
+    // sortie
+    tl.to("#s5-cam", { scale: 1.3, filter: "blur(14px)", duration: 0.2, ease: "power3.in" }, 2.5);
+    window.__timelines["s5-retiens"] = tl;
+  </script>
+</template>

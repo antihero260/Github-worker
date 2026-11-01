@@ -1,0 +1,1 @@
+Ça, c'est toi. Un dev normal, rien de spécial. Ton code marche parfaitement sur ta machine. Tu l'envoies en production. Et là… tout plante. Trois heures à chercher. Le problème ? Ce n'est pas ton code. C'est ton environnement. Retiens ça : si ça ne tourne que chez toi, ça ne tourne pas. Abonne-toi pour la suite.

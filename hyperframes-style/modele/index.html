@@ -1,0 +1,291 @@
+<!doctype html>
+<html
+  lang="fr"
+  data-resolution="portrait"
+  data-composition-variables='[
+    {"id":"color-ground","type":"color","label":"Fond","default":"#0C0C0C"},
+    {"id":"color-accent","type":"color","label":"Accent (toi, chiffres clés)","default":"#DCFC1C"},
+    {"id":"color-light","type":"color","label":"Clair (elle, papiers, serif)","default":"#ECECE8"},
+    {"id":"caption-box","type":"color","label":"Bandeau des sous-titres","default":"#EEEEEA"},
+    {"id":"caption-ink","type":"color","label":"Texte des sous-titres","default":"#0A0A06"}
+  ]'
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+    <style>
+      /* Style « Projecteur » : les valeurs viennent de ../frame.md. */
+      @font-face {
+        font-family: "Anton";
+        src: url("assets/fonts/Anton-Regular.woff2") format("woff2");
+        font-weight: 400;
+      }
+      @font-face {
+        font-family: "Instrument Serif";
+        src: url("assets/fonts/InstrumentSerif-Italic.woff2") format("woff2");
+        font-style: italic;
+        font-weight: 400;
+      }
+      :root {
+        --color-ground: #0c0c0c;
+        --color-accent: #dcfc1c;
+        --color-light: #ecece8;
+        --caption-box: #eeeeea;
+        --caption-ink: #0a0a06;
+        --accent-shade: #98ac18;
+        --accent-glow: rgba(220, 252, 28, 0.35);
+        --hud-grey: #9a9a9a;
+        --caption-y: 1511px;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        width: 1080px;
+        height: 1920px;
+        overflow: hidden;
+        background: #000;
+      }
+      #fond {
+        position: absolute;
+        inset: 0;
+        background: var(--color-ground);
+      }
+
+      /* ---- Composants partagés par toutes les scènes (préfixe pj-) ---- */
+      .pj-scene {
+        position: absolute;
+        inset: 0;
+        overflow: hidden;
+        background: radial-gradient(ellipse 70% 45% at 50% 62%, #262626 0%, var(--color-ground) 72%);
+      }
+      .pj-cam {
+        position: absolute;
+        inset: 0;
+        transform-origin: 50% 60%;
+      }
+      .pj-horizon {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 12px;
+        background-image: radial-gradient(circle, rgba(255, 255, 255, 0.28) 2.5px, transparent 3.5px);
+        background-size: 72px 12px;
+        opacity: 0.6;
+      }
+      .pj-cone {
+        position: absolute;
+        top: -40px;
+        width: 560px;
+        background: linear-gradient(to bottom, rgba(255, 255, 255, 0.24), rgba(255, 255, 255, 0.05));
+        clip-path: polygon(41% 0, 59% 0, 100% 100%, 0 100%);
+        filter: blur(16px);
+      }
+      .pj-sol {
+        position: absolute;
+        width: 620px;
+        height: 150px;
+        border-radius: 50%;
+        background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.34), rgba(255, 255, 255, 0) 70%);
+      }
+      .pj-picto {
+        position: absolute;
+        overflow: visible;
+      }
+      .pj-picto .pj-contour * {
+        fill: #000;
+        stroke: #000;
+        stroke-width: 12;
+        stroke-linejoin: round;
+      }
+      .pj-toi .pj-plein * {
+        fill: var(--color-accent);
+      }
+      .pj-elle .pj-plein * {
+        fill: var(--color-light);
+      }
+      .pj-autre .pj-contour * {
+        fill: #fff;
+        stroke: #fff;
+        stroke-width: 9;
+      }
+      .pj-autre .pj-plein * {
+        fill: #050505;
+      }
+      .pj-label {
+        position: absolute;
+        font-family: "JetBrains Mono", monospace;
+        font-weight: 700;
+        font-size: 28px;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        line-height: 1.45;
+        white-space: nowrap;
+      }
+      .pj-label .pj-k {
+        color: var(--color-accent);
+        display: block;
+      }
+      .pj-label .pj-d {
+        color: var(--hud-grey);
+        display: block;
+      }
+      .pj-equerres {
+        position: absolute;
+      }
+      .pj-equerres i {
+        position: absolute;
+        width: 46px;
+        height: 46px;
+        border-color: var(--color-accent);
+        border-style: solid;
+        border-width: 0;
+      }
+      .pj-equerres i:nth-child(1) {
+        left: 0;
+        top: 0;
+        border-left-width: 6px;
+        border-top-width: 6px;
+      }
+      .pj-equerres i:nth-child(2) {
+        right: 0;
+        top: 0;
+        border-right-width: 6px;
+        border-top-width: 6px;
+      }
+      .pj-equerres i:nth-child(3) {
+        left: 0;
+        bottom: 0;
+        border-left-width: 6px;
+        border-bottom-width: 6px;
+      }
+      .pj-equerres i:nth-child(4) {
+        right: 0;
+        bottom: 0;
+        border-right-width: 6px;
+        border-bottom-width: 6px;
+      }
+      .pj-sticker {
+        position: absolute;
+        background: var(--color-accent);
+        color: #000;
+        font-family: "Anton", sans-serif;
+        font-size: 92px;
+        line-height: 1;
+        padding: 10px 26px 12px;
+        text-transform: uppercase;
+        white-space: nowrap;
+      }
+      .pj-papier {
+        position: absolute;
+        background: var(--color-light);
+        color: #0a0a06;
+        padding: 40px 44px;
+        box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+      }
+      .pj-papier h3 {
+        font-family: "Anton", sans-serif;
+        font-weight: 400;
+        font-size: 104px;
+        line-height: 1;
+        text-transform: uppercase;
+      }
+      .pj-papier .pj-ligne {
+        font-family: "JetBrains Mono", monospace;
+        font-weight: 700;
+        font-size: 30px;
+        letter-spacing: 0.06em;
+        margin-top: 22px;
+        white-space: nowrap;
+      }
+      .pj-impact {
+        font-family: "Anton", sans-serif;
+        color: var(--color-accent);
+        text-transform: uppercase;
+        line-height: 0.9;
+        text-shadow:
+          0 0 28px var(--accent-glow),
+          0 0 70px var(--accent-glow);
+        white-space: nowrap;
+      }
+      .pj-serif {
+        position: absolute;
+        font-family: "Instrument Serif", serif;
+        font-style: italic;
+        color: var(--color-light);
+        line-height: 1.1;
+      }
+      .pj-serif span {
+        opacity: 0;
+      }
+      .pj-stat {
+        position: absolute;
+        font-family: "JetBrains Mono", monospace;
+        font-weight: 700;
+        color: var(--color-accent);
+        white-space: nowrap;
+      }
+      .pj-flash {
+        position: absolute;
+        inset: 0;
+        background: var(--color-accent);
+        opacity: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="16"
+      data-width="1080"
+      data-height="1920"
+    >
+      <div id="fond" class="clip" data-start="0" data-duration="16" data-track-index="0"></div>
+
+      <div id="s1-toi" data-composition-id="s1-toi" data-composition-src="compositions/s1-toi.html"
+        data-start="0" data-duration="2.5" data-track-index="1" data-track-kind="graphics"
+        data-width="1080" data-height="1920" style="z-index: 10"></div>
+      <div id="s2-machine" data-composition-id="s2-machine" data-composition-src="compositions/s2-machine.html"
+        data-start="2.5" data-duration="3.1" data-track-index="1" data-track-kind="graphics"
+        data-width="1080" data-height="1920" style="z-index: 10"></div>
+      <div id="s3-plante" data-composition-id="s3-plante" data-composition-src="compositions/s3-plante.html"
+        data-start="5.6" data-duration="2.25" data-track-index="1" data-track-kind="graphics"
+        data-width="1080" data-height="1920" style="z-index: 10"></div>
+      <div id="s4-env" data-composition-id="s4-env" data-composition-src="compositions/s4-env.html"
+        data-start="7.85" data-duration="2.75" data-track-index="1" data-track-kind="graphics"
+        data-width="1080" data-height="1920" style="z-index: 10"></div>
+      <div id="s5-retiens" data-composition-id="s5-retiens" data-composition-src="compositions/s5-retiens.html"
+        data-start="10.6" data-duration="2.7" data-track-index="1" data-track-kind="graphics"
+        data-width="1080" data-height="1920" style="z-index: 10"></div>
+      <div id="s6-suite" data-composition-id="s6-suite" data-composition-src="compositions/s6-suite.html"
+        data-start="13.3" data-duration="2.7" data-track-index="1" data-track-kind="graphics"
+        data-width="1080" data-height="1920" style="z-index: 10"></div>
+
+      <div id="cadre" data-composition-id="cadre" data-composition-src="compositions/cadre.html"
+        data-start="0" data-duration="16" data-track-index="2" data-track-kind="graphics"
+        data-width="1080" data-height="1920" style="z-index: 40"></div>
+      <div id="sous-titres" data-composition-id="sous-titres" data-composition-src="compositions/sous-titres.html"
+        data-start="0" data-duration="16" data-track-index="3" data-track-kind="captions"
+        data-width="1080" data-height="1920" style="z-index: 50"></div>
+
+      <audio id="voix" src="assets/audio/voix.wav" data-start="0" data-track-index="10"></audio>
+      <audio id="musique" src="assets/audio/musique.wav" data-start="0" data-volume="0.55" data-track-index="11"></audio>
+      <audio id="souffle-1" src="assets/audio/souffle.wav" data-start="2.35" data-duration="0.45" data-volume="0.5" data-track-index="12"></audio>
+      <audio id="souffle-2" src="assets/audio/souffle.wav" data-start="5.45" data-duration="0.45" data-volume="0.5" data-track-index="12"></audio>
+      <audio id="impact-1" src="assets/audio/impact.wav" data-start="6.16" data-duration="1.2" data-volume="0.8" data-track-index="13"></audio>
+      <audio id="souffle-3" src="assets/audio/souffle.wav" data-start="7.7" data-duration="0.45" data-volume="0.5" data-track-index="12"></audio>
+      <audio id="impact-2" src="assets/audio/impact.wav" data-start="10.64" data-duration="1.2" data-volume="0.7" data-track-index="13"></audio>
+      <audio id="souffle-4" src="assets/audio/souffle.wav" data-start="13.15" data-duration="0.45" data-volume="0.5" data-track-index="12"></audio>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

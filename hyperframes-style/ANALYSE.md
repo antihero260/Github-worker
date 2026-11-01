@@ -143,6 +143,8 @@ Durée cible : **1 min 30 à 2 min 30**, soit 350 à 550 mots de script.
 
 ## 10. Comment le produire avec HyperFrames
 
+Un projet modèle prêt à copier applique tout ce qui suit : [`modele/`](modele/README.md).
+
 1. **Script d'abord** : suivre la structure du § 8, 230 mots/min, phrases courtes, une métaphore matérielle.
 2. **Voix off** : `/media-use` (HeyGen) ou une voix française locale ; caler le débit autour de 230 mots/min.
    Le worker Edge TTS de ce dépôt (`fr-FR-VivienneMultilingualNeural`) peut aussi servir, avec un débit accéléré.

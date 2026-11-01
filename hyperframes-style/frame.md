@@ -37,7 +37,7 @@ typography:
   stat:     { fontFamily: "JetBrains Mono", cqw: 7, weight: 700 }                          # chiffres et compteurs [estimé]
   voice:    { fontFamily: "Instrument Serif", cqw: 8.5, style: italic, weight: 400, lineHeight: 1.1 }  # [estimé] hauteur d'x mesurée 4,3 cqw
   bubble:   { fontFamily: "Instrument Serif", cqw: 4, style: italic, weight: 400 }        # [estimé]
-  label:    { fontFamily: "JetBrains Mono", cqw: 2.4, weight: 700, upper: true, tracking: "0.15em" }  # [estimé] capitale mesurée 1,75 cqw
+  label:    { fontFamily: "JetBrains Mono", cqw: 2.6, weight: 700, upper: true, tracking: "0.15em" }  # 28 px, plancher de lisibilité HyperFrames (références : capitale 1,75 cqw, ~26 px)
   hook:     { fontFamily: "Inter", cqw: 4.8, weight: 600, lineHeight: 1.2 }                # titre du format B [estimé]
 
 spacing:
