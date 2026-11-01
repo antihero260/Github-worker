@@ -1,5 +1,4 @@
 renders/
 .hyperframes/
-assets/audio/voix.wav
-assets/audio/musique.wav
 __pycache__/
+.media/audio/bgm/
