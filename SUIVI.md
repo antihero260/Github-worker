@@ -53,6 +53,8 @@ Dernière mise à jour : 1er novembre 2026, 19 h 30 UTC.
 - Rendu lancé alors que le contrôle signalait un chevauchement (« REC » sur « 23:17 » pendant un zoom).
 - Identifiant d'élément égal à l'identifiant de sa scène (`s5-carte`, `s11-prof`) : masquait toute la scène.
 - Le signe « ≠ » n'existe pas dans la police Anton : il faut le dessiner.
+- Commandes lancées en parallèle (création du projet vertical + rendu) : le rendu est parti dans le mauvais dossier.
+  Toujours passer le dossier du projet à `hyperframes render <dossier>` et enchaîner les étapes dans l'ordre.
 
 ## À savoir sur le son
 

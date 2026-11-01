@@ -54,7 +54,7 @@ mot à mot. `assets/mots.json` sert ensuite à caler chaque animation sur son mo
 ## 6. Rendu et livraison
 
 ```bash
-cd videos/<nom> && hyperframes render -o renders/<nom>-16x9.mp4          # film intermédiaire (non livré)
+hyperframes render videos/<nom> -o videos/<nom>/renders/<nom>-16x9.mp4   # film intermédiaire (non livré)
 cp renders/<nom>-16x9.mp4 ../<nom>-vertical/assets/
 cd ../<nom>-vertical && hyperframes check && hyperframes render -o renders/<titre>.mp4
 ```
