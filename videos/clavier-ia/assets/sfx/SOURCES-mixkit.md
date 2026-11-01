@@ -1,0 +1,63 @@
+# Bruitages : Mixkit
+
+Téléchargés sur https://mixkit.co (licence gratuite Mixkit Sound Effects Free License : usage commercial autorisé, crédit non obligatoire). Coupés et calibrés à environ −16 LUFS (crête ≤ −1,5 dBFS).
+
+| Fichier | Source Mixkit | Durée |
+| --- | --- | --- |
+| `souffle-rapide.mp3` | mixkit-fast-whoosh-transition-1490.wav | 1.76 s |
+| `souffle-cine.mp3` | mixkit-cinematic-whoosh-fast-transition-1492.wav | 1.33 s |
+| `souffle-air.mp3` | mixkit-air-woosh-1489.wav | 2.32 s |
+| `swoosh-accent.mp3` | mixkit-quick-swoosh-accent-1464.wav | 1.10 s |
+| `swoosh-court.mp3` | mixkit-quick-swoosh-1462.wav | 1.25 s |
+| `swoosh-vol.mp3` | mixkit-flying-fast-swoosh-1469.wav | 1.63 s |
+| `swoosh-vitesse.mp3` | mixkit-speeding-swoosh-1484.wav | 2.60 s |
+| `swoosh-tourbillon.mp3` | mixkit-swirling-short-swoosh-1459.wav | 3.77 s |
+| `swoosh-monte.mp3` | mixkit-elevating-swoosh-1466.wav | 1.03 s |
+| `zoom-impact.mp3` | mixkit-quick-zoom-impact-772.wav | 1.22 s |
+| `zoom-in.mp3` | mixkit-ui-zoom-in-2617.wav | 0.66 s |
+| `zoom-out.mp3` | mixkit-ui-zoom-out-2619.wav | 1.15 s |
+| `zoom-air.mp3` | mixkit-fast-air-zoom-2625.wav | 1.28 s |
+| `zoom-futur.mp3` | mixkit-futuristic-zoom-move-2626.wav | 2.17 s |
+| `zoom-swipe.mp3` | mixkit-fast-swipe-zoom-2627.wav | 1.06 s |
+| `zoom-in-out.mp3` | mixkit-in-and-out-zoom-sound-2622.wav | 1.25 s |
+| `zoom-scifi.mp3` | mixkit-sci-fi-interface-zoom-890.wav | 1.80 s |
+| `zoom-expand.mp3` | mixkit-interface-sci-fi-expand-or-zoom-913.wav | 0.64 s |
+| `zoom-vide.mp3` | mixkit-air-zoom-vacuum-2608.wav | 1.27 s |
+| `riser-trailer.mp3` | mixkit-cinematic-trailer-riser-790.wav | 2.57 s |
+| `riser-tech.mp3` | mixkit-tech-choir-cinematic-riser-794.wav | 5.00 s |
+| `riser-synth.mp3` | mixkit-cinematic-synth-riser-645.wav | 4.00 s |
+| `swell-court.mp3` | mixkit-short-sci-fi-swell-2669.wav | 2.91 s |
+| `impact-whoosh.mp3` | mixkit-movie-whoosh-impact-presentation-2903.wav | 3.53 s |
+| `impact-basse.mp3` | mixkit-short-bass-hit-2299.wav | 1.10 s |
+| `impact-futur.mp3` | mixkit-futuristic-bass-hit-2303.wav | 2.75 s |
+| `impact-tambour.mp3` | mixkit-deep-cinematic-subtle-drum-impact-549.wav | 3.00 s |
+| `impact-cartoon.mp3` | mixkit-cartoon-blow-impact-2654.wav | 1.41 s |
+| `clavier-tel.mp3` | mixkit-smartphone-typing-1393.wav | 4.50 s |
+| `clavier-tel-2.mp3` | mixkit-smartphone-digital-keyboard-1394.wav | 7.50 s |
+| `clavier-tel-3.mp3` | mixkit-typing-text-on-a-smartphone-1395.wav | 6.00 s |
+| `clavier-doux.mp3` | mixkit-soft-typing-on-a-digital-keyboard-1396.wav | 9.50 s |
+| `clavier-bit.mp3` | mixkit-phone-keyboard-bit-2535.wav | 7.50 s |
+| `pop-bulle.mp3` | mixkit-bubble-pop-up-alert-notification-2357.wav | 0.38 s |
+| `pop-sec.mp3` | mixkit-dry-pop-up-notification-alert-2356.wav | 0.30 s |
+| `pop-click.mp3` | mixkit-hard-pop-click-2364.wav | 1.17 s |
+| `clic.mp3` | mixkit-interface-click-1126.wav | 0.45 s |
+| `clic-positif.mp3` | mixkit-positive-interface-click-1112.wav | 1.77 s |
+| `coche.mp3` | mixkit-modern-click-box-check-1120.wav | 0.24 s |
+| `pop-cartoon.mp3` | mixkit-cartoon-bubble-pop-731.wav | 0.52 s |
+| `pop-long.mp3` | mixkit-long-pop-2358.wav | 0.48 s |
+| `notif-positive.mp3` | mixkit-positive-notification-951.wav | 2.80 s |
+| `bonne-reponse.mp3` | mixkit-correct-answer-notification-947.wav | 1.06 s |
+| `buzz-faux.mp3` | mixkit-game-show-wrong-answer-buzz-950.wav | 1.74 s |
+| `buzz-basse.mp3` | mixkit-wrong-answer-bass-buzzer-948.wav | 2.55 s |
+| `notif-indice.mp3` | mixkit-interface-hint-notification-911.wav | 1.72 s |
+| `pluie.mp3` | mixkit-light-rain-loop-1253.wav | 10.00 s |
+| `tonnerre.mp3` | mixkit-mid-strength-single-thunder-1298.wav | 5.50 s |
+| `tonnerre-transition.mp3` | mixkit-cinematic-thunder-transition-1281.wav | 5.00 s |
+| `glitch-data.mp3` | mixkit-glitch-data-noise-1040.wav | 1.20 s |
+| `glitch-court.mp3` | mixkit-glitch-short-1031.wav | 0.83 s |
+| `glitch-ok.mp3` | mixkit-sci-fi-glitch-confirmation-1032.wav | 2.49 s |
+| `surprise-cartoon.mp3` | mixkit-cartoon-surprise-suspense-676.wav | 3.21 s |
+| `etincelles.mp3` | mixkit-fairy-sparkle-whoosh-869.wav | 4.55 s |
+| `cloche-succes.mp3` | mixkit-achievement-bell-600.wav | 2.40 s |
+| `photo.mp3` | mixkit-camera-digital-shutter-1432.wav | 1.51 s |
+| `fouet.mp3` | mixkit-fast-whip-strike-1511.wav | 1.05 s |

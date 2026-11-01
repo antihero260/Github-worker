@@ -41,9 +41,15 @@ mot à mot. `assets/mots.json` sert ensuite à caler chaque animation sur son mo
   choisies d'après leur description et leur courbe d'énergie, coupées et bouclées sur des mesures entières.
 - **Niveaux** : voix −15/−16 LUFS ; musiques **−18 à −19 LUFS** (3–4 dB dessous, limiteur à −4 dB en fin de chaîne) ; puis carve sur chaque musique :
   `node <skill media-use>/audio/scripts/carve.mjs --comp index.html --bed musique-N --strength 0.5 --core <core>`.
-- **Bruitages** (volume 0,2–0,4) : souffle à chaque transition, impact grave sur les mots-chocs, montée avant un
-  mot-choc, clavier pendant un texte tapé, clic par case cochée, pop par apparition, son « barré », ping sur les chiffres.
-- Simuler le mixage avec ffmpeg avant le rendu : crête sous −1 dBFS, total autour de −15 LUFS.
+  **Attention** : le carve ajoute aussi une baisse de niveau automatique (−9 à −12 dB pendant la parole) qui rend la
+  musique inaudible : la retirer. Tout est fait par `videos/clavier-ia/tools/mixage.py` (à copier).
+- **Sources** : Mixkit (musiques, bruitages, vidéos gratuites, sans crédit) — voir `SUIVI.md` pour les adresses
+  directes des fichiers ; catalogue HeyGen en secours.
+- **Bruitages** (calibrés à −16 LUFS, volume 0,35–0,6) : **rush à chaque recadrage**, souffle à chaque transition,
+  impact grave sur les mots-chocs, riser avant un mot-choc, clavier pendant un texte tapé, clic par case cochée, pop
+  par apparition, son « barré », ping sur les chiffres. Caler le **pic** du son sur l'image (voir `son()` dans
+  `videos/clavier-ia/tools/construire-scenes.py`).
+- Simuler le mixage avant le rendu (`videos/clavier-ia/tools/simuler-mix.py`) : total autour de −14/−15 LUFS.
 
 ## 5. Contrôle AVANT tout rendu
 

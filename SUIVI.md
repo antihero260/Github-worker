@@ -1,6 +1,6 @@
 # Suivi du travail
 
-Dernière mise à jour : 1er novembre 2026, 19 h 40 UTC.
+Dernière mise à jour : 1er novembre 2026, 20 h 50 UTC.
 
 ## État actuel
 
@@ -11,6 +11,7 @@ Dernière mise à jour : 1er novembre 2026, 19 h 40 UTC.
 | Projets modèles | Faits : `hyperframes-style/modele/` (film 16:9) et `modele-vertical/` (titre + bandeau). |
 | Vidéo « Réviser en une nuit avec ChatGPT » | Version 4 envoyée à 17 h 45 (musique +3 dB). Pas encore de retour. |
 | Vidéo « ChatGPT te donne toujours raison ? » | Demandée « beaucoup plus dynamique, surtout le perso ». 15 scènes, 2 personnages animés, 3 musiques, 68 bruitages. **Envoyée** à 19 h 40 (1080×1920, 103 s, −16,5 LUFS, crête −1,5 dBTP). Titre proposé, à valider. En attente des retours. |
+| Vidéo « L’IA cachée dans ton clavier » (vidéo 3) | Voix off sur le clavier prédictif (le script fourni parlait de n8n : **la voix fait foi**, confirmé par l'utilisateur). 16 scènes, vraies vidéos et logos, téléphone animé, 3 musiques et 58 bruitages Mixkit (155 placés). Contrôle réussi (0 erreur), images revues. Rendu 16:9 en cours, puis version verticale. Titre proposé, à valider. |
 | Pull request | [#2](https://github.com/antihero260/Github-worker/pull/2) ouverte vers `main`, surveillée. Branche : `ccr-e6530603-mcler7`. |
 
 ## Prochaines étapes
@@ -31,7 +32,16 @@ Dernière mise à jour : 1er novembre 2026, 19 h 40 UTC.
 - **Format** : 7 vidéos de référence sur 9 sont un film 16:9 dans un bandeau sous un titre blanc. C'est le format
   livré. La vidéo verticale est fabriquée à partir du film 16:9 (`videos/<nom>-vertical/`).
 - **Titre de la vidéo actuelle** : « Réviser en une nuit avec ChatGPT » (choisi par l'utilisateur).
-- **Musique** : catalogue HeyGen (l'utilisateur a choisi cette source ; compte HeyGen connecté).
+- **Vidéo 3 : sons sur Internet** (demande de l'utilisateur) : Mixkit (musiques, bruitages, vidéos ; gratuit, usage
+  commercial, crédit non obligatoire). Le site bloque vite les robots (Cloudflare, erreur 429) mais les fichiers
+  restent accessibles directement : `https://assets.mixkit.co/active_storage/sfx/<n>/<n>.wav` (le nom du son est
+  dans l'en-tête `content-disposition`), `https://assets.mixkit.co/music/<n>/<n>.mp3`,
+  `https://assets.mixkit.co/videos/<n>/<n>-1080.mp4` (ou `-720`). Les numéros des vidéos se trouvent avec WebFetch
+  sur une page de recherche Mixkit (vignettes `…/videos/<n>/<n>-thumb-360-0.jpg`).
+- **Vidéo 3 : beaucoup plus de bruitages** (demande de l'utilisateur) : un son de rush à chaque recadrage (`zoom()`
+  dans `construire-scenes.py`), souffle à chaque transition, risers avant les moments forts, pops, frappe, pluie…
+  Chaque son est calé sur son pic (`assets/sfx/pics.json`).
+- **Musique** : catalogue HeyGen pour les vidéos 1 et 2 (l'utilisateur a choisi cette source ; compte HeyGen connecté), Mixkit pour la vidéo 3.
   - Partie 1 « tension » : `bgm_002` (nappe tendue avec tic-tac), temps fort sur « tu ouvres ChatGPT ».
   - Partie 2 « méthode » : `bgm_005` (enquête rythmée, 128 BPM), bouclé sur 14 mesures.
   - Partie 3 « élan » : `bgm_007` (montée cinématique), à partir de 83,3 s.
@@ -55,6 +65,17 @@ Dernière mise à jour : 1er novembre 2026, 19 h 40 UTC.
 - Le signe « ≠ » n'existe pas dans la police Anton : il faut le dessiner.
 - Commandes lancées en parallèle (création du projet vertical + rendu) : le rendu est parti dans le mauvais dossier.
   Toujours passer le dossier du projet à `hyperframes render <dossier>` et enchaîner les étapes dans l'ordre.
+
+- **Musique trop basse dans les vidéos 1 et 2 : vraie cause trouvée.** Le carve (`carve.mjs`, force 0,5) ajoute,
+  en plus des creux de fréquences, une **baisse de niveau automatique** (nœud « gain » + courbe) qui vise une musique
+  **12 dB sous la voix** et la baisse jusqu'à −12 dB dès que la voix parle (−9 dB en moyenne). Les niveaux « 3–4 dB
+  sous la voix » des fichiers n'étaient donc pas ceux entendus. Désormais `tools/mixage.py` retire cette baisse et
+  garde seulement les creux de fréquences (vidéo 3). Les vidéos 1 et 2 ont encore la baisse : à corriger si
+  l'utilisateur veut les refaire.
+- Snapshots : quand on demande beaucoup d'images d'un coup, certaines sortent floues/vides (scène prise à son état
+  de départ). Relancer ces instants seuls pour vérifier avant de conclure à un bug.
+- Apostrophe droite `'` dans le titre du projet vertical : casse l'attribut `data-composition-variables='…'`.
+  Utiliser l'apostrophe typographique `’`.
 
 ## À savoir sur le son
 

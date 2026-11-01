@@ -404,7 +404,7 @@ def confettis(s, cid, g, cx, cy, n=22, rayon=420):
         coul = "#DCFC1C" if k % 3 else "#ECECE8"
         w, h = (18, 10) if k % 2 else (12, 12)
         morceaux.append(f'<i id="{cid}-{k}" style="position: absolute; left: {cx}px; top: {cy}px; width: {w}px; height: {h}px; background: {coul}; opacity: 0"></i>')
-        s.j(f'tl.fromTo("#{cid}-{k}", {{ x: 0, y: 0, rotation: 0, opacity: 1 }}, {{ x: {dx}, y: {dy + 260}, rotation: {(k * 97) % 540 - 270}, opacity: 0, duration: 1.3, ease: "power2.out" }}, {s.L(g)});')
+        s.j(f'tl.fromTo("#{cid}-{k}", {{ x: 0, y: 0, rotation: 0, opacity: 1 }}, {{ x: {dx}, y: {dy + 260}, rotation: {(k * 97) % 540 - 270}, opacity: 0, duration: 1.3, ease: "power2.out", immediateRender: false }}, {s.L(g)});')
     cam(s, "".join(morceaux))
 
 
