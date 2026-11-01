@@ -9,8 +9,9 @@ sans coder » + ce film dans le bandeau). Le film 16:9 seul n'est pas livré.
 
 ## Retours de l'utilisateur appliqués (après la vidéo 3, qu'il a « adorée »)
 
-- **« Baisse très légèrement le volume du son »** : bruitages 2 dB plus bas (`VOL_SFX = 0.8` dans
-  `tools/construire-scenes.py`). Musique au même niveau que la vidéo 3 (≈ −19 LUFS, sans baisse automatique).
+- **« Baisse très légèrement le volume du son »**, précisé ensuite : « les bruitages sont bons, c'est la musique qu'il
+  faut baisser » → musique 2 dB plus bas que la vidéo 3 (≈ −21 LUFS, 5–6 dB sous la voix, `data-volume` 0,63),
+  bruitages au même niveau que la vidéo 3.
 - **« Prends des sons sur Internet, surtout quand tu en prends plusieurs »** : 99 bruitages Mixkit différents
   (58 de la vidéo 3 + 41 nouveaux : clavier d'ordinateur, souris, robots, pages, déverrouillage, fusée, pièces…),
   211 sons placés.

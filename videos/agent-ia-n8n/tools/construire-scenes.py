@@ -23,7 +23,7 @@ import projecteur as P  # noqa: E402
 init(ICI)
 
 ACCENT, CLAIR = "#DCFC1C", "#ECECE8"
-VOL_SFX = 0.8  # retour de l'utilisateur après la vidéo 3 : « baisse très légèrement le volume du son »
+VOL_SFX = 1.0  # bruitages au même niveau que la vidéo 3 (l'utilisateur : « les bruitages sont bons »)
 
 
 def b(i):
@@ -1115,10 +1115,11 @@ son(t_mot(76), "riser-synth", 0.3, "montée vers l'étape 1")
 son(t_mot(267), "riser-tech", 0.3, "montée vers ET VOILÀ")
 son(t_mot(367), "riser-trailer", 0.32, "montée vers EXÉCUTANT NUMÉRIQUE")
 
-MUSIQUES = [  # (début, fichier, durée, volume) — fichiers à −16,9 LUFS ; 0,79 ≈ −19 LUFS (4 dB sous la voix)
-    (0, "partie-1-digital-clouds", 25.9, 0.79),
-    (25.1, "partie-2-tech-house", 61.4, 0.79),
-    (86.0, "partie-3-positive-energy", 44.3, 0.79),
+MUSIQUES = [  # (début, fichier, durée, volume) — fichiers à −16,9 LUFS ; 0,63 ≈ −21 LUFS (≈ 6 dB sous la voix) :
+    # l'utilisateur après la vidéo 3 : « c'est la musique qu'il faut baisser » (très légèrement) → −2 dB
+    (0, "partie-1-digital-clouds", 25.9, 0.63),
+    (25.1, "partie-2-tech-house", 61.4, 0.63),
+    (86.0, "partie-3-positive-energy", 44.3, 0.63),
 ]
 MASQUES = []
 
