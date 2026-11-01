@@ -1,6 +1,6 @@
 # Suivi du travail
 
-Dernière mise à jour : 1er novembre 2026, 19 h 30 UTC.
+Dernière mise à jour : 1er novembre 2026, 19 h 40 UTC.
 
 ## État actuel
 
@@ -10,13 +10,13 @@ Dernière mise à jour : 1er novembre 2026, 19 h 30 UTC.
 | Charte de style « Projecteur » | Faite : `hyperframes-style/frame.md` + `ANALYSE.md`. |
 | Projets modèles | Faits : `hyperframes-style/modele/` (film 16:9) et `modele-vertical/` (titre + bandeau). |
 | Vidéo « Réviser en une nuit avec ChatGPT » | Version 4 envoyée à 17 h 45 (musique +3 dB). Pas encore de retour. |
-| Vidéo « ChatGPT te donne toujours raison ? » | Demandée « beaucoup plus dynamique, surtout le perso ». 15 scènes, 2 personnages animés, 3 musiques, 68 bruitages. Contrôle passé. **Rendu en cours** (lancé à 19 h 25). Titre proposé (non encore validé). |
+| Vidéo « ChatGPT te donne toujours raison ? » | Demandée « beaucoup plus dynamique, surtout le perso ». 15 scènes, 2 personnages animés, 3 musiques, 68 bruitages. **Envoyée** à 19 h 40 (1080×1920, 103 s, −16,5 LUFS, crête −1,5 dBTP). Titre proposé, à valider. En attente des retours. |
 | Pull request | [#2](https://github.com/antihero260/Github-worker/pull/2) ouverte vers `main`, surveillée. Branche : `ccr-e6530603-mcler7`. |
 
 ## Prochaines étapes
 
-1. Envoyer « ChatGPT te donne toujours raison ? » (`videos/ia-te-donne-raison-vertical/renders/chatgpt-te-donne-toujours-raison.mp4`)
-   après vérification, et faire valider le titre.
+1. Recueillir les retours sur « ChatGPT te donne toujours raison ? »
+   (`videos/ia-te-donne-raison-vertical/renders/chatgpt-te-donne-toujours-raison.mp4`, non versionné) et faire valider le titre.
 2. Recueillir les retours de l'utilisateur sur la version 4 de « Réviser… »
    (`videos/examen-demain-vertical/renders/reviser-en-une-nuit-avec-chatgpt.mp4`, non versionné : 1080×1920, 120 s,
    −15,6 LUFS, crête −1,5 dBFS).
