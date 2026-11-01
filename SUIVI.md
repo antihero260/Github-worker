@@ -1,6 +1,6 @@
 # Suivi du travail
 
-Dernière mise à jour : 1er novembre 2026, 16 h 40 UTC.
+Dernière mise à jour : 1er novembre 2026, 17 h 45 UTC.
 
 ## État actuel
 
@@ -9,14 +9,14 @@ Dernière mise à jour : 1er novembre 2026, 16 h 40 UTC.
 | Installation de HyperFrames | Faite (dans le conteneur cloud, temporaire). Script permanent : `scripts/install-hyperframes.sh`. |
 | Charte de style « Projecteur » | Faite : `hyperframes-style/frame.md` + `ANALYSE.md`. |
 | Projets modèles | Faits : `hyperframes-style/modele/` (film 16:9) et `modele-vertical/` (titre + bandeau). |
-| Vidéo « Réviser en une nuit avec ChatGPT » | Version 3 envoyée à 16 h 25. Retour : « augmenter encore un peu la musique ». **Version 4 (musique +3 dB) en rendu.** |
+| Vidéo « Réviser en une nuit avec ChatGPT » | **Version 4 envoyée** à 17 h 45 (musique +3 dB par rapport à la voix). En attente des retours. |
 | Pull request | [#2](https://github.com/antihero260/Github-worker/pull/2) ouverte vers `main`, surveillée. Branche : `ccr-e6530603-mcler7`. |
 
 ## Prochaines étapes
 
-1. Recueillir les retours de l'utilisateur sur la version 3
+1. Recueillir les retours de l'utilisateur sur la version 4
    (`videos/examen-demain-vertical/renders/reviser-en-une-nuit-avec-chatgpt.mp4`, non versionné : 1080×1920, 120 s,
-   −15,5 LUFS, crête −1,6 dBFS).
+   −15,6 LUFS, crête −1,5 dBFS).
 2. Corriger d'après ses retours (en suivant `hyperframes-style/PROCESSUS-VIDEO.md`).
 3. Mettre à jour `hyperframes-style/frame.md`, `ANALYSE.md` et les modèles avec ce qui a été appris sur cette
    vidéo (personnage articulé, recadrages, niveaux de musique) : les modèles n'ont pas encore ces améliorations.
@@ -46,6 +46,12 @@ Dernière mise à jour : 1er novembre 2026, 16 h 40 UTC.
 - Rendu lancé alors que le contrôle signalait un chevauchement (« REC » sur « 23:17 » pendant un zoom).
 - Identifiant d'élément égal à l'identifiant de sa scène (`s5-carte`, `s11-prof`) : masquait toute la scène.
 - Le signe « ≠ » n'existe pas dans la police Anton : il faut le dessiner.
+
+## À savoir sur le son
+
+- À la fin du rendu, HyperFrames baisse **tout** le mixage pour que les crêtes restent sous −1 dBTP (2,5 dB sur la
+  version 4, voir « lowered by … dB » dans le journal du rendu). Le volume global reste donc vers −15,6 LUFS même si
+  on remonte la musique ; c'est l'écart musique/voix qui change.
 
 ## Environnement cloud (limites connues)
 
