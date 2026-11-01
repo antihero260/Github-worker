@@ -1,7 +1,10 @@
-# Modèle HyperFrames — style « Projecteur »
+# Modèle HyperFrames — style « Projecteur » : le film 16:9
 
-Projet de départ pour toutes nos vidéos verticales (1080×1920, 30 i/s). Il applique la charte
-[`../frame.md`](../frame.md) et contient une vidéo de test de 16 s (« Ça, c'est toi. Un dev normal… »).
+Projet de départ pour toutes nos vidéos : le **film 16:9 au format YouTube** (1920×1080, 30 i/s). Il applique la
+charte [`../frame.md`](../frame.md) et contient une vidéo de test de 16 s (« Ça, c'est toi. Un dev normal… »).
+
+La version TikTok / Shorts / Reels (titre en haut, ce film dans un bandeau au centre) se fait ensuite avec
+[`../modele-vertical/`](../modele-vertical/README.md).
 
 ## Ce qu'il contient
 
@@ -38,8 +41,9 @@ Projet de départ pour toutes nos vidéos verticales (1080×1920, 30 i/s). Il ap
    ```bash
    hyperframes check
    hyperframes snapshot --at 0.1,2,4,6
-   hyperframes render -o renders/ma-video.mp4
+   hyperframes render -o renders/film-16x9.mp4
    ```
+8. **Version verticale** : copier `renders/film-16x9.mp4` dans `../modele-vertical/assets/` et suivre son README.
 
 ### Régénérer la nappe musicale
 
@@ -56,12 +60,12 @@ ffmpeg -f lavfi -i "aevalsrc='0.34*sin(2*PI*41.2*t)+0.24*sin(2*PI*55*t)+0.10*sin
 
 - `hyperframes check` : réussi, 0 erreur. Il reste 5 avertissements « texte affiché moins de 1 à 1,5 s » :
   c'est le rythme rapide voulu par le style (les sous-titres portent le texte).
-- Rendu : 1080×1920, 30 i/s, 16 s, −12,9 LUFS intégrés.
-- Les sous-titres sont placés à 1511 px comme dans les références, dans la zone où TikTok affiche sa légende :
-  pour les remonter, changer `--caption-y` dans `index.html`.
+- Rendu : 1920×1080, 30 i/s, 16 s.
+- Positions mesurées sur les références (croix à 58 px des bords, sous-titres centrés à 915 px) ; la hauteur des
+  sous-titres se règle avec `--caption-y` dans `index.html`.
 
 ## Limites connues
 
 - Les décors sont en 2,5D (dégradés, pictogrammes SVG), pas en vraie 3D comme les références.
 - La voix Kokoro est correcte mais synthétique ; prévoir une meilleure voix pour publier.
-- Le grain rend le fichier lourd (~27 Mo pour 16 s) ; baisser son opacité dans `cadre.html` si besoin.
+- Le grain rend le fichier lourd (~27 Mo pour 16 s en 1080p) ; baisser son opacité dans `cadre.html` si besoin.

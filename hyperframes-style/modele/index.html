@@ -1,7 +1,7 @@
 <!doctype html>
 <html
   lang="fr"
-  data-resolution="portrait"
+  data-resolution="landscape"
   data-composition-variables='[
     {"id":"color-ground","type":"color","label":"Fond","default":"#0C0C0C"},
     {"id":"color-accent","type":"color","label":"Accent (toi, chiffres clés)","default":"#DCFC1C"},
@@ -12,10 +12,10 @@
 >
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=1080, height=1920" />
+    <meta name="viewport" content="width=1920, height=1080" />
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
     <style>
-      /* Style « Projecteur » : les valeurs viennent de ../frame.md. */
+      /* Style « Projecteur » : film 16:9 (format YouTube), valeurs de ../frame.md. */
       @font-face {
         font-family: "Anton";
         src: url("assets/fonts/Anton-Regular.woff2") format("woff2");
@@ -36,7 +36,7 @@
         --accent-shade: #98ac18;
         --accent-glow: rgba(220, 252, 28, 0.35);
         --hud-grey: #9a9a9a;
-        --caption-y: 1511px;
+        --caption-y: 915px;
       }
       * {
         margin: 0;
@@ -45,8 +45,8 @@
       }
       html,
       body {
-        width: 1080px;
-        height: 1920px;
+        width: 1920px;
+        height: 1080px;
         overflow: hidden;
         background: #000;
       }
@@ -61,7 +61,7 @@
         position: absolute;
         inset: 0;
         overflow: hidden;
-        background: radial-gradient(ellipse 70% 45% at 50% 62%, #262626 0%, var(--color-ground) 72%);
+        background: radial-gradient(ellipse 55% 70% at 50% 72%, #262626 0%, var(--color-ground) 72%);
       }
       .pj-cam {
         position: absolute;
@@ -120,7 +120,7 @@
         position: absolute;
         font-family: "JetBrains Mono", monospace;
         font-weight: 700;
-        font-size: 28px;
+        font-size: 30px;
         letter-spacing: 0.15em;
         text-transform: uppercase;
         line-height: 1.45;
@@ -174,9 +174,9 @@
         background: var(--color-accent);
         color: #000;
         font-family: "Anton", sans-serif;
-        font-size: 92px;
+        font-size: 84px;
         line-height: 1;
-        padding: 10px 26px 12px;
+        padding: 8px 24px 10px;
         text-transform: uppercase;
         white-space: nowrap;
       }
@@ -243,36 +243,36 @@
       data-composition-id="main"
       data-start="0"
       data-duration="16"
-      data-width="1080"
-      data-height="1920"
+      data-width="1920"
+      data-height="1080"
     >
       <div id="fond" class="clip" data-start="0" data-duration="16" data-track-index="0"></div>
 
       <div id="s1-toi" data-composition-id="s1-toi" data-composition-src="compositions/s1-toi.html"
         data-start="0" data-duration="2.5" data-track-index="1" data-track-kind="graphics"
-        data-width="1080" data-height="1920" style="z-index: 10"></div>
+        data-width="1920" data-height="1080" style="z-index: 10"></div>
       <div id="s2-machine" data-composition-id="s2-machine" data-composition-src="compositions/s2-machine.html"
         data-start="2.5" data-duration="3.1" data-track-index="1" data-track-kind="graphics"
-        data-width="1080" data-height="1920" style="z-index: 10"></div>
+        data-width="1920" data-height="1080" style="z-index: 10"></div>
       <div id="s3-plante" data-composition-id="s3-plante" data-composition-src="compositions/s3-plante.html"
         data-start="5.6" data-duration="2.25" data-track-index="1" data-track-kind="graphics"
-        data-width="1080" data-height="1920" style="z-index: 10"></div>
+        data-width="1920" data-height="1080" style="z-index: 10"></div>
       <div id="s4-env" data-composition-id="s4-env" data-composition-src="compositions/s4-env.html"
         data-start="7.85" data-duration="2.75" data-track-index="1" data-track-kind="graphics"
-        data-width="1080" data-height="1920" style="z-index: 10"></div>
+        data-width="1920" data-height="1080" style="z-index: 10"></div>
       <div id="s5-retiens" data-composition-id="s5-retiens" data-composition-src="compositions/s5-retiens.html"
         data-start="10.6" data-duration="2.7" data-track-index="1" data-track-kind="graphics"
-        data-width="1080" data-height="1920" style="z-index: 10"></div>
+        data-width="1920" data-height="1080" style="z-index: 10"></div>
       <div id="s6-suite" data-composition-id="s6-suite" data-composition-src="compositions/s6-suite.html"
         data-start="13.3" data-duration="2.7" data-track-index="1" data-track-kind="graphics"
-        data-width="1080" data-height="1920" style="z-index: 10"></div>
+        data-width="1920" data-height="1080" style="z-index: 10"></div>
 
       <div id="cadre" data-composition-id="cadre" data-composition-src="compositions/cadre.html"
         data-start="0" data-duration="16" data-track-index="2" data-track-kind="graphics"
-        data-width="1080" data-height="1920" style="z-index: 40"></div>
+        data-width="1920" data-height="1080" style="z-index: 40"></div>
       <div id="sous-titres" data-composition-id="sous-titres" data-composition-src="compositions/sous-titres.html"
         data-start="0" data-duration="16" data-track-index="3" data-track-kind="captions"
-        data-width="1080" data-height="1920" style="z-index: 50"></div>
+        data-width="1920" data-height="1080" style="z-index: 50"></div>
 
       <audio id="voix" src="assets/audio/voix.wav" data-start="0" data-track-index="10"></audio>
       <audio id="musique" src="assets/audio/musique.wav" data-start="0" data-volume="0.55" data-track-index="11"></audio>

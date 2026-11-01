@@ -1,19 +1,20 @@
 ---
 version: 1
-name: Projecteur — style maison (vidéo verticale)
+name: Projecteur — style maison (film 16:9 au format YouTube, décliné en vertical avec titre)
 description: >
   Explication en voix off rapide, racontée en pictogrammes sous des projecteurs, dans un décor gris
   presque noir. Une seule couleur d'accent, un vert-jaune électrique, réservée au héros (« toi ») et à
   l'information clé. Sous-titres mot à mot en capitales condensées sur un bandeau blanc, habillage
   d'interface technique (croix de cadrage, étiquettes en monospace, compteurs) et phrases dites en
-  serif italique. Les valeurs marquées [mesuré] viennent des 9 vidéos de référence ; [estimé] = lu à
-  l'œil, à confirmer.
-unit: "1080×1920 à 30 i/s (format A, natif vertical). Format B : film 16:9 dans un bandeau au centre."
+  serif italique. Le film est fait en 16:9 (YouTube) ; pour TikTok, Shorts et Reels, il est posé dans un
+  bandeau au centre d'un 9:16 noir, sous un titre-promesse blanc (7 vidéos de référence sur 9). Les valeurs
+  marquées [mesuré] viennent des 9 vidéos de référence ; [estimé] = lu à l'œil, à confirmer.
+unit: "Film 1920×1080 à 30 i/s (format YouTube) ; version verticale 1080×1920 = titre + film dans un bandeau 1080×608. Toutes les positions ci-dessous sont en pixels du film 1920×1080, sauf mention « vertical »."
 principle: un seul accent · la caméra ne s'arrête jamais · un changement visuel toutes les 2 s
 
 colors:
   ground: "#0C0C0C"          # [mesuré] fond des décors (#080808 à #141414)
-  void: "#000000"            # [mesuré] noir pur : cartes plein écran, bandes du format B
+  void: "#000000"            # [mesuré] noir pur : cartes plein écran, fond de la version verticale
   accent: "#DCFC1C"          # [mesuré] vert-jaune éclairé : « toi », chiffres clés, autocollants
   accent-shade: "#98AC18"    # [mesuré] le même accent dans l'ombre (hors du projecteur)
   accent-glow: "rgba(220,252,28,0.35)"  # [estimé] halo des mots-chocs
@@ -30,31 +31,36 @@ colors:
   hairline: "rgba(255,255,255,0.06)"  # [estimé] lignes de grille quasi invisibles
 
 typography:
-  # cqw = % de la largeur de l'image (1 cqw = 10,8 px en 1080 de large)
-  caption:  { fontFamily: "Anton", cqw: 7.8, weight: 400, upper: true, lineHeight: 1.0 }   # [mesuré] hauteur de capitale 6,7 cqw ; police [estimé]
-  impact:   { fontFamily: "Anton", cqw: 30, weight: 400, upper: true, lineHeight: 0.9 }    # mot-choc plein écran, ~75 % de la largeur [mesuré]
-  sticker:  { fontFamily: "Anton", cqw: 6.5, weight: 400, upper: true }                    # [estimé]
-  stat:     { fontFamily: "JetBrains Mono", cqw: 7, weight: 700 }                          # chiffres et compteurs [estimé]
-  voice:    { fontFamily: "Instrument Serif", cqw: 8.5, style: italic, weight: 400, lineHeight: 1.1 }  # [estimé] hauteur d'x mesurée 4,3 cqw
-  bubble:   { fontFamily: "Instrument Serif", cqw: 4, style: italic, weight: 400 }        # [estimé]
-  label:    { fontFamily: "JetBrains Mono", cqw: 2.6, weight: 700, upper: true, tracking: "0.15em" }  # 28 px, plancher de lisibilité HyperFrames (références : capitale 1,75 cqw, ~26 px)
-  hook:     { fontFamily: "Inter", cqw: 4.8, weight: 600, lineHeight: 1.2 }                # titre du format B [estimé]
+  # tailles en px dans le film 1920×1080 (affiché à 56,25 % dans la version verticale)
+  caption:  { fontFamily: "Anton", px: 78, weight: 400, upper: true, lineHeight: 0.9 }     # bandeau de 94 px [mesuré] ; police [estimé]
+  impact:   { fontFamily: "Anton", px: "240 à 330", weight: 400, upper: true, lineHeight: 0.9 }  # mot-choc plein écran [estimé]
+  sticker:  { fontFamily: "Anton", px: 84, weight: 400, upper: true }                      # [estimé]
+  stat:     { fontFamily: "JetBrains Mono", px: "120 à 150", weight: 700 }                  # chiffres et compteurs [estimé]
+  voice:    { fontFamily: "Instrument Serif", px: "108 à 130", style: italic, weight: 400, lineHeight: 1.1 }  # [estimé]
+  bubble:   { fontFamily: "Instrument Serif", px: 56, style: italic, weight: 400 }          # [estimé]
+  label:    { fontFamily: "JetBrains Mono", px: 30, weight: 700, upper: true, tracking: "0.15em" }  # [estimé] ; parfois un mot en Anton vert-jaune au-dessus (« TOI »)
+  hook:     { fontFamily: "Inter", px: 70, weight: 600, lineHeight: 1.2, color: "#FFFFFF" }  # vertical : titre au-dessus du bandeau [mesuré : interligne 84 px] ; police [estimé]
 
 spacing:
-  frame-x: "60px"          # [mesuré] croix de cadrage à 5,6 % des bords gauche/droit
-  frame-top: "141px"       # [mesuré] 7,3 % de la hauteur
-  frame-bottom: "1558px"   # [mesuré] 81,2 % de la hauteur : rien d'important en dessous
-  label-x: "84px"          # [mesuré]
-  label-top: "206px"       # [mesuré]
-  caption-center-y: "1511px"  # [mesuré] 78,7 % de la hauteur
-  band-top: "656px"        # [mesuré] format B : bandeau 1080×608 centré verticalement
+  # film 1920×1080 [mesuré dans le bandeau des références, ×3,33]
+  frame-x: "58px"            # croix de cadrage à 58 px des bords gauche et droit
+  frame-top: "88px"
+  frame-bottom: "992px"
+  label-x: "113px"
+  label-top: "107px"
+  caption-center-y: "915px"  # 85 % de la hauteur du film
+  # version verticale 1080×1920 [mesuré]
+  band-top: "656px"          # bandeau 1080×608 centré verticalement (656 → 1264)
   band-height: "608px"
+  hook-bottom: "581px"       # le bas du titre reste à 581 px ; un titre plus long monte
+  hook-width: "830px"        # 1 à 3 lignes, centré
+  # format A secondaire (vertical natif, 2 références sur 9) : croix 60/141/1558 px, sous-titres à 1511 px
 
 components:
   caption:
-    box: "{colors.caption-box}, coins carrés, hauteur 103 px [mesuré], marge interne 15 px × 19 px"
+    box: "{colors.caption-box}, coins carrés, hauteur 94 px [mesuré], marge interne 12 px × 20 px"
     text: "{typography.caption} en {colors.caption-ink}"
-    placement: "centré horizontalement, centre à {spacing.caption-center-y} ; format B : en bas du bandeau"
+    placement: "centré horizontalement dans le film, centre à {spacing.caption-center-y}"
     behavior: >
       Mot à mot : chaque mot apparaît à l'image où il est prononcé (à ±2 images près) et s'ajoute au groupe ;
       le bandeau s'élargit d'un coup, sans animation. Le groupe repart de zéro à la ponctuation ou au-delà de
@@ -105,7 +111,7 @@ components:
       (« NON. », « RETIENS ÇA. »), ou blanc. Variante : mot blanc en relief 3D qui s'écrase, avec 1 à 3
       images entièrement {colors.accent}, des débris et des traînées verticales vert-jaune.
   hook-title:
-    description: "format B seulement : titre-promesse blanc {typography.hook} sur 2 à 3 lignes, centré, juste au-dessus du bandeau"
+    description: "version verticale : titre-promesse blanc {typography.hook} sur 1 à 3 lignes, centré, large de {spacing.hook-width} au plus, bas à {spacing.hook-bottom} ; affiché toute la vidéo"
 ---
 
 # Projecteur — style maison
@@ -118,6 +124,7 @@ grâce à une métaphore matérielle (un bouclier, une porte, une zone grise, un
 
 ## À faire
 
+- Faire le film en 16:9 (1920×1080) : c'est la version YouTube. La version TikTok/Shorts/Reels pose ce film dans le bandeau, sous le titre-promesse.
 - Le pictogramme « toi » est à l'écran dès l'image 0, sous un projecteur.
 - Une seule couleur d'accent ; elle couvre environ 1,5 % de l'image en médiane et 5 % au plus (90e centile) [mesuré]. Une image sur cinq n'en contient pas.
 - La caméra bouge toujours : lente avancée sur chaque plan, recul rapide ou panoramique filé pour passer au plan suivant.

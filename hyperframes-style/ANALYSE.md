@@ -10,33 +10,37 @@ Légende : **[mesuré]** = calculé sur les fichiers (images, son, transcription
 
 | Vidéo | Durée | Format | Mots | Débit | Plans (coupes franches) | Durée médiane d'un plan |
 | --- | --- | --- | --- | --- | --- | --- |
-| v1 « Ça c'est toi… » (accroche) | 2 min 25 | A (vertical natif) | 543 | 235 mots/min | 75 | 1,7 s |
-| v2 « Elle a choisi un mec… » | 2 min 14 | A | 504 | 236 | 51 | 2,2 s |
-| v3 « Comment les femmes tombent amoureuses » | 2 min 01 | B (bandeau) | 437 | 228 | 11 | 4,1 s |
-| v4 « Poser des questions » | 1 min 32 | B | 341 | 239 | 13 | 4,0 s |
-| v5 « La faire revenir » | 1 min 40 | B | 353 | 220 | 8 | 11,3 s |
-| v6 « Plus aucune femme ne pourra t'ignorer » | 2 min 26 | B | 523 | 225 | 17 | 6,4 s |
-| v7 « La porte TIRER » | 2 min 21 | B | 493 | 220 | 29 | 3,2 s |
-| v8 « La zone grise » | 2 min 17 | B | 518 | 227 | 13 | 6,1 s |
-| v9 « Complimenter » | 2 min 35 | B | 556 | 224 | 45 | 1,8 s |
+| v1 « Ça c'est toi… » (accroche) | 2 min 25 | vertical natif | 543 | 235 mots/min | 75 | 1,7 s |
+| v2 « Elle a choisi un mec… » | 2 min 14 | vertical natif | 504 | 236 | 51 | 2,2 s |
+| v3 « Comment les femmes tombent amoureuses » | 2 min 01 | 16:9 + titre | 437 | 228 | 11 | 4,1 s |
+| v4 « Poser des questions » | 1 min 32 | 16:9 + titre | 341 | 239 | 13 | 4,0 s |
+| v5 « La faire revenir » | 1 min 40 | 16:9 + titre | 353 | 220 | 8 | 11,3 s |
+| v6 « Plus aucune femme ne pourra t'ignorer » | 2 min 26 | 16:9 + titre | 523 | 225 | 17 | 6,4 s |
+| v7 « La porte TIRER » | 2 min 21 | 16:9 + titre | 493 | 220 | 29 | 3,2 s |
+| v8 « La zone grise » | 2 min 17 | 16:9 + titre | 518 | 227 | 13 | 6,1 s |
+| v9 « Complimenter » | 2 min 35 | 16:9 + titre | 556 | 224 | 45 | 1,8 s |
 
 Toutes les vidéos sont en 576×1024 (téléchargement TikTok), 30 i/s, son AAC stéréo [mesuré]. Le filigrane
 « TikTok @klauser.app » et l'écran de fin noir-bleu sont ajoutés par la plateforme : ils ne font pas partie du style.
 
-Dans le format B, la plupart des changements de plan sont des mouvements de caméra ou des éclairs plutôt que
+Dans le format principal (16:9 avec titre), la plupart des changements de plan sont des mouvements de caméra ou des éclairs plutôt que
 des coupes franches (121 « éclairs » et 7 mouvements rapides détectés au total) : la durée médiane d'un plan
 y est donc surestimée. Le rythme réel ressemble à celui du format A.
 
 ## 2. Les deux formats
 
-**Format A — vertical natif (v1, v2).** Le film occupe tout le 9:16. Cadre technique : 4 croix « + » à 5,6 %
-des bords gauche et droit, à 7,3 % du haut et à 81,2 % de la hauteur [mesuré]. Sous-titres centrés à 78,7 %
-de la hauteur [mesuré]. C'est le format à privilégier : tout l'écran sert l'histoire.
+**Format principal — film 16:9 au format YouTube, avec titre (v3 à v9, 7 vidéos sur 9).** Le film est
+fait en 16:9. Sur TikTok, il apparaît dans un bandeau de 1080×608 centré verticalement (de y=656 à 1264 px
+en 1080×1920) sur fond noir [mesuré]. Au-dessus, un **titre-promesse** blanc de 1 à 3 lignes
+(« Comment complimenter une femme ? ») reste affiché toute la vidéo : c'est l'accroche écrite pour ceux qui
+regardent sans le son. Son bas reste à ~581 px, l'interligne est de ~84 px et la largeur de ~810 px [mesuré].
+Le même film sert donc tel quel pour YouTube.
 
-**Format B — bandeau (v3 à v9).** Un film 16:9 (1080×608 une fois mis en 1080×1920) est centré verticalement
-sur fond noir, avec au-dessus un **titre-promesse** blanc sur 2 à 3 lignes (« Comment complimenter une femme ? »).
-Le titre reste affiché toute la vidéo : c'est l'accroche écrite pour ceux qui regardent sans le son.
-Il peut être intégré au rendu (composant `hook-title`) ou ajouté dans TikTok.
+Dans le film (positions ramenées en 1920×1080) : croix de cadrage à 58 px des bords, à 88 et 992 px de haut,
+sous-titres centrés à 915 px (85 % de la hauteur), bandeau de sous-titre de 94 px [mesuré].
+
+**Format secondaire — vertical natif (v1, v2).** Le film occupe tout le 9:16 : croix à 60 px des bords,
+à 141 et 1558 px de haut, sous-titres centrés à 1511 px [mesuré].
 
 ## 3. La couleur
 
@@ -52,12 +56,12 @@ Il peut être intégré au rendu (composant `hook-title`) ou ajouté dans TikTok
 
 | Rôle | Police (estimée) | Taille | Exemple |
 | --- | --- | --- | --- |
-| Sous-titres | Anton, capitales | hauteur de capitale 6,7 % de la largeur [mesuré] → ~84 px en 1080 | « CE QUI SE PASSE. » |
+| Sous-titres | Anton, capitales | ~78 px dans le film 1920×1080 (bandeau de 94 px) [mesuré] | « CE QUI SE PASSE. » |
 | Mots-chocs, autocollants | Anton, capitales, avec point final | jusqu'à ~75 % de la largeur [mesuré] | « NON. », « COUPÉE. » |
 | Phrases dites ou pensées | Instrument Serif italique, minuscules | hauteur d'x 4,3 % de la largeur [mesuré] | « comment je me débarrasse » |
 | Habillage technique | JetBrains Mono gras, capitales espacées (~0,15 em) | capitale 1,75 % de la largeur [mesuré] | « ANALYSE · IMAGE FIGÉE » |
 | Chiffres | monospace gras, vert-jaune | grand | « 04,29 s », « 17 % » |
-| Titre-promesse (format B) | sans-serif demi-gras type Inter 600 | ~52 px en 1080 [estimé] | « Comment la faire revenir ? » |
+| Titre-promesse (version verticale) | sans-serif demi-gras type Inter 600 | ~70 px en 1080, interligne 84 px [mesuré] | « Comment la faire revenir ? » |
 
 Trois voix typographiques, trois rôles : **Anton = ce que dit la voix off**, **serif italique = ce que
 disent ou pensent les personnages**, **monospace = la machine qui analyse la scène**.
@@ -67,7 +71,7 @@ Anton et Instrument Serif ne sont pas fournies avec HyperFrames : il faut leurs 
 
 ## 5. Les sous-titres
 
-- Bandeau blanc cassé `#EEEEEA`, coins carrés, 103 px de haut en 1080 de large, texte quasi noir `#0A0A06` [mesuré].
+- Bandeau blanc cassé `#EEEEEA`, coins carrés, texte quasi noir `#0A0A06` [mesuré] : 94 px de haut, centré à 915 px dans le film 16:9 ; 103 px de haut, centré à 1511 px en vertical natif [mesuré].
 - **Mot à mot** : chaque mot apparaît dans l'image où il est prononcé (écart observé : 0 à 2 images) et
   s'ajoute aux précédents ; le bandeau s'élargit d'un coup, sans animation [mesuré sur v1, 45,5 à 48,5 s].
 - Le groupe repart de zéro à chaque ponctuation, ou après 4 à 5 mots / ~26 caractères [mesuré].
@@ -143,14 +147,14 @@ Durée cible : **1 min 30 à 2 min 30**, soit 350 à 550 mots de script.
 
 ## 10. Comment le produire avec HyperFrames
 
-Un projet modèle prêt à copier applique tout ce qui suit : [`modele/`](modele/README.md).
+Deux projets modèles prêts à copier appliquent tout ce qui suit : [`modele/`](modele/README.md) (le film 16:9, version YouTube) et [`modele-vertical/`](modele-vertical/README.md) (titre + film en bandeau, version TikTok/Shorts/Reels).
 
 1. **Script d'abord** : suivre la structure du § 8, 230 mots/min, phrases courtes, une métaphore matérielle.
 2. **Voix off** : `/media-use` (HeyGen) ou une voix française locale ; caler le débit autour de 230 mots/min.
    Le worker Edge TTS de ce dépôt (`fr-FR-VivienneMultilingualNeural`) peut aussi servir, avec un débit accéléré.
 3. **Transcription mot à mot** : `hyperframes transcribe voix.wav` → les temps de chaque mot pilotent les sous-titres,
    la serif qui s'écrit et les coupes.
-4. **Projet** : `hyperframes init <nom> --resolution portrait`, puis copier `frame.md` à la racine du projet ;
+4. **Projet** : copier `modele/` (film 1920×1080) ; ou `hyperframes init <nom> --resolution landscape`, puis copier `frame.md` à la racine du projet ;
    le skill `/hyperframes` le lit automatiquement.
 5. **Décors** : deux options.
    - **2,5D (recommandé pour commencer)** : arrière-plans gris générés ou photographiés, désaturés et floutés
@@ -166,10 +170,9 @@ Un projet modèle prêt à copier applique tout ce qui suit : [`modele/`](modele
 
 ## 11. Points à trancher
 
-- **Sous-titres et interface TikTok** : les références placent les sous-titres à 78,7 % de la hauteur (≈1511 px),
-  dans la zone où TikTok affiche la légende et le nom du compte. Le guide HyperFrames recommande de ne rien mettre
-  d'important sous ~1330 px. Garder la position des références (fidèle au style) ou remonter les sous-titres
-  (plus sûr) : `caption-center-y` dans `frame.md`.
+- **Sous-titres et interface TikTok** : dans le format principal, les sous-titres sont dans le film, donc à
+  ~1170 px en vertical, au-dessus de la zone où TikTok affiche sa légende : pas de conflit. Le problème ne se
+  pose qu'en format vertical natif (sous-titres à 1511 px).
 - **Identité propre** : ce style est la signature visuelle d'un autre créateur (@klauser.app). Reprendre sa grammaire
   (rythme, mise en scène, habillage) est sain ; pour être reconnaissable, il vaut mieux poser notre propre marque
   (nom, logo, éventuellement une nuance d'accent différente) et ne jamais reprendre ses contenus ni ses métaphores telles quelles.

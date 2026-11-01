@@ -13,34 +13,34 @@
     #s5-titre {
       position: absolute;
       left: 0;
-      width: 1080px;
-      top: 700px;
+      width: 1920px;
+      top: 330px;
       text-align: center;
       transform-origin: 50% 0;
     }
     #s5-serif {
-      left: 84px;
-      top: 760px;
-      font-size: 112px;
+      left: 113px;
+      top: 330px;
+      font-size: 108px;
     }
     #s5-souligne {
       position: absolute;
-      left: 84px;
-      top: 1112px;
-      width: 725px;
+      left: 113px;
+      top: 676px;
+      width: 700px;
       height: 10px;
       background: var(--color-accent);
       transform-origin: 0 50%;
     }
   </style>
-  <div id="root" data-composition-id="s5-retiens" data-width="1080" data-height="1920">
+  <div id="root" data-composition-id="s5-retiens" data-width="1920" data-height="1080">
     <div class="pj-scene">
       <div id="s5-cam" class="pj-cam">
-        <div class="pj-horizon" style="top: 1300px"></div>
+        <div class="pj-horizon" style="top: 760px"></div>
         <div id="s5-noir"></div>
         <div id="s5-titre">
           <div class="pj-label" style="position: static"><span class="pj-k">Règle n° 1</span></div>
-          <div id="s5-mot" class="pj-impact" style="font-size: 196px; margin-top: 18px">Retiens ça.</div>
+          <div id="s5-mot" class="pj-impact" style="font-size: 240px; margin-top: 18px">Retiens ça.</div>
         </div>
         <div id="s5-serif" class="pj-serif">
           <div><span>si</span> <span>ça</span> <span>ne</span> <span>tourne</span></div>
@@ -58,7 +58,7 @@
     tl.fromTo("#s5-mot", { opacity: 0, scale: 1.45 }, { opacity: 1, scale: 1, duration: 0.14, ease: "power4.out" }, 0.04);
     tl.fromTo("#s5-titre .pj-label", { opacity: 0 }, { opacity: 1, duration: 0.1 }, 0.1);
     // « si ça ne tourne… » : la carte monte, le décor revient, la règle s'écrit mot à mot
-    tl.to("#s5-titre", { y: -390, scale: 0.6, duration: 0.3, ease: "power3.inOut" }, 0.68);
+    tl.to("#s5-titre", { y: -250, scale: 0.55, duration: 0.3, ease: "power3.inOut" }, 0.68);
     tl.to("#s5-noir", { opacity: 0, duration: 0.3 }, 0.68);
     tl.to("#s5-titre .pj-label", { opacity: 0, duration: 0.15 }, 0.68);
     const temps = [0.68, 0.84, 1.0, 1.08, 1.4, 1.48, 1.64, 1.88, 2.12, 2.2, 2.44];

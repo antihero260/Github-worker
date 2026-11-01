@@ -1,0 +1,91 @@
+<!doctype html>
+<html
+  lang="fr"
+  data-resolution="portrait"
+  data-composition-variables='[
+    {"id":"titre","type":"string","label":"Titre-promesse (au-dessus du film)","default":"Pourquoi ton code plante en production ?","maxLength":90}
+  ]'
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+    <style>
+      /* Version TikTok / Shorts / Reels du style « Projecteur » (frame.md, format B) :
+         fond noir, titre blanc au-dessus, film 16:9 dans un bandeau 1080×608 centré. */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        width: 1080px;
+        height: 1920px;
+        overflow: hidden;
+        background: #000;
+      }
+      #fond {
+        position: absolute;
+        inset: 0;
+        background: #000;
+      }
+      /* Le bas du titre reste fixe à 581 px : un titre plus long monte, il ne descend jamais sur le film. */
+      #titre {
+        position: absolute;
+        left: 125px;
+        width: 830px;
+        bottom: 1339px;
+        color: #fff;
+        font-family: "Inter", sans-serif;
+        font-weight: 600;
+        font-size: 70px;
+        line-height: 1.2;
+        letter-spacing: -0.01em;
+        text-align: center;
+      }
+      #bandeau {
+        position: absolute;
+        left: 0;
+        top: 656px;
+        width: 1080px;
+        height: 608px;
+        overflow: hidden;
+      }
+      #film {
+        width: 1080px;
+        height: 608px;
+        object-fit: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="16"
+      data-width="1080"
+      data-height="1920"
+    >
+      <div id="fond" class="clip" data-start="0" data-duration="16" data-track-index="0"></div>
+      <h1 id="titre" class="clip" data-start="0" data-duration="16" data-track-index="1" data-var-text="titre">
+        Pourquoi ton code plante en production ?
+      </h1>
+      <div id="bandeau">
+        <video
+          id="film"
+          src="assets/film-16x9.mp4"
+          data-start="0"
+          data-duration="16"
+          data-track-index="2"
+          data-has-audio="true"
+        ></video>
+      </div>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

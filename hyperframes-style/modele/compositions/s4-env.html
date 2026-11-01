@@ -7,12 +7,12 @@
     }
     .s4-panneau {
       position: absolute;
-      left: 80px;
-      width: 920px;
-      height: 450px;
+      top: 235px;
+      width: 830px;
+      height: 560px;
       border: 2px solid #5a5a5a;
       overflow: hidden;
-      background: radial-gradient(ellipse 60% 70% at 22% 70%, #2c2c2c 0%, #121212 75%);
+      background: radial-gradient(ellipse 60% 70% at 18% 72%, #2c2c2c 0%, #121212 75%);
     }
     .s4-titre {
       position: absolute;
@@ -21,8 +21,8 @@
     }
     .s4-liste {
       position: absolute;
-      left: 380px;
-      top: 130px;
+      left: 330px;
+      top: 190px;
     }
     .s4-liste div {
       font-family: "JetBrains Mono", monospace;
@@ -36,7 +36,7 @@
     }
     #s4-etiquette {
       position: absolute;
-      left: 560px;
+      left: 780px;
       top: 690px;
       background: var(--color-light);
       color: #0a0a06;
@@ -57,22 +57,22 @@
       transform-origin: 0 50%;
     }
   </style>
-  <div id="root" data-composition-id="s4-env" data-width="1080" data-height="1920">
+  <div id="root" data-composition-id="s4-env" data-width="1920" data-height="1080">
     <div class="pj-scene">
       <div id="s4-cam" class="pj-cam">
-        <div id="s4-p1" class="s4-panneau" style="top: 330px">
+        <div id="s4-p1" class="s4-panneau" style="left: 100px">
           <div class="pj-label s4-titre"><span class="pj-k">▶ Prise 01 · chez toi</span></div>
-          <div class="pj-cone" style="left: -60px; height: 520px; width: 420px"></div>
-          <svg class="pj-picto pj-toi" viewBox="-8 -8 116 276" style="left: 110px; top: 120px; width: 126px; height: 300px">
+          <div class="pj-cone" style="left: -40px; height: 640px; width: 420px"></div>
+          <svg class="pj-picto pj-toi" viewBox="-8 -8 116 276" style="left: 110px; top: 200px; width: 140px; height: 330px">
             <g class="pj-contour"><circle cx="50" cy="26" r="24" /><rect x="16" y="58" width="68" height="96" rx="10" /><rect x="21" y="140" width="25" height="118" rx="5" /><rect x="54" y="140" width="25" height="118" rx="5" /></g>
             <g class="pj-plein"><circle cx="50" cy="26" r="24" /><rect x="16" y="58" width="68" height="96" rx="10" /><rect x="21" y="140" width="25" height="118" rx="5" /><rect x="54" y="140" width="25" height="118" rx="5" /></g>
           </svg>
           <div class="s4-liste"><div>NODE 20.11</div><div>.ENV PRÉSENT</div><div>BDD LOCALE</div></div>
         </div>
-        <div id="s4-p2" class="s4-panneau" style="top: 830px">
+        <div id="s4-p2" class="s4-panneau" style="left: 990px">
           <div class="pj-label s4-titre"><span class="pj-k">▶ Prise 02 · en prod</span></div>
-          <div class="pj-cone" style="left: -60px; height: 520px; width: 420px"></div>
-          <svg class="pj-picto pj-toi" viewBox="-8 -8 116 276" style="left: 110px; top: 120px; width: 126px; height: 300px">
+          <div class="pj-cone" style="left: -40px; height: 640px; width: 420px"></div>
+          <svg class="pj-picto pj-toi" viewBox="-8 -8 116 276" style="left: 110px; top: 200px; width: 140px; height: 330px">
             <g class="pj-contour"><circle cx="50" cy="26" r="24" /><rect x="16" y="58" width="68" height="96" rx="10" /><rect x="21" y="140" width="25" height="118" rx="5" /><rect x="54" y="140" width="25" height="118" rx="5" /></g>
             <g class="pj-plein"><circle cx="50" cy="26" r="24" /><rect x="16" y="58" width="68" height="96" rx="10" /><rect x="21" y="140" width="25" height="118" rx="5" /><rect x="54" y="140" width="25" height="118" rx="5" /></g>
           </svg>
@@ -80,8 +80,8 @@
         </div>
         <div id="s4-etiquette">TON CODE<div id="s4-rature"></div></div>
       </div>
-      <div id="s4-hud-g" class="pj-label" style="left: 84px; top: 206px"><span class="pj-k">Le problème</span><span class="pj-d">Analyse · 2 environnements</span></div>
-      <div id="s4-hud-d" class="pj-label" style="right: 84px; top: 206px; text-align: right"><span class="pj-k">Comparaison…</span></div>
+      <div id="s4-hud-g" class="pj-label" style="left: 113px; top: 107px"><span class="pj-k">Le problème</span><span class="pj-d">Analyse · 2 environnements</span></div>
+      <div id="s4-hud-d" class="pj-label" style="right: 113px; top: 107px; text-align: right"><span class="pj-k">Comparaison…</span></div>
     </div>
   </div>
   <script>
@@ -89,8 +89,8 @@
     tl.fromTo("#s4-cam", { scale: 1 }, { scale: 1.05, duration: 2.55, ease: "none" }, 0);
     tl.fromTo("#s4-cam", { filter: "blur(14px)" }, { filter: "blur(0px)", duration: 0.16, ease: "power2.out" }, 0);
     // « le problème ? » : les deux prises arrivent
-    tl.fromTo("#s4-p1", { x: -1100 }, { x: 0, duration: 0.24, ease: "power4.out" }, 0.07);
-    tl.fromTo("#s4-p2", { x: 1100 }, { x: 0, duration: 0.24, ease: "power4.out" }, 0.22);
+    tl.fromTo("#s4-p1", { x: -1000 }, { x: 0, duration: 0.24, ease: "power4.out" }, 0.07);
+    tl.fromTo("#s4-p2", { x: 1000 }, { x: 0, duration: 0.24, ease: "power4.out" }, 0.22);
     tl.fromTo(["#s4-hud-g", "#s4-hud-d"], { opacity: 0 }, { opacity: 1, duration: 0.12 }, 0.1);
     // « ce n'est pas ton code » : le suspect, puis rayé
     tl.fromTo("#s4-etiquette", { scale: 1.6, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.16, ease: "back.out(2)" }, 0.63);

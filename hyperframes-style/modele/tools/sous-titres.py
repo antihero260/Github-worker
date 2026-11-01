@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""Génère compositions/sous-titres.html (sous-titres mot à mot du style « Projecteur »).
+"""Génère compositions/sous-titres.html (sous-titres mot à mot du style « Projecteur »,
+film 16:9 en 1920×1080 : bandeau centré à 915 px, 85 % de la hauteur).
 
 Usage :
   python3 tools/sous-titres.py assets/transcript.json [--script script.txt] [--fin 16]
@@ -113,8 +114,8 @@ def main() -> None:
       position: absolute;
       left: 0;
       width: 100%;
-      top: calc(var(--caption-y, 1511px) - 52px);
-      height: 104px;
+      top: calc(var(--caption-y, 915px) - 47px);
+      height: 94px;
       text-align: center;
       overflow: visible;
     }}
@@ -123,9 +124,9 @@ def main() -> None:
       background: var(--caption-box, #eeeeea);
       color: var(--caption-ink, #0a0a06);
       font-family: "Anton", "League Gothic", sans-serif;
-      font-size: 84px;
+      font-size: 78px;
       line-height: 0.9;
-      padding: 14px 20px 13px;
+      padding: 12px 20px 11px;
       text-transform: uppercase;
       white-space: nowrap;
     }}
@@ -139,7 +140,7 @@ def main() -> None:
       margin-left: 0.22em;
     }}
   </style>
-  <div id="root" data-composition-id="sous-titres" data-width="1080" data-height="1920">
+  <div id="root" data-composition-id="sous-titres" data-width="1920" data-height="1080">
 {chr(10).join(lignes_html)}
   </div>
   <script>
