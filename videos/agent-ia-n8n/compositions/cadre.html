@@ -1,0 +1,118 @@
+<!-- Cadre technique du style « Projecteur » : croix, lignes de grille, vignettage, grain.
+     Les cartes plein écran (mots-chocs) le masquent : voir masquer() plus bas. -->
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+    #cadre-guides {
+      position: absolute;
+      inset: 0;
+    }
+    .cadre-ligne {
+      position: absolute;
+      background: rgba(255, 255, 255, 0.06);
+    }
+    .cadre-croix {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      margin: -20px 0 0 -20px;
+    }
+    .cadre-croix::before,
+    .cadre-croix::after {
+      content: "";
+      position: absolute;
+      background: #d9d9d9;
+    }
+    .cadre-croix::before {
+      left: 19px;
+      top: 0;
+      width: 2px;
+      height: 40px;
+    }
+    .cadre-croix::after {
+      left: 0;
+      top: 19px;
+      width: 40px;
+      height: 2px;
+    }
+    #hf-vignette {
+      background: radial-gradient(ellipse at center, transparent 48%, rgba(0, 0, 0, 0.72) 100%);
+    }
+    @keyframes hf-grain-noise {
+      0%,
+      100% {
+        transform: translate(0, 0);
+      }
+      10% {
+        transform: translate(-5%, -5%);
+      }
+      20% {
+        transform: translate(-10%, 5%);
+      }
+      30% {
+        transform: translate(5%, -10%);
+      }
+      40% {
+        transform: translate(-5%, 15%);
+      }
+      50% {
+        transform: translate(-10%, 5%);
+      }
+      60% {
+        transform: translate(15%, 0);
+      }
+      70% {
+        transform: translate(0, 10%);
+      }
+      80% {
+        transform: translate(-15%, 0);
+      }
+      90% {
+        transform: translate(10%, 5%);
+      }
+    }
+    #grain-overlay .grain-texture {
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+      opacity: 0.09;
+      animation: hf-grain-noise 0.5s steps(1) infinite;
+    }
+  </style>
+  <div id="root" data-composition-id="cadre" data-width="1920" data-height="1080">
+    <!-- vignette (registre : vignette) -->
+    <div id="hf-vignette" data-layout-allow-occlusion style="position: absolute; inset: 0; z-index: 1"></div>
+    <!-- croix de cadrage et lignes de grille (frame.md : frame-guides) -->
+    <div id="cadre-guides" style="z-index: 2">
+      <div class="cadre-ligne" style="left: 58px; top: 0; width: 1px; height: 1080px"></div>
+      <div class="cadre-ligne" style="left: 1862px; top: 0; width: 1px; height: 1080px"></div>
+      <div class="cadre-ligne" style="left: 0; top: 88px; width: 1920px; height: 1px"></div>
+      <div class="cadre-ligne" style="left: 0; top: 992px; width: 1920px; height: 1px"></div>
+      <div class="cadre-croix" style="left: 58px; top: 88px"></div>
+      <div class="cadre-croix" style="left: 1862px; top: 88px"></div>
+      <div class="cadre-croix" style="left: 58px; top: 992px"></div>
+      <div class="cadre-croix" style="left: 1862px; top: 992px"></div>
+    </div>
+    <!-- grain (registre : grain-overlay) -->
+    <div id="grain-overlay" data-layout-allow-occlusion style="position: absolute; inset: 0; z-index: 3; overflow: hidden">
+      <div class="grain-texture"></div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    // Cartes plein écran : pas de cadre technique (frame.md, frame-guides).
+    function masquer(debut, fin) {
+      tl.set("#cadre-guides", { opacity: 0 }, debut);
+      tl.set("#cadre-guides", { opacity: 1 }, fin);
+    }
+    // aucune carte plein écran
+    window.__timelines["cadre"] = tl;
+  </script>
+</template>

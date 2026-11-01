@@ -1,0 +1,51 @@
+<!-- Scène 7 · « ChatGPT cherche-t-il simplement à te faire plaisir ? Pas exactement. » (41.64 → 46.6 s). Fichier écrit par un générateur, modifiable à la main. -->
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+    }
+
+  </style>
+  <div id="root" data-composition-id="s07-plaisir" data-width="1920" data-height="1080">
+    <div class="pj-scene">
+      <div id="s07-plaisir-cam" class="pj-cam">
+        <div id="s07-plaisir-cadre" class="pj-cadre">
+        <div class="pj-horizon" style="top: 760px"></div>
+        <div class="pj-cone" style="left: 280px; height: 900px; opacity: 1.0"></div><div class="pj-sol" style="left: 250px; top: 740px; opacity: 1.0"></div><div class="pj-cone" style="left: 1060px; height: 900px; opacity: 0.85"></div><div class="pj-sol" style="left: 1030px; top: 740px; opacity: 0.85"></div>
+        <svg id="s07-toi" class="pj-perso pj-toi-perso" viewBox="-30 -20 160 290" style="left: 450px; top: 430px; width: 221px; height: 400px"><g id="s07-toi-vie"><g id="s07-toi-corps"><g id="s07-toi-jg"><g class="c"><rect x="24" y="136" width="24" height="112" rx="8" /></g><g class="p"><rect x="24" y="136" width="24" height="112" rx="8" /></g></g><g id="s07-toi-jd"><g class="c"><rect x="52" y="136" width="24" height="112" rx="8" /></g><g class="p"><rect x="52" y="136" width="24" height="112" rx="8" /></g></g><g id="s07-toi-tronc"><g class="c"><rect x="22" y="52" width="56" height="94" rx="12" /></g><g class="p"><rect x="22" y="52" width="56" height="94" rx="12" /></g></g><g id="s07-toi-bg"><g class="c"><rect x="2" y="54" width="18" height="86" rx="9" /></g><g class="p"><rect x="2" y="54" width="18" height="86" rx="9" /></g></g><g id="s07-toi-bd"><g class="c"><rect x="80" y="54" width="18" height="86" rx="9" /></g><g class="p"><rect x="80" y="54" width="18" height="86" rx="9" /></g></g><g id="s07-toi-tete"><g class="c"><circle cx="50" cy="24" r="22" /></g><g class="p"><circle cx="50" cy="24" r="22" /></g></g></g></g></svg>
+        <svg id="s07-ia" class="pj-perso pj-ia-perso" viewBox="-30 -20 160 290" style="left: 1230px; top: 430px; width: 221px; height: 400px"><g id="s07-ia-vie"><g id="s07-ia-corps"><g id="s07-ia-jg"><g class="c"><rect x="24" y="136" width="24" height="112" rx="8" /></g><g class="p"><rect x="24" y="136" width="24" height="112" rx="8" /></g></g><g id="s07-ia-jd"><g class="c"><rect x="52" y="136" width="24" height="112" rx="8" /></g><g class="p"><rect x="52" y="136" width="24" height="112" rx="8" /></g></g><g id="s07-ia-tronc"><g class="c"><rect x="22" y="52" width="56" height="94" rx="12" /></g><g class="p"><rect x="22" y="52" width="56" height="94" rx="12" /></g></g><g id="s07-ia-bg"><g class="c"><rect x="2" y="54" width="18" height="86" rx="9" /></g><g class="p"><rect x="2" y="54" width="18" height="86" rx="9" /></g></g><g id="s07-ia-bd"><g class="c"><rect x="80" y="54" width="18" height="86" rx="9" /></g><g class="p"><rect x="80" y="54" width="18" height="86" rx="9" /></g></g><g id="s07-ia-tete"><g class="c"><rect x="25" y="0" width="50" height="46" rx="13" /></g><g class="p"><rect x="25" y="0" width="50" height="46" rx="13" /></g><g class="yeux"><circle cx="40" cy="22" r="5" /><circle cx="60" cy="22" r="5" /></g></g></g></g></svg>
+        <svg id="s07-coeur" style="position: absolute; left: 1150px; top: 430px; width: 90px; height: 90px; overflow: visible; opacity: 0" viewBox="0 0 100 90"><path d="M50 88 C20 62 0 46 0 26 C0 10 12 0 26 0 C38 0 46 8 50 16 C54 8 62 0 74 0 C88 0 100 10 100 26 C100 46 80 62 50 88 Z" fill="#DCFC1C" stroke="#000" stroke-width="5" /></svg>
+        <div id="s07-b" class="pj-serif" style="left: 620px; top: 230px; font-size: 52px; color: #0a0a06; background: #ECECE8; padding: 10px 26px; opacity: 0; transform-origin: 0% 100%">Tu veux juste me faire plaisir ?</div>
+        <div id="s07-pas" class="pj-sticker" style="left: 640px; top: 560px; font-size: 84px; background: #DCFC1C; transform: rotate(-5deg); opacity: 0">Pas exactement.</div>
+        </div>
+      </div>
+      <div id="s07-hud" class="pj-label" style="left: 113px; top: 107px; "><span class="pj-k">Question</span><span class="pj-d">Il veut te plaire ?</span></div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#s07-plaisir-cam", { scale: 1 }, { scale: 1.05, duration: 4.76, ease: "none" }, 0);
+    tl.fromTo("#s07-plaisir-cam", { filter: "blur(14px)" }, { filter: "blur(0px)", duration: 0.16, ease: "power2.out" }, 0);
+    tl.fromTo("#s07-toi-vie", { y: 0 }, { y: -5, duration: 0.42, repeat: 10, yoyo: true, ease: "sine.inOut", immediateRender: false }, 0.0);
+    tl.fromTo("#s07-ia-vie", { y: 0 }, { y: -5, duration: 0.42, repeat: 10, yoyo: true, ease: "sine.inOut", immediateRender: false }, 0.0);
+    tl.to("#s07-toi-bd", { svgOrigin: "89 62", keyframes: [{ rotation: -62, duration: 0.24, ease: "sine.inOut" }, { rotation: -118, duration: 0.24, ease: "sine.inOut" }, { rotation: -62, duration: 0.24, ease: "sine.inOut" }, { rotation: -118, duration: 0.24, ease: "sine.inOut" }, { rotation: -62, duration: 0.24, ease: "sine.inOut" }, { rotation: -118, duration: 0.24, ease: "sine.inOut" }, { rotation: -62, duration: 0.24, ease: "sine.inOut" }, { rotation: -118, duration: 0.24, ease: "sine.inOut" }, { rotation: -62, duration: 0.24, ease: "sine.inOut" }, { rotation: -118, duration: 0.24, ease: "sine.inOut" }, { rotation: -62, duration: 0.24, ease: "sine.inOut" }, { rotation: 0, duration: 0.2 }] }, 0.12);
+    tl.to("#s07-toi-tete", { svgOrigin: "50 50", keyframes: [{ rotation: -6, duration: 0.36 }, { rotation: 6, duration: 0.36 }, { rotation: -6, duration: 0.36 }, { rotation: 6, duration: 0.36 }, { rotation: -6, duration: 0.36 }, { rotation: 6, duration: 0.36 }, { rotation: -6, duration: 0.36 }, { rotation: 0, duration: 0.2 }] }, 0.12);
+    tl.fromTo("#s07-b", { opacity: 0, scale: 0.4 }, { opacity: 1, scale: 1, duration: 0.2, ease: "back.out(2.4)" }, 1.88);
+    tl.to("#s07-b", { opacity: 0, scale: 0.8, duration: 0.15 }, 3.88);
+    tl.to("#s07-ia-bg", { rotation: 78, svgOrigin: "11 62", duration: 0.16, ease: "back.out(2)" }, 2.76);
+    tl.fromTo("#s07-coeur", { opacity: 0, scale: 0.2 }, { opacity: 1, scale: 1, duration: 0.2, ease: "back.out(3)", immediateRender: false }, 2.92);
+    tl.to("#s07-coeur", { scale: 1.15, duration: 0.12, repeat: 3, yoyo: true }, 3.12);
+    tl.to("#s07-toi-bg", { rotation: 48, svgOrigin: "11 62", duration: 0.16, ease: "back.out(2)" }, 3.08);
+    tl.to("#s07-toi-bd", { rotation: -48, svgOrigin: "89 62", duration: 0.16, ease: "back.out(2)" }, 3.08);
+    tl.to("#s07-toi-tete", { rotation: 8, svgOrigin: "50 50", duration: 0.16, ease: "back.out(2)" }, 3.08);
+    tl.to("#s07-toi-corps", { keyframes: [{ y: -14, duration: 0.13, ease: "power2.out" }, { y: 0, duration: 0.15, ease: "power2.in" }] }, 3.08);
+    tl.to("#s07-ia-tete", { svgOrigin: "50 50", keyframes: [{ rotation: -14, duration: 0.08 }, { rotation: 14, duration: 0.1 }, { rotation: -10, duration: 0.1 }, { rotation: 0, duration: 0.08 }] }, 3.88);
+    tl.to("#s07-ia-bg", { rotation: 0, svgOrigin: "11 62", duration: 0.15, ease: "power2.out" }, 3.88);
+    tl.to("#s07-coeur", { y: 360, rotation: 40, opacity: 0, duration: 0.45, ease: "power2.in" }, 3.88);
+    tl.fromTo("#s07-pas", { opacity: 0, scale: 2.2 }, { opacity: 1, scale: 1, duration: 0.14, ease: "power4.in" }, 4.2);
+    tl.fromTo("#s07-pas", { x: 0 }, { keyframes: [{ x: -10, duration: 0.03 }, { x: 8, duration: 0.03 }, { x: 0, duration: 0.03 }] }, 4.34);
+    tl.to("#s07-plaisir-cam", { scale: 1.3, filter: "blur(14px)", duration: 0.2, ease: "power3.in" }, 4.76);
+    window.__timelines["s07-plaisir"] = tl;
+  </script>
+</template>

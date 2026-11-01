@@ -1,0 +1,230 @@
+{
+ "bonne-reponse": {
+  "pic": 0.05,
+  "duree": 1.061
+ },
+ "buzz-basse": {
+  "pic": 0.05,
+  "duree": 2.549
+ },
+ "buzz-faux": {
+  "pic": 0.15,
+  "duree": 1.739
+ },
+ "clavier-bit": {
+  "pic": 4.85,
+  "duree": 7.5
+ },
+ "clavier-doux": {
+  "pic": 3.3,
+  "duree": 9.5
+ },
+ "clavier-tel-2": {
+  "pic": 6.3,
+  "duree": 7.5
+ },
+ "clavier-tel-3": {
+  "pic": 1.35,
+  "duree": 6.0
+ },
+ "clavier-tel": {
+  "pic": 0.75,
+  "duree": 4.504
+ },
+ "clic-positif": {
+  "pic": 0.0,
+  "duree": 1.769
+ },
+ "clic": {
+  "pic": 0.15,
+  "duree": 0.447
+ },
+ "cloche-succes": {
+  "pic": 0.15,
+  "duree": 2.4
+ },
+ "coche": {
+  "pic": 0.1,
+  "duree": 0.237
+ },
+ "etincelles": {
+  "pic": 1.35,
+  "duree": 4.549
+ },
+ "fouet": {
+  "pic": 0.0,
+  "duree": 1.051
+ },
+ "glitch-court": {
+  "pic": 0.15,
+  "duree": 0.834
+ },
+ "glitch-data": {
+  "pic": 0.95,
+  "duree": 1.2
+ },
+ "glitch-ok": {
+  "pic": 1.2,
+  "duree": 2.487
+ },
+ "impact-basse": {
+  "pic": 0.1,
+  "duree": 1.1
+ },
+ "impact-cartoon": {
+  "pic": 0.05,
+  "duree": 1.414
+ },
+ "impact-futur": {
+  "pic": 0.2,
+  "duree": 2.75
+ },
+ "impact-tambour": {
+  "pic": 0.75,
+  "duree": 3.0
+ },
+ "impact-whoosh": {
+  "pic": 0.9,
+  "duree": 3.528
+ },
+ "notif-indice": {
+  "pic": 0.3,
+  "duree": 1.716
+ },
+ "notif-positive": {
+  "pic": 0.3,
+  "duree": 2.8
+ },
+ "photo": {
+  "pic": 0.3,
+  "duree": 1.512
+ },
+ "pluie": {
+  "pic": 7.05,
+  "duree": 10.0
+ },
+ "pop-bulle": {
+  "pic": 0.1,
+  "duree": 0.381
+ },
+ "pop-cartoon": {
+  "pic": 0.0,
+  "duree": 0.521
+ },
+ "pop-click": {
+  "pic": 0.0,
+  "duree": 1.175
+ },
+ "pop-long": {
+  "pic": 0.0,
+  "duree": 0.479
+ },
+ "pop-sec": {
+  "pic": 0.1,
+  "duree": 0.305
+ },
+ "riser-synth": {
+  "pic": 1.7,
+  "duree": 4.0
+ },
+ "riser-tech": {
+  "pic": 4.65,
+  "duree": 5.0
+ },
+ "riser-trailer": {
+  "pic": 2.45,
+  "duree": 2.575
+ },
+ "souffle-air": {
+  "pic": 0.7,
+  "duree": 2.321
+ },
+ "souffle-cine": {
+  "pic": 1.05,
+  "duree": 1.334
+ },
+ "souffle-rapide": {
+  "pic": 0.7,
+  "duree": 1.757
+ },
+ "surprise-cartoon": {
+  "pic": 0.1,
+  "duree": 3.21
+ },
+ "swell-court": {
+  "pic": 1.45,
+  "duree": 2.91
+ },
+ "swoosh-accent": {
+  "pic": 0.05,
+  "duree": 1.1
+ },
+ "swoosh-court": {
+  "pic": 0.15,
+  "duree": 1.25
+ },
+ "swoosh-monte": {
+  "pic": 0.1,
+  "duree": 1.03
+ },
+ "swoosh-tourbillon": {
+  "pic": 0.6,
+  "duree": 3.773
+ },
+ "swoosh-vitesse": {
+  "pic": 0.55,
+  "duree": 2.6
+ },
+ "swoosh-vol": {
+  "pic": 0.5,
+  "duree": 1.632
+ },
+ "tonnerre-transition": {
+  "pic": 0.5,
+  "duree": 5.0
+ },
+ "tonnerre": {
+  "pic": 0.9,
+  "duree": 5.5
+ },
+ "zoom-air": {
+  "pic": 0.45,
+  "duree": 1.282
+ },
+ "zoom-expand": {
+  "pic": 0.4,
+  "duree": 0.645
+ },
+ "zoom-futur": {
+  "pic": 0.6,
+  "duree": 2.171
+ },
+ "zoom-impact": {
+  "pic": 0.5,
+  "duree": 1.222
+ },
+ "zoom-in-out": {
+  "pic": 0.15,
+  "duree": 1.25
+ },
+ "zoom-in": {
+  "pic": 0.4,
+  "duree": 0.657
+ },
+ "zoom-out": {
+  "pic": 0.3,
+  "duree": 1.149
+ },
+ "zoom-scifi": {
+  "pic": 0.25,
+  "duree": 1.8
+ },
+ "zoom-swipe": {
+  "pic": 0.25,
+  "duree": 1.056
+ },
+ "zoom-vide": {
+  "pic": 0.4,
+  "duree": 1.275
+ }
+}
