@@ -1,0 +1,5 @@
+.hyperframes/
+.media/
+.media/audio/bgm/
+__pycache__/
+renders/

@@ -1,6 +1,6 @@
 # Suivi du travail
 
-Dernière mise à jour : 1er novembre 2026, 21 h 00 UTC.
+Dernière mise à jour : 1er novembre 2026, 22 h 30 UTC.
 
 ## État actuel
 
@@ -11,13 +11,13 @@ Dernière mise à jour : 1er novembre 2026, 21 h 00 UTC.
 | Projets modèles | Faits : `hyperframes-style/modele/` (film 16:9) et `modele-vertical/` (titre + bandeau). |
 | Vidéo « Réviser en une nuit avec ChatGPT » | Version 4 envoyée à 17 h 45 (musique +3 dB). Pas encore de retour. |
 | Vidéo « ChatGPT te donne toujours raison ? » | Demandée « beaucoup plus dynamique, surtout le perso ». 15 scènes, 2 personnages animés, 3 musiques, 68 bruitages. **Envoyée** à 19 h 40 (1080×1920, 103 s, −16,5 LUFS, crête −1,5 dBTP). Titre proposé, à valider. En attente des retours. |
-| Vidéo « L’IA cachée dans ton clavier » (vidéo 3) | Voix off sur le clavier prédictif (le script fourni parlait de n8n : **la voix fait foi**, confirmé par l'utilisateur). 16 scènes, vraies vidéos et logos, téléphone animé, 3 musiques et 58 bruitages Mixkit (155 placés). Contrôle réussi (0 erreur), images revues. **Envoyée** à 21 h (`videos/clavier-ia-vertical/renders/L-IA-cachee-dans-ton-clavier.mp4`, non versionné : 1080×1920, 96 s, −13,9 LUFS, crête −1,4 dBFS ; volume final monté avec ffmpeg, image copiée telle quelle). Titre proposé, à valider. En attente des retours. |
+| Vidéo « L’IA cachée dans ton clavier » (vidéo 3) | Voix off sur le clavier prédictif (le script fourni parlait de n8n : **la voix fait foi**, confirmé par l'utilisateur). 16 scènes, vraies vidéos et logos, téléphone animé, 3 musiques et 58 bruitages Mixkit (155 placés). Contrôle réussi (0 erreur), images revues. **Envoyée** à 21 h (`videos/clavier-ia-vertical/renders/L-IA-cachee-dans-ton-clavier.mp4`, non versionné : 1080×1920, 96 s, −13,9 LUFS, crête −1,4 dBFS ; volume final monté avec ffmpeg, image copiée telle quelle). Titre proposé, à valider. **Retour : l'utilisateur l'a adorée** (« juste baisse très légèrement le volume du son »). Titre non commenté. |
+| Vidéo « Crée ton agent IA sans coder » (vidéo 4, n8n + Telegram) | L'utilisateur a **adoré la vidéo 3**. Ses demandes : baisser très légèrement « le son » (compris : les bruitages, −2 dB), encore plus de sons d'Internet et variés, **beaucoup plus d'illustrations, surtout des vidéos**. 27 scènes, 21 vidéos Mixkit, 6 logos, interface n8n et Telegram animées, 99 bruitages (211 placés). Contrôle réussi, images revues. Rendu en cours. Titre proposé, à valider. |
 | Pull request | [#2](https://github.com/antihero260/Github-worker/pull/2) ouverte vers `main`, surveillée. Branche : `ccr-e6530603-mcler7`. |
 
 ## Prochaines étapes
 
-1. Recueillir les retours sur « L’IA cachée dans ton clavier » (niveau de la musique sans la baisse automatique, nombre de
-   bruitages, vraies vidéos) et faire valider le titre.
+1. Envoyer « Crée ton agent IA sans coder » (vertical) et recueillir les retours (niveau des bruitages, titre).
 2. Recueillir les retours sur « ChatGPT te donne toujours raison ? »
    (`videos/ia-te-donne-raison-vertical/renders/chatgpt-te-donne-toujours-raison.mp4`, non versionné) et faire valider le titre.
 3. Recueillir les retours de l'utilisateur sur la version 4 de « Réviser… »
@@ -74,6 +74,9 @@ Dernière mise à jour : 1er novembre 2026, 21 h 00 UTC.
   sous la voix » des fichiers n'étaient donc pas ceux entendus. Désormais `tools/mixage.py` retire cette baisse et
   garde seulement les creux de fréquences (vidéo 3). Les vidéos 1 et 2 ont encore la baisse : à corriger si
   l'utilisateur veut les refaire.
+- Vidéo 4 : identifiant égal à la scène refait (`s15-agir`, `s22-voila` : scène vide par moments). Le générateur
+  vérifie maintenant automatiquement qu'aucun élément ne porte l'identifiant de sa scène.
+- Caractères absents d'Anton (⇄, ⌕, ◆) : les remplacer par du texte ou un petit SVG.
 - Snapshots : quand on demande beaucoup d'images d'un coup, certaines sortent floues/vides (scène prise à son état
   de départ). Relancer ces instants seuls pour vérifier avant de conclure à un bug.
 - Apostrophe droite `'` dans le titre du projet vertical : casse l'attribut `data-composition-variables='…'`.

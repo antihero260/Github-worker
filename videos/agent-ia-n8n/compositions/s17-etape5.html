@@ -1,0 +1,41 @@
+<!-- Scène 17 · « Cinquième étape : connecte-le à Telegram. » (73.87 → 76.67 s). Fichier écrit par un générateur, modifiable à la main. -->
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+    }
+
+  </style>
+  <div id="root" data-composition-id="s17-etape5" data-width="1920" data-height="1080">
+    <div class="pj-scene">
+      <div id="s17-etape5-cam" class="pj-cam">
+        <div id="s17-etape5-cadre" class="pj-cadre">
+        <div class="pj-horizon" style="top: 760px"></div>
+        <div id="s17-et" class="pj-etape" style="left: 1440px; top: 128px; opacity: 0"><span>Étape</span><b>5</b><i>/5</i></div>
+        <div class="pj-cone" style="left: 280px; height: 900px; opacity: 1.0"></div><div class="pj-sol" style="left: 250px; top: 740px; opacity: 1.0"></div>
+        <svg id="s17-ia" class="pj-perso pj-ia-perso" viewBox="-30 -20 160 290" style="left: 450px; top: 430px; width: 221px; height: 400px"><g id="s17-ia-vie"><g id="s17-ia-corps"><g id="s17-ia-jg"><g class="c"><rect x="24" y="136" width="24" height="112" rx="8" /></g><g class="p"><rect x="24" y="136" width="24" height="112" rx="8" /></g></g><g id="s17-ia-jd"><g class="c"><rect x="52" y="136" width="24" height="112" rx="8" /></g><g class="p"><rect x="52" y="136" width="24" height="112" rx="8" /></g></g><g id="s17-ia-tronc"><g class="c"><rect x="22" y="52" width="56" height="94" rx="12" /></g><g class="p"><rect x="22" y="52" width="56" height="94" rx="12" /></g></g><g id="s17-ia-bg"><g class="c"><rect x="2" y="54" width="18" height="86" rx="9" /></g><g class="p"><rect x="2" y="54" width="18" height="86" rx="9" /></g></g><g id="s17-ia-bd"><g class="c"><rect x="80" y="54" width="18" height="86" rx="9" /></g><g class="p"><rect x="80" y="54" width="18" height="86" rx="9" /></g></g><g id="s17-ia-tete"><g class="c"><rect x="25" y="0" width="50" height="46" rx="13" /></g><g class="p"><rect x="25" y="0" width="50" height="46" rx="13" /></g><g class="yeux"><circle cx="40" cy="22" r="5" /><circle cx="60" cy="22" r="5" /></g></g></g></g></svg>
+        <div id="s17-tg" class="pj-logo" style="left: 1220px; top: 260px; width: 300px; opacity: 0"><img src="assets/img/logo-telegram.svg" alt="Telegram" style="width: 204px; height: 204px" /><div class="pj-logo-nom">Telegram</div></div>
+        <svg id="s17-l" style="position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; overflow: visible" viewBox="0 0 1920 1080"><path id="s17-l-0" d="M680 520 C770 520 1130 440 1220 440" pathLength="100" fill="none" stroke="#DCFC1C" stroke-width="5" stroke-dasharray="100" stroke-dashoffset="100" /></svg>
+        </div>
+      </div>
+      <div id="s17-hud" class="pj-label" style="left: 113px; top: 107px; "><span class="pj-k">Étape 5</span><span class="pj-d">Telegram</span></div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#s17-etape5-cam", { scale: 1 }, { scale: 1.05, duration: 2.6, ease: "none" }, 0);
+    tl.fromTo("#s17-etape5-cam", { filter: "blur(14px)" }, { filter: "blur(0px)", duration: 0.16, ease: "power2.out" }, 0);
+    tl.fromTo("#s17-et", { opacity: 0, scale: 1.9 }, { opacity: 1, scale: 1, duration: 0.18, ease: "back.out(2.2)" }, 0.12);
+    tl.to("#s17-l-0", { attr: { "stroke-dashoffset": 0 }, duration: 0.35, ease: "power2.out" }, 1.44);
+    tl.fromTo("#s17-ia-vie", { y: 0 }, { y: -5, duration: 0.42, repeat: 5, yoyo: true, ease: "sine.inOut", immediateRender: false }, 0.0);
+    tl.fromTo("#s17-tg", { opacity: 0, scale: 1.8 }, { opacity: 1, scale: 1, duration: 0.18, ease: "back.out(2.2)" }, 1.24);
+    tl.to("#s17-ia-bd", { rotation: -100, svgOrigin: "89 62", duration: 0.16, ease: "back.out(2)" }, 1.24);
+    tl.to("#s17-ia-tete", { rotation: -8, svgOrigin: "50 50", duration: 0.16, ease: "back.out(2)" }, 1.24);
+    tl.to("#s17-ia-corps", { keyframes: [{ y: -30, duration: 0.13, ease: "power2.out" }, { y: 0, duration: 0.15, ease: "power2.in" }] }, 2.12);
+    tl.to("#s17-etape5-cadre", { x: 0, y: 67, scale: 1.12, duration: 0.26, ease: "power3.inOut" }, 1.96);
+    tl.to("#s17-etape5-cadre", { keyframes: [{ filter: "blur(10px)", duration: 0.13 }, { filter: "blur(0px)", duration: 0.13 }] }, 1.96);
+    tl.to("#s17-etape5-cam", { scale: 1.3, filter: "blur(14px)", duration: 0.2, ease: "power3.in" }, 2.6);
+    window.__timelines["s17-etape5"] = tl;
+  </script>
+</template>
