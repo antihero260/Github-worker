@@ -1,0 +1,93 @@
+<!-- Scène 4 · le premier prompt, tapé mot à mot (23.1 → 39.5 s). Fichier écrit par un générateur, modifiable à la main. -->
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+    }
+
+  </style>
+  <div id="root" data-composition-id="s4-prompt1" data-width="1920" data-height="1080">
+    <div class="pj-scene">
+      <div id="s4-prompt1-cam" class="pj-cam">
+        <div class="pj-horizon" style="top: 760px"></div>
+        <div class="pj-cone" style="left: 20px; height: 900px; opacity: 0.85"></div><div class="pj-sol" style="left: -10px; top: 740px; opacity: 0.85"></div>
+        <svg id="s4-toi" class="pj-picto pj-toi" viewBox="-8 -8 116 276" style="left: 229px; top: 460px; width: 143px; height: 340px"><g class="pj-contour"><circle cx="50" cy="26" r="24" /><rect x="16" y="58" width="68" height="96" rx="10" /><rect x="21" y="140" width="25" height="118" rx="5" /><rect x="54" y="140" width="25" height="118" rx="5" /></g><g class="pj-plein"><circle cx="50" cy="26" r="24" /><rect x="16" y="58" width="68" height="96" rx="10" /><rect x="21" y="140" width="25" height="118" rx="5" /><rect x="54" y="140" width="25" height="118" rx="5" /></g></svg>
+        <div id="s4-chat" class="pj-chat" style="left: 560px; top: 210px; width: 1250px; height: 630px"><div class="pj-chat-tete"><i></i><i></i><i></i><span style="margin-left: 14px">ChatGPT · ta mission</span></div><div id="s4-pj" class="pj-label" style="left: 30px; top: 92px; background: #262626; padding: 8px 18px; letter-spacing: 0.1em"><span class="pj-k">▣ cours.pdf · 40 pages</span></div><div class="pj-msg" style="left: 30px; top: 160px; width: 1186px"><span id="s4-m83">Je</span> <span id="s4-m84">suis</span> <span id="s4-m85">étudiant</span> <span id="s4-m86">et</span> <span id="s4-m87">j'ai</span> <span id="s4-m88">un</span> <span id="s4-m89">examen</span> <span id="s4-m90">demain.</span> <span id="s4-m91">À</span> <span id="s4-m92">partir</span> <span id="s4-m93">de</span> <span id="s4-m94">ce</span> <span id="s4-m95">document</span> <span id="s4-m96">uniquement,</span> <span id="s4-m97">identifie</span> <span id="s4-m98">les</span> <span id="s4-m99">notions</span> <span id="s4-m100">essentielles,</span> <span id="s4-m101">les</span> <span id="s4-m102">définitions</span> <span id="s4-m103">à</span> <span id="s4-m104">connaître</span> <span id="s4-m105">et</span> <span id="s4-m106">les</span> <span id="s4-m107">concepts</span> <span id="s4-m108">que</span> <span id="s4-m109">je</span> <span id="s4-m110">risque</span> <span id="s4-m111">de</span> <span id="s4-m112">confondre.</span> <span id="s4-m113">N'invente</span> <span id="s4-m114">aucune</span> <span id="s4-m115">information.</span> <span id="s4-m116">Si</span> <span id="s4-m117">un</span> <span id="s4-m118">passage</span> <span id="s4-m119">est</span> <span id="s4-m120">ambigu,</span> <span id="s4-m121">signale-le.</span></div></div>
+      </div>
+      <div id="s4-hud" class="pj-label" style="left: 113px; top: 107px; "><span class="pj-k">Prompt 01</span><span class="pj-d">La mission</span></div>
+      <div class="pj-label" style="right: 113px; top: 107px; width: 480px"><span class="pj-k" style="position: relative; display: block; height: 40px"><span id="s4-c-0" style="position: absolute; right: 0; opacity: 1">Consignes : 0/5</span><span id="s4-c-1" style="position: absolute; right: 0; opacity: 0">Consignes : 1/5</span><span id="s4-c-2" style="position: absolute; right: 0; opacity: 0">Consignes : 2/5</span><span id="s4-c-3" style="position: absolute; right: 0; opacity: 0">Consignes : 3/5</span><span id="s4-c-4" style="position: absolute; right: 0; opacity: 0">Consignes : 4/5</span><span id="s4-c-5" style="position: absolute; right: 0; opacity: 0">Consignes : 5/5</span></span></div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#s4-prompt1-cam", { scale: 1 }, { scale: 1.05, duration: 16.2, ease: "none" }, 0);
+    tl.fromTo("#s4-prompt1-cam", { filter: "blur(14px)" }, { filter: "blur(0px)", duration: 0.16, ease: "power2.out" }, 0);
+    tl.set("#s4-m83", { opacity: 1 }, 2.42);
+    tl.set("#s4-m84", { opacity: 1 }, 2.62);
+    tl.set("#s4-m85", { opacity: 1 }, 2.86);
+    tl.set("#s4-m86", { opacity: 1 }, 3.42);
+    tl.set("#s4-m87", { opacity: 1 }, 3.58);
+    tl.set("#s4-m88", { opacity: 1 }, 3.82);
+    tl.set("#s4-m89", { opacity: 1 }, 3.98);
+    tl.set("#s4-m89", { backgroundColor: "#DCFC1C" }, 4.13);
+    tl.set("#s4-m90", { opacity: 1 }, 4.38);
+    tl.set("#s4-m90", { backgroundColor: "#DCFC1C" }, 4.53);
+    tl.set("#s4-m91", { opacity: 1 }, 4.98);
+    tl.set("#s4-m92", { opacity: 1 }, 5.14);
+    tl.set("#s4-m93", { opacity: 1 }, 5.38);
+    tl.set("#s4-m94", { opacity: 1 }, 5.54);
+    tl.set("#s4-m95", { opacity: 1 }, 5.7);
+    tl.set("#s4-m95", { backgroundColor: "#DCFC1C" }, 5.85);
+    tl.set("#s4-m96", { opacity: 1 }, 6.26);
+    tl.set("#s4-m96", { backgroundColor: "#DCFC1C" }, 6.41);
+    tl.set("#s4-m97", { opacity: 1 }, 6.98);
+    tl.set("#s4-m98", { opacity: 1 }, 7.62);
+    tl.set("#s4-m99", { opacity: 1 }, 7.78);
+    tl.set("#s4-m99", { backgroundColor: "#DCFC1C" }, 7.93);
+    tl.set("#s4-m100", { opacity: 1 }, 8.18);
+    tl.set("#s4-m100", { backgroundColor: "#DCFC1C" }, 8.33);
+    tl.set("#s4-m101", { opacity: 1 }, 8.9);
+    tl.set("#s4-m102", { opacity: 1 }, 9.06);
+    tl.set("#s4-m102", { backgroundColor: "#DCFC1C" }, 9.21);
+    tl.set("#s4-m103", { opacity: 1 }, 9.62);
+    tl.set("#s4-m104", { opacity: 1 }, 9.78);
+    tl.set("#s4-m105", { opacity: 1 }, 10.26);
+    tl.set("#s4-m106", { opacity: 1 }, 10.42);
+    tl.set("#s4-m107", { opacity: 1 }, 10.58);
+    tl.set("#s4-m107", { backgroundColor: "#DCFC1C" }, 10.73);
+    tl.set("#s4-m108", { opacity: 1 }, 10.98);
+    tl.set("#s4-m109", { opacity: 1 }, 11.14);
+    tl.set("#s4-m110", { opacity: 1 }, 11.3);
+    tl.set("#s4-m111", { opacity: 1 }, 11.62);
+    tl.set("#s4-m112", { opacity: 1 }, 11.78);
+    tl.set("#s4-m112", { backgroundColor: "#DCFC1C" }, 11.93);
+    tl.set("#s4-m113", { opacity: 1 }, 12.5);
+    tl.set("#s4-m113", { backgroundColor: "#DCFC1C" }, 12.65);
+    tl.set("#s4-m114", { opacity: 1 }, 13.22);
+    tl.set("#s4-m114", { backgroundColor: "#DCFC1C" }, 13.37);
+    tl.set("#s4-m115", { opacity: 1 }, 13.62);
+    tl.set("#s4-m115", { backgroundColor: "#DCFC1C" }, 13.77);
+    tl.set("#s4-m116", { opacity: 1 }, 14.34);
+    tl.set("#s4-m117", { opacity: 1 }, 14.58);
+    tl.set("#s4-m118", { opacity: 1 }, 14.74);
+    tl.set("#s4-m119", { opacity: 1 }, 15.06);
+    tl.set("#s4-m120", { opacity: 1 }, 15.22);
+    tl.set("#s4-m120", { backgroundColor: "#DCFC1C" }, 15.37);
+    tl.set("#s4-m121", { opacity: 1 }, 15.94);
+    tl.set("#s4-m121", { backgroundColor: "#DCFC1C" }, 16.09);
+    tl.set("#s4-c-0", { opacity: 0 }, 6.98);
+    tl.set("#s4-c-1", { opacity: 1 }, 6.98);
+    tl.set("#s4-c-1", { opacity: 0 }, 9.06);
+    tl.set("#s4-c-2", { opacity: 1 }, 9.06);
+    tl.set("#s4-c-2", { opacity: 0 }, 10.58);
+    tl.set("#s4-c-3", { opacity: 1 }, 10.58);
+    tl.set("#s4-c-3", { opacity: 0 }, 12.5);
+    tl.set("#s4-c-4", { opacity: 1 }, 12.5);
+    tl.set("#s4-c-4", { opacity: 0 }, 14.34);
+    tl.set("#s4-c-5", { opacity: 1 }, 14.34);
+    tl.fromTo("#s4-pj", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.18, ease: "power3.out" }, 0.5);
+    tl.to("#s4-prompt1-cam", { scale: 1.3, filter: "blur(14px)", duration: 0.2, ease: "power3.in" }, 16.2);
+    window.__timelines["s4-prompt1"] = tl;
+  </script>
+</template>

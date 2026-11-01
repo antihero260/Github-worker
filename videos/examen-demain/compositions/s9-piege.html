@@ -1,0 +1,46 @@
+<!-- Scène 9 · le piège : vérifier dans le document original (81.45 → 91.85 s). Fichier écrit par un générateur, modifiable à la main. -->
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+    }
+
+  </style>
+  <div id="root" data-composition-id="s9-piege" data-width="1920" data-height="1080">
+    <div class="pj-scene">
+      <div id="s9-piege-cam" class="pj-cam">
+        <div class="pj-horizon" style="top: 760px"></div>
+        <div id="s9-chat" class="pj-chat" style="left: 120px; top: 240px; width: 820px; height: 580px; opacity: 0"><div class="pj-chat-tete"><i></i><i></i><i></i><span style="margin-left: 14px">Réponse de l'IA</span></div><div style="position: absolute; left: 30px; right: 30px; top: 100px; background: #232323; padding: 30px"><div style="height: 18px; width: 94%; background: #5a5a5a; margin-bottom: 22px"></div><div style="height: 18px; width: 82%; background: #5a5a5a; margin-bottom: 22px"></div><div style="height: 18px; width: 90%; background: #5a5a5a; margin-bottom: 22px"></div><div style="height: 18px; width: 66%; background: #5a5a5a; margin-bottom: 22px"></div><div style="height: 18px; width: 88%; background: #5a5a5a; margin-bottom: 22px"></div><div style="height: 18px; width: 74%; background: #5a5a5a; margin-bottom: 22px"></div><div style="height: 18px; width: 92%; background: #5a5a5a; margin-bottom: 22px"></div></div><div id="s9-verite" class="pj-sticker" style="left: 150px; top: 330px; transform: rotate(-5deg); font-size: 80px; background: #ECECE8">Vérité absolue<div id="s9-rature" style="position: absolute; left: -12px; right: -12px; top: 50%; height: 12px; margin-top: -6px; background: #DCFC1C; transform-origin: 0 50%"></div></div></div>
+        <div id="s9-liste" style="position: absolute; left: 1060px; top: 200px; opacity: 0"><div class="pj-label" style="position: static; margin-bottom: 30px"><span class="pj-k">Vérifie</span><span class="pj-d">Dans ton cours</span></div><div class="pj-ligne-coche"><b id="s9-c0"></b>DÉFINITIONS</div><div class="pj-ligne-coche"><b id="s9-c1"></b>FORMULES</div><div class="pj-ligne-coche"><b id="s9-c2"></b>CORRECTIONS</div></div>
+        <div id="s9-doc" class="pj-papier" style="left: 1080px; top: 560px; width: 560px; padding: 26px 34px; opacity: 0"><h3 style="font-size: 66px">Document original</h3><div class="pj-ligne">COURS.PDF · 40 PAGES</div></div>
+        <div id="s9-equerres" class="pj-equerres" style="left: 1050px; top: 530px; width: 620px; height: 230px; opacity: 0"><i></i><i></i><i></i><i></i></div>
+      </div>
+      <div id="s9-noir" style="position: absolute; inset: 0; background: #000; opacity: 0"></div><div id="s9-titre" class="pj-impact" style="position: absolute; left: 0; width: 1920px; top: 330px; text-align: center; font-size: 300px; opacity: 0">Le piège.</div>
+      <div id="s9-piege-eclair" class="pj-flash"></div>
+      <div id="s9-hud" class="pj-label" style="left: 113px; top: 107px; "><span class="pj-k">Attention</span><span class="pj-d">Piège à éviter</span></div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#s9-piege-cam", { scale: 1 }, { scale: 1.05, duration: 10.2, ease: "none" }, 0);
+    tl.fromTo("#s9-piege-cam", { filter: "blur(14px)" }, { filter: "blur(0px)", duration: 0.16, ease: "power2.out" }, 0);
+    tl.set("#s9-piege-eclair", { opacity: 1 }, 0.74);
+    tl.set("#s9-piege-eclair", { opacity: 0 }, 0.807);
+    tl.set("#s9-noir", { opacity: 1 }, 0);
+    tl.set("#s9-titre", { opacity: 1 }, 0.74);
+    tl.fromTo("#s9-titre", { opacity: 0, scale: 1.45 }, { opacity: 1, scale: 1, duration: 0.13, ease: "power4.out" }, 0.74);
+    tl.set(["#s9-noir", "#s9-titre"], { opacity: 0 }, 1.94);
+    tl.fromTo("#s9-chat", { opacity: 0, x: -120 }, { opacity: 1, x: 0, duration: 0.24, ease: "power4.out", immediateRender: false }, 1.94);
+    tl.fromTo("#s9-verite", { opacity: 0, scale: 1.6 }, { opacity: 1, scale: 1, duration: 0.18, ease: "back.out(2.2)" }, 4.18);
+    tl.fromTo("#s9-rature", { scaleX: 0 }, { scaleX: 1, duration: 0.16, ease: "power2.out" }, 4.66);
+    tl.fromTo("#s9-liste", { opacity: 0, x: 80 }, { opacity: 1, x: 0, duration: 0.2, ease: "power3.out", immediateRender: false }, 5.38);
+    tl.set("#s9-c0", { backgroundColor: "#DCFC1C", borderColor: "#DCFC1C" }, 6.2);
+    tl.set("#s9-c1", { backgroundColor: "#DCFC1C", borderColor: "#DCFC1C" }, 7.08);
+    tl.set("#s9-c2", { backgroundColor: "#DCFC1C", borderColor: "#DCFC1C" }, 7.8);
+    tl.fromTo("#s9-doc", { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: 0.2, ease: "power3.out", immediateRender: false }, 9.22);
+    tl.fromTo("#s9-equerres", { opacity: 0, scale: 1.2 }, { opacity: 1, scale: 1, duration: 0.18, ease: "back.out(2.2)" }, 9.7);
+    tl.to("#s9-piege-cam", { scale: 1.3, filter: "blur(14px)", duration: 0.2, ease: "power3.in" }, 10.2);
+    window.__timelines["s9-piege"] = tl;
+  </script>
+</template>

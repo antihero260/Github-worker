@@ -1,0 +1,49 @@
+<!-- Scène 5 · « une première carte de révision. Mais attention… » (39.5 → 49.8 s). Fichier écrit par un générateur, modifiable à la main. -->
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+    }
+
+  </style>
+  <div id="root" data-composition-id="s5-carte" data-width="1920" data-height="1080">
+    <div class="pj-scene">
+      <div id="s5-carte-cam" class="pj-cam">
+        <div class="pj-horizon" style="top: 760px"></div>
+        <div class="pj-cone" style="left: 140px; height: 900px; opacity: 1.0"></div><div class="pj-sol" style="left: 110px; top: 740px; opacity: 1.0"></div>
+        <svg id="s5-toi" class="pj-picto pj-toi" viewBox="-8 -8 116 276" style="left: 340px; top: 420px; width: 160px; height: 380px"><g class="pj-contour"><circle cx="50" cy="26" r="24" /><rect x="16" y="58" width="68" height="96" rx="10" /><rect x="21" y="140" width="25" height="118" rx="5" /><rect x="54" y="140" width="25" height="118" rx="5" /></g><g class="pj-plein"><circle cx="50" cy="26" r="24" /><rect x="16" y="58" width="68" height="96" rx="10" /><rect x="21" y="140" width="25" height="118" rx="5" /><rect x="54" y="140" width="25" height="118" rx="5" /></g></svg>
+        <div id="s5-fiche" class="pj-papier" style="left: 820px; top: 150px; width: 900px; transform: rotate(-2deg)"><h3 style="font-size: 92px">Carte de révision</h3><div id="s5-l0" class="pj-ligne" style="font-size: 34px; display: flex; justify-content: space-between; border-top: 2px solid #c8c8c2; padding-top: 14px"><span>NOTIONS ESSENTIELLES</span><span style="background: #0a0a06; color: #dcfc1c; padding: 0 12px">12</span></div><div id="s5-l1" class="pj-ligne" style="font-size: 34px; display: flex; justify-content: space-between; border-top: 2px solid #c8c8c2; padding-top: 14px"><span>DÉFINITIONS</span><span style="background: #0a0a06; color: #dcfc1c; padding: 0 12px">18</span></div><div id="s5-l2" class="pj-ligne" style="font-size: 34px; display: flex; justify-content: space-between; border-top: 2px solid #c8c8c2; padding-top: 14px"><span>CONCEPTS À NE PAS CONFONDRE</span><span style="background: #0a0a06; color: #dcfc1c; padding: 0 12px">5</span></div><div id="s5-l3" class="pj-ligne" style="font-size: 34px; display: flex; justify-content: space-between; border-top: 2px solid #c8c8c2; padding-top: 14px"><span>PASSAGES AMBIGUS</span><span style="background: #0a0a06; color: #dcfc1c; padding: 0 12px">2</span></div></div>
+        <div id="s5-gauche" class="pj-impact" style="position: absolute; left: 120px; width: 760px; top: 330px; text-align: center; font-size: 120px; color: #ECECE8; text-shadow: none; white-space: normal; opacity: 0">Lire un résumé</div>
+        <div id="s5-diff" style="position: absolute; left: 885px; top: 380px; width: 150px; height: 130px; opacity: 0; filter: drop-shadow(0 0 18px rgba(220,252,28,0.45))"><i style="position: absolute; left: 0; top: 30px; width: 150px; height: 22px; background: #DCFC1C"></i><i style="position: absolute; left: 0; top: 78px; width: 150px; height: 22px; background: #DCFC1C"></i><i style="position: absolute; left: 64px; top: -10px; width: 22px; height: 150px; background: #DCFC1C; transform: rotate(28deg)"></i></div>
+        <div id="s5-droite" class="pj-impact" style="position: absolute; left: 1040px; width: 760px; top: 330px; text-align: center; font-size: 120px; white-space: normal; opacity: 0">Connaître son cours</div>
+        <div id="s5-etape" style="position: absolute; left: 0; width: 1920px; top: 260px; text-align: center; opacity: 0"><div class="pj-label" style="position: static"><span class="pj-k">Tu passes à</span></div><div class="pj-impact" style="font-size: 260px; margin-top: 46px">Étape 02</div></div>
+      </div>
+      <div id="s5-noir" style="position: absolute; inset: 0; background: #000; opacity: 0"></div><div id="s5-attention" class="pj-impact" style="position: absolute; left: 0; width: 1920px; top: 330px; text-align: center; font-size: 300px; opacity: 0">Attention.</div>
+      <div id="s5-carte-eclair" class="pj-flash"></div>
+      <div id="s5-hud" class="pj-label" style="left: 113px; top: 107px; "><span class="pj-k">Résultat</span><span class="pj-d">En quelques instants</span></div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#s5-carte-cam", { scale: 1 }, { scale: 1.05, duration: 10.1, ease: "none" }, 0);
+    tl.fromTo("#s5-carte-cam", { filter: "blur(14px)" }, { filter: "blur(0px)", duration: 0.16, ease: "power2.out" }, 0);
+    tl.set("#s5-carte-eclair", { opacity: 1 }, 3.94);
+    tl.set("#s5-carte-eclair", { opacity: 0 }, 4.007);
+    tl.fromTo("#s5-fiche", { opacity: 0, y: 140, rotation: 4 }, { opacity: 1, y: 0, rotation: -2, duration: 0.28, ease: "power4.out" }, 1.54);
+    tl.fromTo("#s5-l0", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.12, ease: "power3.out" }, 2.26);
+    tl.fromTo("#s5-l1", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.12, ease: "power3.out" }, 2.58);
+    tl.fromTo("#s5-l2", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.12, ease: "power3.out" }, 2.9);
+    tl.fromTo("#s5-l3", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.12, ease: "power3.out" }, 3.06);
+    tl.set(["#s5-noir", "#s5-attention"], { opacity: 1 }, 3.94);
+    tl.fromTo("#s5-attention", { opacity: 0, scale: 1.45 }, { opacity: 1, scale: 1, duration: 0.13, ease: "power4.out" }, 3.94);
+    tl.set(["#s5-noir", "#s5-attention", "#s5-fiche", "#s5-toi"], { opacity: 0 }, 4.66);
+    tl.fromTo("#s5-gauche", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.18, ease: "power3.out" }, 4.66);
+    tl.fromTo("#s5-droite", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.18, ease: "power3.out" }, 5.78);
+    tl.fromTo("#s5-diff", { opacity: 0, scale: 1.6 }, { opacity: 1, scale: 1, duration: 0.18, ease: "back.out(2.2)" }, 7.22);
+    tl.to(["#s5-gauche", "#s5-droite", "#s5-diff"], { opacity: 0, x: -200, duration: 0.2, ease: "power3.in" }, 8.26);
+    tl.fromTo("#s5-etape", { opacity: 0, scale: 1.45 }, { opacity: 1, scale: 1, duration: 0.13, ease: "power4.out" }, 8.9);
+    tl.to("#s5-carte-cam", { scale: 1.3, filter: "blur(14px)", duration: 0.2, ease: "power3.in" }, 10.1);
+    window.__timelines["s5-carte"] = tl;
+  </script>
+</template>
