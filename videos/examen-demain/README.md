@@ -10,10 +10,13 @@ Vidéo de 2 min (120 s) dans le style « Projecteur » ([`../../hyperframes-styl
 | Fichier | Contenu |
 | --- | --- |
 | `script.txt` | Le script, tel que lu par la voix. |
-| `assets/audio/voix.wav` | La voix off ElevenLabs (« Nicolas – Narrator »), normalisée à −15 LUFS. |
+| `assets/audio/voix.mp3` | La voix off ElevenLabs (« Nicolas – Narrator »), normalisée à −15 LUFS. |
 | `assets/transcript-brut.json` | La transcription automatique (temps justes, mais avec des fautes de mots). |
 | `assets/mots.json` | Les mots exacts du script, alignés sur ces temps. Sert aux sous-titres et aux scènes. |
-| `assets/audio/musique.wav` | Nappe grave générée avec ffmpeg, coupée sur « oublié la moitié » et « le piège ». |
+| `assets/music/partie-1-tension.mp3` | Catalogue HeyGen (« tense suspense drone with clock ticks »), 0 → 24,6 s ; temps fort sur « tu ouvres ChatGPT », coupé sur « oublié la moitié ». |
+| `assets/music/partie-2-methode.mp3` | Catalogue HeyGen (« rhythmic investigative documentary »), 128 BPM, bouclé sur 14 mesures, 23,1 → 81,5 s, coupé net sur « le piège ». |
+| `assets/music/partie-3-elan.mp3` | Catalogue HeyGen (« uplifting hopeful cinematic, modern electronic build »), 83,3 → 120 s. |
+| `assets/sfx/` | 53 bruitages placés dans `index.html` : bibliothèque Pixabay de HyperFrames (licence Pixabay, sans crédit obligatoire) ; battement de cœur et frappe continue fabriqués avec ffmpeg. |
 
 ## Les 12 scènes
 
@@ -31,6 +34,13 @@ Vidéo de 2 min (120 s) dans le style « Projecteur » ([`../../hyperframes-styl
 | `s10-heures` | 91,9 → 102,2 s | temps restant, cible « notions essentielles » et lacunes, belles fiches barrées, « APPRENDRE. DORMIR. » |
 | `s11-prof` | 102,2 → 110,6 s | « réviser à ta place » barré, « PROFESSEUR », bulles de questions |
 | `s12-question` | 110,6 → 120 s | « dis-moi… », choix A « Résumer » / B « T'interroger », « ? », réponse en commentaire |
+
+## Son
+
+Voix à −15 LUFS, musiques à −27/−29 LUFS (12 à 14 dB dessous), bruitages entre 0,2 et 0,4 de volume.
+Mixage complet mesuré : −15,5 LUFS intégrés, crête à −0,5 dBFS.
+
+Les morceaux bruts du catalogue sont dans `.media/audio/bgm/` (non versionnés) ; leur origine est dans `.media/manifest.jsonl`.
 
 ## Refaire ou retoucher
 
