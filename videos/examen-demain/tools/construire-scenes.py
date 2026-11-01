@@ -27,10 +27,111 @@ PICTO = ('<g class="pj-contour"><circle cx="50" cy="26" r="24" /><rect x="16" y=
          '<rect x="21" y="140" width="25" height="118" rx="5" /><rect x="54" y="140" width="25" height="118" rx="5" /></g>')
 
 
+PARTIES = {  # forme (contour + remplissage) et pivot de chaque membre, en unités du SVG
+    "jg": ('<rect x="24" y="136" width="24" height="112" rx="8" />', "36 142"),
+    "jd": ('<rect x="52" y="136" width="24" height="112" rx="8" />', "64 142"),
+    "tronc": ('<rect x="22" y="52" width="56" height="94" rx="12" />', None),
+    "bg": ('<rect x="2" y="54" width="18" height="86" rx="9" />', "11 62"),
+    "bd": ('<rect x="80" y="54" width="18" height="86" rx="9" />', "89 62"),
+    "tete": ('<circle cx="50" cy="24" r="22" />', "50 50"),
+}
+PIVOTS = {k: v[1] for k, v in PARTIES.items() if v[1]}
+
+
 def toi(id_, cx, pieds, h):
-    w = round(h * 116 / 276)
-    return (f'<svg id="{id_}" class="pj-picto pj-toi" viewBox="-8 -8 116 276" '
-            f'style="left: {cx - w // 2}px; top: {pieds - h}px; width: {w}px; height: {h}px">{PICTO}</svg>')
+    """Pictogramme « toi » articulé : tête, tronc, bras et jambes animables séparément."""
+    w = round(h * 160 / 290)
+    groupes = "".join(f'<g id="{id_}-{k}"><g class="c">{forme}</g><g class="p">{forme}</g></g>' for k, (forme, _) in PARTIES.items())
+    return (f'<svg id="{id_}" class="pj-perso pj-toi-perso" viewBox="-30 -20 160 290" '
+            f'style="left: {cx - w // 2}px; top: {pieds - round(h * 268 / 290)}px; width: {w}px; height: {h}px">'
+            f'<g id="{id_}-corps">{groupes}</g></svg>')
+
+
+# ---- gestes (temps en secondes de la vidéo)
+def pose(s, pid, g, d=0.18, ease="power2.out", **angles):
+    for k, v in angles.items():
+        s.j(f'tl.to("#{pid}-{k}", {{ rotation: {v}, svgOrigin: "{PIVOTS[k]}", duration: {d}, ease: "{ease}" }}, {s.L(g)});')
+
+
+def repos(s, pid, g, d=0.2):
+    pose(s, pid, g, d, bg=0, bd=0, jg=0, jd=0, tete=0)
+
+
+def marche(s, pid, g0, g1, dx):
+    """Marche de g0 à g1 en avançant de dx pixels : jambes et bras alternés, petit rebond."""
+    pas = max(2, round((g1 - g0) / 0.28))
+    d = round((g1 - g0) / pas / 2, 3)
+    s.j(f'tl.to("#{pid}", {{ x: "+={dx}", duration: {round(g1 - g0, 3)}, ease: "none" }}, {s.L(g0)});')
+    for k, sens in (("jg", 1), ("jd", -1), ("bg", -1), ("bd", 1)):
+        amp = 24 if k[0] == "j" else 20
+        kf = ", ".join(f'{{ rotation: {sens * amp * (1 if n % 2 == 0 else -1)}, duration: {d} }}' for n in range(pas * 2 - 1)) + f', {{ rotation: 0, duration: {d} }}'
+        s.j(f'tl.to("#{pid}-{k}", {{ svgOrigin: "{PIVOTS[k]}", keyframes: [{kf}] }}, {s.L(g0)});')
+    kf = ", ".join(f'{{ y: {-6 if n % 2 == 0 else 0}, duration: {d} }}' for n in range(pas * 2))
+    s.j(f'tl.to("#{pid}-corps", {{ keyframes: [{kf}] }}, {s.L(g0)});')
+
+
+def tape(s, pid, g0, g1, vite=0.11):
+    """Tape au clavier : avant-bras rentrés qui alternent."""
+    n = max(1, int((g1 - g0 - 0.15 - vite) / vite) - 1)  # se termine avant g1
+    pose(s, pid, g0, 0.15, bg=-28, bd=28, tete=10)
+    s.j(f'tl.to("#{pid}-bg", {{ rotation: -18, svgOrigin: "{PIVOTS["bg"]}", duration: {vite}, repeat: {n}, yoyo: true, ease: "sine.inOut" }}, {s.L(g0 + 0.15)});')
+    s.j(f'tl.to("#{pid}-bd", {{ rotation: 38, svgOrigin: "{PIVOTS["bd"]}", duration: {vite}, repeat: {n}, yoyo: true, ease: "sine.inOut" }}, {s.L(g0 + 0.15 + vite / 2)});')
+    repos(s, pid, g1)
+
+
+def non(s, pid, g):
+    s.j(f'tl.to("#{pid}-tete", {{ svgOrigin: "{PIVOTS["tete"]}", keyframes: [{{ rotation: -14, duration: 0.08 }}, {{ rotation: 14, duration: 0.1 }}, {{ rotation: -10, duration: 0.1 }}, {{ rotation: 0, duration: 0.08 }}] }}, {s.L(g)});')
+
+
+def oui(s, pid, g):
+    s.j(f'tl.to("#{pid}-tete", {{ svgOrigin: "{PIVOTS["tete"]}", keyframes: [{{ rotation: 10, y: 4, duration: 0.1 }}, {{ rotation: 0, y: 0, duration: 0.12 }}] }}, {s.L(g)});')
+
+
+def saut(s, pid, g, h=34):
+    s.j(f'tl.to("#{pid}-corps", {{ keyframes: [{{ y: -{h}, duration: 0.13, ease: "power2.out" }}, {{ y: 0, duration: 0.15, ease: "power2.in" }}] }}, {s.L(g)});')
+
+
+def tremble(s, pid, g, d=0.8):
+    n = round(d / 0.05)
+    s.j(f'tl.to("#{pid}-corps", {{ x: 5, duration: 0.05, repeat: {n}, yoyo: true, ease: "none" }}, {s.L(g)});')
+    s.j(f'tl.to("#{pid}-corps", {{ x: 0, duration: 0.05 }}, {s.L(g + d + 0.06)});')
+
+
+def panique(s, pid, g, d=1.0):
+    n = round(d / 0.16)
+    kf_g = ", ".join(f'{{ rotation: {150 if k % 2 == 0 else 95}, duration: 0.08 }}' for k in range(n))
+    kf_d = ", ".join(f'{{ rotation: {-95 if k % 2 == 0 else -150}, duration: 0.08 }}' for k in range(n))
+    s.j(f'tl.to("#{pid}-bg", {{ svgOrigin: "{PIVOTS["bg"]}", keyframes: [{kf_g}] }}, {s.L(g)});')
+    s.j(f'tl.to("#{pid}-bd", {{ svgOrigin: "{PIVOTS["bd"]}", keyframes: [{kf_d}] }}, {s.L(g)});')
+    tremble(s, pid, g, d)
+
+
+def gratte(s, pid, g):
+    pose(s, pid, g, 0.16, bd=-158, tete=-8)
+    s.j(f'tl.to("#{pid}-bd", {{ rotation: -146, svgOrigin: "{PIVOTS["bd"]}", duration: 0.09, repeat: 5, yoyo: true }}, {s.L(g + 0.18)});')
+
+
+def haussement(s, pid, g):
+    pose(s, pid, g, 0.16, "back.out(2)", bg=48, bd=-48, tete=8)
+    saut(s, pid, g, 14)
+
+
+def vertiges(s, pid, g, cx, y, d=1.6):
+    """Petits points qui tournent au-dessus de la tête (perdu, sonné)."""
+    vid = f"{pid}-vertige"
+    pts = "".join(f'<circle cx="{round(40 + 34 * __import__("math").cos(k * 1.2566), 1)}" cy="{round(14 + 10 * __import__("math").sin(k * 1.2566), 1)}" r="5" fill="#DCFC1C" />' for k in range(5))
+    cam(s, f'<svg id="{vid}" style="position: absolute; left: {cx - 40}px; top: {y}px; width: 80px; height: 28px; overflow: visible; opacity: 0" viewBox="0 0 80 28">{pts}</svg>')
+    s.j(f'tl.fromTo("#{vid}", {{ opacity: 0 }}, {{ opacity: 1, duration: 0.1 }}, {s.L(g)});')
+    s.j(f'tl.fromTo("#{vid}", {{ rotation: 0 }}, {{ rotation: 360, svgOrigin: "40 14", duration: 0.8, repeat: {max(1, round(d / 0.8) - 1)}, ease: "none" }}, {s.L(g)});')
+    s.j(f'tl.to("#{vid}", {{ opacity: 0, duration: 0.15 }}, {s.L(g + d)});')
+
+
+def dort(s, pid, g, cx, y):
+    s.j(f'tl.to("#{pid}", {{ rotation: -90, transformOrigin: "50% 92%", duration: 0.35, ease: "power2.inOut" }}, {s.L(g)});')
+    zid = f"{pid}-z"
+    cam(s, f'<div id="{zid}" class="pj-serif" style="left: {cx}px; top: {y}px; font-size: 64px; color: #ECECE8">'
+           '<span style="opacity: 1">z</span> <span style="opacity: 1; font-size: 84px">Z</span></div>')
+    s.j(f'tl.fromTo("#{zid}", {{ opacity: 0, y: 30 }}, {{ opacity: 1, y: -30, duration: 0.6, ease: "power1.out" }}, {s.L(g + 0.3)});')
 
 
 def projecteur(cx, sol_y=815, h=900, op=1.0):
@@ -89,6 +190,12 @@ class Scene:
     def croix(self, sel, g):
         self.j(f'tl.fromTo("{sel}", {{ opacity: 0, scale: 1.5 }}, {{ opacity: 1, scale: 1, duration: 0.14, ease: "power4.out" }}, {self.L(g)});')
 
+    def recadre(self, g, px, py, sc, d=0.24):
+        """Recadrage rapide (filé) : amène le point (px, py) au centre, grossi sc fois."""
+        x, y = round(-(px - 960) * sc), round(-(py - 540) * sc)
+        self.j(f'tl.to("#{self.id}-cadre", {{ x: {x}, y: {y}, scale: {sc}, duration: {d}, ease: "power3.inOut" }}, {self.L(g)});')
+        self.j(f'tl.to("#{self.id}-cadre", {{ keyframes: [{{ filter: "blur(10px)", duration: {round(d / 2, 3)} }}, {{ filter: "blur(0px)", duration: {round(d / 2, 3)} }}] }}, {self.L(g)});')
+
     def eclair(self, g):
         self.add(f'<div id="{self.id}-eclair" class="pj-flash"></div>')
         self.j(f'tl.set("#{self.id}-eclair", {{ opacity: 1 }}, {self.L(g)});')
@@ -136,8 +243,10 @@ class Scene:
   <div id="root" data-composition-id="{self.id}" data-width="1920" data-height="1080">
     <div class="pj-scene">
       <div id="{self.id}-cam" class="pj-cam">
+        <div id="{self.id}-cadre" class="pj-cadre">
         <div class="pj-horizon" style="top: 760px"></div>
         {corps}
+        </div>
       </div>
       {hors_cam}
     </div>
@@ -211,6 +320,12 @@ s.compteur("#s1-n", t_mot(12), 0, 40, 0.7)
 s.apparait("#s1-jauge", t_mot(19))
 s.j('tl.set(".s1-seg:first-child", { backgroundColor: "#DCFC1C" }, %s);' % s.L(t_mot(21)))
 s.compteur("#s1-pct", t_mot(19), 0, 3, 0.8, "pct")
+pose(s, "s1-toi", 0.0, 0.01, tete=18)
+pose(s, "s1-toi", t_mot(6), 0.12, tete=0); saut(s, "s1-toi", t_mot(6), 22)
+s.recadre(t_mot(12), 930, 560, 1.45)
+s.recadre(t_mot(16), 960, 540, 1)
+pose(s, "s1-toi", t_mot(20), 0.16, "back.out(2)", bg=150, bd=-150, tete=-6)
+vertiges(s, "s1-toi", t_mot(20) + 0.1, 560, 360, 0.9)
 s.ecrire()
 
 # ---------------------------------------------------------------- S2
@@ -239,6 +354,14 @@ s.compteur("#s2-h", t_mot(34), 23 * 60 + 17, 23 * 60 + 27, 0.9, "hhmm")
 s.j('tl.to(".s2-l2:nth-child(odd)", { opacity: 0.08, duration: 0.25, stagger: 0.05 }, %s);' % s.L(t_mot(41)))
 s.claque("#s2-oublie", t_mot(41))
 s.apparait("#s2-moitie", t_mot(43))
+panique(s, "s2-toi", t_mot(23), 1.0)
+pose(s, "s2-toi", t_mot(27), 0.18, bg=0, bd=-78, tete=14)
+pose(s, "s2-toi", t_mot(33), 0.15, bd=-62)
+s.recadre(t_mot(34), 560, 470, 1.4)
+s.recadre(t_mot(40), 960, 540, 1)
+pose(s, "s2-toi", t_mot(41), 0.14, "back.out(2)", bg=150, bd=-150, tete=-10)
+s.j('tl.to("#s2-toi-corps", { y: 10, duration: 0.15 }, %s);' % s.L(t_mot(41)))
+vertiges(s, "s2-toi", t_mot(41) + 0.1, 560, 360, 1.6)
 s.ecrire()
 
 # ---------------------------------------------------------------- S3
@@ -259,6 +382,14 @@ s.croix("#s3-x", t_mot(66))
 s.j('tl.to("#s3-msg", { opacity: 0.35, duration: 0.2 }, %s);' % s.L(t_mot(66) + 0.1))
 s.claque("#s3-mission", t_mot(71))
 s.j('tl.to("#s3-obj", { opacity: 1, duration: 0.12 }, %s);' % s.L(t_mot(72)))
+s.j('tl.set("#s3-toi", { x: -300 }, 0);')
+marche(s, "s3-toi", 15.5, t_mot(53) + 0.3, 300)
+pose(s, "s3-toi", t_mot(54), 0.18, "back.out(2)", bd=-100)
+s.recadre(t_mot(62), 1450, 400, 1.35)
+non(s, "s3-toi", t_mot(66))
+s.recadre(t_mot(69), 960, 540, 1)
+pose(s, "s3-toi", t_mot(71), 0.16, "back.out(2)", bd=-168, bg=0)
+saut(s, "s3-toi", t_mot(71))
 s.ecrire()
 
 # ---------------------------------------------------------------- S4
@@ -275,6 +406,11 @@ s.add(hud_g("s4-hud", "Prompt 01", "La mission"))
 s.add(etapes(s, "s4-c", ["Consignes : 0/5", "Consignes : 1/5", "Consignes : 2/5", "Consignes : 3/5", "Consignes : 4/5", "Consignes : 5/5"],
              [t_mot(97), t_mot(102), t_mot(107), t_mot(113), t_mot(116)], "right: 113px; top: 107px; width: 480px"))
 s.apparait("#s4-pj", t_mot(77))
+tape(s, "s4-toi", 25.4, 39.2)
+s.recadre(t_mot(96) + 0.4, 1185, 430, 1.32)
+s.recadre(t_mot(108), 960, 540, 1)
+s.recadre(t_mot(113) - 0.1, 1185, 500, 1.32)
+s.recadre(t_mot(118), 960, 540, 1)
 s.ecrire()
 
 # ---------------------------------------------------------------- S5
@@ -310,6 +446,8 @@ s.apparait("#s5-droite", t_mot(138))
 s.claque("#s5-diff", t_mot(143))
 s.j('tl.to(["#s5-gauche", "#s5-droite", "#s5-diff"], { opacity: 0, x: -200, duration: 0.2, ease: "power3.in" }, %s);' % s.L(t_mot(147)))
 s.choc("#s5-etape", t_mot(150))
+pose(s, "s5-toi", t_mot(125), 0.18, "back.out(2)", bd=-112)
+saut(s, "s5-toi", t_mot(131), 18)
 s.ecrire()
 
 # ---------------------------------------------------------------- S6
@@ -325,6 +463,11 @@ cam(s, '<div id="s6-chat" class="pj-chat" style="left: 560px; top: 210px; width:
 s.add(hud_g("s6-hud", "Prompt 02", "Le professeur"))
 s.add(etapes(s, "s6-c", ["Règles : 0/4", "Règles : 1/4", "Règles : 2/4", "Règles : 3/4", "Règles : 4/4"],
              [t_mot(161), t_mot(169), t_mot(184), t_mot(193)], "right: 113px; top: 107px; width: 420px"))
+tape(s, "s6-toi", 51.5, 63.5)
+s.recadre(t_mot(161) - 0.1, 1185, 430, 1.32)
+s.recadre(t_mot(170), 960, 540, 1)
+s.recadre(t_mot(184) - 0.1, 1185, 470, 1.32)
+s.recadre(t_mot(194), 960, 540, 1)
 s.ecrire()
 
 # ---------------------------------------------------------------- S7
@@ -365,6 +508,10 @@ s.j('tl.set(["#s7-p0", "#s7-p1"], { visibility: "hidden" }, %s);' % s.L(t_mot(22
 s.choc("#s7-titre .pj-impact", t_mot(222))
 s.j('tl.to("#s7-titre", { y: -60, duration: 0.3, ease: "power3.inOut" }, %s);' % s.L(t_mot(224)))
 s.apparait("#s7-source", t_mot(224))
+pose(s, "s7-toi0", t_mot(201), 0.15, bg=-24, bd=24, tete=16)
+pose(s, "s7-toi1", t_mot(210), 0.16, bd=-150, tete=-12)
+pose(s, "s7-toi1", t_mot(217), 0.16, "back.out(2)", bd=-172, tete=0)
+saut(s, "s7-toi1", t_mot(217))
 s.ecrire()
 
 # ---------------------------------------------------------------- S8
@@ -394,6 +541,11 @@ s.j('tl.fromTo("#s8-chrono", { opacity: 0 }, { opacity: 1, duration: 0.12, immed
 s.compteur("#s8-t", t_mot(252), 900, 893, 81.45 - t_mot(252) - 0.2, "mmss")
 s.j('tl.fromTo("#s8-notes", { opacity: 0, x: 80 }, { opacity: 1, x: 0, duration: 0.18, ease: "power3.out", immediateRender: false }, %s);' % s.L(t_mot(253)))
 s.croix("#s8-x", t_mot(255))
+pose(s, "s8-toi", t_mot(236), 0.16, "back.out(2)", bd=-112)
+gratte(s, "s8-toi", t_mot(244))
+pose(s, "s8-toi", t_mot(250), 0.12, tete=0)
+marche(s, "s8-toi", t_mot(250), t_mot(252), 140)
+non(s, "s8-toi", t_mot(255))
 s.ecrire()
 
 # ---------------------------------------------------------------- S9
@@ -426,6 +578,14 @@ for k, i in enumerate((276, 278, 281)):
     s.j(f'tl.set("#s9-c{k}", {{ backgroundColor: "#DCFC1C", borderColor: "#DCFC1C" }}, {s.L(t_mot(i) + 0.1)});')
 s.j('tl.fromTo("#s9-doc", { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: 0.2, ease: "power3.out", immediateRender: false }, %s);' % s.L(t_mot(285)))
 s.claque("#s9-equerres", t_mot(286), 1.2)
+cam(s, projecteur(1760, op=0.8))
+cam(s, toi("s9-toi", 1760, 800, 300))
+s.apparait("#s9-toi", t_mot(263))
+non(s, "s9-toi", t_mot(272))
+for k, i in enumerate((276, 278, 281)):
+    pose(s, "s9-toi", t_mot(i), 0.14, "back.out(2)", bg=100 + 15 * k)
+    saut(s, "s9-toi", t_mot(i), 12)
+pose(s, "s9-toi", t_mot(285), 0.16, "back.out(2)", bg=150)
 s.ecrire()
 
 # ---------------------------------------------------------------- S10
@@ -457,6 +617,14 @@ s.croix("#s10-x", t_mot(315))
 s.j('tl.to("#s10-fiches", { opacity: 0, duration: 0.15 }, %s);' % s.L(t_mot(318)))
 s.choc("#s10-a", t_mot(320))
 s.choc("#s10-d", t_mot(322))
+cam(s, projecteur(1720, op=0.8))
+cam(s, toi("s10-toi", 1720, 800, 300))
+pose(s, "s10-toi", t_mot(294), 0.16, "back.out(2)", bg=96)
+pose(s, "s10-toi", t_mot(306), 0.14, bg=0)
+tape(s, "s10-toi", t_mot(313), t_mot(315), 0.07)
+pose(s, "s10-toi", t_mot(315) + 0.25, 0.2, tete=22)
+pose(s, "s10-toi", t_mot(320), 0.15, "back.out(2)", bd=-165, tete=0)
+dort(s, "s10-toi", t_mot(322), 1600, 560)
 s.ecrire()
 
 # ---------------------------------------------------------------- S11
@@ -481,6 +649,12 @@ s.j('tl.to("#s11-place", { opacity: 0, duration: 0.12 }, %s);' % s.L(t_mot(336))
 s.choc("#s11-prof-mot", t_mot(338))
 s.claque("#s11-eq", t_mot(338), 1.15)
 s.j('tl.fromTo(".s11-b", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.16, stagger: 0.28, ease: "back.out(2)" }, %s);' % s.L(t_mot(342)))
+non(s, "s11-toi", t_mot(330))
+pose(s, "s11-toi", t_mot(336), 0.16, "back.out(2)", bd=-178)
+saut(s, "s11-toi", t_mot(338), 16)
+pose(s, "s11-toi", t_mot(342), 0.15, bd=0, tete=-12)
+pose(s, "s11-toi", t_mot(342) + 0.56, 0.15, tete=12)
+pose(s, "s11-toi", t_mot(342) + 1.1, 0.15, tete=0)
 s.ecrire()
 
 # ---------------------------------------------------------------- S12
@@ -503,5 +677,9 @@ s.glisse("#s12-a", t_mot(363), -200)
 s.glisse("#s12-b", t_mot(368), 200)
 s.claque("#s12-q", t_mot(374))
 s.j('tl.to("#s12-com", { opacity: 1, duration: 0.15 }, %s);' % s.L(t_mot(374)))
+pose(s, "s12-toi", t_mot(352), 0.16, "back.out(2)", bd=-90)
+pose(s, "s12-toi", t_mot(363), 0.16, "back.out(2)", bd=0, bg=100)
+pose(s, "s12-toi", t_mot(368), 0.16, "back.out(2)", bg=0, bd=-100)
+haussement(s, "s12-toi", t_mot(374))
 s.ecrire()
 print("12 scènes écrites")
