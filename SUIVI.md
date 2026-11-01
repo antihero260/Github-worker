@@ -17,7 +17,7 @@ Dernière mise à jour : 1er novembre 2026, 16 h 25 UTC.
 1. Recueillir les retours de l'utilisateur sur la version 3
    (`videos/examen-demain-vertical/renders/reviser-en-une-nuit-avec-chatgpt.mp4`, non versionné : 1080×1920, 120 s,
    −15,5 LUFS, crête −1,6 dBFS).
-2. Corriger et corriger (en suivant `hyperframes-style/PROCESSUS-VIDEO.md`).
+2. Corriger d'après ses retours (en suivant `hyperframes-style/PROCESSUS-VIDEO.md`).
 3. Mettre à jour `hyperframes-style/frame.md`, `ANALYSE.md` et les modèles avec ce qui a été appris sur cette
    vidéo (personnage articulé, recadrages, niveaux de musique) : les modèles n'ont pas encore ces améliorations.
 4. Rendre l'installation permanente : l'utilisateur doit fusionner la PR #2 puis ajouter
