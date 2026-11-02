@@ -948,9 +948,9 @@ son(t_mot(190), "riser-trailer", 0.3, "montée vers catégorie 3")
 son(t_mot(237), "riser-tech", 0.3, "montée vers catégorie 4")
 
 MUSIQUES = [  # (début, fichier, durée, volume) — fichiers à −16,9 LUFS ; 0,63 ≈ −21 LUFS (≈ 6 dB sous la voix, réglage validé)
-    (0, "partie-1-cyberpunk-city", 50.2, 0.63),
-    (49.4, "partie-2-pop-track", 41.6, 0.63),
-    (90.4, "partie-3-infectious-groove", 29.8, 0.63),
+    (0, "partie-1-deep-urban", 50.2, 0.63),
+    (49.4, "partie-2-cat-walk", 41.6, 0.63),
+    (90.4, "partie-3-trapanomics", 29.8, 0.63),
 ]
 MASQUES = []
 

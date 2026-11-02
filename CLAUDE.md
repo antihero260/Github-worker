@@ -23,6 +23,10 @@ production de vidéos avec HyperFrames (`hyperframes-style/`, `videos/`, `script
   clics, pops, apparitions… (vidéo 3 : environ 150 sons pour 96 s).
 - **Beaucoup d'illustrations, surtout de vraies vidéos** (demande après la vidéo 3) : vidéo 4 = 21 vidéos Mixkit pour
   130 s, plus logos et interfaces animées (fenêtre d'application, pointeur de souris, workflow, conversations).
+- **Musiques à la mode et libres de droits** (retour sur la vidéo 5 : « les musiques ne sont pas du tout bonnes ») :
+  prendre les morceaux **les plus téléchargés** de Mixkit et des styles actuels (hip-hop urbain, trap, house), pas des
+  morceaux choisis seulement d'après leur nom. NCS est tendance mais impose un crédit en description : à proposer
+  seulement si l'utilisateur l'accepte.
 - **Sons et images téléchargés sur Internet** quand c'est possible (demande de l'utilisateur) : Mixkit (gratuit,
   sans crédit) pour musiques, bruitages et vraies vidéos ; logos officiels avec `media-use resolve --type logo`.
 - **Tout vérifier et corriger avant de lancer un rendu** : `hyperframes check` sans erreur, puis regarder les
