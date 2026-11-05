@@ -8,12 +8,10 @@
 | `sp-cookies` | Service Public Entreprendre, « Gérer les cookies et autres traceurs sur le site internet d'une entreprise » (F31228), avec sa vraie bannière de cookies |
 | `cnil-rgpd` | CNIL, « RGPD : de quoi parle-t-on ? » |
 | `cnil-durees` | CNIL, « Les durées de conservation des données » |
-| `cnil-cookies` | CNIL, « Site web, cookies et autres traceurs » |
 | `cnil-securite` | CNIL, « Sécurité : sécuriser les sites web » |
 | `ue-droit-auteur` | Your Europe (Union européenne), « Droit d'auteur » |
 
-Les captures fixes des mêmes pages sont dans `../img/` (`*-haut.jpg`, `*-bas.jpg`) ; `sp-mentions-bas.jpg` sert pour
-la ligne « En cas de vente en ligne : afficher les conditions générales de vente (CGV) ».
+La capture fixe `../img/sp-mentions-bas.jpg` (même page que `sp-mentions`) sert pour la ligne « En cas de vente en ligne : afficher les conditions générales de vente (CGV) ».
 
 ## Vidéos Mixkit (licence gratuite, crédit non obligatoire)
 
