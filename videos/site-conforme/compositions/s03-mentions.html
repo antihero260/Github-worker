@@ -1,0 +1,63 @@
+<!-- Scène 3 · « Premièrement, les mentions légales : elles permettent d'identifier le propriétaire du site et son hébergeur. » (8.86 → 14.78 s). Fichier écrit par un générateur, modifiable à la main. -->
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+    }
+
+  </style>
+  <div id="root" data-composition-id="s03-mentions" data-width="1920" data-height="1080">
+    <div class="pj-scene">
+      <div id="s03-mentions-cam" class="pj-cam">
+        <div id="s03-mentions-cadre" class="pj-cadre">
+        <div class="pj-horizon" style="top: 760px"></div>
+        <div id="s03-n" class="al-num" style="left: 113px; top: 150px; opacity: 0">01</div>
+        <div id="s03-titre" style="position: absolute; left: 300px; top: 170px; opacity: 0"><div class="al-titre" style="font-size: 110px">Mentions légales</div></div>
+        <div id="s03-page" class="pj-panneau" style="left: 113px; top: 360px; width: 760px; height: 428px; opacity: 0"><video id="s03-page-v" class="clip" src="assets/video/sp-mentions.mp4" data-start="0" data-duration="5.92" data-track-index="5" muted playsinline></video><div class="pj-equerres" style="left: -18px; top: -18px; right: -18px; bottom: -18px"><i></i><i></i><i></i><i></i></div><div id="s03-page-tag" class="pj-panneau-tag">service-public · la vraie page</div></div>
+        <div id="s03-scan" class="al-scan" style="left: 113px; top: 360px; width: 760px; opacity: 0"></div>
+        <div id="s03-proprio" class="al-carte" style="left: 1080px; top: 330px; width: 720px; height: 220px; opacity: 0"><div class="al-carte-tete">Propriétaire du site</div><div class="al-carte-corps"><div class="al-id"><svg viewBox="0 0 100 100" width="110" height="110"><circle cx="50" cy="36" r="20" fill="#ECECE8" /><rect x="18" y="62" width="64" height="34" rx="16" fill="#ECECE8" /></svg><div><p>Nom : <b style="width: 230px"></b></p><p>Adresse : <b style="width: 170px"></b></p><p>Contact : <b style="width: 200px"></b></p></div></div></div></div>
+        <div id="s03-heb" class="al-carte" style="left: 1080px; top: 580px; width: 720px; height: 220px; opacity: 0"><div class="al-carte-tete">Hébergeur</div><div class="al-carte-corps"><div class="al-id"><div class="al-mini"><video id="s03-dc-v" class="clip" src="assets/video/data-center.mp4" data-start="0" data-duration="5.92" data-track-index="5" muted playsinline style="position: absolute; left: 0; top: 0; width: 100%; height: 100%; object-fit: cover; "></video></div><div><p>Hébergeur : <b style="width: 200px"></b></p><p>Adresse : <b style="width: 170px"></b></p><p>Téléphone : <b style="width: 150px"></b></p></div></div></div></div>
+        <svg id="s03-toi" class="pj-perso pj-toi-perso" viewBox="-30 -20 160 290" style="left: 903px; top: 587px; width: 127px; height: 230px"><g id="s03-toi-vie"><g id="s03-toi-corps"><g id="s03-toi-jg"><g class="c"><rect x="24" y="136" width="24" height="112" rx="8" /></g><g class="p"><rect x="24" y="136" width="24" height="112" rx="8" /></g></g><g id="s03-toi-jd"><g class="c"><rect x="52" y="136" width="24" height="112" rx="8" /></g><g class="p"><rect x="52" y="136" width="24" height="112" rx="8" /></g></g><g id="s03-toi-tronc"><g class="c"><rect x="22" y="52" width="56" height="94" rx="12" /></g><g class="p"><rect x="22" y="52" width="56" height="94" rx="12" /></g></g><g id="s03-toi-bg"><g class="c"><rect x="2" y="54" width="18" height="86" rx="9" /></g><g class="p"><rect x="2" y="54" width="18" height="86" rx="9" /></g></g><g id="s03-toi-bd"><g class="c"><rect x="80" y="54" width="18" height="86" rx="9" /></g><g class="p"><rect x="80" y="54" width="18" height="86" rx="9" /></g></g><g id="s03-toi-tete"><g class="c"><circle cx="50" cy="24" r="22" /></g><g class="p"><circle cx="50" cy="24" r="22" /></g></g></g></g></svg>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#s03-mentions-cam", { scale: 1 }, { scale: 1.05, duration: 5.72, ease: "none" }, 0);
+    tl.fromTo("#s03-mentions-cam", { filter: "blur(14px)" }, { filter: "blur(0px)", duration: 0.16, ease: "power2.out" }, 0);
+    tl.fromTo("#s03-n", { opacity: 0, x: 690, y: 70, scale: 3.4 }, { opacity: 1, x: 690, y: 70, scale: 2.2, duration: 0.16, ease: "power4.out" }, 0.12);
+    tl.to("#s03-n", { x: 0, y: 0, scale: 1, duration: 0.3, ease: "power3.inOut" }, 0.82);
+    tl.fromTo("#s03-mentions-cam", { x: 0, y: 0 }, { keyframes: [{ x: -12, y: 6, duration: 0.04 }, { x: 12, y: -6, duration: 0.04 }, { x: -6, y: 4, duration: 0.04 }, { x: 0, y: 0, duration: 0.05 }], immediateRender: false }, 0.12);
+    tl.fromTo("#s03-titre", { opacity: 0, x: -260, skewX: -18 }, { opacity: 1, x: 0, skewX: 0, duration: 0.22, ease: "power4.out" }, 1.12);
+    tl.fromTo("#s03-page", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.18, ease: "power3.out" }, 1.65);
+    tl.to("#s03-mentions-cadre", { x: 607, y: -44, scale: 1.3, duration: 0.26, ease: "power3.inOut" }, 2.19);
+    tl.to("#s03-mentions-cadre", { keyframes: [{ filter: "blur(10px)", duration: 0.13 }, { filter: "blur(0px)", duration: 0.13 }] }, 2.19);
+    tl.fromTo("#s03-scan", { opacity: 1, y: 0 }, { opacity: 1, y: 428, duration: 0.7, ease: "power1.inOut", immediateRender: false }, 3.0);
+    tl.to("#s03-scan", { opacity: 0, duration: 0.1 }, 3.7);
+    tl.to("#s03-mentions-cadre", { x: 0, y: 0, scale: 1.0, duration: 0.26, ease: "power3.inOut" }, 3.67);
+    tl.to("#s03-mentions-cadre", { keyframes: [{ filter: "blur(10px)", duration: 0.13 }, { filter: "blur(0px)", duration: 0.13 }] }, 3.67);
+    tl.fromTo("#s03-proprio", { opacity: 0, scale: 1.4 }, { opacity: 1, scale: 1, duration: 0.18, ease: "back.out(2.2)" }, 3.82);
+    tl.to("#s03-mentions-cadre", { x: -600, y: 125, scale: 1.25, duration: 0.26, ease: "power3.inOut" }, 3.77);
+    tl.to("#s03-mentions-cadre", { keyframes: [{ filter: "blur(10px)", duration: 0.13 }, { filter: "blur(0px)", duration: 0.13 }] }, 3.77);
+    tl.fromTo("#s03-heb", { opacity: 0, scale: 1.4 }, { opacity: 1, scale: 1, duration: 0.18, ease: "back.out(2.2)" }, 5.08);
+    tl.to("#s03-mentions-cadre", { x: -600, y: -188, scale: 1.25, duration: 0.26, ease: "power3.inOut" }, 5.03);
+    tl.to("#s03-mentions-cadre", { keyframes: [{ filter: "blur(10px)", duration: 0.13 }, { filter: "blur(0px)", duration: 0.13 }] }, 5.03);
+    tl.fromTo("#s03-toi-vie", { y: 0 }, { y: -5, duration: 0.42, repeat: 12, yoyo: true, ease: "sine.inOut", immediateRender: false }, 0.0);
+    tl.to("#s03-toi-bg", { rotation: 110, svgOrigin: "11 62", duration: 0.16, ease: "back.out(2)" }, 1.85);
+    tl.to("#s03-toi-tete", { rotation: 8, svgOrigin: "50 50", duration: 0.16, ease: "back.out(2)" }, 1.85);
+    tl.to("#s03-toi-bg", { rotation: 0, svgOrigin: "11 62", duration: 0.16, ease: "back.out(2)" }, 3.82);
+    tl.to("#s03-toi-bd", { rotation: -110, svgOrigin: "89 62", duration: 0.16, ease: "back.out(2)" }, 3.82);
+    tl.to("#s03-toi-tete", { rotation: -8, svgOrigin: "50 50", duration: 0.16, ease: "back.out(2)" }, 3.82);
+    tl.to("#s03-toi-bd", { rotation: 0, svgOrigin: "89 62", duration: 0.12, ease: "power2.out" }, 5.38);
+    tl.to("#s03-toi-tete", { rotation: 0, svgOrigin: "50 50", duration: 0.12, ease: "power2.out" }, 5.38);
+    tl.to("#s03-toi-bg", { rotation: 165, svgOrigin: "11 62", duration: 0.14, ease: "back.out(2)" }, 5.53);
+    tl.to("#s03-toi-bd", { rotation: -165, svgOrigin: "89 62", duration: 0.14, ease: "back.out(2)" }, 5.53);
+    tl.to("#s03-toi-tete", { rotation: -8, svgOrigin: "50 50", duration: 0.14, ease: "back.out(2)" }, 5.53);
+    tl.to("#s03-toi-corps", { keyframes: [{ y: -40, duration: 0.13, ease: "power2.out" }, { y: 0, duration: 0.15, ease: "power2.in" }] }, 5.58);
+    tl.to("#s03-mentions-cam", { scale: 1.3, filter: "blur(14px)", duration: 0.2, ease: "power3.in" }, 5.72);
+    window.__timelines["s03-mentions"] = tl;
+  </script>
+</template>

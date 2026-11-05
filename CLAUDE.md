@@ -29,6 +29,8 @@ production de vidéos avec HyperFrames (`hyperframes-style/`, `videos/`, `script
   seulement si l'utilisateur l'accepte.
 - **Sons et images téléchargés sur Internet** quand c'est possible (demande de l'utilisateur) : Mixkit (gratuit,
   sans crédit) pour musiques, bruitages et vraies vidéos ; logos officiels avec `media-use resolve --type logo`.
+- **Hook visuel fort dès la première seconde** (retour sur la vidéo 6 : « un hook visuel est très important, captiver visuellement dès le début c'est fort ») : rafale ou mosaïque de vraies vidéos qui change sur chaque mot, gros bruitages.
+- Le style peut varier d'une vidéo à l'autre si l'utilisateur le demande (vidéo 7 : style « Alerte », voir `videos/site-conforme/README.md`), en gardant le format vertical, les personnages qui bougent et les recadrages.
 - **Tout vérifier et corriger avant de lancer un rendu** : `hyperframes check` sans erreur, puis regarder les
   images clés. Ne jamais lancer le rendu dans la même commande que le contrôle.
 - Mettre à jour `SUIVI.md` à chaque étape importante.

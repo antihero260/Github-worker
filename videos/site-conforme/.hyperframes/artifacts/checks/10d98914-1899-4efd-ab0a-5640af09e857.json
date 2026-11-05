@@ -1,0 +1,2898 @@
+{
+  "ok": true,
+  "strict": false,
+  "browserSkipped": false,
+  "lint": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 37,
+    "infoCount": 0,
+    "findings": [
+      {
+        "code": "nested_media_start_basis_ambiguous",
+        "severity": "warning",
+        "message": "<video id=\"s01-m1-0-v\"> has data-start=\"0.23\" inside a sub-composition. Nested media timing is local to its composition by default; a nonzero value can be confused with a legacy root-global timestamp.",
+        "selector": "#s01-m1-0-v",
+        "dataAttributes": {},
+        "sourceFile": "/home/user/Github-worker/videos/site-conforme/compositions/s01-publier.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Keep data-start=\"0.23\" if it is composition-local. If this is a legacy root-global timestamp, add data-hf-media-start-basis=\"global\"; otherwise convert it to local time by subtracting the host start."
+      },
+      {
+        "code": "nested_media_start_basis_ambiguous",
+        "severity": "warning",
+        "message": "<video id=\"s01-m1-1-v\"> has data-start=\"0.23\" inside a sub-composition. Nested media timing is local to its composition by default; a nonzero value can be confused with a legacy root-global timestamp.",
+        "selector": "#s01-m1-1-v",
+        "dataAttributes": {},
+        "sourceFile": "/home/user/Github-worker/videos/site-conforme/compositions/s01-publier.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Keep data-start=\"0.23\" if it is composition-local. If this is a legacy root-global timestamp, add data-hf-media-start-basis=\"global\"; otherwise convert it to local time by subtracting the host start."
+      },
+      {
+        "code": "nested_media_start_basis_ambiguous",
+        "severity": "warning",
+        "message": "<video id=\"s01-m2-0-v\"> has data-start=\"0.54\" inside a sub-composition. Nested media timing is local to its composition by default; a nonzero value can be confused with a legacy root-global timestamp.",
+        "selector": "#s01-m2-0-v",
+        "dataAttributes": {},
+        "sourceFile": "/home/user/Github-worker/videos/site-conforme/compositions/s01-publier.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Keep data-start=\"0.54\" if it is composition-local. If this is a legacy root-global timestamp, add data-hf-media-start-basis=\"global\"; otherwise convert it to local time by subtracting the host start."
+      },
+      {
+        "code": "nested_media_start_basis_ambiguous",
+        "severity": "warning",
+        "message": "<video id=\"s01-m2-1-v\"> has data-start=\"0.54\" inside a sub-composition. Nested media timing is local to its composition by default; a nonzero value can be confused with a legacy root-global timestamp.",
+        "selector": "#s01-m2-1-v",
+        "dataAttributes": {},
+        "sourceFile": "/home/user/Github-worker/videos/site-conforme/compositions/s01-publier.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Keep data-start=\"0.54\" if it is composition-local. If this is a legacy root-global timestamp, add data-hf-media-start-basis=\"global\"; otherwise convert it to local time by subtracting the host start."
+      },
+      {
+        "code": "nested_media_start_basis_ambiguous",
+        "severity": "warning",
+        "message": "<video id=\"s01-m2-2-v\"> has data-start=\"0.54\" inside a sub-composition. Nested media timing is local to its composition by default; a nonzero value can be confused with a legacy root-global timestamp.",
+        "selector": "#s01-m2-2-v",
+        "dataAttributes": {},
+        "sourceFile": "/home/user/Github-worker/videos/site-conforme/compositions/s01-publier.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Keep data-start=\"0.54\" if it is composition-local. If this is a legacy root-global timestamp, add data-hf-media-start-basis=\"global\"; otherwise convert it to local time by subtracting the host start."
+      },
+      {
+        "code": "nested_media_start_basis_ambiguous",
+        "severity": "warning",
+        "message": "<video id=\"s01-m2-3-v\"> has data-start=\"0.54\" inside a sub-composition. Nested media timing is local to its composition by default; a nonzero value can be confused with a legacy root-global timestamp.",
+        "selector": "#s01-m2-3-v",
+        "dataAttributes": {},
+        "sourceFile": "/home/user/Github-worker/videos/site-conforme/compositions/s01-publier.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Keep data-start=\"0.54\" if it is composition-local. If this is a legacy root-global timestamp, add data-hf-media-start-basis=\"global\"; otherwise convert it to local time by subtracting the host start."
+      },
+      {
+        "code": "nested_media_start_basis_ambiguous",
+        "severity": "warning",
+        "message": "<video id=\"s01-m3-0-v\"> has data-start=\"0.83\" inside a sub-composition. Nested media timing is local to its composition by default; a nonzero value can be confused with a legacy root-global timestamp.",
+        "selector": "#s01-m3-0-v",
+        "dataAttributes": {},
+        "sourceFile": "/home/user/Github-worker/videos/site-conforme/compositions/s01-publier.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Keep data-start=\"0.83\" if it is composition-local. If this is a legacy root-global timestamp, add data-hf-media-start-basis=\"global\"; otherwise convert it to local time by subtracting the host start."
+      },
+      {
+        "code": "nested_media_start_basis_ambiguous",
+        "severity": "warning",
+        "message": "<video id=\"s01-m3-1-v\"> has data-start=\"0.83\" inside a sub-composition. Nested media timing is local to its composition by default; a nonzero value can be confused with a legacy root-global timestamp.",
+        "selector": "#s01-m3-1-v",
+        "dataAttributes": {},
+        "sourceFile": "/home/user/Github-worker/videos/site-conforme/compositions/s01-publier.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Keep data-start=\"0.83\" if it is composition-local. If this is a legacy root-global timestamp, add data-hf-media-start-basis=\"global\"; otherwise convert it to local time by subtracting the host start."
+      },
+      {
+        "code": "nested_media_start_basis_ambiguous",
+        "severity": "warning",
+        "message": "<video id=\"s01-m3-2-v\"> has data-start=\"0.83\" inside a sub-composition. Nested media timing is local to its composition by default; a nonzero value can be confused with a legacy root-global timestamp.",
+        "selector": "#s01-m3-2-v",
+        "dataAttributes": {},
+        "sourceFile": "/home/user/Github-worker/videos/site-conforme/compositions/s01-publier.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Keep data-start=\"0.83\" if it is composition-local. If this is a legacy root-global timestamp, add data-hf-media-start-basis=\"global\"; otherwise convert it to local time by subtracting the host start."
+      },
+      {
+        "code": "nested_media_start_basis_ambiguous",
+        "severity": "warning",
+        "message": "<video id=\"s01-m3-3-v\"> has data-start=\"0.83\" inside a sub-composition. Nested media timing is local to its composition by default; a nonzero value can be confused with a legacy root-global timestamp.",
+        "selector": "#s01-m3-3-v",
+        "dataAttributes": {},
+        "sourceFile": "/home/user/Github-worker/videos/site-conforme/compositions/s01-publier.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Keep data-start=\"0.83\" if it is composition-local. If this is a legacy root-global timestamp, add data-hf-media-start-basis=\"global\"; otherwise convert it to local time by subtracting the host start."
+      },
+      {
+        "code": "nested_media_start_basis_ambiguous",
+        "severity": "warning",
+        "message": "<video id=\"s01-m3-4-v\"> has data-start=\"0.83\" inside a sub-composition. Nested media timing is local to its composition by default; a nonzero value can be confused with a legacy root-global timestamp.",
+        "selector": "#s01-m3-4-v",
+        "dataAttributes": {},
+        "sourceFile": "/home/user/Github-worker/videos/site-conforme/compositions/s01-publier.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Keep data-start=\"0.83\" if it is composition-local. If this is a legacy root-global timestamp, add data-hf-media-start-basis=\"global\"; otherwise convert it to local time by subtracting the host start."
+      },
+      {
+        "code": "nested_media_start_basis_ambiguous",
+        "severity": "warning",
+        "message": "<video id=\"s01-m3-5-v\"> has data-start=\"0.83\" inside a sub-composition. Nested media timing is local to its composition by default; a nonzero value can be confused with a legacy root-global timestamp.",
+        "selector": "#s01-m3-5-v",
+        "dataAttributes": {},
+        "sourceFile": "/home/user/Github-worker/videos/site-conforme/compositions/s01-publier.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Keep data-start=\"0.83\" if it is composition-local. If this is a legacy root-global timestamp, add data-hf-media-start-basis=\"global\"; otherwise convert it to local time by subtracting the host start."
+      },
+      {
+        "code": "nested_media_start_basis_ambiguous",
+        "severity": "warning",
+        "message": "<video id=\"s01-m3-6-v\"> has data-start=\"0.83\" inside a sub-composition. Nested media timing is local to its composition by default; a nonzero value can be confused with a legacy root-global timestamp.",
+        "selector": "#s01-m3-6-v",
+        "dataAttributes": {},
+        "sourceFile": "/home/user/Github-worker/videos/site-conforme/compositions/s01-publier.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Keep data-start=\"0.83\" if it is composition-local. If this is a legacy root-global timestamp, add data-hf-media-start-basis=\"global\"; otherwise convert it to local time by subtracting the host start."
+      },
+      {
+        "code": "nested_media_start_basis_ambiguous",
+        "severity": "warning",
+        "message": "<video id=\"s01-m3-7-v\"> has data-start=\"0.83\" inside a sub-composition. Nested media timing is local to its composition by default; a nonzero value can be confused with a legacy root-global timestamp.",
+        "selector": "#s01-m3-7-v",
+        "dataAttributes": {},
+        "sourceFile": "/home/user/Github-worker/videos/site-conforme/compositions/s01-publier.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Keep data-start=\"0.83\" if it is composition-local. If this is a legacy root-global timestamp, add data-hf-media-start-basis=\"global\"; otherwise convert it to local time by subtracting the host start."
+      },
+      {
+        "code": "nested_media_start_basis_ambiguous",
+        "severity": "warning",
+        "message": "<video id=\"s01-m3-8-v\"> has data-start=\"0.83\" inside a sub-composition. Nested media timing is local to its composition by default; a nonzero value can be confused with a legacy root-global timestamp.",
+        "selector": "#s01-m3-8-v",
+        "dataAttributes": {},
+        "sourceFile": "/home/user/Github-worker/videos/site-conforme/compositions/s01-publier.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Keep data-start=\"0.83\" if it is composition-local. If this is a legacy root-global timestamp, add data-hf-media-start-basis=\"global\"; otherwise convert it to local time by subtracting the host start."
+      },
+      {
+        "code": "nested_media_start_basis_ambiguous",
+        "severity": "warning",
+        "message": "<video id=\"s01-m4-0-v\"> has data-start=\"1.14\" inside a sub-composition. Nested media timing is local to its composition by default; a nonzero value can be confused with a legacy root-global timestamp.",
+        "selector": "#s01-m4-0-v",
+        "dataAttributes": {},
+        "sourceFile": "/home/user/Github-worker/videos/site-conforme/compositions/s01-publier.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Keep data-start=\"1.14\" if it is composition-local. If this is a legacy root-global timestamp, add data-hf-media-start-basis=\"global\"; otherwise convert it to local time by subtracting the host start."
+      },
+      {
+        "code": "nested_media_start_basis_ambiguous",
+        "severity": "warning",
+        "message": "<video id=\"s01-m4-1-v\"> has data-start=\"1.14\" inside a sub-composition. Nested media timing is local to its composition by default; a nonzero value can be confused with a legacy root-global timestamp.",
+        "selector": "#s01-m4-1-v",
+        "dataAttributes": {},
+        "sourceFile": "/home/user/Github-worker/videos/site-conforme/compositions/s01-publier.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Keep data-start=\"1.14\" if it is composition-local. If this is a legacy root-global timestamp, add data-hf-media-start-basis=\"global\"; otherwise convert it to local time by subtracting the host start."
+      },
+      {
+        "code": "nested_media_start_basis_ambiguous",
+        "severity": "warning",
+        "message": "<video id=\"s01-m4-2-v\"> has data-start=\"1.14\" inside a sub-composition. Nested media timing is local to its composition by default; a nonzero value can be confused with a legacy root-global timestamp.",
+        "selector": "#s01-m4-2-v",
+        "dataAttributes": {},
+        "sourceFile": "/home/user/Github-worker/videos/site-conforme/compositions/s01-publier.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Keep data-start=\"1.14\" if it is composition-local. If this is a legacy root-global timestamp, add data-hf-media-start-basis=\"global\"; otherwise convert it to local time by subtracting the host start."
+      },
+      {
+        "code": "nested_media_start_basis_ambiguous",
+        "severity": "warning",
+        "message": "<video id=\"s01-m4-3-v\"> has data-start=\"1.14\" inside a sub-composition. Nested media timing is local to its composition by default; a nonzero value can be confused with a legacy root-global timestamp.",
+        "selector": "#s01-m4-3-v",
+        "dataAttributes": {},
+        "sourceFile": "/home/user/Github-worker/videos/site-conforme/compositions/s01-publier.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Keep data-start=\"1.14\" if it is composition-local. If this is a legacy root-global timestamp, add data-hf-media-start-basis=\"global\"; otherwise convert it to local time by subtracting the host start."
+      },
+      {
+        "code": "nested_media_start_basis_ambiguous",
+        "severity": "warning",
+        "message": "<video id=\"s01-m4-4-v\"> has data-start=\"1.14\" inside a sub-composition. Nested media timing is local to its composition by default; a nonzero value can be confused with a legacy root-global timestamp.",
+        "selector": "#s01-m4-4-v",
+        "dataAttributes": {},
+        "sourceFile": "/home/user/Github-worker/videos/site-conforme/compositions/s01-publier.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Keep data-start=\"1.14\" if it is composition-local. If this is a legacy root-global timestamp, add data-hf-media-start-basis=\"global\"; otherwise convert it to local time by subtracting the host start."
+      },
+      {
+        "code": "nested_media_start_basis_ambiguous",
+        "severity": "warning",
+        "message": "<video id=\"s01-m4-5-v\"> has data-start=\"1.14\" inside a sub-composition. Nested media timing is local to its composition by default; a nonzero value can be confused with a legacy root-global timestamp.",
+        "selector": "#s01-m4-5-v",
+        "dataAttributes": {},
+        "sourceFile": "/home/user/Github-worker/videos/site-conforme/compositions/s01-publier.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Keep data-start=\"1.14\" if it is composition-local. If this is a legacy root-global timestamp, add data-hf-media-start-basis=\"global\"; otherwise convert it to local time by subtracting the host start."
+      },
+      {
+        "code": "nested_media_start_basis_ambiguous",
+        "severity": "warning",
+        "message": "<video id=\"s01-m4-6-v\"> has data-start=\"1.14\" inside a sub-composition. Nested media timing is local to its composition by default; a nonzero value can be confused with a legacy root-global timestamp.",
+        "selector": "#s01-m4-6-v",
+        "dataAttributes": {},
+        "sourceFile": "/home/user/Github-worker/videos/site-conforme/compositions/s01-publier.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Keep data-start=\"1.14\" if it is composition-local. If this is a legacy root-global timestamp, add data-hf-media-start-basis=\"global\"; otherwise convert it to local time by subtracting the host start."
+      },
+      {
+        "code": "nested_media_start_basis_ambiguous",
+        "severity": "warning",
+        "message": "<video id=\"s01-m4-7-v\"> has data-start=\"1.14\" inside a sub-composition. Nested media timing is local to its composition by default; a nonzero value can be confused with a legacy root-global timestamp.",
+        "selector": "#s01-m4-7-v",
+        "dataAttributes": {},
+        "sourceFile": "/home/user/Github-worker/videos/site-conforme/compositions/s01-publier.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Keep data-start=\"1.14\" if it is composition-local. If this is a legacy root-global timestamp, add data-hf-media-start-basis=\"global\"; otherwise convert it to local time by subtracting the host start."
+      },
+      {
+        "code": "nested_media_start_basis_ambiguous",
+        "severity": "warning",
+        "message": "<video id=\"s01-m4-8-v\"> has data-start=\"1.14\" inside a sub-composition. Nested media timing is local to its composition by default; a nonzero value can be confused with a legacy root-global timestamp.",
+        "selector": "#s01-m4-8-v",
+        "dataAttributes": {},
+        "sourceFile": "/home/user/Github-worker/videos/site-conforme/compositions/s01-publier.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Keep data-start=\"1.14\" if it is composition-local. If this is a legacy root-global timestamp, add data-hf-media-start-basis=\"global\"; otherwise convert it to local time by subtracting the host start."
+      },
+      {
+        "code": "nested_media_start_basis_ambiguous",
+        "severity": "warning",
+        "message": "<video id=\"s01-m4-9-v\"> has data-start=\"1.14\" inside a sub-composition. Nested media timing is local to its composition by default; a nonzero value can be confused with a legacy root-global timestamp.",
+        "selector": "#s01-m4-9-v",
+        "dataAttributes": {},
+        "sourceFile": "/home/user/Github-worker/videos/site-conforme/compositions/s01-publier.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Keep data-start=\"1.14\" if it is composition-local. If this is a legacy root-global timestamp, add data-hf-media-start-basis=\"global\"; otherwise convert it to local time by subtracting the host start."
+      },
+      {
+        "code": "nested_media_start_basis_ambiguous",
+        "severity": "warning",
+        "message": "<video id=\"s01-m4-10-v\"> has data-start=\"1.14\" inside a sub-composition. Nested media timing is local to its composition by default; a nonzero value can be confused with a legacy root-global timestamp.",
+        "selector": "#s01-m4-10-v",
+        "dataAttributes": {},
+        "sourceFile": "/home/user/Github-worker/videos/site-conforme/compositions/s01-publier.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Keep data-start=\"1.14\" if it is composition-local. If this is a legacy root-global timestamp, add data-hf-media-start-basis=\"global\"; otherwise convert it to local time by subtracting the host start."
+      },
+      {
+        "code": "nested_media_start_basis_ambiguous",
+        "severity": "warning",
+        "message": "<video id=\"s01-m4-11-v\"> has data-start=\"1.14\" inside a sub-composition. Nested media timing is local to its composition by default; a nonzero value can be confused with a legacy root-global timestamp.",
+        "selector": "#s01-m4-11-v",
+        "dataAttributes": {},
+        "sourceFile": "/home/user/Github-worker/videos/site-conforme/compositions/s01-publier.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Keep data-start=\"1.14\" if it is composition-local. If this is a legacy root-global timestamp, add data-hf-media-start-basis=\"global\"; otherwise convert it to local time by subtracting the host start."
+      },
+      {
+        "code": "nested_media_start_basis_ambiguous",
+        "severity": "warning",
+        "message": "<video id=\"s01-m4-12-v\"> has data-start=\"1.14\" inside a sub-composition. Nested media timing is local to its composition by default; a nonzero value can be confused with a legacy root-global timestamp.",
+        "selector": "#s01-m4-12-v",
+        "dataAttributes": {},
+        "sourceFile": "/home/user/Github-worker/videos/site-conforme/compositions/s01-publier.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Keep data-start=\"1.14\" if it is composition-local. If this is a legacy root-global timestamp, add data-hf-media-start-basis=\"global\"; otherwise convert it to local time by subtracting the host start."
+      },
+      {
+        "code": "nested_media_start_basis_ambiguous",
+        "severity": "warning",
+        "message": "<video id=\"s01-m4-13-v\"> has data-start=\"1.14\" inside a sub-composition. Nested media timing is local to its composition by default; a nonzero value can be confused with a legacy root-global timestamp.",
+        "selector": "#s01-m4-13-v",
+        "dataAttributes": {},
+        "sourceFile": "/home/user/Github-worker/videos/site-conforme/compositions/s01-publier.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Keep data-start=\"1.14\" if it is composition-local. If this is a legacy root-global timestamp, add data-hf-media-start-basis=\"global\"; otherwise convert it to local time by subtracting the host start."
+      },
+      {
+        "code": "nested_media_start_basis_ambiguous",
+        "severity": "warning",
+        "message": "<video id=\"s01-m4-14-v\"> has data-start=\"1.14\" inside a sub-composition. Nested media timing is local to its composition by default; a nonzero value can be confused with a legacy root-global timestamp.",
+        "selector": "#s01-m4-14-v",
+        "dataAttributes": {},
+        "sourceFile": "/home/user/Github-worker/videos/site-conforme/compositions/s01-publier.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Keep data-start=\"1.14\" if it is composition-local. If this is a legacy root-global timestamp, add data-hf-media-start-basis=\"global\"; otherwise convert it to local time by subtracting the host start."
+      },
+      {
+        "code": "nested_media_start_basis_ambiguous",
+        "severity": "warning",
+        "message": "<video id=\"s01-m4-15-v\"> has data-start=\"1.14\" inside a sub-composition. Nested media timing is local to its composition by default; a nonzero value can be confused with a legacy root-global timestamp.",
+        "selector": "#s01-m4-15-v",
+        "dataAttributes": {},
+        "sourceFile": "/home/user/Github-worker/videos/site-conforme/compositions/s01-publier.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Keep data-start=\"1.14\" if it is composition-local. If this is a legacy root-global timestamp, add data-hf-media-start-basis=\"global\"; otherwise convert it to local time by subtracting the host start."
+      },
+      {
+        "code": "overlapping_gsap_tweens",
+        "severity": "warning",
+        "message": "GSAP tweens overlap on \"#s02-toi-bg\" for svgOrigin between 2.72s and 2.72s.",
+        "selector": "#s02-toi-bg",
+        "dataAttributes": {},
+        "sourceFile": "/home/user/Github-worker/videos/site-conforme/compositions/s02-attention.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Shorten the earlier tween, move the later tween, or add `overwrite: \"auto\"`."
+      },
+      {
+        "code": "overlapping_gsap_tweens",
+        "severity": "warning",
+        "message": "GSAP tweens overlap on \"#s02-toi-bd\" for svgOrigin between 2.72s and 2.72s.",
+        "selector": "#s02-toi-bd",
+        "dataAttributes": {},
+        "sourceFile": "/home/user/Github-worker/videos/site-conforme/compositions/s02-attention.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Shorten the earlier tween, move the later tween, or add `overwrite: \"auto\"`."
+      },
+      {
+        "code": "overlapping_gsap_tweens",
+        "severity": "warning",
+        "message": "GSAP tweens overlap on \"#s02-attention-cadre\" for x, y, scale between 3.55s and 3.62s.",
+        "selector": "#s02-attention-cadre",
+        "dataAttributes": {},
+        "sourceFile": "/home/user/Github-worker/videos/site-conforme/compositions/s02-attention.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Shorten the earlier tween, move the later tween, or add `overwrite: \"auto\"`."
+      },
+      {
+        "code": "overlapping_gsap_tweens",
+        "severity": "warning",
+        "message": "GSAP tweens overlap on \"#s03-mentions-cadre\" for x, y, scale between 3.77s and 3.93s.",
+        "selector": "#s03-mentions-cadre",
+        "dataAttributes": {},
+        "sourceFile": "/home/user/Github-worker/videos/site-conforme/compositions/s03-mentions.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Shorten the earlier tween, move the later tween, or add `overwrite: \"auto\"`."
+      },
+      {
+        "code": "overlapping_gsap_tweens",
+        "severity": "warning",
+        "message": "GSAP tweens overlap on \"#s05-cookies-cadre\" for x, y, scale between 2.30s and 2.33s.",
+        "selector": "#s05-cookies-cadre",
+        "dataAttributes": {},
+        "sourceFile": "/home/user/Github-worker/videos/site-conforme/compositions/s05-cookies.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Shorten the earlier tween, move the later tween, or add `overwrite: \"auto\"`."
+      },
+      {
+        "code": "overlapping_gsap_tweens",
+        "severity": "warning",
+        "message": "GSAP tweens overlap on \"#s07-toi-bd\" for svgOrigin between 5.83s and 5.97s.",
+        "selector": "#s07-toi-bd",
+        "dataAttributes": {},
+        "sourceFile": "/home/user/Github-worker/videos/site-conforme/compositions/s07-droits.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Shorten the earlier tween, move the later tween, or add `overwrite: \"auto\"`."
+      }
+    ],
+    "filesScanned": 13
+  },
+  "runtime": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": []
+  },
+  "layout": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 8,
+    "infoCount": 31,
+    "findings": [
+      {
+        "code": "container_overflow",
+        "severity": "warning",
+        "time": 2.933,
+        "selector": "#vo-0",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": -2972.93,
+          "top": -300,
+          "right": -127.07,
+          "bottom": 1380,
+          "width": 2845.87,
+          "height": 1680
+        },
+        "containerSelector": "#volets > div:nth-of-type(1)",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1920,
+          "bottom": 1080,
+          "width": 1920,
+          "height": 1080
+        },
+        "overflow": {
+          "left": 2972.93,
+          "top": 300,
+          "bottom": 300
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/volets.html",
+        "bbox": {
+          "x": -2972.93,
+          "y": -300,
+          "width": 2845.87,
+          "height": 1680
+        },
+        "firstSeen": 2.933,
+        "lastSeen": 49.867,
+        "occurrences": 9,
+        "heldMs": 0,
+        "times": [
+          2.933,
+          8.8,
+          14.667,
+          20.533,
+          26.4,
+          32.267,
+          38.133,
+          44,
+          49.867
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "warning",
+        "time": 2.933,
+        "selector": "#vo-1",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": -2972.93,
+          "top": -300,
+          "right": -127.07,
+          "bottom": 1380,
+          "width": 2845.87,
+          "height": 1680
+        },
+        "containerSelector": "#volets > div:nth-of-type(1)",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1920,
+          "bottom": 1080,
+          "width": 1920,
+          "height": 1080
+        },
+        "overflow": {
+          "left": 2972.93,
+          "top": 300,
+          "bottom": 300
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/volets.html",
+        "bbox": {
+          "x": -2972.93,
+          "y": -300,
+          "width": 2845.87,
+          "height": 1680
+        },
+        "firstSeen": 2.933,
+        "lastSeen": 49.867,
+        "occurrences": 9,
+        "heldMs": 0,
+        "times": [
+          2.933,
+          8.8,
+          14.667,
+          20.533,
+          26.4,
+          32.267,
+          38.133,
+          44,
+          49.867
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "warning",
+        "time": 2.933,
+        "selector": "#vo-2",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": -2972.93,
+          "top": -300,
+          "right": -127.07,
+          "bottom": 1380,
+          "width": 2845.87,
+          "height": 1680
+        },
+        "containerSelector": "#volets > div:nth-of-type(1)",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1920,
+          "bottom": 1080,
+          "width": 1920,
+          "height": 1080
+        },
+        "overflow": {
+          "left": 2972.93,
+          "top": 300,
+          "bottom": 300
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/volets.html",
+        "bbox": {
+          "x": -2972.93,
+          "y": -300,
+          "width": 2845.87,
+          "height": 1680
+        },
+        "firstSeen": 2.933,
+        "lastSeen": 49.867,
+        "occurrences": 9,
+        "heldMs": 0,
+        "times": [
+          2.933,
+          8.8,
+          14.667,
+          20.533,
+          26.4,
+          32.267,
+          38.133,
+          44,
+          49.867
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "warning",
+        "time": 2.933,
+        "selector": "#vo-3",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": -2972.93,
+          "top": -300,
+          "right": -127.07,
+          "bottom": 1380,
+          "width": 2845.87,
+          "height": 1680
+        },
+        "containerSelector": "#volets > div:nth-of-type(1)",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1920,
+          "bottom": 1080,
+          "width": 1920,
+          "height": 1080
+        },
+        "overflow": {
+          "left": 2972.93,
+          "top": 300,
+          "bottom": 300
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/volets.html",
+        "bbox": {
+          "x": -2972.93,
+          "y": -300,
+          "width": 2845.87,
+          "height": 1680
+        },
+        "firstSeen": 2.933,
+        "lastSeen": 49.867,
+        "occurrences": 9,
+        "heldMs": 0,
+        "times": [
+          2.933,
+          8.8,
+          14.667,
+          20.533,
+          26.4,
+          32.267,
+          38.133,
+          44,
+          49.867
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "warning",
+        "time": 2.933,
+        "selector": "#vo-4",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": -2972.93,
+          "top": -300,
+          "right": -127.07,
+          "bottom": 1380,
+          "width": 2845.87,
+          "height": 1680
+        },
+        "containerSelector": "#volets > div:nth-of-type(1)",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1920,
+          "bottom": 1080,
+          "width": 1920,
+          "height": 1080
+        },
+        "overflow": {
+          "left": 2972.93,
+          "top": 300,
+          "bottom": 300
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/volets.html",
+        "bbox": {
+          "x": -2972.93,
+          "y": -300,
+          "width": 2845.87,
+          "height": 1680
+        },
+        "firstSeen": 2.933,
+        "lastSeen": 49.867,
+        "occurrences": 9,
+        "heldMs": 0,
+        "times": [
+          2.933,
+          8.8,
+          14.667,
+          20.533,
+          26.4,
+          32.267,
+          38.133,
+          44,
+          49.867
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "warning",
+        "time": 2.933,
+        "selector": "#vo-5",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": -2972.93,
+          "top": -300,
+          "right": -127.07,
+          "bottom": 1380,
+          "width": 2845.87,
+          "height": 1680
+        },
+        "containerSelector": "#volets > div:nth-of-type(1)",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1920,
+          "bottom": 1080,
+          "width": 1920,
+          "height": 1080
+        },
+        "overflow": {
+          "left": 2972.93,
+          "top": 300,
+          "bottom": 300
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/volets.html",
+        "bbox": {
+          "x": -2972.93,
+          "y": -300,
+          "width": 2845.87,
+          "height": 1680
+        },
+        "firstSeen": 2.933,
+        "lastSeen": 49.867,
+        "occurrences": 9,
+        "heldMs": 0,
+        "times": [
+          2.933,
+          8.8,
+          14.667,
+          20.533,
+          26.4,
+          32.267,
+          38.133,
+          44,
+          49.867
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "warning",
+        "time": 2.933,
+        "selector": "#vo-6",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": -2972.93,
+          "top": -300,
+          "right": -127.07,
+          "bottom": 1380,
+          "width": 2845.87,
+          "height": 1680
+        },
+        "containerSelector": "#volets > div:nth-of-type(1)",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1920,
+          "bottom": 1080,
+          "width": 1920,
+          "height": 1080
+        },
+        "overflow": {
+          "left": 2972.93,
+          "top": 300,
+          "bottom": 300
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/volets.html",
+        "bbox": {
+          "x": -2972.93,
+          "y": -300,
+          "width": 2845.87,
+          "height": 1680
+        },
+        "firstSeen": 2.933,
+        "lastSeen": 49.867,
+        "occurrences": 9,
+        "heldMs": 0,
+        "times": [
+          2.933,
+          8.8,
+          14.667,
+          20.533,
+          26.4,
+          32.267,
+          38.133,
+          44,
+          49.867
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "warning",
+        "time": 2.933,
+        "selector": "#vo-7",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": -2972.93,
+          "top": -300,
+          "right": -127.07,
+          "bottom": 1380,
+          "width": 2845.87,
+          "height": 1680
+        },
+        "containerSelector": "#volets > div:nth-of-type(1)",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1920,
+          "bottom": 1080,
+          "width": 1920,
+          "height": 1080
+        },
+        "overflow": {
+          "left": 2972.93,
+          "top": 300,
+          "bottom": 300
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/volets.html",
+        "bbox": {
+          "x": -2972.93,
+          "y": -300,
+          "width": 2845.87,
+          "height": 1680
+        },
+        "firstSeen": 2.933,
+        "lastSeen": 49.867,
+        "occurrences": 9,
+        "heldMs": 0,
+        "times": [
+          2.933,
+          8.8,
+          14.667,
+          20.533,
+          26.4,
+          32.267,
+          38.133,
+          44,
+          49.867
+        ]
+      },
+      {
+        "code": "canvas_overflow",
+        "severity": "info",
+        "time": 2.933,
+        "selector": "#s01-nav > div:nth-of-type(1) > span:nth-of-type(1)",
+        "message": "Text extends outside the composition canvas.",
+        "rect": {
+          "left": 187.72,
+          "top": -97.45,
+          "right": 463.91,
+          "bottom": -54.98,
+          "width": 276.19,
+          "height": 42.47
+        },
+        "containerSelector": "#root",
+        "text": "ton-site-ia.fr",
+        "fixHint": "Move the text inward, reduce its size, or mark intentional off-canvas animation with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1920,
+          "bottom": 1080,
+          "width": 1920,
+          "height": 1080
+        },
+        "overflow": {
+          "top": 97.45
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/s01-publier.html",
+        "bbox": {
+          "x": 187.72,
+          "y": -97.45,
+          "width": 276.19,
+          "height": 42.47
+        },
+        "firstSeen": 2.933,
+        "lastSeen": 2.933,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          2.933
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 2.933,
+        "selector": "#s01-nav > div:nth-of-type(2) > div:nth-of-type(2) > span:nth-of-type(1)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 28.81,
+          "top": 651.9,
+          "right": 404.73,
+          "bottom": 702.58,
+          "width": 375.91,
+          "height": 50.69
+        },
+        "containerSelector": "#s01-fusee-v",
+        "text": "ton-site-ia.fr",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "compositions/s01-publier.html",
+        "bbox": {
+          "x": 28.81,
+          "y": 651.9,
+          "width": 375.91,
+          "height": 50.69
+        },
+        "firstSeen": 2.933,
+        "lastSeen": 2.933,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          2.933
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 2.933,
+        "selector": "#s01-pub",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 1191.94,
+          "top": 626.55,
+          "right": 1385.03,
+          "bottom": 725.19,
+          "width": 193.09,
+          "height": 98.63
+        },
+        "containerSelector": "#s01-fusee-v",
+        "text": "Publier",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "compositions/s01-publier.html",
+        "bbox": {
+          "x": 1191.94,
+          "y": 626.55,
+          "width": 193.09,
+          "height": 98.63
+        },
+        "firstSeen": 2.933,
+        "lastSeen": 2.933,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          2.933
+        ]
+      },
+      {
+        "code": "text_box_overflow",
+        "severity": "info",
+        "time": 2.933,
+        "selector": "#s01-q",
+        "message": "Text extends outside its nearest visual/container box.",
+        "rect": {
+          "left": -521.19,
+          "top": 26.68,
+          "right": 1584.64,
+          "bottom": 471.69,
+          "width": 2105.83,
+          "height": 445.01
+        },
+        "containerSelector": "#s01-publier > div:nth-of-type(1) > div:nth-of-type(1)",
+        "text": "En ligne ?",
+        "fixHint": "Text is 2106px x 445px inside 1920px x 1080px and overflows by up to 521px; widen the container to at least ~2441px or shrink font-size from 250px to ~228px, or allow wrapping with max-width/fitTextFontSize.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1920,
+          "bottom": 1080,
+          "width": 1920,
+          "height": 1080
+        },
+        "overflow": {
+          "left": 521.19
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/s01-publier.html",
+        "bbox": {
+          "x": -521.19,
+          "y": 26.68,
+          "width": 2105.83,
+          "height": 445.01
+        },
+        "firstSeen": 2.933,
+        "lastSeen": 2.933,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          2.933
+        ]
+      },
+      {
+        "code": "canvas_overflow",
+        "severity": "info",
+        "time": 2.933,
+        "selector": "#s01-q",
+        "message": "Text extends outside the composition canvas.",
+        "rect": {
+          "left": -521.19,
+          "top": -129.78,
+          "right": 1584.64,
+          "bottom": 634.25,
+          "width": 2105.83,
+          "height": 764.03
+        },
+        "containerSelector": "#root",
+        "text": "En ligne ?",
+        "fixHint": "Move the text inward, reduce its size, or mark intentional off-canvas animation with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1920,
+          "bottom": 1080,
+          "width": 1920,
+          "height": 1080
+        },
+        "overflow": {
+          "left": 521.19,
+          "top": 129.78
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/s01-publier.html",
+        "bbox": {
+          "x": -521.19,
+          "y": -129.78,
+          "width": 2105.83,
+          "height": 764.03
+        },
+        "firstSeen": 2.933,
+        "lastSeen": 2.933,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          2.933
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 2.933,
+        "selector": "#s01-publier-cam",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": -47.56,
+          "top": -27.99,
+          "right": 1960.56,
+          "bottom": 1101.58,
+          "width": 2008.13,
+          "height": 1129.57
+        },
+        "containerSelector": "#s01-publier > div:nth-of-type(1) > div:nth-of-type(1)",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1920,
+          "bottom": 1080,
+          "width": 1920,
+          "height": 1080
+        },
+        "overflow": {
+          "left": 47.56,
+          "right": 40.56,
+          "top": 27.99,
+          "bottom": 21.58
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/s01-publier.html",
+        "bbox": {
+          "x": -47.56,
+          "y": -27.99,
+          "width": 2008.13,
+          "height": 1129.57
+        },
+        "firstSeen": 2.933,
+        "lastSeen": 2.933,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          2.933
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 2.933,
+        "selector": "#s01-q",
+        "message": "Nowrap text is wider than its container.",
+        "rect": {
+          "left": -1458.08,
+          "top": 24.65,
+          "right": 2521.23,
+          "bottom": 481.85,
+          "width": 3979.31,
+          "height": 457.2
+        },
+        "containerSelector": "#s01-publier-cadre",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": -783.55,
+          "top": -352.94,
+          "right": 1846.7,
+          "bottom": 1126.58,
+          "width": 2630.25,
+          "height": 1479.51
+        },
+        "overflow": {
+          "left": 674.53,
+          "right": 674.53
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/s01-publier.html",
+        "bbox": {
+          "x": -1458.08,
+          "y": 24.65,
+          "width": 3979.31,
+          "height": 457.2
+        },
+        "firstSeen": 2.933,
+        "lastSeen": 2.933,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          2.933
+        ]
+      },
+      {
+        "code": "panel_out_of_canvas",
+        "severity": "info",
+        "time": 2.933,
+        "selector": "#s01-nav",
+        "message": "Painted panel extends outside the composition canvas.",
+        "rect": {
+          "left": -16.4,
+          "top": -120.05,
+          "right": 1490.52,
+          "bottom": 756.7,
+          "width": 1506.91,
+          "height": 876.75
+        },
+        "containerSelector": "#root",
+        "text": "ton-site-ia.fr TON-SITE-IA.FR PUBLIER",
+        "fixHint": "Move the panel inward, or mark intentional off-canvas animation with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1920,
+          "bottom": 1080,
+          "width": 1920,
+          "height": 1080
+        },
+        "overflow": {
+          "top": 120.05
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/s01-publier.html",
+        "bbox": {
+          "x": -16.4,
+          "y": -120.05,
+          "width": 1506.91,
+          "height": 876.75
+        },
+        "firstSeen": 2.933,
+        "lastSeen": 2.933,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          2.933
+        ]
+      },
+      {
+        "code": "content_overlap",
+        "severity": "info",
+        "time": 7.119,
+        "selector": "div.al-liste-tete",
+        "message": "Two text blocks overlap and may render unreadable.",
+        "rect": {
+          "left": 298.67,
+          "top": 226.51,
+          "right": 561.88,
+          "bottom": 286.31,
+          "width": 263.21,
+          "height": 59.8
+        },
+        "containerSelector": "#s02-p0 > div:nth-of-type(2)",
+        "text": "AVANT DE PUBLIER",
+        "fixHint": "Give each block its own zone, or put data-layout-allow-overlap on the text or on a container inside the scene. A marker on the scene root does not apply.",
+        "dataAttributes": {},
+        "sourceFile": "compositions/s02-attention.html",
+        "bbox": {
+          "x": 298.67,
+          "y": 226.51,
+          "width": 263.21,
+          "height": 59.8
+        },
+        "firstSeen": 7.119,
+        "lastSeen": 7.119,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          7.119
+        ]
+      },
+      {
+        "code": "text_box_overflow",
+        "severity": "info",
+        "time": 8.8,
+        "selector": "#s02-r1-t",
+        "message": "Text extends outside its nearest visual/container box.",
+        "rect": {
+          "left": 2165.44,
+          "top": -40.77,
+          "right": 5785.61,
+          "bottom": 285.51,
+          "width": 3620.17,
+          "height": 326.28
+        },
+        "containerSelector": "#s02-r1",
+        "text": "Attention / Attention / Attention / Attention / Attention / Attention / Attention / Attention / Attention",
+        "fixHint": "Text is 3620px x 326px inside 2792px x 471px and overflows by up to 432px; widen the container to at least ~3620px or shrink font-size from 66px to ~51px, or allow wrapping with max-width/fitTextFontSize.",
+        "containerRect": {
+          "left": 2560.84,
+          "top": -108.04,
+          "right": 5353.16,
+          "bottom": 362.86,
+          "width": 2792.31,
+          "height": 470.9
+        },
+        "overflow": {
+          "left": 395.4,
+          "right": 432.45
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/s02-attention.html",
+        "bbox": {
+          "x": 2165.44,
+          "y": -40.77,
+          "width": 3620.17,
+          "height": 326.28
+        },
+        "firstSeen": 8.8,
+        "lastSeen": 8.8,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          8.8
+        ]
+      },
+      {
+        "code": "canvas_overflow",
+        "severity": "info",
+        "time": 8.8,
+        "selector": "#s02-r1-t",
+        "message": "Text extends outside the composition canvas.",
+        "rect": {
+          "left": 2165.44,
+          "top": -151.37,
+          "right": 5785.61,
+          "bottom": 401.64,
+          "width": 3620.17,
+          "height": 553.01
+        },
+        "containerSelector": "#root",
+        "text": "Attention / Attention / Attention / Attention / Attention / Attention / Attention / Attention / Attention",
+        "fixHint": "Move the text inward, reduce its size, or mark intentional off-canvas animation with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1920,
+          "bottom": 1080,
+          "width": 1920,
+          "height": 1080
+        },
+        "overflow": {
+          "right": 3865.61,
+          "top": 151.37
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/s02-attention.html",
+        "bbox": {
+          "x": 2165.44,
+          "y": -151.37,
+          "width": 3620.17,
+          "height": 553.01
+        },
+        "firstSeen": 8.8,
+        "lastSeen": 8.8,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          8.8
+        ]
+      },
+      {
+        "code": "text_box_overflow",
+        "severity": "info",
+        "time": 8.8,
+        "selector": "#s02-r2-t",
+        "message": "Text extends outside its nearest visual/container box.",
+        "rect": {
+          "left": -3036.33,
+          "top": 709.64,
+          "right": 589.09,
+          "bottom": 998.86,
+          "width": 3625.42,
+          "height": 289.22
+        },
+        "containerSelector": "#s02-r2",
+        "text": "Attention / Attention / Attention / Attention / Attention / Attention / Attention / Attention / Attention",
+        "fixHint": "Text is 3625px x 289px inside 2796px x 423px and overflows by up to 1228px; resize the container to at least ~4024px x 439px or shrink font-size from 66px to ~51px, or allow wrapping with max-width/fitTextFontSize.",
+        "containerRect": {
+          "left": -3434.78,
+          "top": 559.88,
+          "right": -639.22,
+          "bottom": 982.54,
+          "width": 2795.57,
+          "height": 422.65
+        },
+        "overflow": {
+          "right": 1228.31,
+          "bottom": 16.32
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/s02-attention.html",
+        "bbox": {
+          "x": -3036.33,
+          "y": 709.64,
+          "width": 3625.42,
+          "height": 289.22
+        },
+        "firstSeen": 8.8,
+        "lastSeen": 8.8,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          8.8
+        ]
+      },
+      {
+        "code": "canvas_overflow",
+        "severity": "info",
+        "time": 8.8,
+        "selector": "#s02-r2-t",
+        "message": "Text extends outside the composition canvas.",
+        "rect": {
+          "left": -3036.33,
+          "top": 611.59,
+          "right": 589.09,
+          "bottom": 1101.81,
+          "width": 3625.42,
+          "height": 490.22
+        },
+        "containerSelector": "#root",
+        "text": "Attention / Attention / Attention / Attention / Attention / Attention / Attention / Attention / Attention",
+        "fixHint": "Move the text inward, reduce its size, or mark intentional off-canvas animation with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1920,
+          "bottom": 1080,
+          "width": 1920,
+          "height": 1080
+        },
+        "overflow": {
+          "left": 3036.33,
+          "bottom": 21.81
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/s02-attention.html",
+        "bbox": {
+          "x": -3036.33,
+          "y": 611.59,
+          "width": 3625.42,
+          "height": 490.22
+        },
+        "firstSeen": 8.8,
+        "lastSeen": 8.8,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          8.8
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 8.8,
+        "selector": "#s02-r2-t",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": -3036.33,
+          "top": 611.59,
+          "right": 589.09,
+          "bottom": 1101.81,
+          "width": 3625.42,
+          "height": 490.23
+        },
+        "containerSelector": "#vo-1 > i:nth-of-type(2)",
+        "text": "Attention / Attention / Attention / Attention / Attention / Attention / Attention / Attention / Attention",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 0.22,
+        "dataAttributes": {},
+        "sourceFile": "compositions/s02-attention.html",
+        "bbox": {
+          "x": -3036.33,
+          "y": 611.59,
+          "width": 3625.42,
+          "height": 490.23
+        },
+        "firstSeen": 8.8,
+        "lastSeen": 8.8,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          8.8
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 8.8,
+        "selector": "#s02-p0 > div:nth-of-type(1) > span:nth-of-type(1)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 136.38,
+          "top": 132.96,
+          "right": 257.44,
+          "bottom": 199.56,
+          "width": 121.06,
+          "height": 66.6
+        },
+        "containerSelector": "#vo-1 > i:nth-of-type(2)",
+        "text": "Erreur",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "compositions/s02-attention.html",
+        "bbox": {
+          "x": 136.38,
+          "y": 132.96,
+          "width": 121.06,
+          "height": 66.6
+        },
+        "firstSeen": 8.8,
+        "lastSeen": 8.8,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          8.8
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 8.8,
+        "selector": "#s02-p0 > div:nth-of-type(2)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 89.76,
+          "top": 219.54,
+          "right": 471.7,
+          "bottom": 270.6,
+          "width": 381.94,
+          "height": 51.06
+        },
+        "containerSelector": "#vo-1 > i:nth-of-type(2)",
+        "text": "Site non conforme",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "compositions/s02-attention.html",
+        "bbox": {
+          "x": 89.76,
+          "y": 219.54,
+          "width": 381.94,
+          "height": 51.06
+        },
+        "firstSeen": 8.8,
+        "lastSeen": 8.8,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          8.8
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 8.8,
+        "selector": "#s02-p2 > div:nth-of-type(1) > span:nth-of-type(1)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 91.98,
+          "top": 410.46,
+          "right": 259.82,
+          "bottom": 477.06,
+          "width": 167.84,
+          "height": 66.6
+        },
+        "containerSelector": "#vo-1 > i:nth-of-type(2)",
+        "text": "Attention",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "compositions/s02-attention.html",
+        "bbox": {
+          "x": 91.98,
+          "y": 410.46,
+          "width": 167.84,
+          "height": 66.6
+        },
+        "firstSeen": 8.8,
+        "lastSeen": 8.8,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          8.8
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 8.8,
+        "selector": "#s02-p2 > div:nth-of-type(2)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 45.36,
+          "top": 497.04,
+          "right": 441.25,
+          "bottom": 548.1,
+          "width": 395.89,
+          "height": 51.06
+        },
+        "containerSelector": "#vo-1 > i:nth-of-type(2)",
+        "text": "Données exposées",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "compositions/s02-attention.html",
+        "bbox": {
+          "x": 45.36,
+          "y": 497.04,
+          "width": 395.89,
+          "height": 51.06
+        },
+        "firstSeen": 8.8,
+        "lastSeen": 8.8,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          8.8
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 8.8,
+        "selector": "#s02-surp",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 264.36,
+          "top": 644.67,
+          "right": 1655.64,
+          "bottom": 894.42,
+          "width": 1391.28,
+          "height": 249.75
+        },
+        "containerSelector": "#vo-1 > i:nth-of-type(2)",
+        "text": "Mauvaises surprises",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 0.3,
+        "dataAttributes": {},
+        "sourceFile": "compositions/s02-attention.html",
+        "bbox": {
+          "x": 264.36,
+          "y": 644.67,
+          "width": 1391.28,
+          "height": 249.75
+        },
+        "firstSeen": 8.8,
+        "lastSeen": 8.8,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          8.8
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 8.8,
+        "selector": "#s02-attention-cam",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": -105.6,
+          "top": -71.28,
+          "right": 2025.6,
+          "bottom": 1127.52,
+          "width": 2131.2,
+          "height": 1198.8
+        },
+        "containerSelector": "#s02-attention > div:nth-of-type(1) > div:nth-of-type(1)",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1920,
+          "bottom": 1080,
+          "width": 1920,
+          "height": 1080
+        },
+        "overflow": {
+          "left": 105.6,
+          "right": 105.6,
+          "top": 71.28,
+          "bottom": 47.52
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/s02-attention.html",
+        "bbox": {
+          "x": -105.6,
+          "y": -71.28,
+          "width": 2131.2,
+          "height": 1198.8
+        },
+        "firstSeen": 8.8,
+        "lastSeen": 8.8,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          8.8
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 8.8,
+        "selector": "#s02-r1-t",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": 2166.39,
+          "top": -41.71,
+          "right": 4954.37,
+          "bottom": 393.93,
+          "width": 2787.98,
+          "height": 435.64
+        },
+        "containerSelector": "#s02-r1",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 2560.84,
+          "top": -108.04,
+          "right": 5353.16,
+          "bottom": 362.86,
+          "width": 2792.31,
+          "height": 470.9
+        },
+        "overflow": {
+          "left": 394.45,
+          "bottom": 31.07
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/s02-attention.html",
+        "bbox": {
+          "x": 2166.39,
+          "y": -41.71,
+          "width": 2787.98,
+          "height": 435.64
+        },
+        "firstSeen": 8.8,
+        "lastSeen": 8.8,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          8.8
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 8.8,
+        "selector": "#s02-r2-t",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": -3035.52,
+          "top": 619.32,
+          "right": -243.66,
+          "bottom": 1006.64,
+          "width": 2791.85,
+          "height": 387.33
+        },
+        "containerSelector": "#s02-r2",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": -3434.78,
+          "top": 559.88,
+          "right": -639.22,
+          "bottom": 982.54,
+          "width": 2795.57,
+          "height": 422.65
+        },
+        "overflow": {
+          "right": 395.56,
+          "bottom": 24.1
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/s02-attention.html",
+        "bbox": {
+          "x": -3035.52,
+          "y": 619.32,
+          "width": 2791.85,
+          "height": 387.33
+        },
+        "firstSeen": 8.8,
+        "lastSeen": 8.8,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          8.8
+        ]
+      },
+      {
+        "code": "escaped_container",
+        "severity": "info",
+        "time": 8.8,
+        "selector": "#s02-r1",
+        "message": "Positioned element renders far outside its offset parent — its coordinates were likely computed in a different frame (canvas/viewport pixels).",
+        "rect": {
+          "left": 2560.84,
+          "top": -108.04,
+          "right": 5353.16,
+          "bottom": 362.86,
+          "width": 2792.31,
+          "height": 470.9
+        },
+        "containerSelector": "#s02-attention-cadre",
+        "text": "ATTENTION / ATTENTION / ATTENTION / ATTENTION / ATTENTION / ATTENTION / ATTENTION / ATTENTION / ATTENTION",
+        "fixHint": "Compute left/top in the offset parent's frame (subtract its rect), or mark intentional placement with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": -105.6,
+          "top": -71.28,
+          "right": 2025.6,
+          "bottom": 1127.52,
+          "width": 2131.2,
+          "height": 1198.8
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/s02-attention.html",
+        "bbox": {
+          "x": 2560.84,
+          "y": -108.04,
+          "width": 2792.31,
+          "height": 470.9
+        },
+        "firstSeen": 8.8,
+        "lastSeen": 8.8,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          8.8
+        ]
+      },
+      {
+        "code": "escaped_container",
+        "severity": "info",
+        "time": 8.8,
+        "selector": "#s02-r2",
+        "message": "Positioned element renders far outside its offset parent — its coordinates were likely computed in a different frame (canvas/viewport pixels).",
+        "rect": {
+          "left": -3434.78,
+          "top": 559.88,
+          "right": -639.22,
+          "bottom": 982.54,
+          "width": 2795.57,
+          "height": 422.65
+        },
+        "containerSelector": "#s02-attention-cadre",
+        "text": "ATTENTION / ATTENTION / ATTENTION / ATTENTION / ATTENTION / ATTENTION / ATTENTION / ATTENTION / ATTENTION",
+        "fixHint": "Compute left/top in the offset parent's frame (subtract its rect), or mark intentional placement with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": -105.6,
+          "top": -71.28,
+          "right": 2025.6,
+          "bottom": 1127.52,
+          "width": 2131.2,
+          "height": 1198.8
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/s02-attention.html",
+        "bbox": {
+          "x": -3434.78,
+          "y": 559.88,
+          "width": 2795.57,
+          "height": 422.65
+        },
+        "firstSeen": 8.8,
+        "lastSeen": 8.8,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          8.8
+        ]
+      },
+      {
+        "code": "escaped_container",
+        "severity": "info",
+        "time": 8.8,
+        "selector": "#vo-1",
+        "message": "Positioned element renders far outside its offset parent — its coordinates were likely computed in a different frame (canvas/viewport pixels).",
+        "rect": {
+          "left": -1943.25,
+          "top": -300,
+          "right": 902.62,
+          "bottom": 1380,
+          "width": 2845.87,
+          "height": 1680
+        },
+        "containerSelector": "#volets > div:nth-of-type(1)",
+        "text": "",
+        "fixHint": "Compute left/top in the offset parent's frame (subtract its rect), or mark intentional placement with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1920,
+          "bottom": 1080,
+          "width": 1920,
+          "height": 1080
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/volets.html",
+        "bbox": {
+          "x": -1943.25,
+          "y": -300,
+          "width": 2845.87,
+          "height": 1680
+        },
+        "firstSeen": 8.8,
+        "lastSeen": 8.8,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          8.8
+        ]
+      },
+      {
+        "code": "panel_out_of_canvas",
+        "severity": "info",
+        "time": 8.8,
+        "selector": "#vo-1 > i:nth-of-type(3)",
+        "message": "Painted panel extends outside the composition canvas.",
+        "rect": {
+          "left": 186.75,
+          "top": -300,
+          "right": 902.62,
+          "bottom": 1380,
+          "width": 715.87,
+          "height": 1680
+        },
+        "containerSelector": "#root",
+        "text": "",
+        "fixHint": "Move the panel inward, or mark intentional off-canvas animation with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1920,
+          "bottom": 1080,
+          "width": 1920,
+          "height": 1080
+        },
+        "overflow": {
+          "top": 300,
+          "bottom": 300
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/volets.html",
+        "bbox": {
+          "x": 186.75,
+          "y": -300,
+          "width": 715.87,
+          "height": 1680
+        },
+        "firstSeen": 8.8,
+        "lastSeen": 8.8,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          8.8
+        ]
+      },
+      {
+        "code": "content_overlap",
+        "severity": "info",
+        "time": 19.874,
+        "selector": "#s04-c2 > div:nth-of-type(1)",
+        "message": "Two text blocks overlap and may render unreadable.",
+        "rect": {
+          "left": 667.64,
+          "top": 730.29,
+          "right": 855.41,
+          "bottom": 798.41,
+          "width": 187.77,
+          "height": 68.12
+        },
+        "containerSelector": "#s04-c3 > div:nth-of-type(1)",
+        "text": "ADRESSE IP",
+        "fixHint": "Give each block its own zone, or put data-layout-allow-overlap on the text or on a container inside the scene. A marker on the scene root does not apply.",
+        "dataAttributes": {},
+        "sourceFile": "compositions/s04-confidentialite.html",
+        "bbox": {
+          "x": 667.64,
+          "y": 730.29,
+          "width": 187.77,
+          "height": 68.12
+        },
+        "firstSeen": 19.874,
+        "lastSeen": 19.874,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          19.874
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 32.267,
+        "selector": "#s06-cgv-cam",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": -29.09,
+          "top": -19.63,
+          "right": 1949.09,
+          "bottom": 1093.09,
+          "width": 1978.18,
+          "height": 1112.72
+        },
+        "containerSelector": "#s06-cgv > div:nth-of-type(1) > div:nth-of-type(1)",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1920,
+          "bottom": 1080,
+          "width": 1920,
+          "height": 1080
+        },
+        "overflow": {
+          "left": 29.09,
+          "right": 29.09,
+          "top": 19.63,
+          "bottom": 13.09
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/s06-cgv.html",
+        "bbox": {
+          "x": -29.09,
+          "y": -19.63,
+          "width": 1978.18,
+          "height": 1112.72
+        },
+        "firstSeen": 32.267,
+        "lastSeen": 32.267,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          32.267
+        ]
+      },
+      {
+        "code": "canvas_overflow",
+        "severity": "info",
+        "time": 49.867,
+        "selector": "#s09-design > div:nth-of-type(1)",
+        "message": "Text extends outside the composition canvas.",
+        "rect": {
+          "left": -619.98,
+          "top": 234.18,
+          "right": -474.48,
+          "bottom": 318.91,
+          "width": 145.5,
+          "height": 84.73
+        },
+        "containerSelector": "#root",
+        "text": "Design",
+        "fixHint": "Move the text inward, reduce its size, or mark intentional off-canvas animation with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1920,
+          "bottom": 1080,
+          "width": 1920,
+          "height": 1080
+        },
+        "overflow": {
+          "left": 619.98
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/s09-final.html",
+        "bbox": {
+          "x": -619.98,
+          "y": 234.18,
+          "width": 145.5,
+          "height": 84.73
+        },
+        "firstSeen": 49.867,
+        "lastSeen": 49.867,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          49.867
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 49.867,
+        "selector": "#s09-final-cam",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": -22.37,
+          "top": -15.1,
+          "right": 1942.37,
+          "bottom": 1090.07,
+          "width": 1964.74,
+          "height": 1105.16
+        },
+        "containerSelector": "#s09-final > div:nth-of-type(1) > div:nth-of-type(1)",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1920,
+          "bottom": 1080,
+          "width": 1920,
+          "height": 1080
+        },
+        "overflow": {
+          "left": 22.37,
+          "right": 22.37,
+          "top": 15.1,
+          "bottom": 10.07
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/s09-final.html",
+        "bbox": {
+          "x": -22.37,
+          "y": -15.1,
+          "width": 1964.74,
+          "height": 1105.16
+        },
+        "firstSeen": 49.867,
+        "lastSeen": 49.867,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          49.867
+        ]
+      },
+      {
+        "code": "panel_out_of_canvas",
+        "severity": "info",
+        "time": 49.867,
+        "selector": "#s09-design",
+        "message": "Painted panel extends outside the composition canvas.",
+        "rect": {
+          "left": -653.13,
+          "top": 230.49,
+          "right": 280.12,
+          "bottom": 844.47,
+          "width": 933.25,
+          "height": 613.98
+        },
+        "containerSelector": "#root",
+        "text": "DESIGN",
+        "fixHint": "Move the panel inward, or mark intentional off-canvas animation with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1920,
+          "bottom": 1080,
+          "width": 1920,
+          "height": 1080
+        },
+        "overflow": {
+          "left": 653.13
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/s09-final.html",
+        "bbox": {
+          "x": -653.13,
+          "y": 230.49,
+          "width": 933.25,
+          "height": 613.98
+        },
+        "firstSeen": 49.867,
+        "lastSeen": 49.867,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          49.867
+        ]
+      }
+    ],
+    "duration": 52.8,
+    "samples": [
+      2.933,
+      8.8,
+      14.667,
+      20.533,
+      26.4,
+      32.267,
+      38.133,
+      44,
+      49.867
+    ],
+    "transitionSamples": [],
+    "transitionSamplesDropped": 0,
+    "tolerance": 2,
+    "totalIssueCount": 39,
+    "truncated": false
+  },
+  "motion": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "enabled": false,
+    "samples": 0
+  },
+  "contrast": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "enabled": true,
+    "samples": [
+      2.933,
+      14.667,
+      26.4,
+      38.133,
+      49.867
+    ],
+    "checked": 10,
+    "passed": 10
+  },
+  "craft": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 10,
+    "infoCount": 0,
+    "findings": [
+      {
+        "code": "first_frame_empty",
+        "severity": "warning",
+        "message": "Frame 0 shows only the background, and the first frame is the thumbnail on social players: have the title or key image already on screen at 0 s instead of entering from nothing; see references/review.md.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0
+      },
+      {
+        "code": "line_unread",
+        "severity": "warning",
+        "message": "\"ton-site-ia.fr\" (4 words) is on screen 0.76 s (±0.01 s), under its 1.27 s floor: hold it about 0.5 s + 0.3 s a word (1.70 s here) before it leaves or changes; see references/motion.md.",
+        "text": "ton-site-ia.fr",
+        "selector": "#s01-nav > div:nth-of-type(1) > span:nth-of-type(1)",
+        "dataAttributes": {},
+        "sourceFile": "compositions/s01-publier.html",
+        "bbox": {
+          "x": 750.08,
+          "y": 220.89,
+          "width": 179.98000000000002,
+          "height": 32.610000000000014
+        },
+        "time": 1.74,
+        "words": 4,
+        "seconds": 0.764,
+        "floorSeconds": 1.275
+      },
+      {
+        "code": "text_below_floor",
+        "severity": "warning",
+        "message": "Type floor is 28 px (2.6% of the 1080 px short side, what a phone can read) and \"ton-site-ia.fr\" renders at 21 px for 0.75 s: set reading text to at least 28 px, or put data-layout-ignore on text that is texture rather than reading; see references/look.md.",
+        "text": "ton-site-ia.fr",
+        "selector": "#s01-nav > div:nth-of-type(1) > span:nth-of-type(1)",
+        "dataAttributes": {},
+        "sourceFile": "compositions/s01-publier.html",
+        "bbox": {
+          "x": 750.08,
+          "y": 220.89,
+          "width": 179.98,
+          "height": 32.61
+        },
+        "time": 1.748,
+        "times": [
+          1.748
+        ],
+        "fontPx": 21.34,
+        "floorPx": 28,
+        "seconds": 0.749,
+        "elements": [
+          {
+            "selector": "#s01-nav > div:nth-of-type(1) > span:nth-of-type(1)",
+            "text": "ton-site-ia.fr",
+            "fontPx": 21.34,
+            "time": 1.748,
+            "seconds": 0.749
+          }
+        ]
+      },
+      {
+        "code": "line_unread",
+        "severity": "warning",
+        "message": "\"ATTENTION / ATTENTION / ATTENTION / ATTENTION / ATTENTION...\" (9 words) is on screen 0.90 s (±0.01 s), under its 2.40 s floor: hold it about 0.5 s + 0.3 s a word (3.20 s here) before it leaves or changes; see references/motion.md.",
+        "text": "ATTENTION / ATTENTION / ATTENTION / ATTENTION / ATTENTION / ATTENTION / ATTENTION / ATTENTION / ATTENTION",
+        "selector": "#s02-r1-t",
+        "dataAttributes": {},
+        "sourceFile": "compositions/s02-attention.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1920,
+          "height": 391.77
+        },
+        "time": 3.503,
+        "words": 9,
+        "seconds": 0.897,
+        "floorSeconds": 2.4
+      },
+      {
+        "code": "line_unread",
+        "severity": "warning",
+        "message": "\"ATTENTION / ATTENTION / ATTENTION / ATTENTION / ATTENTION...\" (9 words) is on screen 0.87 s (±0.01 s), under its 2.40 s floor: hold it about 0.5 s + 0.3 s a word (3.20 s here) before it leaves or changes; see references/motion.md.",
+        "text": "ATTENTION / ATTENTION / ATTENTION / ATTENTION / ATTENTION / ATTENTION / ATTENTION / ATTENTION / ATTENTION",
+        "selector": "#s02-r2-t",
+        "dataAttributes": {},
+        "sourceFile": "compositions/s02-attention.html",
+        "bbox": {
+          "x": 150.59,
+          "y": 586.35,
+          "width": 1769.41,
+          "height": 371.73
+        },
+        "time": 3.573,
+        "words": 9,
+        "seconds": 0.866,
+        "floorSeconds": 2.4
+      },
+      {
+        "code": "line_unread",
+        "severity": "warning",
+        "message": "\"ton-site-ia.fr\" (4 words) is on screen 0.87 s (±0.01 s), under its 1.27 s floor: hold it about 0.5 s + 0.3 s a word (1.70 s here) before it leaves or changes; see references/motion.md.",
+        "text": "ton-site-ia.fr",
+        "selector": "#s02-nav > div:nth-of-type(1) > span:nth-of-type(1)",
+        "dataAttributes": {},
+        "sourceFile": "compositions/s02-attention.html",
+        "bbox": {
+          "x": 249.74,
+          "y": 202.31,
+          "width": 203.51999999999998,
+          "height": 31.289999999999992
+        },
+        "time": 4.338,
+        "words": 4,
+        "seconds": 0.866,
+        "floorSeconds": 1.275
+      },
+      {
+        "code": "text_below_floor",
+        "severity": "warning",
+        "message": "Type floor is 28 px (2.6% of the 1080 px short side, what a phone can read) and \"ton-site-ia.fr\" renders at 24 px for 0.87 s: set reading text to at least 28 px, or put data-layout-ignore on text that is texture rather than reading; see references/look.md.",
+        "text": "ton-site-ia.fr",
+        "selector": "#s02-nav > div:nth-of-type(1) > span:nth-of-type(1)",
+        "dataAttributes": {},
+        "sourceFile": "compositions/s02-attention.html",
+        "bbox": {
+          "x": 249.74,
+          "y": 202.31,
+          "width": 203.52,
+          "height": 31.29
+        },
+        "time": 4.369,
+        "times": [
+          4.369
+        ],
+        "fontPx": 24.23,
+        "floorPx": 28,
+        "seconds": 0.874,
+        "elements": [
+          {
+            "selector": "#s02-nav > div:nth-of-type(1) > span:nth-of-type(1)",
+            "text": "ton-site-ia.fr",
+            "fontPx": 24.23,
+            "time": 4.369,
+            "seconds": 0.874
+          }
+        ]
+      },
+      {
+        "code": "line_unread",
+        "severity": "warning",
+        "message": "\"PAS CEUX-LÀ !\" (3 words) is on screen 0.94 s (±0.01 s), under its 1.05 s floor: hold it about 0.5 s + 0.3 s a word (1.40 s here) before it leaves or changes; see references/motion.md.",
+        "text": "PAS CEUX-LÀ !",
+        "selector": "#s05-miam-tag",
+        "dataAttributes": {},
+        "sourceFile": "compositions/s05-cookies.html",
+        "bbox": {
+          "x": 744.84,
+          "y": 310.65,
+          "width": 296.41999999999996,
+          "height": 41.85000000000002
+        },
+        "time": 24.036,
+        "words": 3,
+        "seconds": 0.936,
+        "floorSeconds": 1.05
+      },
+      {
+        "code": "text_below_floor",
+        "severity": "warning",
+        "message": "Type floor is 28 px (2.6% of the 1080 px short side, what a phone can read) and 5 text elements stay under it for 0.5 s or more, the smallest \"En attente\" at 14 px: set reading text to at least 28 px, or put data-layout-ignore on text that is texture rather than reading; see references/look.md.",
+        "text": "En attente",
+        "selector": "#s05-e0",
+        "dataAttributes": {},
+        "sourceFile": "compositions/s05-cookies.html",
+        "bbox": {
+          "x": 333.4,
+          "y": 536.5,
+          "width": 98.52,
+          "height": 18.84
+        },
+        "time": 25.214,
+        "times": [
+          25.214,
+          25.339,
+          25.589,
+          25.589,
+          28.335
+        ],
+        "fontPx": 14.49,
+        "floorPx": 28,
+        "seconds": 3.121,
+        "elements": [
+          {
+            "selector": "#s05-e0",
+            "text": "En attente",
+            "fontPx": 14.49,
+            "time": 25.214,
+            "seconds": 3.121
+          },
+          {
+            "selector": "#s05-e3",
+            "text": "En attente",
+            "fontPx": 18.55,
+            "time": 25.589,
+            "seconds": 2.996
+          },
+          {
+            "selector": "#s05-e1",
+            "text": "En attente",
+            "fontPx": 20.5,
+            "time": 25.339,
+            "seconds": 3.121
+          },
+          {
+            "selector": "#s05-e2",
+            "text": "En attente",
+            "fontPx": 24.58,
+            "time": 25.589,
+            "seconds": 2.871
+          },
+          {
+            "selector": "#s05-a0",
+            "text": "Activé",
+            "fontPx": 27.2,
+            "time": 28.335,
+            "seconds": 0.624
+          }
+        ]
+      },
+      {
+        "code": "line_unread",
+        "severity": "warning",
+        "message": "\"SÉCURISÉ\" (1 word) is on screen 0.16 s (±0.01 s), under its 0.40 s floor: hold it about 0.5 s + 0.3 s a word (0.80 s here) before it leaves or changes; see references/motion.md.",
+        "text": "SÉCURISÉ",
+        "selector": "#s08-ok > span:nth-of-type(1)",
+        "dataAttributes": {},
+        "sourceFile": "compositions/s08-securite.html",
+        "bbox": {
+          "x": 1134.27,
+          "y": 91.16,
+          "width": 143.76999999999998,
+          "height": 63.47999999999999
+        },
+        "time": 47.339,
+        "words": 1,
+        "seconds": 0.164,
+        "floorSeconds": 0.4
+      }
+    ],
+    "enabled": true,
+    "step": 0.125,
+    "samples": 423
+  },
+  "audio": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 13,
+    "infoCount": 0,
+    "findings": [
+      {
+        "code": "audio_clip_silent",
+        "severity": "warning",
+        "message": "assets/sfx/zoom-out.mp3 is silent for the whole part this clip plays (0-1.15 s of the file).",
+        "selector": "#sfx-24",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 2.64,
+        "timeRange": [
+          2.64,
+          3.79
+        ],
+        "fixHint": "Check the file has sound there, or move data-media-start to where it does."
+      },
+      {
+        "code": "audio_clip_silent",
+        "severity": "warning",
+        "message": "assets/sfx/zoom-out.mp3 is silent for the whole part this clip plays (0-1.15 s of the file).",
+        "selector": "#sfx-34",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 5.34,
+        "timeRange": [
+          5.34,
+          6.49
+        ],
+        "fixHint": "Check the file has sound there, or move data-media-start to where it does."
+      },
+      {
+        "code": "audio_clip_silent",
+        "severity": "warning",
+        "message": "assets/sfx/zoom-out.mp3 is silent for the whole part this clip plays (0-1.15 s of the file).",
+        "selector": "#sfx-43",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 6.74,
+        "timeRange": [
+          6.74,
+          7.890000000000001
+        ],
+        "fixHint": "Check the file has sound there, or move data-media-start to where it does."
+      },
+      {
+        "code": "audio_clip_silent",
+        "severity": "warning",
+        "message": "assets/sfx/zoom-out.mp3 is silent for the whole part this clip plays (0-1.15 s of the file).",
+        "selector": "#sfx-59",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 12.36,
+        "timeRange": [
+          12.36,
+          13.51
+        ],
+        "fixHint": "Check the file has sound there, or move data-media-start to where it does."
+      },
+      {
+        "code": "audio_clip_silent",
+        "severity": "warning",
+        "message": "assets/sfx/zoom-out.mp3 is silent for the whole part this clip plays (0-1.15 s of the file).",
+        "selector": "#sfx-70",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 17.61,
+        "timeRange": [
+          17.61,
+          18.759999999999998
+        ],
+        "fixHint": "Check the file has sound there, or move data-media-start to where it does."
+      },
+      {
+        "code": "audio_clip_silent",
+        "severity": "warning",
+        "message": "assets/sfx/zoom-out.mp3 is silent for the whole part this clip plays (0-1.15 s of the file).",
+        "selector": "#sfx-79",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 19.81,
+        "timeRange": [
+          19.81,
+          20.959999999999997
+        ],
+        "fixHint": "Check the file has sound there, or move data-media-start to where it does."
+      },
+      {
+        "code": "audio_clip_silent",
+        "severity": "warning",
+        "message": "assets/sfx/zoom-out.mp3 is silent for the whole part this clip plays (0-1.15 s of the file).",
+        "selector": "#sfx-94",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 24.68,
+        "timeRange": [
+          24.68,
+          25.83
+        ],
+        "fixHint": "Check the file has sound there, or move data-media-start to where it does."
+      },
+      {
+        "code": "audio_clip_silent",
+        "severity": "warning",
+        "message": "assets/sfx/zoom-out.mp3 is silent for the whole part this clip plays (0-1.15 s of the file).",
+        "selector": "#sfx-113",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 31.52,
+        "timeRange": [
+          31.52,
+          32.67
+        ],
+        "fixHint": "Check the file has sound there, or move data-media-start to where it does."
+      },
+      {
+        "code": "audio_clip_silent",
+        "severity": "warning",
+        "message": "assets/sfx/zoom-out.mp3 is silent for the whole part this clip plays (0-1.15 s of the file).",
+        "selector": "#sfx-134",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 37.3,
+        "timeRange": [
+          37.3,
+          38.449999999999996
+        ],
+        "fixHint": "Check the file has sound there, or move data-media-start to where it does."
+      },
+      {
+        "code": "audio_clip_silent",
+        "severity": "warning",
+        "message": "assets/sfx/zoom-out.mp3 is silent for the whole part this clip plays (0-1.15 s of the file).",
+        "selector": "#sfx-139",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 39.18,
+        "timeRange": [
+          39.18,
+          40.33
+        ],
+        "fixHint": "Check the file has sound there, or move data-media-start to where it does."
+      },
+      {
+        "code": "audio_clip_silent",
+        "severity": "warning",
+        "message": "assets/sfx/zoom-out.mp3 is silent for the whole part this clip plays (0-1.15 s of the file).",
+        "selector": "#sfx-157",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 43.17,
+        "timeRange": [
+          43.17,
+          44.32
+        ],
+        "fixHint": "Check the file has sound there, or move data-media-start to where it does."
+      },
+      {
+        "code": "audio_clip_silent",
+        "severity": "warning",
+        "message": "assets/sfx/zoom-out.mp3 is silent for the whole part this clip plays (0-1.15 s of the file).",
+        "selector": "#sfx-167",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 45.74,
+        "timeRange": [
+          45.74,
+          46.89
+        ],
+        "fixHint": "Check the file has sound there, or move data-media-start to where it does."
+      },
+      {
+        "code": "audio_clip_silent",
+        "severity": "warning",
+        "message": "assets/sfx/zoom-out.mp3 is silent for the whole part this clip plays (0-1.15 s of the file).",
+        "selector": "#sfx-181",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 50.29,
+        "timeRange": [
+          50.29,
+          51.44
+        ],
+        "fixHint": "Check the file has sound there, or move data-media-start to where it does."
+      }
+    ]
+  },
+  "hdr": {
+    "autoPromotion": null,
+    "inspection": "available"
+  },
+  "snapshots": {
+    "enabled": false,
+    "files": [],
+    "times": [],
+    "findingFiles": []
+  }
+}
