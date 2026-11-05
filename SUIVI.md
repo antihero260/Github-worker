@@ -14,6 +14,7 @@ Dernière mise à jour : 2 novembre 2026, 13 h 30 UTC.
 | Vidéo « L’IA cachée dans ton clavier » (vidéo 3) | Voix off sur le clavier prédictif (le script fourni parlait de n8n : **la voix fait foi**, confirmé par l'utilisateur). 16 scènes, vraies vidéos et logos, téléphone animé, 3 musiques et 58 bruitages Mixkit (155 placés). Contrôle réussi (0 erreur), images revues. **Envoyée** à 21 h (`videos/clavier-ia-vertical/renders/L-IA-cachee-dans-ton-clavier.mp4`, non versionné : 1080×1920, 96 s, −13,9 LUFS, crête −1,4 dBFS ; volume final monté avec ffmpeg, image copiée telle quelle). Titre proposé, à valider. **Retour : l'utilisateur l'a adorée** (« juste baisse très légèrement le volume du son »). Titre non commenté. |
 | Vidéo « Crée ton agent IA sans coder » (vidéo 4, n8n + Telegram) | L'utilisateur a **adoré la vidéo 3**. Ses demandes : baisser très légèrement « le son » (précision de l'utilisateur ensuite : **les bruitages sont bons, c'est la musique qu'il faut baisser** → musique −2 dB, bruitages inchangés), encore plus de sons d'Internet et variés, **beaucoup plus d'illustrations, surtout des vidéos**. 27 scènes, 21 vidéos Mixkit, 6 logos, interface n8n et Telegram animées, 99 bruitages (211 placés). Contrôle réussi, images revues. **Envoyée** à 22 h 35 (`videos/agent-ia-n8n-vertical/renders/Cree-ton-agent-IA-sans-coder.mp4`, non versionné : 1080×1920, 130 s, −13,9 LUFS, crête −0,9 dBFS). Titre proposé, à valider. En attente des retours. |
 | Vidéo « Je classe les IA de S à C » (vidéo 5) | Voix off + texte fournis par l'utilisateur. 20 scènes autour d'un tableau S/A/B/C animé, 16 logos, 15 vidéos Mixkit, 166 bruitages. Version 1 envoyée. **Retour : musiques « pas du tout bonnes », en vouloir à la mode et libres de droits** → remplacées par les plus téléchargées de Mixkit : « Deep Urban » (n° 1), « Cat Walk » (n° 2), « Trapanomics » (trap). Version 2 **envoyée** (1080×1920, 120 s, −14,1 LUFS, crête −1,8 dBFS). En attente des retours. |
+| Vidéo « 5 skills GitHub pour un design unique » (vidéo 6) | Voix + texte de l'utilisateur (60 s). Intro en rafale de 16 vidéos superposées, murs de sites identiques, les 5 skills vérifiés et filmés sur leurs vraies pages GitHub et sites officiels (Playwright), personnages, 3 musiques rythmées Mixkit, 118 bruitages. Contrôle réussi, images revues. Rendu en cours. |
 | Pull request | [#2](https://github.com/antihero260/Github-worker/pull/2) ouverte vers `main`, surveillée. Branche : `ccr-e6530603-mcler7`. |
 
 ## Prochaines étapes
@@ -80,6 +81,8 @@ Dernière mise à jour : 2 novembre 2026, 13 h 30 UTC.
 - Caractères absents d'Anton (⇄, ⌕, ◆) : les remplacer par du texte ou un petit SVG.
 - Transcription : Parakeet peut dériver vers l'anglais sur une voix française (vidéo 5). Utiliser alors
   `hyperframes transcribe --engine whisper --model medium --language fr`.
+- Filmer de vraies pages web : Playwright (déjà installé) avec `recordVideo` et `colorScheme: 'dark'` ; github.com
+  s'ouvre dans le navigateur même si l'API GitHub est restreinte (la recherche `gh api search/...` marche).
 - Snapshots : quand on demande beaucoup d'images d'un coup, certaines sortent floues/vides (scène prise à son état
   de départ). Relancer ces instants seuls pour vérifier avant de conclure à un bug.
 - Apostrophe droite `'` dans le titre du projet vertical : casse l'attribut `data-composition-variables='…'`.

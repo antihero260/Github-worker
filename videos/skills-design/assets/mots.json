@@ -1,0 +1,920 @@
+[
+{
+"i": 0,
+"text": "TU",
+"start": 0.08,
+"end": 0.13
+},
+{
+"i": 1,
+"text": "VIENS",
+"start": 0.13,
+"end": 0.44
+},
+{
+"i": 2,
+"text": "DE",
+"start": 0.5,
+"end": 0.58
+},
+{
+"i": 3,
+"text": "CRÉER",
+"start": 0.58,
+"end": 0.9
+},
+{
+"i": 4,
+"text": "TON",
+"start": 0.9,
+"end": 1.03
+},
+{
+"i": 5,
+"text": "SITE",
+"start": 1.09,
+"end": 1.35
+},
+{
+"i": 6,
+"text": "AVEC",
+"start": 1.35,
+"end": 1.6
+},
+{
+"i": 7,
+"text": "L'IA.",
+"start": 1.6,
+"end": 1.92
+},
+{
+"i": 8,
+"text": "IL",
+"start": 2,
+"end": 2.05
+},
+{
+"i": 9,
+"text": "FONCTIONNE,",
+"start": 2.05,
+"end": 2.84
+},
+{
+"i": 10,
+"text": "IL",
+"start": 2.84,
+"end": 3.04
+},
+{
+"i": 11,
+"text": "EST",
+"start": 3.04,
+"end": 3.34
+},
+{
+"i": 12,
+"text": "MÊME",
+"start": 3.34,
+"end": 3.59
+},
+{
+"i": 13,
+"text": "JOLI…",
+"start": 3.84,
+"end": 4.16
+},
+{
+"i": 14,
+"text": "MAIS",
+"start": 4.25,
+"end": 4.43
+},
+{
+"i": 15,
+"text": "IL",
+"start": 4.43,
+"end": 4.56
+},
+{
+"i": 16,
+"text": "RESSEMBLE",
+"start": 4.56,
+"end": 5.17
+},
+{
+"i": 17,
+"text": "À",
+"start": 5.17,
+"end": 5.19
+},
+{
+"i": 18,
+"text": "DES",
+"start": 5.25,
+"end": 5.43
+},
+{
+"i": 19,
+"text": "MILLIERS",
+"start": 5.5,
+"end": 5.84
+},
+{
+"i": 20,
+"text": "D'AUTRES :",
+"start": 6.05,
+"end": 6.6
+},
+{
+"i": 21,
+"text": "MÊMES",
+"start": 6.69,
+"end": 7.185
+},
+{
+"i": 22,
+"text": "STRUCTURES,",
+"start": 7.185,
+"end": 7.68
+},
+{
+"i": 23,
+"text": "MÊMES",
+"start": 7.68,
+"end": 8.175
+},
+{
+"i": 24,
+"text": "CARTES,",
+"start": 8.175,
+"end": 8.67
+},
+{
+"i": 25,
+"text": "MÊMES",
+"start": 8.67,
+"end": 9.165
+},
+{
+"i": 26,
+"text": "DÉGRADÉS.",
+"start": 9.165,
+"end": 9.66
+},
+{
+"i": 27,
+"text": "RÉSULTAT :",
+"start": 9.73,
+"end": 10.41
+},
+{
+"i": 28,
+"text": "TON",
+"start": 10.41,
+"end": 10.63
+},
+{
+"i": 29,
+"text": "SITE",
+"start": 10.64,
+"end": 10.93
+},
+{
+"i": 30,
+"text": "SE",
+"start": 11,
+"end": 11.09
+},
+{
+"i": 31,
+"text": "NOIE",
+"start": 11.09,
+"end": 11.34
+},
+{
+"i": 32,
+"text": "DANS",
+"start": 11.64,
+"end": 11.69
+},
+{
+"i": 33,
+"text": "LA",
+"start": 11.69,
+"end": 11.84
+},
+{
+"i": 34,
+"text": "MASSE.",
+"start": 11.84,
+"end": 12.45
+},
+{
+"i": 35,
+"text": "VOICI",
+"start": 12.61,
+"end": 12.96
+},
+{
+"i": 36,
+"text": "CINQ",
+"start": 13.02,
+"end": 13.2
+},
+{
+"i": 37,
+"text": "SKILLS",
+"start": 13.26,
+"end": 13.78
+},
+{
+"i": 38,
+"text": "GITHUB",
+"start": 13.79,
+"end": 14.19
+},
+{
+"i": 39,
+"text": "POUR",
+"start": 14.5,
+"end": 14.7
+},
+{
+"i": 40,
+"text": "ÉVITER",
+"start": 14.7,
+"end": 15.24
+},
+{
+"i": 41,
+"text": "ÇA.",
+"start": 15.24,
+"end": 15.46
+},
+{
+"i": 42,
+"text": "1.",
+"start": 15.55,
+"end": 16.12
+},
+{
+"i": 43,
+"text": "FRONTEND",
+"start": 16.12,
+"end": 16.93
+},
+{
+"i": 44,
+"text": "DESIGN :",
+"start": 16.93,
+"end": 17.54
+},
+{
+"i": 45,
+"text": "AIDE",
+"start": 17.62,
+"end": 17.82
+},
+{
+"i": 46,
+"text": "TON",
+"start": 17.82,
+"end": 18
+},
+{
+"i": 47,
+"text": "IA",
+"start": 18.06,
+"end": 18.14
+},
+{
+"i": 48,
+"text": "À",
+"start": 18.14,
+"end": 18.2
+},
+{
+"i": 49,
+"text": "CRÉER",
+"start": 18.2,
+"end": 18.51
+},
+{
+"i": 50,
+"text": "UNE",
+"start": 18.53,
+"end": 18.73
+},
+{
+"i": 51,
+"text": "VÉRITABLE",
+"start": 18.73,
+"end": 19.23
+},
+{
+"i": 52,
+"text": "DIRECTION",
+"start": 19.54,
+"end": 19.93
+},
+{
+"i": 53,
+"text": "ARTISTIQUE,",
+"start": 19.93,
+"end": 20.66
+},
+{
+"i": 54,
+"text": "AVEC",
+"start": 20.75,
+"end": 20.89
+},
+{
+"i": 55,
+"text": "UNE",
+"start": 20.89,
+"end": 21.06
+},
+{
+"i": 56,
+"text": "IDENTITÉ",
+"start": 21.06,
+"end": 21.52
+},
+{
+"i": 57,
+"text": "VISUELLE",
+"start": 21.52,
+"end": 21.99
+},
+{
+"i": 58,
+"text": "QUI",
+"start": 22,
+"end": 22.16
+},
+{
+"i": 59,
+"text": "NE",
+"start": 22.16,
+"end": 22.26
+},
+{
+"i": 60,
+"text": "RESSEMBLE",
+"start": 22.26,
+"end": 22.76
+},
+{
+"i": 61,
+"text": "PAS",
+"start": 22.81,
+"end": 22.96
+},
+{
+"i": 62,
+"text": "À",
+"start": 22.96,
+"end": 23.03
+},
+{
+"i": 63,
+"text": "UN",
+"start": 23.03,
+"end": 23.18
+},
+{
+"i": 64,
+"text": "SIMPLE",
+"start": 23.18,
+"end": 23.64
+},
+{
+"i": 65,
+"text": "TEMPLATE.",
+"start": 23.64,
+"end": 24.35
+},
+{
+"i": 66,
+"text": "2.",
+"start": 24.59,
+"end": 25.41
+},
+{
+"i": 67,
+"text": "UI/UX",
+"start": 25.41,
+"end": 26.76
+},
+{
+"i": 68,
+"text": "PRO",
+"start": 26.78,
+"end": 27.23
+},
+{
+"i": 69,
+"text": "MAX :",
+"start": 27.23,
+"end": 27.72
+},
+{
+"i": 70,
+"text": "LUI",
+"start": 27.77,
+"end": 27.88
+},
+{
+"i": 71,
+"text": "DONNE",
+"start": 27.88,
+"end": 28.15
+},
+{
+"i": 72,
+"text": "ACCÈS",
+"start": 28.16,
+"end": 28.4
+},
+{
+"i": 73,
+"text": "À",
+"start": 28.46,
+"end": 28.49
+},
+{
+"i": 74,
+"text": "DES",
+"start": 28.49,
+"end": 28.65
+},
+{
+"i": 75,
+"text": "CENTAINES",
+"start": 28.66,
+"end": 29.16
+},
+{
+"i": 76,
+"text": "DE",
+"start": 29.16,
+"end": 29.27
+},
+{
+"i": 77,
+"text": "STYLES,",
+"start": 29.27,
+"end": 29.76
+},
+{
+"i": 78,
+"text": "DE",
+"start": 29.76,
+"end": 29.84
+},
+{
+"i": 79,
+"text": "PALETTES",
+"start": 29.87,
+"end": 30.22
+},
+{
+"i": 80,
+"text": "DE",
+"start": 30.22,
+"end": 30.31
+},
+{
+"i": 81,
+"text": "COULEURS",
+"start": 30.31,
+"end": 30.7
+},
+{
+"i": 82,
+"text": "ET",
+"start": 30.78,
+"end": 30.8
+},
+{
+"i": 83,
+"text": "DE",
+"start": 30.8,
+"end": 30.9
+},
+{
+"i": 84,
+"text": "COMBINAISONS",
+"start": 30.9,
+"end": 31.5
+},
+{
+"i": 85,
+"text": "DE",
+"start": 31.5,
+"end": 31.6
+},
+{
+"i": 86,
+"text": "TYPOGRAPHIES",
+"start": 31.6,
+"end": 32.26
+},
+{
+"i": 87,
+"text": "POUR",
+"start": 32.26,
+"end": 32.38
+},
+{
+"i": 88,
+"text": "CONSTRUIRE",
+"start": 32.68,
+"end": 33.1
+},
+{
+"i": 89,
+"text": "DES",
+"start": 33.1,
+"end": 33.28
+},
+{
+"i": 90,
+"text": "INTERFACES",
+"start": 33.28,
+"end": 33.89
+},
+{
+"i": 91,
+"text": "COHÉRENTES.",
+"start": 33.89,
+"end": 34.6
+},
+{
+"i": 92,
+"text": "3.",
+"start": 34.69,
+"end": 35.55
+},
+{
+"i": 93,
+"text": "SHADCN :",
+"start": 35.57,
+"end": 36.56
+},
+{
+"i": 94,
+"text": "L'AIDE",
+"start": 36.62,
+"end": 36.95
+},
+{
+"i": 95,
+"text": "À",
+"start": 36.95,
+"end": 37
+},
+{
+"i": 96,
+"text": "CHOISIR,",
+"start": 37.06,
+"end": 37.59
+},
+{
+"i": 97,
+"text": "ASSEMBLER",
+"start": 37.65,
+"end": 38.23
+},
+{
+"i": 98,
+"text": "ET",
+"start": 38.23,
+"end": 38.27
+},
+{
+"i": 99,
+"text": "PERSONNALISER",
+"start": 38.54,
+"end": 39.1
+},
+{
+"i": 100,
+"text": "DES",
+"start": 39.1,
+"end": 39.22
+},
+{
+"i": 101,
+"text": "COMPOSANTS",
+"start": 39.22,
+"end": 39.66
+},
+{
+"i": 102,
+"text": "D'INTERFACE",
+"start": 39.66,
+"end": 40.25
+},
+{
+"i": 103,
+"text": "POUR",
+"start": 40.41,
+"end": 40.56
+},
+{
+"i": 104,
+"text": "OBTENIR",
+"start": 40.56,
+"end": 40.98
+},
+{
+"i": 105,
+"text": "UN",
+"start": 40.98,
+"end": 41.1
+},
+{
+"i": 106,
+"text": "DESIGN",
+"start": 41.1,
+"end": 41.46
+},
+{
+"i": 107,
+"text": "PLUS",
+"start": 41.46,
+"end": 41.7
+},
+{
+"i": 108,
+"text": "HARMONIEUX.",
+"start": 41.7,
+"end": 42.52
+},
+{
+"i": 109,
+"text": "4.",
+"start": 42.61,
+"end": 43.2
+},
+{
+"i": 110,
+"text": "TASTE",
+"start": 43.26,
+"end": 43.78
+},
+{
+"i": 111,
+"text": "SKILL :",
+"start": 43.85,
+"end": 44.19
+},
+{
+"i": 112,
+"text": "POUSSE",
+"start": 44.52,
+"end": 44.83
+},
+{
+"i": 113,
+"text": "TON",
+"start": 44.83,
+"end": 45.01
+},
+{
+"i": 114,
+"text": "IA",
+"start": 45.01,
+"end": 45.13
+},
+{
+"i": 115,
+"text": "À",
+"start": 45.13,
+"end": 45.14
+},
+{
+"i": 116,
+"text": "SORTIR",
+"start": 45.2,
+"end": 45.56
+},
+{
+"i": 117,
+"text": "DES",
+"start": 45.56,
+"end": 45.73
+},
+{
+"i": 118,
+"text": "DESIGNS",
+"start": 45.79,
+"end": 46.13
+},
+{
+"i": 119,
+"text": "GÉNÉRIQUES",
+"start": 46.36,
+"end": 46.86
+},
+{
+"i": 120,
+"text": "EN",
+"start": 46.94,
+"end": 46.96
+},
+{
+"i": 121,
+"text": "TRAVAILLANT",
+"start": 46.96,
+"end": 47.53
+},
+{
+"i": 122,
+"text": "DAVANTAGE",
+"start": 47.53,
+"end": 47.99
+},
+{
+"i": 123,
+"text": "LES",
+"start": 47.99,
+"end": 48.13
+},
+{
+"i": 124,
+"text": "CHOIX",
+"start": 48.2,
+"end": 48.4
+},
+{
+"i": 125,
+"text": "ESTHÉTIQUES",
+"start": 48.4,
+"end": 49.02
+},
+{
+"i": 126,
+"text": "ET",
+"start": 49.02,
+"end": 49.12
+},
+{
+"i": 127,
+"text": "LES",
+"start": 49.15,
+"end": 49.3
+},
+{
+"i": 128,
+"text": "RÉFÉRENCES",
+"start": 49.3,
+"end": 49.87
+},
+{
+"i": 129,
+"text": "VISUELLES.",
+"start": 49.87,
+"end": 50.55
+},
+{
+"i": 130,
+"text": "5.",
+"start": 50.69,
+"end": 51.22
+},
+{
+"i": 131,
+"text": "EMIL",
+"start": 51.22,
+"end": 51.73
+},
+{
+"i": 132,
+"text": "DESIGN",
+"start": 51.73,
+"end": 52.27
+},
+{
+"i": 133,
+"text": "ENGINEERING :",
+"start": 52.58,
+"end": 53.5
+},
+{
+"i": 134,
+"text": "LUI",
+"start": 53.55,
+"end": 53.66
+},
+{
+"i": 135,
+"text": "APPREND",
+"start": 53.66,
+"end": 54.02
+},
+{
+"i": 136,
+"text": "À",
+"start": 54.04,
+"end": 54.09
+},
+{
+"i": 137,
+"text": "SOIGNER",
+"start": 54.09,
+"end": 54.47
+},
+{
+"i": 138,
+"text": "LES",
+"start": 54.48,
+"end": 54.64
+},
+{
+"i": 139,
+"text": "ANIMATIONS,",
+"start": 54.64,
+"end": 55.21
+},
+{
+"i": 140,
+"text": "LES",
+"start": 55.48,
+"end": 55.54
+},
+{
+"i": 141,
+"text": "TRANSITIONS",
+"start": 55.54,
+"end": 56.22
+},
+{
+"i": 142,
+"text": "ET",
+"start": 56.22,
+"end": 56.3
+},
+{
+"i": 143,
+"text": "LES",
+"start": 56.38,
+"end": 56.49
+},
+{
+"i": 144,
+"text": "MICRO-INTERACTIONS",
+"start": 56.49,
+"end": 57.19
+},
+{
+"i": 145,
+"text": "QUI",
+"start": 57.58,
+"end": 57.64
+},
+{
+"i": 146,
+"text": "DONNENT",
+"start": 57.64,
+"end": 57.87
+},
+{
+"i": 147,
+"text": "UNE",
+"start": 57.87,
+"end": 57.94
+},
+{
+"i": 148,
+"text": "VRAIE",
+"start": 58.01,
+"end": 58.18
+},
+{
+"i": 149,
+"text": "IMPRESSION",
+"start": 58.24,
+"end": 58.74
+},
+{
+"i": 150,
+"text": "DE",
+"start": 58.74,
+"end": 58.76
+},
+{
+"i": 151,
+"text": "QUALITÉ",
+"start": 58.83,
+"end": 59.13
+},
+{
+"i": 152,
+"text": "PROFESSIONNELLE.",
+"start": 59.13,
+"end": 59.98
+}
+]
