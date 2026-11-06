@@ -5358,6 +5358,7 @@ def ecrire_check():
         js.append(f'      tl.set("#ck-q{k}", {{ opacity: 0 }}, {round(g_act + 0.15, 3)});')
         js.append(f'      tl.set("#ck-c{k}", {{ opacity: 0 }}, {round(g_act + 0.15, 3)});')
         js.append(f'      tl.set("#ck-n{k}", {{ opacity: 1 }}, {round(g_act + 0.15, 3)});')
+        js.append(f'      tl.set("#ck-{k}", {{ backgroundImage: "none" }}, {round(g_act + 0.15, 3)});')
         js.append(f'      tl.to("#ck-{k}", {{ borderColor: "#DCFC1C", backgroundColor: "rgba(220, 252, 28, 0.3)", scale: 1.08, duration: 0.18 }}, {round(g_act + 0.15, 3)});')
         js.append(f'      tl.to("#ck-{k}", {{ borderColor: "#DCFC1C", backgroundColor: "#DCFC1C", color: "#0C0C0C", scale: 1, duration: 0.16 }}, {round(g_ok - 0.05, 3)});')
         js.append(f'      tl.fromTo("#ck-v{k}", {{ opacity: 0, scale: 2 }}, {{ opacity: 1, scale: 1, duration: 0.14, ease: "power4.in", immediateRender: false }}, {round(g_ok - 0.05, 3)});')
