@@ -1,0 +1,23 @@
+Tu penses qu'un site web, c'est forcément une page avec un logo, quelques images et un bouton pour contacter l'entreprise ?
+
+Pas du tout ! Il existe plusieurs types de sites web, et chacun répond à un besoin précis.
+
+1. Le site vitrine. C'est la carte de visite numérique d'une entreprise. Il présente ses services, ses tarifs, ses réalisations et permet aux clients de la contacter.
+
+2. Le site e-commerce. Ici, on passe à la vente. Les visiteurs peuvent consulter des produits, les ajouter au panier, payer directement en ligne et suivre leurs commandes.
+
+3. Le portfolio. C'est la vitrine de ton talent. Graphistes, photographes, développeurs ou créateurs peuvent y présenter leurs meilleurs projets pour attirer des clients.
+
+4. Le blog ou site média. Son objectif est de publier du contenu : articles, actualités, conseils ou analyses. C'est un excellent moyen de construire une audience et d'attirer du trafic.
+
+5. La landing page. C'est une page conçue pour convertir les visiteurs en clients. Son objectif est précis : vendre un produit, récupérer des contacts ou faire télécharger une application.
+
+6. La plateforme web. Là, on passe à un autre niveau. Ce n'est plus seulement un site pour consulter des informations : les utilisateurs peuvent créer un compte, interagir, échanger ou utiliser des fonctionnalités. Pense à Netflix, Airbnb ou à une plateforme de formation.
+
+Et voilà pourquoi tous les sites web ne se construisent pas de la même manière.
+
+La vraie question, ce n'est pas seulement : « Comment créer un site web avec l'IA ? »
+
+C'est surtout : « Quel problème mon site va-t-il résoudre ? »
+
+Abonne toi à Gausscode.

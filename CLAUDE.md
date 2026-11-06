@@ -32,6 +32,11 @@ production de vidéos avec HyperFrames (`hyperframes-style/`, `videos/`, `script
 - **Hook visuel fort dès la première seconde** (retour sur la vidéo 6 : « un hook visuel est très important, captiver visuellement dès le début c'est fort ») : rafale ou mosaïque de vraies vidéos qui change sur chaque mot, gros bruitages.
 - **Le hook doit être plein de vraies vidéos et images d'Internet** (retour sur la vidéo 9 : « ton dernier hook ne me plaisait pas trop… mets les vidéos, ça ne manque pas sur Internet, et les images ; d'ailleurs augmente ») : pas un hook fait seulement d'interfaces dessinées ou codées. Au moins 15–20 vraies vidéos/photos dans les premières secondes, une par mot.
 - **Des vraies vidéos qui choquent visuellement TOUT AU LONG de la vidéo, pas seulement dans le hook** (demande pour la vidéo 11 : « pour empêcher les gens de partir, il faut aussi les choquer visuellement avec beaucoup de vidéos tout au long ») : derrière chaque scène, une rafale de vraies vidéos/photos qui change tous les 1–2 mots (`rafale_mots()`), les éléments (panneaux, personnage, textes) par-dessus.
+- **Du mystère, révélation progressive** (demande pour la vidéo 13) : ne jamais montrer toute la liste d'un coup. Les points
+  restent cachés (cases verrouillées « ? » sous le film, cartes floutées) et se dévoilent un par un, au moment où la voix les
+  annonce, avec un bruitage de révélation.
+- **Plus de suivi de caméra** (vidéo 13) : la caméra suit le personnage et les éléments qui bougent (panoramiques qui accompagnent
+  les déplacements, recadrages successifs), pas seulement des zooms fixes.
 - Le style peut varier d'une vidéo à l'autre si l'utilisateur le demande (vidéo 7 : style « Alerte », voir `videos/site-conforme/README.md`), en gardant le format vertical, les personnages qui bougent et les recadrages.
 - **Tout vérifier et corriger avant de lancer un rendu** : `hyperframes check` sans erreur, puis regarder les
   images clés. Ne jamais lancer le rendu dans la même commande que le contrôle.
