@@ -1,0 +1,632 @@
+[
+  {
+    "text": "Ton",
+    "start": 0.1,
+    "end": 0.17,
+    "id": "w0"
+  },
+  {
+    "text": "site",
+    "start": 0.17,
+    "end": 0.39,
+    "id": "w1"
+  },
+  {
+    "text": "est",
+    "start": 0.45,
+    "end": 0.57,
+    "id": "w2"
+  },
+  {
+    "text": "en",
+    "start": 0.57,
+    "end": 0.67,
+    "id": "w3"
+  },
+  {
+    "text": "français?",
+    "start": 0.67,
+    "end": 1.34,
+    "id": "w4"
+  },
+  {
+    "text": "En",
+    "start": 1.44,
+    "end": 1.51,
+    "id": "w5"
+  },
+  {
+    "text": "un",
+    "start": 1.51,
+    "end": 1.68,
+    "id": "w6"
+  },
+  {
+    "text": "clic,",
+    "start": 1.68,
+    "end": 2.2,
+    "id": "w7"
+  },
+  {
+    "text": "tu",
+    "start": 2.2,
+    "end": 2.29,
+    "id": "w8"
+  },
+  {
+    "text": "peux",
+    "start": 2.29,
+    "end": 2.38,
+    "id": "w9"
+  },
+  {
+    "text": "le",
+    "start": 2.38,
+    "end": 2.62,
+    "id": "w10"
+  },
+  {
+    "text": "rendre",
+    "start": 2.62,
+    "end": 2.86,
+    "id": "w11"
+  },
+  {
+    "text": "accessible",
+    "start": 2.86,
+    "end": 3.34,
+    "id": "w12"
+  },
+  {
+    "text": "aux",
+    "start": 3.34,
+    "end": 3.46,
+    "id": "w13"
+  },
+  {
+    "text": "visiteurs",
+    "start": 3.46,
+    "end": 3.84,
+    "id": "w14"
+  },
+  {
+    "text": "anglophones",
+    "start": 3.84,
+    "end": 4.56,
+    "id": "w15"
+  },
+  {
+    "text": "et",
+    "start": 4.56,
+    "end": 4.66,
+    "id": "w16"
+  },
+  {
+    "text": "hispanophones.",
+    "start": 4.66,
+    "end": 5.48,
+    "id": "w17"
+  },
+  {
+    "text": "Regarde!",
+    "start": 5.58,
+    "end": 6.48,
+    "id": "w18"
+  },
+  {
+    "text": "Ici,",
+    "start": 6.58,
+    "end": 6.77,
+    "id": "w19"
+  },
+  {
+    "text": "j'ai",
+    "start": 6.77,
+    "end": 6.99,
+    "id": "w20"
+  },
+  {
+    "text": "simplement",
+    "start": 6.99,
+    "end": 7.51,
+    "id": "w21"
+  },
+  {
+    "text": "ajouté",
+    "start": 7.7,
+    "end": 7.92,
+    "id": "w22"
+  },
+  {
+    "text": "un",
+    "start": 8,
+    "end": 8.04,
+    "id": "w23"
+  },
+  {
+    "text": "sélecteur",
+    "start": 8.04,
+    "end": 8.5,
+    "id": "w24"
+  },
+  {
+    "text": "de",
+    "start": 8.57,
+    "end": 8.64,
+    "id": "w25"
+  },
+  {
+    "text": "langue,",
+    "start": 8.71,
+    "end": 9.23,
+    "id": "w26"
+  },
+  {
+    "text": "français,",
+    "start": 9.23,
+    "end": 9.96,
+    "id": "w27"
+  },
+  {
+    "text": "anglais",
+    "start": 9.96,
+    "end": 10.45,
+    "id": "w28"
+  },
+  {
+    "text": "et",
+    "start": 10.45,
+    "end": 10.59,
+    "id": "w29"
+  },
+  {
+    "text": "espagnol.",
+    "start": 10.59,
+    "end": 11.24,
+    "id": "w30"
+  },
+  {
+    "text": "Pour",
+    "start": 11.34,
+    "end": 11.53,
+    "id": "w31"
+  },
+  {
+    "text": "le",
+    "start": 11.53,
+    "end": 11.63,
+    "id": "w32"
+  },
+  {
+    "text": "faire",
+    "start": 11.69,
+    "end": 12.04,
+    "id": "w33"
+  },
+  {
+    "text": "avec",
+    "start": 12.04,
+    "end": 12.27,
+    "id": "w34"
+  },
+  {
+    "text": "l'IA,",
+    "start": 12.4,
+    "end": 12.75,
+    "id": "w35"
+  },
+  {
+    "text": "demande-lui",
+    "start": 12.76,
+    "end": 13.62,
+    "id": "w36"
+  },
+  {
+    "text": "«",
+    "start": 13.62,
+    "end": 13.7,
+    "id": "w37"
+  },
+  {
+    "text": "Ajoute",
+    "start": 13.7,
+    "end": 14.21,
+    "id": "w38"
+  },
+  {
+    "text": "un",
+    "start": 14.21,
+    "end": 14.39,
+    "id": "w39"
+  },
+  {
+    "text": "sélecteur",
+    "start": 14.39,
+    "end": 15.08,
+    "id": "w40"
+  },
+  {
+    "text": "de",
+    "start": 15.17,
+    "end": 15.34,
+    "id": "w41"
+  },
+  {
+    "text": "langue",
+    "start": 15.34,
+    "end": 15.8,
+    "id": "w42"
+  },
+  {
+    "text": "FR,",
+    "start": 15.88,
+    "end": 16.21,
+    "id": "w43"
+  },
+  {
+    "text": "EN",
+    "start": 16.21,
+    "end": 16.34,
+    "id": "w44"
+  },
+  {
+    "text": "et",
+    "start": 16.39,
+    "end": 16.63,
+    "id": "w45"
+  },
+  {
+    "text": "ES",
+    "start": 16.64,
+    "end": 17.18,
+    "id": "w46"
+  },
+  {
+    "text": "à",
+    "start": 17.18,
+    "end": 17.22,
+    "id": "w47"
+  },
+  {
+    "text": "mon",
+    "start": 17.22,
+    "end": 17.36,
+    "id": "w48"
+  },
+  {
+    "text": "site.",
+    "start": 17.46,
+    "end": 18.36,
+    "id": "w49"
+  },
+  {
+    "text": "Traduis",
+    "start": 18.46,
+    "end": 18.73,
+    "id": "w50"
+  },
+  {
+    "text": "automatiquement",
+    "start": 18.73,
+    "end": 19.4,
+    "id": "w51"
+  },
+  {
+    "text": "tous",
+    "start": 19.53,
+    "end": 19.69,
+    "id": "w52"
+  },
+  {
+    "text": "les",
+    "start": 19.88,
+    "end": 19.91,
+    "id": "w53"
+  },
+  {
+    "text": "textes,",
+    "start": 19.91,
+    "end": 20.32,
+    "id": "w54"
+  },
+  {
+    "text": "les",
+    "start": 20.32,
+    "end": 20.48,
+    "id": "w55"
+  },
+  {
+    "text": "boutons,",
+    "start": 20.48,
+    "end": 20.95,
+    "id": "w56"
+  },
+  {
+    "text": "les",
+    "start": 20.95,
+    "end": 21.11,
+    "id": "w57"
+  },
+  {
+    "text": "menus",
+    "start": 21.11,
+    "end": 21.38,
+    "id": "w58"
+  },
+  {
+    "text": "et",
+    "start": 21.38,
+    "end": 21.48,
+    "id": "w59"
+  },
+  {
+    "text": "les",
+    "start": 21.48,
+    "end": 21.64,
+    "id": "w60"
+  },
+  {
+    "text": "formulaires",
+    "start": 21.64,
+    "end": 22.36,
+    "id": "w61"
+  },
+  {
+    "text": "selon",
+    "start": 22.36,
+    "end": 22.57,
+    "id": "w62"
+  },
+  {
+    "text": "la",
+    "start": 22.74,
+    "end": 22.75,
+    "id": "w63"
+  },
+  {
+    "text": "langue",
+    "start": 22.75,
+    "end": 23.03,
+    "id": "w64"
+  },
+  {
+    "text": "choisie",
+    "start": 23.09,
+    "end": 23.48,
+    "id": "w65"
+  },
+  {
+    "text": "sans",
+    "start": 23.48,
+    "end": 23.67,
+    "id": "w66"
+  },
+  {
+    "text": "modifier",
+    "start": 23.67,
+    "end": 24.16,
+    "id": "w67"
+  },
+  {
+    "text": "le",
+    "start": 24.16,
+    "end": 24.26,
+    "id": "w68"
+  },
+  {
+    "text": "design.",
+    "start": 24.26,
+    "end": 24.8,
+    "id": "w69"
+  },
+  {
+    "text": "»",
+    "start": 24.9,
+    "end": 25.8,
+    "id": "w70"
+  },
+  {
+    "text": "Et",
+    "start": 25.9,
+    "end": 26,
+    "id": "w71"
+  },
+  {
+    "text": "voilà!",
+    "start": 26,
+    "end": 26.8,
+    "id": "w72"
+  },
+  {
+    "text": "Un",
+    "start": 26.8,
+    "end": 26.84,
+    "id": "w73"
+  },
+  {
+    "text": "seul",
+    "start": 26.84,
+    "end": 27.02,
+    "id": "w74"
+  },
+  {
+    "text": "site,",
+    "start": 27.02,
+    "end": 27.24,
+    "id": "w75"
+  },
+  {
+    "text": "trois",
+    "start": 27.32,
+    "end": 27.43,
+    "id": "w76"
+  },
+  {
+    "text": "langues,",
+    "start": 27.43,
+    "end": 27.76,
+    "id": "w77"
+  },
+  {
+    "text": "sans",
+    "start": 27.76,
+    "end": 27.9,
+    "id": "w78"
+  },
+  {
+    "text": "avoir",
+    "start": 27.9,
+    "end": 28.16,
+    "id": "w79"
+  },
+  {
+    "text": "besoin",
+    "start": 28.16,
+    "end": 28.48,
+    "id": "w80"
+  },
+  {
+    "text": "de",
+    "start": 28.48,
+    "end": 28.58,
+    "id": "w81"
+  },
+  {
+    "text": "créer",
+    "start": 28.58,
+    "end": 28.83,
+    "id": "w82"
+  },
+  {
+    "text": "trois",
+    "start": 28.83,
+    "end": 29.08,
+    "id": "w83"
+  },
+  {
+    "text": "sites",
+    "start": 29.08,
+    "end": 29.33,
+    "id": "w84"
+  },
+  {
+    "text": "différents.",
+    "start": 29.33,
+    "end": 29.96,
+    "id": "w85"
+  },
+  {
+    "text": "Attention",
+    "start": 30.06,
+    "end": 30.51,
+    "id": "w86"
+  },
+  {
+    "text": "tout",
+    "start": 30.51,
+    "end": 30.75,
+    "id": "w87"
+  },
+  {
+    "text": "de",
+    "start": 30.75,
+    "end": 30.86,
+    "id": "w88"
+  },
+  {
+    "text": "même,",
+    "start": 30.86,
+    "end": 31.23,
+    "id": "w89"
+  },
+  {
+    "text": "vérifie",
+    "start": 31.41,
+    "end": 31.65,
+    "id": "w90"
+  },
+  {
+    "text": "les",
+    "start": 31.65,
+    "end": 31.83,
+    "id": "w91"
+  },
+  {
+    "text": "traductions",
+    "start": 31.83,
+    "end": 32.49,
+    "id": "w92"
+  },
+  {
+    "text": "avant",
+    "start": 32.49,
+    "end": 32.79,
+    "id": "w93"
+  },
+  {
+    "text": "de",
+    "start": 32.79,
+    "end": 32.91,
+    "id": "w94"
+  },
+  {
+    "text": "publier.",
+    "start": 32.91,
+    "end": 33.6,
+    "id": "w95"
+  },
+  {
+    "text": "Un",
+    "start": 33.7,
+    "end": 33.73,
+    "id": "w96"
+  },
+  {
+    "text": "site,",
+    "start": 33.73,
+    "end": 34.11,
+    "id": "w97"
+  },
+  {
+    "text": "plusieurs",
+    "start": 34.11,
+    "end": 34.63,
+    "id": "w98"
+  },
+  {
+    "text": "langues,",
+    "start": 34.98,
+    "end": 35.31,
+    "id": "w99"
+  },
+  {
+    "text": "beaucoup",
+    "start": 35.31,
+    "end": 35.84,
+    "id": "w100"
+  },
+  {
+    "text": "plus",
+    "start": 35.84,
+    "end": 36.1,
+    "id": "w101"
+  },
+  {
+    "text": "de",
+    "start": 36.1,
+    "end": 36.22,
+    "id": "w102"
+  },
+  {
+    "text": "visiteurs",
+    "start": 36.24,
+    "end": 36.83,
+    "id": "w103"
+  },
+  {
+    "text": "potentiels.",
+    "start": 36.83,
+    "end": 37.6,
+    "id": "w104"
+  }
+]
