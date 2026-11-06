@@ -10,10 +10,8 @@ Logos officiels (`../img/logo-claude.svg`, `../img/logo-cursor.svg`) : theSVG vi
 
 ## Vidéos Mixkit (licence gratuite, crédit non obligatoire)
 
-Nouvelles : `billets-tombent` (18305), `compteuse-billets` (45703), `billets-tournent` (47005), `encre-liquide` (44818),
-`tunnel-cubes` (31497), `lumiere-cristal` (47282).
-Reprises des vidéos précédentes : `code-html`, `code-ecran`, `web-design`, `developpeur`, `macbook`, `laptop-homme`,
-`graphiste`, `site-mode`, `montage-video`, `photo-produit`, `ville-futur`, `interface-vr`, `sphere-donnees`, `lunettes-ecran`.
+Nouvelles : `billets-tombent` (18305), `encre-liquide` (44818), `tunnel-cubes` (31497).
+Reprises des vidéos précédentes : `code-html`, `web-design`, `graphiste`, `site-mode`, `montage-video`, `photo-produit`, `ville-futur`, `interface-vr`, `sphere-donnees`, `lunettes-ecran`.
 
 ## Faux sites
 
