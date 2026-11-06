@@ -6282,7 +6282,7 @@ def ecrire_check():
         right: 0;
         top: 22px;
         text-align: center;
-        font-size: 96px;
+        font-size: QSIZE;
         line-height: 1;
         color: #dcfc1c;
       }
@@ -6307,7 +6307,7 @@ def ecrire_check():
         top: 8px;
         opacity: 0;
       }
-""".replace("width: 248px;", f"width: {largeur}px;")
+""".replace("width: 248px;", f"width: {largeur}px;").replace("QSIZE", "70px" if len(CHECK) > 6 else "96px")
     html = (f'      <div id="ck-barre" class="clip" data-start="0" data-duration="{FIN}" data-track-index="3" style="opacity: 0">\n'
             f'        <div id="ck-tete">{CHECK_TITRE}</div>\n        <div id="ck-cases">\n' + "\n".join("  " + c for c in cases) +
             "\n        </div>\n      </div>")
