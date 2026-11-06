@@ -1,0 +1,1304 @@
+[
+{
+"i": 0,
+"text": "CE",
+"start": 0.05,
+"end": 0.13
+},
+{
+"i": 1,
+"text": "SITE",
+"start": 0.13,
+"end": 0.38
+},
+{
+"i": 2,
+"text": "RESSEMBLE",
+"start": 0.43,
+"end": 1.01
+},
+{
+"i": 3,
+"text": "À",
+"start": 1.01,
+"end": 1.07
+},
+{
+"i": 4,
+"text": "UN",
+"start": 1.07,
+"end": 1.2
+},
+{
+"i": 5,
+"text": "JEU",
+"start": 1.2,
+"end": 1.4
+},
+{
+"i": 6,
+"text": "VIDÉO,",
+"start": 1.4,
+"end": 1.89
+},
+{
+"i": 7,
+"text": "POURTANT",
+"start": 1.89,
+"end": 2.22
+},
+{
+"i": 8,
+"text": "C'EST",
+"start": 2.3,
+"end": 2.49
+},
+{
+"i": 9,
+"text": "SIMPLEMENT",
+"start": 2.49,
+"end": 3
+},
+{
+"i": 10,
+"text": "UN",
+"start": 3,
+"end": 3.12
+},
+{
+"i": 11,
+"text": "SITE",
+"start": 3.12,
+"end": 3.28
+},
+{
+"i": 12,
+"text": "WEB",
+"start": 3.37,
+"end": 3.56
+},
+{
+"i": 13,
+"text": "CRÉÉ",
+"start": 3.56,
+"end": 4
+},
+{
+"i": 14,
+"text": "AVEC",
+"start": 4,
+"end": 4.24
+},
+{
+"i": 15,
+"text": "L'IA.",
+"start": 4.32,
+"end": 4.66
+},
+{
+"i": 16,
+"text": "ET",
+"start": 4.99,
+"end": 5.05
+},
+{
+"i": 17,
+"text": "LE",
+"start": 5.05,
+"end": 5.16
+},
+{
+"i": 18,
+"text": "PLUS",
+"start": 5.16,
+"end": 5.38
+},
+{
+"i": 19,
+"text": "FOU,",
+"start": 5.38,
+"end": 5.66
+},
+{
+"i": 20,
+"text": "C'EST",
+"start": 5.66,
+"end": 5.93
+},
+{
+"i": 21,
+"text": "QUE",
+"start": 5.93,
+"end": 6.1
+},
+{
+"i": 22,
+"text": "TU",
+"start": 6.1,
+"end": 6.2
+},
+{
+"i": 23,
+"text": "PEUX",
+"start": 6.2,
+"end": 6.43
+},
+{
+"i": 24,
+"text": "LITTÉRALEMENT",
+"start": 6.43,
+"end": 7.14
+},
+{
+"i": 25,
+"text": "TE",
+"start": 7.15,
+"end": 7.26
+},
+{
+"i": 26,
+"text": "PROMENER",
+"start": 7.26,
+"end": 7.67
+},
+{
+"i": 27,
+"text": "DANS",
+"start": 7.74,
+"end": 7.92
+},
+{
+"i": 28,
+"text": "SON",
+"start": 7.92,
+"end": 8.09
+},
+{
+"i": 29,
+"text": "UNIVERS.",
+"start": 8.09,
+"end": 8.76
+},
+{
+"i": 30,
+"text": "IMAGINE :",
+"start": 8.81,
+"end": 9.64
+},
+{
+"i": 31,
+"text": "TU",
+"start": 9.64,
+"end": 9.76
+},
+{
+"i": 32,
+"text": "ARRIVES",
+"start": 9.76,
+"end": 10.21
+},
+{
+"i": 33,
+"text": "SUR",
+"start": 10.21,
+"end": 10.33
+},
+{
+"i": 34,
+"text": "UN",
+"start": 10.33,
+"end": 10.61
+},
+{
+"i": 35,
+"text": "SITE",
+"start": 10.61,
+"end": 10.8
+},
+{
+"i": 36,
+"text": "ET,",
+"start": 10.8,
+"end": 11.2
+},
+{
+"i": 37,
+"text": "AU",
+"start": 11.2,
+"end": 11.32
+},
+{
+"i": 38,
+"text": "LIEU",
+"start": 11.32,
+"end": 11.49
+},
+{
+"i": 39,
+"text": "DE",
+"start": 11.56,
+"end": 11.68
+},
+{
+"i": 40,
+"text": "VOIR",
+"start": 11.68,
+"end": 11.91
+},
+{
+"i": 41,
+"text": "UNE",
+"start": 11.92,
+"end": 12.08
+},
+{
+"i": 42,
+"text": "PAGE",
+"start": 12.13,
+"end": 12.34
+},
+{
+"i": 43,
+"text": "CLASSIQUE,",
+"start": 12.34,
+"end": 12.95
+},
+{
+"i": 44,
+"text": "TU",
+"start": 12.95,
+"end": 13
+},
+{
+"i": 45,
+"text": "DÉCOUVRES",
+"start": 13.08,
+"end": 13.39
+},
+{
+"i": 46,
+"text": "UN",
+"start": 13.39,
+"end": 13.42
+},
+{
+"i": 47,
+"text": "UNIVERS",
+"start": 13.78,
+"end": 14.12
+},
+{
+"i": 48,
+"text": "EN",
+"start": 14.12,
+"end": 14.31
+},
+{
+"i": 49,
+"text": "3D.",
+"start": 14.31,
+"end": 14.98
+},
+{
+"i": 50,
+"text": "TU",
+"start": 15.03,
+"end": 15.1
+},
+{
+"i": 51,
+"text": "BOUGES",
+"start": 15.1,
+"end": 15.47
+},
+{
+"i": 52,
+"text": "TA",
+"start": 15.47,
+"end": 15.59
+},
+{
+"i": 53,
+"text": "SOURIS,",
+"start": 15.59,
+"end": 16.08
+},
+{
+"i": 54,
+"text": "LES",
+"start": 16.08,
+"end": 16.25
+},
+{
+"i": 55,
+"text": "OBJETS",
+"start": 16.25,
+"end": 16.51
+},
+{
+"i": 56,
+"text": "RÉAGISSENT.",
+"start": 16.75,
+"end": 17.5
+},
+{
+"i": 57,
+"text": "TU",
+"start": 17.55,
+"end": 17.64
+},
+{
+"i": 58,
+"text": "FAIS",
+"start": 17.64,
+"end": 17.88
+},
+{
+"i": 59,
+"text": "DÉFILER",
+"start": 17.93,
+"end": 18.44
+},
+{
+"i": 60,
+"text": "LA",
+"start": 18.44,
+"end": 18.58
+},
+{
+"i": 61,
+"text": "PAGE,",
+"start": 18.58,
+"end": 19
+},
+{
+"i": 62,
+"text": "LA",
+"start": 19,
+"end": 19.07
+},
+{
+"i": 63,
+"text": "CAMÉRA",
+"start": 19.34,
+"end": 19.59
+},
+{
+"i": 64,
+"text": "SE",
+"start": 19.59,
+"end": 19.71
+},
+{
+"i": 65,
+"text": "DÉPLACE.",
+"start": 19.8,
+"end": 20.52
+},
+{
+"i": 66,
+"text": "CHAQUE",
+"start": 20.57,
+"end": 20.88
+},
+{
+"i": 67,
+"text": "SECTION",
+"start": 20.88,
+"end": 21.31
+},
+{
+"i": 68,
+"text": "DEVIENT",
+"start": 21.31,
+"end": 21.74
+},
+{
+"i": 69,
+"text": "UNE",
+"start": 21.74,
+"end": 21.92
+},
+{
+"i": 70,
+"text": "NOUVELLE",
+"start": 21.92,
+"end": 22.41
+},
+{
+"i": 71,
+"text": "EXPÉRIENCE.",
+"start": 22.41,
+"end": 23.25
+},
+{
+"i": 72,
+"text": "ET",
+"start": 23.31,
+"end": 23.38
+},
+{
+"i": 73,
+"text": "POUR",
+"start": 23.38,
+"end": 23.63
+},
+{
+"i": 74,
+"text": "RÉALISER",
+"start": 23.63,
+"end": 24.13
+},
+{
+"i": 75,
+"text": "ÇA,",
+"start": 24.13,
+"end": 24.37
+},
+{
+"i": 76,
+"text": "TU",
+"start": 24.37,
+"end": 24.49
+},
+{
+"i": 77,
+"text": "PEUX",
+"start": 24.49,
+"end": 24.74
+},
+{
+"i": 78,
+"text": "COMBINER",
+"start": 24.74,
+"end": 25.22
+},
+{
+"i": 79,
+"text": "DEUX",
+"start": 25.28,
+"end": 25.47
+},
+{
+"i": 80,
+"text": "OUTILS.",
+"start": 25.56,
+"end": 26.12
+},
+{
+"i": 81,
+"text": "D'ABORD,",
+"start": 26.17,
+"end": 26.76
+},
+{
+"i": 82,
+"text": "FRAMER",
+"start": 26.76,
+"end": 27.19
+},
+{
+"i": 83,
+"text": "AI,",
+"start": 27.19,
+"end": 27.47
+},
+{
+"i": 84,
+"text": "POUR",
+"start": 27.47,
+"end": 27.65
+},
+{
+"i": 85,
+"text": "GÉNÉRER",
+"start": 27.96,
+"end": 28.26
+},
+{
+"i": 86,
+"text": "LA",
+"start": 28.26,
+"end": 28.33
+},
+{
+"i": 87,
+"text": "STRUCTURE",
+"start": 28.42,
+"end": 29.05
+},
+{
+"i": 88,
+"text": "ET",
+"start": 29.05,
+"end": 29.19
+},
+{
+"i": 89,
+"text": "LE",
+"start": 29.19,
+"end": 29.32
+},
+{
+"i": 90,
+"text": "DESIGN",
+"start": 29.34,
+"end": 29.76
+},
+{
+"i": 91,
+"text": "DE",
+"start": 29.76,
+"end": 29.9
+},
+{
+"i": 92,
+"text": "TON",
+"start": 29.9,
+"end": 30.11
+},
+{
+"i": 93,
+"text": "SITE",
+"start": 30.11,
+"end": 30.46
+},
+{
+"i": 94,
+"text": "À",
+"start": 30.48,
+"end": 30.54
+},
+{
+"i": 95,
+"text": "PARTIR",
+"start": 30.54,
+"end": 30.75
+},
+{
+"i": 96,
+"text": "D'UNE",
+"start": 30.96,
+"end": 31.2
+},
+{
+"i": 97,
+"text": "SIMPLE",
+"start": 31.2,
+"end": 31.55
+},
+{
+"i": 98,
+"text": "DESCRIPTION.",
+"start": 31.55,
+"end": 32.42
+},
+{
+"i": 99,
+"text": "ENSUITE,",
+"start": 32.47,
+"end": 33.23
+},
+{
+"i": 100,
+"text": "SPLINE.",
+"start": 33.23,
+"end": 33.95
+},
+{
+"i": 101,
+"text": "C'EST",
+"start": 33.95,
+"end": 34.26
+},
+{
+"i": 102,
+"text": "LUI",
+"start": 34.27,
+"end": 34.38
+},
+{
+"i": 103,
+"text": "QUI",
+"start": 34.44,
+"end": 34.62
+},
+{
+"i": 104,
+"text": "VA",
+"start": 34.62,
+"end": 34.74
+},
+{
+"i": 105,
+"text": "DONNER",
+"start": 34.74,
+"end": 35.11
+},
+{
+"i": 106,
+"text": "VIE",
+"start": 35.11,
+"end": 35.29
+},
+{
+"i": 107,
+"text": "À",
+"start": 35.29,
+"end": 35.35
+},
+{
+"i": 108,
+"text": "TON",
+"start": 35.35,
+"end": 35.53
+},
+{
+"i": 109,
+"text": "UNIVERS",
+"start": 35.53,
+"end": 35.97
+},
+{
+"i": 110,
+"text": "3D.",
+"start": 35.97,
+"end": 36.48
+},
+{
+"i": 111,
+"text": "TU",
+"start": 36.53,
+"end": 36.61
+},
+{
+"i": 112,
+"text": "PEUX",
+"start": 36.61,
+"end": 36.86
+},
+{
+"i": 113,
+"text": "MÊME",
+"start": 36.91,
+"end": 37.13
+},
+{
+"i": 114,
+"text": "DEMANDER",
+"start": 37.15,
+"end": 37.7
+},
+{
+"i": 115,
+"text": "À",
+"start": 37.7,
+"end": 37.75
+},
+{
+"i": 116,
+"text": "SON",
+"start": 37.75,
+"end": 37.96
+},
+{
+"i": 117,
+"text": "IA",
+"start": 37.96,
+"end": 38.05
+},
+{
+"i": 118,
+"text": "DE",
+"start": 38.05,
+"end": 38.33
+},
+{
+"i": 119,
+"text": "GÉNÉRER",
+"start": 38.33,
+"end": 38.68
+},
+{
+"i": 120,
+"text": "DES",
+"start": 38.68,
+"end": 38.86
+},
+{
+"i": 121,
+"text": "OBJETS",
+"start": 38.88,
+"end": 39.21
+},
+{
+"i": 122,
+"text": "EN",
+"start": 39.28,
+"end": 39.41
+},
+{
+"i": 123,
+"text": "TROIS",
+"start": 39.41,
+"end": 39.54
+},
+{
+"i": 124,
+"text": "DIMENSIONS",
+"start": 39.54,
+"end": 39.67
+},
+{
+"i": 125,
+"text": "À",
+"start": 39.67,
+"end": 39.73
+},
+{
+"i": 126,
+"text": "PARTIR",
+"start": 39.73,
+"end": 40.13
+},
+{
+"i": 127,
+"text": "DE",
+"start": 40.14,
+"end": 40.27
+},
+{
+"i": 128,
+"text": "TES",
+"start": 40.27,
+"end": 40.47
+},
+{
+"i": 129,
+"text": "DESCRIPTIONS,",
+"start": 40.47,
+"end": 41.5
+},
+{
+"i": 130,
+"text": "PUIS",
+"start": 41.55,
+"end": 41.78
+},
+{
+"i": 131,
+"text": "LES",
+"start": 41.78,
+"end": 41.99
+},
+{
+"i": 132,
+"text": "ANIMER",
+"start": 41.99,
+"end": 42.41
+},
+{
+"i": 133,
+"text": "ET",
+"start": 42.41,
+"end": 42.55
+},
+{
+"i": 134,
+"text": "LES",
+"start": 42.55,
+"end": 42.75
+},
+{
+"i": 135,
+"text": "RENDRE",
+"start": 42.75,
+"end": 43.03
+},
+{
+"i": 136,
+"text": "INTERACTIFS.",
+"start": 43.35,
+"end": 44.2
+},
+{
+"i": 137,
+"text": "ET",
+"start": 44.25,
+"end": 44.32
+},
+{
+"i": 138,
+"text": "LE",
+"start": 44.32,
+"end": 44.44
+},
+{
+"i": 139,
+"text": "MEILLEUR ?",
+"start": 44.44,
+"end": 45.04
+},
+{
+"i": 140,
+"text": "TU",
+"start": 45.04,
+"end": 45.17
+},
+{
+"i": 141,
+"text": "PEUX",
+"start": 45.17,
+"end": 45.43
+},
+{
+"i": 142,
+"text": "INTÉGRER",
+"start": 45.43,
+"end": 45.95
+},
+{
+"i": 143,
+"text": "DIRECTEMENT",
+"start": 46.05,
+"end": 46.67
+},
+{
+"i": 144,
+"text": "TES",
+"start": 46.67,
+"end": 46.86
+},
+{
+"i": 145,
+"text": "CRÉATIONS",
+"start": 46.86,
+"end": 47.44
+},
+{
+"i": 146,
+"text": "SPLINE",
+"start": 47.44,
+"end": 47.82
+},
+{
+"i": 147,
+"text": "DANS",
+"start": 47.82,
+"end": 48.08
+},
+{
+"i": 148,
+"text": "TON",
+"start": 48.08,
+"end": 48.27
+},
+{
+"i": 149,
+"text": "SITE",
+"start": 48.27,
+"end": 48.53
+},
+{
+"i": 150,
+"text": "FRAMER.",
+"start": 48.53,
+"end": 49.18
+},
+{
+"i": 151,
+"text": "MAIS",
+"start": 49.23,
+"end": 49.45
+},
+{
+"i": 152,
+"text": "ATTENTION !",
+"start": 49.45,
+"end": 50.19
+},
+{
+"i": 153,
+"text": "IL",
+"start": 50.19,
+"end": 50.32
+},
+{
+"i": 154,
+"text": "Y",
+"start": 50.32,
+"end": 50.38
+},
+{
+"i": 155,
+"text": "A",
+"start": 50.38,
+"end": 50.43
+},
+{
+"i": 156,
+"text": "UN",
+"start": 50.44,
+"end": 50.57
+},
+{
+"i": 157,
+"text": "PIÈGE.",
+"start": 50.57,
+"end": 51.14
+},
+{
+"i": 158,
+"text": "UN",
+"start": 51.23,
+"end": 51.29
+},
+{
+"i": 159,
+"text": "SITE",
+"start": 51.29,
+"end": 51.51
+},
+{
+"i": 160,
+"text": "SPECTACULAIRE",
+"start": 51.51,
+"end": 52.21
+},
+{
+"i": 161,
+"text": "QUI",
+"start": 52.21,
+"end": 52.37
+},
+{
+"i": 162,
+"text": "MET",
+"start": 52.37,
+"end": 52.53
+},
+{
+"i": 163,
+"text": "DIX",
+"start": 52.53,
+"end": 52.71
+},
+{
+"i": 164,
+"text": "SECONDES",
+"start": 53.03,
+"end": 53.3
+},
+{
+"i": 165,
+"text": "À",
+"start": 53.3,
+"end": 53.35
+},
+{
+"i": 166,
+"text": "CHARGER,",
+"start": 53.35,
+"end": 53.85
+},
+{
+"i": 167,
+"text": "C'EST",
+"start": 53.85,
+"end": 54.11
+},
+{
+"i": 168,
+"text": "UN",
+"start": 54.11,
+"end": 54.22
+},
+{
+"i": 169,
+"text": "SITE",
+"start": 54.22,
+"end": 54.44
+},
+{
+"i": 170,
+"text": "QUI",
+"start": 54.44,
+"end": 54.6
+},
+{
+"i": 171,
+"text": "RISQUE",
+"start": 54.6,
+"end": 54.89
+},
+{
+"i": 172,
+"text": "DE",
+"start": 54.94,
+"end": 55.04
+},
+{
+"i": 173,
+"text": "FAIRE",
+"start": 55.04,
+"end": 55.31
+},
+{
+"i": 174,
+"text": "FUIR",
+"start": 55.31,
+"end": 55.52
+},
+{
+"i": 175,
+"text": "TES",
+"start": 55.53,
+"end": 55.69
+},
+{
+"i": 176,
+"text": "VISITEURS.",
+"start": 55.69,
+"end": 56.48
+},
+{
+"i": 177,
+"text": "LA",
+"start": 56.53,
+"end": 56.6
+},
+{
+"i": 178,
+"text": "3D",
+"start": 56.6,
+"end": 56.84
+},
+{
+"i": 179,
+"text": "DOIT",
+"start": 56.84,
+"end": 57.09
+},
+{
+"i": 180,
+"text": "DONC",
+"start": 57.09,
+"end": 57.34
+},
+{
+"i": 181,
+"text": "ÊTRE",
+"start": 57.34,
+"end": 57.59
+},
+{
+"i": 182,
+"text": "BIEN",
+"start": 57.59,
+"end": 57.84
+},
+{
+"i": 183,
+"text": "OPTIMISÉE,",
+"start": 57.84,
+"end": 58.52
+},
+{
+"i": 184,
+"text": "NOTAMMENT",
+"start": 58.52,
+"end": 59.08
+},
+{
+"i": 185,
+"text": "POUR",
+"start": 59.08,
+"end": 59.33
+},
+{
+"i": 186,
+"text": "LES",
+"start": 59.33,
+"end": 59.51
+},
+{
+"i": 187,
+"text": "TÉLÉPHONES.",
+"start": 59.51,
+"end": 60.4
+},
+{
+"i": 188,
+"text": "LA",
+"start": 60.45,
+"end": 60.51
+},
+{
+"i": 189,
+"text": "VRAIE",
+"start": 60.51,
+"end": 60.78
+},
+{
+"i": 190,
+"text": "RÉVOLUTION,",
+"start": 60.83,
+"end": 61.48
+},
+{
+"i": 191,
+"text": "CE",
+"start": 61.48,
+"end": 61.59
+},
+{
+"i": 192,
+"text": "N'EST",
+"start": 61.59,
+"end": 61.86
+},
+{
+"i": 193,
+"text": "PAS",
+"start": 61.86,
+"end": 61.97
+},
+{
+"i": 194,
+"text": "SEULEMENT",
+"start": 62.25,
+"end": 62.56
+},
+{
+"i": 195,
+"text": "DE",
+"start": 62.56,
+"end": 62.61
+},
+{
+"i": 196,
+"text": "CRÉER",
+"start": 62.7,
+"end": 62.96
+},
+{
+"i": 197,
+"text": "UN",
+"start": 62.96,
+"end": 63.07
+},
+{
+"i": 198,
+"text": "SITE",
+"start": 63.07,
+"end": 63.3
+},
+{
+"i": 199,
+"text": "AVEC",
+"start": 63.3,
+"end": 63.53
+},
+{
+"i": 200,
+"text": "L'IA.",
+"start": 63.53,
+"end": 64.05
+},
+{
+"i": 201,
+"text": "C'EST",
+"start": 64.11,
+"end": 64.35
+},
+{
+"i": 202,
+"text": "DE",
+"start": 64.36,
+"end": 64.44
+},
+{
+"i": 203,
+"text": "POUVOIR",
+"start": 64.49,
+"end": 64.92
+},
+{
+"i": 204,
+"text": "TRANSFORMER",
+"start": 64.92,
+"end": 65.59
+},
+{
+"i": 205,
+"text": "UN",
+"start": 65.61,
+"end": 65.64
+},
+{
+"i": 206,
+"text": "SIMPLE",
+"start": 65.91,
+"end": 66.11
+},
+{
+"i": 207,
+"text": "SITE",
+"start": 66.11,
+"end": 66.28
+},
+{
+"i": 208,
+"text": "WEB",
+"start": 66.36,
+"end": 66.55
+},
+{
+"i": 209,
+"text": "EN",
+"start": 66.55,
+"end": 66.67
+},
+{
+"i": 210,
+"text": "UNE",
+"start": 66.68,
+"end": 66.79
+},
+{
+"i": 211,
+"text": "VÉRITABLE",
+"start": 66.86,
+"end": 67.34
+},
+{
+"i": 212,
+"text": "EXPÉRIENCE",
+"start": 67.43,
+"end": 68.06
+},
+{
+"i": 213,
+"text": "IMMERSIVE.",
+"start": 68.06,
+"end": 68.72
+},
+{
+"i": 214,
+"text": "ABONNE-TOI",
+"start": 68.93,
+"end": 69.45
+},
+{
+"i": 215,
+"text": "À",
+"start": 69.45,
+"end": 69.51
+},
+{
+"i": 216,
+"text": "GAUSSCODE.",
+"start": 69.51,
+"end": 70.84
+}
+]
