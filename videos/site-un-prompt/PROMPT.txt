@@ -1,0 +1,31 @@
+Tu es un développeur web senior et un designer expert. Crée-moi un site vitrine complet pour [Café Aurore, un café moderne à Abidjan].
+
+Format : un seul fichier index.html (HTML + CSS + JavaScript dans le même fichier), sans framework, prêt à ouvrir dans le navigateur.
+
+Style :
+- Design premium et moderne, ambiance chaleureuse.
+- Couleurs : [crème #F5EFE6, brun café #3B2A20, accent caramel #D9893D].
+- Polices Google Fonts : une police élégante pour les titres (Playfair Display), une police lisible pour le texte (Inter).
+- Beaucoup d'espace, coins arrondis, ombres douces.
+
+Sections, dans cet ordre :
+1. Menu fixe en haut (logo + liens), qui devient un menu burger sur téléphone.
+2. Grande section d'accueil avec un titre accrocheur, un sous-titre et un bouton « Voir la carte ».
+3. « Notre histoire » : texte court + photo.
+4. « La carte » : 6 produits en cartes (photo, nom, description, prix en FCFA).
+5. « Avis clients » : 3 avis avec étoiles.
+6. « Nous trouver » : adresse, horaires et formulaire de contact (nom, e-mail, message) avec vérification des champs.
+7. Pied de page avec réseaux sociaux.
+
+Animations :
+- Les sections apparaissent en douceur au défilement.
+- Effet au survol sur les boutons et les cartes.
+- Le titre d'accueil s'affiche avec une animation élégante.
+
+Important :
+- Parfaitement adapté au téléphone, à la tablette et à l'ordinateur.
+- Photos libres de droits depuis Unsplash (liens directs).
+- Tous les textes en français, crédibles (pas de « lorem ipsum »).
+- Code propre et commenté.
+
+Donne-moi le fichier complet, sans rien couper.
