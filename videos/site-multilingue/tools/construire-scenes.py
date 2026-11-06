@@ -5873,7 +5873,7 @@ def ecrire_check():
         cases.append(f'        <div id="ck-{k}" class="ck-case"><b>{k + 1}</b><span id="ck-q{k}" class="ck-q">?</span><span id="ck-n{k}" class="ck-nom" style="opacity: 0">{m}</span>'
                      f'<i id="ck-c{k}" class="ck-c">{cad}</i><i id="ck-v{k}" class="ck-v">{COCHE.format(w=34, c="#0C0C0C")}</i></div>')
         js.append(f'      tl.to("#ck-{k}", {{ keyframes: [{{ x: -6, duration: 0.05 }}, {{ x: 6, duration: 0.05 }}, {{ x: -4, duration: 0.05 }}, {{ x: 0, duration: 0.05 }}] }}, {round(g_act - 0.9, 3)});')
-        js.append(f'      tl.to("#ck-{k}", {{ rotationY: 360, transformPerspective: 800, duration: 0.4, ease: "power3.inOut" }}, {round(g_act - 0.05, 3)});')
+        js.append(f'      tl.to("#ck-{k}", {{ rotationY: 360, transformPerspective: 3000, duration: 0.4, ease: "power3.inOut" }}, {round(g_act - 0.05, 3)});')
         js.append(f'      tl.set("#ck-q{k}", {{ opacity: 0 }}, {round(g_act + 0.15, 3)});')
         js.append(f'      tl.set("#ck-c{k}", {{ opacity: 0 }}, {round(g_act + 0.15, 3)});')
         js.append(f'      tl.set("#ck-n{k}", {{ opacity: 1 }}, {round(g_act + 0.15, 3)});')
