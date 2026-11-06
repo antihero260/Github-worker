@@ -12,7 +12,5 @@ Logos officiels (`../img/logo-*.svg`) : theSVG via `hyperframes media-use resolv
 
 ## Vidéos Mixkit (licence gratuite, crédit non obligatoire)
 
-Nouvelles : `traces-lumiere` (31594), `autoroute-nuit` (34559), `trou-de-ver` (18791), `nuit-vitesse` (47664),
-`compteur-voiture` (64), `ennui-attente` (47985), `ennui-trottoir` (47990), `geste-attente` (34091), `nerveux-banc` (12837),
-`metro-tunnel` (44882). Reprises : `tunnel-cubes`, `encre-liquide`, `interface-vr`, `graphiste`, `web-design`, `site-mode`,
-`photo-produit`, `montage-video`, `fusee`.
+Nouvelles : `traces-lumiere` (31594), `trou-de-ver` (18791). Reprises : `tunnel-cubes`, `encre-liquide`, `interface-vr`,
+`graphiste`, `web-design`, `site-mode`, `photo-produit`, `montage-video`.
