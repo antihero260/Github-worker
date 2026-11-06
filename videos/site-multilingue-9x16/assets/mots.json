@@ -1,0 +1,410 @@
+[
+{
+"i": 0,
+"text": "TON",
+"start": 0.1,
+"end": 0.17
+},
+{
+"i": 1,
+"text": "SITE",
+"start": 0.17,
+"end": 0.39
+},
+{
+"i": 2,
+"text": "EST",
+"start": 0.45,
+"end": 0.57
+},
+{
+"i": 3,
+"text": "EN",
+"start": 0.57,
+"end": 0.67
+},
+{
+"i": 4,
+"text": "FRANÇAIS ?",
+"start": 0.67,
+"end": 1.36
+},
+{
+"i": 5,
+"text": "EN",
+"start": 1.46,
+"end": 1.52
+},
+{
+"i": 6,
+"text": "UN",
+"start": 1.52,
+"end": 1.67
+},
+{
+"i": 7,
+"text": "CLIC,",
+"start": 1.68,
+"end": 2.2
+},
+{
+"i": 8,
+"text": "TU",
+"start": 2.2,
+"end": 2.26
+},
+{
+"i": 9,
+"text": "PEUX",
+"start": 2.28,
+"end": 2.4
+},
+{
+"i": 10,
+"text": "LE",
+"start": 2.4,
+"end": 2.64
+},
+{
+"i": 11,
+"text": "RENDRE",
+"start": 2.64,
+"end": 2.88
+},
+{
+"i": 12,
+"text": "ACCESSIBLE",
+"start": 2.88,
+"end": 3.32
+},
+{
+"i": 13,
+"text": "AUX",
+"start": 3.32,
+"end": 3.38
+},
+{
+"i": 14,
+"text": "VISITEURS",
+"start": 3.45,
+"end": 3.84
+},
+{
+"i": 15,
+"text": "ANGLOPHONES",
+"start": 3.84,
+"end": 4.56
+},
+{
+"i": 16,
+"text": "ET",
+"start": 4.56,
+"end": 4.69
+},
+{
+"i": 17,
+"text": "HISPANOPHONES.",
+"start": 4.69,
+"end": 5.56
+},
+{
+"i": 18,
+"text": "REGARDE !",
+"start": 5.66,
+"end": 6.44
+},
+{
+"i": 19,
+"text": "ICI,",
+"start": 6.54,
+"end": 6.74
+},
+{
+"i": 20,
+"text": "J'AI",
+"start": 6.74,
+"end": 6.95
+},
+{
+"i": 21,
+"text": "SIMPLEMENT",
+"start": 6.98,
+"end": 7.47
+},
+{
+"i": 22,
+"text": "AJOUTÉ",
+"start": 7.71,
+"end": 7.95
+},
+{
+"i": 23,
+"text": "UN",
+"start": 7.96,
+"end": 8.07
+},
+{
+"i": 24,
+"text": "SÉLECTEUR",
+"start": 8.07,
+"end": 8.6
+},
+{
+"i": 25,
+"text": "DE",
+"start": 8.67,
+"end": 8.7
+},
+{
+"i": 26,
+"text": "LANGUES :",
+"start": 8.73,
+"end": 9.19
+},
+{
+"i": 27,
+"text": "FRANÇAIS,",
+"start": 9.3,
+"end": 10.06
+},
+{
+"i": 28,
+"text": "ANGLAIS",
+"start": 10.06,
+"end": 10.66
+},
+{
+"i": 29,
+"text": "ET",
+"start": 10.72,
+"end": 10.83
+},
+{
+"i": 30,
+"text": "ESPAGNOL.",
+"start": 10.83,
+"end": 11.59
+},
+{
+"i": 31,
+"text": "POUR",
+"start": 11.7,
+"end": 11.84
+},
+{
+"i": 32,
+"text": "LE",
+"start": 11.84,
+"end": 11.96
+},
+{
+"i": 33,
+"text": "FAIRE",
+"start": 11.96,
+"end": 12.26
+},
+{
+"i": 34,
+"text": "AVEC",
+"start": 12.26,
+"end": 12.5
+},
+{
+"i": 35,
+"text": "L'IA,",
+"start": 12.5,
+"end": 12.84
+},
+{
+"i": 36,
+"text": "DEMANDE-LUI :",
+"start": 13.12,
+"end": 13.84
+},
+{
+"i": 37,
+"text": "« AJOUTE",
+"start": 13.94,
+"end": 14.39
+},
+{
+"i": 38,
+"text": "UN",
+"start": 14.39,
+"end": 14.51
+},
+{
+"i": 39,
+"text": "SÉLECTEUR",
+"start": 14.59,
+"end": 15.4
+},
+{
+"i": 40,
+"text": "DE",
+"start": 15.4,
+"end": 15.58
+},
+{
+"i": 41,
+"text": "LANGUES",
+"start": 15.58,
+"end": 16.14
+},
+{
+"i": 42,
+"text": "FR,",
+"start": 16.14,
+"end": 16.5
+},
+{
+"i": 43,
+"text": "EN",
+"start": 16.5,
+"end": 16.68
+},
+{
+"i": 44,
+"text": "ET",
+"start": 16.68,
+"end": 16.86
+},
+{
+"i": 45,
+"text": "ES",
+"start": 16.86,
+"end": 17.12
+},
+{
+"i": 46,
+"text": "À",
+"start": 17.12,
+"end": 17.23
+},
+{
+"i": 47,
+"text": "MON",
+"start": 17.23,
+"end": 17.57
+},
+{
+"i": 48,
+"text": "SITE. »",
+"start": 17.57,
+"end": 18.06
+},
+{
+"i": 49,
+"text": "ATTENTION",
+"start": 18.18,
+"end": 18.54
+},
+{
+"i": 50,
+"text": "TOUT",
+"start": 18.54,
+"end": 18.74
+},
+{
+"i": 51,
+"text": "DE",
+"start": 18.75,
+"end": 18.84
+},
+{
+"i": 52,
+"text": "MÊME :",
+"start": 18.84,
+"end": 19.12
+},
+{
+"i": 53,
+"text": "VÉRIFIE",
+"start": 19.36,
+"end": 19.62
+},
+{
+"i": 54,
+"text": "LES",
+"start": 19.62,
+"end": 19.82
+},
+{
+"i": 55,
+"text": "TRADUCTIONS",
+"start": 19.82,
+"end": 20.54
+},
+{
+"i": 56,
+"text": "AVANT",
+"start": 20.54,
+"end": 20.87
+},
+{
+"i": 57,
+"text": "DE",
+"start": 20.87,
+"end": 20.97
+},
+{
+"i": 58,
+"text": "PUBLIER.",
+"start": 21.01,
+"end": 21.72
+},
+{
+"i": 59,
+"text": "UN",
+"start": 21.82,
+"end": 21.84
+},
+{
+"i": 60,
+"text": "SITE,",
+"start": 21.84,
+"end": 22.21
+},
+{
+"i": 61,
+"text": "PLUSIEURS",
+"start": 22.21,
+"end": 22.75
+},
+{
+"i": 62,
+"text": "LANGUES,",
+"start": 23.04,
+"end": 23.4
+},
+{
+"i": 63,
+"text": "BEAUCOUP",
+"start": 23.4,
+"end": 23.86
+},
+{
+"i": 64,
+"text": "PLUS",
+"start": 23.86,
+"end": 24.09
+},
+{
+"i": 65,
+"text": "DE",
+"start": 24.09,
+"end": 24.2
+},
+{
+"i": 66,
+"text": "VISITEURS",
+"start": 24.2,
+"end": 24.69
+},
+{
+"i": 67,
+"text": "POTENTIELS.",
+"start": 24.72,
+"end": 25.48
+}
+]
