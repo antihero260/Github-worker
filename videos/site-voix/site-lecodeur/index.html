@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lecodeur — J'apprends à créer des sites avec l'IA</title>
+  <!-- Site construit à la voix, une instruction après l'autre (vidéo « Je parle, le site se construit »). -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  <style>
+    :root { --noir: #0b0b0c; --jaune: #ffd60a; --blanc: #f4f4f2; --gris: #9a9a9f; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: "Inter", system-ui, sans-serif; background: var(--noir); color: var(--blanc); transition: background 0.5s ease; }
+
+    /* ---------- Accueil ---------- */
+    .accueil { position: relative; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 60px 5% 40px; overflow: hidden; }
+    .accueil video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.32; transition: opacity 0.9s ease; }
+    .accueil::after { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(11, 11, 12, 0.2) 0%, rgba(11, 11, 12, 0.9) 80%); pointer-events: none; }
+    .accueil > *:not(video) { position: relative; z-index: 2; }
+    h1 { font-family: "Anton", sans-serif; font-weight: 400; font-size: clamp(4.5rem, 14vw, 11rem); line-height: 0.95; letter-spacing: 0.02em; text-transform: uppercase; transition: font-size 0.45s cubic-bezier(0.2, 0.8, 0.2, 1); }
+    h1 span { display: inline-block; }
+    .sous-titre { margin-top: 0.6rem; font-size: clamp(1.1rem, 2.2vw, 1.6rem); color: #d8d8d4; }
+    .sous-titre span { display: inline-block; margin: 0 0.15em; transition: opacity 0.25s ease, transform 0.25s ease; }
+    .sous-titre em { font-style: normal; color: var(--jaune); font-weight: 800; }
+    .bouton { display: inline-flex; align-items: center; gap: 0.6rem; margin-top: 1.6rem; padding: 0.95rem 2.2rem; border-radius: 999px; border: 2px solid var(--jaune); background: var(--jaune); color: var(--noir); font-weight: 800; font-size: 1.1rem; text-decoration: none; transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.4s ease, color 0.4s ease; box-shadow: 0 0 0 rgba(255, 214, 10, 0); }
+    .bouton:hover { transform: translateY(-3px) scale(1.03); box-shadow: 0 12px 40px rgba(255, 214, 10, 0.45); }
+
+    /* ---------- Mes meilleures vidéos ---------- */
+    .cartes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; width: min(1100px, 100%); margin-top: 2.2rem; }
+    .carte { border-radius: 18px; overflow: hidden; background: #18181b; border: 1px solid #26262b; text-align: left; transition: transform 0.35s ease, opacity 0.35s ease; }
+    .carte:hover { transform: translateY(-6px); }
+    .carte .vignette { aspect-ratio: 16 / 9; background: #222226 center / cover no-repeat; transition: background-image 0.3s ease; }
+    .carte p { padding: 12px 16px 14px; font-weight: 600; font-size: 0.95rem; }
+    .carte p small { display: block; color: var(--gris); font-weight: 400; margin-top: 2px; }
+
+    /* ---------- Ce que tu vas apprendre ---------- */
+    .apprendre { padding: 110px 5%; text-align: center; }
+    .apprendre h2 { font-family: "Anton", sans-serif; font-weight: 400; font-size: clamp(2.4rem, 5vw, 3.6rem); text-transform: uppercase; }
+    .apprendre h2 em { font-style: normal; color: var(--jaune); }
+    .tuiles { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; width: min(1100px, 100%); margin: 40px auto 0; }
+    .tuile { padding: 28px 22px; border-radius: 18px; background: #151518; border: 1px solid #26262b; text-align: left; }
+    .tuile b { display: block; font-family: "Anton", sans-serif; font-weight: 400; font-size: 2.2rem; color: var(--jaune); }
+    .tuile span { color: #cfcfcc; }
+    footer { padding: 40px 5%; text-align: center; color: var(--gris); border-top: 1px solid #1f1f23; }
+
+    /* ---------- Apparition au défilement ---------- */
+    .revele { opacity: 0; transform: translateY(60px) scale(0.96); transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); }
+    .revele.visible { opacity: 1; transform: none; }
+
+    /* ---------- Téléphone ---------- */
+    @media (max-width: 700px) {
+      .accueil { justify-content: flex-start; padding-top: 110px; }
+      .cartes { grid-template-columns: 1fr; gap: 16px; }
+      .tuiles { grid-template-columns: 1fr 1fr; }
+    }
+
+    /* ---------- Mode « construction à la voix » (vidéo) : la page part de zéro ---------- */
+    body.construction { background: #ffffff; }
+    body.construction .accueil::after { opacity: 0; transition: opacity 0.6s ease; }
+    body.construction.e1 .accueil::after { opacity: 1; }
+    body.construction video { opacity: 0; }
+    body.construction.e4 video { opacity: 0.32; }
+    body.construction h1, body.construction .sous-titre, body.construction .bouton, body.construction .cartes .carte { opacity: 0; }
+    body.construction.e1 { background: var(--noir); }
+    body.construction.e2 h1 { opacity: 1; font-size: 3rem; }
+    body.construction.e2b h1 { font-size: clamp(4.5rem, 14vw, 11rem); }
+    body.construction.e3 .sous-titre { opacity: 1; }
+    body.construction .sous-titre span { opacity: 0; transform: translateY(14px); }
+    body.construction .sous-titre span.on { opacity: 1; transform: none; }
+    body.construction .carte { opacity: 0; transform: translateY(40px); }
+    body.construction .carte.on { opacity: 1; transform: none; }
+    body.construction .carte .vignette { background-image: none !important; }
+    body.construction.e5b .carte .vignette { background-image: var(--img) !important; }
+    body.construction.e6 .bouton { opacity: 1; background: transparent; color: var(--blanc); border-color: #555; }
+    body.construction.e6b .bouton { background: var(--jaune); color: var(--noir); border-color: var(--jaune); }
+  </style>
+</head>
+<body>
+  <section class="accueil" id="accueil">
+    <video src="fond.mp4" autoplay muted loop playsinline></video>
+    <h1 id="titre">Lecodeur</h1>
+    <p class="sous-titre" id="sous-titre"><span>J'apprends</span><span>à</span><span>créer</span><span>des</span><span>sites</span><span>avec</span><span><em>l'IA</em></span></p>
+    <a href="#" class="bouton" id="bouton"><span id="bouton-texte">Abonne-toi</span></a>
+    <div class="cartes">
+      <article class="carte" style="--img: url('video-prompt.jpg')"><div class="vignette" style="background-image: url('video-prompt.jpg')"></div><p>Ce site = 1 seul prompt<small>Un site complet sans coder</small></p></article>
+      <article class="carte" style="--img: url('video-langues.jpg')"><div class="vignette" style="background-image: url('video-langues.jpg')"></div><p>Ton site en 3 langues<small>FR · EN · ES en 1 clic</small></p></article>
+      <article class="carte" style="--img: url('video-types.jpg')"><div class="vignette" style="background-image: url('video-types.jpg')"></div><p>Les 6 types de sites<small>Lequel te faut-il ?</small></p></article>
+    </div>
+  </section>
+
+  <section class="apprendre">
+    <h2 class="revele">Ce que tu vas <em>apprendre</em></h2>
+    <div class="tuiles">
+      <div class="tuile revele"><b>01</b><span>Créer ton site avec un seul prompt</span></div>
+      <div class="tuile revele"><b>02</b><span>Le rendre beau, rapide et animé</span></div>
+      <div class="tuile revele"><b>03</b><span>Le faire trouver sur Google</span></div>
+      <div class="tuile revele"><b>04</b><span>Le mettre en ligne gratuitement</span></div>
+    </div>
+  </section>
+
+  <footer>© 2026 Lecodeur — Une nouvelle astuce IA chaque jour sur TikTok</footer>
+
+  <script>
+    // Apparition des blocs au défilement
+    const obs = new IntersectionObserver((entrees) => entrees.forEach((e) => { if (e.isIntersecting) e.target.classList.add("visible"); }), { threshold: 0.2 });
+    document.querySelectorAll(".revele").forEach((el, i) => { el.style.transitionDelay = `${(i % 4) * 0.12}s`; obs.observe(el); });
+
+    // ---------- Mode construction : chaque instruction dite à voix haute = une étape ----------
+    if (location.hash === "#construction") {
+      document.body.classList.add("construction");
+      const b = document.body.classList;
+      const titre = document.getElementById("titre");
+      const mots = [...document.querySelectorAll("#sous-titre span")];
+      const cartes = [...document.querySelectorAll(".carte")];
+      const texteBouton = document.getElementById("bouton-texte");
+      titre.textContent = "Titre";
+      texteBouton.textContent = "Bouton";
+      window.etape = (n) => {
+        if (n === "noir") b.add("e1");
+        if (n === "titre") b.add("e2");
+        if (n === "enorme") b.add("e2b");
+        if (n === "lecodeur") {
+          titre.textContent = "";
+          [..."LECODEUR"].forEach((c, k) => setTimeout(() => { titre.textContent += c; }, k * 45));
+        }
+        if (n.startsWith("mot")) { b.add("e3"); mots[+n.slice(3)].classList.add("on"); }
+        if (n === "video") b.add("e4");
+        if (n.startsWith("carte")) cartes[+n.slice(5)].classList.add("on");
+        if (n === "vignettes") b.add("e5b");
+        if (n === "bouton") b.add("e6");
+        if (n === "jaune") b.add("e6b");
+        if (n === "abonne") {
+          texteBouton.textContent = "";
+          [..."Abonne-toi"].forEach((c, k) => setTimeout(() => { texteBouton.textContent += c; }, k * 35));
+        }
+      };
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,494 @@
+[
+{
+"i": 0,
+"text": "JE",
+"start": 0.05,
+"end": 0.11
+},
+{
+"i": 1,
+"text": "NE",
+"start": 0.11,
+"end": 0.22
+},
+{
+"i": 2,
+"text": "VAIS",
+"start": 0.22,
+"end": 0.44
+},
+{
+"i": 3,
+"text": "PAS",
+"start": 0.44,
+"end": 0.6
+},
+{
+"i": 4,
+"text": "ÉCRIRE",
+"start": 0.6,
+"end": 0.91
+},
+{
+"i": 5,
+"text": "UNE",
+"start": 1.02,
+"end": 1.08
+},
+{
+"i": 6,
+"text": "SEULE",
+"start": 1.08,
+"end": 1.35
+},
+{
+"i": 7,
+"text": "LIGNE",
+"start": 1.35,
+"end": 1.62
+},
+{
+"i": 8,
+"text": "DE",
+"start": 1.62,
+"end": 1.73
+},
+{
+"i": 9,
+"text": "CODE.",
+"start": 1.73,
+"end": 2.14
+},
+{
+"i": 10,
+"text": "JE",
+"start": 2.14,
+"end": 2.41
+},
+{
+"i": 11,
+"text": "VAIS",
+"start": 2.41,
+"end": 2.63
+},
+{
+"i": 12,
+"text": "JUSTE",
+"start": 2.63,
+"end": 2.99
+},
+{
+"i": 13,
+"text": "PARLER…",
+"start": 3.18,
+"end": 3.65
+},
+{
+"i": 14,
+"text": "ET",
+"start": 3.68,
+"end": 3.84
+},
+{
+"i": 15,
+"text": "LE",
+"start": 3.84,
+"end": 4
+},
+{
+"i": 16,
+"text": "SITE",
+"start": 4,
+"end": 4.32
+},
+{
+"i": 17,
+"text": "SE",
+"start": 4.32,
+"end": 4.47
+},
+{
+"i": 18,
+"text": "CONSTRUIT",
+"start": 4.49,
+"end": 4.96
+},
+{
+"i": 19,
+"text": "PENDANT",
+"start": 4.96,
+"end": 5.4
+},
+{
+"i": 20,
+"text": "QUE",
+"start": 5.4,
+"end": 5.59
+},
+{
+"i": 21,
+"text": "JE",
+"start": 5.59,
+"end": 5.65
+},
+{
+"i": 22,
+"text": "PARLE.",
+"start": 6.03,
+"end": 6.24
+},
+{
+"i": 23,
+"text": "UN",
+"start": 6.24,
+"end": 6.49
+},
+{
+"i": 24,
+"text": "FOND",
+"start": 6.49,
+"end": 6.78
+},
+{
+"i": 25,
+"text": "NOIR.",
+"start": 6.85,
+"end": 7.34
+},
+{
+"i": 26,
+"text": "UN",
+"start": 7.46,
+"end": 7.65
+},
+{
+"i": 27,
+"text": "TITRE",
+"start": 7.65,
+"end": 8.18
+},
+{
+"i": 28,
+"text": "ÉNORME :",
+"start": 8.18,
+"end": 9.07
+},
+{
+"i": 29,
+"text": "LECODEUR.",
+"start": 9.07,
+"end": 10.04
+},
+{
+"i": 30,
+"text": "EN",
+"start": 10.04,
+"end": 10.29
+},
+{
+"i": 31,
+"text": "DESSOUS :",
+"start": 10.29,
+"end": 10.8
+},
+{
+"i": 32,
+"text": "« J'APPRENDS",
+"start": 10.8,
+"end": 11.42
+},
+{
+"i": 33,
+"text": "À",
+"start": 11.42,
+"end": 11.47
+},
+{
+"i": 34,
+"text": "CRÉER",
+"start": 11.5,
+"end": 11.8
+},
+{
+"i": 35,
+"text": "DES",
+"start": 11.8,
+"end": 11.99
+},
+{
+"i": 36,
+"text": "SITES",
+"start": 11.99,
+"end": 12.34
+},
+{
+"i": 37,
+"text": "AVEC",
+"start": 12.61,
+"end": 12.84
+},
+{
+"i": 38,
+"text": "L'IA ».",
+"start": 12.84,
+"end": 13.35
+},
+{
+"i": 39,
+"text": "UNE",
+"start": 13.35,
+"end": 13.61
+},
+{
+"i": 40,
+"text": "VIDÉO",
+"start": 13.61,
+"end": 13.82
+},
+{
+"i": 41,
+"text": "QUI",
+"start": 13.82,
+"end": 13.99
+},
+{
+"i": 42,
+"text": "TOURNE",
+"start": 13.99,
+"end": 14.33
+},
+{
+"i": 43,
+"text": "EN",
+"start": 14.33,
+"end": 14.44
+},
+{
+"i": 44,
+"text": "ARRIÈRE-PLAN.",
+"start": 14.44,
+"end": 15.28
+},
+{
+"i": 45,
+"text": "TROIS",
+"start": 15.28,
+"end": 15.57
+},
+{
+"i": 46,
+"text": "CARTES",
+"start": 15.57,
+"end": 15.91
+},
+{
+"i": 47,
+"text": "AVEC",
+"start": 15.93,
+"end": 16.14
+},
+{
+"i": 48,
+"text": "MES",
+"start": 16.14,
+"end": 16.31
+},
+{
+"i": 49,
+"text": "MEILLEURES",
+"start": 16.31,
+"end": 16.85
+},
+{
+"i": 50,
+"text": "VIDÉOS.",
+"start": 17.4,
+"end": 17.44
+},
+{
+"i": 51,
+"text": "UN",
+"start": 17.44,
+"end": 17.69
+},
+{
+"i": 52,
+"text": "BOUTON",
+"start": 17.69,
+"end": 17.98
+},
+{
+"i": 53,
+"text": "JAUNE :",
+"start": 18.05,
+"end": 18.56
+},
+{
+"i": 54,
+"text": "« ABONNE-TOI ».",
+"start": 18.66,
+"end": 19.43
+},
+{
+"i": 55,
+"text": "DES",
+"start": 19.51,
+"end": 19.65
+},
+{
+"i": 56,
+"text": "ANIMATIONS",
+"start": 19.65,
+"end": 20.23
+},
+{
+"i": 57,
+"text": "QUAND",
+"start": 20.23,
+"end": 20.52
+},
+{
+"i": 58,
+"text": "ON",
+"start": 20.52,
+"end": 20.57
+},
+{
+"i": 59,
+"text": "FAIT",
+"start": 20.63,
+"end": 20.86
+},
+{
+"i": 60,
+"text": "DÉFILER.",
+"start": 20.86,
+"end": 21.48
+},
+{
+"i": 61,
+"text": "ET",
+"start": 21.48,
+"end": 21.73
+},
+{
+"i": 62,
+"text": "MAINTENANT…",
+"start": 21.73,
+"end": 22.44
+},
+{
+"i": 63,
+"text": "SUR",
+"start": 22.44,
+"end": 22.58
+},
+{
+"i": 64,
+"text": "TÉLÉPHONE.",
+"start": 22.7,
+"end": 23.56
+},
+{
+"i": 65,
+"text": "VOILÀ.",
+"start": 23.81,
+"end": 24
+},
+{
+"i": 66,
+"text": "UN",
+"start": 24,
+"end": 24.1
+},
+{
+"i": 67,
+"text": "SITE",
+"start": 24.17,
+"end": 24.52
+},
+{
+"i": 68,
+"text": "COMPLET,",
+"start": 24.52,
+"end": 25.13
+},
+{
+"i": 69,
+"text": "JUSTE",
+"start": 25.13,
+"end": 25.55
+},
+{
+"i": 70,
+"text": "AVEC",
+"start": 25.63,
+"end": 25.89
+},
+{
+"i": 71,
+"text": "MA",
+"start": 25.89,
+"end": 26.13
+},
+{
+"i": 72,
+"text": "VOIX.",
+"start": 26.13,
+"end": 26.52
+},
+{
+"i": 73,
+"text": "COMMENTE",
+"start": 26.77,
+"end": 27.29
+},
+{
+"i": 74,
+"text": "« VOIX »",
+"start": 27.29,
+"end": 27.52
+},
+{
+"i": 75,
+"text": "ET",
+"start": 27.52,
+"end": 27.62
+},
+{
+"i": 76,
+"text": "JE",
+"start": 27.62,
+"end": 27.74
+},
+{
+"i": 77,
+"text": "TE",
+"start": 27.74,
+"end": 27.85
+},
+{
+"i": 78,
+"text": "DONNE",
+"start": 27.85,
+"end": 28.14
+},
+{
+"i": 79,
+"text": "TOUTES",
+"start": 28.14,
+"end": 28.49
+},
+{
+"i": 80,
+"text": "LES",
+"start": 28.49,
+"end": 28.66
+},
+{
+"i": 81,
+"text": "PHRASES.",
+"start": 28.66,
+"end": 29.12
+}
+]
