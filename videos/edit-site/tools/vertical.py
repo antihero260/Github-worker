@@ -37,6 +37,9 @@ js.append(f'tl.to(".ck-case", {{ keyframes: [{{ y: -22, duration: 0.1 }}, {{ y: 
 for x in (B[21] + (B[22] - B[21]) / 2, B[22], B[23]):
     js.append(f'tl.to(".ck-case", {{ keyframes: [{{ scale: 1.06, duration: 0.07 }}, {{ scale: 1, duration: 0.14 }}] }}, {round(x, 3)});')
 h = re.sub(r'(const tl = gsap\.timeline\(\{ paused: true \}\);\n).*?(\s*window\.__timelines\["main"\] = tl;)', lambda m: m.group(1) + "\n".join("      " + l for l in js) + m.group(2), h, flags=re.S)
+# Demande de l'utilisateur pour l'edit : pas de texte → titre seul, sans les cases sous le film
+h = re.sub(r"\s*<!-- check : début -->.*?<!-- check : fin -->", "", h, flags=re.S)
+h = re.sub(r'(const tl = gsap\.timeline\(\{ paused: true \}\);\n).*?(\s*window\.__timelines\["main"\] = tl;)', lambda m: m.group(1) + m.group(2).lstrip("\n"), h, flags=re.S)
 (V / "index.html").write_text(h, encoding="utf-8")
 json.dump({"id": "edit-site-vertical", "name": "edit-site-vertical", "createdAt": "2026-11-07T01:00:00.000Z"}, open(V / "meta.json", "w"), indent=2)
 print("vertical écrit :", len(CASES), "cases")

@@ -211,11 +211,9 @@ HTML.append('<div id="noir-avant-drop" class="ed-noir" style="opacity: 0"></div>
 j(f'tl.set("#noir-avant-drop", {{ opacity: 1 }}, {T(7.9)});')
 j(f'tl.set("#noir-avant-drop", {{ opacity: 0 }}, {T(8)});')
 
-mot("m-code", "PAS DE CODE.", 0, T(2), entree=False)
-mot("m-dev", "PAS DE DEV.", T(2), T(4))
-mot("m-agence", "PAS D'AGENCE.", T(4), T(6))
-mot("m-juste", "JUSTE…", T(6), T(7), taille=170)
-mot("m-prompt", "1 PROMPT.", T(7), T(7.9), taille=230, coul="#DCFC1C", zoom_fin=1.7)
+# SANS TEXTE (demande de l'utilisateur) : la montée se fait à l'image, la caméra fonce vers le drop
+j(f'tl.fromTo("#fonds-intro", {{ scale: 1 }}, {{ scale: 1.5, duration: {r(T(7.9) - T(7))}, ease: "power2.in", immediateRender: false }}, {T(7)});')
+j(f'tl.set("#fonds-intro", {{ scale: 1 }}, {T(8)});')
 son(0.0, "impact-basse", 0.5, "ouverture")
 son(0.02, "glitch-court", 0.34, "ouverture")
 for x, nom in ((2, "impact-tambour"), (4, "impact-cartoon"), (6, "coup-mystere"), (7, "impact-futur")):
@@ -263,8 +261,6 @@ HTML.append(f'''<div id="scene" class="ed-scene">
             <video id="tel-lecodeur" class="clip" src="assets/video/lecodeur-mobile.mp4" data-start="{T(19.5)}" data-duration="{r(T(20) - T(19.5))}" data-track-index="7" muted playsinline></video>
           </div>
         </div>
-        <div id="st-complet" class="pj-sticker ed-sticker" style="left: 860px; top: 690px; transform: rotate(-7deg); opacity: 0">Site complet ✓</div>
-        <div id="pu-site" class="ed-puce" style="left: 1240px; top: 120px; opacity: 0"><span id="pu-texte">Une boutique</span></div>
       </div>''')
 j(f'tl.fromTo("#nav", {{ opacity: 0, scale: 1.35, rotation: -4 }}, {{ opacity: 1, scale: 1, rotation: 0, duration: 0.16, ease: "power4.out", immediateRender: false }}, {T(8)});')
 j(f'tl.set("#perso", {{ opacity: 1 }}, {T(8)});')
@@ -345,8 +341,6 @@ son(T(17), "swoosh-monte", 0.42, "le téléphone arrive")
 son(T(17) + 0.16, "impact-tambour", 0.36, "le téléphone se pose")
 secousse(T(17) + 0.16, 16, 4)
 # Site complet (temps 18)
-j(f'tl.fromTo("#st-complet", {{ opacity: 0, scale: 2.4 }}, {{ opacity: 1, scale: 1, duration: 0.13, ease: "power4.in", immediateRender: false }}, {T(18)});')
-j(f'tl.to("#st-complet", {{ opacity: 0, duration: 0.1 }}, {T(19) - 0.05});')
 son(T(18) + 0.12, "impact-cartoon", 0.4, "tampon")
 son(T(18) + 0.12, "cloche-succes", 0.36, "site complet")
 secousse(T(18) + 0.13, 20, 4)
@@ -373,8 +367,6 @@ def change_site(t, url_txt, puce, sel_on=None, sel_off=None):
     if sel_on:
         j(f'tl.set("{sel_on}", {{ opacity: 1 }}, {r(t)});')
     j(f'tl.set("#url", {{ textContent: {json.dumps(url_txt)} }}, {r(t)});')
-    j(f'tl.set("#pu-texte", {{ textContent: {json.dumps(puce)} }}, {r(t)});')
-    j(f'tl.fromTo("#pu-site", {{ opacity: 0, scale: 1.6, rotation: 6 }}, {{ opacity: 1, scale: 1, rotation: 4, duration: 0.12, ease: "power4.out", immediateRender: false }}, {r(t + 0.03)});')
     j(f'tl.fromTo("#nav", {{ x: 160, filter: "blur(10px)" }}, {{ x: 0, filter: "blur(0px)", duration: 0.16, ease: "power3.out", immediateRender: false }}, {r(t)});')
     eclair(t, "#ffffff", 0.06, 0.55)
     son(t, "fouet", 0.42, f"site suivant : {puce}")
@@ -389,25 +381,21 @@ recadre(T(19.5) - 0.06, 900, 560, 1.12, 0.16)
 change_site(T(20), "volt-sneakers.ci", "Une boutique", "#i-volt-final", "#i-lecodeur")
 j(f'tl.set("#tel-volt", {{ opacity: 1, y: 0 }}, {T(20)});')
 recadre(T(20) - 0.06, 960, 540, 1.0, 0.16)
-j(f'tl.to("#pu-site", {{ opacity: 0, duration: 0.08 }}, {T(20) + 0.3});')
 
 # Les mots de la fin, sur le site (temps 21 → 24)
-HTML.append('<div id="voile-fin" class="ed-noir" style="opacity: 0"></div>')
-j(f'tl.to("#voile-fin", {{ opacity: 0.62, duration: 0.08 }}, {T(20) + 0.04});')
-mot("m-ia", "FAIT PAR L'IA.", T(20) + 0.06, T(21.5), taille=200)
-HTML.append('''<div id="m-commente" class="ed-mot ed-commente" style="top: 540px; opacity: 0">
-        <svg viewBox="0 0 40 40" width="150" height="150"><path d="M6 8 h28 a4 4 0 0 1 4 4 v14 a4 4 0 0 1 -4 4 h-16 l-8 7 v-7 h-4 a4 4 0 0 1 -4 -4 v-14 a4 4 0 0 1 4 -4 z" fill="#fe2c55" /></svg>
-        <span>COMMENTE</span><b>SITE</b></div>''')
-j(f'tl.fromTo("#m-commente", {{ opacity: 0, scale: 1.5 }}, {{ opacity: 1, scale: 1, duration: 0.1, ease: "power4.out", immediateRender: false }}, {T(21.5)});')
-for x in (22.5, 23, 23.5):
-    j(f'tl.to("#m-commente b", {{ keyframes: [{{ scale: 1.14, duration: 0.08 }}, {{ scale: 1, duration: 0.14 }}] }}, {T(x)});')
-    son(T(x), tour(POPS), 0.3, "SITE bat la mesure")
-for t_, nom in ((T(20) + 0.06, "impact-whoosh"), (T(21.5), "impact-basse")):
-    son(t_, nom, 0.45, "mot de la fin")
-    secousse(t_ + 0.02, 20, 4)
-son(T(21.5) + 0.05, "notif-positive", 0.4, "commente")
-pose("toi", T(21.5), 0.14, "back.out(2)", bg=165, bd=-165, tete=-8)
-saut("toi", T(21.5) + 0.05, 44)
+# Fin SANS TEXTE (temps 20 → 24) : la caméra tourne autour du site, un flash et un zoom par temps, puis la boucle repart
+recadre(T(21) - 0.06, *film_xy(950, 400), 1.35, 0.18)
+recadre(T(22) - 0.06, 260, 640, 1.3, 0.18)
+recadre(T(23) - 0.06, 960, 540, 1.0, 0.2)
+for x in (21, 22, 23):
+    eclair(T(x), "#ffffff", 0.06, 0.45)
+    son(T(x), IMPACTS[x % 3], 0.42, "coup de fin")
+    secousse(T(x) + 0.02, 18, 4)
+barres_glitch(T(23.5))
+j(f'tl.to("#cam", {{ scale: 1.25, rotation: -3, duration: {r(FIN - T(23.5))}, ease: "power3.in" }}, {T(23.5)});')
+eclair(FIN - 0.05, "#000000", 0.05, 1)
+pose("toi", T(21), 0.14, "back.out(2)", bg=165, bd=-165, tete=-8)
+saut("toi", T(21) + 0.05, 44)
 saut("toi", T(22) + 0.05, 30)
 saut("toi", T(23) + 0.05, 30)
 son(FIN - 0.05, "rewind-glitch", 0.36, "la boucle repart")
@@ -480,7 +468,9 @@ page = tete + CSS_EDIT + """    </style>
     <div id="root" data-composition-id="main" data-start="0" data-duration="%(fin)s" data-width="1920" data-height="1080">
       <div id="fond" class="clip" data-start="0" data-duration="%(fin)s" data-track-index="0"></div>
       <div id="cam" class="ed-cam">
+        <div id="fonds-intro" class="ed-cam">
         %(fonds)s
+        </div>
         <div id="voile"></div>
         %(corps)s
       </div>
