@@ -1,0 +1,828 @@
+<!doctype html>
+<html
+  lang="fr"
+  data-resolution="landscape"
+  data-composition-variables='[
+    {"id":"color-ground","type":"color","label":"Fond","default":"#0C0C0C"},
+    {"id":"color-accent","type":"color","label":"Accent (toi, chiffres clés)","default":"#DCFC1C"},
+    {"id":"color-light","type":"color","label":"Clair (elle, papiers, serif)","default":"#ECECE8"},
+    {"id":"caption-box","type":"color","label":"Bandeau des sous-titres","default":"#EEEEEA"},
+    {"id":"caption-ink","type":"color","label":"Texte des sous-titres","default":"#0A0A06"}
+  ]'
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+    <style>
+      /* Style « Projecteur » : film 16:9 (format YouTube), valeurs de ../frame.md. */
+      @font-face {
+        font-family: "Anton";
+        src: url("assets/fonts/Anton-Regular.woff2") format("woff2");
+        font-weight: 400;
+      }
+      @font-face {
+        font-family: "Instrument Serif";
+        src: url("assets/fonts/InstrumentSerif-Italic.woff2") format("woff2");
+        font-style: italic;
+        font-weight: 400;
+      }
+      :root {
+        --color-ground: #0c0c0c;
+        --color-accent: #dcfc1c;
+        --color-light: #ecece8;
+        --caption-box: #eeeeea;
+        --caption-ink: #0a0a06;
+        --accent-shade: #98ac18;
+        --accent-glow: rgba(220, 252, 28, 0.35);
+        --hud-grey: #9a9a9a;
+        --caption-y: 915px;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: #000;
+      }
+      #fond {
+        position: absolute;
+        inset: 0;
+        background: var(--color-ground);
+      }
+
+      /* ---- Composants partagés par toutes les scènes (préfixe pj-) ---- */
+      .pj-scene {
+        position: absolute;
+        inset: 0;
+        overflow: hidden;
+        background: radial-gradient(ellipse 55% 70% at 50% 72%, #262626 0%, var(--color-ground) 72%);
+      }
+      .pj-cam {
+        position: absolute;
+        inset: 0;
+        transform-origin: 50% 60%;
+      }
+      .pj-horizon {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 12px;
+        background-image: radial-gradient(circle, rgba(255, 255, 255, 0.28) 2.5px, transparent 3.5px);
+        background-size: 72px 12px;
+        opacity: 0.6;
+      }
+      .pj-cone {
+        position: absolute;
+        top: -40px;
+        width: 560px;
+        background: linear-gradient(to bottom, rgba(255, 255, 255, 0.24), rgba(255, 255, 255, 0.05));
+        clip-path: polygon(41% 0, 59% 0, 100% 100%, 0 100%);
+        filter: blur(16px);
+      }
+      .pj-sol {
+        position: absolute;
+        width: 620px;
+        height: 150px;
+        border-radius: 50%;
+        background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.34), rgba(255, 255, 255, 0) 70%);
+      }
+      .pj-picto {
+        position: absolute;
+        overflow: visible;
+      }
+      .pj-picto .pj-contour * {
+        fill: #000;
+        stroke: #000;
+        stroke-width: 12;
+        stroke-linejoin: round;
+      }
+      .pj-toi .pj-plein * {
+        fill: var(--color-accent);
+      }
+      .pj-elle .pj-plein * {
+        fill: var(--color-light);
+      }
+      .pj-autre .pj-contour * {
+        fill: #fff;
+        stroke: #fff;
+        stroke-width: 9;
+      }
+      .pj-autre .pj-plein * {
+        fill: #050505;
+      }
+      .pj-label {
+        position: absolute;
+        font-family: "JetBrains Mono", monospace;
+        font-weight: 700;
+        font-size: 30px;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        line-height: 1.45;
+        white-space: nowrap;
+      }
+      .pj-label .pj-k {
+        color: var(--color-accent);
+        display: block;
+      }
+      .pj-label .pj-d {
+        color: var(--hud-grey);
+        display: block;
+      }
+      .pj-equerres {
+        position: absolute;
+      }
+      .pj-equerres i {
+        position: absolute;
+        width: 46px;
+        height: 46px;
+        border-color: var(--color-accent);
+        border-style: solid;
+        border-width: 0;
+      }
+      .pj-equerres i:nth-child(1) {
+        left: 0;
+        top: 0;
+        border-left-width: 6px;
+        border-top-width: 6px;
+      }
+      .pj-equerres i:nth-child(2) {
+        right: 0;
+        top: 0;
+        border-right-width: 6px;
+        border-top-width: 6px;
+      }
+      .pj-equerres i:nth-child(3) {
+        left: 0;
+        bottom: 0;
+        border-left-width: 6px;
+        border-bottom-width: 6px;
+      }
+      .pj-equerres i:nth-child(4) {
+        right: 0;
+        bottom: 0;
+        border-right-width: 6px;
+        border-bottom-width: 6px;
+      }
+      .pj-sticker {
+        position: absolute;
+        background: var(--color-accent);
+        color: #000;
+        font-family: "Anton", sans-serif;
+        font-size: 84px;
+        line-height: 1;
+        padding: 8px 24px 10px;
+        text-transform: uppercase;
+        white-space: nowrap;
+      }
+      .pj-papier {
+        position: absolute;
+        background: var(--color-light);
+        color: #0a0a06;
+        padding: 40px 44px;
+        box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+      }
+      .pj-papier h3 {
+        font-family: "Anton", sans-serif;
+        font-weight: 400;
+        font-size: 104px;
+        line-height: 1;
+        text-transform: uppercase;
+      }
+      .pj-papier .pj-ligne {
+        font-family: "JetBrains Mono", monospace;
+        font-weight: 700;
+        font-size: 30px;
+        letter-spacing: 0.06em;
+        margin-top: 22px;
+        white-space: nowrap;
+      }
+      .pj-impact {
+        font-family: "Anton", sans-serif;
+        color: var(--color-accent);
+        text-transform: uppercase;
+        line-height: 0.9;
+        text-shadow:
+          0 0 28px var(--accent-glow),
+          0 0 70px var(--accent-glow);
+        white-space: nowrap;
+      }
+      .pj-serif {
+        position: absolute;
+        font-family: "Instrument Serif", serif;
+        font-style: italic;
+        color: var(--color-light);
+        line-height: 1.1;
+      }
+      .pj-serif span {
+        opacity: 0;
+      }
+      .pj-stat {
+        position: absolute;
+        font-family: "JetBrains Mono", monospace;
+        font-weight: 700;
+        color: var(--color-accent);
+        white-space: nowrap;
+      }
+      .pj-flash {
+        position: absolute;
+        inset: 0;
+        background: var(--color-accent);
+        opacity: 0;
+      }
+
+      /* ---- Composants ajoutés pour cette vidéo ---- */
+      .pj-cadre {
+        position: absolute;
+        inset: 0;
+        transform-origin: 50% 50%;
+      }
+      .pj-perso {
+        position: absolute;
+        overflow: visible;
+      }
+      .pj-perso .c * {
+        fill: #000;
+        stroke: #000;
+        stroke-width: 10;
+        stroke-linejoin: round;
+      }
+      .pj-ia-perso .p * {
+        fill: var(--color-light);
+      }
+      .pj-perso .yeux * {
+        fill: #0a0a06;
+        stroke: none;
+      }
+      .pj-toi-perso .p * {
+        fill: var(--color-accent);
+      }
+      .pj-chat {
+        position: absolute;
+        background: #141414;
+        border: 2px solid #4a4a4a;
+        box-shadow: 0 30px 90px rgba(0, 0, 0, 0.7);
+      }
+      .pj-chat-tete {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        height: 64px;
+        padding: 0 26px;
+        border-bottom: 2px solid #2e2e2e;
+        font-family: "JetBrains Mono", monospace;
+        font-weight: 700;
+        font-size: 28px;
+        letter-spacing: 0.12em;
+        color: var(--hud-grey);
+        text-transform: uppercase;
+      }
+      .pj-chat-tete i {
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background: #3a3a3a;
+      }
+      .pj-msg {
+        position: absolute;
+        background: var(--color-light);
+        color: #0a0a06;
+        font-family: "JetBrains Mono", monospace;
+        font-weight: 700;
+        font-size: 34px;
+        line-height: 1.5;
+        padding: 26px 32px;
+      }
+      .pj-msg span {
+        opacity: 0;
+        padding: 0 3px;
+      }
+      .pj-x {
+        position: absolute;
+        pointer-events: none;
+      }
+      .pj-x::before,
+      .pj-x::after {
+        content: "";
+        position: absolute;
+        left: -6%;
+        top: 50%;
+        width: 112%;
+        height: 16px;
+        margin-top: -8px;
+        background: var(--color-accent);
+      }
+      .pj-x::before {
+        transform: rotate(18deg);
+      }
+      .pj-x::after {
+        transform: rotate(-18deg);
+      }
+      .pj-carte {
+        position: absolute;
+        background: var(--color-light);
+        color: #0a0a06;
+        font-family: "Anton", sans-serif;
+        text-transform: uppercase;
+        line-height: 1;
+        text-align: center;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+      }
+      .pj-ligne-coche {
+        font-family: "JetBrains Mono", monospace;
+        font-weight: 700;
+        font-size: 40px;
+        letter-spacing: 0.06em;
+        color: var(--color-light);
+        white-space: nowrap;
+        margin-bottom: 26px;
+      }
+      .pj-ligne-coche b {
+        display: inline-block;
+        width: 46px;
+        height: 46px;
+        border: 4px solid var(--color-light);
+        margin-right: 22px;
+        vertical-align: -10px;
+        text-align: center;
+        line-height: 38px;
+        font-size: 34px;
+        color: #000;
+      }
+
+      .ed-cam { position: absolute; inset: 0; transform-origin: 50% 50%; }
+      .ed-fond { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; object-fit: cover; }
+      #voile { position: absolute; inset: 0; background: #050507; opacity: 0.42; }
+      .ed-scene { position: absolute; inset: 0; transform-origin: 50% 50%; }
+      .ed-mot { position: absolute; left: 0; width: 1920px; transform: translateY(-50%); text-align: center; font-family: "Anton", sans-serif;
+        line-height: 1; text-transform: uppercase; white-space: nowrap; letter-spacing: 0.01em;
+        text-shadow: -7px 0 0 rgba(255, 42, 85, 0.85), 7px 0 0 rgba(0, 229, 255, 0.85), 0 14px 50px rgba(0, 0, 0, 0.8); }
+      .ed-commente { display: flex; align-items: center; justify-content: center; gap: 34px; font-size: 170px; color: #fff; }
+      .ed-commente b { display: inline-block; font-weight: 400; background: #DCFC1C; color: #0a0a06; padding: 4px 34px 14px; text-shadow: none; }
+      .ed-noir { position: absolute; inset: 0; background: #000; }
+      .ed-eclair { position: absolute; inset: 0; opacity: 0; }
+      .ed-glitch { position: absolute; inset: 0; opacity: 0; mix-blend-mode: screen; }
+      .ed-glitch i { position: absolute; }
+      .ed-nav { position: absolute; border-radius: 18px; overflow: hidden; background: #0d0d10; border: 3px solid #2c2c33;
+        box-shadow: 0 40px 120px rgba(0, 0, 0, 0.85), 0 0 60px rgba(220, 252, 28, 0.12); }
+      .ed-nav-barre { height: 46px; display: flex; align-items: center; gap: 10px; padding: 0 18px; background: #0a0a0c; border-bottom: 1px solid #222; }
+      .ed-nav-barre i { width: 13px; height: 13px; border-radius: 50%; background: #444; }
+      .ed-nav-barre i:first-child { background: #DCFC1C; }
+      .ed-nav-barre span { margin-left: 14px; font: 600 21px/1 "JetBrains Mono", ui-monospace, monospace; color: #b8b8b8; white-space: nowrap; }
+      .ed-page-fenetre { position: relative; overflow: hidden; }
+      .ed-page { position: absolute; left: 0; top: 0; width: 1280px; height: 1700px; transform-origin: 0 0; }
+      .ed-bloc { position: absolute; display: block; }
+      .ed-dans-nav { position: absolute; left: 0; top: 0; width: 100%; height: 100%; object-fit: cover; object-position: top; }
+      .ed-tel { position: absolute; width: 300px; height: 610px; border: 11px solid #0c0c0c; border-radius: 46px; overflow: hidden; background: #0d0d10;
+        box-shadow: 0 40px 100px rgba(0, 0, 0, 0.85), 0 0 0 3px #3a3a3a; }
+      .ed-tel-ecran { position: absolute; inset: 0; overflow: hidden; }
+      .ed-tel-ecran img { position: absolute; left: 0; top: 0; width: 100%; }
+      .ed-tel-ecran video { position: absolute; left: 0; top: 0; width: 100%; height: 100%; object-fit: cover; object-position: top; }
+      .ed-sticker { font-size: 92px; box-shadow: 12px 12px 0 #000; }
+      .ed-puce { position: absolute; padding: 12px 30px 16px; background: #fe2c55; color: #fff; font-family: "Anton", sans-serif; font-size: 64px;
+        line-height: 1; text-transform: uppercase; white-space: nowrap; box-shadow: 10px 10px 0 #000; }
+      .ed-confettis { position: absolute; width: 0; height: 0; }
+      .ed-cf { position: absolute; left: 0; top: 0; opacity: 0; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="15.606" data-width="1920" data-height="1080">
+      <div id="fond" class="clip" data-start="0" data-duration="15.606" data-track-index="0"></div>
+      <div id="cam" class="ed-cam">
+        <video id="f-0" class="clip ed-fond" src="assets/video/hacker-glitch.mp4" data-start="0.0" data-duration="0.65" data-track-index="2" muted playsinline></video>
+        <video id="f-1" class="clip ed-fond" src="assets/video/code-chiffres.mp4" data-start="0.65" data-duration="0.651" data-track-index="3" muted playsinline></video>
+        <video id="f-2" class="clip ed-fond" src="assets/video/hacker-nuit.mp4" data-start="1.301" data-duration="0.65" data-track-index="2" muted playsinline></video>
+        <video id="f-3" class="clip ed-fond" src="assets/video/serveurs-attaque.mp4" data-start="1.951" data-duration="0.65" data-track-index="3" muted playsinline></video>
+        <video id="f-4" class="clip ed-fond" src="assets/video/neon-japon.mp4" data-start="2.601" data-duration="0.651" data-track-index="2" muted playsinline></video>
+        <video id="f-5" class="clip ed-fond" src="assets/video/doigts-tapent.mp4" data-start="3.252" data-duration="0.65" data-track-index="3" muted playsinline></video>
+        <video id="f-6" class="clip ed-fond" src="assets/video/hacker-masque-ecrans.mp4" data-start="3.902" data-duration="0.325" data-track-index="2" muted playsinline></video>
+        <video id="f-7" class="clip ed-fond" src="assets/video/robot-yeux.mp4" data-start="4.227" data-duration="0.325" data-track-index="3" muted playsinline></video>
+        <video id="f-8" class="clip ed-fond" src="assets/video/tunnel-rouge.mp4" data-start="4.552" data-duration="0.162" data-track-index="2" muted playsinline></video>
+        <video id="f-9" class="clip ed-fond" src="assets/video/gamer-rgb.mp4" data-start="4.714" data-duration="0.163" data-track-index="3" muted playsinline></video>
+        <video id="f-10" class="clip ed-fond" src="assets/video/ecrans-code.mp4" data-start="4.877" data-duration="0.163" data-track-index="2" muted playsinline></video>
+        <video id="f-11" class="clip ed-fond" src="assets/video/fibre-optique.mp4" data-start="5.04" data-duration="0.097" data-track-index="3" muted playsinline></video>
+        <video id="f-12" class="clip ed-fond" src="assets/video/ville-nuit-aerien.mp4" data-start="5.202" data-duration="0.651" data-track-index="2" muted playsinline></video>
+        <video id="f-13" class="clip ed-fond" src="assets/video/tokyo-train-nuit.mp4" data-start="5.853" data-duration="0.65" data-track-index="3" muted playsinline></video>
+        <video id="f-14" class="clip ed-fond" src="assets/video/trafic-nuit-tourne.mp4" data-start="6.503" data-duration="0.655" data-track-index="2" muted playsinline></video>
+        <video id="f-15" class="clip ed-fond" src="assets/video/voiture-compteur.mp4" data-start="7.158" data-duration="0.651" data-track-index="3" muted playsinline></video>
+        <video id="f-16" class="clip ed-fond" src="assets/video/neon-etincelles.mp4" data-start="7.809" data-duration="0.656" data-track-index="2" muted playsinline></video>
+        <video id="f-17" class="clip ed-fond" src="assets/video/serveurs-lumieres.mp4" data-start="8.465" data-duration="0.65" data-track-index="3" muted playsinline></video>
+        <video id="f-18" class="clip ed-fond" src="assets/video/voiture-rouge-spot.mp4" data-start="9.115" data-duration="0.65" data-track-index="2" muted playsinline></video>
+        <video id="f-19" class="clip ed-fond" src="assets/video/hacker-darkweb.mp4" data-start="9.765" data-duration="0.656" data-track-index="3" muted playsinline></video>
+        <video id="f-20" class="clip ed-fond" src="assets/video/robot-danse.mp4" data-start="10.421" data-duration="0.65" data-track-index="2" muted playsinline></video>
+        <video id="f-21" class="clip ed-fond" src="assets/video/code-chiffres.mp4" data-start="11.071" data-duration="0.65" data-track-index="3" muted playsinline></video>
+        <video id="f-22" class="clip ed-fond" src="assets/video/neon-japon.mp4" data-start="11.721" data-duration="0.65" data-track-index="2" muted playsinline></video>
+        <video id="f-23" class="clip ed-fond" src="assets/video/fibre-optique.mp4" data-start="12.371" data-duration="0.656" data-track-index="3" muted playsinline></video>
+        <video id="f-24" class="clip ed-fond" src="assets/video/hacker-glitch.mp4" data-start="13.027" data-duration="0.65" data-track-index="2" muted playsinline></video>
+        <video id="f-25" class="clip ed-fond" src="assets/video/tokyo-train-nuit.mp4" data-start="13.677" data-duration="0.651" data-track-index="3" muted playsinline></video>
+        <video id="f-26" class="clip ed-fond" src="assets/video/voiture-compteur.mp4" data-start="14.328" data-duration="0.65" data-track-index="2" muted playsinline></video>
+        <video id="f-27" class="clip ed-fond" src="assets/video/ville-nuit-aerien.mp4" data-start="14.978" data-duration="0.628" data-track-index="3" muted playsinline></video>
+        <div id="voile"></div>
+        <div id="noir-avant-drop" class="ed-noir" style="opacity: 0"></div>
+      <div id="m-code" class="ed-mot" style="top: 540px; font-size: 210px; color: #FFFFFF; opacity: 0">PAS DE CODE.</div>
+      <div id="m-dev" class="ed-mot" style="top: 540px; font-size: 210px; color: #FFFFFF; opacity: 0">PAS DE DEV.</div>
+      <div id="m-agence" class="ed-mot" style="top: 540px; font-size: 210px; color: #FFFFFF; opacity: 0">PAS D'AGENCE.</div>
+      <div id="m-juste" class="ed-mot" style="top: 540px; font-size: 170px; color: #FFFFFF; opacity: 0">JUSTE…</div>
+      <div id="m-prompt" class="ed-mot" style="top: 540px; font-size: 230px; color: #DCFC1C; opacity: 0">1 PROMPT.</div>
+      <div id="eclair-6" class="ed-eclair" style="background: #ffffff"></div>
+      <div id="eclair-7" class="ed-eclair" style="background: #ffffff"></div>
+      <div id="eclair-8" class="ed-eclair" style="background: #ffffff"></div>
+      <div id="eclair-9" class="ed-eclair" style="background: #ffffff"></div>
+      <div id="glitch-10" class="ed-glitch"><i style="top: 140px; height: 26px; background: #ff2a55; left: 0px; width: 1920px"></i><i style="top: 402px; height: 12px; background: #00e5ff; left: 260px; width: 1660px"></i><i style="top: 611px; height: 40px; background: #ffffff; left: 0px; width: 1300px"></i><i style="top: 820px; height: 18px; background: #ff2a55; left: 500px; width: 1420px"></i><i style="top: 955px; height: 10px; background: #00e5ff; left: 0px; width: 1920px"></i></div>
+      <div id="scene" class="ed-scene">
+        <div id="nav" class="ed-nav" style="left: 300px; top: 66px; width: 1320px; height: 788px; opacity: 0">
+          <div class="ed-nav-barre"><i></i><i></i><i></i><span id="url" data-layout-ignore>volt-sneakers.ci</span></div>
+          <div class="ed-page-fenetre" style="height: 742px">
+            <div id="page" class="ed-page" style="transform: scale(1.03125)">
+              <img id="b-menu" class="ed-bloc" src="assets/img/volt-menu.png" style="left: 0px; top: 0px; width: 1280px; height: 81px; opacity: 0" alt="" /><img id="b-titre" class="ed-bloc" src="assets/img/volt-titre.png" style="left: 51px; top: 241px; width: 583px; height: 170px; opacity: 0" alt="" /><img id="b-texte" class="ed-bloc" src="assets/img/volt-texte.png" style="left: 51px; top: 431px; width: 460px; height: 42px; opacity: 0" alt="" /><img id="b-bouton" class="ed-bloc" src="assets/img/volt-bouton.png" style="left: 51px; top: 505px; width: 236px; height: 49px; opacity: 0" alt="" /><img id="b-photo" class="ed-bloc" src="assets/img/volt-photo.png" style="left: 674px; top: 120px; width: 555px; height: 555px; opacity: 0" alt="" /><img id="b-titre-produits" class="ed-bloc" src="assets/img/volt-titre-produits.png" style="left: 51px; top: 825px; width: 1178px; height: 46px; opacity: 0" alt="" /><img id="b-p0" class="ed-bloc" src="assets/img/volt-p0.png" style="left: 51px; top: 899px; width: 279px; height: 412px; opacity: 0" alt="" /><img id="b-p1" class="ed-bloc" src="assets/img/volt-p1.png" style="left: 351px; top: 899px; width: 279px; height: 412px; opacity: 0" alt="" /><img id="b-p2" class="ed-bloc" src="assets/img/volt-p2.png" style="left: 650px; top: 899px; width: 279px; height: 412px; opacity: 0" alt="" /><img id="b-p3" class="ed-bloc" src="assets/img/volt-p3.png" style="left: 949px; top: 899px; width: 279px; height: 412px; opacity: 0" alt="" />
+              <img id="b-panier" class="ed-bloc" src="assets/img/volt-panier.png" style="left: 900px; top: 780px; width: 380px; height: 720px; opacity: 0" alt="" />
+            </div>
+            <video id="v-cafe" class="clip ed-dans-nav" src="assets/video/cafe-hero-plein.mp4" data-start="12.371" data-duration="0.328" data-track-index="6" muted playsinline></video>
+            <img id="i-lecodeur" class="ed-dans-nav" src="assets/img/lecodeur-final.png" style="opacity: 0" alt="" />
+            <img id="i-volt-final" class="ed-dans-nav" src="assets/img/volt-ecran.png" style="opacity: 0" alt="" />
+          </div>
+        </div>
+        <div id="tel" class="ed-tel" style="left: 96px; top: 190px; opacity: 0">
+          <div class="ed-tel-ecran"><img id="tel-volt" src="assets/img/volt-mobile.png" alt="" />
+            <video id="tel-cafe" class="clip" src="assets/video/cafe-mobile.mp4" data-start="12.371" data-duration="0.328" data-track-index="7" muted playsinline></video>
+            <video id="tel-lecodeur" class="clip" src="assets/video/lecodeur-mobile.mp4" data-start="12.699" data-duration="0.328" data-track-index="7" muted playsinline></video>
+          </div>
+        </div>
+        <div id="st-complet" class="pj-sticker ed-sticker" style="left: 860px; top: 690px; transform: rotate(-7deg); opacity: 0">Site complet ✓</div>
+        <div id="pu-site" class="ed-puce" style="left: 1240px; top: 120px; opacity: 0"><span id="pu-texte">Une boutique</span></div>
+      </div>
+      <div id="eclair-12" class="ed-eclair" style="background: #DCFC1C"></div>
+      <div id="glitch-13" class="ed-glitch"><i style="top: 140px; height: 26px; background: #ff2a55; left: 0px; width: 1920px"></i><i style="top: 402px; height: 12px; background: #00e5ff; left: 260px; width: 1660px"></i><i style="top: 611px; height: 40px; background: #ffffff; left: 0px; width: 1300px"></i><i style="top: 820px; height: 18px; background: #ff2a55; left: 500px; width: 1420px"></i><i style="top: 955px; height: 10px; background: #00e5ff; left: 0px; width: 1920px"></i></div>
+      <div class="ed-confettis" style="left: 1380px; top: 760px"><i id="cf-0" class="ed-cf" style="width: 13px; height: 13px; background: #ECECE8"></i><i id="cf-1" class="ed-cf" style="width: 20px; height: 11px; background: #DCFC1C"></i><i id="cf-2" class="ed-cf" style="width: 13px; height: 13px; background: #DCFC1C"></i><i id="cf-3" class="ed-cf" style="width: 20px; height: 11px; background: #ECECE8"></i><i id="cf-4" class="ed-cf" style="width: 13px; height: 13px; background: #DCFC1C"></i><i id="cf-5" class="ed-cf" style="width: 20px; height: 11px; background: #DCFC1C"></i><i id="cf-6" class="ed-cf" style="width: 13px; height: 13px; background: #ECECE8"></i><i id="cf-7" class="ed-cf" style="width: 20px; height: 11px; background: #DCFC1C"></i><i id="cf-8" class="ed-cf" style="width: 13px; height: 13px; background: #DCFC1C"></i><i id="cf-9" class="ed-cf" style="width: 20px; height: 11px; background: #ECECE8"></i><i id="cf-10" class="ed-cf" style="width: 13px; height: 13px; background: #DCFC1C"></i><i id="cf-11" class="ed-cf" style="width: 20px; height: 11px; background: #DCFC1C"></i><i id="cf-12" class="ed-cf" style="width: 13px; height: 13px; background: #ECECE8"></i><i id="cf-13" class="ed-cf" style="width: 20px; height: 11px; background: #DCFC1C"></i><i id="cf-14" class="ed-cf" style="width: 13px; height: 13px; background: #DCFC1C"></i><i id="cf-15" class="ed-cf" style="width: 20px; height: 11px; background: #ECECE8"></i><i id="cf-16" class="ed-cf" style="width: 13px; height: 13px; background: #DCFC1C"></i><i id="cf-17" class="ed-cf" style="width: 20px; height: 11px; background: #DCFC1C"></i><i id="cf-18" class="ed-cf" style="width: 13px; height: 13px; background: #ECECE8"></i><i id="cf-19" class="ed-cf" style="width: 20px; height: 11px; background: #DCFC1C"></i><i id="cf-20" class="ed-cf" style="width: 13px; height: 13px; background: #DCFC1C"></i><i id="cf-21" class="ed-cf" style="width: 20px; height: 11px; background: #ECECE8"></i><i id="cf-22" class="ed-cf" style="width: 13px; height: 13px; background: #DCFC1C"></i><i id="cf-23" class="ed-cf" style="width: 20px; height: 11px; background: #DCFC1C"></i><i id="cf-24" class="ed-cf" style="width: 13px; height: 13px; background: #ECECE8"></i><i id="cf-25" class="ed-cf" style="width: 20px; height: 11px; background: #DCFC1C"></i></div>
+      <div id="eclair-15" class="ed-eclair" style="background: #ffffff"></div>
+      <div id="eclair-16" class="ed-eclair" style="background: #ffffff"></div>
+      <div id="eclair-17" class="ed-eclair" style="background: #ffffff"></div>
+      <div id="voile-fin" class="ed-noir" style="opacity: 0"></div>
+      <div id="m-ia" class="ed-mot" style="top: 540px; font-size: 200px; color: #FFFFFF; opacity: 0">FAIT PAR L'IA.</div>
+      <div id="m-commente" class="ed-mot ed-commente" style="top: 540px; opacity: 0">
+        <svg viewBox="0 0 40 40" width="150" height="150"><path d="M6 8 h28 a4 4 0 0 1 4 4 v14 a4 4 0 0 1 -4 4 h-16 l-8 7 v-7 h-4 a4 4 0 0 1 -4 -4 v-14 a4 4 0 0 1 4 -4 z" fill="#fe2c55" /></svg>
+        <span>COMMENTE</span><b>SITE</b></div>
+      <div id="perso" style="position: absolute; inset: 0; opacity: 0"><svg id="toi" class="pj-perso pj-toi-perso" viewBox="-30 -20 160 290" style="left: 1669px; top: 725px; width: 182px; height: 330px"><g id="toi-vie"><g id="toi-corps"><g id="toi-jg"><g class="c"><rect x="24" y="136" width="24" height="112" rx="8" /></g><g class="p"><rect x="24" y="136" width="24" height="112" rx="8" /></g></g><g id="toi-jd"><g class="c"><rect x="52" y="136" width="24" height="112" rx="8" /></g><g class="p"><rect x="52" y="136" width="24" height="112" rx="8" /></g></g><g id="toi-tronc"><g class="c"><rect x="22" y="52" width="56" height="94" rx="12" /></g><g class="p"><rect x="22" y="52" width="56" height="94" rx="12" /></g></g><g id="toi-bg"><g class="c"><rect x="2" y="54" width="18" height="86" rx="9" /></g><g class="p"><rect x="2" y="54" width="18" height="86" rx="9" /></g></g><g id="toi-bd"><g class="c"><rect x="80" y="54" width="18" height="86" rx="9" /></g><g class="p"><rect x="80" y="54" width="18" height="86" rx="9" /></g></g><g id="toi-tete"><g class="c"><circle cx="50" cy="24" r="22" /></g><g class="p"><circle cx="50" cy="24" r="22" /></g></g></g></g></svg></div>
+      </div>
+      <audio id="musique" src="assets/music/phonk-remix-holiznacc0.wav" data-start="0" data-duration="15.606" data-volume="1" data-track-index="10"></audio>
+      <audio id="sfx-001" src="assets/sfx/glitch-court.mp3" data-start="0.0" data-duration="0.834" data-volume="0.34" data-track-index="30"></audio><!-- ouverture -->
+      <audio id="sfx-002" src="assets/sfx/impact-basse.mp3" data-start="0.0" data-duration="1.1" data-volume="0.5" data-track-index="31"></audio><!-- ouverture -->
+      <audio id="sfx-003" src="assets/sfx/souffle-rapide.mp3" data-start="0.0" data-duration="1.757" data-volume="0.42" data-track-index="32"></audio><!-- coupe code-chiffres -->
+      <audio id="sfx-004" src="assets/sfx/impact-tambour.mp3" data-start="0.571" data-duration="3.0" data-volume="0.4" data-track-index="33"></audio><!-- mot qui claque -->
+      <audio id="sfx-005" src="assets/sfx/swoosh-court.mp3" data-start="1.151" data-duration="1.25" data-volume="0.42" data-track-index="30"></audio><!-- coupe hacker-nuit -->
+      <audio id="sfx-006" src="assets/sfx/fouet.mp3" data-start="1.951" data-duration="1.051" data-volume="0.42" data-track-index="31"></audio><!-- coupe serveurs-attaque -->
+      <audio id="sfx-007" src="assets/sfx/swoosh-vol.mp3" data-start="2.101" data-duration="1.632" data-volume="0.42" data-track-index="32"></audio><!-- coupe neon-japon -->
+      <audio id="sfx-008" src="assets/sfx/impact-cartoon.mp3" data-start="2.571" data-duration="1.414" data-volume="0.4" data-track-index="30"></audio><!-- mot qui claque -->
+      <audio id="sfx-009" src="assets/sfx/balaie-rapide.mp3" data-start="2.852" data-duration="1.917" data-volume="0.42" data-track-index="34"></audio><!-- coupe doigts-tapent -->
+      <audio id="sfx-010" src="assets/sfx/souffle-cine.mp3" data-start="3.177" data-duration="1.334" data-volume="0.42" data-track-index="31"></audio><!-- coupe robot-yeux -->
+      <audio id="sfx-011" src="assets/sfx/coup-mystere.mp3" data-start="3.322" data-duration="3.5" data-volume="0.4" data-track-index="35"></audio><!-- mot qui claque -->
+      <audio id="sfx-012" src="assets/sfx/glitch-mini.mp3" data-start="3.502" data-duration="1.722" data-volume="0.36" data-track-index="36"></audio><!-- coupe tunnel-rouge -->
+      <audio id="sfx-013" src="assets/sfx/riser-synth.mp3" data-start="3.502" data-duration="1.78" data-volume="0.42" data-track-index="37"></audio><!-- montée avant le drop -->
+      <audio id="sfx-014" src="assets/sfx/aspiration.mp3" data-start="3.587" data-duration="1.615" data-volume="0.3" data-track-index="33"></audio><!-- aspiration avant le drop -->
+      <audio id="sfx-015" src="assets/sfx/swoosh-accent.mp3" data-start="3.852" data-duration="1.1" data-volume="0.42" data-track-index="32"></audio><!-- coupe hacker-masque-ecrans -->
+      <audio id="sfx-016" src="assets/sfx/impact-futur.mp3" data-start="4.372" data-duration="2.75" data-volume="0.4" data-track-index="30"></audio><!-- mot qui claque -->
+      <audio id="sfx-017" src="assets/sfx/declencheur.mp3" data-start="4.614" data-duration="0.628" data-volume="0.36" data-track-index="31"></audio><!-- coupe gamer-rgb -->
+      <audio id="sfx-018" src="assets/sfx/tonnerre-transition.mp3" data-start="4.702" data-duration="5.0" data-volume="0.3" data-track-index="38"></audio><!-- DROP -->
+      <audio id="sfx-019" src="assets/sfx/glitch-court.mp3" data-start="4.727" data-duration="0.834" data-volume="0.36" data-track-index="39"></audio><!-- coupe ecrans-code -->
+      <audio id="sfx-020" src="assets/sfx/obturateur-num.mp3" data-start="4.74" data-duration="1.512" data-volume="0.36" data-track-index="40"></audio><!-- coupe fibre-optique -->
+      <audio id="sfx-021" src="assets/sfx/impact-futur.mp3" data-start="5.002" data-duration="2.75" data-volume="0.4" data-track-index="32"></audio><!-- DROP -->
+      <audio id="sfx-022" src="assets/sfx/impact-basse.mp3" data-start="5.102" data-duration="1.1" data-volume="0.62" data-track-index="34"></audio><!-- DROP -->
+      <audio id="sfx-023" src="assets/sfx/clavier-ordi.mp3" data-start="5.342" data-duration="0.5" data-volume="0.3" data-track-index="31"></audio><!-- l'URL se tape -->
+      <audio id="sfx-024" src="assets/sfx/zoom-air.mp3" data-start="5.433" data-duration="1.282" data-volume="0.3" data-track-index="33"></audio><!-- la caméra suit -->
+      <audio id="sfx-025" src="assets/sfx/pop-click.mp3" data-start="5.873" data-duration="1.175" data-volume="0.42" data-track-index="31"></audio><!-- le menu -->
+      <audio id="sfx-026" src="assets/sfx/zoom-swipe.mp3" data-start="6.283" data-duration="1.056" data-volume="0.3" data-track-index="34"></audio><!-- la caméra suit -->
+      <audio id="sfx-027" src="assets/sfx/pop-sec.mp3" data-start="6.423" data-duration="0.305" data-volume="0.42" data-track-index="36"></audio><!-- le titre -->
+      <audio id="sfx-028" src="assets/sfx/zoom-futur.mp3" data-start="6.588" data-duration="2.171" data-volume="0.3" data-track-index="37"></audio><!-- la caméra suit -->
+      <audio id="sfx-029" src="assets/sfx/pop-bulle.mp3" data-start="7.078" data-duration="0.381" data-volume="0.42" data-track-index="31"></audio><!-- la photo -->
+      <audio id="sfx-030" src="assets/sfx/papier-glisse.mp3" data-start="7.134" data-duration="1.094" data-volume="0.25" data-track-index="30"></audio><!-- le texte -->
+      <audio id="sfx-031" src="assets/sfx/zoom-vide.mp3" data-start="7.439" data-duration="1.275" data-volume="0.3" data-track-index="33"></audio><!-- la caméra suit -->
+      <audio id="sfx-032" src="assets/sfx/pop-cartoon.mp3" data-start="7.829" data-duration="0.521" data-volume="0.42" data-track-index="31"></audio><!-- le bouton -->
+      <audio id="sfx-033" src="assets/sfx/clic-positif.mp3" data-start="7.859" data-duration="1.769" data-volume="0.4" data-track-index="32"></audio><!-- clic sur le bouton -->
+      <audio id="sfx-034" src="assets/sfx/swoosh-vitesse.mp3" data-start="7.915" data-duration="2.6" data-volume="0.42" data-track-index="34"></audio><!-- défilement vers les produits -->
+      <audio id="sfx-035" src="assets/sfx/zoom-scifi.mp3" data-start="8.225" data-duration="1.8" data-volume="0.3" data-track-index="35"></audio><!-- la caméra suit -->
+      <audio id="sfx-036" src="assets/sfx/pop-click.mp3" data-start="8.605" data-duration="1.175" data-volume="0.42" data-track-index="30"></audio><!-- les plus vendues -->
+      <audio id="sfx-037" src="assets/sfx/zoom-air.mp3" data-start="8.695" data-duration="1.282" data-volume="0.3" data-track-index="31"></audio><!-- la caméra suit -->
+      <audio id="sfx-038" src="assets/sfx/pop-sec.mp3" data-start="9.035" data-duration="0.305" data-volume="0.42" data-track-index="33"></audio><!-- produit 1 -->
+      <audio id="sfx-039" src="assets/sfx/zoom-futur.mp3" data-start="9.195" data-duration="2.171" data-volume="0.3" data-track-index="36"></audio><!-- la caméra suit -->
+      <audio id="sfx-040" src="assets/sfx/zoom-swipe.mp3" data-start="9.22" data-duration="1.056" data-volume="0.3" data-track-index="37"></audio><!-- la caméra suit -->
+      <audio id="sfx-041" src="assets/sfx/pop-bulle.mp3" data-start="9.36" data-duration="0.381" data-volume="0.42" data-track-index="33"></audio><!-- produit 2 -->
+      <audio id="sfx-042" src="assets/sfx/scanner-caisse.mp3" data-start="9.621" data-duration="1.4" data-volume="0.45" data-track-index="39"></audio><!-- panier -->
+      <audio id="sfx-043" src="assets/sfx/zoom-vide.mp3" data-start="9.723" data-duration="1.275" data-volume="0.3" data-track-index="32"></audio><!-- la caméra suit -->
+      <audio id="sfx-044" src="assets/sfx/pop-cartoon.mp3" data-start="9.785" data-duration="0.521" data-volume="0.42" data-track-index="33"></audio><!-- produit 3 -->
+      <audio id="sfx-045" src="assets/sfx/balaie-court.mp3" data-start="9.971" data-duration="0.606" data-volume="0.36" data-track-index="30"></audio><!-- le panier glisse -->
+      <audio id="sfx-046" src="assets/sfx/pop-click.mp3" data-start="10.113" data-duration="1.175" data-volume="0.42" data-track-index="31"></audio><!-- produit 4 -->
+      <audio id="sfx-047" src="assets/sfx/zoom-scifi.mp3" data-start="10.201" data-duration="1.8" data-volume="0.3" data-track-index="35"></audio><!-- la caméra suit -->
+      <audio id="sfx-048" src="assets/sfx/impact-tambour.mp3" data-start="10.481" data-duration="3.0" data-volume="0.36" data-track-index="33"></audio><!-- le téléphone se pose -->
+      <audio id="sfx-049" src="assets/sfx/zoom-air.mp3" data-start="10.651" data-duration="1.282" data-volume="0.3" data-track-index="30"></audio><!-- la caméra suit -->
+      <audio id="sfx-050" src="assets/sfx/swoosh-monte.mp3" data-start="10.971" data-duration="1.03" data-volume="0.42" data-track-index="34"></audio><!-- le téléphone arrive -->
+      <audio id="sfx-051" src="assets/sfx/paillettes.mp3" data-start="11.261" data-duration="1.6" data-volume="0.3" data-track-index="32"></audio><!-- confettis -->
+      <audio id="sfx-052" src="assets/sfx/cloche-succes.mp3" data-start="11.691" data-duration="2.4" data-volume="0.36" data-track-index="31"></audio><!-- site complet -->
+      <audio id="sfx-053" src="assets/sfx/impact-cartoon.mp3" data-start="11.791" data-duration="1.414" data-volume="0.4" data-track-index="36"></audio><!-- tampon -->
+      <audio id="sfx-054" src="assets/sfx/zoom-futur.mp3" data-start="12.119" data-duration="2.171" data-volume="0.3" data-track-index="30"></audio><!-- la caméra suit -->
+      <audio id="sfx-055" src="assets/sfx/zoom-swipe.mp3" data-start="12.141" data-duration="1.056" data-volume="0.3" data-track-index="34"></audio><!-- la caméra suit -->
+      <audio id="sfx-056" src="assets/sfx/impact-whoosh.mp3" data-start="12.187" data-duration="3.419" data-volume="0.45" data-track-index="35"></audio><!-- mot de la fin -->
+      <audio id="sfx-057" src="assets/sfx/fouet.mp3" data-start="12.371" data-duration="1.051" data-volume="0.42" data-track-index="37"></audio><!-- site suivant : Un café -->
+      <audio id="sfx-058" src="assets/sfx/obturateur.mp3" data-start="12.411" data-duration="1.419" data-volume="0.32" data-track-index="38"></audio><!-- déclic -->
+      <audio id="sfx-059" src="assets/sfx/zoom-vide.mp3" data-start="12.647" data-duration="1.275" data-volume="0.3" data-track-index="39"></audio><!-- la caméra suit -->
+      <audio id="sfx-060" src="assets/sfx/fouet.mp3" data-start="12.699" data-duration="1.051" data-volume="0.42" data-track-index="40"></audio><!-- site suivant : Une chaîne -->
+      <audio id="sfx-061" src="assets/sfx/obturateur.mp3" data-start="12.739" data-duration="1.419" data-volume="0.32" data-track-index="41"></audio><!-- déclic -->
+      <audio id="sfx-062" src="assets/sfx/fouet.mp3" data-start="13.027" data-duration="1.051" data-volume="0.42" data-track-index="32"></audio><!-- site suivant : Une boutique -->
+      <audio id="sfx-063" src="assets/sfx/obturateur.mp3" data-start="13.067" data-duration="1.419" data-volume="0.32" data-track-index="42"></audio><!-- déclic -->
+      <audio id="sfx-064" src="assets/sfx/notif-positive.mp3" data-start="13.752" data-duration="1.854" data-volume="0.4" data-track-index="33"></audio><!-- commente -->
+      <audio id="sfx-065" src="assets/sfx/impact-basse.mp3" data-start="13.902" data-duration="1.1" data-volume="0.45" data-track-index="34"></audio><!-- mot de la fin -->
+      <audio id="sfx-066" src="assets/sfx/pop-sec.mp3" data-start="14.553" data-duration="0.305" data-volume="0.3" data-track-index="30"></audio><!-- SITE bat la mesure -->
+      <audio id="sfx-067" src="assets/sfx/pop-bulle.mp3" data-start="14.878" data-duration="0.381" data-volume="0.3" data-track-index="30"></audio><!-- SITE bat la mesure -->
+      <audio id="sfx-068" src="assets/sfx/rewind-glitch.mp3" data-start="15.206" data-duration="0.4" data-volume="0.36" data-track-index="31"></audio><!-- la boucle repart -->
+      <audio id="sfx-069" src="assets/sfx/pop-cartoon.mp3" data-start="15.292" data-duration="0.314" data-volume="0.3" data-track-index="30"></audio><!-- SITE bat la mesure -->
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#cam", { scale: 1.05 }, { scale: 1, duration: 0.3, ease: "power3.out", immediateRender: false }, 0.65);
+      tl.fromTo("#cam", { scale: 1.05 }, { scale: 1, duration: 0.3, ease: "power3.out", immediateRender: false }, 1.301);
+      tl.fromTo("#cam", { scale: 1.05 }, { scale: 1, duration: 0.3, ease: "power3.out", immediateRender: false }, 1.951);
+      tl.fromTo("#cam", { scale: 1.05 }, { scale: 1, duration: 0.3, ease: "power3.out", immediateRender: false }, 2.601);
+      tl.fromTo("#cam", { scale: 1.05 }, { scale: 1, duration: 0.3, ease: "power3.out", immediateRender: false }, 3.252);
+      tl.fromTo("#cam", { scale: 1.05 }, { scale: 1, duration: 0.3, ease: "power3.out", immediateRender: false }, 3.902);
+      tl.fromTo("#cam", { scale: 1.03 }, { scale: 1, duration: 0.14, ease: "power3.out", immediateRender: false }, 4.227);
+      tl.fromTo("#cam", { scale: 1.03 }, { scale: 1, duration: 0.14, ease: "power3.out", immediateRender: false }, 4.552);
+      tl.fromTo("#cam", { scale: 1.03 }, { scale: 1, duration: 0.14, ease: "power3.out", immediateRender: false }, 4.714);
+      tl.fromTo("#cam", { scale: 1.03 }, { scale: 1, duration: 0.14, ease: "power3.out", immediateRender: false }, 4.877);
+      tl.fromTo("#cam", { scale: 1.03 }, { scale: 1, duration: 0.14, ease: "power3.out", immediateRender: false }, 5.04);
+      tl.set("#noir-avant-drop", { opacity: 1 }, 5.137);
+      tl.set("#noir-avant-drop", { opacity: 0 }, 5.202);
+      tl.set("#m-code", { opacity: 1 }, 0);
+      tl.set("#m-code", { opacity: 0 }, 1.301);
+      tl.fromTo("#m-dev", { opacity: 0, scale: 1.45 }, { opacity: 1, scale: 1, duration: 0.1, ease: "power4.out", immediateRender: false }, 1.301);
+      tl.set("#m-dev", { opacity: 0 }, 2.601);
+      tl.fromTo("#m-agence", { opacity: 0, scale: 1.45 }, { opacity: 1, scale: 1, duration: 0.1, ease: "power4.out", immediateRender: false }, 2.601);
+      tl.set("#m-agence", { opacity: 0 }, 3.902);
+      tl.fromTo("#m-juste", { opacity: 0, scale: 1.45 }, { opacity: 1, scale: 1, duration: 0.1, ease: "power4.out", immediateRender: false }, 3.902);
+      tl.set("#m-juste", { opacity: 0 }, 4.552);
+      tl.fromTo("#m-prompt", { opacity: 0, scale: 1.45 }, { opacity: 1, scale: 1, duration: 0.1, ease: "power4.out", immediateRender: false }, 4.552);
+      tl.to("#m-prompt", { scale: 1.7, duration: 0.465, ease: "power2.in" }, 4.672);
+      tl.set("#m-prompt", { opacity: 0 }, 5.137);
+      tl.to("#cam", { keyframes: [{ x: 12.0, y: -7.2, rotation: -0.48, duration: 0.035 }, { x: -8.0, y: 4.8, rotation: 0.32, duration: 0.035 }, { x: 4.0, y: -2.4, rotation: -0.16, duration: 0.035 }, { x: 0, y: 0, rotation: 0, duration: 0.04 }] }, 1.321);
+      tl.to("#cam", { keyframes: [{ x: 12.0, y: -7.2, rotation: -0.48, duration: 0.035 }, { x: -8.0, y: 4.8, rotation: 0.32, duration: 0.035 }, { x: 4.0, y: -2.4, rotation: -0.16, duration: 0.035 }, { x: 0, y: 0, rotation: 0, duration: 0.04 }] }, 2.621);
+      tl.to("#cam", { keyframes: [{ x: 12.0, y: -7.2, rotation: -0.48, duration: 0.035 }, { x: -8.0, y: 4.8, rotation: 0.32, duration: 0.035 }, { x: 4.0, y: -2.4, rotation: -0.16, duration: 0.035 }, { x: 0, y: 0, rotation: 0, duration: 0.04 }] }, 3.922);
+      tl.to("#cam", { keyframes: [{ x: 12.0, y: -7.2, rotation: -0.48, duration: 0.035 }, { x: -8.0, y: 4.8, rotation: 0.32, duration: 0.035 }, { x: 4.0, y: -2.4, rotation: -0.16, duration: 0.035 }, { x: 0, y: 0, rotation: 0, duration: 0.04 }] }, 4.572);
+      tl.set("#eclair-6", { opacity: 0.25 }, 4.714);
+      tl.to("#eclair-6", { opacity: 0, duration: 0.05, ease: "power2.out" }, 4.748);
+      tl.set("#eclair-7", { opacity: 0.25 }, 4.877);
+      tl.to("#eclair-7", { opacity: 0, duration: 0.05, ease: "power2.out" }, 4.911);
+      tl.set("#eclair-8", { opacity: 0.25 }, 5.04);
+      tl.to("#eclair-8", { opacity: 0, duration: 0.05, ease: "power2.out" }, 5.074);
+      tl.set("#eclair-9", { opacity: 1 }, 5.202);
+      tl.to("#eclair-9", { opacity: 0, duration: 0.12, ease: "power2.out" }, 5.236);
+      tl.set("#glitch-10", { opacity: 0.85, x: -40 }, 5.302);
+      tl.set("#glitch-10", { opacity: 0.6, x: 30 }, 5.336);
+      tl.set("#glitch-10", { opacity: 0 }, 5.402);
+      tl.to("#cam", { keyframes: [{ x: 30.0, y: -18.0, rotation: -1.2, duration: 0.035 }, { x: -25.0, y: 15.0, rotation: 1.0, duration: 0.035 }, { x: 20.0, y: -12.0, rotation: -0.8, duration: 0.035 }, { x: -15.0, y: 9.0, rotation: 0.6, duration: 0.035 }, { x: 10.0, y: -6.0, rotation: -0.4, duration: 0.035 }, { x: -5.0, y: 3.0, rotation: 0.2, duration: 0.035 }, { x: 0, y: 0, rotation: 0, duration: 0.04 }] }, 5.202);
+      tl.fromTo("#cam", { scale: 1.15 }, { scale: 1, duration: 0.45, ease: "power3.out", immediateRender: false }, 5.202);
+      tl.set("#voile", { opacity: 0.66 }, 5.202);
+      tl.fromTo("#nav", { opacity: 0, scale: 1.35, rotation: -4 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.16, ease: "power4.out", immediateRender: false }, 5.202);
+      tl.set("#perso", { opacity: 1 }, 5.202);
+      tl.fromTo("#toi", { y: 300 }, { y: 0, duration: 0.22, ease: "back.out(1.6)", immediateRender: false }, 5.202);
+      tl.to("#toi-bg", { rotation: 150, svgOrigin: "11 62", duration: 0.14, ease: "back.out(2)" }, 5.202);
+      tl.to("#toi-bd", { rotation: -150, svgOrigin: "89 62", duration: 0.14, ease: "back.out(2)" }, 5.202);
+      tl.to("#toi-tete", { rotation: -8, svgOrigin: "50 50", duration: 0.14, ease: "back.out(2)" }, 5.202);
+      tl.to("#toi-corps", { keyframes: [{ y: -50, duration: 0.13, ease: "power2.out" }, { y: 0, duration: 0.15, ease: "power2.in" }] }, 5.252);
+      tl.to("#toi-bg", { rotation: 0, svgOrigin: "11 62", duration: 0.16, ease: "power2.out" }, 5.753);
+      tl.to("#toi-bd", { rotation: 0, svgOrigin: "89 62", duration: 0.16, ease: "power2.out" }, 5.753);
+      tl.to("#toi-tete", { rotation: 0, svgOrigin: "50 50", duration: 0.16, ease: "power2.out" }, 5.753);
+      tl.to("#toi-tete", { svgOrigin: "50 50", keyframes: [{ rotation: 12, y: 5, duration: 0.09 }, { rotation: 0, y: 0, duration: 0.16 }] }, 5.853);
+      tl.to("#toi-corps", { keyframes: [{ y: 8, duration: 0.09 }, { y: 0, duration: 0.16 }] }, 5.853);
+      tl.to("#toi-tete", { svgOrigin: "50 50", keyframes: [{ rotation: 12, y: 5, duration: 0.09 }, { rotation: 0, y: 0, duration: 0.16 }] }, 6.503);
+      tl.to("#toi-corps", { keyframes: [{ y: 8, duration: 0.09 }, { y: 0, duration: 0.16 }] }, 6.503);
+      tl.to("#toi-tete", { svgOrigin: "50 50", keyframes: [{ rotation: 12, y: 5, duration: 0.09 }, { rotation: 0, y: 0, duration: 0.16 }] }, 7.158);
+      tl.to("#toi-corps", { keyframes: [{ y: 8, duration: 0.09 }, { y: 0, duration: 0.16 }] }, 7.158);
+      tl.to("#toi-tete", { svgOrigin: "50 50", keyframes: [{ rotation: 12, y: 5, duration: 0.09 }, { rotation: 0, y: 0, duration: 0.16 }] }, 7.809);
+      tl.to("#toi-corps", { keyframes: [{ y: 8, duration: 0.09 }, { y: 0, duration: 0.16 }] }, 7.809);
+      tl.to("#toi-tete", { svgOrigin: "50 50", keyframes: [{ rotation: 12, y: 5, duration: 0.09 }, { rotation: 0, y: 0, duration: 0.16 }] }, 8.465);
+      tl.to("#toi-corps", { keyframes: [{ y: 8, duration: 0.09 }, { y: 0, duration: 0.16 }] }, 8.465);
+      tl.to("#toi-tete", { svgOrigin: "50 50", keyframes: [{ rotation: 12, y: 5, duration: 0.09 }, { rotation: 0, y: 0, duration: 0.16 }] }, 9.115);
+      tl.to("#toi-corps", { keyframes: [{ y: 8, duration: 0.09 }, { y: 0, duration: 0.16 }] }, 9.115);
+      tl.to("#toi-tete", { svgOrigin: "50 50", keyframes: [{ rotation: 12, y: 5, duration: 0.09 }, { rotation: 0, y: 0, duration: 0.16 }] }, 9.765);
+      tl.to("#toi-corps", { keyframes: [{ y: 8, duration: 0.09 }, { y: 0, duration: 0.16 }] }, 9.765);
+      tl.to("#toi-tete", { svgOrigin: "50 50", keyframes: [{ rotation: 12, y: 5, duration: 0.09 }, { rotation: 0, y: 0, duration: 0.16 }] }, 10.421);
+      tl.to("#toi-corps", { keyframes: [{ y: 8, duration: 0.09 }, { y: 0, duration: 0.16 }] }, 10.421);
+      tl.to("#toi-tete", { svgOrigin: "50 50", keyframes: [{ rotation: 12, y: 5, duration: 0.09 }, { rotation: 0, y: 0, duration: 0.16 }] }, 11.071);
+      tl.to("#toi-corps", { keyframes: [{ y: 8, duration: 0.09 }, { y: 0, duration: 0.16 }] }, 11.071);
+      tl.to("#toi-tete", { svgOrigin: "50 50", keyframes: [{ rotation: 12, y: 5, duration: 0.09 }, { rotation: 0, y: 0, duration: 0.16 }] }, 12.371);
+      tl.to("#toi-corps", { keyframes: [{ y: 8, duration: 0.09 }, { y: 0, duration: 0.16 }] }, 12.371);
+      tl.to("#toi-tete", { svgOrigin: "50 50", keyframes: [{ rotation: 12, y: 5, duration: 0.09 }, { rotation: 0, y: 0, duration: 0.16 }] }, 13.027);
+      tl.to("#toi-corps", { keyframes: [{ y: 8, duration: 0.09 }, { y: 0, duration: 0.16 }] }, 13.027);
+      tl.to("#toi-tete", { svgOrigin: "50 50", keyframes: [{ rotation: 12, y: 5, duration: 0.09 }, { rotation: 0, y: 0, duration: 0.16 }] }, 13.677);
+      tl.to("#toi-corps", { keyframes: [{ y: 8, duration: 0.09 }, { y: 0, duration: 0.16 }] }, 13.677);
+      tl.set("#url", { textContent: "|" }, 5.322);
+      tl.set("#url", { textContent: "v|" }, 5.35);
+      tl.set("#url", { textContent: "vo|" }, 5.378);
+      tl.set("#url", { textContent: "vol|" }, 5.406);
+      tl.set("#url", { textContent: "volt|" }, 5.434);
+      tl.set("#url", { textContent: "volt-|" }, 5.462);
+      tl.set("#url", { textContent: "volt-s|" }, 5.49);
+      tl.set("#url", { textContent: "volt-sn|" }, 5.518);
+      tl.set("#url", { textContent: "volt-sne|" }, 5.546);
+      tl.set("#url", { textContent: "volt-snea|" }, 5.574);
+      tl.set("#url", { textContent: "volt-sneak|" }, 5.602);
+      tl.set("#url", { textContent: "volt-sneake|" }, 5.63);
+      tl.set("#url", { textContent: "volt-sneaker|" }, 5.658);
+      tl.set("#url", { textContent: "volt-sneakers|" }, 5.686);
+      tl.set("#url", { textContent: "volt-sneakers.|" }, 5.714);
+      tl.set("#url", { textContent: "volt-sneakers.c|" }, 5.742);
+      tl.set("#url", { textContent: "volt-sneakers.ci" }, 5.77);
+      tl.fromTo("#b-menu", { opacity: 0, x: 0, y: -140, rotation: 0, scale: 1.12 }, { opacity: 1, x: 0, y: 0, rotation: 0, scale: 1, duration: 0.16, ease: "power4.out", immediateRender: false }, 5.853);
+      tl.to("#scene", { x: 0, y: 507, scale: 1.3, duration: 0.22, ease: "power3.inOut" }, 5.773);
+      tl.to("#scene", { keyframes: [{ filter: "blur(8px)", duration: 0.11 }, { filter: "blur(0px)", duration: 0.11 }] }, 5.773);
+      tl.to("#toi-bd", { rotation: -120, svgOrigin: "89 62", duration: 0.12, ease: "back.out(2.5)" }, 5.853);
+      tl.to("#toi-bd", { rotation: 0, svgOrigin: "89 62", duration: 0.16, ease: "power2.out" }, 6.273);
+      tl.fromTo("#b-titre", { opacity: 0, x: -420, y: 0, rotation: -6, scale: 1.12 }, { opacity: 1, x: 0, y: 0, rotation: 0, scale: 1, duration: 0.16, ease: "power4.out", immediateRender: false }, 6.503);
+      tl.to("#scene", { x: 445, y: 133, scale: 1.45, duration: 0.22, ease: "power3.inOut" }, 6.423);
+      tl.to("#scene", { keyframes: [{ filter: "blur(8px)", duration: 0.11 }, { filter: "blur(0px)", duration: 0.11 }] }, 6.423);
+      tl.to("#cam", { keyframes: [{ x: 14.0, y: -8.4, rotation: -0.56, duration: 0.035 }, { x: -9.333, y: 5.6, rotation: 0.373, duration: 0.035 }, { x: 4.667, y: -2.8, rotation: -0.187, duration: 0.035 }, { x: 0, y: 0, rotation: 0, duration: 0.04 }] }, 6.623);
+      tl.to("#toi-bg", { rotation: 120, svgOrigin: "11 62", duration: 0.12, ease: "back.out(2.5)" }, 6.503);
+      tl.to("#toi-bg", { rotation: 0, svgOrigin: "11 62", duration: 0.16, ease: "power2.out" }, 6.923);
+      tl.fromTo("#b-photo", { opacity: 0, x: 420, y: 0, rotation: 8, scale: 1.12 }, { opacity: 1, x: 0, y: 0, rotation: 0, scale: 1, duration: 0.16, ease: "power4.out", immediateRender: false }, 7.158);
+      tl.to("#scene", { x: -385, y: 22, scale: 1.2, duration: 0.22, ease: "power3.inOut" }, 7.078);
+      tl.to("#scene", { keyframes: [{ filter: "blur(8px)", duration: 0.11 }, { filter: "blur(0px)", duration: 0.11 }] }, 7.078);
+      tl.to("#cam", { keyframes: [{ x: 14.0, y: -8.4, rotation: -0.56, duration: 0.035 }, { x: -9.333, y: 5.6, rotation: 0.373, duration: 0.035 }, { x: 4.667, y: -2.8, rotation: -0.187, duration: 0.035 }, { x: 0, y: 0, rotation: 0, duration: 0.04 }] }, 7.278);
+      tl.fromTo("#b-texte", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.14, immediateRender: false }, 7.484);
+      tl.fromTo("#b-bouton", { opacity: 0, x: 0, y: 120, rotation: 0, scale: 1.12 }, { opacity: 1, x: 0, y: 0, rotation: 0, scale: 1, duration: 0.16, ease: "power4.out", immediateRender: false }, 7.809);
+      tl.fromTo("#b-bouton", { filter: "drop-shadow(0 0 0px #DCFC1C)" }, { filter: "drop-shadow(0 0 22px #DCFC1C)", duration: 0.2, yoyo: true, repeat: 1, immediateRender: false }, 7.969);
+      tl.to("#scene", { x: 284, y: -71, scale: 1.25, duration: 0.22, ease: "power3.inOut" }, 7.729);
+      tl.to("#scene", { keyframes: [{ filter: "blur(8px)", duration: 0.11 }, { filter: "blur(0px)", duration: 0.11 }] }, 7.729);
+      tl.to("#toi-bd", { rotation: -120, svgOrigin: "89 62", duration: 0.12, ease: "back.out(2.5)" }, 7.809);
+      tl.to("#toi-bd", { rotation: 0, svgOrigin: "89 62", duration: 0.16, ease: "power2.out" }, 8.229);
+      tl.to("#page", { y: -780, duration: 0.24, ease: "power3.inOut" }, 8.365);
+      tl.to("#scene", { x: 0, y: 70, scale: 1.0, duration: 0.22, ease: "power3.inOut" }, 8.365);
+      tl.to("#scene", { keyframes: [{ filter: "blur(8px)", duration: 0.11 }, { filter: "blur(0px)", duration: 0.11 }] }, 8.365);
+      tl.set("#eclair-12", { opacity: 0.35 }, 8.465);
+      tl.to("#eclair-12", { opacity: 0, duration: 0.06, ease: "power2.out" }, 8.499);
+      tl.set("#glitch-13", { opacity: 0.85, x: -40 }, 8.465);
+      tl.set("#glitch-13", { opacity: 0.6, x: 30 }, 8.499);
+      tl.set("#glitch-13", { opacity: 0 }, 8.565);
+      tl.fromTo("#b-titre-produits", { opacity: 0, x: -420, y: 0, rotation: -6, scale: 1.12 }, { opacity: 1, x: 0, y: 0, rotation: 0, scale: 1, duration: 0.16, ease: "power4.out", immediateRender: false }, 8.585);
+      tl.fromTo("#b-p0", { opacity: 0, x: 0, y: 120, rotation: 0, scale: 1.12 }, { opacity: 1, x: 0, y: 0, rotation: 0, scale: 1, duration: 0.16, ease: "power4.out", immediateRender: false }, 9.115);
+      tl.to("#scene", { x: 640, y: 128, scale: 1.38, duration: 0.18, ease: "power3.inOut" }, 9.055);
+      tl.to("#scene", { keyframes: [{ filter: "blur(8px)", duration: 0.09 }, { filter: "blur(0px)", duration: 0.09 }] }, 9.055);
+      tl.to("#cam", { keyframes: [{ x: 10.0, y: -6.0, rotation: -0.4, duration: 0.035 }, { x: -6.667, y: 4.0, rotation: 0.267, duration: 0.035 }, { x: 3.333, y: -2.0, rotation: -0.133, duration: 0.035 }, { x: 0, y: 0, rotation: 0, duration: 0.04 }] }, 9.215);
+      tl.fromTo("#b-p1", { opacity: 0, x: 0, y: 120, rotation: 0, scale: 1.12 }, { opacity: 1, x: 0, y: 0, rotation: 0, scale: 1, duration: 0.16, ease: "power4.out", immediateRender: false }, 9.44);
+      tl.to("#scene", { x: 204, y: 123, scale: 1.32, duration: 0.18, ease: "power3.inOut" }, 9.38);
+      tl.to("#scene", { keyframes: [{ filter: "blur(8px)", duration: 0.09 }, { filter: "blur(0px)", duration: 0.09 }] }, 9.38);
+      tl.fromTo("#b-p2", { opacity: 0, x: 0, y: 120, rotation: 0, scale: 1.12 }, { opacity: 1, x: 0, y: 0, rotation: 0, scale: 1, duration: 0.16, ease: "power4.out", immediateRender: false }, 9.765);
+      tl.to("#scene", { x: -213, y: 128, scale: 1.38, duration: 0.18, ease: "power3.inOut" }, 9.705);
+      tl.to("#scene", { keyframes: [{ filter: "blur(8px)", duration: 0.09 }, { filter: "blur(0px)", duration: 0.09 }] }, 9.705);
+      tl.to("#cam", { keyframes: [{ x: 10.0, y: -6.0, rotation: -0.4, duration: 0.035 }, { x: -6.667, y: 4.0, rotation: 0.267, duration: 0.035 }, { x: 3.333, y: -2.0, rotation: -0.133, duration: 0.035 }, { x: 0, y: 0, rotation: 0, duration: 0.04 }] }, 9.865);
+      tl.fromTo("#b-p3", { opacity: 0, x: 0, y: 120, rotation: 0, scale: 1.12 }, { opacity: 1, x: 0, y: 0, rotation: 0, scale: 1, duration: 0.16, ease: "power4.out", immediateRender: false }, 10.093);
+      tl.to("#scene", { x: -611, y: 123, scale: 1.32, duration: 0.18, ease: "power3.inOut" }, 10.033);
+      tl.to("#scene", { keyframes: [{ filter: "blur(8px)", duration: 0.09 }, { filter: "blur(0px)", duration: 0.09 }] }, 10.033);
+      tl.fromTo("#b-panier", { opacity: 1, x: 420 }, { opacity: 1, x: 0, duration: 0.2, ease: "power4.out", immediateRender: false }, 10.421);
+      tl.to("#scene", { x: -557, y: 68, scale: 1.2, duration: 0.22, ease: "power3.inOut" }, 10.341);
+      tl.to("#scene", { keyframes: [{ filter: "blur(8px)", duration: 0.11 }, { filter: "blur(0px)", duration: 0.11 }] }, 10.341);
+      tl.to("#toi-bg", { rotation: 120, svgOrigin: "11 62", duration: 0.12, ease: "back.out(2.5)" }, 10.421);
+      tl.to("#toi-bg", { rotation: 0, svgOrigin: "11 62", duration: 0.16, ease: "power2.out" }, 10.841);
+      tl.fromTo("#tel", { opacity: 0, y: 700, rotation: 14 }, { opacity: 1, y: 0, rotation: -6, duration: 0.2, ease: "power4.out", immediateRender: false }, 11.071);
+      tl.fromTo("#tel-volt", { y: 0 }, { y: -1150, duration: 1.2, ease: "power1.inOut", immediateRender: false }, 11.270999999999999);
+      tl.to("#scene", { x: 200, y: 0, scale: 1.0, duration: 0.22, ease: "power3.inOut" }, 10.991);
+      tl.to("#scene", { keyframes: [{ filter: "blur(8px)", duration: 0.11 }, { filter: "blur(0px)", duration: 0.11 }] }, 10.991);
+      tl.to("#cam", { keyframes: [{ x: 16.0, y: -9.6, rotation: -0.64, duration: 0.035 }, { x: -12.0, y: 7.2, rotation: 0.48, duration: 0.035 }, { x: 8.0, y: -4.8, rotation: -0.32, duration: 0.035 }, { x: -4.0, y: 2.4, rotation: 0.16, duration: 0.035 }, { x: 0, y: 0, rotation: 0, duration: 0.04 }] }, 11.231);
+      tl.fromTo("#st-complet", { opacity: 0, scale: 2.4 }, { opacity: 1, scale: 1, duration: 0.13, ease: "power4.in", immediateRender: false }, 11.721);
+      tl.to("#st-complet", { opacity: 0, duration: 0.1 }, 12.321);
+      tl.to("#cam", { keyframes: [{ x: 20.0, y: -12.0, rotation: -0.8, duration: 0.035 }, { x: -15.0, y: 9.0, rotation: 0.6, duration: 0.035 }, { x: 10.0, y: -6.0, rotation: -0.4, duration: 0.035 }, { x: -5.0, y: 3.0, rotation: 0.2, duration: 0.035 }, { x: 0, y: 0, rotation: 0, duration: 0.04 }] }, 11.851);
+      tl.to("#toi-bg", { rotation: 165, svgOrigin: "11 62", duration: 0.14, ease: "back.out(2)" }, 11.721);
+      tl.to("#toi-bd", { rotation: -165, svgOrigin: "89 62", duration: 0.14, ease: "back.out(2)" }, 11.721);
+      tl.to("#toi-tete", { rotation: -8, svgOrigin: "50 50", duration: 0.14, ease: "back.out(2)" }, 11.721);
+      tl.to("#toi-corps", { keyframes: [{ y: -46, duration: 0.13, ease: "power2.out" }, { y: 0, duration: 0.15, ease: "power2.in" }] }, 11.771);
+      tl.to("#toi-corps", { keyframes: [{ y: -30, duration: 0.13, ease: "power2.out" }, { y: 0, duration: 0.15, ease: "power2.in" }] }, 12.081);
+      tl.to("#toi-bg", { rotation: 0, svgOrigin: "11 62", duration: 0.14, ease: "power2.out" }, 12.291);
+      tl.to("#toi-bd", { rotation: 0, svgOrigin: "89 62", duration: 0.14, ease: "power2.out" }, 12.291);
+      tl.to("#toi-tete", { rotation: 0, svgOrigin: "50 50", duration: 0.14, ease: "power2.out" }, 12.291);
+      tl.fromTo("#cf-0", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: 207, y: 160, rotation: -270, opacity: 0, duration: 1.2, ease: "power2.out", immediateRender: false }, 11.841);
+      tl.fromTo("#cf-1", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: -227, y: 306, rotation: -173, opacity: 0, duration: 1.2, ease: "power2.out", immediateRender: false }, 11.841);
+      tl.fromTo("#cf-2", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: 36, y: -125, rotation: -76, opacity: 0, duration: 1.2, ease: "power2.out", immediateRender: false }, 11.841);
+      tl.fromTo("#cf-3", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: 141, y: 289, rotation: 21, opacity: 0, duration: 1.2, ease: "power2.out", immediateRender: false }, 11.841);
+      tl.fromTo("#cf-4", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: -328, y: 119, rotation: 118, opacity: 0, duration: 1.2, ease: "power2.out", immediateRender: false }, 11.841);
+      tl.fromTo("#cf-5", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: 367, y: -3, rotation: 215, opacity: 0, duration: 1.2, ease: "power2.out", immediateRender: false }, 11.841);
+      tl.fromTo("#cf-6", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: -67, y: 334, rotation: -228, opacity: 0, duration: 1.2, ease: "power2.out", immediateRender: false }, 11.841);
+      tl.fromTo("#cf-7", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: -165, y: -63, rotation: -131, opacity: 0, duration: 1.2, ease: "power2.out", immediateRender: false }, 11.841);
+      tl.fromTo("#cf-8", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: 432, y: 270, rotation: -34, opacity: 0, duration: 1.2, ease: "power2.out", immediateRender: false }, 11.841);
+      tl.fromTo("#cf-9", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: -261, y: 236, rotation: 63, opacity: 0, duration: 1.2, ease: "power2.out", immediateRender: false }, 11.841);
+      tl.fromTo("#cf-10", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: 163, y: -84, rotation: 160, opacity: 0, duration: 1.2, ease: "power2.out", immediateRender: false }, 11.841);
+      tl.fromTo("#cf-11", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: 62, y: 298, rotation: 257, opacity: 0, duration: 1.2, ease: "power2.out", immediateRender: false }, 11.841);
+      tl.fromTo("#cf-12", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: -267, y: 52, rotation: -186, opacity: 0, duration: 1.2, ease: "power2.out", immediateRender: false }, 11.841);
+      tl.fromTo("#cf-13", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: 400, y: 98, rotation: -89, opacity: 0, duration: 1.2, ease: "power2.out", immediateRender: false }, 11.841);
+      tl.fromTo("#cf-14", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: -134, y: 293, rotation: 8, opacity: 0, duration: 1.2, ease: "power2.out", immediateRender: false }, 11.841);
+      tl.fromTo("#cf-15", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: -43, y: -72, rotation: 105, opacity: 0, duration: 1.2, ease: "power2.out", immediateRender: false }, 11.841);
+      tl.fromTo("#cf-16", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: 332, y: 356, rotation: 202, opacity: 0, duration: 1.2, ease: "power2.out", immediateRender: false }, 11.841);
+      tl.fromTo("#cf-17", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: -257, y: 167, rotation: -241, opacity: 0, duration: 1.2, ease: "power2.out", immediateRender: false }, 11.841);
+      tl.fromTo("#cf-18", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: 254, y: -17, rotation: -144, opacity: 0, duration: 1.2, ease: "power2.out", immediateRender: false }, 11.841);
+      tl.fromTo("#cf-19", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: -21, y: 482, rotation: -47, opacity: 0, duration: 1.2, ease: "power2.out", immediateRender: false }, 11.841);
+      tl.fromTo("#cf-20", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: -181, y: 8, rotation: 50, opacity: 0, duration: 1.2, ease: "power2.out", immediateRender: false }, 11.841);
+      tl.fromTo("#cf-21", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: 381, y: 196, rotation: 147, opacity: 0, duration: 1.2, ease: "power2.out", immediateRender: false }, 11.841);
+      tl.fromTo("#cf-22", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: -170, y: 243, rotation: 244, opacity: 0, duration: 1.2, ease: "power2.out", immediateRender: false }, 11.841);
+      tl.fromTo("#cf-23", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: 68, y: -50, rotation: -199, opacity: 0, duration: 1.2, ease: "power2.out", immediateRender: false }, 11.841);
+      tl.fromTo("#cf-24", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: 204, y: 409, rotation: -102, opacity: 0, duration: 1.2, ease: "power2.out", immediateRender: false }, 11.841);
+      tl.fromTo("#cf-25", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: -221, y: 111, rotation: -5, opacity: 0, duration: 1.2, ease: "power2.out", immediateRender: false }, 11.841);
+      tl.set("#tel-volt", { opacity: 0 }, 12.371);
+      tl.set("#url", { textContent: "cafe-aurore.ci" }, 12.371);
+      tl.set("#pu-texte", { textContent: "Un caf\u00e9" }, 12.371);
+      tl.fromTo("#pu-site", { opacity: 0, scale: 1.6, rotation: 6 }, { opacity: 1, scale: 1, rotation: 4, duration: 0.12, ease: "power4.out", immediateRender: false }, 12.401);
+      tl.fromTo("#nav", { x: 160, filter: "blur(10px)" }, { x: 0, filter: "blur(0px)", duration: 0.16, ease: "power3.out", immediateRender: false }, 12.371);
+      tl.set("#eclair-15", { opacity: 0.55 }, 12.371);
+      tl.to("#eclair-15", { opacity: 0, duration: 0.06, ease: "power2.out" }, 12.405);
+      tl.to("#scene", { x: 0, y: 21, scale: 1.06, duration: 0.16, ease: "power3.inOut" }, 12.311);
+      tl.to("#scene", { keyframes: [{ filter: "blur(8px)", duration: 0.08 }, { filter: "blur(0px)", duration: 0.08 }] }, 12.311);
+      tl.set("#i-lecodeur", { opacity: 1 }, 12.699);
+      tl.set("#url", { textContent: "lecodeur.fr" }, 12.699);
+      tl.set("#pu-texte", { textContent: "Une cha\u00eene" }, 12.699);
+      tl.fromTo("#pu-site", { opacity: 0, scale: 1.6, rotation: 6 }, { opacity: 1, scale: 1, rotation: 4, duration: 0.12, ease: "power4.out", immediateRender: false }, 12.729);
+      tl.fromTo("#nav", { x: 160, filter: "blur(10px)" }, { x: 0, filter: "blur(0px)", duration: 0.16, ease: "power3.out", immediateRender: false }, 12.699);
+      tl.set("#eclair-16", { opacity: 0.55 }, 12.699);
+      tl.to("#eclair-16", { opacity: 0, duration: 0.06, ease: "power2.out" }, 12.733);
+      tl.to("#scene", { x: 67, y: -22, scale: 1.12, duration: 0.16, ease: "power3.inOut" }, 12.639);
+      tl.to("#scene", { keyframes: [{ filter: "blur(8px)", duration: 0.08 }, { filter: "blur(0px)", duration: 0.08 }] }, 12.639);
+      tl.set("#i-lecodeur", { opacity: 0 }, 13.027);
+      tl.set("#i-volt-final", { opacity: 1 }, 13.027);
+      tl.set("#url", { textContent: "volt-sneakers.ci" }, 13.027);
+      tl.set("#pu-texte", { textContent: "Une boutique" }, 13.027);
+      tl.fromTo("#pu-site", { opacity: 0, scale: 1.6, rotation: 6 }, { opacity: 1, scale: 1, rotation: 4, duration: 0.12, ease: "power4.out", immediateRender: false }, 13.057);
+      tl.fromTo("#nav", { x: 160, filter: "blur(10px)" }, { x: 0, filter: "blur(0px)", duration: 0.16, ease: "power3.out", immediateRender: false }, 13.027);
+      tl.set("#eclair-17", { opacity: 0.55 }, 13.027);
+      tl.to("#eclair-17", { opacity: 0, duration: 0.06, ease: "power2.out" }, 13.061);
+      tl.set("#tel-volt", { opacity: 1, y: 0 }, 13.027);
+      tl.to("#scene", { x: 0, y: 0, scale: 1.0, duration: 0.16, ease: "power3.inOut" }, 12.967);
+      tl.to("#scene", { keyframes: [{ filter: "blur(8px)", duration: 0.08 }, { filter: "blur(0px)", duration: 0.08 }] }, 12.967);
+      tl.to("#pu-site", { opacity: 0, duration: 0.08 }, 13.327);
+      tl.to("#voile-fin", { opacity: 0.62, duration: 0.08 }, 13.066999999999998);
+      tl.fromTo("#m-ia", { opacity: 0, scale: 1.45 }, { opacity: 1, scale: 1, duration: 0.1, ease: "power4.out", immediateRender: false }, 13.087);
+      tl.set("#m-ia", { opacity: 0 }, 14.002);
+      tl.fromTo("#m-commente", { opacity: 0, scale: 1.5 }, { opacity: 1, scale: 1, duration: 0.1, ease: "power4.out", immediateRender: false }, 14.002);
+      tl.to("#m-commente b", { keyframes: [{ scale: 1.14, duration: 0.08 }, { scale: 1, duration: 0.14 }] }, 14.653);
+      tl.to("#m-commente b", { keyframes: [{ scale: 1.14, duration: 0.08 }, { scale: 1, duration: 0.14 }] }, 14.978);
+      tl.to("#m-commente b", { keyframes: [{ scale: 1.14, duration: 0.08 }, { scale: 1, duration: 0.14 }] }, 15.292);
+      tl.to("#cam", { keyframes: [{ x: 20.0, y: -12.0, rotation: -0.8, duration: 0.035 }, { x: -15.0, y: 9.0, rotation: 0.6, duration: 0.035 }, { x: 10.0, y: -6.0, rotation: -0.4, duration: 0.035 }, { x: -5.0, y: 3.0, rotation: 0.2, duration: 0.035 }, { x: 0, y: 0, rotation: 0, duration: 0.04 }] }, 13.107);
+      tl.to("#cam", { keyframes: [{ x: 20.0, y: -12.0, rotation: -0.8, duration: 0.035 }, { x: -15.0, y: 9.0, rotation: 0.6, duration: 0.035 }, { x: 10.0, y: -6.0, rotation: -0.4, duration: 0.035 }, { x: -5.0, y: 3.0, rotation: 0.2, duration: 0.035 }, { x: 0, y: 0, rotation: 0, duration: 0.04 }] }, 14.022);
+      tl.to("#toi-bg", { rotation: 165, svgOrigin: "11 62", duration: 0.14, ease: "back.out(2)" }, 14.002);
+      tl.to("#toi-bd", { rotation: -165, svgOrigin: "89 62", duration: 0.14, ease: "back.out(2)" }, 14.002);
+      tl.to("#toi-tete", { rotation: -8, svgOrigin: "50 50", duration: 0.14, ease: "back.out(2)" }, 14.002);
+      tl.to("#toi-corps", { keyframes: [{ y: -44, duration: 0.13, ease: "power2.out" }, { y: 0, duration: 0.15, ease: "power2.in" }] }, 14.052);
+      tl.to("#toi-corps", { keyframes: [{ y: -30, duration: 0.13, ease: "power2.out" }, { y: 0, duration: 0.15, ease: "power2.in" }] }, 14.378);
+      tl.to("#toi-corps", { keyframes: [{ y: -30, duration: 0.13, ease: "power2.out" }, { y: 0, duration: 0.15, ease: "power2.in" }] }, 15.028);
+      tl.fromTo("#cam", { scale: 1.04 }, { scale: 1, duration: 0.3, ease: "power3.out", immediateRender: false }, 5.853);
+      tl.fromTo("#cam", { scale: 1.06 }, { scale: 1, duration: 0.3, ease: "power3.out", immediateRender: false }, 6.503);
+      tl.fromTo("#cam", { scale: 1.04 }, { scale: 1, duration: 0.3, ease: "power3.out", immediateRender: false }, 7.158);
+      tl.fromTo("#cam", { scale: 1.06 }, { scale: 1, duration: 0.3, ease: "power3.out", immediateRender: false }, 7.809);
+      tl.fromTo("#cam", { scale: 1.04 }, { scale: 1, duration: 0.3, ease: "power3.out", immediateRender: false }, 8.465);
+      tl.fromTo("#cam", { scale: 1.06 }, { scale: 1, duration: 0.3, ease: "power3.out", immediateRender: false }, 9.115);
+      tl.fromTo("#cam", { scale: 1.04 }, { scale: 1, duration: 0.3, ease: "power3.out", immediateRender: false }, 9.765);
+      tl.fromTo("#cam", { scale: 1.06 }, { scale: 1, duration: 0.3, ease: "power3.out", immediateRender: false }, 10.421);
+      tl.fromTo("#cam", { scale: 1.04 }, { scale: 1, duration: 0.3, ease: "power3.out", immediateRender: false }, 11.071);
+      tl.fromTo("#cam", { scale: 1.06 }, { scale: 1, duration: 0.3, ease: "power3.out", immediateRender: false }, 11.721);
+      tl.fromTo("#cam", { scale: 1.04 }, { scale: 1, duration: 0.3, ease: "power3.out", immediateRender: false }, 12.371);
+      tl.fromTo("#cam", { scale: 1.06 }, { scale: 1, duration: 0.3, ease: "power3.out", immediateRender: false }, 13.027);
+      tl.fromTo("#cam", { scale: 1.04 }, { scale: 1, duration: 0.3, ease: "power3.out", immediateRender: false }, 13.677);
+      tl.fromTo("#cam", { scale: 1.06 }, { scale: 1, duration: 0.3, ease: "power3.out", immediateRender: false }, 14.328);
+      tl.fromTo("#cam", { scale: 1.04 }, { scale: 1, duration: 0.3, ease: "power3.out", immediateRender: false }, 14.978);
+      tl.to("#cam", { keyframes: [{ y: 7, duration: 0.03 }, { y: -4, duration: 0.03 }, { y: 0, duration: 0.04 }] }, 5.382);
+      tl.to("#cam", { keyframes: [{ y: 7, duration: 0.03 }, { y: -4, duration: 0.03 }, { y: 0, duration: 0.04 }] }, 5.684);
+      tl.to("#cam", { keyframes: [{ y: 7, duration: 0.03 }, { y: -4, duration: 0.03 }, { y: 0, duration: 0.04 }] }, 6.177);
+      tl.to("#cam", { keyframes: [{ y: 7, duration: 0.03 }, { y: -4, duration: 0.03 }, { y: 0, duration: 0.04 }] }, 6.311);
+      tl.to("#cam", { keyframes: [{ y: 7, duration: 0.03 }, { y: -4, duration: 0.03 }, { y: 0, duration: 0.04 }] }, 6.648);
+      tl.to("#cam", { keyframes: [{ y: 7, duration: 0.03 }, { y: -4, duration: 0.03 }, { y: 0, duration: 0.04 }] }, 6.804);
+      tl.to("#cam", { keyframes: [{ y: 7, duration: 0.03 }, { y: -4, duration: 0.03 }, { y: 0, duration: 0.04 }] }, 7.019);
+      tl.to("#cam", { keyframes: [{ y: 7, duration: 0.03 }, { y: -4, duration: 0.03 }, { y: 0, duration: 0.04 }] }, 7.472);
+      tl.to("#cam", { keyframes: [{ y: 7, duration: 0.03 }, { y: -4, duration: 0.03 }, { y: 0, duration: 0.04 }] }, 7.652);
+      tl.to("#cam", { keyframes: [{ y: 7, duration: 0.03 }, { y: -4, duration: 0.03 }, { y: 0, duration: 0.04 }] }, 7.994);
+      tl.to("#cam", { keyframes: [{ y: 7, duration: 0.03 }, { y: -4, duration: 0.03 }, { y: 0, duration: 0.04 }] }, 8.29);
+      tl.to("#cam", { keyframes: [{ y: 7, duration: 0.03 }, { y: -4, duration: 0.03 }, { y: 0, duration: 0.04 }] }, 8.784);
+      tl.to("#cam", { keyframes: [{ y: 7, duration: 0.03 }, { y: -4, duration: 0.03 }, { y: 0, duration: 0.04 }] }, 8.917);
+      tl.to("#cam", { keyframes: [{ y: 7, duration: 0.03 }, { y: -4, duration: 0.03 }, { y: 0, duration: 0.04 }] }, 9.254);
+      tl.to("#cam", { keyframes: [{ y: 7, duration: 0.03 }, { y: -4, duration: 0.03 }, { y: 0, duration: 0.04 }] }, 9.411);
+      tl.to("#cam", { keyframes: [{ y: 7, duration: 0.03 }, { y: -4, duration: 0.03 }, { y: 0, duration: 0.04 }] }, 9.533);
+      tl.to("#cam", { keyframes: [{ y: 7, duration: 0.03 }, { y: -4, duration: 0.03 }, { y: 0, duration: 0.04 }] }, 9.864);
+      tl.to("#cam", { keyframes: [{ y: 7, duration: 0.03 }, { y: -4, duration: 0.03 }, { y: 0, duration: 0.04 }] }, 10.903);
+      tl.to("#cam", { keyframes: [{ y: 7, duration: 0.03 }, { y: -4, duration: 0.03 }, { y: 0, duration: 0.04 }] }, 11.39);
+      tl.to("#cam", { keyframes: [{ y: 7, duration: 0.03 }, { y: -4, duration: 0.03 }, { y: 0, duration: 0.04 }] }, 11.53);
+      tl.to("#cam", { keyframes: [{ y: 7, duration: 0.03 }, { y: -4, duration: 0.03 }, { y: 0, duration: 0.04 }] }, 11.861);
+      tl.to("#cam", { keyframes: [{ y: 7, duration: 0.03 }, { y: -4, duration: 0.03 }, { y: 0, duration: 0.04 }] }, 12.017);
+      tl.to("#cam", { keyframes: [{ y: 7, duration: 0.03 }, { y: -4, duration: 0.03 }, { y: 0, duration: 0.04 }] }, 12.238);
+      tl.to("#cam", { keyframes: [{ y: 7, duration: 0.03 }, { y: -4, duration: 0.03 }, { y: 0, duration: 0.04 }] }, 12.557);
+      tl.to("#cam", { keyframes: [{ y: 7, duration: 0.03 }, { y: -4, duration: 0.03 }, { y: 0, duration: 0.04 }] }, 12.691);
+      tl.to("#cam", { keyframes: [{ y: 7, duration: 0.03 }, { y: -4, duration: 0.03 }, { y: 0, duration: 0.04 }] }, 12.911);
+      tl.to("#cam", { keyframes: [{ y: 7, duration: 0.03 }, { y: -4, duration: 0.03 }, { y: 0, duration: 0.04 }] }, 13.207);
+      tl.to("#cam", { keyframes: [{ y: 7, duration: 0.03 }, { y: -4, duration: 0.03 }, { y: 0, duration: 0.04 }] }, 13.509);
+      tl.to("#cam", { keyframes: [{ y: 7, duration: 0.03 }, { y: -4, duration: 0.03 }, { y: 0, duration: 0.04 }] }, 13.997);
+      tl.to("#cam", { keyframes: [{ y: 7, duration: 0.03 }, { y: -4, duration: 0.03 }, { y: 0, duration: 0.04 }] }, 14.136);
+      tl.to("#cam", { keyframes: [{ y: 7, duration: 0.03 }, { y: -4, duration: 0.03 }, { y: 0, duration: 0.04 }] }, 14.467);
+      tl.to("#cam", { keyframes: [{ y: 7, duration: 0.03 }, { y: -4, duration: 0.03 }, { y: 0, duration: 0.04 }] }, 14.63);
+      tl.to("#cam", { keyframes: [{ y: 7, duration: 0.03 }, { y: -4, duration: 0.03 }, { y: 0, duration: 0.04 }] }, 14.751);
+      tl.to("#cam", { keyframes: [{ y: 7, duration: 0.03 }, { y: -4, duration: 0.03 }, { y: 0, duration: 0.04 }] }, 15.076);
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

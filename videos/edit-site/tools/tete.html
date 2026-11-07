@@ -1,0 +1,356 @@
+<!doctype html>
+<html
+  lang="fr"
+  data-resolution="landscape"
+  data-composition-variables='[
+    {"id":"color-ground","type":"color","label":"Fond","default":"#0C0C0C"},
+    {"id":"color-accent","type":"color","label":"Accent (toi, chiffres clés)","default":"#DCFC1C"},
+    {"id":"color-light","type":"color","label":"Clair (elle, papiers, serif)","default":"#ECECE8"},
+    {"id":"caption-box","type":"color","label":"Bandeau des sous-titres","default":"#EEEEEA"},
+    {"id":"caption-ink","type":"color","label":"Texte des sous-titres","default":"#0A0A06"}
+  ]'
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+    <style>
+      /* Style « Projecteur » : film 16:9 (format YouTube), valeurs de ../frame.md. */
+      @font-face {
+        font-family: "Anton";
+        src: url("assets/fonts/Anton-Regular.woff2") format("woff2");
+        font-weight: 400;
+      }
+      @font-face {
+        font-family: "Instrument Serif";
+        src: url("assets/fonts/InstrumentSerif-Italic.woff2") format("woff2");
+        font-style: italic;
+        font-weight: 400;
+      }
+      :root {
+        --color-ground: #0c0c0c;
+        --color-accent: #dcfc1c;
+        --color-light: #ecece8;
+        --caption-box: #eeeeea;
+        --caption-ink: #0a0a06;
+        --accent-shade: #98ac18;
+        --accent-glow: rgba(220, 252, 28, 0.35);
+        --hud-grey: #9a9a9a;
+        --caption-y: 915px;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: #000;
+      }
+      #fond {
+        position: absolute;
+        inset: 0;
+        background: var(--color-ground);
+      }
+
+      /* ---- Composants partagés par toutes les scènes (préfixe pj-) ---- */
+      .pj-scene {
+        position: absolute;
+        inset: 0;
+        overflow: hidden;
+        background: radial-gradient(ellipse 55% 70% at 50% 72%, #262626 0%, var(--color-ground) 72%);
+      }
+      .pj-cam {
+        position: absolute;
+        inset: 0;
+        transform-origin: 50% 60%;
+      }
+      .pj-horizon {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 12px;
+        background-image: radial-gradient(circle, rgba(255, 255, 255, 0.28) 2.5px, transparent 3.5px);
+        background-size: 72px 12px;
+        opacity: 0.6;
+      }
+      .pj-cone {
+        position: absolute;
+        top: -40px;
+        width: 560px;
+        background: linear-gradient(to bottom, rgba(255, 255, 255, 0.24), rgba(255, 255, 255, 0.05));
+        clip-path: polygon(41% 0, 59% 0, 100% 100%, 0 100%);
+        filter: blur(16px);
+      }
+      .pj-sol {
+        position: absolute;
+        width: 620px;
+        height: 150px;
+        border-radius: 50%;
+        background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.34), rgba(255, 255, 255, 0) 70%);
+      }
+      .pj-picto {
+        position: absolute;
+        overflow: visible;
+      }
+      .pj-picto .pj-contour * {
+        fill: #000;
+        stroke: #000;
+        stroke-width: 12;
+        stroke-linejoin: round;
+      }
+      .pj-toi .pj-plein * {
+        fill: var(--color-accent);
+      }
+      .pj-elle .pj-plein * {
+        fill: var(--color-light);
+      }
+      .pj-autre .pj-contour * {
+        fill: #fff;
+        stroke: #fff;
+        stroke-width: 9;
+      }
+      .pj-autre .pj-plein * {
+        fill: #050505;
+      }
+      .pj-label {
+        position: absolute;
+        font-family: "JetBrains Mono", monospace;
+        font-weight: 700;
+        font-size: 30px;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        line-height: 1.45;
+        white-space: nowrap;
+      }
+      .pj-label .pj-k {
+        color: var(--color-accent);
+        display: block;
+      }
+      .pj-label .pj-d {
+        color: var(--hud-grey);
+        display: block;
+      }
+      .pj-equerres {
+        position: absolute;
+      }
+      .pj-equerres i {
+        position: absolute;
+        width: 46px;
+        height: 46px;
+        border-color: var(--color-accent);
+        border-style: solid;
+        border-width: 0;
+      }
+      .pj-equerres i:nth-child(1) {
+        left: 0;
+        top: 0;
+        border-left-width: 6px;
+        border-top-width: 6px;
+      }
+      .pj-equerres i:nth-child(2) {
+        right: 0;
+        top: 0;
+        border-right-width: 6px;
+        border-top-width: 6px;
+      }
+      .pj-equerres i:nth-child(3) {
+        left: 0;
+        bottom: 0;
+        border-left-width: 6px;
+        border-bottom-width: 6px;
+      }
+      .pj-equerres i:nth-child(4) {
+        right: 0;
+        bottom: 0;
+        border-right-width: 6px;
+        border-bottom-width: 6px;
+      }
+      .pj-sticker {
+        position: absolute;
+        background: var(--color-accent);
+        color: #000;
+        font-family: "Anton", sans-serif;
+        font-size: 84px;
+        line-height: 1;
+        padding: 8px 24px 10px;
+        text-transform: uppercase;
+        white-space: nowrap;
+      }
+      .pj-papier {
+        position: absolute;
+        background: var(--color-light);
+        color: #0a0a06;
+        padding: 40px 44px;
+        box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+      }
+      .pj-papier h3 {
+        font-family: "Anton", sans-serif;
+        font-weight: 400;
+        font-size: 104px;
+        line-height: 1;
+        text-transform: uppercase;
+      }
+      .pj-papier .pj-ligne {
+        font-family: "JetBrains Mono", monospace;
+        font-weight: 700;
+        font-size: 30px;
+        letter-spacing: 0.06em;
+        margin-top: 22px;
+        white-space: nowrap;
+      }
+      .pj-impact {
+        font-family: "Anton", sans-serif;
+        color: var(--color-accent);
+        text-transform: uppercase;
+        line-height: 0.9;
+        text-shadow:
+          0 0 28px var(--accent-glow),
+          0 0 70px var(--accent-glow);
+        white-space: nowrap;
+      }
+      .pj-serif {
+        position: absolute;
+        font-family: "Instrument Serif", serif;
+        font-style: italic;
+        color: var(--color-light);
+        line-height: 1.1;
+      }
+      .pj-serif span {
+        opacity: 0;
+      }
+      .pj-stat {
+        position: absolute;
+        font-family: "JetBrains Mono", monospace;
+        font-weight: 700;
+        color: var(--color-accent);
+        white-space: nowrap;
+      }
+      .pj-flash {
+        position: absolute;
+        inset: 0;
+        background: var(--color-accent);
+        opacity: 0;
+      }
+
+      /* ---- Composants ajoutés pour cette vidéo ---- */
+      .pj-cadre {
+        position: absolute;
+        inset: 0;
+        transform-origin: 50% 50%;
+      }
+      .pj-perso {
+        position: absolute;
+        overflow: visible;
+      }
+      .pj-perso .c * {
+        fill: #000;
+        stroke: #000;
+        stroke-width: 10;
+        stroke-linejoin: round;
+      }
+      .pj-ia-perso .p * {
+        fill: var(--color-light);
+      }
+      .pj-perso .yeux * {
+        fill: #0a0a06;
+        stroke: none;
+      }
+      .pj-toi-perso .p * {
+        fill: var(--color-accent);
+      }
+      .pj-chat {
+        position: absolute;
+        background: #141414;
+        border: 2px solid #4a4a4a;
+        box-shadow: 0 30px 90px rgba(0, 0, 0, 0.7);
+      }
+      .pj-chat-tete {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        height: 64px;
+        padding: 0 26px;
+        border-bottom: 2px solid #2e2e2e;
+        font-family: "JetBrains Mono", monospace;
+        font-weight: 700;
+        font-size: 28px;
+        letter-spacing: 0.12em;
+        color: var(--hud-grey);
+        text-transform: uppercase;
+      }
+      .pj-chat-tete i {
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background: #3a3a3a;
+      }
+      .pj-msg {
+        position: absolute;
+        background: var(--color-light);
+        color: #0a0a06;
+        font-family: "JetBrains Mono", monospace;
+        font-weight: 700;
+        font-size: 34px;
+        line-height: 1.5;
+        padding: 26px 32px;
+      }
+      .pj-msg span {
+        opacity: 0;
+        padding: 0 3px;
+      }
+      .pj-x {
+        position: absolute;
+        pointer-events: none;
+      }
+      .pj-x::before,
+      .pj-x::after {
+        content: "";
+        position: absolute;
+        left: -6%;
+        top: 50%;
+        width: 112%;
+        height: 16px;
+        margin-top: -8px;
+        background: var(--color-accent);
+      }
+      .pj-x::before {
+        transform: rotate(18deg);
+      }
+      .pj-x::after {
+        transform: rotate(-18deg);
+      }
+      .pj-carte {
+        position: absolute;
+        background: var(--color-light);
+        color: #0a0a06;
+        font-family: "Anton", sans-serif;
+        text-transform: uppercase;
+        line-height: 1;
+        text-align: center;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+      }
+      .pj-ligne-coche {
+        font-family: "JetBrains Mono", monospace;
+        font-weight: 700;
+        font-size: 40px;
+        letter-spacing: 0.06em;
+        color: var(--color-light);
+        white-space: nowrap;
+        margin-bottom: 26px;
+      }
+      .pj-ligne-coche b {
+        display: inline-block;
+        width: 46px;
+        height: 46px;
+        border: 4px solid var(--color-light);
+        margin-right: 22px;
+        vertical-align: -10px;
+        text-align: center;
+        line-height: 38px;
+        font-size: 34px;
+        color: #000;
+      }
