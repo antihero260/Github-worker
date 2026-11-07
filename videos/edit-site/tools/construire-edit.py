@@ -159,7 +159,7 @@ for k, (x, f, depart, effet) in enumerate(PLANS):
     elif effet == "drop":
         j(f'tl.fromTo("#p{k:02d}", {{ scale: 1.6 }}, {{ scale: 1.05, duration: 0.25, ease: "power4.out", immediateRender: false }}, {t0});')
     if k > 0:
-        son(t0, tour(WHOOSH), 0.26 if effet == "fouet" else 0.3, f"coupe {f}")
+        son(t0, tour(WHOOSH), 0.18 if effet == "fouet" else 0.28, f"coupe {f}")
 
 
 # ================================================================ EFFETS SUR LE RYTHME
