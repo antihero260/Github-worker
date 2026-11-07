@@ -63,57 +63,84 @@ WHOOSH = ["souffle-rapide", "swoosh-court", "fouet", "swoosh-vol", "balaie-rapid
 
 # ================================================================ LES PLANS (temps musical, vidéo, départ dans le fichier, effet)
 # effet : "coup" = coup de zoom ; "fouet" = flou filé latéral ; "drop" ; "pousse" = zoom continu
-PLANS = [
-    (0, "hacker-glitch", 0.2, "pousse"),
-    (1, "ecrans-matrix", 0.3, "coup"),
-    (2, "danse-fumee-violette", 0.2, "coup"),
-    (3, "vr-mains-interface", 0.4, "coup"),
-    (4, "hologramme-web", 1.0, "coup"),
-    (5, "danse-silhouette-energie", 0.3, "coup"),
-    (6, "lignes-3d", 0.5, "coup"),
-    (6.5, "tunnel-cubes", 0.6, "fouet"),
-    (7, "trou-de-ver", 0.3, "pousse"),
-    (7.25, "rayons-lumiere", 0.4, "fouet"),
-    (7.5, "neon-etincelles", 0.5, "fouet"),
-    (7.75, "explosion-particules", 1.2, "fouet"),
-    # --- DROP
+import subprocess
+
+
+def duree(f):
+    return float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0",
+                                 str(ICI / "assets/video" / f"{f}.mp4")], capture_output=True, text=True).stdout)
+
+
+# Deux réserves : des plans en mouvement (sur les temps) et de vrais sites (sur les demi-temps et dans les rafales)
+MOUVEMENT = ["danse-silhouette-rouge", "moto-wheelie", "danse-rue-choregraphie", "robot-danse", "skate-rampe", "danse-basket-nuit",
+             "breakdance", "boxe-ko", "danse-lumieres", "conduite-nuit", "vr-combinaison", "skate-pirouette", "danse-hiphop-groupe",
+             "feux-artifice", "basket-tir", "danse-fumee-violette", "moto-tunnel", "hologramme-gestes-vr", "danse-rue-cinq",
+             "autoroute-nuit", "boxe-match", "danseur-dos", "foot-but", "vr-fille", "skate-bowl", "breakdance-2", "danse-silhouette-energie",
+             "feux-explosions", "hologramme-main", "danse-fumee-2", "gamer-rgb", "voiture-rouge-spot", "robot-yeux", "hacker-darkweb"]
+SITES = ["site-apple", "spline-ai", "site-stripe", "site-figma", "framer-ai", "site-notion", "site-webflow", "cafe-anims", "site-vercel",
+         "volt-visite", "site-spline-site", "site-nike", "cafe-survol", "spline", "site-linear", "site-lusion", "site-igloo", "site-bruno-simon",
+         "site-raycast", "site-bolt", "site-v0", "site-cursor", "site-replit", "site-locomotive", "site-activetheory", "site-cuberto",
+         "site-dogstudio", "site-midjourney", "site-shopify", "site-spotify", "site-airbnb", "site-duolingo", "site-wix", "site-squarespace",
+         "cafe-defile", "hologramme-navigateur"]
+SITES = [f for f in SITES if (ICI / "assets/video" / f"{f}.mp4").exists()]
+FX = ["rayons-lumiere", "neon-etincelles", "etincelles", "trou-de-ver", "tunnel-cubes", "lignes-3d", "paysage-neon", "neon-3d-route",
+      "immeubles-futur", "retro-soleil", "ecrans-matrix", "code-chiffres", "fibre-optique", "neon-japon", "serveurs-lumieres"]
+DUREES = {}
+USAGES = {}
+CURSEUR = {"m": 0, "s": 0, "x": 0}
+
+
+def prend(reserve, cle):
+    f = reserve[CURSEUR[cle] % len(reserve)]
+    CURSEUR[cle] += 1
+    return f
+
+
+PLANS = [  # intro (temps 0 à 8) : la tension monte
+    (0, "hacker-glitch", 0.2, "pousse"), (1, "ecrans-matrix", 0.3, "coup"), (2, "danse-fumee-violette", 0.2, "coup"),
+    (3, "vr-mains-interface", 0.4, "coup"), (4, "hologramme-web", 1.0, "coup"), (5, "danse-silhouette-energie", 0.3, "coup"),
+    (6, "lignes-3d", 0.5, "coup"), (6.5, "tunnel-cubes", 0.6, "fouet"), (7, "trou-de-ver", 0.3, "pousse"),
+    (7.25, "rayons-lumiere", 0.4, "fouet"), (7.5, "neon-etincelles", 0.5, "fouet"), (7.75, "explosion-particules", 1.2, "fouet"),
     (8, "supernova", 1.6, "drop"),
-    (8.25, "spline-ai", 2.0, "fouet"),
-    (8.5, "breakdance", 0.2, "fouet"),
-    (8.75, "framer-ai", 3.0, "fouet"),
-    (9, "danse-silhouette-rouge", 0.3, "coup"),
-    (9.5, "neon-japon", 0.5, "fouet"),
-    (10, "moto-wheelie", 0.4, "coup"),
-    (10.5, "cafe-anims", 1.0, "fouet"),
-    (11, "danse-rue-choregraphie", 0.3, "coup"),
-    (11.5, "spline", 2.5, "fouet"),
-    (12, "robot-danse", 0.6, "coup"),
-    (12.5, "autoroute-nuit", 0.3, "fouet"),
-    (13, "danse-basket-nuit", 0.4, "coup"),
-    (13.25, "volt-visite", 1.0, "fouet"),
-    (13.5, "hacker-darkweb", 0.6, "fouet"),
-    (13.75, "explosion-particules", 2.4, "fouet"),
-    (14, "danse-lumieres", 0.3, "coup"),
-    (15, "conduite-nuit", 0.3, "coup"),
-    (15.5, "cafe-survol", 1.5, "fouet"),
-    (16, "breakdance", 1.1, "coup"),
-    (16.5, "hologramme-paiement", 0.6, "fouet"),
-    (17, "danse-hiphop-groupe", 0.4, "coup"),
-    (17.5, "immeubles-futur", 0.5, "fouet"),
-    (18, "vr-combinaison", 0.3, "coup"),
-    (18.5, "paysage-neon", 0.4, "fouet"),
-    (19, "moto-tunnel", 0.3, "coup"),
-    (19.5, "spline-ai", 5.5, "fouet"),
-    (20, "robot-yeux", 0.5, "coup"),
-    (20.5, "retro-soleil", 1.0, "fouet"),
-    (21, "main-hologramme", 0.8, "coup"),
-    (21.25, "danse-silhouette-rouge", 1.3, "fouet"),
-    (21.5, "cafe-defile", 6.0, "fouet"),
-    (22, "danse-fumee-violette", 1.4, "coup"),
-    (22.5, "neon-3d-route", 1.0, "fouet"),
-    (22.75, "gamer-rgb", 0.6, "fouet"),
-    (23, "hacker-glitch", 1.4, "pousse"),
 ]
+# Rafale juste après le premier drop
+for x in (8.25, 8.5, 8.75):
+    PLANS.append((x, prend(SITES, "s"), None, "fouet"))
+# Temps 9 à 38 : un plan en mouvement sur chaque temps, un vrai site sur le demi-temps, une rafale de 4 à la fin de chaque phrase
+for n in range(9, 39):
+    if n % 8 == 7:
+        for q in (0, 0.25, 0.5, 0.75):
+            PLANS.append((n + q, prend(SITES, "s") if q in (0.25, 0.75) else prend(FX, "x"), None, "fouet"))
+    else:
+        PLANS.append((n, prend(MOUVEMENT, "m"), None, "coup"))
+        PLANS.append((n + 0.5, prend(SITES, "s"), None, "fouet"))
+# Temps 39 : le trou des basses → un seul plan qui pousse, puis noir
+PLANS.append((39, "danse-silhouette-rouge", 1.0, "pousse"))
+# Temps 40 : DEUXIÈME DROP, puis un plan par demi-temps jusqu'à la fin
+PLANS.append((40, "feux-explosions", 0.5, "drop"))
+for x in (40.25, 40.5, 40.75):
+    PLANS.append((x, prend(SITES, "s"), None, "fouet"))
+for n in range(41, 47):
+    PLANS.append((n, prend(MOUVEMENT, "m"), None, "coup"))
+    PLANS.append((n + 0.5, prend(SITES, "s"), None, "fouet"))
+PLANS.append((47, "hacker-glitch", 1.4, "pousse"))  # la boucle retombe sur le plan du début
+
+# Départ dans chaque fichier : change à chaque réutilisation pour ne jamais revoir la même image
+plans = []
+for k, (x, f, depart, effet) in enumerate(PLANS):
+    if f not in DUREES:
+        DUREES[f] = duree(f)
+    t0 = T(x)
+    t1 = T(PLANS[k + 1][0]) if k + 1 < len(PLANS) else FIN
+    if depart is None:
+        u = USAGES.get(f, 0)
+        marge = max(0.0, DUREES[f] - (t1 - t0) - 0.15)
+        depart = round((0.3 + u * 1.1) % marge, 2) if marge > 0.3 else 0.0
+        if f.startswith("site-") or f in ("spline-ai", "framer-ai", "spline", "cafe-defile", "volt-visite"):
+            depart = round(min(marge, 1.2 + u * 1.3), 2)
+    USAGES[f] = USAGES.get(f, 0) + 1
+    plans.append((x, f, depart, effet))
+PLANS = plans
 
 vids = []
 for k, (x, f, depart, effet) in enumerate(PLANS):
@@ -192,20 +219,34 @@ for x in (8.25, 8.5, 8.75):
 
 # Pendant le drop : coup de zoom de toute l'image sur chaque temps, flash coloré tous les 2 temps, inversion tous les 4
 COULS = ["#ff2a55", "#00e5ff", "#dcfc1c", "#ffffff"]
-for n in range(9, 24):
+for n in list(range(9, 39)) + list(range(41, 48)):
     j(f'tl.fromTo("#cam", {{ scale: {1.08 if n % 2 == 0 else 1.05} }}, {{ scale: 1, duration: 0.3, ease: "power3.out", immediateRender: false }}, {T(n)});')
     if n % 2 == 0:
         flash(T(n), COULS[(n // 2) % 4], 0.28, 0.08)
-    if n % 4 == 0:
+    if n % 8 == 0:
         inverse(T(n), 0.034)
         glitch(T(n) + 0.05)
         son(T(n), "impact-tambour", 0.3, "coup fort")
     secousse(T(n) + 0.01, 14 if n % 2 == 0 else 9, 3)
-for x in (13.25, 13.5, 13.75, 21.25, 22.75):
-    flash(T(x), "#ffffff", 0.3, 0.05)
+for n in range(15, 39, 8):
+    for q in (0.25, 0.5, 0.75):
+        flash(T(n + q), "#ffffff", 0.3, 0.05)
+# Trou des basses (temps 39) puis DEUXIÈME DROP (temps 40)
+son(T(40), "riser-tech", 0.3, "remontée avant le 2e drop", fin=T(40) + 0.05)
+HTML.append('<div id="noir-drop2" class="ed-flash" style="background: #000"></div>')
+j(f'tl.set("#noir-drop2", {{ opacity: 1 }}, {T(39.88)});')
+j(f'tl.set("#noir-drop2", {{ opacity: 0 }}, {T(40)});')
+flash(T(40), "#ffffff", 1, 0.12)
+inverse(T(40) + 0.1, 0.1)
+glitch(T(40) + 0.2)
+secousse(T(40), 34, 7)
+son(T(40), "impact-basse", 0.55, "2e DROP")
+son(T(40), "tonnerre-transition", 0.3, "2e DROP")
+for x in (40.25, 40.5, 40.75):
+    flash(T(x), "#ffffff", 0.35, 0.05)
 # Petites secousses sur les kicks entre les temps
 for k in KICKS:
-    if T(8) < k < FIN - 0.1 and min(abs(k - T(n)) for n in range(8, 25)) > 0.08:
+    if T(8) < k < FIN - 0.1 and not (T(39) - 0.05 < k < T(40)) and min(abs(k - T(n)) for n in range(8, 49)) > 0.08:
         j(f'tl.to("#cam", {{ keyframes: [{{ y: 8, duration: 0.03 }}, {{ y: -5, duration: 0.03 }}, {{ y: 0, duration: 0.04 }}] }}, {r(k)});')
 # Fin : le silence des basses (temps 23) → zoom lent, puis la boucle repart sur la même vidéo qu'au début
 glitch(FIN - 0.1)
