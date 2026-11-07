@@ -10,7 +10,7 @@ V = ICI.parent / "edit-site-vertical"
 SRC = ICI.parent / "site-mot-secret-vertical/index.html"
 TEMPS = json.loads((ICI / "tools/temps.json").read_text())
 B, FIN = TEMPS["beats"], TEMPS["fin"]
-TITRE = "POV : l’IA a codé mon site en 1 prompt"
+TITRE = "POV : tu crées des sites avec l’IA"
 CASES = [("Menu", B[9]), ("Titre", B[10]), ("Photo", B[11]), ("Bouton", B[12]), ("Produits", B[14]), ("Mobile", B[17])]
 
 h = SRC.read_text()
