@@ -39,3 +39,10 @@ sur chaque image, des effets dignes de Premiere Pro ») : « Montagem Rugada » 
 pendant la montée → bleu-orange chaud au drop), bandes cinémascope qui se resserrent jusqu'à une fente puis s'ouvrent au drop,
 grain de film, vignette, vraies fuites de lumière, aberration chromatique RGB (filtre SVG), zoom traversant, rotation, filé,
 stutter, écran partagé en 3, vrais ralentis avec accélération, stroboscope, flashs, inversion, glitch, secousses sur les kicks.
+
+v7 / vidéo 19 (« le 12, toujours plus de travail et d'expertise », + extraits de films) : « AVANGARD (Slowed) » de LONOWN,
+29,8 s. 94 plans + 1 écran partagé, 93 vidéos différentes dont 35 sites, **extraits de films libres** (Tears of Steel, Sintel
+– Blender Foundation, CC BY) et **vidéos NASA** (domaine public). Nouveaux effets : fondus enchaînés (intro et outro),
+arrêts sur image sur les attaques et le triple kick, traînées de mouvement (echo), effet miroir, ouverture en iris,
+bascule 3D, flou de zoom radial au drop, micro-éclairs sur les caisses claires, outro couleur pellicule.
+Crédit obligatoire en description : « Tears of Steel, Sintel (CC) Blender Foundation ».

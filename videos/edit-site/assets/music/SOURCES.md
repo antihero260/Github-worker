@@ -1,11 +1,9 @@
 # Musique
 
-**Version actuelle (v6)** : « Montagem Rugada » – **cape**. Son **non libre**, choisi par l'utilisateur parmi les sons d'edit
-les plus populaires ; TikTok le reconnaît à la publication (son relié à sa page). Extrait officiel de 30 s (aperçu Deezer,
-écouté puis choisi par l'utilisateur), ramené à −16 LUFS. `son-edit.wav` n'est **pas versionné**.
-Structure (tools/temps.json, ≈130 BPM) : intro sans basses (temps 0–7), montée (8–21), silence (22–23), 3 coups secs,
-tension sans basses (25,5–31), DROP au temps 32 (14,91 s), 32 temps à fond.
-À ne pas republier hors de TikTok avec ce son.
+**Version actuelle (v7, vidéo 19)** : « AVANGARD (Slowed) » – **LONOWN**. Son **non libre**, choisi par l'utilisateur
+(n° 12 des sons d'edit proposés) ; TikTok le reconnaît à la publication. Extrait officiel de 30 s (aperçu Deezer),
+ramené à −16 LUFS. `son-edit.wav` n'est **pas versionné**. Grille (tools/temps.json) : 0,509 s par temps, calée sur le drop
+(16,333 s) ; basses jusqu'à 24,5 s ; outro jusqu'à 29,8 s.
 
-Versions précédentes : v5 « Phonk Drift Racing Montage » – Alex Morgan (CC BY 4.0) ; v1 « Phonk Remix » – HoliznaCC0 ;
-v2 à v4 le son d'une vidéo de référence de l'utilisateur.
+Historique : v6 « Montagem Rugada » – cape (non libre) ; v5 « Phonk Drift Racing Montage » – Alex Morgan (CC BY 4.0) ;
+v1 « Phonk Remix » – HoliznaCC0 (CC0) ; v2–v4 le son d'une vidéo de référence de l'utilisateur.
