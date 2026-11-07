@@ -8,5 +8,27 @@
   },
   "media": {
     "autoProxy": true
-  }
+  },
+  "registryItems": [
+    {
+      "name": "grain-overlay",
+      "type": "hyperframes:component",
+      "target": "compositions/components/grain-overlay.html"
+    },
+    {
+      "name": "organic-light-leak-overlay",
+      "type": "hyperframes:block",
+      "target": "compositions/organic-light-leak-overlay.html"
+    },
+    {
+      "name": "beat-freeze-cut",
+      "type": "hyperframes:block",
+      "target": "compositions/beat-freeze-cut.html"
+    },
+    {
+      "name": "editorial-flash-overlay",
+      "type": "hyperframes:block",
+      "target": "compositions/editorial-flash-overlay.html"
+    }
+  ]
 }

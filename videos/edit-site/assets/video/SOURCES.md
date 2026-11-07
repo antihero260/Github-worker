@@ -25,3 +25,19 @@ Vidéos Mixkit (licence gratuite, crédit non obligatoire), extraits de 2,5 à 3
   squarespace.com. Écartés : les sites qui bloquent les robots (openai.com, tesla.com, lovable.dev, porsche.com,
   coinbase.com, replit.com — non contournés) et ceux restés sur un écran de chargement (igloo.inc, lusion.co, linear.app,
   dogstudio.co, activetheory.net, spotify.com).
+
+## v6 (edit pro, Montagem Rugada)
+
+- 4ᵉ série Mixkit : flammes-noir (52304), boule-feu (48288), lave-particules (4426), etincelles-feu (3463), flammes-miroir (3767),
+  boxe-coups (40967), boxe-direct (40968), boxe-sac-silhouette (23929), mma-combat (40985), boxe-sac-bas (40276),
+  danse-techno-neon (50449), danseur-masque-neon (3613), lasers-cyberpunk (50458), filles-barres-lumiere (42286),
+  silhouettes-fumee (33901), tunnel-neon-rouge (35333), danse-objectif (42217), coureur-sol (32809), coureur-ville (608),
+  ville-nuit-drone (16125).
+- `../fx/` : vraies fuites de lumière Mixkit posées en mode écran : fuite-ambre (48011), fuite-bleue (48013),
+  fuite-violette (48012), fuite-rouge (47259), fuite-spirale (46236), flare-soleil (48494).
+- `rampe-*.mp4` : vrais ralentis avec accélération fabriqués avec ffmpeg (1,5 s jouées ×3 puis 0,3 s ralenties ×2,5 avec
+  interpolation d'images `minterpolate`).
+- Nouveaux sites filmés : lamborghini.com, mclaren.com, playstation.com, xbox.com, nvidia.com, netflix.com, discord.com,
+  twitch.tv, ubisoft.com, riotgames.com, apple.com (Vision Pro, iPhone), dji.com, gopro.com, dribbble.com. Écartés :
+  formula1.com (page blanche), meta.com et samsung.com (fenêtres de cookies), nike.com (blanc).
+- Retirées de l'edit (demande « pas de vidéo cuisine ») : cafe-*, hologramme-paiement, hologramme-web, vr-fille.

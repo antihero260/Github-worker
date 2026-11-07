@@ -32,3 +32,10 @@ vidéos Mixkit : rally, drift, karting, motos, voitures, foules en concert, écl
 **Montée en tension** sur 10 s : image sombre et désaturée qui reprend ses couleurs, un plan tous les 2 temps → chaque temps →
 demi-temps → quart de temps, caméra qui avance, secousses et flashs de plus en plus forts, cœur qui bat, roulement, riser,
 noir, DROP. Coupure des basses au milieu avec une 2ᵉ petite montée, 2ᵉ drop avec un plan par demi-temps.
+
+v6 (« prends le 5… montée en tension constante, pas de vidéo cuisine, cinématique, beaucoup plus de vidéos et de sites, calé
+sur chaque image, des effets dignes de Premiere Pro ») : « Montagem Rugada » (cape, son TikTok non libre), 29,7 s.
+108 plans + 3 écrans partagés, 95 vidéos différentes dont 38 vrais sites. Effets : étalonnage cinéma (froid et désaturé
+pendant la montée → bleu-orange chaud au drop), bandes cinémascope qui se resserrent jusqu'à une fente puis s'ouvrent au drop,
+grain de film, vignette, vraies fuites de lumière, aberration chromatique RGB (filtre SVG), zoom traversant, rotation, filé,
+stutter, écran partagé en 3, vrais ralentis avec accélération, stroboscope, flashs, inversion, glitch, secousses sur les kicks.
