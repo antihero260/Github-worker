@@ -12,3 +12,16 @@ Vidéos Mixkit (licence gratuite, crédit non obligatoire), extraits de 2,5 à 3
 - Reprises des vidéos précédentes : framer-ai, spline-ai, spline (vrais sites filmés, vidéo 11), explosion-particules,
   supernova, main-hologramme, neon-3d-route, retro-soleil (vidéo 11), cafe-anims, cafe-defile, cafe-survol (vidéo 15),
   volt-visite (vidéo 17).
+
+## v4 (30 s)
+
+- 3ᵉ série Mixkit : skate-rampe (1366), skate-pirouette (34382), skate-bowl (1367), feux-artifice (45739), feux-explosions (48290),
+  etincelles (683), hologramme-navigateur (8797), hologramme-gestes-vr (5427), hologramme-main (40277), vr-fille (14014),
+  boxe-ko (40969), boxe-match (40957), basket-tir (44448), foot-but (43499), breakdance-2 (452), danse-rue-cinq (51295),
+  danse-fumee-2 (33899), danseur-dos (1038).
+- `site-*.mp4` : vrais sites publics filmés en direct avec Playwright (1280×720, défilement à la molette, 5 s), le 7 novembre
+  2026 : apple.com, stripe.com, vercel.com, figma.com, notion.com, webflow.com, nike.com, spline.design, bruno-simon.com,
+  bolt.new, v0.dev, cursor.com, raycast.com, locomotive.ca, cuberto.com, midjourney.com, shopify.com, duolingo.com, wix.com,
+  squarespace.com. Écartés : les sites qui bloquent les robots (openai.com, tesla.com, lovable.dev, porsche.com,
+  coinbase.com, replit.com — non contournés) et ceux restés sur un écran de chargement (igloo.inc, lusion.co, linear.app,
+  dogstudio.co, activetheory.net, spotify.com).

@@ -1,10 +1,10 @@
 # Edit rythmé « POV : tu crées des sites avec l'IA » (vidéo 18)
 
 Premier **edit** de la chaîne : aucune voix, **aucun texte** (demande de l'utilisateur, pour cette vidéo seulement),
-tout est calé image par image sur le son de la vidéo de référence qu'il a envoyée. 15,2 s, en boucle.
+tout est calé image par image sur le son de la vidéo de référence qu'il a envoyée. **30,3 s**, en boucle.
 
-- Son : extrait 25,130 → 40,281 s de la vidéo de référence (8 temps avant le drop des basses à 30,174 s + 16 après,
-  ≈ 94,8 BPM) ; `tools/temps.json` (temps et kicks repérés avec librosa). Voir `assets/music/SOURCES.md`.
+- Son : extrait 25,130 → 55,438 s de la vidéo de référence (48 temps ≈ 94,8 BPM : drop au temps 8, trou des basses au
+  temps 39, 2ᵉ drop au temps 40) ; `tools/temps.json` (temps et kicks repérés avec librosa). Voir `assets/music/SOURCES.md`.
 - v3 (après « tu vas juste présenter un site de chaussures ? C'est un edit ») : **48 plans** très courts pleins de mouvement
   (danse, breakdance, robots, moto, vitesse, VR, hologrammes, tunnels, néons, code) coupés sur les temps, rafales de coupes
   au quart de temps avant et après le drop, vrais sites (Spline, Framer, café, VOLT) seulement en flashs.
@@ -18,3 +18,10 @@ python3 tools/construire-edit.py && python3 tools/vertical.py
 hyperframes check
 hyperframes render . -o renders/edit-site-16x9.mp4   # commande séparée
 ```
+
+v4 (« plus de sites, beaucoup plus de vidéos, 30 secondes ») : **100 plans**, 76 vidéos différentes dont **30 vrais sites**
+(23 grands sites filmés en direct avec Playwright : Apple, Stripe, Vercel, Figma, Notion, Webflow, Nike, Spline, Bolt, v0,
+Cursor, Raycast, Locomotive, Cuberto, Midjourney, Shopify, Duolingo, Wix, Squarespace, Bruno Simon… + Framer, Spline AI,
+café, VOLT) et 19 nouvelles vidéos Mixkit (skate, feux d'artifice, boxe, basket, foot, hologrammes, danse). Le montage est
+construit automatiquement sur les temps : un plan en mouvement sur chaque temps, un site sur chaque demi-temps, une rafale
+de 4 plans à la fin de chaque phrase de 8 temps, deux drops.
