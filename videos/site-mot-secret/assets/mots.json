@@ -1,0 +1,440 @@
+[
+{
+"i": 0,
+"text": "CE",
+"start": 0.06,
+"end": 0.15
+},
+{
+"i": 1,
+"text": "SITE",
+"start": 0.15,
+"end": 0.45
+},
+{
+"i": 2,
+"text": "A",
+"start": 0.46,
+"end": 0.53
+},
+{
+"i": 3,
+"text": "ÉTÉ",
+"start": 0.53,
+"end": 0.74
+},
+{
+"i": 4,
+"text": "CRÉÉ",
+"start": 0.8,
+"end": 1.06
+},
+{
+"i": 5,
+"text": "AVEC",
+"start": 1.06,
+"end": 1.37
+},
+{
+"i": 6,
+"text": "L'IA",
+"start": 1.37,
+"end": 1.7
+},
+{
+"i": 7,
+"text": "EN",
+"start": 1.72,
+"end": 1.88
+},
+{
+"i": 8,
+"text": "MOINS",
+"start": 1.88,
+"end": 2.29
+},
+{
+"i": 9,
+"text": "D'UNE",
+"start": 2.29,
+"end": 2.65
+},
+{
+"i": 10,
+"text": "MINUTE…",
+"start": 2.76,
+"end": 2.85
+},
+{
+"i": 11,
+"text": "ET",
+"start": 3.24,
+"end": 3.32
+},
+{
+"i": 12,
+"text": "IL",
+"start": 3.32,
+"end": 3.44
+},
+{
+"i": 13,
+"text": "CACHE",
+"start": 3.44,
+"end": 3.74
+},
+{
+"i": 14,
+"text": "UN",
+"start": 3.74,
+"end": 3.85
+},
+{
+"i": 15,
+"text": "MOT",
+"start": 3.86,
+"end": 4.04
+},
+{
+"i": 16,
+"text": "SECRET.",
+"start": 4.04,
+"end": 4.51
+},
+{
+"i": 17,
+"text": "REGARDE",
+"start": 4.84,
+"end": 5.15
+},
+{
+"i": 18,
+"text": "BIEN :",
+"start": 5.15,
+"end": 5.64
+},
+{
+"i": 19,
+"text": "LE",
+"start": 5.64,
+"end": 5.87
+},
+{
+"i": 20,
+"text": "MENU,",
+"start": 5.88,
+"end": 6.52
+},
+{
+"i": 21,
+"text": "LES",
+"start": 6.6,
+"end": 6.82
+},
+{
+"i": 22,
+"text": "ANIMATIONS,",
+"start": 6.82,
+"end": 7.67
+},
+{
+"i": 23,
+"text": "LES",
+"start": 7.67,
+"end": 8.04
+},
+{
+"i": 24,
+"text": "PRODUITS,",
+"start": 8.04,
+"end": 8.56
+},
+{
+"i": 25,
+"text": "LE",
+"start": 8.56,
+"end": 8.7
+},
+{
+"i": 26,
+"text": "PANIER…",
+"start": 8.7,
+"end": 9.3
+},
+{
+"i": 27,
+"text": "TOUT",
+"start": 9.62,
+"end": 9.66
+},
+{
+"i": 28,
+"text": "A",
+"start": 9.66,
+"end": 9.73
+},
+{
+"i": 29,
+"text": "ÉTÉ",
+"start": 9.73,
+"end": 9.96
+},
+{
+"i": 30,
+"text": "GÉNÉRÉ",
+"start": 9.96,
+"end": 10.4
+},
+{
+"i": 31,
+"text": "AVEC",
+"start": 10.42,
+"end": 10.72
+},
+{
+"i": 32,
+"text": "UN",
+"start": 10.72,
+"end": 10.84
+},
+{
+"i": 33,
+"text": "SEUL",
+"start": 10.92,
+"end": 11.17
+},
+{
+"i": 34,
+"text": "PROMPT.",
+"start": 11.17,
+"end": 11.76
+},
+{
+"i": 35,
+"text": "MAIS",
+"start": 11.76,
+"end": 12.02
+},
+{
+"i": 36,
+"text": "QUELQUE",
+"start": 12.02,
+"end": 12.41
+},
+{
+"i": 37,
+"text": "PART",
+"start": 12.42,
+"end": 12.66
+},
+{
+"i": 38,
+"text": "DANS",
+"start": 12.66,
+"end": 12.9
+},
+{
+"i": 39,
+"text": "CETTE",
+"start": 12.9,
+"end": 13.2
+},
+{
+"i": 40,
+"text": "VIDÉO,",
+"start": 13.2,
+"end": 13.64
+},
+{
+"i": 41,
+"text": "UN",
+"start": 13.64,
+"end": 13.8
+},
+{
+"i": 42,
+"text": "MOT",
+"start": 13.8,
+"end": 14.08
+},
+{
+"i": 43,
+"text": "APPARAÎT",
+"start": 14.08,
+"end": 14.44
+},
+{
+"i": 44,
+"text": "PENDANT",
+"start": 14.44,
+"end": 14.77
+},
+{
+"i": 45,
+"text": "UNE",
+"start": 14.77,
+"end": 14.84
+},
+{
+"i": 46,
+"text": "DEMI-SECONDE.",
+"start": 14.84,
+"end": 15.68
+},
+{
+"i": 47,
+"text": "LE",
+"start": 15.68,
+"end": 15.94
+},
+{
+"i": 48,
+"text": "PREMIER",
+"start": 15.94,
+"end": 16.23
+},
+{
+"i": 49,
+"text": "QUI",
+"start": 16.23,
+"end": 16.41
+},
+{
+"i": 50,
+"text": "LE",
+"start": 16.41,
+"end": 16.53
+},
+{
+"i": 51,
+"text": "TROUVE",
+"start": 16.54,
+"end": 16.92
+},
+{
+"i": 52,
+"text": "ET",
+"start": 16.92,
+"end": 17
+},
+{
+"i": 53,
+"text": "L'ÉCRIT",
+"start": 17,
+"end": 17.32
+},
+{
+"i": 54,
+"text": "EN",
+"start": 17.32,
+"end": 17.4
+},
+{
+"i": 55,
+"text": "COMMENTAIRE",
+"start": 17.66,
+"end": 18
+},
+{
+"i": 56,
+"text": "REÇOIT",
+"start": 18.06,
+"end": 18.42
+},
+{
+"i": 57,
+"text": "LE",
+"start": 18.42,
+"end": 18.54
+},
+{
+"i": 58,
+"text": "PROMPT",
+"start": 18.54,
+"end": 18.88
+},
+{
+"i": 59,
+"text": "COMPLET.",
+"start": 18.96,
+"end": 19.52
+},
+{
+"i": 60,
+"text": "PETIT",
+"start": 19.52,
+"end": 19.94
+},
+{
+"i": 61,
+"text": "INDICE :",
+"start": 19.94,
+"end": 20.49
+},
+{
+"i": 62,
+"text": "REGARDE",
+"start": 20.84,
+"end": 21.09
+},
+{
+"i": 63,
+"text": "BIEN",
+"start": 21.17,
+"end": 21.42
+},
+{
+"i": 64,
+"text": "LES",
+"start": 21.42,
+"end": 21.63
+},
+{
+"i": 65,
+"text": "BOUTONS.",
+"start": 21.63,
+"end": 22.2
+},
+{
+"i": 66,
+"text": "ABONNE-TOI",
+"start": 22.4,
+"end": 22.71
+},
+{
+"i": 67,
+"text": "À",
+"start": 22.73,
+"end": 22.77
+},
+{
+"i": 68,
+"text": "GAUSSCODE",
+"start": 22.77,
+"end": 23.24
+},
+{
+"i": 69,
+"text": "POUR",
+"start": 23.24,
+"end": 23.45
+},
+{
+"i": 70,
+"text": "LE",
+"start": 23.45,
+"end": 23.55
+},
+{
+"i": 71,
+"text": "PROCHAIN",
+"start": 23.55,
+"end": 23.97
+},
+{
+"i": 72,
+"text": "DÉFI.",
+"start": 23.97,
+"end": 24.4
+}
+]
