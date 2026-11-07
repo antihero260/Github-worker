@@ -37,6 +37,7 @@ production de vidéos avec HyperFrames (`hyperframes-style/`, `videos/`, `script
   annonce, avec un bruitage de révélation.
 - **Plus de suivi de caméra** (vidéo 13) : la caméra suit le personnage et les éléments qui bougent (panoramiques qui accompagnent
   les déplacements, recadrages successifs), pas seulement des zooms fixes.
+- **Exception de la vidéo 18 seulement** (edit rythmé « POV : l'IA a codé mon site ») : aucun texte dans le film, pas de voix, son choisi par l'utilisateur (vidéo de référence). Après cette vidéo, **tout redevient comme d'habitude** (voix, sous-titres, mots qui claquent, cases mystère, musiques Mixkit).
 - Le style peut varier d'une vidéo à l'autre si l'utilisateur le demande (vidéo 7 : style « Alerte », voir `videos/site-conforme/README.md`), en gardant le format vertical, les personnages qui bougent et les recadrages.
 - **Tout vérifier et corriger avant de lancer un rendu** : `hyperframes check` sans erreur, puis regarder les
   images clés. Ne jamais lancer le rendu dans la même commande que le contrôle.

@@ -474,7 +474,7 @@ page = tete + CSS_EDIT + """    </style>
         <div id="voile"></div>
         %(corps)s
       </div>
-      <audio id="musique" src="assets/music/phonk-remix-holiznacc0.wav" data-start="0" data-duration="%(fin)s" data-volume="1" data-track-index="10"></audio>
+      <audio id="musique" src="assets/music/son-edit.wav" data-start="0" data-duration="%(fin)s" data-volume="1" data-track-index="10"></audio>
       %(sons)s
     </div>
     <script>
