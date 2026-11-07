@@ -1,0 +1,63 @@
+# Bruitages : Mixkit
+
+Téléchargés sur https://mixkit.co (licence gratuite Mixkit Sound Effects Free License : usage commercial autorisé, crédit non obligatoire). Coupés et calibrés à environ −16 LUFS (crête ≤ −1,5 dBFS).
+
+| Fichier | Source Mixkit | Durée |
+| --- | --- | --- |
+| `souffle-rapide.mp3` | mixkit-fast-whoosh-transition-1490.wav | 1.76 s |
+| `souffle-cine.mp3` | mixkit-cinematic-whoosh-fast-transition-1492.wav | 1.33 s |
+| `souffle-air.mp3` | mixkit-air-woosh-1489.wav | 2.32 s |
+| `swoosh-accent.mp3` | mixkit-quick-swoosh-accent-1464.wav | 1.10 s |
+| `swoosh-court.mp3` | mixkit-quick-swoosh-1462.wav | 1.25 s |
+| `swoosh-vol.mp3` | mixkit-flying-fast-swoosh-1469.wav | 1.63 s |
+| `swoosh-vitesse.mp3` | mixkit-speeding-swoosh-1484.wav | 2.60 s |
+| `swoosh-monte.mp3` | mixkit-elevating-swoosh-1466.wav | 1.03 s |
+| `zoom-impact.mp3` | mixkit-quick-zoom-impact-772.wav | 1.22 s |
+| `zoom-out.mp3` | mixkit-ui-zoom-out-2619.wav | 1.15 s |
+| `zoom-air.mp3` | mixkit-fast-air-zoom-2625.wav | 1.28 s |
+| `zoom-futur.mp3` | mixkit-futuristic-zoom-move-2626.wav | 2.17 s |
+| `zoom-swipe.mp3` | mixkit-fast-swipe-zoom-2627.wav | 1.06 s |
+| `zoom-in-out.mp3` | mixkit-in-and-out-zoom-sound-2622.wav | 1.25 s |
+| `zoom-scifi.mp3` | mixkit-sci-fi-interface-zoom-890.wav | 1.80 s |
+| `zoom-vide.mp3` | mixkit-air-zoom-vacuum-2608.wav | 1.27 s |
+| `impact-whoosh.mp3` | mixkit-movie-whoosh-impact-presentation-2903.wav | 3.53 s |
+| `impact-basse.mp3` | mixkit-short-bass-hit-2299.wav | 1.10 s |
+| `impact-futur.mp3` | mixkit-futuristic-bass-hit-2303.wav | 2.75 s |
+| `impact-cartoon.mp3` | mixkit-cartoon-blow-impact-2654.wav | 1.41 s |
+| `pop-bulle.mp3` | mixkit-bubble-pop-up-alert-notification-2357.wav | 0.38 s |
+| `pop-sec.mp3` | mixkit-dry-pop-up-notification-alert-2356.wav | 0.30 s |
+| `pop-click.mp3` | mixkit-hard-pop-click-2364.wav | 1.17 s |
+| `clic-positif.mp3` | mixkit-positive-interface-click-1112.wav | 1.77 s |
+| `coche.mp3` | mixkit-modern-click-box-check-1120.wav | 0.24 s |
+| `pop-long.mp3` | mixkit-long-pop-2358.wav | 0.48 s |
+| `notif-positive.mp3` | mixkit-positive-notification-951.wav | 2.80 s |
+| `buzz-faux.mp3` | mixkit-game-show-wrong-answer-buzz-950.wav | 1.74 s |
+| `glitch-court.mp3` | mixkit-glitch-short-1031.wav | 0.83 s |
+| `cloche-succes.mp3` | mixkit-achievement-bell-600.wav | 2.40 s |
+| `fouet.mp3` | mixkit-fast-whip-strike-1511.wav | 1.05 s |
+| `fusee-whoosh.mp3` | mixkit-fast-rocket-whoosh-1714.wav | 4.75 s |
+| `pages-defilent.mp3` | mixkit-fast-browsing-book-paging-1102.wav | 2.50 s |
+| `pieces.mp3` | mixkit-coin-win-notification-1992.wav | 2.50 s |
+| `pieces-2.mp3` | mixkit-clinking-coins-1993.wav | 1.02 s |
+| `fanfare.mp3` | mixkit-successful-horns-fanfare-722.wav | 3.16 s |
+| `scratch.mp3` | mixkit-swell-vinyl-record-scratch-709.wav | 1.20 s |
+| `declencheur.mp3` | mixkit-camera-shutter-hard-click-1430.wav | 0.63 s |
+| `glitch-cine.mp3` | mixkit-cinematic-glitch-trailer-1021.wav | 1.60 s |
+| `glitch-mini.mp3` | mixkit-small-sci-fi-glitch-1030.wav | 1.72 s |
+| `glitch-scifi.mp3` | mixkit-cinematic-sci-fi-glitch-1022.wav | 1.50 s |
+| `glitch-rugit.mp3` | mixkit-glitch-roar-1033.wav | 1.20 s |
+| `balaie-rapide.mp3` | mixkit-fast-sweeping-transition-164.wav | 1.92 s |
+| `balaie-air.mp3` | mixkit-fast-air-sweep-transition-168.wav | 0.86 s |
+| `balaie.mp3` | mixkit-fast-sweep-transition-174.wav | 1.00 s |
+| `balaie-court.mp3` | mixkit-short-transition-sweep-175.wav | 0.61 s |
+| `scintille-whoosh.mp3` | mixkit-fairy-sparkle-whoosh-869.wav | 4.55 s |
+| `piece-gagne.mp3` | mixkit-space-coin-win-notification-271.wav | 0.51 s |
+| `jeu-deblocage.mp3` | mixkit-unlock-game-notification-253.wav | 1.40 s |
+| `trophee-magique.mp3` | mixkit-magic-sweep-game-trophy-257.wav | 3.30 s |
+| `grille-poele.mp3` | mixkit-frying-eggs-on-hot-pan-121.wav | 1.60 s |
+| `perceuse.mp3` | mixkit-quick-drilling-machine-hum-815.wav | 1.20 s |
+| `marteau.mp3` | mixkit-metal-hammer-hit-833.wav | 0.77 s |
+| `cle-molette.mp3` | mixkit-wrench-metal-noises-853.wav | 1.20 s |
+| `trousseau.mp3` | mixkit-keys-moving-1558.wav | 1.20 s |
+| `aspiration.mp3` | mixkit-vacuum-swoosh-transition-1465.wav | 2.26 s |
+| `buzzer-sport.mp3` | mixkit-ice-hockey-sports-buzzer-941.wav | 1.20 s |

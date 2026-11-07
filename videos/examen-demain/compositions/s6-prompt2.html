@@ -1,0 +1,119 @@
+<!-- Scène 6 · le deuxième prompt : « interroge-moi comme un professeur » (49.8 → 63.8 s). Fichier écrit par un générateur, modifiable à la main. -->
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+    }
+
+  </style>
+  <div id="root" data-composition-id="s6-prompt2" data-width="1920" data-height="1080">
+    <div class="pj-scene">
+      <div id="s6-prompt2-cam" class="pj-cam">
+        <div id="s6-prompt2-cadre" class="pj-cadre">
+        <div class="pj-horizon" style="top: 760px"></div>
+        <div class="pj-cone" style="left: 20px; height: 900px; opacity: 0.85"></div><div class="pj-sol" style="left: -10px; top: 740px; opacity: 0.85"></div>
+        <svg id="s6-toi" class="pj-perso pj-toi-perso" viewBox="-30 -20 160 290" style="left: 206px; top: 486px; width: 188px; height: 340px"><g id="s6-toi-corps"><g id="s6-toi-jg"><g class="c"><rect x="24" y="136" width="24" height="112" rx="8" /></g><g class="p"><rect x="24" y="136" width="24" height="112" rx="8" /></g></g><g id="s6-toi-jd"><g class="c"><rect x="52" y="136" width="24" height="112" rx="8" /></g><g class="p"><rect x="52" y="136" width="24" height="112" rx="8" /></g></g><g id="s6-toi-tronc"><g class="c"><rect x="22" y="52" width="56" height="94" rx="12" /></g><g class="p"><rect x="22" y="52" width="56" height="94" rx="12" /></g></g><g id="s6-toi-bg"><g class="c"><rect x="2" y="54" width="18" height="86" rx="9" /></g><g class="p"><rect x="2" y="54" width="18" height="86" rx="9" /></g></g><g id="s6-toi-bd"><g class="c"><rect x="80" y="54" width="18" height="86" rx="9" /></g><g class="p"><rect x="80" y="54" width="18" height="86" rx="9" /></g></g><g id="s6-toi-tete"><g class="c"><circle cx="50" cy="24" r="22" /></g><g class="p"><circle cx="50" cy="24" r="22" /></g></g></g></svg>
+        <div id="s6-chat" class="pj-chat" style="left: 560px; top: 210px; width: 1250px; height: 630px"><div class="pj-chat-tete"><i></i><i></i><i></i><span style="margin-left: 14px">ChatGPT · étape 02</span></div><div class="pj-label" style="left: 30px; top: 92px; background: #262626; padding: 8px 18px; letter-spacing: 0.1em"><span class="pj-d">✓ carte de révision</span></div><div class="pj-msg" style="left: 30px; top: 160px; width: 1186px"><span id="s6-m159">Maintenant,</span> <span id="s6-m160">interroge-moi</span> <span id="s6-m161">une</span> <span id="s6-m162">question</span> <span id="s6-m163">à</span> <span id="s6-m164">la</span> <span id="s6-m165">fois,</span> <span id="s6-m166">comme</span> <span id="s6-m167">un</span> <span id="s6-m168">professeur.</span> <span id="s6-m169">Ne</span> <span id="s6-m170">me</span> <span id="s6-m171">donne</span> <span id="s6-m172">pas</span> <span id="s6-m173">la</span> <span id="s6-m174">réponse</span> <span id="s6-m175">avant</span> <span id="s6-m176">que</span> <span id="s6-m177">j'aie</span> <span id="s6-m178">essayé.</span> <span id="s6-m179">Après</span> <span id="s6-m180">chacune</span> <span id="s6-m181">de</span> <span id="s6-m182">mes</span> <span id="s6-m183">réponses,</span> <span id="s6-m184">corrige</span> <span id="s6-m185">mes</span> <span id="s6-m186">erreurs</span> <span id="s6-m187">en</span> <span id="s6-m188">t'appuyant</span> <span id="s6-m189">sur</span> <span id="s6-m190">le</span> <span id="s6-m191">cours</span> <span id="s6-m192">et</span> <span id="s6-m193">explique-moi</span> <span id="s6-m194">ce</span> <span id="s6-m195">que</span> <span id="s6-m196">je</span> <span id="s6-m197">n'ai</span> <span id="s6-m198">pas</span> <span id="s6-m199">compris.</span></div></div>
+        </div>
+      </div>
+      <div id="s6-hud" class="pj-label" style="left: 113px; top: 107px; "><span class="pj-k">Prompt 02</span><span class="pj-d">Le professeur</span></div>
+      <div class="pj-label" style="right: 113px; top: 107px; width: 420px"><span class="pj-k" style="position: relative; display: block; height: 40px"><span id="s6-c-0" style="position: absolute; right: 0; opacity: 1">Règles : 0/4</span><span id="s6-c-1" style="position: absolute; right: 0; opacity: 0">Règles : 1/4</span><span id="s6-c-2" style="position: absolute; right: 0; opacity: 0">Règles : 2/4</span><span id="s6-c-3" style="position: absolute; right: 0; opacity: 0">Règles : 3/4</span><span id="s6-c-4" style="position: absolute; right: 0; opacity: 0">Règles : 4/4</span></span></div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#s6-prompt2-cam", { scale: 1 }, { scale: 1.05, duration: 13.8, ease: "none" }, 0);
+    tl.fromTo("#s6-prompt2-cam", { filter: "blur(14px)" }, { filter: "blur(0px)", duration: 0.16, ease: "power2.out" }, 0);
+    tl.set("#s6-m159", { opacity: 1 }, 1.8);
+    tl.set("#s6-m160", { opacity: 1 }, 2.36);
+    tl.set("#s6-m161", { opacity: 1 }, 3.24);
+    tl.set("#s6-m161", { backgroundColor: "#DCFC1C" }, 3.39);
+    tl.set("#s6-m162", { opacity: 1 }, 3.48);
+    tl.set("#s6-m162", { backgroundColor: "#DCFC1C" }, 3.63);
+    tl.set("#s6-m163", { opacity: 1 }, 3.8);
+    tl.set("#s6-m163", { backgroundColor: "#DCFC1C" }, 3.95);
+    tl.set("#s6-m164", { opacity: 1 }, 3.96);
+    tl.set("#s6-m164", { backgroundColor: "#DCFC1C" }, 4.11);
+    tl.set("#s6-m165", { opacity: 1 }, 4.04);
+    tl.set("#s6-m165", { backgroundColor: "#DCFC1C" }, 4.19);
+    tl.set("#s6-m166", { opacity: 1 }, 4.44);
+    tl.set("#s6-m166", { backgroundColor: "#DCFC1C" }, 4.59);
+    tl.set("#s6-m167", { opacity: 1 }, 4.6);
+    tl.set("#s6-m167", { backgroundColor: "#DCFC1C" }, 4.75);
+    tl.set("#s6-m168", { opacity: 1 }, 4.96);
+    tl.set("#s6-m168", { backgroundColor: "#DCFC1C" }, 5.11);
+    tl.set("#s6-m169", { opacity: 1 }, 5.56);
+    tl.set("#s6-m170", { opacity: 1 }, 5.72);
+    tl.set("#s6-m171", { opacity: 1 }, 5.88);
+    tl.set("#s6-m172", { opacity: 1 }, 6.12);
+    tl.set("#s6-m173", { opacity: 1 }, 6.28);
+    tl.set("#s6-m174", { opacity: 1 }, 6.44);
+    tl.set("#s6-m175", { opacity: 1 }, 6.84);
+    tl.set("#s6-m175", { backgroundColor: "#DCFC1C" }, 6.99);
+    tl.set("#s6-m176", { opacity: 1 }, 7.08);
+    tl.set("#s6-m176", { backgroundColor: "#DCFC1C" }, 7.23);
+    tl.set("#s6-m177", { opacity: 1 }, 7.24);
+    tl.set("#s6-m177", { backgroundColor: "#DCFC1C" }, 7.39);
+    tl.set("#s6-m178", { opacity: 1 }, 7.48);
+    tl.set("#s6-m178", { backgroundColor: "#DCFC1C" }, 7.63);
+    tl.set("#s6-m179", { opacity: 1 }, 8.2);
+    tl.set("#s6-m180", { opacity: 1 }, 8.44);
+    tl.set("#s6-m181", { opacity: 1 }, 8.84);
+    tl.set("#s6-m182", { opacity: 1 }, 8.92);
+    tl.set("#s6-m183", { opacity: 1 }, 9.08);
+    tl.set("#s6-m184", { opacity: 1 }, 9.83);
+    tl.set("#s6-m184", { backgroundColor: "#DCFC1C" }, 9.98);
+    tl.set("#s6-m185", { opacity: 1 }, 10.23);
+    tl.set("#s6-m185", { backgroundColor: "#DCFC1C" }, 10.38);
+    tl.set("#s6-m186", { opacity: 1 }, 10.47);
+    tl.set("#s6-m186", { backgroundColor: "#DCFC1C" }, 10.62);
+    tl.set("#s6-m187", { opacity: 1 }, 10.71);
+    tl.set("#s6-m188", { opacity: 1 }, 10.87);
+    tl.set("#s6-m189", { opacity: 1 }, 11.43);
+    tl.set("#s6-m190", { opacity: 1 }, 11.51);
+    tl.set("#s6-m191", { opacity: 1 }, 11.67);
+    tl.set("#s6-m192", { opacity: 1 }, 11.99);
+    tl.set("#s6-m193", { opacity: 1 }, 12.23);
+    tl.set("#s6-m194", { opacity: 1 }, 12.87);
+    tl.set("#s6-m194", { backgroundColor: "#DCFC1C" }, 13.02);
+    tl.set("#s6-m195", { opacity: 1 }, 13.03);
+    tl.set("#s6-m195", { backgroundColor: "#DCFC1C" }, 13.18);
+    tl.set("#s6-m196", { opacity: 1 }, 13.11);
+    tl.set("#s6-m196", { backgroundColor: "#DCFC1C" }, 13.26);
+    tl.set("#s6-m197", { opacity: 1 }, 13.19);
+    tl.set("#s6-m197", { backgroundColor: "#DCFC1C" }, 13.34);
+    tl.set("#s6-m198", { opacity: 1 }, 13.43);
+    tl.set("#s6-m198", { backgroundColor: "#DCFC1C" }, 13.58);
+    tl.set("#s6-m199", { opacity: 1 }, 13.59);
+    tl.set("#s6-m199", { backgroundColor: "#DCFC1C" }, 13.74);
+    tl.set("#s6-c-0", { opacity: 0 }, 3.24);
+    tl.set("#s6-c-1", { opacity: 1 }, 3.24);
+    tl.set("#s6-c-1", { opacity: 0 }, 5.56);
+    tl.set("#s6-c-2", { opacity: 1 }, 5.56);
+    tl.set("#s6-c-2", { opacity: 0 }, 9.83);
+    tl.set("#s6-c-3", { opacity: 1 }, 9.83);
+    tl.set("#s6-c-3", { opacity: 0 }, 12.23);
+    tl.set("#s6-c-4", { opacity: 1 }, 12.23);
+    tl.to("#s6-toi-bg", { rotation: -28, svgOrigin: "11 62", duration: 0.15, ease: "power2.out" }, 1.7);
+    tl.to("#s6-toi-bd", { rotation: 28, svgOrigin: "89 62", duration: 0.15, ease: "power2.out" }, 1.7);
+    tl.to("#s6-toi-tete", { rotation: 10, svgOrigin: "50 50", duration: 0.15, ease: "power2.out" }, 1.7);
+    tl.to("#s6-toi-bg", { rotation: -18, svgOrigin: "11 62", duration: 0.11, repeat: 105, yoyo: true, ease: "sine.inOut" }, 1.85);
+    tl.to("#s6-toi-bd", { rotation: 38, svgOrigin: "89 62", duration: 0.11, repeat: 105, yoyo: true, ease: "sine.inOut" }, 1.905);
+    tl.to("#s6-toi-bg", { rotation: 0, svgOrigin: "11 62", duration: 0.2, ease: "power2.out" }, 13.7);
+    tl.to("#s6-toi-bd", { rotation: 0, svgOrigin: "89 62", duration: 0.2, ease: "power2.out" }, 13.7);
+    tl.to("#s6-toi-jg", { rotation: 0, svgOrigin: "36 142", duration: 0.2, ease: "power2.out" }, 13.7);
+    tl.to("#s6-toi-jd", { rotation: 0, svgOrigin: "64 142", duration: 0.2, ease: "power2.out" }, 13.7);
+    tl.to("#s6-toi-tete", { rotation: 0, svgOrigin: "50 50", duration: 0.2, ease: "power2.out" }, 13.7);
+    tl.to("#s6-prompt2-cadre", { x: -297, y: 145, scale: 1.32, duration: 0.24, ease: "power3.inOut" }, 3.14);
+    tl.to("#s6-prompt2-cadre", { keyframes: [{ filter: "blur(10px)", duration: 0.12 }, { filter: "blur(0px)", duration: 0.12 }] }, 3.14);
+    tl.to("#s6-prompt2-cadre", { x: 0, y: 0, scale: 1, duration: 0.24, ease: "power3.inOut" }, 5.72);
+    tl.to("#s6-prompt2-cadre", { keyframes: [{ filter: "blur(10px)", duration: 0.12 }, { filter: "blur(0px)", duration: 0.12 }] }, 5.72);
+    tl.to("#s6-prompt2-cadre", { x: -297, y: 92, scale: 1.32, duration: 0.24, ease: "power3.inOut" }, 9.73);
+    tl.to("#s6-prompt2-cadre", { keyframes: [{ filter: "blur(10px)", duration: 0.12 }, { filter: "blur(0px)", duration: 0.12 }] }, 9.73);
+    tl.to("#s6-prompt2-cadre", { x: 0, y: 0, scale: 1, duration: 0.24, ease: "power3.inOut" }, 12.87);
+    tl.to("#s6-prompt2-cadre", { keyframes: [{ filter: "blur(10px)", duration: 0.12 }, { filter: "blur(0px)", duration: 0.12 }] }, 12.87);
+    tl.to("#s6-prompt2-cam", { scale: 1.3, filter: "blur(14px)", duration: 0.2, ease: "power3.in" }, 13.8);
+    window.__timelines["s6-prompt2"] = tl;
+  </script>
+</template>

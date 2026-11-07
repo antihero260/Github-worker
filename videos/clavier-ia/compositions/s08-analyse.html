@@ -1,0 +1,68 @@
+<!-- Scène 8 · « Il analyse ce que tu viens d'écrire, tient compte du contexte et évalue les mots les plus probables. » (38.92 → 45.8 s). Fichier écrit par un générateur, modifiable à la main. -->
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+    }
+
+  </style>
+  <div id="root" data-composition-id="s08-analyse" data-width="1920" data-height="1080">
+    <div class="pj-scene">
+      <div id="s08-analyse-cam" class="pj-cam">
+        <div id="s08-analyse-cadre" class="pj-cadre">
+        <div class="pj-horizon" style="top: 760px"></div>
+        <div id="s08-vid" class="pj-panneau" style="left: 113px; top: 190px; width: 780px; height: 439px; opacity: 0"><video id="s08-vid-v" class="clip" src="assets/video/rue-telephone.mp4" data-start="0" data-duration="6.88" data-track-index="5" muted playsinline></video><div class="pj-equerres" style="left: -18px; top: -18px; right: -18px; bottom: -18px"><i></i><i></i><i></i><i></i></div><div id="s08-vid-tag" class="pj-panneau-tag">Ce que tu viens d'écrire</div></div>
+        <div id="s08-scan" style="position: absolute; left: 113px; top: 190px; width: 780px; height: 10px; background: #DCFC1C; box-shadow: 0 0 30px rgba(220, 252, 28, 0.9); opacity: 0"></div>
+        <div id="s08-ctx" class="pj-label" style="left: 113px; top: 680px; opacity: 0"><span class="pj-k">Contexte</span><span class="pj-d" style="color: #ECECE8">« Je suis en… »</span></div>
+        <svg id="s08-ia" class="pj-perso pj-ia-perso" viewBox="-30 -20 160 290" style="left: 927px; top: 523px; width: 166px; height: 300px"><g id="s08-ia-vie"><g id="s08-ia-corps"><g id="s08-ia-jg"><g class="c"><rect x="24" y="136" width="24" height="112" rx="8" /></g><g class="p"><rect x="24" y="136" width="24" height="112" rx="8" /></g></g><g id="s08-ia-jd"><g class="c"><rect x="52" y="136" width="24" height="112" rx="8" /></g><g class="p"><rect x="52" y="136" width="24" height="112" rx="8" /></g></g><g id="s08-ia-tronc"><g class="c"><rect x="22" y="52" width="56" height="94" rx="12" /></g><g class="p"><rect x="22" y="52" width="56" height="94" rx="12" /></g></g><g id="s08-ia-bg"><g class="c"><rect x="2" y="54" width="18" height="86" rx="9" /></g><g class="p"><rect x="2" y="54" width="18" height="86" rx="9" /></g></g><g id="s08-ia-bd"><g class="c"><rect x="80" y="54" width="18" height="86" rx="9" /></g><g class="p"><rect x="80" y="54" width="18" height="86" rx="9" /></g></g><g id="s08-ia-tete"><g class="c"><rect x="25" y="0" width="50" height="46" rx="13" /></g><g class="p"><rect x="25" y="0" width="50" height="46" rx="13" /></g><g class="yeux"><circle cx="40" cy="22" r="5" /><circle cx="60" cy="22" r="5" /></g></g></g></g></svg>
+        <div id="s08-b-0" class="pj-barre" style="left: 1140px; top: 220px; width: 660px; opacity: 0"><div class="pj-barre-mot">retard</div><div class="pj-barre-piste"><i id="s08-b-0-f"></i></div><div id="s08-b-0-p" class="pj-barre-pct">0 %</div></div><div id="s08-b-1" class="pj-barre" style="left: 1140px; top: 348px; width: 660px; opacity: 0"><div class="pj-barre-mot">route</div><div class="pj-barre-piste"><i id="s08-b-1-f"></i></div><div id="s08-b-1-p" class="pj-barre-pct">0 %</div></div><div id="s08-b-2" class="pj-barre" style="left: 1140px; top: 476px; width: 660px; opacity: 0"><div class="pj-barre-mot">train</div><div class="pj-barre-piste"><i id="s08-b-2-f"></i></div><div id="s08-b-2-p" class="pj-barre-pct">0 %</div></div>
+        <div id="s08-choix" class="pj-sticker" style="left: 1500px; top: 560px; font-size: 54px; opacity: 0">→ Proposé</div>
+        </div>
+      </div>
+      <div id="s08-hud" class="pj-label" style="left: 113px; top: 107px; opacity: 0"><span class="pj-k">Analyse</span><span class="pj-d">Contexte + probabilités</span></div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#s08-analyse-cam", { scale: 1 }, { scale: 1.05, duration: 6.68, ease: "none" }, 0);
+    tl.fromTo("#s08-analyse-cam", { filter: "blur(14px)" }, { filter: "blur(0px)", duration: 0.16, ease: "power2.out" }, 0);
+    tl.fromTo("#s08-b-0", { opacity: 0, x: 140 }, { opacity: 1, x: 0, duration: 0.24, ease: "power4.out" }, 3.72);
+    tl.fromTo("#s08-b-0-f", { scaleX: 0 }, { scaleX: 0.64, duration: 0.6, ease: "power2.out" }, 3.82);
+    const p1 = { v: 0 };
+    tl.fromTo(p1, { v: 0 }, { v: 64, duration: 0.6, ease: "power2.out", immediateRender: false, onUpdate: () => { document.querySelector("#s08-b-0-p").textContent = Math.round(p1.v) + " %"; } }, 3.82);
+    tl.fromTo("#s08-b-1", { opacity: 0, x: 140 }, { opacity: 1, x: 0, duration: 0.24, ease: "power4.out" }, 4.0);
+    tl.fromTo("#s08-b-1-f", { scaleX: 0 }, { scaleX: 0.23, duration: 0.6, ease: "power2.out" }, 4.1);
+    const p2 = { v: 0 };
+    tl.fromTo(p2, { v: 0 }, { v: 23, duration: 0.6, ease: "power2.out", immediateRender: false, onUpdate: () => { document.querySelector("#s08-b-1-p").textContent = Math.round(p2.v) + " %"; } }, 4.1);
+    tl.fromTo("#s08-b-2", { opacity: 0, x: 140 }, { opacity: 1, x: 0, duration: 0.24, ease: "power4.out" }, 4.28);
+    tl.fromTo("#s08-b-2-f", { scaleX: 0 }, { scaleX: 0.13, duration: 0.6, ease: "power2.out" }, 4.38);
+    const p3 = { v: 0 };
+    tl.fromTo(p3, { v: 0 }, { v: 13, duration: 0.6, ease: "power2.out", immediateRender: false, onUpdate: () => { document.querySelector("#s08-b-2-p").textContent = Math.round(p3.v) + " %"; } }, 4.38);
+    tl.fromTo("#s08-hud", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.18, ease: "power3.out" }, 0.1);
+    tl.fromTo("#s08-vid", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.18, ease: "power3.out" }, 0.05);
+    tl.fromTo("#s08-ia-vie", { y: 0 }, { y: -5, duration: 0.42, repeat: 14, yoyo: true, ease: "sine.inOut", immediateRender: false }, 0.0);
+    tl.set("#s08-scan", { opacity: 1 }, 0.36);
+    tl.fromTo("#s08-scan", { y: 0 }, { y: 429, duration: 0.6, repeat: 2, yoyo: true, ease: "sine.inOut", immediateRender: false }, 0.36);
+    tl.to("#s08-scan", { opacity: 0, duration: 0.1 }, 2.21);
+    tl.to("#s08-ia-bg", { rotation: 110, svgOrigin: "11 62", duration: 0.16, ease: "back.out(2)" }, 0.36);
+    tl.to("#s08-ia-tete", { rotation: 8, svgOrigin: "50 50", duration: 0.16, ease: "back.out(2)" }, 0.36);
+    tl.to("#s08-analyse-cadre", { x: 550, y: 150, scale: 1.25, duration: 0.26, ease: "power3.inOut" }, 0.21);
+    tl.to("#s08-analyse-cadre", { keyframes: [{ filter: "blur(10px)", duration: 0.13 }, { filter: "blur(0px)", duration: 0.13 }] }, 0.21);
+    tl.to("#s08-analyse-cadre", { x: 0, y: 0, scale: 1.0, duration: 0.26, ease: "power3.inOut" }, 2.1);
+    tl.to("#s08-analyse-cadre", { keyframes: [{ filter: "blur(10px)", duration: 0.13 }, { filter: "blur(0px)", duration: 0.13 }] }, 2.1);
+    tl.fromTo("#s08-ctx", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.18, ease: "power3.out" }, 2.52);
+    tl.to("#s08-ia-bg", { rotation: 0, svgOrigin: "11 62", duration: 0.12, ease: "power2.out" }, 3.0);
+    tl.to("#s08-ia-tete", { svgOrigin: "50 50", keyframes: [{ rotation: 14, duration: 0.11 }, { rotation: -2, duration: 0.11 }, { rotation: 14, duration: 0.11 }, { rotation: -2, duration: 0.11 }, { rotation: 0, duration: 0.11 }] }, 3.0);
+    tl.to("#s08-ctx", { opacity: 0, duration: 0.15 }, 3.62);
+    tl.to("#s08-analyse-cadre", { x: -537, y: 171, scale: 1.22, duration: 0.26, ease: "power3.inOut" }, 3.57);
+    tl.to("#s08-analyse-cadre", { keyframes: [{ filter: "blur(10px)", duration: 0.13 }, { filter: "blur(0px)", duration: 0.13 }] }, 3.57);
+    tl.to("#s08-ia-bd", { rotation: -105, svgOrigin: "89 62", duration: 0.16, ease: "back.out(2)" }, 4.2);
+    tl.to("#s08-ia-tete", { rotation: -8, svgOrigin: "50 50", duration: 0.16, ease: "back.out(2)" }, 4.2);
+    tl.to("#s08-b-0", { keyframes: [{ scale: 1.06, duration: 0.1 }, { scale: 1, duration: 0.14 }] }, 6.12);
+    tl.fromTo("#s08-choix", { opacity: 0, scale: 1.8 }, { opacity: 1, scale: 1, duration: 0.18, ease: "back.out(2.2)" }, 6.12);
+    tl.to("#s08-ia-corps", { keyframes: [{ y: -30, duration: 0.13, ease: "power2.out" }, { y: 0, duration: 0.15, ease: "power2.in" }] }, 6.12);
+    tl.to("#s08-analyse-cam", { scale: 1.3, filter: "blur(14px)", duration: 0.2, ease: "power3.in" }, 6.68);
+    window.__timelines["s08-analyse"] = tl;
+  </script>
+</template>

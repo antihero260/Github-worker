@@ -1,0 +1,14 @@
+Les phrases que j'ai dites pour construire mon site (copie-les dans ChatGPT, Claude ou Gemini, une par une ou toutes ensemble) :
+
+Crée-moi un site web en un seul fichier HTML, moderne et adapté au téléphone. Puis applique ces instructions dans l'ordre :
+
+1. Un fond noir.
+2. Un titre énorme : [Lecodeur].
+3. En dessous : « [J'apprends à créer des sites avec l'IA] ».
+4. Une vidéo qui tourne en arrière-plan.
+5. Trois cartes avec mes meilleures vidéos (une image + un titre pour chacune).
+6. Un bouton jaune : « [Abonne-toi] ».
+7. Des animations quand on fait défiler.
+8. Et que tout soit parfait sur téléphone.
+
+Astuce : remplace ce qui est entre crochets par ton nom et ton message. Tu peux aussi dicter ces phrases avec le mode vocal de l'IA.

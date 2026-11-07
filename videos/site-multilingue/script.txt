@@ -1,0 +1,13 @@
+Ton site est en français ? En un clic, tu peux le rendre accessible aux visiteurs anglophones et hispanophones. Regarde !
+
+Ici, j'ai simplement ajouté un sélecteur de langues : français, anglais et espagnol.
+
+Pour le faire avec l'IA, demande-lui :
+
+« Ajoute un sélecteur de langues FR, EN et ES à mon site. Traduis automatiquement tous les textes, les boutons, les menus et les formulaires selon la langue choisie, sans modifier le design. »
+
+Et voilà ! Un seul site, trois langues, sans avoir besoin de créer trois sites différents.
+
+Attention tout de même : vérifie les traductions avant de publier.
+
+Un site, plusieurs langues, beaucoup plus de visiteurs potentiels.

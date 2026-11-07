@@ -1,0 +1,9 @@
+Ce site ressemble à un jeu vidéo, pourtant c'est simplement un site web créé avec l'IA. Et le plus fou, c'est que tu peux littéralement te promener dans son univers.
+
+Imagine : tu arrives sur un site et, au lieu de voir une page classique, tu découvres un univers en 3D. Tu bouges ta souris, les objets réagissent. Tu fais défiler la page, la caméra se déplace. Chaque section devient une nouvelle expérience.
+
+Et pour réaliser ça, tu peux combiner deux outils. D'abord, Framer AI, pour générer la structure et le design de ton site à partir d'une simple description. Ensuite, Spline. C'est lui qui va donner vie à ton univers 3D. Tu peux même demander à son IA de générer des objets en trois dimensions à partir de tes descriptions, puis les animer et les rendre interactifs. Et le meilleur ? Tu peux intégrer directement tes créations Spline dans ton site Framer.
+
+Mais attention ! Il y a un piège. Un site spectaculaire qui met dix secondes à charger, c'est un site qui risque de faire fuir tes visiteurs. La 3D doit donc être bien optimisée, notamment pour les téléphones.
+
+La vraie révolution, ce n'est pas seulement de créer un site avec l'IA. C'est de pouvoir transformer un simple site web en une véritable expérience immersive. Abonne-toi à Gausscode.

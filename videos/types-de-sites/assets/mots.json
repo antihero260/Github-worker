@@ -1,0 +1,1556 @@
+[
+{
+"i": 0,
+"text": "TU",
+"start": 0.09,
+"end": 0.11
+},
+{
+"i": 1,
+"text": "PENSES",
+"start": 0.11,
+"end": 0.4
+},
+{
+"i": 2,
+"text": "QU'UN",
+"start": 0.46,
+"end": 0.72
+},
+{
+"i": 3,
+"text": "SITE",
+"start": 0.72,
+"end": 0.95
+},
+{
+"i": 4,
+"text": "WEB,",
+"start": 0.95,
+"end": 1.2
+},
+{
+"i": 5,
+"text": "C'EST",
+"start": 1.2,
+"end": 1.41
+},
+{
+"i": 6,
+"text": "FORCÉMENT",
+"start": 1.46,
+"end": 1.86
+},
+{
+"i": 7,
+"text": "UNE",
+"start": 1.86,
+"end": 1.97
+},
+{
+"i": 8,
+"text": "PAGE",
+"start": 2.03,
+"end": 2.24
+},
+{
+"i": 9,
+"text": "AVEC",
+"start": 2.24,
+"end": 2.43
+},
+{
+"i": 10,
+"text": "UN",
+"start": 2.49,
+"end": 2.69
+},
+{
+"i": 11,
+"text": "LOGO,",
+"start": 2.69,
+"end": 3.31
+},
+{
+"i": 12,
+"text": "QUELQUES",
+"start": 3.31,
+"end": 3.79
+},
+{
+"i": 13,
+"text": "IMAGES",
+"start": 3.79,
+"end": 4.13
+},
+{
+"i": 14,
+"text": "ET",
+"start": 4.18,
+"end": 4.19
+},
+{
+"i": 15,
+"text": "UN",
+"start": 4.19,
+"end": 4.3
+},
+{
+"i": 16,
+"text": "BOUTON",
+"start": 4.3,
+"end": 4.57
+},
+{
+"i": 17,
+"text": "POUR",
+"start": 4.57,
+"end": 4.76
+},
+{
+"i": 18,
+"text": "CONTACTER",
+"start": 4.76,
+"end": 5.18
+},
+{
+"i": 19,
+"text": "L'ENTREPRISE ?",
+"start": 5.18,
+"end": 5.92
+},
+{
+"i": 20,
+"text": "PAS",
+"start": 5.92,
+"end": 6.17
+},
+{
+"i": 21,
+"text": "DU",
+"start": 6.23,
+"end": 6.36
+},
+{
+"i": 22,
+"text": "TOUT !",
+"start": 6.36,
+"end": 7
+},
+{
+"i": 23,
+"text": "IL",
+"start": 7,
+"end": 7.15
+},
+{
+"i": 24,
+"text": "EXISTE",
+"start": 7.15,
+"end": 7.6
+},
+{
+"i": 25,
+"text": "PLUSIEURS",
+"start": 7.65,
+"end": 8.31
+},
+{
+"i": 26,
+"text": "TYPES",
+"start": 8.31,
+"end": 8.72
+},
+{
+"i": 27,
+"text": "DE",
+"start": 8.72,
+"end": 8.77
+},
+{
+"i": 28,
+"text": "SITES",
+"start": 8.88,
+"end": 9.13
+},
+{
+"i": 29,
+"text": "WEB,",
+"start": 9.13,
+"end": 9.34
+},
+{
+"i": 30,
+"text": "ET",
+"start": 9.34,
+"end": 9.48
+},
+{
+"i": 31,
+"text": "CHACUN",
+"start": 9.48,
+"end": 9.9
+},
+{
+"i": 32,
+"text": "RÉPOND",
+"start": 9.9,
+"end": 10.32
+},
+{
+"i": 33,
+"text": "À",
+"start": 10.32,
+"end": 10.39
+},
+{
+"i": 34,
+"text": "UN",
+"start": 10.39,
+"end": 10.53
+},
+{
+"i": 35,
+"text": "BESOIN",
+"start": 10.53,
+"end": 10.95
+},
+{
+"i": 36,
+"text": "PRÉCIS.",
+"start": 10.95,
+"end": 11.46
+},
+{
+"i": 37,
+"text": "1.",
+"start": 11.56,
+"end": 12.46
+},
+{
+"i": 38,
+"text": "LE",
+"start": 12.55,
+"end": 12.61
+},
+{
+"i": 39,
+"text": "SITE",
+"start": 12.61,
+"end": 12.86
+},
+{
+"i": 40,
+"text": "VITRINE.",
+"start": 12.91,
+"end": 13.46
+},
+{
+"i": 41,
+"text": "C'EST",
+"start": 13.46,
+"end": 13.84
+},
+{
+"i": 42,
+"text": "LA",
+"start": 13.87,
+"end": 14.03
+},
+{
+"i": 43,
+"text": "CARTE",
+"start": 14.03,
+"end": 14.43
+},
+{
+"i": 44,
+"text": "DE",
+"start": 14.49,
+"end": 14.61
+},
+{
+"i": 45,
+"text": "VISITE",
+"start": 14.61,
+"end": 15.11
+},
+{
+"i": 46,
+"text": "NUMÉRIQUE",
+"start": 15.11,
+"end": 15.85
+},
+{
+"i": 47,
+"text": "D'UNE",
+"start": 15.86,
+"end": 16.34
+},
+{
+"i": 48,
+"text": "ENTREPRISE.",
+"start": 16.44,
+"end": 17.34
+},
+{
+"i": 49,
+"text": "IL",
+"start": 17.43,
+"end": 17.44
+},
+{
+"i": 50,
+"text": "PRÉSENTE",
+"start": 17.44,
+"end": 17.86
+},
+{
+"i": 51,
+"text": "SES",
+"start": 17.86,
+"end": 18.02
+},
+{
+"i": 52,
+"text": "SERVICES,",
+"start": 18.02,
+"end": 18.54
+},
+{
+"i": 53,
+"text": "SES",
+"start": 18.54,
+"end": 18.7
+},
+{
+"i": 54,
+"text": "TARIFS,",
+"start": 18.7,
+"end": 19.12
+},
+{
+"i": 55,
+"text": "SES",
+"start": 19.12,
+"end": 19.28
+},
+{
+"i": 56,
+"text": "RÉALISATIONS",
+"start": 19.28,
+"end": 19.91
+},
+{
+"i": 57,
+"text": "ET",
+"start": 19.91,
+"end": 20.01
+},
+{
+"i": 58,
+"text": "PERMET",
+"start": 20.01,
+"end": 20.33
+},
+{
+"i": 59,
+"text": "AUX",
+"start": 20.33,
+"end": 20.49
+},
+{
+"i": 60,
+"text": "CLIENTS",
+"start": 20.49,
+"end": 20.86
+},
+{
+"i": 61,
+"text": "DE",
+"start": 20.86,
+"end": 20.95
+},
+{
+"i": 62,
+"text": "LA",
+"start": 20.96,
+"end": 21.14
+},
+{
+"i": 63,
+"text": "CONTACTER.",
+"start": 21.24,
+"end": 22.14
+},
+{
+"i": 64,
+"text": "2.",
+"start": 22.24,
+"end": 23.14
+},
+{
+"i": 65,
+"text": "LE",
+"start": 23.23,
+"end": 23.29
+},
+{
+"i": 66,
+"text": "SITE",
+"start": 23.29,
+"end": 23.54
+},
+{
+"i": 67,
+"text": "E-COMMERCE.",
+"start": 23.6,
+"end": 24.34
+},
+{
+"i": 68,
+"text": "ICI,",
+"start": 24.34,
+"end": 24.67
+},
+{
+"i": 69,
+"text": "ON",
+"start": 24.67,
+"end": 24.78
+},
+{
+"i": 70,
+"text": "PASSE",
+"start": 24.8,
+"end": 25.11
+},
+{
+"i": 71,
+"text": "À",
+"start": 25.17,
+"end": 25.21
+},
+{
+"i": 72,
+"text": "LA",
+"start": 25.21,
+"end": 25.34
+},
+{
+"i": 73,
+"text": "VENTE.",
+"start": 25.34,
+"end": 25.94
+},
+{
+"i": 74,
+"text": "LES",
+"start": 25.94,
+"end": 26.16
+},
+{
+"i": 75,
+"text": "VISITEURS",
+"start": 26.16,
+"end": 26.82
+},
+{
+"i": 76,
+"text": "PEUVENT",
+"start": 26.92,
+"end": 27.22
+},
+{
+"i": 77,
+"text": "CONSULTER",
+"start": 27.22,
+"end": 27.73
+},
+{
+"i": 78,
+"text": "DES",
+"start": 27.73,
+"end": 27.9
+},
+{
+"i": 79,
+"text": "PRODUITS,",
+"start": 27.9,
+"end": 28.46
+},
+{
+"i": 80,
+"text": "LES",
+"start": 28.48,
+"end": 28.64
+},
+{
+"i": 81,
+"text": "AJOUTER",
+"start": 28.64,
+"end": 29.04
+},
+{
+"i": 82,
+"text": "AU",
+"start": 29.04,
+"end": 29.15
+},
+{
+"i": 83,
+"text": "PANIER,",
+"start": 29.15,
+"end": 29.6
+},
+{
+"i": 84,
+"text": "PAYER",
+"start": 29.6,
+"end": 29.89
+},
+{
+"i": 85,
+"text": "DIRECTEMENT",
+"start": 29.89,
+"end": 30.53
+},
+{
+"i": 86,
+"text": "EN",
+"start": 30.53,
+"end": 30.64
+},
+{
+"i": 87,
+"text": "LIGNE",
+"start": 30.64,
+"end": 30.93
+},
+{
+"i": 88,
+"text": "ET",
+"start": 30.93,
+"end": 31.14
+},
+{
+"i": 89,
+"text": "SUIVRE",
+"start": 31.14,
+"end": 31.59
+},
+{
+"i": 90,
+"text": "LEURS",
+"start": 31.7,
+"end": 31.89
+},
+{
+"i": 91,
+"text": "COMMANDES.",
+"start": 31.89,
+"end": 32.6
+},
+{
+"i": 92,
+"text": "3.",
+"start": 32.7,
+"end": 33.6
+},
+{
+"i": 93,
+"text": "LE",
+"start": 33.69,
+"end": 33.72
+},
+{
+"i": 94,
+"text": "PORTFOLIO.",
+"start": 33.72,
+"end": 34.27
+},
+{
+"i": 95,
+"text": "C'EST",
+"start": 34.27,
+"end": 34.57
+},
+{
+"i": 96,
+"text": "LA",
+"start": 34.57,
+"end": 34.69
+},
+{
+"i": 97,
+"text": "VITRINE",
+"start": 34.69,
+"end": 35.11
+},
+{
+"i": 98,
+"text": "DE",
+"start": 35.11,
+"end": 35.23
+},
+{
+"i": 99,
+"text": "TON",
+"start": 35.23,
+"end": 35.41
+},
+{
+"i": 100,
+"text": "TALENT.",
+"start": 35.41,
+"end": 36
+},
+{
+"i": 101,
+"text": "GRAPHISTES,",
+"start": 36,
+"end": 37.28
+},
+{
+"i": 102,
+"text": "PHOTOGRAPHES,",
+"start": 37.38,
+"end": 37.98
+},
+{
+"i": 103,
+"text": "DÉVELOPPEURS",
+"start": 37.98,
+"end": 38.56
+},
+{
+"i": 104,
+"text": "OU",
+"start": 38.58,
+"end": 38.68
+},
+{
+"i": 105,
+"text": "CRÉATEURS",
+"start": 38.68,
+"end": 39.13
+},
+{
+"i": 106,
+"text": "PEUVENT",
+"start": 39.13,
+"end": 39.47
+},
+{
+"i": 107,
+"text": "Y",
+"start": 39.48,
+"end": 39.53
+},
+{
+"i": 108,
+"text": "PRÉSENTER",
+"start": 39.53,
+"end": 39.98
+},
+{
+"i": 109,
+"text": "LEURS",
+"start": 39.98,
+"end": 40.23
+},
+{
+"i": 110,
+"text": "MEILLEURS",
+"start": 40.23,
+"end": 40.67
+},
+{
+"i": 111,
+"text": "PROJETS",
+"start": 40.68,
+"end": 41.08
+},
+{
+"i": 112,
+"text": "POUR",
+"start": 41.18,
+"end": 41.27
+},
+{
+"i": 113,
+"text": "ATTIRER",
+"start": 41.27,
+"end": 41.59
+},
+{
+"i": 114,
+"text": "DES",
+"start": 41.59,
+"end": 41.72
+},
+{
+"i": 115,
+"text": "CLIENTS.",
+"start": 41.74,
+"end": 42.22
+},
+{
+"i": 116,
+"text": "4.",
+"start": 42.32,
+"end": 43.22
+},
+{
+"i": 117,
+"text": "LE",
+"start": 43.32,
+"end": 43.42
+},
+{
+"i": 118,
+"text": "BLOG",
+"start": 43.42,
+"end": 43.81
+},
+{
+"i": 119,
+"text": "OU",
+"start": 43.81,
+"end": 43.94
+},
+{
+"i": 120,
+"text": "SITE",
+"start": 44.03,
+"end": 44.39
+},
+{
+"i": 121,
+"text": "MÉDIA.",
+"start": 44.4,
+"end": 44.92
+},
+{
+"i": 122,
+"text": "SON",
+"start": 44.92,
+"end": 45.14
+},
+{
+"i": 123,
+"text": "OBJECTIF",
+"start": 45.14,
+"end": 45.74
+},
+{
+"i": 124,
+"text": "EST",
+"start": 45.74,
+"end": 45.96
+},
+{
+"i": 125,
+"text": "DE",
+"start": 45.96,
+"end": 46.11
+},
+{
+"i": 126,
+"text": "PUBLIER",
+"start": 46.11,
+"end": 46.62
+},
+{
+"i": 127,
+"text": "DU",
+"start": 46.67,
+"end": 46.78
+},
+{
+"i": 128,
+"text": "CONTENU :",
+"start": 46.78,
+"end": 47.76
+},
+{
+"i": 129,
+"text": "ARTICLES,",
+"start": 47.76,
+"end": 48.64
+},
+{
+"i": 130,
+"text": "ACTUALITÉS,",
+"start": 48.76,
+"end": 49.38
+},
+{
+"i": 131,
+"text": "CONSEILS",
+"start": 49.38,
+"end": 49.86
+},
+{
+"i": 132,
+"text": "OU",
+"start": 49.86,
+"end": 49.98
+},
+{
+"i": 133,
+"text": "ANALYSES.",
+"start": 49.98,
+"end": 50.63
+},
+{
+"i": 134,
+"text": "C'EST",
+"start": 50.73,
+"end": 50.95
+},
+{
+"i": 135,
+"text": "UN",
+"start": 50.95,
+"end": 51.06
+},
+{
+"i": 136,
+"text": "EXCELLENT",
+"start": 51.06,
+"end": 51.57
+},
+{
+"i": 137,
+"text": "MOYEN",
+"start": 51.57,
+"end": 51.84
+},
+{
+"i": 138,
+"text": "DE",
+"start": 51.84,
+"end": 51.96
+},
+{
+"i": 139,
+"text": "CONSTRUIRE",
+"start": 51.96,
+"end": 52.53
+},
+{
+"i": 140,
+"text": "UNE",
+"start": 52.53,
+"end": 52.65
+},
+{
+"i": 141,
+"text": "AUDIENCE",
+"start": 52.71,
+"end": 53.15
+},
+{
+"i": 142,
+"text": "ET",
+"start": 53.17,
+"end": 53.27
+},
+{
+"i": 143,
+"text": "D'ATTIRER",
+"start": 53.27,
+"end": 53.76
+},
+{
+"i": 144,
+"text": "DU",
+"start": 53.76,
+"end": 53.86
+},
+{
+"i": 145,
+"text": "TRAFIC.",
+"start": 53.86,
+"end": 54.48
+},
+{
+"i": 146,
+"text": "5.",
+"start": 54.58,
+"end": 55.48
+},
+{
+"i": 147,
+"text": "LA",
+"start": 55.57,
+"end": 55.63
+},
+{
+"i": 148,
+"text": "LANDING",
+"start": 55.63,
+"end": 56.16
+},
+{
+"i": 149,
+"text": "PAGE.",
+"start": 56.16,
+"end": 56.46
+},
+{
+"i": 150,
+"text": "C'EST",
+"start": 56.46,
+"end": 56.82
+},
+{
+"i": 151,
+"text": "UNE",
+"start": 56.82,
+"end": 57.05
+},
+{
+"i": 152,
+"text": "PAGE",
+"start": 57.05,
+"end": 57.35
+},
+{
+"i": 153,
+"text": "CONÇUE",
+"start": 57.35,
+"end": 57.8
+},
+{
+"i": 154,
+"text": "POUR",
+"start": 57.8,
+"end": 58.1
+},
+{
+"i": 155,
+"text": "CONVERTIR",
+"start": 58.1,
+"end": 58.86
+},
+{
+"i": 156,
+"text": "LES",
+"start": 58.86,
+"end": 58.96
+},
+{
+"i": 157,
+"text": "VISITEURS",
+"start": 59.06,
+"end": 59.54
+},
+{
+"i": 158,
+"text": "EN",
+"start": 59.54,
+"end": 59.67
+},
+{
+"i": 159,
+"text": "CLIENTS.",
+"start": 59.67,
+"end": 60.34
+},
+{
+"i": 160,
+"text": "SON",
+"start": 60.46,
+"end": 60.55
+},
+{
+"i": 161,
+"text": "OBJECTIF",
+"start": 60.55,
+"end": 61.07
+},
+{
+"i": 162,
+"text": "EST",
+"start": 61.07,
+"end": 61.26
+},
+{
+"i": 163,
+"text": "PRÉCIS :",
+"start": 61.26,
+"end": 61.77
+},
+{
+"i": 164,
+"text": "VENDRE",
+"start": 61.81,
+"end": 62.17
+},
+{
+"i": 165,
+"text": "UN",
+"start": 62.17,
+"end": 62.3
+},
+{
+"i": 166,
+"text": "PRODUIT,",
+"start": 62.3,
+"end": 62.88
+},
+{
+"i": 167,
+"text": "RÉCUPÉRER",
+"start": 62.88,
+"end": 63.46
+},
+{
+"i": 168,
+"text": "DES",
+"start": 63.46,
+"end": 63.65
+},
+{
+"i": 169,
+"text": "CONTACTS",
+"start": 63.65,
+"end": 64.17
+},
+{
+"i": 170,
+"text": "OU",
+"start": 64.17,
+"end": 64.3
+},
+{
+"i": 171,
+"text": "FAIRE",
+"start": 64.3,
+"end": 64.62
+},
+{
+"i": 172,
+"text": "TÉLÉCHARGER",
+"start": 64.62,
+"end": 65.4
+},
+{
+"i": 173,
+"text": "UNE",
+"start": 65.5,
+"end": 65.57
+},
+{
+"i": 174,
+"text": "APPLICATION.",
+"start": 65.57,
+"end": 66.4
+},
+{
+"i": 175,
+"text": "6.",
+"start": 66.5,
+"end": 67.4
+},
+{
+"i": 176,
+"text": "LA",
+"start": 67.49,
+"end": 67.54
+},
+{
+"i": 177,
+"text": "PLATEFORME",
+"start": 67.54,
+"end": 68.24
+},
+{
+"i": 178,
+"text": "WEB.",
+"start": 68.24,
+"end": 68.45
+},
+{
+"i": 179,
+"text": "LÀ,",
+"start": 68.45,
+"end": 68.73
+},
+{
+"i": 180,
+"text": "ON",
+"start": 68.73,
+"end": 68.87
+},
+{
+"i": 181,
+"text": "PASSE",
+"start": 68.87,
+"end": 69.22
+},
+{
+"i": 182,
+"text": "À",
+"start": 69.22,
+"end": 69.29
+},
+{
+"i": 183,
+"text": "UN",
+"start": 69.29,
+"end": 69.37
+},
+{
+"i": 184,
+"text": "AUTRE",
+"start": 69.43,
+"end": 69.78
+},
+{
+"i": 185,
+"text": "NIVEAU.",
+"start": 69.78,
+"end": 70.44
+},
+{
+"i": 186,
+"text": "CE",
+"start": 70.44,
+"end": 70.53
+},
+{
+"i": 187,
+"text": "N'EST",
+"start": 70.53,
+"end": 70.75
+},
+{
+"i": 188,
+"text": "PLUS",
+"start": 70.75,
+"end": 70.94
+},
+{
+"i": 189,
+"text": "SEULEMENT",
+"start": 70.94,
+"end": 71.38
+},
+{
+"i": 190,
+"text": "UN",
+"start": 71.38,
+"end": 71.47
+},
+{
+"i": 191,
+"text": "SITE",
+"start": 71.47,
+"end": 71.66
+},
+{
+"i": 192,
+"text": "POUR",
+"start": 71.66,
+"end": 71.84
+},
+{
+"i": 193,
+"text": "CONSULTER",
+"start": 71.85,
+"end": 72.27
+},
+{
+"i": 194,
+"text": "DES",
+"start": 72.27,
+"end": 72.41
+},
+{
+"i": 195,
+"text": "INFORMATIONS :",
+"start": 72.41,
+"end": 73.24
+},
+{
+"i": 196,
+"text": "LES",
+"start": 73.34,
+"end": 73.43
+},
+{
+"i": 197,
+"text": "UTILISATEURS",
+"start": 73.43,
+"end": 74.21
+},
+{
+"i": 198,
+"text": "PEUVENT",
+"start": 74.21,
+"end": 74.61
+},
+{
+"i": 199,
+"text": "CRÉER",
+"start": 74.7,
+"end": 74.98
+},
+{
+"i": 200,
+"text": "UN",
+"start": 74.98,
+"end": 75.11
+},
+{
+"i": 201,
+"text": "COMPTE,",
+"start": 75.11,
+"end": 75.63
+},
+{
+"i": 202,
+"text": "INTERAGIR,",
+"start": 75.63,
+"end": 76.34
+},
+{
+"i": 203,
+"text": "ÉCHANGER",
+"start": 76.34,
+"end": 76.85
+},
+{
+"i": 204,
+"text": "OU",
+"start": 76.86,
+"end": 76.98
+},
+{
+"i": 205,
+"text": "UTILISER",
+"start": 76.98,
+"end": 77.5
+},
+{
+"i": 206,
+"text": "DES",
+"start": 77.5,
+"end": 77.69
+},
+{
+"i": 207,
+"text": "FONCTIONNALITÉS.",
+"start": 77.69,
+"end": 78.88
+},
+{
+"i": 208,
+"text": "PENSE",
+"start": 78.94,
+"end": 79.21
+},
+{
+"i": 209,
+"text": "À",
+"start": 79.21,
+"end": 79.27
+},
+{
+"i": 210,
+"text": "NETFLIX,",
+"start": 79.27,
+"end": 79.87
+},
+{
+"i": 211,
+"text": "AIRBNB",
+"start": 79.87,
+"end": 80.25
+},
+{
+"i": 212,
+"text": "OU",
+"start": 80.27,
+"end": 80.4
+},
+{
+"i": 213,
+"text": "À",
+"start": 80.4,
+"end": 80.45
+},
+{
+"i": 214,
+"text": "UNE",
+"start": 80.46,
+"end": 80.66
+},
+{
+"i": 215,
+"text": "PLATEFORME",
+"start": 80.66,
+"end": 81.31
+},
+{
+"i": 216,
+"text": "DE",
+"start": 81.37,
+"end": 81.47
+},
+{
+"i": 217,
+"text": "FORMATION.",
+"start": 81.47,
+"end": 82.36
+},
+{
+"i": 218,
+"text": "ET",
+"start": 82.45,
+"end": 82.47
+},
+{
+"i": 219,
+"text": "VOILÀ",
+"start": 82.47,
+"end": 82.76
+},
+{
+"i": 220,
+"text": "POURQUOI",
+"start": 82.76,
+"end": 83.23
+},
+{
+"i": 221,
+"text": "TOUS",
+"start": 83.23,
+"end": 83.46
+},
+{
+"i": 222,
+"text": "LES",
+"start": 83.46,
+"end": 83.63
+},
+{
+"i": 223,
+"text": "SITES",
+"start": 83.63,
+"end": 83.92
+},
+{
+"i": 224,
+"text": "WEB",
+"start": 83.92,
+"end": 84.09
+},
+{
+"i": 225,
+"text": "NE",
+"start": 84.09,
+"end": 84.2
+},
+{
+"i": 226,
+"text": "SE",
+"start": 84.2,
+"end": 84.31
+},
+{
+"i": 227,
+"text": "CONSTRUISENT",
+"start": 84.31,
+"end": 85
+},
+{
+"i": 228,
+"text": "PAS",
+"start": 85,
+"end": 85.17
+},
+{
+"i": 229,
+"text": "DE",
+"start": 85.17,
+"end": 85.28
+},
+{
+"i": 230,
+"text": "LA",
+"start": 85.28,
+"end": 85.39
+},
+{
+"i": 231,
+"text": "MÊME",
+"start": 85.39,
+"end": 85.54
+},
+{
+"i": 232,
+"text": "MANIÈRE.",
+"start": 85.62,
+"end": 86.36
+},
+{
+"i": 233,
+"text": "LA",
+"start": 86.45,
+"end": 86.48
+},
+{
+"i": 234,
+"text": "VRAIE",
+"start": 86.48,
+"end": 86.76
+},
+{
+"i": 235,
+"text": "QUESTION,",
+"start": 86.82,
+"end": 87.39
+},
+{
+"i": 236,
+"text": "CE",
+"start": 87.39,
+"end": 87.51
+},
+{
+"i": 237,
+"text": "N'EST",
+"start": 87.51,
+"end": 87.81
+},
+{
+"i": 238,
+"text": "PAS",
+"start": 87.81,
+"end": 87.99
+},
+{
+"i": 239,
+"text": "SEULEMENT :",
+"start": 87.99,
+"end": 88.54
+},
+{
+"i": 240,
+"text": "« COMMENT",
+"start": 88.6,
+"end": 89.02
+},
+{
+"i": 241,
+"text": "CRÉER",
+"start": 89.02,
+"end": 89.32
+},
+{
+"i": 242,
+"text": "UN",
+"start": 89.32,
+"end": 89.44
+},
+{
+"i": 243,
+"text": "SITE",
+"start": 89.44,
+"end": 89.68
+},
+{
+"i": 244,
+"text": "WEB",
+"start": 89.68,
+"end": 89.86
+},
+{
+"i": 245,
+"text": "AVEC",
+"start": 89.86,
+"end": 90.1
+},
+{
+"i": 246,
+"text": "L'IA ? »",
+"start": 90.1,
+"end": 90.34
+},
+{
+"i": 247,
+"text": "C'EST",
+"start": 90.66,
+"end": 90.88
+},
+{
+"i": 248,
+"text": "SURTOUT :",
+"start": 90.88,
+"end": 91.29
+},
+{
+"i": 249,
+"text": "« QUEL",
+"start": 91.41,
+"end": 91.59
+},
+{
+"i": 250,
+"text": "PROBLÈME",
+"start": 91.59,
+"end": 91.97
+},
+{
+"i": 251,
+"text": "MON",
+"start": 92.05,
+"end": 92.24
+},
+{
+"i": 252,
+"text": "SITE",
+"start": 92.24,
+"end": 92.48
+},
+{
+"i": 253,
+"text": "VA-T-IL",
+"start": 92.48,
+"end": 92.86
+},
+{
+"i": 254,
+"text": "RÉSOUDRE ? »",
+"start": 92.86,
+"end": 93.6
+},
+{
+"i": 255,
+"text": "ABONNE",
+"start": 93.82,
+"end": 94.19
+},
+{
+"i": 256,
+"text": "TOI",
+"start": 94.19,
+"end": 94.56
+},
+{
+"i": 257,
+"text": "À",
+"start": 94.56,
+"end": 94.64
+},
+{
+"i": 258,
+"text": "GAUSSCODE.",
+"start": 94.64,
+"end": 95.44
+}
+]

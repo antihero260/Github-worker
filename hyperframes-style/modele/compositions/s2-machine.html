@@ -1,0 +1,80 @@
+<!-- Scène 2 · « Ton code marche parfaitement sur ta machine. Tu l'envoies en production. » (2,5 → 5,6 s) -->
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+    }
+    #s2-barre {
+      position: absolute;
+      left: 560px;
+      top: 470px;
+      width: 800px;
+      height: 44px;
+      display: flex;
+      gap: 8px;
+    }
+    #s2-barre i {
+      flex: 1;
+      background: #2a2a2a;
+    }
+  </style>
+  <div id="root" data-composition-id="s2-machine" data-width="1920" data-height="1080">
+    <div class="pj-scene">
+      <div id="s2-cam" class="pj-cam">
+        <div class="pj-horizon" style="top: 760px"></div>
+        <div class="pj-cone" style="left: 140px; height: 900px"></div>
+        <div class="pj-sol" style="left: 110px; top: 740px"></div>
+        <svg class="pj-picto pj-toi" viewBox="-8 -8 116 276" style="left: 340px; top: 420px; width: 160px; height: 380px">
+          <g class="pj-contour"><circle cx="50" cy="26" r="24" /><rect x="16" y="58" width="68" height="96" rx="10" /><rect x="21" y="140" width="25" height="118" rx="5" /><rect x="54" y="140" width="25" height="118" rx="5" /></g>
+          <g class="pj-plein"><circle cx="50" cy="26" r="24" /><rect x="16" y="58" width="68" height="96" rx="10" /><rect x="21" y="140" width="25" height="118" rx="5" /><rect x="54" y="140" width="25" height="118" rx="5" /></g>
+        </svg>
+        <div id="s2-papier" class="pj-papier" style="left: 1000px; top: 160px; width: 600px; transform: rotate(-3deg)">
+          <h3>Ta machine</h3>
+          <div id="s2-l1" class="pj-ligne">BUILD ...... OK <span style="background: #0a0a06; color: #dcfc1c; padding: 0 8px">✓</span></div>
+          <div id="s2-l2" class="pj-ligne">TESTS ...... 100 % <span style="background: #0a0a06; color: #dcfc1c; padding: 0 8px">✓</span></div>
+          <div id="s2-l3" class="pj-ligne">DÉMO ....... OK <span style="background: #0a0a06; color: #dcfc1c; padding: 0 8px">✓</span></div>
+        </div>
+        <div id="s2-sticker" class="pj-sticker" style="left: 1150px; top: 620px; transform: rotate(-5deg)">Ça marche.</div>
+        <div id="s2-envoi" style="position: absolute; inset: 0; opacity: 0">
+          <div class="pj-label" style="left: 560px; top: 400px"><span class="pj-k">Envoi en production</span></div>
+          <div id="s2-pourcent" class="pj-stat" style="right: 560px; top: 392px; font-size: 44px">0 %</div>
+          <div id="s2-barre"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        </div>
+      </div>
+      <div id="s2-hud-g" class="pj-label" style="left: 113px; top: 107px"><span class="pj-k">Tests réussis</span><span id="s2-compteur" class="pj-stat" style="position: static; font-size: 120px; letter-spacing: 0; line-height: 1.1">0 %</span></div>
+      <div id="s2-hud-d" class="pj-label" style="right: 113px; top: 107px; text-align: right; opacity: 0"><span class="pj-k">Déploiement</span><span class="pj-d">Vers : prod</span></div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#s2-cam", { scale: 1 }, { scale: 1.06, duration: 2.9, ease: "none" }, 0);
+    tl.fromTo("#s2-cam", { filter: "blur(14px)" }, { filter: "blur(0px)", duration: 0.16, ease: "power2.out" }, 0);
+    // « ton code » / « marche » / « parfaitement » : la fiche se remplit
+    tl.fromTo("#s2-papier", { y: 60, opacity: 0 }, { y: 0, opacity: 1, duration: 0.2, ease: "power3.out" }, 0.1);
+    tl.fromTo("#s2-l1", { opacity: 0, x: -14 }, { opacity: 1, x: 0, duration: 0.1 }, 0.3);
+    tl.fromTo("#s2-l2", { opacity: 0, x: -14 }, { opacity: 1, x: 0, duration: 0.1 }, 0.55);
+    tl.fromTo("#s2-l3", { opacity: 0, x: -14 }, { opacity: 1, x: 0, duration: 0.1 }, 0.86);
+    // compteur 0 → 100 %
+    const c = { v: 0 };
+    tl.fromTo(c, { v: 0 }, {
+      v: 100, duration: 0.8, ease: "power2.out",
+      onUpdate: () => { document.querySelector("#s2-compteur").textContent = Math.round(c.v) + " %"; },
+    }, 0.4);
+    // autocollant
+    tl.fromTo("#s2-sticker", { scale: 1.7, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.18, ease: "back.out(2.2)" }, 1.15);
+    // « tu l'envoies en production » : la fiche part, la barre d'envoi se remplit
+    tl.to(["#s2-papier", "#s2-sticker"], { y: -900, opacity: 0, duration: 0.3, ease: "power3.in" }, 1.98);
+    tl.fromTo("#s2-envoi", { opacity: 0 }, { opacity: 1, duration: 0.12 }, 2.1);
+    tl.fromTo("#s2-hud-d", { opacity: 0, x: 24 }, { opacity: 1, x: 0, duration: 0.15, ease: "power3.out" }, 2.0);
+    tl.fromTo("#s2-barre i", { backgroundColor: "#2a2a2a" }, { backgroundColor: "#DCFC1C", duration: 0.04, stagger: 0.07 }, 2.15);
+    const p = { v: 0 };
+    tl.fromTo(p, { v: 0 }, {
+      v: 100, duration: 0.7, ease: "none", immediateRender: false,
+      onUpdate: () => { document.querySelector("#s2-pourcent").textContent = Math.round(p.v) + " %"; },
+    }, 2.15);
+    // sortie
+    tl.to("#s2-cam", { scale: 1.35, filter: "blur(14px)", duration: 0.2, ease: "power3.in" }, 2.9);
+    window.__timelines["s2-machine"] = tl;
+  </script>
+</template>

@@ -1,0 +1,47 @@
+<!-- Scène 10 · « Ce comportement a même été observé dans des versions de ChatGPT. » (60.84 → 64.53 s). Fichier écrit par un générateur, modifiable à la main. -->
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+    }
+
+  </style>
+  <div id="root" data-composition-id="s10-observe" data-width="1920" data-height="1080">
+    <div class="pj-scene">
+      <div id="s10-observe-cam" class="pj-cam">
+        <div id="s10-observe-cadre" class="pj-cadre">
+        <div class="pj-horizon" style="top: 760px"></div>
+        <div class="pj-cone" style="left: 680px; height: 900px; opacity: 1.0"></div><div class="pj-sol" style="left: 650px; top: 740px; opacity: 1.0"></div>
+        <svg id="s10-ia" class="pj-perso pj-ia-perso" viewBox="-30 -20 160 290" style="left: 839px; top: 393px; width: 243px; height: 440px"><g id="s10-ia-vie"><g id="s10-ia-corps"><g id="s10-ia-jg"><g class="c"><rect x="24" y="136" width="24" height="112" rx="8" /></g><g class="p"><rect x="24" y="136" width="24" height="112" rx="8" /></g></g><g id="s10-ia-jd"><g class="c"><rect x="52" y="136" width="24" height="112" rx="8" /></g><g class="p"><rect x="52" y="136" width="24" height="112" rx="8" /></g></g><g id="s10-ia-tronc"><g class="c"><rect x="22" y="52" width="56" height="94" rx="12" /></g><g class="p"><rect x="22" y="52" width="56" height="94" rx="12" /></g></g><g id="s10-ia-bg"><g class="c"><rect x="2" y="54" width="18" height="86" rx="9" /></g><g class="p"><rect x="2" y="54" width="18" height="86" rx="9" /></g></g><g id="s10-ia-bd"><g class="c"><rect x="80" y="54" width="18" height="86" rx="9" /></g><g class="p"><rect x="80" y="54" width="18" height="86" rx="9" /></g></g><g id="s10-ia-tete"><g class="c"><rect x="25" y="0" width="50" height="46" rx="13" /></g><g class="p"><rect x="25" y="0" width="50" height="46" rx="13" /></g><g class="yeux"><circle cx="40" cy="22" r="5" /><circle cx="60" cy="22" r="5" /></g></g></g></g></svg>
+        <svg id="s10-loupe" style="position: absolute; left: 300px; top: 300px; width: 260px; height: 260px; overflow: visible" viewBox="0 0 260 260"><circle cx="110" cy="110" r="90" fill="rgba(220,252,28,0.12)" stroke="#ECECE8" stroke-width="14" /><rect x="170" y="175" width="26" height="100" rx="10" fill="#ECECE8" transform="rotate(-45 183 225)" /></svg>
+        <div id="s10-eq" class="pj-equerres" style="left: 810px; top: 330px; width: 300px; height: 520px; opacity: 0"><i></i><i></i><i></i><i></i></div>
+        <div id="s10-leg" class="pj-label" style="left: 1150px; top: 330px; opacity: 0"><span class="pj-k">Complaisance</span><span class="pj-d">Constatée</span></div>
+        </div>
+      </div>
+      <div id="s10-hud" class="pj-label" style="left: 113px; top: 107px; "><span class="pj-k">Rapport</span><span class="pj-d">Versions de ChatGPT</span></div>
+      <div id="s10-obs" class="pj-label" style="right: 113px; top: 107px; text-align: right; opacity: 0"><span class="pj-k">Observé</span><span class="pj-d">Comportement réel</span></div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#s10-observe-cam", { scale: 1 }, { scale: 1.05, duration: 3.49, ease: "none" }, 0);
+    tl.fromTo("#s10-observe-cam", { filter: "blur(14px)" }, { filter: "blur(0px)", duration: 0.16, ease: "power2.out" }, 0);
+    tl.fromTo("#s10-ia-vie", { y: 0 }, { y: -5, duration: 0.42, repeat: 7, yoyo: true, ease: "sine.inOut", immediateRender: false }, 0.0);
+    tl.fromTo("#s10-loupe", { x: -200, y: 120 }, { keyframes: [{ x: 420, y: -60, duration: 0.6 }, { x: 650, y: 40, duration: 0.5 }, { x: 560, y: -20, duration: 0.4 }], ease: "sine.inOut" }, 0.12);
+    tl.fromTo("#s10-eq", { opacity: 0, scale: 1.2 }, { opacity: 1, scale: 1, duration: 0.18, ease: "back.out(2.2)" }, 1.64);
+    tl.fromTo("#s10-leg", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.18, ease: "power3.out" }, 1.64);
+    tl.to("#s10-loupe", { opacity: 0, duration: 0.2 }, 1.64);
+    tl.to("#s10-ia-bg", { rotation: 150, svgOrigin: "11 62", duration: 0.15, ease: "back.out(2)" }, 1.64);
+    tl.to("#s10-ia-bd", { rotation: -150, svgOrigin: "89 62", duration: 0.15, ease: "back.out(2)" }, 1.64);
+    tl.to("#s10-ia-tete", { rotation: 12, svgOrigin: "50 50", duration: 0.15, ease: "back.out(2)" }, 1.64);
+    tl.to("#s10-ia-bg", { rotation: -40, svgOrigin: "11 62", duration: 0.2, ease: "power2.out" }, 2.2);
+    tl.to("#s10-ia-bd", { rotation: 40, svgOrigin: "89 62", duration: 0.2, ease: "power2.out" }, 2.2);
+    tl.to("#s10-ia-tete", { rotation: 16, svgOrigin: "50 50", duration: 0.2, ease: "power2.out" }, 2.2);
+    tl.to("#s10-obs", { opacity: 1, duration: 0.12 }, 2.36);
+    tl.to("#s10-observe-cadre", { x: 0, y: 100, scale: 1.25, duration: 0.24, ease: "power3.inOut" }, 2.2);
+    tl.to("#s10-observe-cadre", { keyframes: [{ filter: "blur(10px)", duration: 0.12 }, { filter: "blur(0px)", duration: 0.12 }] }, 2.2);
+    tl.to("#s10-observe-cam", { scale: 1.3, filter: "blur(14px)", duration: 0.2, ease: "power3.in" }, 3.49);
+    window.__timelines["s10-observe"] = tl;
+  </script>
+</template>

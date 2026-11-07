@@ -1,0 +1,846 @@
+<!doctype html>
+<html lang="fr" data-resolution="landscape">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+    <style>
+      /* Edit pro (vidéo 19, v7) : aucun texte, tout est calé sur les temps de « AVANGARD » (tools/temps.json). */
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1920px; height: 1080px; overflow: hidden; background: #000; }
+      #fond { position: absolute; inset: 0; background: #000; }
+      #rgbw, #grade { position: absolute; inset: 0; }
+      #cam { position: absolute; left: -70px; top: -70px; width: 2060px; height: 1220px; overflow: hidden; transform-origin: 50% 50%; }
+      .ed-plan { position: absolute; left: 70px; top: 70px; width: 1920px; height: 1080px; object-fit: cover; transform-origin: 50% 50%; }
+      .ed-split { position: absolute; left: 70px; top: 70px; width: 1920px; height: 1080px; background: #000; }
+      .ed-tiers { position: absolute; top: 0; width: 632px; height: 1080px; overflow: hidden; }
+      .ed-tiers-v { position: absolute; left: -330px; top: 0; width: 1292px; height: 1080px; object-fit: cover; }
+      #teinte { position: absolute; inset: 0; mix-blend-mode: soft-light;
+        background: linear-gradient(180deg, rgba(0, 110, 130, 0.9) 0%, rgba(0, 60, 80, 0.6) 45%, rgba(255, 140, 50, 0.7) 100%); }
+      #vignette { position: absolute; inset: 0; background: radial-gradient(ellipse 72% 68% at 50% 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.7) 100%); }
+      #grain { position: absolute; inset: -50%; width: 200%; height: 200%; opacity: 0.13; background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+        animation: ed-grain 0.4s steps(1) infinite; mix-blend-mode: overlay; }
+      @keyframes ed-grain { 0%, 100% { transform: translate(0, 0); } 20% { transform: translate(-6%, 4%); }
+        40% { transform: translate(5%, -7%); } 60% { transform: translate(-4%, 8%); } 80% { transform: translate(7%, 3%); } }
+      .ed-fuite { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; object-fit: cover; mix-blend-mode: screen; opacity: 0; }
+      .ed-flash { position: absolute; inset: 0; opacity: 0; }
+      .ed-glitch { position: absolute; inset: 0; opacity: 0; mix-blend-mode: screen; }
+      .ed-glitch i { position: absolute; }
+      .ed-bande { position: absolute; left: 0; width: 1920px; height: 0; background: #000; }
+      .ed-echo { mix-blend-mode: screen; }
+      #bande-h { top: 0; }
+      #bande-b { bottom: 0; }
+    </style>
+  </head>
+  <body>
+    <svg width="0" height="0" style="position: absolute">
+      <filter id="rgb" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
+        <feColorMatrix in="SourceGraphic" type="matrix" values="1 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 0" result="r" />
+        <feOffset id="rgb-r" in="r" dx="0" dy="0" result="ro" />
+        <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0  0 1 0 0 0  0 0 0 0 0  0 0 0 1 0" result="g" />
+        <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 1 0 0  0 0 0 1 0" result="b" />
+        <feOffset id="rgb-b" in="b" dx="0" dy="0" result="bo" />
+        <feBlend in="ro" in2="g" mode="screen" result="rg" />
+        <feBlend in="rg" in2="bo" mode="screen" />
+      </filter>
+    </svg>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="29.82" data-width="1920" data-height="1080">
+      <div id="fond" class="clip" data-start="0" data-duration="29.82" data-track-index="0"></div>
+      <div id="rgbw">
+        <div id="grade">
+          <div id="cam">
+            <video id="p000" class="clip ed-plan" src="assets/video/film-tos-robot.mp4" data-start="0.0" data-duration="1.463" data-media-start="1.0" data-track-index="1" muted playsinline></video>
+            <video id="p001" class="clip ed-plan" src="assets/video/film-tos-ville-sombre.mp4" data-start="1.063" data-duration="1.418" data-media-start="0.3" data-track-index="2" muted playsinline></video>
+            <video id="p002" class="clip ed-plan" src="assets/video/nasa-artemis-allumage.mp4" data-start="2.081" data-duration="1.418" data-media-start="0.3" data-track-index="1" muted playsinline></video>
+            <video id="p003" class="clip ed-plan" src="assets/video/film-tos-invasion.mp4" data-start="3.099" data-duration="1.418" data-media-start="0.3" data-track-index="2" muted playsinline></video>
+            <video id="p004" class="clip ed-plan" src="assets/video/film-tos-cyborg.mp4" data-start="4.117" data-duration="0.909" data-media-start="0.3" data-track-index="1" muted playsinline></video>
+            <video id="p005" class="clip ed-plan" src="assets/video/boxeur-sombre.mp4" data-start="4.626" data-duration="0.909" data-media-start="0.3" data-track-index="2" muted playsinline></video>
+            <video id="p006" class="clip ed-plan" src="assets/video/nasa-artemis-feu.mp4" data-start="5.135" data-duration="0.509" data-media-start="0.3" data-track-index="1" muted playsinline></video>
+            <video id="p007" class="clip ed-plan" src="assets/video/film-tos-ruines.mp4" data-start="5.644" data-duration="0.509" data-media-start="0.3" data-track-index="2" muted playsinline></video>
+            <video id="p008" class="clip ed-plan" src="assets/video/film-tos-robot-geant.mp4" data-start="6.153" data-duration="0.509" data-media-start="0.3" data-track-index="1" muted playsinline></video>
+            <video id="p009" class="clip ed-plan" src="assets/video/film-sintel-grotte.mp4" data-start="6.662" data-duration="0.509" data-media-start="0.3" data-track-index="2" muted playsinline></video>
+            <video id="p010" class="clip ed-plan" src="assets/video/nasa-booster-jet.mp4" data-start="7.171" data-duration="0.763" data-media-start="0.3" data-track-index="1" muted playsinline></video>
+            <video id="p011" class="clip ed-plan" src="assets/video/film-tos-explosion.mp4" data-start="7.934" data-duration="0.255" data-media-start="0.4" data-track-index="2" muted playsinline></video>
+            <video id="p011-z0" class="clip ed-plan ed-echo" src="assets/video/film-tos-explosion.mp4" data-start="7.934" data-duration="0.235" data-media-start="0.41" data-track-index="28" muted playsinline style="opacity: 0"></video>
+            <video id="p011-z1" class="clip ed-plan ed-echo" src="assets/video/film-tos-explosion.mp4" data-start="7.934" data-duration="0.215" data-media-start="0.42" data-track-index="29" muted playsinline style="opacity: 0"></video>
+            <video id="p011-z2" class="clip ed-plan ed-echo" src="assets/video/film-tos-explosion.mp4" data-start="7.934" data-duration="0.195" data-media-start="0.43" data-track-index="30" muted playsinline style="opacity: 0"></video>
+            <video id="p012" class="clip ed-plan" src="assets/video/film-tos-bras-robot.mp4" data-start="8.189" data-duration="0.509" data-media-start="0.3" data-track-index="1" muted playsinline></video>
+            <video id="p013" class="clip ed-plan" src="assets/video/danse-techno-neon.mp4" data-start="8.698" data-duration="0.509" data-media-start="0.3" data-track-index="2" muted playsinline></video>
+            <video id="p014" class="clip ed-plan" src="assets/video/nasa-rocketlab-moteur.mp4" data-start="9.207" data-duration="0.255" data-media-start="0.3" data-track-index="1" muted playsinline></video>
+            <video id="p015" class="clip ed-plan" src="assets/video/site-lamborghini.mp4" data-start="9.462" data-duration="0.254" data-media-start="1.0" data-track-index="2" muted playsinline></video>
+            <video id="p016" class="clip ed-plan" src="assets/video/moto-wheelie.mp4" data-start="9.716" data-duration="0.254" data-media-start="0.3" data-track-index="1" muted playsinline></video>
+            <video id="p017" class="clip ed-plan" src="assets/video/spline-ai.mp4" data-start="9.97" data-duration="0.255" data-media-start="1.0" data-track-index="2" muted playsinline></video>
+            <video id="p018" class="clip ed-plan" src="assets/video/film-tos-hologramme.mp4" data-start="10.225" data-duration="0.254" data-media-start="0.3" data-track-index="1" muted playsinline></video>
+            <video id="p019" class="clip ed-plan" src="assets/video/site-apple.mp4" data-start="10.479" data-duration="0.255" data-media-start="1.0" data-track-index="2" muted playsinline></video>
+            <video id="p020" class="clip ed-plan" src="assets/video/boxe-coups.mp4" data-start="10.734" data-duration="0.255" data-media-start="0.3" data-track-index="1" muted playsinline></video>
+            <video id="p021" class="clip ed-plan" src="assets/video/site-playstation.mp4" data-start="10.989" data-duration="0.254" data-media-start="1.0" data-track-index="2" muted playsinline></video>
+            <video id="p022" class="clip ed-plan" src="assets/video/nasa-artemis-decolle.mp4" data-start="11.243" data-duration="0.255" data-media-start="0.3" data-track-index="1" muted playsinline></video>
+            <img id="p023" class="clip ed-plan" src="assets/img/gel-film-tos-robot-geant.jpg" data-start="11.498" data-duration="0.254" data-track-index="2" alt="" />
+            <video id="p024" class="clip ed-plan" src="assets/video/foule-saute.mp4" data-start="11.752" data-duration="0.254" data-media-start="0.3" data-track-index="1" muted playsinline></video>
+            <video id="p025" class="clip ed-plan" src="assets/video/framer-ai.mp4" data-start="12.006" data-duration="0.255" data-media-start="1.0" data-track-index="2" muted playsinline></video>
+            <video id="p026" class="clip ed-plan" src="assets/video/film-tos-interface.mp4" data-start="12.261" data-duration="0.0" data-media-start="0.3" data-track-index="1" muted playsinline></video>
+            <img id="p027" class="clip ed-plan" src="assets/img/gel-nasa-booster-face.jpg" data-start="12.261" data-duration="0.509" data-track-index="2" alt="" />
+            <video id="p028" class="clip ed-plan" src="assets/video/rally-terre.mp4" data-start="12.77" data-duration="0.254" data-media-start="0.3" data-track-index="1" muted playsinline></video>
+            <video id="p029" class="clip ed-plan" src="assets/video/site-nvidia.mp4" data-start="13.024" data-duration="0.255" data-media-start="1.0" data-track-index="2" muted playsinline></video>
+            <video id="p030" class="clip ed-plan" src="assets/video/nasa-booster-face.mp4" data-start="13.279" data-duration="0.255" data-media-start="0.3" data-track-index="1" muted playsinline></video>
+            <video id="p031" class="clip ed-plan" src="assets/video/site-stripe.mp4" data-start="13.534" data-duration="0.254" data-media-start="1.0" data-track-index="2" muted playsinline></video>
+            <video id="p032" class="clip ed-plan" src="assets/video/breakdance.mp4" data-start="13.788" data-duration="0.255" data-media-start="0.3" data-track-index="1" muted playsinline></video>
+            <video id="p033" class="clip ed-plan" src="assets/video/site-mclaren.mp4" data-start="14.043" data-duration="0.254" data-media-start="1.0" data-track-index="2" muted playsinline></video>
+            <video id="p034" class="clip ed-plan" src="assets/video/film-tos-fil-de-fer.mp4" data-start="14.297" data-duration="0.255" data-media-start="0.3" data-track-index="1" muted playsinline></video>
+            <video id="p035" class="clip ed-plan" src="assets/video/site-visionpro.mp4" data-start="14.552" data-duration="0.254" data-media-start="1.0" data-track-index="2" muted playsinline></video>
+            <video id="p036" class="clip ed-plan" src="assets/video/lasers-cyberpunk.mp4" data-start="14.806" data-duration="0.254" data-media-start="0.3" data-track-index="1" muted playsinline></video>
+            <video id="p037" class="clip ed-plan" src="assets/video/site-figma.mp4" data-start="15.06" data-duration="0.255" data-media-start="1.0" data-track-index="2" muted playsinline></video>
+            <video id="p038" class="clip ed-plan" src="assets/video/nasa-separation-1.mp4" data-start="15.315" data-duration="0.127" data-media-start="0.3" data-track-index="1" muted playsinline></video>
+            <video id="p039" class="clip ed-plan" src="assets/video/site-xbox.mp4" data-start="15.442" data-duration="0.127" data-media-start="1.0" data-track-index="2" muted playsinline></video>
+            <video id="p040" class="clip ed-plan" src="assets/video/voitures-vitesse.mp4" data-start="15.569" data-duration="0.128" data-media-start="0.3" data-track-index="1" muted playsinline></video>
+            <video id="p041" class="clip ed-plan" src="assets/video/site-webflow.mp4" data-start="15.697" data-duration="0.127" data-media-start="1.0" data-track-index="2" muted playsinline></video>
+            <video id="p042" class="clip ed-plan" src="assets/video/film-tos-projection.mp4" data-start="15.824" data-duration="0.085" data-media-start="0.3" data-track-index="1" muted playsinline></video>
+            <video id="p043" class="clip ed-plan" src="assets/video/site-netflix.mp4" data-start="15.909" data-duration="0.085" data-media-start="1.0" data-track-index="2" muted playsinline></video>
+            <video id="p044" class="clip ed-plan" src="assets/video/nasa-artemis-flamme.mp4" data-start="15.994" data-duration="0.084" data-media-start="0.3" data-track-index="1" muted playsinline></video>
+            <video id="p045" class="clip ed-plan" src="assets/video/site-spline-site.mp4" data-start="16.078" data-duration="0.085" data-media-start="1.0" data-track-index="2" muted playsinline></video>
+            <video id="p046" class="clip ed-plan" src="assets/video/film-tos-machines.mp4" data-start="16.163" data-duration="0.17" data-media-start="0.3" data-track-index="1" muted playsinline></video>
+            <video id="p047" class="clip ed-plan" src="assets/video/nasa-booster-allumage.mp4" data-start="16.333" data-duration="0.127" data-media-start="0.4" data-track-index="2" muted playsinline></video>
+            <video id="p047-z0" class="clip ed-plan ed-echo" src="assets/video/nasa-booster-allumage.mp4" data-start="16.333" data-duration="0.107" data-media-start="0.41" data-track-index="28" muted playsinline style="opacity: 0"></video>
+            <video id="p047-z1" class="clip ed-plan ed-echo" src="assets/video/nasa-booster-allumage.mp4" data-start="16.333" data-duration="0.087" data-media-start="0.42" data-track-index="29" muted playsinline style="opacity: 0"></video>
+            <video id="p047-z2" class="clip ed-plan ed-echo" src="assets/video/nasa-booster-allumage.mp4" data-start="16.333" data-duration="0.067" data-media-start="0.43" data-track-index="30" muted playsinline style="opacity: 0"></video>
+            <video id="p048" class="clip ed-plan" src="assets/video/site-ubisoft.mp4" data-start="16.46" data-duration="0.127" data-media-start="1.0" data-track-index="1" muted playsinline></video>
+            <video id="p049" class="clip ed-plan" src="assets/video/site-vercel.mp4" data-start="16.587" data-duration="0.128" data-media-start="1.0" data-track-index="2" muted playsinline></video>
+            <video id="p050" class="clip ed-plan" src="assets/video/site-riot.mp4" data-start="16.715" data-duration="0.127" data-media-start="1.0" data-track-index="1" muted playsinline></video>
+            <video id="p051" class="clip ed-plan" src="assets/video/rampe-moto-wheelie-2.mp4" data-start="16.842" data-duration="0.763" data-media-start="0.0" data-track-index="2" muted playsinline></video>
+            <img id="p052" class="clip ed-plan" src="assets/img/gel-boxe-direct.jpg" data-start="17.605" data-duration="0.128" data-track-index="1" alt="" />
+            <img id="p053" class="clip ed-plan" src="assets/img/gel-film-tos-cyborg.jpg" data-start="17.733" data-duration="0.127" data-track-index="2" alt="" />
+            <img id="p054" class="clip ed-plan" src="assets/img/gel-danse-silhouette-rouge.jpg" data-start="17.86" data-duration="0.254" data-track-index="1" alt="" />
+            <video id="p055" class="clip ed-plan" src="assets/video/site-dji.mp4" data-start="18.114" data-duration="0.255" data-media-start="1.0" data-track-index="2" muted playsinline></video>
+            <video id="p056" class="clip ed-plan" src="assets/video/film-tos-armure.mp4" data-start="18.369" data-duration="0.254" data-media-start="0.3" data-track-index="1" muted playsinline></video>
+            <video id="p057" class="clip ed-plan" src="assets/video/site-raycast.mp4" data-start="18.623" data-duration="0.128" data-media-start="1.0" data-track-index="2" muted playsinline></video>
+            <video id="p058" class="clip ed-plan" src="assets/video/festival-saute.mp4" data-start="18.751" data-duration="0.127" data-media-start="0.3" data-track-index="1" muted playsinline></video>
+            <video id="p059" class="clip ed-plan" src="assets/video/boxe-direct.mp4" data-start="18.878" data-duration="0.255" data-media-start="0.3" data-track-index="2" muted playsinline></video>
+            <video id="p059-e0" class="clip ed-plan ed-echo" src="assets/video/boxe-direct.mp4" data-start="18.878" data-duration="0.255" data-media-start="0.2" data-track-index="26" muted playsinline style="opacity: 0.5"></video>
+            <video id="p059-e1" class="clip ed-plan ed-echo" src="assets/video/boxe-direct.mp4" data-start="18.878" data-duration="0.255" data-media-start="0.1" data-track-index="27" muted playsinline style="opacity: 0.28"></video>
+            <video id="p060" class="clip ed-plan" src="assets/video/site-iphone.mp4" data-start="19.133" data-duration="0.254" data-media-start="1.0" data-track-index="1" muted playsinline></video>
+            <video id="p061" class="clip ed-plan" src="assets/video/nasa-booster-tuyere.mp4" data-start="19.387" data-duration="0.255" data-media-start="0.3" data-track-index="2" muted playsinline></video>
+            <video id="p062" class="clip ed-plan" src="assets/video/site-bolt.mp4" data-start="19.642" data-duration="0.127" data-media-start="1.0" data-track-index="1" muted playsinline></video>
+            <video id="p063" class="clip ed-plan" src="assets/video/danse-rue-choregraphie.mp4" data-start="19.769" data-duration="0.127" data-media-start="0.3" data-track-index="2" muted playsinline></video>
+            <video id="p064" class="clip ed-plan" src="assets/video/skate-rampe.mp4" data-start="19.896" data-duration="0.127" data-media-start="0.3" data-track-index="1" muted playsinline></video>
+            <video id="p065" class="clip ed-plan" src="assets/video/site-discord.mp4" data-start="20.023" data-duration="0.128" data-media-start="1.0" data-track-index="2" muted playsinline></video>
+            <video id="p066" class="clip ed-plan" src="assets/video/foule-pogo.mp4" data-start="20.151" data-duration="0.127" data-media-start="0.3" data-track-index="1" muted playsinline></video>
+            <video id="p067" class="clip ed-plan" src="assets/video/site-gopro.mp4" data-start="20.278" data-duration="0.127" data-media-start="1.0" data-track-index="2" muted playsinline></video>
+            <div id="p068" class="ed-split" style="opacity: 0"><div class="ed-tiers" style="left: 0px"><video id="p068-0" class="clip ed-tiers-v" src="assets/video/site-wix.mp4" data-start="20.405" data-duration="0.255" data-media-start="1.0" data-track-index="20" muted playsinline></video></div><div class="ed-tiers" style="left: 640px"><video id="p068-1" class="clip ed-tiers-v" src="assets/video/site-squarespace.mp4" data-start="20.405" data-duration="0.255" data-media-start="1.0" data-track-index="21" muted playsinline></video></div><div class="ed-tiers" style="left: 1280px"><video id="p068-2" class="clip ed-tiers-v" src="assets/video/spline.mp4" data-start="20.405" data-duration="0.255" data-media-start="1.0" data-track-index="22" muted playsinline></video></div></div>
+            <video id="p069" class="clip ed-plan" src="assets/video/site-v0.mp4" data-start="20.66" data-duration="0.254" data-media-start="1.0" data-track-index="2" muted playsinline></video>
+            <video id="p070" class="clip ed-plan" src="assets/video/filles-barres-lumiere.mp4" data-start="20.914" data-duration="0.255" data-media-start="0.3" data-track-index="1" muted playsinline></video>
+            <video id="p070-m" class="clip ed-plan ed-miroir" src="assets/video/filles-barres-lumiere.mp4" data-start="20.914" data-duration="0.255" data-media-start="0.3" data-track-index="25" muted playsinline style="transform: scaleX(-1); clip-path: inset(0 50% 0 0)"></video>
+            <video id="p071" class="clip ed-plan" src="assets/video/site-cursor.mp4" data-start="21.169" data-duration="0.254" data-media-start="1.0" data-track-index="2" muted playsinline></video>
+            <video id="p072" class="clip ed-plan" src="assets/video/nasa-rocketlab-onboard.mp4" data-start="21.423" data-duration="0.254" data-media-start="0.3" data-track-index="1" muted playsinline></video>
+            <video id="p073" class="clip ed-plan" src="assets/video/site-twitch.mp4" data-start="21.677" data-duration="0.128" data-media-start="1.0" data-track-index="2" muted playsinline></video>
+            <video id="p074" class="clip ed-plan" src="assets/video/mma-combat.mp4" data-start="21.805" data-duration="0.127" data-media-start="0.3" data-track-index="1" muted playsinline></video>
+            <video id="p075" class="clip ed-plan" src="assets/video/danse-objectif.mp4" data-start="21.932" data-duration="0.254" data-media-start="0.3" data-track-index="2" muted playsinline></video>
+            <video id="p076" class="clip ed-plan" src="assets/video/site-locomotive.mp4" data-start="22.186" data-duration="0.255" data-media-start="1.0" data-track-index="1" muted playsinline></video>
+            <video id="p077" class="clip ed-plan" src="assets/video/film-tos-explosion.mp4" data-start="22.441" data-duration="0.254" data-media-start="1.2" data-track-index="2" muted playsinline></video>
+            <video id="p078" class="clip ed-plan" src="assets/video/site-cuberto.mp4" data-start="22.695" data-duration="0.128" data-media-start="1.0" data-track-index="1" muted playsinline></video>
+            <video id="p079" class="clip ed-plan" src="assets/video/karting.mp4" data-start="22.823" data-duration="0.127" data-media-start="0.3" data-track-index="2" muted playsinline></video>
+            <video id="p080" class="clip ed-plan" src="assets/video/danseur-masque-neon.mp4" data-start="22.95" data-duration="0.254" data-media-start="0.3" data-track-index="1" muted playsinline></video>
+            <video id="p080-e0" class="clip ed-plan ed-echo" src="assets/video/danseur-masque-neon.mp4" data-start="22.95" data-duration="0.254" data-media-start="0.2" data-track-index="26" muted playsinline style="opacity: 0.5"></video>
+            <video id="p080-e1" class="clip ed-plan ed-echo" src="assets/video/danseur-masque-neon.mp4" data-start="22.95" data-duration="0.254" data-media-start="0.1" data-track-index="27" muted playsinline style="opacity: 0.28"></video>
+            <video id="p081" class="clip ed-plan" src="assets/video/site-midjourney.mp4" data-start="23.204" data-duration="0.255" data-media-start="1.0" data-track-index="2" muted playsinline></video>
+            <video id="p082" class="clip ed-plan" src="assets/video/nasa-artemis-lumiere.mp4" data-start="23.459" data-duration="0.254" data-media-start="0.3" data-track-index="1" muted playsinline></video>
+            <video id="p083" class="clip ed-plan" src="assets/video/site-dribbble.mp4" data-start="23.713" data-duration="0.255" data-media-start="1.0" data-track-index="2" muted playsinline></video>
+            <video id="p084" class="clip ed-plan" src="assets/video/moto-tunnel-2.mp4" data-start="23.968" data-duration="0.127" data-media-start="0.3" data-track-index="1" muted playsinline></video>
+            <video id="p085" class="clip ed-plan" src="assets/video/site-shopify.mp4" data-start="24.095" data-duration="0.128" data-media-start="1.0" data-track-index="2" muted playsinline></video>
+            <video id="p086" class="clip ed-plan" src="assets/video/danse-silhouette-rouge.mp4" data-start="24.223" data-duration="0.127" data-media-start="0.3" data-track-index="1" muted playsinline></video>
+            <video id="p087" class="clip ed-plan" src="assets/video/site-notion.mp4" data-start="24.35" data-duration="0.127" data-media-start="1.0" data-track-index="2" muted playsinline></video>
+            <img id="p088" class="clip ed-plan" src="assets/img/gel-nasa-artemis-feu.jpg" data-start="24.477" data-duration="0.909" data-track-index="1" alt="" />
+            <video id="p089" class="clip ed-plan" src="assets/video/film-sintel-coucher.mp4" data-start="24.986" data-duration="1.418" data-media-start="0.2" data-track-index="2" muted playsinline></video>
+            <video id="p090" class="clip ed-plan" src="assets/video/nasa-artemis-ciel.mp4" data-start="26.004" data-duration="1.018" data-media-start="0.4" data-track-index="1" muted playsinline></video>
+            <video id="p091" class="clip ed-plan" src="assets/video/film-tos-fil-de-fer.mp4" data-start="27.022" data-duration="1.418" data-media-start="0.3" data-track-index="2" muted playsinline></video>
+            <video id="p091-e0" class="clip ed-plan ed-echo" src="assets/video/film-tos-fil-de-fer.mp4" data-start="27.022" data-duration="1.418" data-media-start="0.2" data-track-index="26" muted playsinline style="opacity: 0.5"></video>
+            <video id="p091-e1" class="clip ed-plan ed-echo" src="assets/video/film-tos-fil-de-fer.mp4" data-start="27.022" data-duration="1.418" data-media-start="0.1" data-track-index="27" muted playsinline style="opacity: 0.28"></video>
+            <video id="p092" class="clip ed-plan" src="assets/video/nasa-rocketlab-ciel.mp4" data-start="28.04" data-duration="1.418" data-media-start="0.2" data-track-index="1" muted playsinline></video>
+            <video id="p093" class="clip ed-plan" src="assets/video/film-tos-robot.mp4" data-start="29.058" data-duration="0.762" data-media-start="0.3" data-track-index="2" muted playsinline></video>
+          </div>
+          <div id="teinte"></div>
+        </div>
+        <video id="lk0" class="clip ed-fuite" src="assets/fx/fuite-bleue.mp4" data-start="0.0" data-duration="3.0" data-media-start="0.3" data-track-index="40" muted playsinline></video>
+        <video id="lk1" class="clip ed-fuite" src="assets/fx/fuite-violette.mp4" data-start="3.099" data-duration="2.6" data-media-start="0.3" data-track-index="41" muted playsinline></video>
+        <video id="lk2" class="clip ed-fuite" src="assets/fx/fuite-ambre.mp4" data-start="6.153" data-duration="2.4" data-media-start="0.3" data-track-index="42" muted playsinline></video>
+        <div id="fl3" class="ed-flash" style="background: #ffffff"></div>
+        <div id="fl4" class="ed-flash" style="background: #ffffff"></div>
+        <video id="lk5" class="clip ed-fuite" src="assets/fx/fuite-ambre.mp4" data-start="8.189" data-duration="1.2" data-media-start="0.3" data-track-index="42" muted playsinline></video>
+        <div id="fl6" class="ed-flash" style="background: #ffffff"></div>
+        <div id="fl7" class="ed-flash" style="background: #ffffff"></div>
+        <video id="lk8" class="clip ed-fuite" src="assets/fx/fuite-rouge.mp4" data-start="10.225" data-duration="1.2" data-media-start="0.3" data-track-index="42" muted playsinline></video>
+        <div id="fl9" class="ed-flash" style="background: #ffffff"></div>
+        <div id="fl10" class="ed-flash" style="background: #ffffff"></div>
+        <video id="lk11" class="clip ed-fuite" src="assets/fx/fuite-bleue.mp4" data-start="12.261" data-duration="1.2" data-media-start="0.3" data-track-index="42" muted playsinline></video>
+        <div id="fl12" class="ed-flash" style="background: #ffffff"></div>
+        <div id="fl13" class="ed-flash" style="background: #ffffff"></div>
+        <div id="fl14" class="ed-flash" style="background: #ffffff"></div>
+        <div id="fl15" class="ed-flash" style="background: #ffffff"></div>
+        <div id="fl16" class="ed-flash" style="background: #ffffff"></div>
+        <div id="fl17" class="ed-flash" style="background: #ffffff"></div>
+        <div id="fl18" class="ed-flash" style="background: #ffffff"></div>
+        <div id="fl19" class="ed-flash" style="background: #ffffff"></div>
+        <div id="fl20" class="ed-flash" style="background: #ffffff"></div>
+        <div id="fl21" class="ed-flash" style="background: #ffffff"></div>
+        <div id="fl22" class="ed-flash" style="background: #ffffff"></div>
+        <div id="fl23" class="ed-flash" style="background: #000000"></div>
+        <div id="fl24" class="ed-flash" style="background: #ffffff"></div>
+        <div id="fl25" class="ed-flash" style="background: #000000"></div>
+        <div id="fl26" class="ed-flash" style="background: #ffffff"></div>
+        <div id="fl27" class="ed-flash" style="background: #000000"></div>
+        <div id="nr28" class="ed-flash" style="background: #000"></div>
+        <div id="fl29" class="ed-flash" style="background: #ffffff"></div>
+        <div id="gl30" class="ed-glitch"><i style="top: 120px; height: 30px; background: #ff2a55; left: 0px; width: 1920px"></i><i style="top: 380px; height: 14px; background: #00e5ff; left: 300px; width: 1620px"></i><i style="top: 590px; height: 46px; background: #ffffff; left: 0px; width: 1200px"></i><i style="top: 800px; height: 20px; background: #ff2a55; left: 600px; width: 1320px"></i><i style="top: 960px; height: 12px; background: #00e5ff; left: 0px; width: 1920px"></i></div>
+        <video id="lk31" class="clip ed-fuite" src="assets/fx/flare-soleil.mp4" data-start="16.333" data-duration="1.2" data-media-start="0.3" data-track-index="41" muted playsinline></video>
+        <div id="fl32" class="ed-flash" style="background: #ffffff"></div>
+        <div id="fl33" class="ed-flash" style="background: #ffffff"></div>
+        <div id="fl34" class="ed-flash" style="background: #ffffff"></div>
+        <div id="fl35" class="ed-flash" style="background: #00e5ff"></div>
+        <div id="fl36" class="ed-flash" style="background: #ffb347"></div>
+        <div id="fl37" class="ed-flash" style="background: #ffffff"></div>
+        <div id="gl38" class="ed-glitch"><i style="top: 120px; height: 30px; background: #ff2a55; left: 0px; width: 1920px"></i><i style="top: 380px; height: 14px; background: #00e5ff; left: 300px; width: 1620px"></i><i style="top: 590px; height: 46px; background: #ffffff; left: 0px; width: 1200px"></i><i style="top: 800px; height: 20px; background: #ff2a55; left: 600px; width: 1320px"></i><i style="top: 960px; height: 12px; background: #00e5ff; left: 0px; width: 1920px"></i></div>
+        <video id="lk39" class="clip ed-fuite" src="assets/fx/fuite-violette.mp4" data-start="18.369" data-duration="1.1" data-media-start="0.3" data-track-index="40" muted playsinline></video>
+        <div id="fl40" class="ed-flash" style="background: #ffffff"></div>
+        <div id="gl41" class="ed-glitch"><i style="top: 120px; height: 30px; background: #ff2a55; left: 0px; width: 1920px"></i><i style="top: 380px; height: 14px; background: #00e5ff; left: 300px; width: 1620px"></i><i style="top: 590px; height: 46px; background: #ffffff; left: 0px; width: 1200px"></i><i style="top: 800px; height: 20px; background: #ff2a55; left: 600px; width: 1320px"></i><i style="top: 960px; height: 12px; background: #00e5ff; left: 0px; width: 1920px"></i></div>
+        <div id="fl42" class="ed-flash" style="background: #ffffff"></div>
+        <div id="fl43" class="ed-flash" style="background: #ffffff"></div>
+        <div id="fl44" class="ed-flash" style="background: #ffffff"></div>
+        <div id="fl45" class="ed-flash" style="background: #ff2a55"></div>
+        <div id="fl46" class="ed-flash" style="background: #ffffff"></div>
+        <div id="gl47" class="ed-glitch"><i style="top: 120px; height: 30px; background: #ff2a55; left: 0px; width: 1920px"></i><i style="top: 380px; height: 14px; background: #00e5ff; left: 300px; width: 1620px"></i><i style="top: 590px; height: 46px; background: #ffffff; left: 0px; width: 1200px"></i><i style="top: 800px; height: 20px; background: #ff2a55; left: 600px; width: 1320px"></i><i style="top: 960px; height: 12px; background: #00e5ff; left: 0px; width: 1920px"></i></div>
+        <video id="lk48" class="clip ed-fuite" src="assets/fx/fuite-spirale.mp4" data-start="20.405" data-duration="1.1" data-media-start="0.3" data-track-index="40" muted playsinline></video>
+        <div id="fl49" class="ed-flash" style="background: #00e5ff"></div>
+        <div id="fl50" class="ed-flash" style="background: #ffb347"></div>
+        <div id="fl51" class="ed-flash" style="background: #ffffff"></div>
+        <div id="gl52" class="ed-glitch"><i style="top: 120px; height: 30px; background: #ff2a55; left: 0px; width: 1920px"></i><i style="top: 380px; height: 14px; background: #00e5ff; left: 300px; width: 1620px"></i><i style="top: 590px; height: 46px; background: #ffffff; left: 0px; width: 1200px"></i><i style="top: 800px; height: 20px; background: #ff2a55; left: 600px; width: 1320px"></i><i style="top: 960px; height: 12px; background: #00e5ff; left: 0px; width: 1920px"></i></div>
+        <video id="lk53" class="clip ed-fuite" src="assets/fx/flare-soleil.mp4" data-start="22.441" data-duration="1.1" data-media-start="0.3" data-track-index="42" muted playsinline></video>
+        <div id="fl54" class="ed-flash" style="background: #ffffff"></div>
+        <div id="gl55" class="ed-glitch"><i style="top: 120px; height: 30px; background: #ff2a55; left: 0px; width: 1920px"></i><i style="top: 380px; height: 14px; background: #00e5ff; left: 300px; width: 1620px"></i><i style="top: 590px; height: 46px; background: #ffffff; left: 0px; width: 1200px"></i><i style="top: 800px; height: 20px; background: #ff2a55; left: 600px; width: 1320px"></i><i style="top: 960px; height: 12px; background: #00e5ff; left: 0px; width: 1920px"></i></div>
+        <div id="fl56" class="ed-flash" style="background: #ffffff"></div>
+        <div id="fl57" class="ed-flash" style="background: #ffffff"></div>
+        <div id="fl58" class="ed-flash" style="background: #ffffff"></div>
+        <div id="fl59" class="ed-flash" style="background: #ffffff"></div>
+        <div id="fl60" class="ed-flash" style="background: #ffffff"></div>
+        <div id="fl61" class="ed-flash" style="background: #ffffff"></div>
+        <div id="fl62" class="ed-flash" style="background: #ffffff"></div>
+        <div id="fl63" class="ed-flash" style="background: #ffffff"></div>
+        <div id="fl64" class="ed-flash" style="background: #ffffff"></div>
+        <video id="lk65" class="clip ed-fuite" src="assets/fx/fuite-ambre.mp4" data-start="24.986" data-duration="2.8" data-media-start="0.3" data-track-index="42" muted playsinline></video>
+        <video id="lk66" class="clip ed-fuite" src="assets/fx/fuite-spirale.mp4" data-start="27.022" data-duration="2.8" data-media-start="0.3" data-track-index="40" muted playsinline></video>
+      </div>
+      <div id="vignette"></div>
+      <div style="position: absolute; inset: 0; overflow: hidden"><div id="grain"></div></div>
+      <div id="bande-h" class="ed-bande"></div>
+      <div id="bande-b" class="ed-bande"></div>
+      <audio id="musique" src="assets/music/son-edit.wav" data-start="0" data-duration="29.82" data-volume="1" data-track-index="10"></audio>
+      <audio id="sfx-001" src="assets/sfx/intro-mystere.mp3" data-start="0.0" data-duration="3.5" data-volume="0.32" data-track-index="50"></audio><!-- ouverture cinéma -->
+      <audio id="sfx-002" src="assets/sfx/souffle-cine.mp3" data-start="0.013" data-duration="1.334" data-volume="0.2" data-track-index="51"></audio><!-- fondu enchaîné -->
+      <audio id="sfx-003" src="assets/sfx/souffle-cine.mp3" data-start="1.031" data-duration="1.334" data-volume="0.2" data-track-index="52"></audio><!-- fondu enchaîné -->
+      <audio id="sfx-004" src="assets/sfx/souffle-cine.mp3" data-start="2.049" data-duration="1.334" data-volume="0.2" data-track-index="51"></audio><!-- fondu enchaîné -->
+      <audio id="sfx-005" src="assets/sfx/battements.mp3" data-start="2.699" data-duration="2.6" data-volume="0.26" data-track-index="52"></audio><!-- cœur qui bat -->
+      <audio id="sfx-006" src="assets/sfx/souffle-cine.mp3" data-start="3.067" data-duration="1.334" data-volume="0.2" data-track-index="53"></audio><!-- fondu enchaîné -->
+      <audio id="sfx-007" src="assets/sfx/souffle-cine.mp3" data-start="3.576" data-duration="1.334" data-volume="0.2" data-track-index="50"></audio><!-- fondu enchaîné -->
+      <audio id="sfx-008" src="assets/sfx/souffle-cine.mp3" data-start="4.085" data-duration="1.334" data-volume="0.2" data-track-index="51"></audio><!-- fondu enchaîné -->
+      <audio id="sfx-009" src="assets/sfx/souffle-rapide.mp3" data-start="4.944" data-duration="1.757" data-volume="0.24" data-track-index="50"></audio><!-- coupe film-tos-ruines -->
+      <audio id="sfx-010" src="assets/sfx/swoosh-court.mp3" data-start="6.003" data-duration="1.25" data-volume="0.24" data-track-index="51"></audio><!-- coupe film-tos-robot-geant -->
+      <audio id="sfx-011" src="assets/sfx/fouet.mp3" data-start="6.662" data-duration="1.051" data-volume="0.24" data-track-index="52"></audio><!-- coupe film-sintel-grotte -->
+      <audio id="sfx-012" src="assets/sfx/swoosh-vol.mp3" data-start="6.671" data-duration="1.632" data-volume="0.24" data-track-index="53"></audio><!-- coupe nasa-booster-jet -->
+      <audio id="sfx-013" src="assets/sfx/balaie-rapide.mp3" data-start="7.534" data-duration="1.917" data-volume="0.24" data-track-index="50"></audio><!-- coupe film-tos-explosion -->
+      <audio id="sfx-014" src="assets/sfx/impact-basse.mp3" data-start="7.834" data-duration="1.1" data-volume="0.42" data-track-index="51"></audio><!-- première attaque -->
+      <audio id="sfx-015" src="assets/sfx/swoosh-accent.mp3" data-start="8.139" data-duration="1.1" data-volume="0.24" data-track-index="52"></audio><!-- coupe film-tos-bras-robot -->
+      <audio id="sfx-016" src="assets/sfx/balaie-court.mp3" data-start="8.248" data-duration="0.606" data-volume="0.24" data-track-index="54"></audio><!-- coupe danse-techno-neon -->
+      <audio id="sfx-017" src="assets/sfx/souffle-rapide.mp3" data-start="8.507" data-duration="1.757" data-volume="0.24" data-track-index="53"></audio><!-- coupe nasa-rocketlab-moteur -->
+      <audio id="sfx-018" src="assets/sfx/swoosh-court.mp3" data-start="9.312" data-duration="1.25" data-volume="0.15" data-track-index="51"></audio><!-- coupe site-lamborghini -->
+      <audio id="sfx-019" src="assets/sfx/swoosh-vol.mp3" data-start="9.47" data-duration="1.632" data-volume="0.15" data-track-index="50"></audio><!-- coupe spline-ai -->
+      <audio id="sfx-020" src="assets/sfx/fouet.mp3" data-start="9.716" data-duration="1.051" data-volume="0.24" data-track-index="52"></audio><!-- coupe moto-wheelie -->
+      <audio id="sfx-021" src="assets/sfx/balaie-rapide.mp3" data-start="9.825" data-duration="1.917" data-volume="0.15" data-track-index="54"></audio><!-- coupe film-tos-hologramme -->
+      <audio id="sfx-022" src="assets/sfx/balaie-court.mp3" data-start="10.284" data-duration="0.606" data-volume="0.24" data-track-index="53"></audio><!-- coupe boxe-coups -->
+      <audio id="sfx-023" src="assets/sfx/souffle-rapide.mp3" data-start="10.289" data-duration="1.757" data-volume="0.15" data-track-index="55"></audio><!-- coupe site-playstation -->
+      <audio id="sfx-024" src="assets/sfx/swoosh-accent.mp3" data-start="10.429" data-duration="1.1" data-volume="0.15" data-track-index="56"></audio><!-- coupe site-apple -->
+      <audio id="sfx-025" src="assets/sfx/impact-tambour.mp3" data-start="10.748" data-duration="3.0" data-volume="0.38" data-track-index="51"></audio><!-- arrêt sur image -->
+      <audio id="sfx-026" src="assets/sfx/swoosh-court.mp3" data-start="11.093" data-duration="1.25" data-volume="0.24" data-track-index="52"></audio><!-- coupe nasa-artemis-decolle -->
+      <audio id="sfx-027" src="assets/sfx/obturateur.mp3" data-start="11.498" data-duration="1.419" data-volume="0.32" data-track-index="50"></audio><!-- arrêt sur image -->
+      <audio id="sfx-028" src="assets/sfx/swoosh-vol.mp3" data-start="11.506" data-duration="1.632" data-volume="0.15" data-track-index="53"></audio><!-- coupe framer-ai -->
+      <audio id="sfx-029" src="assets/sfx/impact-tambour.mp3" data-start="11.511" data-duration="3.0" data-volume="0.38" data-track-index="57"></audio><!-- arrêt sur image -->
+      <audio id="sfx-030" src="assets/sfx/fouet.mp3" data-start="11.752" data-duration="1.051" data-volume="0.24" data-track-index="54"></audio><!-- coupe foule-saute -->
+      <audio id="sfx-031" src="assets/sfx/balaie-rapide.mp3" data-start="11.861" data-duration="1.917" data-volume="0.24" data-track-index="56"></audio><!-- coupe film-tos-interface -->
+      <audio id="sfx-032" src="assets/sfx/obturateur.mp3" data-start="12.261" data-duration="1.419" data-volume="0.32" data-track-index="55"></audio><!-- arrêt sur image -->
+      <audio id="sfx-033" src="assets/sfx/balaie-court.mp3" data-start="12.574" data-duration="0.606" data-volume="0.15" data-track-index="52"></audio><!-- coupe site-nvidia -->
+      <audio id="sfx-034" src="assets/sfx/souffle-rapide.mp3" data-start="12.579" data-duration="1.757" data-volume="0.15" data-track-index="58"></audio><!-- coupe nasa-booster-face -->
+      <audio id="sfx-035" src="assets/sfx/swoosh-accent.mp3" data-start="12.72" data-duration="1.1" data-volume="0.24" data-track-index="59"></audio><!-- coupe rally-terre -->
+      <audio id="sfx-036" src="assets/sfx/roulement-suspense.mp3" data-start="13.097" data-duration="1.6" data-volume="0.24" data-track-index="50"></audio><!-- roulement -->
+      <audio id="sfx-037" src="assets/sfx/swoosh-court.mp3" data-start="13.384" data-duration="1.25" data-volume="0.15" data-track-index="52"></audio><!-- coupe site-stripe -->
+      <audio id="sfx-038" src="assets/sfx/swoosh-vol.mp3" data-start="13.543" data-duration="1.632" data-volume="0.15" data-track-index="53"></audio><!-- coupe site-mclaren -->
+      <audio id="sfx-039" src="assets/sfx/fouet.mp3" data-start="13.788" data-duration="1.051" data-volume="0.24" data-track-index="51"></audio><!-- coupe breakdance -->
+      <audio id="sfx-040" src="assets/sfx/riser-trailer.mp3" data-start="13.883" data-duration="2.5" data-volume="0.38" data-track-index="54"></audio><!-- montée avant le drop -->
+      <audio id="sfx-041" src="assets/sfx/balaie-rapide.mp3" data-start="13.897" data-duration="1.917" data-volume="0.24" data-track-index="55"></audio><!-- coupe film-tos-fil-de-fer -->
+      <audio id="sfx-042" src="assets/sfx/balaie-court.mp3" data-start="14.356" data-duration="0.606" data-volume="0.24" data-track-index="56"></audio><!-- coupe lasers-cyberpunk -->
+      <audio id="sfx-043" src="assets/sfx/souffle-rapide.mp3" data-start="14.36" data-duration="1.757" data-volume="0.15" data-track-index="58"></audio><!-- coupe site-figma -->
+      <audio id="sfx-044" src="assets/sfx/swoosh-accent.mp3" data-start="14.502" data-duration="1.1" data-volume="0.15" data-track-index="59"></audio><!-- coupe site-visionpro -->
+      <audio id="sfx-045" src="assets/sfx/aspiration.mp3" data-start="14.579" data-duration="1.754" data-volume="0.28" data-track-index="57"></audio><!-- aspiration -->
+      <audio id="sfx-046" src="assets/sfx/riser-synth.mp3" data-start="14.633" data-duration="1.75" data-volume="0.24" data-track-index="60"></audio><!-- montée avant le drop -->
+      <audio id="sfx-047" src="assets/sfx/swoosh-court.mp3" data-start="15.165" data-duration="1.25" data-volume="0.24" data-track-index="50"></audio><!-- coupe nasa-separation-1 -->
+      <audio id="sfx-048" src="assets/sfx/swoosh-vol.mp3" data-start="15.324" data-duration="1.632" data-volume="0.15" data-track-index="51"></audio><!-- coupe film-tos-projection -->
+      <audio id="sfx-049" src="assets/sfx/fouet.mp3" data-start="15.569" data-duration="1.051" data-volume="0.24" data-track-index="52"></audio><!-- coupe voitures-vitesse -->
+      <audio id="sfx-050" src="assets/sfx/balaie-rapide.mp3" data-start="15.678" data-duration="1.917" data-volume="0.15" data-track-index="53"></audio><!-- coupe site-spline-site -->
+      <audio id="sfx-051" src="assets/sfx/tonnerre-transition.mp3" data-start="15.833" data-duration="5.0" data-volume="0.28" data-track-index="55"></audio><!-- DROP -->
+      <audio id="sfx-052" src="assets/sfx/impact-futur.mp3" data-start="16.133" data-duration="2.75" data-volume="0.34" data-track-index="56"></audio><!-- DROP -->
+      <audio id="sfx-053" src="assets/sfx/balaie-court.mp3" data-start="16.137" data-duration="0.606" data-volume="0.15" data-track-index="58"></audio><!-- coupe site-vercel -->
+      <audio id="sfx-054" src="assets/sfx/souffle-rapide.mp3" data-start="16.142" data-duration="1.757" data-volume="0.24" data-track-index="59"></audio><!-- coupe rampe-moto-wheelie-2 -->
+      <audio id="sfx-055" src="assets/sfx/impact-basse.mp3" data-start="16.233" data-duration="1.1" data-volume="0.6" data-track-index="61"></audio><!-- DROP -->
+      <audio id="sfx-056" src="assets/sfx/swoosh-accent.mp3" data-start="16.283" data-duration="1.1" data-volume="0.24" data-track-index="62"></audio><!-- coupe nasa-booster-allumage -->
+      <audio id="sfx-057" src="assets/sfx/impact-tambour.mp3" data-start="16.855" data-duration="3.0" data-volume="0.36" data-track-index="50"></audio><!-- triple kick -->
+      <audio id="sfx-058" src="assets/sfx/impact-tambour.mp3" data-start="16.983" data-duration="3.0" data-volume="0.36" data-track-index="51"></audio><!-- triple kick -->
+      <audio id="sfx-059" src="assets/sfx/impact-tambour.mp3" data-start="17.11" data-duration="3.0" data-volume="0.36" data-track-index="52"></audio><!-- triple kick -->
+      <audio id="sfx-060" src="assets/sfx/obturateur.mp3" data-start="17.605" data-duration="1.419" data-volume="0.32" data-track-index="54"></audio><!-- arrêt sur image -->
+      <audio id="sfx-061" src="assets/sfx/obturateur.mp3" data-start="17.733" data-duration="1.419" data-volume="0.32" data-track-index="53"></audio><!-- arrêt sur image -->
+      <audio id="sfx-062" src="assets/sfx/obturateur.mp3" data-start="17.86" data-duration="1.419" data-volume="0.32" data-track-index="57"></audio><!-- arrêt sur image -->
+      <audio id="sfx-063" src="assets/sfx/swoosh-court.mp3" data-start="17.964" data-duration="1.25" data-volume="0.15" data-track-index="58"></audio><!-- coupe site-dji -->
+      <audio id="sfx-064" src="assets/sfx/swoosh-vol.mp3" data-start="18.123" data-duration="1.632" data-volume="0.15" data-track-index="59"></audio><!-- coupe site-raycast -->
+      <audio id="sfx-065" src="assets/sfx/impact-basse.mp3" data-start="18.269" data-duration="1.1" data-volume="0.4" data-track-index="60"></audio><!-- début de demi-phrase -->
+      <audio id="sfx-066" src="assets/sfx/fouet.mp3" data-start="18.369" data-duration="1.051" data-volume="0.24" data-track-index="61"></audio><!-- coupe film-tos-armure -->
+      <audio id="sfx-067" src="assets/sfx/balaie-rapide.mp3" data-start="18.478" data-duration="1.917" data-volume="0.24" data-track-index="62"></audio><!-- coupe boxe-direct -->
+      <audio id="sfx-068" src="assets/sfx/balaie-court.mp3" data-start="18.937" data-duration="0.606" data-volume="0.24" data-track-index="56"></audio><!-- coupe nasa-booster-tuyere -->
+      <audio id="sfx-069" src="assets/sfx/souffle-rapide.mp3" data-start="18.942" data-duration="1.757" data-volume="0.15" data-track-index="63"></audio><!-- coupe site-bolt -->
+      <audio id="sfx-070" src="assets/sfx/swoosh-accent.mp3" data-start="19.083" data-duration="1.1" data-volume="0.15" data-track-index="54"></audio><!-- coupe site-iphone -->
+      <audio id="sfx-071" src="assets/sfx/swoosh-court.mp3" data-start="19.746" data-duration="1.25" data-volume="0.15" data-track-index="53"></audio><!-- coupe skate-rampe -->
+      <audio id="sfx-072" src="assets/sfx/fouet.mp3" data-start="20.151" data-duration="1.051" data-volume="0.15" data-track-index="50"></audio><!-- coupe foule-pogo -->
+      <audio id="sfx-073" src="assets/sfx/swoosh-vol.mp3" data-start="20.16" data-duration="1.632" data-volume="0.15" data-track-index="51"></audio><!-- coupe site-v0 -->
+      <audio id="sfx-074" src="assets/sfx/glitch-court.mp3" data-start="20.255" data-duration="0.834" data-volume="0.3" data-track-index="52"></audio><!-- écran partagé -->
+      <audio id="sfx-075" src="assets/sfx/impact-basse.mp3" data-start="20.305" data-duration="1.1" data-volume="0.4" data-track-index="54"></audio><!-- début de demi-phrase -->
+      <audio id="sfx-076" src="assets/sfx/balaie-rapide.mp3" data-start="20.514" data-duration="1.917" data-volume="0.24" data-track-index="56"></audio><!-- coupe filles-barres-lumiere -->
+      <audio id="sfx-077" src="assets/sfx/balaie-court.mp3" data-start="20.973" data-duration="0.606" data-volume="0.24" data-track-index="55"></audio><!-- coupe nasa-rocketlab-onboard -->
+      <audio id="sfx-078" src="assets/sfx/souffle-rapide.mp3" data-start="20.977" data-duration="1.757" data-volume="0.15" data-track-index="57"></audio><!-- coupe site-twitch -->
+      <audio id="sfx-079" src="assets/sfx/swoosh-accent.mp3" data-start="21.119" data-duration="1.1" data-volume="0.15" data-track-index="52"></audio><!-- coupe site-cursor -->
+      <audio id="sfx-080" src="assets/sfx/swoosh-court.mp3" data-start="21.782" data-duration="1.25" data-volume="0.24" data-track-index="50"></audio><!-- coupe danse-objectif -->
+      <audio id="sfx-081" src="assets/sfx/swoosh-vol.mp3" data-start="21.941" data-duration="1.632" data-volume="0.24" data-track-index="51"></audio><!-- coupe film-tos-explosion -->
+      <audio id="sfx-082" src="assets/sfx/fouet.mp3" data-start="22.186" data-duration="1.051" data-volume="0.15" data-track-index="53"></audio><!-- coupe site-locomotive -->
+      <audio id="sfx-083" src="assets/sfx/balaie-rapide.mp3" data-start="22.295" data-duration="1.917" data-volume="0.15" data-track-index="52"></audio><!-- coupe site-cuberto -->
+      <audio id="sfx-084" src="assets/sfx/impact-basse.mp3" data-start="22.341" data-duration="1.1" data-volume="0.4" data-track-index="54"></audio><!-- début de demi-phrase -->
+      <audio id="sfx-085" src="assets/sfx/balaie-court.mp3" data-start="22.754" data-duration="0.606" data-volume="0.15" data-track-index="55"></audio><!-- coupe site-midjourney -->
+      <audio id="sfx-086" src="assets/sfx/souffle-rapide.mp3" data-start="22.759" data-duration="1.757" data-volume="0.24" data-track-index="56"></audio><!-- coupe nasa-artemis-lumiere -->
+      <audio id="sfx-087" src="assets/sfx/swoosh-accent.mp3" data-start="22.9" data-duration="1.1" data-volume="0.24" data-track-index="57"></audio><!-- coupe danseur-masque-neon -->
+      <audio id="sfx-088" src="assets/sfx/souffle-cine.mp3" data-start="23.477" data-duration="1.334" data-volume="0.3" data-track-index="50"></audio><!-- retombée -->
+      <audio id="sfx-089" src="assets/sfx/swoosh-court.mp3" data-start="23.563" data-duration="1.25" data-volume="0.15" data-track-index="53"></audio><!-- coupe site-dribbble -->
+      <audio id="sfx-090" src="assets/sfx/swoosh-vol.mp3" data-start="23.723" data-duration="1.632" data-volume="0.15" data-track-index="51"></audio><!-- coupe danse-silhouette-rouge -->
+      <audio id="sfx-091" src="assets/sfx/souffle-cine.mp3" data-start="23.936" data-duration="1.334" data-volume="0.2" data-track-index="54"></audio><!-- fondu enchaîné -->
+      <audio id="sfx-092" src="assets/sfx/fouet.mp3" data-start="23.968" data-duration="1.051" data-volume="0.15" data-track-index="55"></audio><!-- coupe moto-tunnel-2 -->
+      <audio id="sfx-093" src="assets/sfx/impact-basse.mp3" data-start="24.377" data-duration="1.1" data-volume="0.5" data-track-index="52"></audio><!-- fin des basses -->
+      <audio id="sfx-094" src="assets/sfx/obturateur.mp3" data-start="24.477" data-duration="1.419" data-volume="0.32" data-track-index="57"></audio><!-- arrêt sur image -->
+      <audio id="sfx-095" src="assets/sfx/souffle-cine.mp3" data-start="24.954" data-duration="1.334" data-volume="0.2" data-track-index="50"></audio><!-- fondu enchaîné -->
+      <audio id="sfx-096" src="assets/sfx/balaie-rapide.mp3" data-start="26.622" data-duration="1.917" data-volume="0.24" data-track-index="50"></audio><!-- coupe film-tos-fil-de-fer -->
+      <audio id="sfx-097" src="assets/sfx/souffle-cine.mp3" data-start="26.99" data-duration="1.334" data-volume="0.2" data-track-index="51"></audio><!-- fondu enchaîné -->
+      <audio id="sfx-098" src="assets/sfx/souffle-cine.mp3" data-start="28.008" data-duration="1.334" data-volume="0.2" data-track-index="52"></audio><!-- fondu enchaîné -->
+      <audio id="sfx-099" src="assets/sfx/rewind-glitch.mp3" data-start="29.42" data-duration="0.4" data-volume="0.26" data-track-index="50"></audio><!-- la boucle repart -->
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#p000", { scale: 1.0 }, { scale: 1.2, duration: 1.463, ease: "none", immediateRender: false }, 0.0);
+      tl.fromTo("#p001", { opacity: 0, scale: 1.08 }, { opacity: 1, scale: 1.0, duration: 0.4, ease: "sine.inOut", immediateRender: false }, 1.063);
+      tl.to("#p001", { scale: 1.16, duration: 1.018, ease: "none" }, 1.463);
+      tl.fromTo("#p002", { opacity: 0, scale: 1.08 }, { opacity: 1, scale: 1.0, duration: 0.4, ease: "sine.inOut", immediateRender: false }, 2.081);
+      tl.to("#p002", { scale: 1.16, duration: 1.018, ease: "none" }, 2.481);
+      tl.fromTo("#p003", { opacity: 0, scale: 1.08 }, { opacity: 1, scale: 1.0, duration: 0.4, ease: "sine.inOut", immediateRender: false }, 3.099);
+      tl.to("#p003", { scale: 1.16, duration: 1.018, ease: "none" }, 3.499);
+      tl.fromTo("#p004", { opacity: 0, scale: 1.08 }, { opacity: 1, scale: 1.0, duration: 0.4, ease: "sine.inOut", immediateRender: false }, 4.117);
+      tl.to("#p004", { scale: 1.16, duration: 0.509, ease: "none" }, 4.517);
+      tl.fromTo("#p005", { opacity: 0, scale: 1.08 }, { opacity: 1, scale: 1.0, duration: 0.4, ease: "sine.inOut", immediateRender: false }, 4.626);
+      tl.to("#p005", { scale: 1.16, duration: 0.509, ease: "none" }, 5.026);
+      tl.fromTo("#p006", { opacity: 0, scale: 1.08 }, { opacity: 1, scale: 1.0, duration: 0.4, ease: "sine.inOut", immediateRender: false }, 5.135);
+      tl.to("#p006", { scale: 1.16, duration: 0.109, ease: "none" }, 5.535);
+      tl.to("#p006", { scale: 2.4, filter: "blur(18px)", duration: 0.1, ease: "power3.in" }, 5.544);
+      tl.fromTo("#p007", { scale: 0.6, filter: "blur(14px)" }, { scale: 1.04, filter: "blur(0px)", duration: 0.18, ease: "power3.out", immediateRender: false }, 5.644);
+      tl.fromTo("#p008", { scale: 1.18 }, { scale: 1.02, duration: 0.24, ease: "power3.out", immediateRender: false }, 6.153);
+      tl.fromTo("#p009", { rotationY: 38, transformPerspective: 1400, scale: 1.25, filter: "blur(8px)" }, { rotationY: 0, scale: 1.04, filter: "blur(0px)", duration: 0.22, ease: "power3.out", immediateRender: false }, 6.662);
+      tl.to("#p009", { scale: 2.4, filter: "blur(18px)", duration: 0.1, ease: "power3.in" }, 7.071);
+      tl.fromTo("#p010", { scale: 0.6, filter: "blur(14px)" }, { scale: 1.04, filter: "blur(0px)", duration: 0.18, ease: "power3.out", immediateRender: false }, 7.171);
+      tl.fromTo("#p011", { scale: 1.7 }, { scale: 1.05, duration: 0.255, ease: "power4.out", immediateRender: false }, 7.934);
+      tl.fromTo("#p011-z0", { scale: 1.6500000000000001, opacity: 0.4 }, { scale: 1.1, opacity: 0, duration: 0.45, ease: "power3.out", immediateRender: false }, 7.934);
+      tl.fromTo("#p011-z1", { scale: 1.83, opacity: 0.26 }, { scale: 1.22, opacity: 0, duration: 0.45, ease: "power3.out", immediateRender: false }, 7.934);
+      tl.fromTo("#p011-z2", { scale: 2.04, opacity: 0.16 }, { scale: 1.36, opacity: 0, duration: 0.45, ease: "power3.out", immediateRender: false }, 7.934);
+      tl.fromTo("#p012", { scale: 1.18 }, { scale: 1.02, duration: 0.24, ease: "power3.out", immediateRender: false }, 8.189);
+      tl.fromTo("#p013", { rotation: 18, scale: 1.45, filter: "blur(14px)" }, { rotation: 0, scale: 1.04, filter: "blur(0px)", duration: 0.2, ease: "power3.out", immediateRender: false }, 8.698);
+      tl.fromTo("#p014", { scale: 1.18 }, { scale: 1.02, duration: 0.24, ease: "power3.out", immediateRender: false }, 9.207);
+      tl.fromTo("#p015", { x: 160, scale: 1.12, filter: "blur(16px)" }, { x: 0, scale: 1.04, filter: "blur(0px)", duration: 0.08, ease: "power3.out", immediateRender: false }, 9.462);
+      tl.fromTo("#p016", { rotationY: -38, transformPerspective: 1400, scale: 1.25, filter: "blur(8px)" }, { rotationY: 0, scale: 1.04, filter: "blur(0px)", duration: 0.22, ease: "power3.out", immediateRender: false }, 9.716);
+      tl.fromTo("#p017", { x: 160, scale: 1.12, filter: "blur(16px)" }, { x: 0, scale: 1.04, filter: "blur(0px)", duration: 0.08, ease: "power3.out", immediateRender: false }, 9.97);
+      tl.fromTo("#p018", { x: -160, scale: 1.12, filter: "blur(16px)" }, { x: 0, scale: 1.04, filter: "blur(0px)", duration: 0.08, ease: "power3.out", immediateRender: false }, 10.225);
+      tl.fromTo("#p019", { x: 160, scale: 1.12, filter: "blur(16px)" }, { x: 0, scale: 1.04, filter: "blur(0px)", duration: 0.08, ease: "power3.out", immediateRender: false }, 10.479);
+      tl.to("#p019", { scale: 2.4, filter: "blur(18px)", duration: 0.1, ease: "power3.in" }, 10.634);
+      tl.fromTo("#p020", { scale: 0.6, filter: "blur(14px)" }, { scale: 1.04, filter: "blur(0px)", duration: 0.18, ease: "power3.out", immediateRender: false }, 10.734);
+      tl.fromTo("#p021", { x: 160, scale: 1.12, filter: "blur(16px)" }, { x: 0, scale: 1.04, filter: "blur(0px)", duration: 0.08, ease: "power3.out", immediateRender: false }, 10.989);
+      tl.fromTo("#p022", { scale: 1.18 }, { scale: 1.02, duration: 0.24, ease: "power3.out", immediateRender: false }, 11.243);
+      tl.fromTo("#p023", { scale: 1.3, filter: "saturate(0) contrast(1.6) brightness(1.4)" }, { scale: 1.08, filter: "saturate(0.6) contrast(1.25) brightness(1)", duration: 0.254, ease: "power4.out", immediateRender: false }, 11.498);
+      tl.fromTo("#p024", { rotation: -18, scale: 1.45, filter: "blur(14px)" }, { rotation: 0, scale: 1.04, filter: "blur(0px)", duration: 0.2, ease: "power3.out", immediateRender: false }, 11.752);
+      tl.fromTo("#p025", { x: 160, scale: 1.12, filter: "blur(16px)" }, { x: 0, scale: 1.04, filter: "blur(0px)", duration: 0.08, ease: "power3.out", immediateRender: false }, 12.006);
+      tl.fromTo("#p026", { scale: 1.18 }, { scale: 1.02, duration: 0.0, ease: "power3.out", immediateRender: false }, 12.261);
+      tl.fromTo("#p027", { scale: 1.3, filter: "saturate(0) contrast(1.6) brightness(1.4)" }, { scale: 1.08, filter: "saturate(0.6) contrast(1.25) brightness(1)", duration: 0.3, ease: "power4.out", immediateRender: false }, 12.261);
+      tl.fromTo("#p028", { rotationY: -38, transformPerspective: 1400, scale: 1.25, filter: "blur(8px)" }, { rotationY: 0, scale: 1.04, filter: "blur(0px)", duration: 0.22, ease: "power3.out", immediateRender: false }, 12.77);
+      tl.fromTo("#p029", { x: 160, scale: 1.12, filter: "blur(16px)" }, { x: 0, scale: 1.04, filter: "blur(0px)", duration: 0.08, ease: "power3.out", immediateRender: false }, 13.024);
+      tl.fromTo("#p030", { x: -160, scale: 1.12, filter: "blur(16px)" }, { x: 0, scale: 1.04, filter: "blur(0px)", duration: 0.08, ease: "power3.out", immediateRender: false }, 13.279);
+      tl.fromTo("#p031", { x: 160, scale: 1.12, filter: "blur(16px)" }, { x: 0, scale: 1.04, filter: "blur(0px)", duration: 0.08, ease: "power3.out", immediateRender: false }, 13.534);
+      tl.to("#p031", { scale: 2.4, filter: "blur(18px)", duration: 0.1, ease: "power3.in" }, 13.688);
+      tl.fromTo("#p032", { scale: 0.6, filter: "blur(14px)" }, { scale: 1.04, filter: "blur(0px)", duration: 0.18, ease: "power3.out", immediateRender: false }, 13.788);
+      tl.fromTo("#p033", { x: 160, scale: 1.12, filter: "blur(16px)" }, { x: 0, scale: 1.04, filter: "blur(0px)", duration: 0.08, ease: "power3.out", immediateRender: false }, 14.043);
+      tl.to("#p033", { scale: 2.4, filter: "blur(18px)", duration: 0.1, ease: "power3.in" }, 14.197);
+      tl.fromTo("#p034", { scale: 0.6, filter: "blur(14px)" }, { scale: 1.04, filter: "blur(0px)", duration: 0.18, ease: "power3.out", immediateRender: false }, 14.297);
+      tl.fromTo("#p035", { x: 160, scale: 1.12, filter: "blur(16px)" }, { x: 0, scale: 1.04, filter: "blur(0px)", duration: 0.08, ease: "power3.out", immediateRender: false }, 14.552);
+      tl.fromTo("#p036", { rotation: -18, scale: 1.45, filter: "blur(14px)" }, { rotation: 0, scale: 1.04, filter: "blur(0px)", duration: 0.2, ease: "power3.out", immediateRender: false }, 14.806);
+      tl.fromTo("#p037", { x: 160, scale: 1.12, filter: "blur(16px)" }, { x: 0, scale: 1.04, filter: "blur(0px)", duration: 0.08, ease: "power3.out", immediateRender: false }, 15.06);
+      tl.fromTo("#p038", { rotationY: -38, transformPerspective: 1400, scale: 1.25, filter: "blur(8px)" }, { rotationY: 0, scale: 1.04, filter: "blur(0px)", duration: 0.127, ease: "power3.out", immediateRender: false }, 15.315);
+      tl.fromTo("#p039", { x: 160, scale: 1.12, filter: "blur(16px)" }, { x: 0, scale: 1.04, filter: "blur(0px)", duration: 0.08, ease: "power3.out", immediateRender: false }, 15.442);
+      tl.to("#p039", { scale: 2.4, filter: "blur(18px)", duration: 0.1, ease: "power3.in" }, 15.469);
+      tl.fromTo("#p040", { scale: 0.6, filter: "blur(14px)" }, { scale: 1.04, filter: "blur(0px)", duration: 0.128, ease: "power3.out", immediateRender: false }, 15.569);
+      tl.fromTo("#p041", { x: 160, scale: 1.12, filter: "blur(16px)" }, { x: 0, scale: 1.04, filter: "blur(0px)", duration: 0.08, ease: "power3.out", immediateRender: false }, 15.697);
+      tl.fromTo("#p042", { x: -160, scale: 1.12, filter: "blur(16px)" }, { x: 0, scale: 1.04, filter: "blur(0px)", duration: 0.08, ease: "power3.out", immediateRender: false }, 15.824);
+      tl.fromTo("#p043", { x: 160, scale: 1.12, filter: "blur(16px)" }, { x: 0, scale: 1.04, filter: "blur(0px)", duration: 0.08, ease: "power3.out", immediateRender: false }, 15.909);
+      tl.fromTo("#p044", { x: -160, scale: 1.12, filter: "blur(16px)" }, { x: 0, scale: 1.04, filter: "blur(0px)", duration: 0.08, ease: "power3.out", immediateRender: false }, 15.994);
+      tl.fromTo("#p045", { x: 160, scale: 1.12, filter: "blur(16px)" }, { x: 0, scale: 1.04, filter: "blur(0px)", duration: 0.08, ease: "power3.out", immediateRender: false }, 16.078);
+      tl.fromTo("#p046", { x: -160, scale: 1.12, filter: "blur(16px)" }, { x: 0, scale: 1.04, filter: "blur(0px)", duration: 0.08, ease: "power3.out", immediateRender: false }, 16.163);
+      tl.fromTo("#p047", { scale: 1.7 }, { scale: 1.05, duration: 0.127, ease: "power4.out", immediateRender: false }, 16.333);
+      tl.fromTo("#p047-z0", { scale: 1.6500000000000001, opacity: 0.4 }, { scale: 1.1, opacity: 0, duration: 0.45, ease: "power3.out", immediateRender: false }, 16.333);
+      tl.fromTo("#p047-z1", { scale: 1.83, opacity: 0.26 }, { scale: 1.22, opacity: 0, duration: 0.45, ease: "power3.out", immediateRender: false }, 16.333);
+      tl.fromTo("#p047-z2", { scale: 2.04, opacity: 0.16 }, { scale: 1.36, opacity: 0, duration: 0.45, ease: "power3.out", immediateRender: false }, 16.333);
+      tl.fromTo("#p048", { x: -160, scale: 1.12, filter: "blur(16px)" }, { x: 0, scale: 1.04, filter: "blur(0px)", duration: 0.08, ease: "power3.out", immediateRender: false }, 16.46);
+      tl.fromTo("#p049", { x: 160, scale: 1.12, filter: "blur(16px)" }, { x: 0, scale: 1.04, filter: "blur(0px)", duration: 0.08, ease: "power3.out", immediateRender: false }, 16.587);
+      tl.fromTo("#p050", { x: -160, scale: 1.12, filter: "blur(16px)" }, { x: 0, scale: 1.04, filter: "blur(0px)", duration: 0.08, ease: "power3.out", immediateRender: false }, 16.715);
+      tl.fromTo("#p051", { scale: 1.35 }, { scale: 1.02, duration: 0.35, ease: "power3.out", immediateRender: false }, 16.842);
+      tl.to("#p051", { scale: 1.12, duration: 0.413, ease: "power1.in" }, 17.192);
+      tl.fromTo("#p052", { scale: 1.3, filter: "saturate(0) contrast(1.6) brightness(1.4)" }, { scale: 1.08, filter: "saturate(0.6) contrast(1.25) brightness(1)", duration: 0.128, ease: "power4.out", immediateRender: false }, 17.605);
+      tl.fromTo("#p053", { scale: 1.3, filter: "saturate(0) contrast(1.6) brightness(1.4)" }, { scale: 1.08, filter: "saturate(0.6) contrast(1.25) brightness(1)", duration: 0.127, ease: "power4.out", immediateRender: false }, 17.733);
+      tl.fromTo("#p054", { scale: 1.3, filter: "saturate(0) contrast(1.6) brightness(1.4)" }, { scale: 1.08, filter: "saturate(0.6) contrast(1.25) brightness(1)", duration: 0.254, ease: "power4.out", immediateRender: false }, 17.86);
+      tl.fromTo("#p055", { x: 160, scale: 1.12, filter: "blur(16px)" }, { x: 0, scale: 1.04, filter: "blur(0px)", duration: 0.08, ease: "power3.out", immediateRender: false }, 18.114);
+      tl.fromTo("#p056", { scale: 1.18 }, { scale: 1.02, duration: 0.24, ease: "power3.out", immediateRender: false }, 18.369);
+      tl.fromTo("#p057", { x: 160, scale: 1.12, filter: "blur(16px)" }, { x: 0, scale: 1.04, filter: "blur(0px)", duration: 0.08, ease: "power3.out", immediateRender: false }, 18.623);
+      tl.fromTo("#p058", { x: -160, scale: 1.12, filter: "blur(16px)" }, { x: 0, scale: 1.04, filter: "blur(0px)", duration: 0.08, ease: "power3.out", immediateRender: false }, 18.751);
+      tl.fromTo("#p059", { scale: 1.15 }, { scale: 1.02, duration: 0.25, ease: "power3.out", immediateRender: false }, 18.878);
+      tl.fromTo("#p060", { x: -160, scale: 1.12, filter: "blur(16px)" }, { x: 0, scale: 1.04, filter: "blur(0px)", duration: 0.08, ease: "power3.out", immediateRender: false }, 19.133);
+      tl.fromTo("#p061", { rotation: 18, scale: 1.45, filter: "blur(14px)" }, { rotation: 0, scale: 1.04, filter: "blur(0px)", duration: 0.2, ease: "power3.out", immediateRender: false }, 19.387);
+      tl.fromTo("#p062", { x: -160, scale: 1.12, filter: "blur(16px)" }, { x: 0, scale: 1.04, filter: "blur(0px)", duration: 0.08, ease: "power3.out", immediateRender: false }, 19.642);
+      tl.fromTo("#p063", { x: 160, scale: 1.12, filter: "blur(16px)" }, { x: 0, scale: 1.04, filter: "blur(0px)", duration: 0.08, ease: "power3.out", immediateRender: false }, 19.769);
+      tl.fromTo("#p064", { x: -160, scale: 1.12, filter: "blur(16px)" }, { x: 0, scale: 1.04, filter: "blur(0px)", duration: 0.08, ease: "power3.out", immediateRender: false }, 19.896);
+      tl.fromTo("#p065", { x: 160, scale: 1.12, filter: "blur(16px)" }, { x: 0, scale: 1.04, filter: "blur(0px)", duration: 0.08, ease: "power3.out", immediateRender: false }, 20.023);
+      tl.fromTo("#p066", { x: -160, scale: 1.12, filter: "blur(16px)" }, { x: 0, scale: 1.04, filter: "blur(0px)", duration: 0.08, ease: "power3.out", immediateRender: false }, 20.151);
+      tl.fromTo("#p067", { x: 160, scale: 1.12, filter: "blur(16px)" }, { x: 0, scale: 1.04, filter: "blur(0px)", duration: 0.08, ease: "power3.out", immediateRender: false }, 20.278);
+      tl.fromTo("#p068-0", { yPercent: -110 }, { yPercent: 0, duration: 0.12, ease: "power4.out", immediateRender: false }, 20.405);
+      tl.fromTo("#p068-1", { yPercent: 110 }, { yPercent: 0, duration: 0.12, ease: "power4.out", immediateRender: false }, 20.435);
+      tl.fromTo("#p068-2", { yPercent: -110 }, { yPercent: 0, duration: 0.12, ease: "power4.out", immediateRender: false }, 20.465);
+      tl.set("#p068", { opacity: 1 }, 20.405);
+      tl.set("#p068", { opacity: 0 }, 20.66);
+      tl.fromTo("#p069", { x: 160, scale: 1.12, filter: "blur(16px)" }, { x: 0, scale: 1.04, filter: "blur(0px)", duration: 0.08, ease: "power3.out", immediateRender: false }, 20.66);
+      tl.fromTo("#p070", { scale: 1.14 }, { scale: 1.0, duration: 0.2, ease: "power3.out", immediateRender: false }, 20.914);
+      tl.fromTo("#p071", { x: 160, scale: 1.12, filter: "blur(16px)" }, { x: 0, scale: 1.04, filter: "blur(0px)", duration: 0.08, ease: "power3.out", immediateRender: false }, 21.169);
+      tl.fromTo("#p072", { rotation: -18, scale: 1.45, filter: "blur(14px)" }, { rotation: 0, scale: 1.04, filter: "blur(0px)", duration: 0.2, ease: "power3.out", immediateRender: false }, 21.423);
+      tl.fromTo("#p073", { x: 160, scale: 1.12, filter: "blur(16px)" }, { x: 0, scale: 1.04, filter: "blur(0px)", duration: 0.08, ease: "power3.out", immediateRender: false }, 21.677);
+      tl.fromTo("#p074", { x: -160, scale: 1.12, filter: "blur(16px)" }, { x: 0, scale: 1.04, filter: "blur(0px)", duration: 0.08, ease: "power3.out", immediateRender: false }, 21.805);
+      tl.fromTo("#p075", { clipPath: "circle(0% at 50% 50%)" }, { clipPath: "circle(80% at 50% 50%)", duration: 0.22, ease: "power3.out", immediateRender: false }, 21.932);
+      tl.fromTo("#p076", { x: -160, scale: 1.12, filter: "blur(16px)" }, { x: 0, scale: 1.04, filter: "blur(0px)", duration: 0.08, ease: "power3.out", immediateRender: false }, 22.186);
+      tl.fromTo("#p077", { scale: 1.18 }, { scale: 1.02, duration: 0.24, ease: "power3.out", immediateRender: false }, 22.441);
+      tl.fromTo("#p078", { x: -160, scale: 1.12, filter: "blur(16px)" }, { x: 0, scale: 1.04, filter: "blur(0px)", duration: 0.08, ease: "power3.out", immediateRender: false }, 22.695);
+      tl.fromTo("#p079", { x: 160, scale: 1.12, filter: "blur(16px)" }, { x: 0, scale: 1.04, filter: "blur(0px)", duration: 0.08, ease: "power3.out", immediateRender: false }, 22.823);
+      tl.fromTo("#p080", { scale: 1.15 }, { scale: 1.02, duration: 0.25, ease: "power3.out", immediateRender: false }, 22.95);
+      tl.fromTo("#p081", { x: 160, scale: 1.12, filter: "blur(16px)" }, { x: 0, scale: 1.04, filter: "blur(0px)", duration: 0.08, ease: "power3.out", immediateRender: false }, 23.204);
+      tl.fromTo("#p082", { rotationY: -38, transformPerspective: 1400, scale: 1.25, filter: "blur(8px)" }, { rotationY: 0, scale: 1.04, filter: "blur(0px)", duration: 0.22, ease: "power3.out", immediateRender: false }, 23.459);
+      tl.fromTo("#p083", { x: 160, scale: 1.12, filter: "blur(16px)" }, { x: 0, scale: 1.04, filter: "blur(0px)", duration: 0.08, ease: "power3.out", immediateRender: false }, 23.713);
+      tl.fromTo("#p084", { x: -160, scale: 1.12, filter: "blur(16px)" }, { x: 0, scale: 1.04, filter: "blur(0px)", duration: 0.08, ease: "power3.out", immediateRender: false }, 23.968);
+      tl.fromTo("#p085", { x: 160, scale: 1.12, filter: "blur(16px)" }, { x: 0, scale: 1.04, filter: "blur(0px)", duration: 0.08, ease: "power3.out", immediateRender: false }, 24.095);
+      tl.fromTo("#p086", { x: -160, scale: 1.12, filter: "blur(16px)" }, { x: 0, scale: 1.04, filter: "blur(0px)", duration: 0.08, ease: "power3.out", immediateRender: false }, 24.223);
+      tl.fromTo("#p087", { x: 160, scale: 1.12, filter: "blur(16px)" }, { x: 0, scale: 1.04, filter: "blur(0px)", duration: 0.08, ease: "power3.out", immediateRender: false }, 24.35);
+      tl.fromTo("#p088", { scale: 1.3, filter: "saturate(0) contrast(1.6) brightness(1.4)" }, { scale: 1.08, filter: "saturate(0.6) contrast(1.25) brightness(1)", duration: 0.3, ease: "power4.out", immediateRender: false }, 24.477);
+      tl.fromTo("#p089", { opacity: 0, scale: 1.08 }, { opacity: 1, scale: 1.0, duration: 0.4, ease: "sine.inOut", immediateRender: false }, 24.986);
+      tl.to("#p089", { scale: 1.16, duration: 1.018, ease: "none" }, 25.386);
+      tl.fromTo("#p090", { opacity: 0, scale: 1.08 }, { opacity: 1, scale: 1.0, duration: 0.4, ease: "sine.inOut", immediateRender: false }, 26.004);
+      tl.to("#p090", { scale: 1.16, duration: 0.618, ease: "none" }, 26.404);
+      tl.fromTo("#p091", { scale: 1.15 }, { scale: 1.02, duration: 0.25, ease: "power3.out", immediateRender: false }, 27.022);
+      tl.fromTo("#p092", { opacity: 0, scale: 1.08 }, { opacity: 1, scale: 1.0, duration: 0.4, ease: "sine.inOut", immediateRender: false }, 28.04);
+      tl.to("#p092", { scale: 1.16, duration: 1.018, ease: "none" }, 28.44);
+      tl.fromTo("#p093", { opacity: 0, scale: 1.08 }, { opacity: 1, scale: 1.0, duration: 0.4, ease: "sine.inOut", immediateRender: false }, 29.058);
+      tl.to("#p093", { scale: 1.16, duration: 0.362, ease: "none" }, 29.458);
+      tl.set("#grade", { filter: "saturate(0.35) contrast(1.2) brightness(0.7) sepia(0)" }, 0);
+      tl.set(".ed-bande", { height: 150 }, 0);
+      tl.set("#teinte", { opacity: 0.2 }, 0);
+      tl.fromTo("#lk0", { opacity: 0 }, { opacity: 0.5, duration: 0.9, ease: "sine.out", immediateRender: false }, 0.0);
+      tl.to("#lk0", { opacity: 0, duration: 1.5, ease: "sine.in" }, 1.5);
+      tl.fromTo("#lk1", { opacity: 0 }, { opacity: 0.45, duration: 0.78, ease: "sine.out", immediateRender: false }, 3.099);
+      tl.to("#lk1", { opacity: 0, duration: 1.3, ease: "sine.in" }, 4.399);
+      tl.fromTo("#lk2", { opacity: 0 }, { opacity: 0.5, duration: 0.72, ease: "sine.out", immediateRender: false }, 6.153);
+      tl.to("#lk2", { opacity: 0, duration: 1.2, ease: "sine.in" }, 7.353);
+      tl.fromTo("#cam", { scale: 1.03 }, { scale: 1, duration: 0.45, ease: "sine.out", immediateRender: false }, 1.063);
+      tl.fromTo("#cam", { scale: 1.03 }, { scale: 1, duration: 0.45, ease: "sine.out", immediateRender: false }, 2.081);
+      tl.fromTo("#cam", { scale: 1.03 }, { scale: 1, duration: 0.45, ease: "sine.out", immediateRender: false }, 3.099);
+      tl.fromTo("#cam", { scale: 1.03 }, { scale: 1, duration: 0.45, ease: "sine.out", immediateRender: false }, 4.117);
+      tl.fromTo("#cam", { scale: 1.03 }, { scale: 1, duration: 0.45, ease: "sine.out", immediateRender: false }, 4.626);
+      tl.fromTo("#cam", { scale: 1.03 }, { scale: 1, duration: 0.45, ease: "sine.out", immediateRender: false }, 5.135);
+      tl.fromTo("#cam", { scale: 1.03 }, { scale: 1, duration: 0.45, ease: "sine.out", immediateRender: false }, 5.644);
+      tl.fromTo("#cam", { scale: 1.03 }, { scale: 1, duration: 0.45, ease: "sine.out", immediateRender: false }, 6.153);
+      tl.fromTo("#cam", { scale: 1.03 }, { scale: 1, duration: 0.45, ease: "sine.out", immediateRender: false }, 6.662);
+      tl.fromTo("#cam", { scale: 1.03 }, { scale: 1, duration: 0.45, ease: "sine.out", immediateRender: false }, 7.171);
+      tl.to("#grade", { filter: "saturate(0.9) contrast(1.15) brightness(0.92) sepia(0)", duration: 6.363, ease: "power1.in" }, 7.934);
+      tl.to("#teinte", { opacity: 0.45, duration: 6.363, ease: "none" }, 7.934);
+      tl.set("#fl3", { opacity: 0.6 }, 7.934);
+      tl.to("#fl3", { opacity: 0, duration: 0.1, ease: "power2.out" }, 7.968);
+      tl.set("#rgbw", { filter: "url(#rgb)" }, 7.934);
+      tl.fromTo("#rgb-r", { attr: { dx: 26 } }, { attr: { dx: 0 }, duration: 0.2, ease: "power2.out", immediateRender: false }, 7.934);
+      tl.fromTo("#rgb-b", { attr: { dx: -26 } }, { attr: { dx: 0 }, duration: 0.2, ease: "power2.out", immediateRender: false }, 7.934);
+      tl.set("#rgbw", { filter: "none" }, 8.144);
+      tl.to("#cam", { keyframes: [{ x: 20.0, y: -12.0, rotation: -1.0, duration: 0.035 }, { x: -16.0, y: 9.6, rotation: 0.8, duration: 0.035 }, { x: 12.0, y: -7.2, rotation: -0.6, duration: 0.035 }, { x: -8.0, y: 4.8, rotation: 0.4, duration: 0.035 }, { x: 4.0, y: -2.4, rotation: -0.2, duration: 0.035 }, { x: 0, y: 0, rotation: 0, duration: 0.04 }] }, 7.934);
+      tl.fromTo("#cam", { scale: 1.03 }, { scale: 1, duration: 0.32, ease: "power3.out", immediateRender: false }, 8.189);
+      tl.to("#cam", { keyframes: [{ x: 5.0, y: -3.0, rotation: -0.25, duration: 0.035 }, { x: -3.333, y: 2.0, rotation: 0.167, duration: 0.035 }, { x: 1.667, y: -1.0, rotation: -0.083, duration: 0.035 }, { x: 0, y: 0, rotation: 0, duration: 0.04 }] }, 8.199);
+      tl.set("#fl4", { opacity: 0.1 }, 8.189);
+      tl.to("#fl4", { opacity: 0, duration: 0.06, ease: "power2.out" }, 8.223);
+      tl.set("#rgbw", { filter: "url(#rgb)" }, 8.189);
+      tl.fromTo("#rgb-r", { attr: { dx: 10 } }, { attr: { dx: 0 }, duration: 0.16, ease: "power2.out", immediateRender: false }, 8.189);
+      tl.fromTo("#rgb-b", { attr: { dx: -10 } }, { attr: { dx: 0 }, duration: 0.16, ease: "power2.out", immediateRender: false }, 8.189);
+      tl.set("#rgbw", { filter: "none" }, 8.359);
+      tl.fromTo("#lk5", { opacity: 0 }, { opacity: 0.55, duration: 0.36, ease: "sine.out", immediateRender: false }, 8.189);
+      tl.to("#lk5", { opacity: 0, duration: 0.6, ease: "sine.in" }, 8.789);
+      tl.fromTo("#cam", { scale: 1.034 }, { scale: 1, duration: 0.32, ease: "power3.out", immediateRender: false }, 8.698);
+      tl.to("#cam", { keyframes: [{ x: 5.9, y: -3.54, rotation: -0.295, duration: 0.035 }, { x: -3.933, y: 2.36, rotation: 0.197, duration: 0.035 }, { x: 1.967, y: -1.18, rotation: -0.098, duration: 0.035 }, { x: 0, y: 0, rotation: 0, duration: 0.04 }] }, 8.708);
+      tl.fromTo("#cam", { scale: 1.037 }, { scale: 1, duration: 0.32, ease: "power3.out", immediateRender: false }, 9.207);
+      tl.to("#cam", { keyframes: [{ x: 6.8, y: -4.08, rotation: -0.34, duration: 0.035 }, { x: -4.533, y: 2.72, rotation: 0.227, duration: 0.035 }, { x: 2.267, y: -1.36, rotation: -0.113, duration: 0.035 }, { x: 0, y: 0, rotation: 0, duration: 0.04 }] }, 9.217);
+      tl.set("#fl6", { opacity: 0.13 }, 9.207);
+      tl.to("#fl6", { opacity: 0, duration: 0.06, ease: "power2.out" }, 9.241);
+      tl.set("#rgbw", { filter: "url(#rgb)" }, 9.207);
+      tl.fromTo("#rgb-r", { attr: { dx: 12 } }, { attr: { dx: 0 }, duration: 0.16, ease: "power2.out", immediateRender: false }, 9.207);
+      tl.fromTo("#rgb-b", { attr: { dx: -12 } }, { attr: { dx: 0 }, duration: 0.16, ease: "power2.out", immediateRender: false }, 9.207);
+      tl.set("#rgbw", { filter: "none" }, 9.377);
+      tl.fromTo("#cam", { scale: 1.041 }, { scale: 1, duration: 0.32, ease: "power3.out", immediateRender: false }, 9.716);
+      tl.to("#cam", { keyframes: [{ x: 7.7, y: -4.62, rotation: -0.385, duration: 0.035 }, { x: -5.133, y: 3.08, rotation: 0.257, duration: 0.035 }, { x: 2.567, y: -1.54, rotation: -0.128, duration: 0.035 }, { x: 0, y: 0, rotation: 0, duration: 0.04 }] }, 9.726);
+      tl.fromTo("#cam", { scale: 1.045 }, { scale: 1, duration: 0.32, ease: "power3.out", immediateRender: false }, 10.225);
+      tl.to("#cam", { keyframes: [{ x: 8.6, y: -5.16, rotation: -0.43, duration: 0.035 }, { x: -5.733, y: 3.44, rotation: 0.287, duration: 0.035 }, { x: 2.867, y: -1.72, rotation: -0.143, duration: 0.035 }, { x: 0, y: 0, rotation: 0, duration: 0.04 }] }, 10.235);
+      tl.set("#fl7", { opacity: 0.17 }, 10.225);
+      tl.to("#fl7", { opacity: 0, duration: 0.06, ease: "power2.out" }, 10.259);
+      tl.set("#rgbw", { filter: "url(#rgb)" }, 10.225);
+      tl.fromTo("#rgb-r", { attr: { dx: 14 } }, { attr: { dx: 0 }, duration: 0.16, ease: "power2.out", immediateRender: false }, 10.225);
+      tl.fromTo("#rgb-b", { attr: { dx: -14 } }, { attr: { dx: 0 }, duration: 0.16, ease: "power2.out", immediateRender: false }, 10.225);
+      tl.set("#rgbw", { filter: "none" }, 10.395);
+      tl.fromTo("#lk8", { opacity: 0 }, { opacity: 0.55, duration: 0.36, ease: "sine.out", immediateRender: false }, 10.225);
+      tl.to("#lk8", { opacity: 0, duration: 0.6, ease: "sine.in" }, 10.825);
+      tl.fromTo("#cam", { scale: 1.048 }, { scale: 1, duration: 0.32, ease: "power3.out", immediateRender: false }, 10.734);
+      tl.to("#cam", { keyframes: [{ x: 9.5, y: -5.7, rotation: -0.475, duration: 0.035 }, { x: -6.333, y: 3.8, rotation: 0.317, duration: 0.035 }, { x: 3.167, y: -1.9, rotation: -0.158, duration: 0.035 }, { x: 0, y: 0, rotation: 0, duration: 0.04 }] }, 10.744);
+      tl.fromTo("#cam", { scale: 1.052 }, { scale: 1, duration: 0.32, ease: "power3.out", immediateRender: false }, 11.243);
+      tl.to("#cam", { keyframes: [{ x: 10.5, y: -6.3, rotation: -0.525, duration: 0.035 }, { x: -7.0, y: 4.2, rotation: 0.35, duration: 0.035 }, { x: 3.5, y: -2.1, rotation: -0.175, duration: 0.035 }, { x: 0, y: 0, rotation: 0, duration: 0.04 }] }, 11.253);
+      tl.set("#fl9", { opacity: 0.2 }, 11.243);
+      tl.to("#fl9", { opacity: 0, duration: 0.06, ease: "power2.out" }, 11.277);
+      tl.set("#rgbw", { filter: "url(#rgb)" }, 11.243);
+      tl.fromTo("#rgb-r", { attr: { dx: 17 } }, { attr: { dx: 0 }, duration: 0.16, ease: "power2.out", immediateRender: false }, 11.243);
+      tl.fromTo("#rgb-b", { attr: { dx: -17 } }, { attr: { dx: 0 }, duration: 0.16, ease: "power2.out", immediateRender: false }, 11.243);
+      tl.set("#rgbw", { filter: "none" }, 11.413);
+      tl.fromTo("#cam", { scale: 1.055 }, { scale: 1, duration: 0.32, ease: "power3.out", immediateRender: false }, 11.752);
+      tl.to("#cam", { keyframes: [{ x: 11.4, y: -6.84, rotation: -0.57, duration: 0.035 }, { x: -7.6, y: 4.56, rotation: 0.38, duration: 0.035 }, { x: 3.8, y: -2.28, rotation: -0.19, duration: 0.035 }, { x: 0, y: 0, rotation: 0, duration: 0.04 }] }, 11.762);
+      tl.fromTo("#cam", { scale: 1.059 }, { scale: 1, duration: 0.32, ease: "power3.out", immediateRender: false }, 12.261);
+      tl.to("#cam", { keyframes: [{ x: 12.3, y: -7.38, rotation: -0.615, duration: 0.035 }, { x: -8.2, y: 4.92, rotation: 0.41, duration: 0.035 }, { x: 4.1, y: -2.46, rotation: -0.205, duration: 0.035 }, { x: 0, y: 0, rotation: 0, duration: 0.04 }] }, 12.271);
+      tl.set("#fl10", { opacity: 0.23 }, 12.261);
+      tl.to("#fl10", { opacity: 0, duration: 0.06, ease: "power2.out" }, 12.295);
+      tl.set("#rgbw", { filter: "url(#rgb)" }, 12.261);
+      tl.fromTo("#rgb-r", { attr: { dx: 19 } }, { attr: { dx: 0 }, duration: 0.16, ease: "power2.out", immediateRender: false }, 12.261);
+      tl.fromTo("#rgb-b", { attr: { dx: -19 } }, { attr: { dx: 0 }, duration: 0.16, ease: "power2.out", immediateRender: false }, 12.261);
+      tl.set("#rgbw", { filter: "none" }, 12.431);
+      tl.fromTo("#lk11", { opacity: 0 }, { opacity: 0.55, duration: 0.36, ease: "sine.out", immediateRender: false }, 12.261);
+      tl.to("#lk11", { opacity: 0, duration: 0.6, ease: "sine.in" }, 12.861);
+      tl.fromTo("#cam", { scale: 1.063 }, { scale: 1, duration: 0.32, ease: "power3.out", immediateRender: false }, 12.77);
+      tl.to("#cam", { keyframes: [{ x: 13.2, y: -7.92, rotation: -0.66, duration: 0.035 }, { x: -8.8, y: 5.28, rotation: 0.44, duration: 0.035 }, { x: 4.4, y: -2.64, rotation: -0.22, duration: 0.035 }, { x: 0, y: 0, rotation: 0, duration: 0.04 }] }, 12.78);
+      tl.fromTo("#cam", { scale: 1.066 }, { scale: 1, duration: 0.32, ease: "power3.out", immediateRender: false }, 13.279);
+      tl.to("#cam", { keyframes: [{ x: 14.1, y: -8.46, rotation: -0.705, duration: 0.035 }, { x: -9.4, y: 5.64, rotation: 0.47, duration: 0.035 }, { x: 4.7, y: -2.82, rotation: -0.235, duration: 0.035 }, { x: 0, y: 0, rotation: 0, duration: 0.04 }] }, 13.289);
+      tl.set("#fl12", { opacity: 0.26 }, 13.279);
+      tl.to("#fl12", { opacity: 0, duration: 0.06, ease: "power2.out" }, 13.313);
+      tl.set("#rgbw", { filter: "url(#rgb)" }, 13.279);
+      tl.fromTo("#rgb-r", { attr: { dx: 21 } }, { attr: { dx: 0 }, duration: 0.16, ease: "power2.out", immediateRender: false }, 13.279);
+      tl.fromTo("#rgb-b", { attr: { dx: -21 } }, { attr: { dx: 0 }, duration: 0.16, ease: "power2.out", immediateRender: false }, 13.279);
+      tl.set("#rgbw", { filter: "none" }, 13.449);
+      tl.fromTo("#cam", { scale: 1.07 }, { scale: 1, duration: 0.32, ease: "power3.out", immediateRender: false }, 13.788);
+      tl.to("#cam", { keyframes: [{ x: 15.0, y: -9.0, rotation: -0.75, duration: 0.035 }, { x: -10.0, y: 6.0, rotation: 0.5, duration: 0.035 }, { x: 5.0, y: -3.0, rotation: -0.25, duration: 0.035 }, { x: 0, y: 0, rotation: 0, duration: 0.04 }] }, 13.798);
+      tl.set("#fl13", { opacity: 0.8 }, 11.498);
+      tl.to("#fl13", { opacity: 0, duration: 0.08, ease: "power2.out" }, 11.532);
+      tl.set("#rgbw", { filter: "url(#rgb)" }, 11.498);
+      tl.fromTo("#rgb-r", { attr: { dx: 30 } }, { attr: { dx: 0 }, duration: 0.22, ease: "power2.out", immediateRender: false }, 11.498);
+      tl.fromTo("#rgb-b", { attr: { dx: -30 } }, { attr: { dx: 0 }, duration: 0.22, ease: "power2.out", immediateRender: false }, 11.498);
+      tl.set("#rgbw", { filter: "none" }, 11.728);
+      tl.to("#cam", { keyframes: [{ x: 24.0, y: -14.4, rotation: -1.2, duration: 0.035 }, { x: -19.2, y: 11.52, rotation: 0.96, duration: 0.035 }, { x: 14.4, y: -8.64, rotation: -0.72, duration: 0.035 }, { x: -9.6, y: 5.76, rotation: 0.48, duration: 0.035 }, { x: 4.8, y: -2.88, rotation: -0.24, duration: 0.035 }, { x: 0, y: 0, rotation: 0, duration: 0.04 }] }, 11.498);
+      tl.set("#fl14", { opacity: 0.8 }, 12.261);
+      tl.to("#fl14", { opacity: 0, duration: 0.08, ease: "power2.out" }, 12.295);
+      tl.set("#rgbw", { filter: "url(#rgb)" }, 12.261);
+      tl.fromTo("#rgb-r", { attr: { dx: 30 } }, { attr: { dx: 0 }, duration: 0.22, ease: "power2.out", immediateRender: false }, 12.261);
+      tl.fromTo("#rgb-b", { attr: { dx: -30 } }, { attr: { dx: 0 }, duration: 0.22, ease: "power2.out", immediateRender: false }, 12.261);
+      tl.set("#rgbw", { filter: "none" }, 12.491);
+      tl.to("#cam", { keyframes: [{ x: 24.0, y: -14.4, rotation: -1.2, duration: 0.035 }, { x: -19.2, y: 11.52, rotation: 0.96, duration: 0.035 }, { x: 14.4, y: -8.64, rotation: -0.72, duration: 0.035 }, { x: -9.6, y: 5.76, rotation: 0.48, duration: 0.035 }, { x: 4.8, y: -2.88, rotation: -0.24, duration: 0.035 }, { x: 0, y: 0, rotation: 0, duration: 0.04 }] }, 12.261);
+      tl.to(".ed-bande", { height: 120, duration: 0.4, ease: "power3.inOut" }, 10.225);
+      tl.to(".ed-bande", { height: 330, duration: 1.96, ease: "power2.in" }, 14.297);
+      tl.to("#grade", { filter: "saturate(0.7) contrast(1.35) brightness(0.85) sepia(0)", duration: 1.96, ease: "power2.in" }, 14.297);
+      tl.fromTo("#cam", { scale: 1 }, { scale: 1.24, duration: 1.985, ease: "power3.in", immediateRender: false }, 14.297);
+      tl.set("#fl15", { opacity: 0.25 }, 14.297);
+      tl.to("#fl15", { opacity: 0, duration: 0.05, ease: "power2.out" }, 14.331);
+      tl.set("#rgbw", { filter: "url(#rgb)" }, 14.297);
+      tl.fromTo("#rgb-r", { attr: { dx: 16 } }, { attr: { dx: 0 }, duration: 0.16, ease: "power2.out", immediateRender: false }, 14.297);
+      tl.fromTo("#rgb-b", { attr: { dx: -16 } }, { attr: { dx: 0 }, duration: 0.16, ease: "power2.out", immediateRender: false }, 14.297);
+      tl.set("#rgbw", { filter: "none" }, 14.467);
+      tl.to("#cam", { keyframes: [{ x: 12.0, y: -7.2, rotation: -0.6, duration: 0.035 }, { x: -8.0, y: 4.8, rotation: 0.4, duration: 0.035 }, { x: 4.0, y: -2.4, rotation: -0.2, duration: 0.035 }, { x: 0, y: 0, rotation: 0, duration: 0.04 }] }, 14.297);
+      tl.set("#fl16", { opacity: 0.25 }, 14.552);
+      tl.to("#fl16", { opacity: 0, duration: 0.05, ease: "power2.out" }, 14.586);
+      tl.set("#rgbw", { filter: "url(#rgb)" }, 14.552);
+      tl.fromTo("#rgb-r", { attr: { dx: 16 } }, { attr: { dx: 0 }, duration: 0.16, ease: "power2.out", immediateRender: false }, 14.552);
+      tl.fromTo("#rgb-b", { attr: { dx: -16 } }, { attr: { dx: 0 }, duration: 0.16, ease: "power2.out", immediateRender: false }, 14.552);
+      tl.set("#rgbw", { filter: "none" }, 14.722);
+      tl.to("#cam", { keyframes: [{ x: 12.0, y: -7.2, rotation: -0.6, duration: 0.035 }, { x: -8.0, y: 4.8, rotation: 0.4, duration: 0.035 }, { x: 4.0, y: -2.4, rotation: -0.2, duration: 0.035 }, { x: 0, y: 0, rotation: 0, duration: 0.04 }] }, 14.552);
+      tl.set("#fl17", { opacity: 0.25 }, 14.806);
+      tl.to("#fl17", { opacity: 0, duration: 0.05, ease: "power2.out" }, 14.84);
+      tl.set("#rgbw", { filter: "url(#rgb)" }, 14.806);
+      tl.fromTo("#rgb-r", { attr: { dx: 16 } }, { attr: { dx: 0 }, duration: 0.16, ease: "power2.out", immediateRender: false }, 14.806);
+      tl.fromTo("#rgb-b", { attr: { dx: -16 } }, { attr: { dx: 0 }, duration: 0.16, ease: "power2.out", immediateRender: false }, 14.806);
+      tl.set("#rgbw", { filter: "none" }, 14.976);
+      tl.to("#cam", { keyframes: [{ x: 12.0, y: -7.2, rotation: -0.6, duration: 0.035 }, { x: -8.0, y: 4.8, rotation: 0.4, duration: 0.035 }, { x: 4.0, y: -2.4, rotation: -0.2, duration: 0.035 }, { x: 0, y: 0, rotation: 0, duration: 0.04 }] }, 14.806);
+      tl.set("#fl18", { opacity: 0.25 }, 15.06);
+      tl.to("#fl18", { opacity: 0, duration: 0.05, ease: "power2.out" }, 15.094);
+      tl.set("#rgbw", { filter: "url(#rgb)" }, 15.06);
+      tl.fromTo("#rgb-r", { attr: { dx: 16 } }, { attr: { dx: 0 }, duration: 0.16, ease: "power2.out", immediateRender: false }, 15.06);
+      tl.fromTo("#rgb-b", { attr: { dx: -16 } }, { attr: { dx: 0 }, duration: 0.16, ease: "power2.out", immediateRender: false }, 15.06);
+      tl.set("#rgbw", { filter: "none" }, 15.23);
+      tl.to("#cam", { keyframes: [{ x: 12.0, y: -7.2, rotation: -0.6, duration: 0.035 }, { x: -8.0, y: 4.8, rotation: 0.4, duration: 0.035 }, { x: 4.0, y: -2.4, rotation: -0.2, duration: 0.035 }, { x: 0, y: 0, rotation: 0, duration: 0.04 }] }, 15.06);
+      tl.set("#fl19", { opacity: 0.25 }, 15.315);
+      tl.to("#fl19", { opacity: 0, duration: 0.05, ease: "power2.out" }, 15.349);
+      tl.set("#rgbw", { filter: "url(#rgb)" }, 15.315);
+      tl.fromTo("#rgb-r", { attr: { dx: 16 } }, { attr: { dx: 0 }, duration: 0.16, ease: "power2.out", immediateRender: false }, 15.315);
+      tl.fromTo("#rgb-b", { attr: { dx: -16 } }, { attr: { dx: 0 }, duration: 0.16, ease: "power2.out", immediateRender: false }, 15.315);
+      tl.set("#rgbw", { filter: "none" }, 15.485);
+      tl.to("#cam", { keyframes: [{ x: 12.0, y: -7.2, rotation: -0.6, duration: 0.035 }, { x: -8.0, y: 4.8, rotation: 0.4, duration: 0.035 }, { x: 4.0, y: -2.4, rotation: -0.2, duration: 0.035 }, { x: 0, y: 0, rotation: 0, duration: 0.04 }] }, 15.315);
+      tl.set("#fl20", { opacity: 0.25 }, 15.442);
+      tl.to("#fl20", { opacity: 0, duration: 0.05, ease: "power2.out" }, 15.476);
+      tl.set("#rgbw", { filter: "url(#rgb)" }, 15.442);
+      tl.fromTo("#rgb-r", { attr: { dx: 16 } }, { attr: { dx: 0 }, duration: 0.16, ease: "power2.out", immediateRender: false }, 15.442);
+      tl.fromTo("#rgb-b", { attr: { dx: -16 } }, { attr: { dx: 0 }, duration: 0.16, ease: "power2.out", immediateRender: false }, 15.442);
+      tl.set("#rgbw", { filter: "none" }, 15.612);
+      tl.to("#cam", { keyframes: [{ x: 12.0, y: -7.2, rotation: -0.6, duration: 0.035 }, { x: -8.0, y: 4.8, rotation: 0.4, duration: 0.035 }, { x: 4.0, y: -2.4, rotation: -0.2, duration: 0.035 }, { x: 0, y: 0, rotation: 0, duration: 0.04 }] }, 15.442);
+      tl.set("#fl21", { opacity: 0.25 }, 15.569);
+      tl.to("#fl21", { opacity: 0, duration: 0.05, ease: "power2.out" }, 15.603);
+      tl.set("#rgbw", { filter: "url(#rgb)" }, 15.569);
+      tl.fromTo("#rgb-r", { attr: { dx: 16 } }, { attr: { dx: 0 }, duration: 0.16, ease: "power2.out", immediateRender: false }, 15.569);
+      tl.fromTo("#rgb-b", { attr: { dx: -16 } }, { attr: { dx: 0 }, duration: 0.16, ease: "power2.out", immediateRender: false }, 15.569);
+      tl.set("#rgbw", { filter: "none" }, 15.739);
+      tl.to("#cam", { keyframes: [{ x: 12.0, y: -7.2, rotation: -0.6, duration: 0.035 }, { x: -8.0, y: 4.8, rotation: 0.4, duration: 0.035 }, { x: 4.0, y: -2.4, rotation: -0.2, duration: 0.035 }, { x: 0, y: 0, rotation: 0, duration: 0.04 }] }, 15.569);
+      tl.set("#fl22", { opacity: 0.25 }, 15.697);
+      tl.to("#fl22", { opacity: 0, duration: 0.05, ease: "power2.out" }, 15.731);
+      tl.set("#rgbw", { filter: "url(#rgb)" }, 15.697);
+      tl.fromTo("#rgb-r", { attr: { dx: 16 } }, { attr: { dx: 0 }, duration: 0.16, ease: "power2.out", immediateRender: false }, 15.697);
+      tl.fromTo("#rgb-b", { attr: { dx: -16 } }, { attr: { dx: 0 }, duration: 0.16, ease: "power2.out", immediateRender: false }, 15.697);
+      tl.set("#rgbw", { filter: "none" }, 15.867);
+      tl.to("#cam", { keyframes: [{ x: 12.0, y: -7.2, rotation: -0.6, duration: 0.035 }, { x: -8.0, y: 4.8, rotation: 0.4, duration: 0.035 }, { x: 4.0, y: -2.4, rotation: -0.2, duration: 0.035 }, { x: 0, y: 0, rotation: 0, duration: 0.04 }] }, 15.697);
+      tl.set("#fl23", { opacity: 0.4 }, 15.824);
+      tl.to("#fl23", { opacity: 0, duration: 0.03, ease: "power2.out" }, 15.858);
+      tl.set("#fl24", { opacity: 0.4 }, 15.909);
+      tl.to("#fl24", { opacity: 0, duration: 0.03, ease: "power2.out" }, 15.943);
+      tl.set("#fl25", { opacity: 0.4 }, 15.994);
+      tl.to("#fl25", { opacity: 0, duration: 0.03, ease: "power2.out" }, 16.028);
+      tl.set("#fl26", { opacity: 0.4 }, 16.078);
+      tl.to("#fl26", { opacity: 0, duration: 0.03, ease: "power2.out" }, 16.112);
+      tl.set("#fl27", { opacity: 0.4 }, 16.163);
+      tl.to("#fl27", { opacity: 0, duration: 0.03, ease: "power2.out" }, 16.197);
+      tl.set("#nr28", { opacity: 1 }, 16.257);
+      tl.set("#nr28", { opacity: 0 }, 16.333);
+      tl.set("#cam", { scale: 1 }, 16.333);
+      tl.to(".ed-bande", { height: 0, duration: 0.12, ease: "power4.out" }, 16.333);
+      tl.to("#grade", { filter: "saturate(1.3) contrast(1.12) brightness(1.02) sepia(0)", duration: 0.1, ease: "none" }, 16.333);
+      tl.set("#teinte", { opacity: 0.55 }, 16.333);
+      tl.set("#fl29", { opacity: 1 }, 16.333);
+      tl.to("#fl29", { opacity: 0, duration: 0.14, ease: "power2.out" }, 16.367);
+      tl.set("#cam", { filter: "invert(1)" }, 16.453);
+      tl.set("#cam", { filter: "invert(0)" }, 16.553);
+      tl.set("#rgbw", { filter: "url(#rgb)" }, 16.333);
+      tl.fromTo("#rgb-r", { attr: { dx: 42 } }, { attr: { dx: 0 }, duration: 0.32, ease: "power2.out", immediateRender: false }, 16.333);
+      tl.fromTo("#rgb-b", { attr: { dx: -42 } }, { attr: { dx: 0 }, duration: 0.32, ease: "power2.out", immediateRender: false }, 16.333);
+      tl.set("#rgbw", { filter: "none" }, 16.663);
+      tl.set("#gl30", { opacity: 0.85, x: -50 }, 16.553);
+      tl.set("#gl30", { opacity: 0.6, x: 40 }, 16.587);
+      tl.set("#gl30", { opacity: 0 }, 16.653);
+      tl.to("#cam", { keyframes: [{ x: 42.0, y: -25.2, rotation: -2.1, duration: 0.035 }, { x: -36.75, y: 22.05, rotation: 1.838, duration: 0.035 }, { x: 31.5, y: -18.9, rotation: -1.575, duration: 0.035 }, { x: -26.25, y: 15.75, rotation: 1.312, duration: 0.035 }, { x: 21.0, y: -12.6, rotation: -1.05, duration: 0.035 }, { x: -15.75, y: 9.45, rotation: 0.788, duration: 0.035 }, { x: 10.5, y: -6.3, rotation: -0.525, duration: 0.035 }, { x: -5.25, y: 3.15, rotation: 0.263, duration: 0.035 }, { x: 0, y: 0, rotation: 0, duration: 0.04 }] }, 16.333);
+      tl.fromTo("#lk31", { opacity: 0 }, { opacity: 0.6, duration: 0.36, ease: "sine.out", immediateRender: false }, 16.333);
+      tl.to("#lk31", { opacity: 0, duration: 0.6, ease: "sine.in" }, 16.933);
+      tl.set("#fl32", { opacity: 0.7 }, 17.605);
+      tl.to("#fl32", { opacity: 0, duration: 0.05, ease: "power2.out" }, 17.639);
+      tl.set("#cam", { filter: "invert(1)" }, 17.635);
+      tl.set("#cam", { filter: "invert(0)" }, 17.675);
+      tl.set("#rgbw", { filter: "url(#rgb)" }, 17.605);
+      tl.fromTo("#rgb-r", { attr: { dx: 34 } }, { attr: { dx: 0 }, duration: 0.16, ease: "power2.out", immediateRender: false }, 17.605);
+      tl.fromTo("#rgb-b", { attr: { dx: -34 } }, { attr: { dx: 0 }, duration: 0.16, ease: "power2.out", immediateRender: false }, 17.605);
+      tl.set("#rgbw", { filter: "none" }, 17.775);
+      tl.to("#cam", { keyframes: [{ x: 26.0, y: -15.6, rotation: -1.3, duration: 0.035 }, { x: -19.5, y: 11.7, rotation: 0.975, duration: 0.035 }, { x: 13.0, y: -7.8, rotation: -0.65, duration: 0.035 }, { x: -6.5, y: 3.9, rotation: 0.325, duration: 0.035 }, { x: 0, y: 0, rotation: 0, duration: 0.04 }] }, 17.605);
+      tl.set("#fl33", { opacity: 0.7 }, 17.733);
+      tl.to("#fl33", { opacity: 0, duration: 0.05, ease: "power2.out" }, 17.767);
+      tl.set("#cam", { filter: "invert(1)" }, 17.763);
+      tl.set("#cam", { filter: "invert(0)" }, 17.803);
+      tl.set("#rgbw", { filter: "url(#rgb)" }, 17.733);
+      tl.fromTo("#rgb-r", { attr: { dx: 34 } }, { attr: { dx: 0 }, duration: 0.16, ease: "power2.out", immediateRender: false }, 17.733);
+      tl.fromTo("#rgb-b", { attr: { dx: -34 } }, { attr: { dx: 0 }, duration: 0.16, ease: "power2.out", immediateRender: false }, 17.733);
+      tl.set("#rgbw", { filter: "none" }, 17.903);
+      tl.to("#cam", { keyframes: [{ x: 26.0, y: -15.6, rotation: -1.3, duration: 0.035 }, { x: -19.5, y: 11.7, rotation: 0.975, duration: 0.035 }, { x: 13.0, y: -7.8, rotation: -0.65, duration: 0.035 }, { x: -6.5, y: 3.9, rotation: 0.325, duration: 0.035 }, { x: 0, y: 0, rotation: 0, duration: 0.04 }] }, 17.733);
+      tl.set("#fl34", { opacity: 0.7 }, 17.86);
+      tl.to("#fl34", { opacity: 0, duration: 0.05, ease: "power2.out" }, 17.894);
+      tl.set("#cam", { filter: "invert(1)" }, 17.89);
+      tl.set("#cam", { filter: "invert(0)" }, 17.93);
+      tl.set("#rgbw", { filter: "url(#rgb)" }, 17.86);
+      tl.fromTo("#rgb-r", { attr: { dx: 34 } }, { attr: { dx: 0 }, duration: 0.16, ease: "power2.out", immediateRender: false }, 17.86);
+      tl.fromTo("#rgb-b", { attr: { dx: -34 } }, { attr: { dx: 0 }, duration: 0.16, ease: "power2.out", immediateRender: false }, 17.86);
+      tl.set("#rgbw", { filter: "none" }, 18.03);
+      tl.to("#cam", { keyframes: [{ x: 26.0, y: -15.6, rotation: -1.3, duration: 0.035 }, { x: -19.5, y: 11.7, rotation: 0.975, duration: 0.035 }, { x: 13.0, y: -7.8, rotation: -0.65, duration: 0.035 }, { x: -6.5, y: 3.9, rotation: 0.325, duration: 0.035 }, { x: 0, y: 0, rotation: 0, duration: 0.04 }] }, 17.86);
+      tl.fromTo("#cam", { scale: 1.05 }, { scale: 1, duration: 0.28, ease: "power3.out", immediateRender: false }, 16.842);
+      tl.to("#cam", { keyframes: [{ x: 9.0, y: -5.4, rotation: -0.45, duration: 0.035 }, { x: -6.0, y: 3.6, rotation: 0.3, duration: 0.035 }, { x: 3.0, y: -1.8, rotation: -0.15, duration: 0.035 }, { x: 0, y: 0, rotation: 0, duration: 0.04 }] }, 16.852);
+      tl.fromTo("#cam", { scale: 1.09 }, { scale: 1, duration: 0.28, ease: "power3.out", immediateRender: false }, 17.351);
+      tl.to("#cam", { keyframes: [{ x: 15.0, y: -9.0, rotation: -0.75, duration: 0.035 }, { x: -10.0, y: 6.0, rotation: 0.5, duration: 0.035 }, { x: 5.0, y: -3.0, rotation: -0.25, duration: 0.035 }, { x: 0, y: 0, rotation: 0, duration: 0.04 }] }, 17.361);
+      tl.set("#fl35", { opacity: 0.24 }, 17.351);
+      tl.to("#fl35", { opacity: 0, duration: 0.07, ease: "power2.out" }, 17.385);
+      tl.set("#rgbw", { filter: "url(#rgb)" }, 17.351);
+      tl.fromTo("#rgb-r", { attr: { dx: 14 } }, { attr: { dx: 0 }, duration: 0.12, ease: "power2.out", immediateRender: false }, 17.351);
+      tl.fromTo("#rgb-b", { attr: { dx: -14 } }, { attr: { dx: 0 }, duration: 0.12, ease: "power2.out", immediateRender: false }, 17.351);
+      tl.set("#rgbw", { filter: "none" }, 17.481);
+      tl.fromTo("#cam", { scale: 1.05 }, { scale: 1, duration: 0.28, ease: "power3.out", immediateRender: false }, 17.86);
+      tl.to("#cam", { keyframes: [{ x: 9.0, y: -5.4, rotation: -0.45, duration: 0.035 }, { x: -6.0, y: 3.6, rotation: 0.3, duration: 0.035 }, { x: 3.0, y: -1.8, rotation: -0.15, duration: 0.035 }, { x: 0, y: 0, rotation: 0, duration: 0.04 }] }, 17.87);
+      tl.fromTo("#cam", { scale: 1.09 }, { scale: 1, duration: 0.28, ease: "power3.out", immediateRender: false }, 18.369);
+      tl.to("#cam", { keyframes: [{ x: 15.0, y: -9.0, rotation: -0.75, duration: 0.035 }, { x: -10.0, y: 6.0, rotation: 0.5, duration: 0.035 }, { x: 5.0, y: -3.0, rotation: -0.25, duration: 0.035 }, { x: 0, y: 0, rotation: 0, duration: 0.04 }] }, 18.379);
+      tl.set("#fl36", { opacity: 0.24 }, 18.369);
+      tl.to("#fl36", { opacity: 0, duration: 0.07, ease: "power2.out" }, 18.403);
+      tl.set("#rgbw", { filter: "url(#rgb)" }, 18.369);
+      tl.fromTo("#rgb-r", { attr: { dx: 14 } }, { attr: { dx: 0 }, duration: 0.12, ease: "power2.out", immediateRender: false }, 18.369);
+      tl.fromTo("#rgb-b", { attr: { dx: -14 } }, { attr: { dx: 0 }, duration: 0.12, ease: "power2.out", immediateRender: false }, 18.369);
+      tl.set("#rgbw", { filter: "none" }, 18.499);
+      tl.set("#fl37", { opacity: 0.75 }, 18.369);
+      tl.to("#fl37", { opacity: 0, duration: 0.1, ease: "power2.out" }, 18.403);
+      tl.set("#cam", { filter: "invert(1)" }, 18.419);
+      tl.set("#cam", { filter: "invert(0)" }, 18.459);
+      tl.set("#rgbw", { filter: "url(#rgb)" }, 18.369);
+      tl.fromTo("#rgb-r", { attr: { dx: 30 } }, { attr: { dx: 0 }, duration: 0.22, ease: "power2.out", immediateRender: false }, 18.369);
+      tl.fromTo("#rgb-b", { attr: { dx: -30 } }, { attr: { dx: 0 }, duration: 0.22, ease: "power2.out", immediateRender: false }, 18.369);
+      tl.set("#rgbw", { filter: "none" }, 18.599);
+      tl.set("#gl38", { opacity: 0.85, x: -50 }, 18.429);
+      tl.set("#gl38", { opacity: 0.6, x: 40 }, 18.463);
+      tl.set("#gl38", { opacity: 0 }, 18.529);
+      tl.fromTo("#lk39", { opacity: 0 }, { opacity: 0.5, duration: 0.33, ease: "sine.out", immediateRender: false }, 18.369);
+      tl.to("#lk39", { opacity: 0, duration: 0.55, ease: "sine.in" }, 18.919);
+      tl.fromTo("#cam", { scale: 1.05 }, { scale: 1, duration: 0.28, ease: "power3.out", immediateRender: false }, 18.878);
+      tl.to("#cam", { keyframes: [{ x: 9.0, y: -5.4, rotation: -0.45, duration: 0.035 }, { x: -6.0, y: 3.6, rotation: 0.3, duration: 0.035 }, { x: 3.0, y: -1.8, rotation: -0.15, duration: 0.035 }, { x: 0, y: 0, rotation: 0, duration: 0.04 }] }, 18.888);
+      tl.fromTo("#cam", { scale: 1.09 }, { scale: 1, duration: 0.28, ease: "power3.out", immediateRender: false }, 19.387);
+      tl.to("#cam", { keyframes: [{ x: 15.0, y: -9.0, rotation: -0.75, duration: 0.035 }, { x: -10.0, y: 6.0, rotation: 0.5, duration: 0.035 }, { x: 5.0, y: -3.0, rotation: -0.25, duration: 0.035 }, { x: 0, y: 0, rotation: 0, duration: 0.04 }] }, 19.397);
+      tl.set("#fl40", { opacity: 0.24 }, 19.387);
+      tl.to("#fl40", { opacity: 0, duration: 0.07, ease: "power2.out" }, 19.421);
+      tl.set("#rgbw", { filter: "url(#rgb)" }, 19.387);
+      tl.fromTo("#rgb-r", { attr: { dx: 14 } }, { attr: { dx: 0 }, duration: 0.12, ease: "power2.out", immediateRender: false }, 19.387);
+      tl.fromTo("#rgb-b", { attr: { dx: -14 } }, { attr: { dx: 0 }, duration: 0.12, ease: "power2.out", immediateRender: false }, 19.387);
+      tl.set("#rgbw", { filter: "none" }, 19.517);
+      tl.fromTo("#cam", { scale: 1.05 }, { scale: 1, duration: 0.28, ease: "power3.out", immediateRender: false }, 19.896);
+      tl.to("#cam", { keyframes: [{ x: 9.0, y: -5.4, rotation: -0.45, duration: 0.035 }, { x: -6.0, y: 3.6, rotation: 0.3, duration: 0.035 }, { x: 3.0, y: -1.8, rotation: -0.15, duration: 0.035 }, { x: 0, y: 0, rotation: 0, duration: 0.04 }] }, 19.906);
+      tl.set("#gl41", { opacity: 0.85, x: -50 }, 19.896);
+      tl.set("#gl41", { opacity: 0.6, x: 40 }, 19.93);
+      tl.set("#gl41", { opacity: 0 }, 19.996);
+      tl.set("#fl42", { opacity: 0.35 }, 20.023);
+      tl.to("#fl42", { opacity: 0, duration: 0.05, ease: "power2.out" }, 20.057);
+      tl.set("#fl43", { opacity: 0.35 }, 20.151);
+      tl.to("#fl43", { opacity: 0, duration: 0.05, ease: "power2.out" }, 20.185);
+      tl.set("#fl44", { opacity: 0.35 }, 20.278);
+      tl.to("#fl44", { opacity: 0, duration: 0.05, ease: "power2.out" }, 20.312);
+      tl.fromTo("#cam", { scale: 1.09 }, { scale: 1, duration: 0.28, ease: "power3.out", immediateRender: false }, 20.405);
+      tl.to("#cam", { keyframes: [{ x: 15.0, y: -9.0, rotation: -0.75, duration: 0.035 }, { x: -10.0, y: 6.0, rotation: 0.5, duration: 0.035 }, { x: 5.0, y: -3.0, rotation: -0.25, duration: 0.035 }, { x: 0, y: 0, rotation: 0, duration: 0.04 }] }, 20.415);
+      tl.set("#fl45", { opacity: 0.24 }, 20.405);
+      tl.to("#fl45", { opacity: 0, duration: 0.07, ease: "power2.out" }, 20.439);
+      tl.set("#rgbw", { filter: "url(#rgb)" }, 20.405);
+      tl.fromTo("#rgb-r", { attr: { dx: 14 } }, { attr: { dx: 0 }, duration: 0.12, ease: "power2.out", immediateRender: false }, 20.405);
+      tl.fromTo("#rgb-b", { attr: { dx: -14 } }, { attr: { dx: 0 }, duration: 0.12, ease: "power2.out", immediateRender: false }, 20.405);
+      tl.set("#rgbw", { filter: "none" }, 20.535);
+      tl.set("#fl46", { opacity: 0.75 }, 20.405);
+      tl.to("#fl46", { opacity: 0, duration: 0.1, ease: "power2.out" }, 20.439);
+      tl.set("#cam", { filter: "invert(1)" }, 20.455);
+      tl.set("#cam", { filter: "invert(0)" }, 20.495);
+      tl.set("#rgbw", { filter: "url(#rgb)" }, 20.405);
+      tl.fromTo("#rgb-r", { attr: { dx: 30 } }, { attr: { dx: 0 }, duration: 0.22, ease: "power2.out", immediateRender: false }, 20.405);
+      tl.fromTo("#rgb-b", { attr: { dx: -30 } }, { attr: { dx: 0 }, duration: 0.22, ease: "power2.out", immediateRender: false }, 20.405);
+      tl.set("#rgbw", { filter: "none" }, 20.635);
+      tl.set("#gl47", { opacity: 0.85, x: -50 }, 20.465);
+      tl.set("#gl47", { opacity: 0.6, x: 40 }, 20.499);
+      tl.set("#gl47", { opacity: 0 }, 20.565);
+      tl.fromTo("#lk48", { opacity: 0 }, { opacity: 0.5, duration: 0.33, ease: "sine.out", immediateRender: false }, 20.405);
+      tl.to("#lk48", { opacity: 0, duration: 0.55, ease: "sine.in" }, 20.955);
+      tl.fromTo("#cam", { scale: 1.05 }, { scale: 1, duration: 0.28, ease: "power3.out", immediateRender: false }, 20.914);
+      tl.to("#cam", { keyframes: [{ x: 9.0, y: -5.4, rotation: -0.45, duration: 0.035 }, { x: -6.0, y: 3.6, rotation: 0.3, duration: 0.035 }, { x: 3.0, y: -1.8, rotation: -0.15, duration: 0.035 }, { x: 0, y: 0, rotation: 0, duration: 0.04 }] }, 20.924);
+      tl.fromTo("#cam", { scale: 1.09 }, { scale: 1, duration: 0.28, ease: "power3.out", immediateRender: false }, 21.423);
+      tl.to("#cam", { keyframes: [{ x: 15.0, y: -9.0, rotation: -0.75, duration: 0.035 }, { x: -10.0, y: 6.0, rotation: 0.5, duration: 0.035 }, { x: 5.0, y: -3.0, rotation: -0.25, duration: 0.035 }, { x: 0, y: 0, rotation: 0, duration: 0.04 }] }, 21.433);
+      tl.set("#fl49", { opacity: 0.24 }, 21.423);
+      tl.to("#fl49", { opacity: 0, duration: 0.07, ease: "power2.out" }, 21.457);
+      tl.set("#rgbw", { filter: "url(#rgb)" }, 21.423);
+      tl.fromTo("#rgb-r", { attr: { dx: 14 } }, { attr: { dx: 0 }, duration: 0.12, ease: "power2.out", immediateRender: false }, 21.423);
+      tl.fromTo("#rgb-b", { attr: { dx: -14 } }, { attr: { dx: 0 }, duration: 0.12, ease: "power2.out", immediateRender: false }, 21.423);
+      tl.set("#rgbw", { filter: "none" }, 21.553);
+      tl.fromTo("#cam", { scale: 1.05 }, { scale: 1, duration: 0.28, ease: "power3.out", immediateRender: false }, 21.932);
+      tl.to("#cam", { keyframes: [{ x: 9.0, y: -5.4, rotation: -0.45, duration: 0.035 }, { x: -6.0, y: 3.6, rotation: 0.3, duration: 0.035 }, { x: 3.0, y: -1.8, rotation: -0.15, duration: 0.035 }, { x: 0, y: 0, rotation: 0, duration: 0.04 }] }, 21.942);
+      tl.fromTo("#cam", { scale: 1.09 }, { scale: 1, duration: 0.28, ease: "power3.out", immediateRender: false }, 22.441);
+      tl.to("#cam", { keyframes: [{ x: 15.0, y: -9.0, rotation: -0.75, duration: 0.035 }, { x: -10.0, y: 6.0, rotation: 0.5, duration: 0.035 }, { x: 5.0, y: -3.0, rotation: -0.25, duration: 0.035 }, { x: 0, y: 0, rotation: 0, duration: 0.04 }] }, 22.451);
+      tl.set("#fl50", { opacity: 0.24 }, 22.441);
+      tl.to("#fl50", { opacity: 0, duration: 0.07, ease: "power2.out" }, 22.475);
+      tl.set("#rgbw", { filter: "url(#rgb)" }, 22.441);
+      tl.fromTo("#rgb-r", { attr: { dx: 14 } }, { attr: { dx: 0 }, duration: 0.12, ease: "power2.out", immediateRender: false }, 22.441);
+      tl.fromTo("#rgb-b", { attr: { dx: -14 } }, { attr: { dx: 0 }, duration: 0.12, ease: "power2.out", immediateRender: false }, 22.441);
+      tl.set("#rgbw", { filter: "none" }, 22.571);
+      tl.set("#fl51", { opacity: 0.75 }, 22.441);
+      tl.to("#fl51", { opacity: 0, duration: 0.1, ease: "power2.out" }, 22.475);
+      tl.set("#cam", { filter: "invert(1)" }, 22.491);
+      tl.set("#cam", { filter: "invert(0)" }, 22.531);
+      tl.set("#rgbw", { filter: "url(#rgb)" }, 22.441);
+      tl.fromTo("#rgb-r", { attr: { dx: 30 } }, { attr: { dx: 0 }, duration: 0.22, ease: "power2.out", immediateRender: false }, 22.441);
+      tl.fromTo("#rgb-b", { attr: { dx: -30 } }, { attr: { dx: 0 }, duration: 0.22, ease: "power2.out", immediateRender: false }, 22.441);
+      tl.set("#rgbw", { filter: "none" }, 22.671);
+      tl.set("#gl52", { opacity: 0.85, x: -50 }, 22.501);
+      tl.set("#gl52", { opacity: 0.6, x: 40 }, 22.535);
+      tl.set("#gl52", { opacity: 0 }, 22.601);
+      tl.fromTo("#lk53", { opacity: 0 }, { opacity: 0.5, duration: 0.33, ease: "sine.out", immediateRender: false }, 22.441);
+      tl.to("#lk53", { opacity: 0, duration: 0.55, ease: "sine.in" }, 22.991);
+      tl.fromTo("#cam", { scale: 1.05 }, { scale: 1, duration: 0.28, ease: "power3.out", immediateRender: false }, 22.95);
+      tl.to("#cam", { keyframes: [{ x: 9.0, y: -5.4, rotation: -0.45, duration: 0.035 }, { x: -6.0, y: 3.6, rotation: 0.3, duration: 0.035 }, { x: 3.0, y: -1.8, rotation: -0.15, duration: 0.035 }, { x: 0, y: 0, rotation: 0, duration: 0.04 }] }, 22.96);
+      tl.fromTo("#cam", { scale: 1.09 }, { scale: 1, duration: 0.28, ease: "power3.out", immediateRender: false }, 23.459);
+      tl.to("#cam", { keyframes: [{ x: 15.0, y: -9.0, rotation: -0.75, duration: 0.035 }, { x: -10.0, y: 6.0, rotation: 0.5, duration: 0.035 }, { x: 5.0, y: -3.0, rotation: -0.25, duration: 0.035 }, { x: 0, y: 0, rotation: 0, duration: 0.04 }] }, 23.469);
+      tl.set("#fl54", { opacity: 0.24 }, 23.459);
+      tl.to("#fl54", { opacity: 0, duration: 0.07, ease: "power2.out" }, 23.493);
+      tl.set("#rgbw", { filter: "url(#rgb)" }, 23.459);
+      tl.fromTo("#rgb-r", { attr: { dx: 14 } }, { attr: { dx: 0 }, duration: 0.12, ease: "power2.out", immediateRender: false }, 23.459);
+      tl.fromTo("#rgb-b", { attr: { dx: -14 } }, { attr: { dx: 0 }, duration: 0.12, ease: "power2.out", immediateRender: false }, 23.459);
+      tl.set("#rgbw", { filter: "none" }, 23.589);
+      tl.fromTo("#cam", { scale: 1.05 }, { scale: 1, duration: 0.28, ease: "power3.out", immediateRender: false }, 23.968);
+      tl.to("#cam", { keyframes: [{ x: 9.0, y: -5.4, rotation: -0.45, duration: 0.035 }, { x: -6.0, y: 3.6, rotation: 0.3, duration: 0.035 }, { x: 3.0, y: -1.8, rotation: -0.15, duration: 0.035 }, { x: 0, y: 0, rotation: 0, duration: 0.04 }] }, 23.978);
+      tl.set("#gl55", { opacity: 0.85, x: -50 }, 23.968);
+      tl.set("#gl55", { opacity: 0.6, x: 40 }, 24.002);
+      tl.set("#gl55", { opacity: 0 }, 24.068);
+      tl.set("#fl56", { opacity: 0.35 }, 24.095);
+      tl.to("#fl56", { opacity: 0, duration: 0.05, ease: "power2.out" }, 24.129);
+      tl.set("#fl57", { opacity: 0.35 }, 24.223);
+      tl.to("#fl57", { opacity: 0, duration: 0.05, ease: "power2.out" }, 24.257);
+      tl.set("#fl58", { opacity: 0.35 }, 24.35);
+      tl.to("#fl58", { opacity: 0, duration: 0.05, ease: "power2.out" }, 24.384);
+      tl.to("#cam", { keyframes: [{ y: 7, duration: 0.025 }, { y: -4, duration: 0.025 }, { y: 0, duration: 0.03 }] }, 16.48);
+      tl.to("#cam", { keyframes: [{ y: 7, duration: 0.025 }, { y: -4, duration: 0.025 }, { y: 0, duration: 0.03 }] }, 17.0);
+      tl.to("#cam", { keyframes: [{ y: 7, duration: 0.025 }, { y: -4, duration: 0.025 }, { y: 0, duration: 0.03 }] }, 17.638);
+      tl.to("#cam", { keyframes: [{ y: 7, duration: 0.025 }, { y: -4, duration: 0.025 }, { y: 0, duration: 0.03 }] }, 17.795);
+      tl.to("#cam", { keyframes: [{ y: 7, duration: 0.025 }, { y: -4, duration: 0.025 }, { y: 0, duration: 0.03 }] }, 20.811);
+      tl.set("#fl59", { opacity: 0.14 }, 16.718);
+      tl.to("#fl59", { opacity: 0, duration: 0.04, ease: "power2.out" }, 16.752);
+      tl.set("#fl60", { opacity: 0.14 }, 18.753);
+      tl.to("#fl60", { opacity: 0, duration: 0.04, ease: "power2.out" }, 18.787);
+      tl.set("#fl61", { opacity: 0.14 }, 20.236);
+      tl.to("#fl61", { opacity: 0, duration: 0.04, ease: "power2.out" }, 20.27);
+      tl.set("#fl62", { opacity: 0.14 }, 20.788);
+      tl.to("#fl62", { opacity: 0, duration: 0.04, ease: "power2.out" }, 20.822);
+      tl.set("#fl63", { opacity: 0.14 }, 22.822);
+      tl.to("#fl63", { opacity: 0, duration: 0.04, ease: "power2.out" }, 22.856);
+      tl.set("#fl64", { opacity: 0.9 }, 24.477);
+      tl.to("#fl64", { opacity: 0, duration: 0.12, ease: "power2.out" }, 24.511);
+      tl.set("#rgbw", { filter: "url(#rgb)" }, 24.477);
+      tl.fromTo("#rgb-r", { attr: { dx: 36 } }, { attr: { dx: 0 }, duration: 0.3, ease: "power2.out", immediateRender: false }, 24.477);
+      tl.fromTo("#rgb-b", { attr: { dx: -36 } }, { attr: { dx: 0 }, duration: 0.3, ease: "power2.out", immediateRender: false }, 24.477);
+      tl.set("#rgbw", { filter: "none" }, 24.787);
+      tl.to("#cam", { keyframes: [{ x: 30.0, y: -18.0, rotation: -1.5, duration: 0.035 }, { x: -25.0, y: 15.0, rotation: 1.25, duration: 0.035 }, { x: 20.0, y: -12.0, rotation: -1.0, duration: 0.035 }, { x: -15.0, y: 9.0, rotation: 0.75, duration: 0.035 }, { x: 10.0, y: -6.0, rotation: -0.5, duration: 0.035 }, { x: -5.0, y: 3.0, rotation: 0.25, duration: 0.035 }, { x: 0, y: 0, rotation: 0, duration: 0.04 }] }, 24.477);
+      tl.to("#grade", { filter: "saturate(0.55) contrast(1.1) brightness(0.85) sepia(0.35)", duration: 1.2, ease: "power2.out" }, 24.477);
+      tl.to("#teinte", { opacity: 0.25, duration: 1.2, ease: "none" }, 24.477);
+      tl.to(".ed-bande", { height: 150, duration: 1.4, ease: "power2.inOut" }, 24.777);
+      tl.fromTo("#lk65", { opacity: 0 }, { opacity: 0.55, duration: 0.84, ease: "sine.out", immediateRender: false }, 24.986);
+      tl.to("#lk65", { opacity: 0, duration: 1.4, ease: "sine.in" }, 26.386);
+      tl.fromTo("#lk66", { opacity: 0 }, { opacity: 0.5, duration: 0.84, ease: "sine.out", immediateRender: false }, 27.022);
+      tl.to("#lk66", { opacity: 0, duration: 1.4, ease: "sine.in" }, 28.422);
+      tl.to("#grade", { filter: "saturate(0.35) contrast(1.2) brightness(0.7) sepia(0)", duration: 1.271, ease: "power1.in" }, 28.549);
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

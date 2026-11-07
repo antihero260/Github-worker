@@ -1,0 +1,46 @@
+<!-- Scène 7 · « Première étape : rends-toi sur n8n et crée ton espace de travail. » (25.24 → 29.64 s). Fichier écrit par un générateur, modifiable à la main. -->
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+    }
+
+  </style>
+  <div id="root" data-composition-id="s07-etape1" data-width="1920" data-height="1080">
+    <div class="pj-scene">
+      <div id="s07-etape1-cam" class="pj-cam">
+        <div id="s07-etape1-cadre" class="pj-cadre">
+        <div class="pj-horizon" style="top: 760px"></div>
+        <div id="s07-et" class="pj-etape" style="left: 1440px; top: 128px; opacity: 0"><span>Étape</span><b>1</b><i>/5</i></div>
+        <div id="s07-vid" class="pj-panneau" style="left: 113px; top: 250px; width: 700px; height: 394px; opacity: 0"><video id="s07-vid-v" class="clip" src="assets/video/macbook.mp4" data-start="0" data-duration="4.4" data-track-index="5" muted playsinline></video><div class="pj-equerres" style="left: -18px; top: -18px; right: -18px; bottom: -18px"><i></i><i></i><i></i><i></i></div><div id="s07-vid-tag" class="pj-panneau-tag">Ton ordinateur</div></div>
+        <div id="s07-n8n" class="pj-logo" style="left: 880px; top: 230px; width: 280px; opacity: 0"><img src="assets/img/logo-n8n.svg" alt="n8n" style="width: 184px; height: 184px" /><div class="pj-logo-nom">n8n</div></div>
+        <div id="s07-fen" class="pj-fenetre" style="left: 1240px; top: 330px; width: 580px; height: 380px; opacity: 0"><div class="pj-fen-barre"><i></i><i></i><i></i><img src="assets/img/logo-n8n.svg" alt="" /><span>Mon espace de travail</span></div><div class="pj-fen-corps"><div class="pj-fen-vide"><b>+</b><span>Nouvel espace</span></div></div></div>
+        <svg id="s07-toi" class="pj-perso pj-toi-perso" viewBox="-30 -20 160 290" style="left: 951px; top: 569px; width: 138px; height: 250px"><g id="s07-toi-vie"><g id="s07-toi-corps"><g id="s07-toi-jg"><g class="c"><rect x="24" y="136" width="24" height="112" rx="8" /></g><g class="p"><rect x="24" y="136" width="24" height="112" rx="8" /></g></g><g id="s07-toi-jd"><g class="c"><rect x="52" y="136" width="24" height="112" rx="8" /></g><g class="p"><rect x="52" y="136" width="24" height="112" rx="8" /></g></g><g id="s07-toi-tronc"><g class="c"><rect x="22" y="52" width="56" height="94" rx="12" /></g><g class="p"><rect x="22" y="52" width="56" height="94" rx="12" /></g></g><g id="s07-toi-bg"><g class="c"><rect x="2" y="54" width="18" height="86" rx="9" /></g><g class="p"><rect x="2" y="54" width="18" height="86" rx="9" /></g></g><g id="s07-toi-bd"><g class="c"><rect x="80" y="54" width="18" height="86" rx="9" /></g><g class="p"><rect x="80" y="54" width="18" height="86" rx="9" /></g></g><g id="s07-toi-tete"><g class="c"><circle cx="50" cy="24" r="22" /></g><g class="p"><circle cx="50" cy="24" r="22" /></g></g></g></g></svg>
+        </div>
+      </div>
+      <div id="s07-hud" class="pj-label" style="left: 113px; top: 107px; "><span class="pj-k">Étape 1</span><span class="pj-d">n8n</span></div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#s07-etape1-cam", { scale: 1 }, { scale: 1.05, duration: 4.2, ease: "none" }, 0);
+    tl.fromTo("#s07-etape1-cam", { filter: "blur(14px)" }, { filter: "blur(0px)", duration: 0.16, ease: "power2.out" }, 0);
+    tl.fromTo("#s07-et", { opacity: 0, scale: 1.9 }, { opacity: 1, scale: 1, duration: 0.18, ease: "back.out(2.2)" }, 0.12);
+    tl.fromTo("#s07-vid", { opacity: 0, x: -420 }, { opacity: 1, x: 0, duration: 0.24, ease: "power4.out" }, 0.05);
+    tl.fromTo("#s07-toi-vie", { y: 0 }, { y: -5, duration: 0.42, repeat: 9, yoyo: true, ease: "sine.inOut", immediateRender: false }, 0.0);
+    tl.fromTo("#s07-n8n", { opacity: 0, scale: 1.8 }, { opacity: 1, scale: 1, duration: 0.18, ease: "back.out(2.2)" }, 1.88);
+    tl.to("#s07-etape1-cadre", { x: -73, y: 146, scale: 1.22, duration: 0.26, ease: "power3.inOut" }, 1.76);
+    tl.to("#s07-etape1-cadre", { keyframes: [{ filter: "blur(10px)", duration: 0.13 }, { filter: "blur(0px)", duration: 0.13 }] }, 1.76);
+    tl.to("#s07-toi-bd", { rotation: -160, svgOrigin: "89 62", duration: 0.16, ease: "back.out(2)" }, 1.88);
+    tl.to("#s07-toi-tete", { rotation: -8, svgOrigin: "50 50", duration: 0.16, ease: "back.out(2)" }, 1.88);
+    tl.to("#s07-toi-corps", { keyframes: [{ y: -26, duration: 0.13, ease: "power2.out" }, { y: 0, duration: 0.15, ease: "power2.in" }] }, 1.88);
+    tl.fromTo("#s07-fen", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.18, ease: "power3.out" }, 2.92);
+    tl.to("#s07-etape1-cadre", { x: -506, y: 69, scale: 1.15, duration: 0.26, ease: "power3.inOut" }, 2.8);
+    tl.to("#s07-etape1-cadre", { keyframes: [{ filter: "blur(10px)", duration: 0.13 }, { filter: "blur(0px)", duration: 0.13 }] }, 2.8);
+    tl.to("#s07-toi-bd", { rotation: -100, svgOrigin: "89 62", duration: 0.16, ease: "back.out(2)" }, 3.24);
+    tl.to("#s07-toi-tete", { rotation: -4, svgOrigin: "50 50", duration: 0.16, ease: "back.out(2)" }, 3.24);
+    tl.to("#s07-etape1-cam", { scale: 1.3, filter: "blur(14px)", duration: 0.2, ease: "power3.in" }, 4.2);
+    window.__timelines["s07-etape1"] = tl;
+  </script>
+</template>

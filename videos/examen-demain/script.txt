@@ -1,0 +1,25 @@
+Il est 23 h 17. Ton examen est demain matin. Tu as 40 pages à réviser… et tu n'as presque rien retenu.
+
+Tu commences à paniquer. Tu relis la première page, puis la deuxième. Dix minutes plus tard, tu as déjà oublié la moitié de ce que tu viens de lire.
+
+Alors, tu ouvres ChatGPT. Mais au lieu de lui demander de résumer tes 40 pages, tu vas lui confier une mission beaucoup plus utile.
+
+Tu lui envoies ton cours et tu écris : « Je suis étudiant et j'ai un examen demain. À partir de ce document uniquement, identifie les notions essentielles, les définitions à connaître et les concepts que je risque de confondre. N'invente aucune information. Si un passage est ambigu, signale-le. »
+
+En quelques instants, tu obtiens une première carte de révision. Mais attention : lire un résumé et connaître son cours, ce n'est pas la même chose.
+
+C'est là que tu passes à l'étape suivante.
+
+Tu demandes à ChatGPT : « Maintenant, interroge-moi une question à la fois, comme un professeur. Ne me donne pas la réponse avant que j'aie essayé. Après chacune de mes réponses, corrige mes erreurs en t'appuyant sur le cours et explique-moi ce que je n'ai pas compris. »
+
+Et là, tu ne fais plus que relire passivement : tu essaies de retrouver les informations dans ta mémoire. C'est une méthode appelée rappel actif, étudiée en sciences de l'apprentissage.
+
+Tu peux même lui demander de créer cinq questions difficiles sur les notions que tu maîtrises le moins, puis de te proposer un mini-examen sans regarder tes notes.
+
+Mais voici le piège à éviter : ne prends jamais les réponses de l'IA pour une vérité absolue. Vérifie les définitions, les formules et les corrections importantes dans ton document original.
+
+Et si tu n'as que quelques heures, concentre-toi sur les notions essentielles et les questions qui révèlent tes lacunes. Ne passe pas toute la nuit à fabriquer de belles fiches : tu dois encore apprendre et dormir.
+
+ChatGPT ne peut pas réviser à ta place. Mais bien utilisé, il peut devenir le professeur qui te pose les questions que tu aurais oublié de te poser.
+
+Maintenant, dis-moi : si tu avais un examen demain, tu utiliserais l'IA pour résumer ton cours ou pour t'interroger jusqu'à ce que tu saches répondre ?

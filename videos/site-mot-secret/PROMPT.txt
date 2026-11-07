@@ -1,0 +1,32 @@
+Tu es un développeur web senior et un designer expert. Crée-moi un site e-commerce complet pour [VOLT, une marque de sneakers à Abidjan].
+
+Format : un seul fichier index.html (HTML + CSS + JavaScript dans le même fichier), sans framework, prêt à ouvrir dans le navigateur.
+
+Style :
+- Design sombre, sportif et premium.
+- Couleurs : [noir #0B0B0D, blanc #F4F4F2, accent vert fluo #DCFC1C, rose néon #FF3D7F].
+- Polices Google Fonts : Archivo Black pour les titres, Inter pour le texte.
+- Coins arrondis, grandes photos, beaucoup de contraste.
+
+Sections, dans cet ordre :
+1. Menu fixe en haut (logo, liens Nouveautés, Homme, Femme, Promos, icône panier avec compteur), menu burger sur téléphone.
+2. Grande section d'accueil : titre « Cours plus vite. » qui apparaît ligne par ligne, sous-titre, bouton « Découvrir la collection » et grande photo de la sneaker vedette.
+3. « Les plus vendues » : 4 produits en cartes (photo, nom, prix en FCFA, bouton « Ajouter »).
+4. Bandeau promo « -10 % sur ta première paire ».
+5. Pied de page.
+
+Fonctionnalités :
+- Un clic sur « Ajouter » augmente le compteur du panier et ouvre un panier latéral qui glisse depuis la droite.
+- L'icône panier ouvre et ferme ce panier.
+
+Animations :
+- Les sections apparaissent en douceur au défilement.
+- Les cartes se soulèvent au survol, les boutons s'agrandissent légèrement.
+
+Important :
+- Parfaitement adapté au téléphone, à la tablette et à l'ordinateur.
+- Photos libres de droits (liens directs Unsplash ou Pexels).
+- Tous les textes en français.
+
+(Le mot secret de la vidéo, « NÉON », a été ajouté ensuite avec une seule phrase : « Quand la souris passe sur le bouton
+de la VOLT Pastel, remplace "Ajouter" par le mot NÉON en rose fluo pendant une demi-seconde. »)

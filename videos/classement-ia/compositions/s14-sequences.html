@@ -1,0 +1,52 @@
+<!-- Scène 14 · « Deux outils impressionnants pour créer des séquences à partir de textes, d'images et même de références vidéo. » (78.1 → 84.34 s). Fichier écrit par un générateur, modifiable à la main. -->
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+    }
+
+  </style>
+  <div id="root" data-composition-id="s14-sequences" data-width="1920" data-height="1080">
+    <div class="pj-scene">
+      <div id="s14-sequences-cam" class="pj-cam">
+        <div id="s14-sequences-cadre" class="pj-cadre">
+        <div class="pj-horizon" style="top: 760px"></div>
+        <div id="s14-vid" class="pj-panneau" style="left: 113px; top: 230px; width: 700px; height: 394px; opacity: 0"><video id="s14-vid-v" class="clip" src="assets/video/camera-retro.mp4" data-start="0" data-duration="6.24" data-track-index="5" muted playsinline></video><div class="pj-equerres" style="left: -18px; top: -18px; right: -18px; bottom: -18px"><i></i><i></i><i></i><i></i></div><div id="s14-vid-tag" class="pj-panneau-tag">Impressionnants</div></div>
+        <div id="s14-e0" style="position: absolute; left: 1000px; top: 280px; width: 0; height: 0; opacity: 0"><div class="pj-puce" style="font-size: 48px">Texte</div></div>
+        <div id="s14-e1" style="position: absolute; left: 1000px; top: 390px; width: 0; height: 0; opacity: 0"><div class="pj-puce" style="font-size: 48px">Image</div></div>
+        <div id="s14-e2" style="position: absolute; left: 1000px; top: 500px; width: 0; height: 0; opacity: 0"><div class="pj-puce" style="font-size: 48px">Vidéo</div></div>
+        <div id="s14-fl" style="position: absolute; left: 1120px; top: 380px; width: 200px; height: 18px; background: #DCFC1C; transform-origin: 0% 50%"></div>
+        <div id="s14-seq" class="pj-sticker" style="left: 1360px; top: 340px; font-size: 70px; opacity: 0">Séquence</div>
+        <svg id="s14-ia" class="pj-perso pj-ia-perso" viewBox="-30 -20 160 290" style="left: 1483px; top: 541px; width: 154px; height: 280px"><g id="s14-ia-vie"><g id="s14-ia-corps"><g id="s14-ia-jg"><g class="c"><rect x="24" y="136" width="24" height="112" rx="8" /></g><g class="p"><rect x="24" y="136" width="24" height="112" rx="8" /></g></g><g id="s14-ia-jd"><g class="c"><rect x="52" y="136" width="24" height="112" rx="8" /></g><g class="p"><rect x="52" y="136" width="24" height="112" rx="8" /></g></g><g id="s14-ia-tronc"><g class="c"><rect x="22" y="52" width="56" height="94" rx="12" /></g><g class="p"><rect x="22" y="52" width="56" height="94" rx="12" /></g></g><g id="s14-ia-bg"><g class="c"><rect x="2" y="54" width="18" height="86" rx="9" /></g><g class="p"><rect x="2" y="54" width="18" height="86" rx="9" /></g></g><g id="s14-ia-bd"><g class="c"><rect x="80" y="54" width="18" height="86" rx="9" /></g><g class="p"><rect x="80" y="54" width="18" height="86" rx="9" /></g></g><g id="s14-ia-tete"><g class="c"><rect x="25" y="0" width="50" height="46" rx="13" /></g><g class="p"><rect x="25" y="0" width="50" height="46" rx="13" /></g><g class="yeux"><circle cx="40" cy="22" r="5" /><circle cx="60" cy="22" r="5" /></g></g></g></g></svg>
+        </div>
+      </div>
+      <div id="s14-hud" class="pj-label" style="left: 113px; top: 107px; "><span class="pj-k">Kling et Seedance</span><span class="pj-d">Du texte à la vidéo</span></div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#s14-sequences-cam", { scale: 1 }, { scale: 1.05, duration: 6.04, ease: "none" }, 0);
+    tl.fromTo("#s14-sequences-cam", { filter: "blur(14px)" }, { filter: "blur(0px)", duration: 0.16, ease: "power2.out" }, 0);
+    tl.fromTo("#s14-e0", { opacity: 0, scale: 0.3 }, { opacity: 1, scale: 1, duration: 0.2, ease: "back.out(2.4)" }, 3.8);
+    tl.fromTo("#s14-e1", { opacity: 0, scale: 0.3 }, { opacity: 1, scale: 1, duration: 0.2, ease: "back.out(2.4)" }, 4.3);
+    tl.fromTo("#s14-e2", { opacity: 0, scale: 0.3 }, { opacity: 1, scale: 1, duration: 0.2, ease: "back.out(2.4)" }, 5.35);
+    tl.set("#s14-fl", { scaleX: 0 }, 0);
+    tl.fromTo("#s14-vid", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.18, ease: "power3.out" }, 0.05);
+    tl.fromTo("#s14-ia-vie", { y: 0 }, { y: -5, duration: 0.42, repeat: 13, yoyo: true, ease: "sine.inOut", immediateRender: false }, 0.0);
+    tl.to("#s14-sequences-cadre", { x: 564, y: 126, scale: 1.15, duration: 0.26, ease: "power3.inOut" }, 1.02);
+    tl.to("#s14-sequences-cadre", { keyframes: [{ filter: "blur(10px)", duration: 0.13 }, { filter: "blur(0px)", duration: 0.13 }] }, 1.02);
+    tl.to("#s14-sequences-cadre", { x: -334, y: 138, scale: 1.15, duration: 0.26, ease: "power3.inOut" }, 3.68);
+    tl.to("#s14-sequences-cadre", { keyframes: [{ filter: "blur(10px)", duration: 0.13 }, { filter: "blur(0px)", duration: 0.13 }] }, 3.68);
+    tl.to("#s14-fl", { scaleX: 1, duration: 0.3, ease: "power2.out" }, 5.55);
+    tl.fromTo("#s14-seq", { opacity: 0, scale: 1.8 }, { opacity: 1, scale: 1, duration: 0.18, ease: "back.out(2.2)" }, 5.94);
+    tl.to("#s14-ia-bg", { rotation: 110, svgOrigin: "11 62", duration: 0.16, ease: "back.out(2)" }, 3.8);
+    tl.to("#s14-ia-tete", { rotation: 8, svgOrigin: "50 50", duration: 0.16, ease: "back.out(2)" }, 3.8);
+    tl.to("#s14-ia-bg", { rotation: 165, svgOrigin: "11 62", duration: 0.14, ease: "back.out(2)" }, 5.84);
+    tl.to("#s14-ia-bd", { rotation: -165, svgOrigin: "89 62", duration: 0.14, ease: "back.out(2)" }, 5.84);
+    tl.to("#s14-ia-tete", { rotation: -8, svgOrigin: "50 50", duration: 0.14, ease: "back.out(2)" }, 5.84);
+    tl.to("#s14-ia-corps", { keyframes: [{ y: -40, duration: 0.13, ease: "power2.out" }, { y: 0, duration: 0.15, ease: "power2.in" }] }, 5.89);
+    tl.to("#s14-sequences-cam", { scale: 1.3, filter: "blur(14px)", duration: 0.2, ease: "power3.in" }, 6.04);
+    window.__timelines["s14-sequences"] = tl;
+  </script>
+</template>

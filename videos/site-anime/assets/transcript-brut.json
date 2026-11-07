@@ -1,0 +1,674 @@
+[
+  {
+    "text": "Ces",
+    "start": 0.06,
+    "end": 0.13,
+    "id": "w0"
+  },
+  {
+    "text": "animations",
+    "start": 0.14,
+    "end": 0.57,
+    "id": "w1"
+  },
+  {
+    "text": "donnent",
+    "start": 0.57,
+    "end": 0.87,
+    "id": "w2"
+  },
+  {
+    "text": "l'impression",
+    "start": 0.87,
+    "end": 1.44,
+    "id": "w3"
+  },
+  {
+    "text": "que",
+    "start": 1.44,
+    "end": 1.62,
+    "id": "w4"
+  },
+  {
+    "text": "ceci",
+    "start": 1.62,
+    "end": 2,
+    "id": "w5"
+  },
+  {
+    "text": "est",
+    "start": 2,
+    "end": 2.15,
+    "id": "w6"
+  },
+  {
+    "text": "à",
+    "start": 2.15,
+    "end": 2.2,
+    "id": "w7"
+  },
+  {
+    "text": "coûter",
+    "start": 2.2,
+    "end": 2.5,
+    "id": "w8"
+  },
+  {
+    "text": "des",
+    "start": 2.5,
+    "end": 2.65,
+    "id": "w9"
+  },
+  {
+    "text": "milliers",
+    "start": 2.65,
+    "end": 3.05,
+    "id": "w10"
+  },
+  {
+    "text": "d'euros.",
+    "start": 3.05,
+    "end": 3.44,
+    "id": "w11"
+  },
+  {
+    "text": "Pourtant,",
+    "start": 3.82,
+    "end": 4.28,
+    "id": "w12"
+  },
+  {
+    "text": "elles",
+    "start": 4.28,
+    "end": 4.53,
+    "id": "w13"
+  },
+  {
+    "text": "ont",
+    "start": 4.53,
+    "end": 4.68,
+    "id": "w14"
+  },
+  {
+    "text": "été",
+    "start": 4.68,
+    "end": 4.83,
+    "id": "w15"
+  },
+  {
+    "text": "réalisées",
+    "start": 4.83,
+    "end": 5.27,
+    "id": "w16"
+  },
+  {
+    "text": "avec",
+    "start": 5.28,
+    "end": 5.48,
+    "id": "w17"
+  },
+  {
+    "text": "l'intelligence",
+    "start": 5.48,
+    "end": 6.14,
+    "id": "w18"
+  },
+  {
+    "text": "artificielle.",
+    "start": 6.14,
+    "end": 6.8,
+    "id": "w19"
+  },
+  {
+    "text": "Et",
+    "start": 6.8,
+    "end": 6.935,
+    "id": "w20"
+  },
+  {
+    "text": "le",
+    "start": 6.935,
+    "end": 7.07,
+    "id": "w21"
+  },
+  {
+    "text": "plus",
+    "start": 7.07,
+    "end": 7.29,
+    "id": "w22"
+  },
+  {
+    "text": "intéressant,",
+    "start": 7.29,
+    "end": 8.08,
+    "id": "w23"
+  },
+  {
+    "text": "c'est",
+    "start": 8.12,
+    "end": 8.37,
+    "id": "w24"
+  },
+  {
+    "text": "que",
+    "start": 8.37,
+    "end": 8.51,
+    "id": "w25"
+  },
+  {
+    "text": "tu",
+    "start": 8.52,
+    "end": 8.62,
+    "id": "w26"
+  },
+  {
+    "text": "peux",
+    "start": 8.62,
+    "end": 8.82,
+    "id": "w27"
+  },
+  {
+    "text": "faire",
+    "start": 8.82,
+    "end": 9.04,
+    "id": "w28"
+  },
+  {
+    "text": "pareil.",
+    "start": 9.1,
+    "end": 9.4,
+    "id": "w29"
+  },
+  {
+    "text": "Avec",
+    "start": 9.66,
+    "end": 9.68,
+    "id": "w30"
+  },
+  {
+    "text": "un",
+    "start": 9.68,
+    "end": 9.82,
+    "id": "w31"
+  },
+  {
+    "text": "outil",
+    "start": 9.82,
+    "end": 10.17,
+    "id": "w32"
+  },
+  {
+    "text": "de",
+    "start": 10.17,
+    "end": 10.31,
+    "id": "w33"
+  },
+  {
+    "text": "Vibe",
+    "start": 10.31,
+    "end": 10.59,
+    "id": "w34"
+  },
+  {
+    "text": "Coding",
+    "start": 10.59,
+    "end": 11.04,
+    "id": "w35"
+  },
+  {
+    "text": "comme",
+    "start": 11.04,
+    "end": 11.34,
+    "id": "w36"
+  },
+  {
+    "text": "Cloud",
+    "start": 11.34,
+    "end": 11.63,
+    "id": "w37"
+  },
+  {
+    "text": "Code",
+    "start": 11.7,
+    "end": 11.96,
+    "id": "w38"
+  },
+  {
+    "text": "ou",
+    "start": 11.96,
+    "end": 12.14,
+    "id": "w39"
+  },
+  {
+    "text": "Cursor,",
+    "start": 12.14,
+    "end": 12.68,
+    "id": "w40"
+  },
+  {
+    "text": "tu",
+    "start": 12.68,
+    "end": 12.94,
+    "id": "w41"
+  },
+  {
+    "text": "peux",
+    "start": 12.94,
+    "end": 13.08,
+    "id": "w42"
+  },
+  {
+    "text": "demander",
+    "start": 13.08,
+    "end": 13.62,
+    "id": "w43"
+  },
+  {
+    "text": "à",
+    "start": 13.62,
+    "end": 13.68,
+    "id": "w44"
+  },
+  {
+    "text": "ton",
+    "start": 13.68,
+    "end": 13.88,
+    "id": "w45"
+  },
+  {
+    "text": "EA",
+    "start": 13.88,
+    "end": 14.03,
+    "id": "w46"
+  },
+  {
+    "text": "d'ajouter",
+    "start": 14.03,
+    "end": 14.52,
+    "id": "w47"
+  },
+  {
+    "text": "des",
+    "start": 14.52,
+    "end": 14.68,
+    "id": "w48"
+  },
+  {
+    "text": "animations",
+    "start": 14.68,
+    "end": 15.2,
+    "id": "w49"
+  },
+  {
+    "text": "au",
+    "start": 15.2,
+    "end": 15.33,
+    "id": "w50"
+  },
+  {
+    "text": "défilement,",
+    "start": 15.33,
+    "end": 16.07,
+    "id": "w51"
+  },
+  {
+    "text": "des",
+    "start": 16.07,
+    "end": 16.17,
+    "id": "w52"
+  },
+  {
+    "text": "effets",
+    "start": 16.17,
+    "end": 16.32,
+    "id": "w53"
+  },
+  {
+    "text": "de",
+    "start": 16.32,
+    "end": 16.78,
+    "id": "w54"
+  },
+  {
+    "text": "parallax,",
+    "start": 16.78,
+    "end": 17.07,
+    "id": "w55"
+  },
+  {
+    "text": "des",
+    "start": 17.07,
+    "end": 17.23,
+    "id": "w56"
+  },
+  {
+    "text": "transitions",
+    "start": 17.23,
+    "end": 17.8,
+    "id": "w57"
+  },
+  {
+    "text": "fluides",
+    "start": 17.84,
+    "end": 18.18,
+    "id": "w58"
+  },
+  {
+    "text": "entre",
+    "start": 18.22,
+    "end": 18.48,
+    "id": "w59"
+  },
+  {
+    "text": "les",
+    "start": 18.48,
+    "end": 18.63,
+    "id": "w60"
+  },
+  {
+    "text": "sections",
+    "start": 18.68,
+    "end": 19.12,
+    "id": "w61"
+  },
+  {
+    "text": "et",
+    "start": 19.12,
+    "end": 19.32,
+    "id": "w62"
+  },
+  {
+    "text": "même",
+    "start": 19.32,
+    "end": 19.72,
+    "id": "w63"
+  },
+  {
+    "text": "des",
+    "start": 19.72,
+    "end": 19.92,
+    "id": "w64"
+  },
+  {
+    "text": "interactions",
+    "start": 19.92,
+    "end": 20.16,
+    "id": "w65"
+  },
+  {
+    "text": "au",
+    "start": 20.56,
+    "end": 20.64,
+    "id": "w66"
+  },
+  {
+    "text": "survol",
+    "start": 20.85,
+    "end": 20.95,
+    "id": "w67"
+  },
+  {
+    "text": "des",
+    "start": 20.95,
+    "end": 21.11,
+    "id": "w68"
+  },
+  {
+    "text": "boutons.",
+    "start": 21.11,
+    "end": 21.68,
+    "id": "w69"
+  },
+  {
+    "text": "Le",
+    "start": 21.68,
+    "end": 21.84,
+    "id": "w70"
+  },
+  {
+    "text": "secret,",
+    "start": 21.84,
+    "end": 22.52,
+    "id": "w71"
+  },
+  {
+    "text": "c'est",
+    "start": 22.52,
+    "end": 22.72,
+    "id": "w72"
+  },
+  {
+    "text": "de",
+    "start": 22.72,
+    "end": 22.8,
+    "id": "w73"
+  },
+  {
+    "text": "lui",
+    "start": 22.8,
+    "end": 22.88,
+    "id": "w74"
+  },
+  {
+    "text": "demander",
+    "start": 22.94,
+    "end": 23.28,
+    "id": "w75"
+  },
+  {
+    "text": "des",
+    "start": 23.28,
+    "end": 23.44,
+    "id": "w76"
+  },
+  {
+    "text": "animations",
+    "start": 23.44,
+    "end": 23.99,
+    "id": "w77"
+  },
+  {
+    "text": "élégantes,",
+    "start": 23.99,
+    "end": 24.72,
+    "id": "w78"
+  },
+  {
+    "text": "cohérentes",
+    "start": 24.93,
+    "end": 25.42,
+    "id": "w79"
+  },
+  {
+    "text": "et",
+    "start": 25.42,
+    "end": 25.55,
+    "id": "w80"
+  },
+  {
+    "text": "adaptées",
+    "start": 25.56,
+    "end": 26.12,
+    "id": "w81"
+  },
+  {
+    "text": "à",
+    "start": 26.12,
+    "end": 26.19,
+    "id": "w82"
+  },
+  {
+    "text": "ton",
+    "start": 26.19,
+    "end": 26.38,
+    "id": "w83"
+  },
+  {
+    "text": "design,",
+    "start": 26.41,
+    "end": 26.95,
+    "id": "w84"
+  },
+  {
+    "text": "plutôt",
+    "start": 26.95,
+    "end": 27.28,
+    "id": "w85"
+  },
+  {
+    "text": "que",
+    "start": 27.28,
+    "end": 27.44,
+    "id": "w86"
+  },
+  {
+    "text": "de",
+    "start": 27.44,
+    "end": 27.55,
+    "id": "w87"
+  },
+  {
+    "text": "tout",
+    "start": 27.55,
+    "end": 27.8,
+    "id": "w88"
+  },
+  {
+    "text": "faire",
+    "start": 27.8,
+    "end": 28.04,
+    "id": "w89"
+  },
+  {
+    "text": "bouger",
+    "start": 28.04,
+    "end": 28.32,
+    "id": "w90"
+  },
+  {
+    "text": "dans",
+    "start": 28.32,
+    "end": 28.36,
+    "id": "w91"
+  },
+  {
+    "text": "tous",
+    "start": 28.36,
+    "end": 28.83,
+    "id": "w92"
+  },
+  {
+    "text": "les",
+    "start": 28.83,
+    "end": 29.06,
+    "id": "w93"
+  },
+  {
+    "text": "sens.",
+    "start": 29.06,
+    "end": 29.76,
+    "id": "w94"
+  },
+  {
+    "text": "Regarde",
+    "start": 29.76,
+    "end": 30.03,
+    "id": "w95"
+  },
+  {
+    "text": "le",
+    "start": 30.03,
+    "end": 30.09,
+    "id": "w96"
+  },
+  {
+    "text": "résultat.",
+    "start": 30.11,
+    "end": 30.56,
+    "id": "w97"
+  },
+  {
+    "text": "Abonne-toi",
+    "start": 30.76,
+    "end": 31.12,
+    "id": "w98"
+  },
+  {
+    "text": "à",
+    "start": 31.12,
+    "end": 31.17,
+    "id": "w99"
+  },
+  {
+    "text": "Ghostcode,",
+    "start": 31.17,
+    "end": 31.84,
+    "id": "w100"
+  },
+  {
+    "text": "je",
+    "start": 31.84,
+    "end": 31.97,
+    "id": "w101"
+  },
+  {
+    "text": "te",
+    "start": 31.97,
+    "end": 32.09,
+    "id": "w102"
+  },
+  {
+    "text": "montre",
+    "start": 32.11,
+    "end": 32.52,
+    "id": "w103"
+  },
+  {
+    "text": "tout",
+    "start": 32.52,
+    "end": 32.76,
+    "id": "w104"
+  },
+  {
+    "text": "ce",
+    "start": 32.76,
+    "end": 32.8,
+    "id": "w105"
+  },
+  {
+    "text": "que",
+    "start": 32.86,
+    "end": 32.96,
+    "id": "w106"
+  },
+  {
+    "text": "tu",
+    "start": 32.96,
+    "end": 33.06,
+    "id": "w107"
+  },
+  {
+    "text": "peux",
+    "start": 33.06,
+    "end": 33.27,
+    "id": "w108"
+  },
+  {
+    "text": "créer",
+    "start": 33.27,
+    "end": 33.56,
+    "id": "w109"
+  },
+  {
+    "text": "avec",
+    "start": 33.56,
+    "end": 33.9,
+    "id": "w110"
+  },
+  {
+    "text": "l'IA.",
+    "start": 33.9,
+    "end": 34.24,
+    "id": "w111"
+  }
+]
