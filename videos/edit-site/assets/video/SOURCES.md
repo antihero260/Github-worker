@@ -41,3 +41,15 @@ Vidéos Mixkit (licence gratuite, crédit non obligatoire), extraits de 2,5 à 3
   twitch.tv, ubisoft.com, riotgames.com, apple.com (Vision Pro, iPhone), dji.com, gopro.com, dribbble.com. Écartés :
   formula1.com (page blanche), meta.com et samsung.com (fenêtres de cookies), nike.com (blanc).
 - Retirées de l'edit (demande « pas de vidéo cuisine ») : cafe-*, hologramme-paiement, hologramme-web, vr-fille.
+
+## Extraits de films libres et NASA (pour le prochain edit)
+
+- `film-tos-*.mp4` : extraits de **« Tears of Steel »** (2012), Blender Foundation, licence **CC BY 3.0** —
+  crédit obligatoire : « Tears of Steel (CC) Blender Foundation | mango.blender.org ».
+- `film-sintel-*.mp4` : extraits de **« Sintel »** (2010), Blender Foundation, licence **CC BY 3.0** —
+  crédit obligatoire : « Sintel (CC) Blender Foundation | durian.blender.org ».
+- `nasa-*.mp4` : vidéos de la NASA (images-api.nasa.gov : décollage d'Artemis I au ralenti, essais de boosters SLS,
+  Rocket Lab, séparation des boosters), **domaine public** (pas de crédit obligatoire ; ne pas laisser croire que la NASA
+  soutient la vidéo).
+- Pas de films protégés (Marvel, Fast & Furious…) : pas de copie légale. « Metropolis » (1927) écarté : encore protégé en
+  Europe et en Côte d'Ivoire (Fritz Lang, mort en 1976).
