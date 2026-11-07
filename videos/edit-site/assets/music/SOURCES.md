@@ -1,9 +1,12 @@
 # Musique
 
-**Version envoyée (v2)** : le son de la vidéo de référence envoyée par l'utilisateur (un edit TikTok), extrait 25,130 → 40,281 s
-(8 temps avant le drop des basses à 30,174 s + 16 temps après, ≈ 94,8 BPM), ramené à −16 LUFS (`son-edit.wav`).
-Ce son n'est **pas libre de droits** : il sert au calage. Pour publier, l'utilisateur choisit **ce même son dans la
-bibliothèque TikTok** et le démarre à **25,1 s** (il peut couper le son d'origine de la vidéo).
+**Version actuelle (v5)** : « Phonk Drift Racing Montage » – **Alex Morgan**, Free Music Archive
+(https://freemusicarchive.org/music/alex-morgan/phonk-drift/phonk-drift-racing-montage/), licence **CC BY 4.0**
+(usage commercial autorisé, **crédit obligatoire**). Choisie par l'utilisateur parmi 7 extraits (`../../choix-musique-2/`).
+Extrait 86,376 → 120,880 s (80 temps ≈ 139 BPM : montée 0–23, drop au temps 24, coupure des basses 52–55, 2ᵉ drop au temps 56),
+ramené à −16 LUFS (`son-edit.wav`, WAV pour garder le calage à l'échantillon près).
 
-v1 (refusée : « la musique est nulle ») : « Phonk Remix » – HoliznaCC0 (CC0), Free Music Archive.
-Le fichier `son-edit.wav` n'est pas versionné (son non libre) : il se refait depuis la vidéo de référence avec ffmpeg (-ss 25.130 -t 15.151, puis −16 LUFS).
+**Crédit à mettre dans la description TikTok** : « Musique : Alex Morgan – Phonk Drift Racing Montage (CC BY 4.0) »
+
+Versions précédentes : v1 « Phonk Remix » – HoliznaCC0 (refusée) ; v2 à v4 le son d'une vidéo de référence de l'utilisateur
+(non libre, jamais versionné).

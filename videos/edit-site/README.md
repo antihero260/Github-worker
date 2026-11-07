@@ -25,3 +25,10 @@ Cursor, Raycast, Locomotive, Cuberto, Midjourney, Shopify, Duolingo, Wix, Square
 café, VOLT) et 19 nouvelles vidéos Mixkit (skate, feux d'artifice, boxe, basket, foot, hologrammes, danse). Le montage est
 construit automatiquement sur les temps : un plan en mouvement sur chaque temps, un site sur chaque demi-temps, une rafale
 de 4 plans à la fin de chaque phrase de 8 temps, deux drops.
+
+v5 (« seulement le 1 est intéressant, une edit de malade, encore plus de vidéos, une montée en tension ») : musique libre
+« Phonk Drift Racing Montage » d'Alex Morgan (CC BY 4.0), 34,5 s. **146 plans, 110 vidéos différentes dont 30 sites** (38 nouvelles
+vidéos Mixkit : rally, drift, karting, motos, voitures, foules en concert, éclairs, fumée, explosions, boxe, snowboard).
+**Montée en tension** sur 10 s : image sombre et désaturée qui reprend ses couleurs, un plan tous les 2 temps → chaque temps →
+demi-temps → quart de temps, caméra qui avance, secousses et flashs de plus en plus forts, cœur qui bat, roulement, riser,
+noir, DROP. Coupure des basses au milieu avec une 2ᵉ petite montée, 2ᵉ drop avec un plan par demi-temps.
