@@ -109,7 +109,7 @@
   \end{scope}
   \node[anchor=south west,text width=12.4cm,align=left] at ($(current page.south west)+(1.2cm,2.3cm)$)
     {\fontsize{13.5}{17}\selectfont\color{white}La méthode pas à pas pour faire tes vidéos TikTok, Reels et Shorts avec Claude Opus 5.5.};
-  \node[anchor=south west,fill=citron,text=encre,inner sep=5pt,font=\bfseries\small] at ($(current page.south west)+(1.2cm,1.2cm)$) {52 PROMPTS PRÊTS À COPIER};
+  \node[anchor=south west,fill=citron,text=encre,inner sep=5pt,font=\bfseries\small] at ($(current page.south west)+(1.2cm,1.2cm)$) {53 PROMPTS PRÊTS À COPIER};
   \node[anchor=south east] at ($(current page.south east)+(-1.2cm,1.25cm)$) {\anton\fontsize{14}{16}\selectfont\color{white}GAUSSCODE};
 \end{tikzpicture}
 \restoregeometry
@@ -392,6 +392,35 @@ Ajoute à mes consignes : [ta remarque]. Applique-la à toutes mes prochaines vi
 \objectif{faire reprendre par Claude le style d'une vidéo existante.}
 Tu peux montrer à Claude des vidéos dont tu aimes le style et lui demander de les imiter. Télécharge-les d'abord sur ton appareil, puis joins-les au message.
 
+\begin{figure}[H]\centering
+\begin{tikzpicture}[lb/.style={font=\bfseries\scriptsize,anchor=west},tx/.style={font=\scriptsize,text width=4.55cm,align=left}]
+  % rangée 1 : la vidéo d'un autre créateur
+  \node[lb,text=gris] at (-5.9,4.55) {1. LA VIDÉO D'UN AUTRE CRÉATEUR};
+  \telephone[-3]{-4.6,2.0}{2.3cm}{images/miniatures/s1-autre-a.jpg}
+  \telephone[3]{-1.95,2.0}{2.3cm}{images/miniatures/s2-autre-b.jpg}
+  \node[fill=fondgris,rounded corners=4pt,draw=encre!15,inner sep=7pt,tx,anchor=west] at (0.2,2.0) {%
+    \textbf{\color{violet}Ce que Claude relève}\\[3pt]
+    \textbullet\ fond crème, aucun fond noir\\
+    \textbullet\ titres fins en italique\\
+    \textbullet\ une photo aux coins arrondis par scène\\
+    \textbullet\ un mot surligné en orange par phrase\\
+    \textbullet\ rythme calme, une coupe par phrase};
+  % flèche
+  \draw[violet,line width=2pt,-{Stealth[length=8pt]}] (2.55,-0.35) -- (2.55,-1.05) node[midway,right=4pt,font=\bfseries\scriptsize,text=violet] {Claude copie le style};
+  % rangée 2 : ta vidéo
+  \node[lb,text=gris] at (-5.9,-1.45) {2. TA VIDÉO DANS CE STYLE};
+  \telephone[-3]{-4.6,-3.9}{2.3cm}{images/miniatures/s3-toi-a.jpg}
+  \telephone[3]{-1.95,-3.9}{2.3cm}{images/miniatures/s4-toi-b.jpg}
+  \node[fill=citron!25,rounded corners=4pt,inner sep=7pt,tx,anchor=west] at (0.2,-3.9) {%
+    \textbf{Ce qui reste à toi}\\[3pt]
+    \textbullet\ ton sujet et ton texte\\
+    \textbullet\ ta voix\\
+    \textbullet\ tes images\\
+    \textbullet\ le personnage vert};
+\end{tikzpicture}
+\caption{Le style passe d'une vidéo à l'autre, le contenu reste le tien. La vidéo de référence est un exemple inventé.}
+\end{figure}
+
 \begin{acopier}[Prompt : analyser un style]
 Voici 3 vidéos dont j'aime le style (jointes). Décris leur rythme de montage, leurs couleurs, leurs polices, leurs sous-titres, leurs transitions et leurs sons. Ajoute ce style à mes consignes et garde le personnage vert.
 \end{acopier}
@@ -602,10 +631,32 @@ La vidéo me convient. Fabrique la version finale en 1080×1920 et une miniature
 Fais aussi une version horizontale 1920×1080 de cette vidéo, avec les mêmes scènes et le même son.
 \end{acopier}
 
+\section{Des miniatures qui donnent envie}
+La miniature décide souvent si on ouvre ta vidéo depuis ton profil. Demande-en plusieurs et garde la meilleure.
+
 \begin{figure}[H]\centering
-\fcolorbox{encre!20}{white}{\includegraphics[width=0.36\linewidth]{images/miniature-exemple.jpg}}
-\caption{Une miniature fabriquée par Claude.}
+\begin{tikzpicture}
+  \fill[encre,rounded corners=6pt] (-5.9,-3.15) rectangle (5.9,3.0);
+  \node[anchor=north west] at (-5.6,2.8) {\anton\fontsize{15}{17}\selectfont\color{white}4\hspace{0.18em}MINIATURES\hspace{0.18em}FAITES\hspace{0.18em}PAR\hspace{0.18em}\textcolor{citron}{CLAUDE}};
+  \telephone[-3]{-4.3,-0.55}{2.35cm}{images/miniatures/m1-site-ia.jpg}
+  \telephone[2]{-1.45,-0.55}{2.35cm}{images/miniatures/m2-jeu-video.jpg}
+  \telephone[-2]{1.45,-0.55}{2.35cm}{images/miniatures/m3-google.jpg}
+  \telephone[3]{4.3,-0.55}{2.35cm}{images/miniatures/m4-5000.jpg}
+\end{tikzpicture}
+\caption{Une phrase choc, une vraie image forte, le personnage vert et une touche de rouge.}
 \end{figure}
+
+Ce qui marche dans ces miniatures :
+\begin{itemize}
+  \item 3 à 5 mots, lisibles même en tout petit ;
+  \item une image forte : un visage qui réagit, l'écran du site, un prix barré ;
+  \item du jaune citron sur fond sombre, et du rouge pour l'alerte ;
+  \item le titre au milieu de l'image, car le profil TikTok rogne le haut et le bas des miniatures.
+\end{itemize}
+
+\begin{acopier}[Prompt : miniatures au choix]
+Fabrique 4 miniatures verticales différentes pour cette vidéo : 3 à 5 mots en très gros, une vraie image forte (visage qui réagit, écran du site), le personnage vert et un élément rouge (cercle, prix barré, tampon). Garde le titre au milieu de l'image. Montre-les-moi côte à côte.
+\end{acopier}
 
 \section{Aller plus loin avec HyperFrames}
 \begin{acopier}[Prompt : voir avant le rendu]
