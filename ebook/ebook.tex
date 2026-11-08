@@ -75,16 +75,19 @@
 % ---- téléphone (image verticale dans un cadre arrondi)
 \newcommand{\telephone}[4][0]{\node[rotate=#1,inner sep=1.6pt,fill=black,draw=white,line width=1.2pt,rounded corners=6pt,drop shadow={opacity=0.45,shadow xshift=2pt,shadow yshift=-2pt}] at (#2) {\includegraphics[width=#3]{#4}};}
 % ---- le personnage vert (mêmes formes que dans les vidéos : unités du SVG, y vers le bas)
+\def\persocoul{citron}
+\definecolor{rose}{HTML}{FF3D8B}
+\definecolor{bleu}{HTML}{3B82F6}
 \newcommand{\persovert}[3]{% #1 = échelle, #2 = angle du bras gauche, #3 = angle du bras droit (degrés, sens SVG)
 \begin{scope}[yscale=-1,x=#1pt,y=#1pt]
 \pgfmathsetmacro{\ep}{10*#1}
-\tikzset{membre/.style={fill=citron,draw=black,line width=\ep pt,rounded corners=8*#1pt}}
+\tikzset{membre/.style={fill=\persocoul,draw=black,line width=\ep pt,rounded corners=8*#1pt}}
 \draw[membre] (24,136) rectangle ++(24,112);
 \draw[membre] (52,136) rectangle ++(24,112);
 \draw[membre,rounded corners=12*#1pt] (22,52) rectangle ++(56,94);
 \draw[membre,rotate around={#2:(11,62)}] (2,54) rectangle ++(18,86);
 \draw[membre,rotate around={#3:(89,62)}] (80,54) rectangle ++(18,86);
-\draw[fill=citron,draw=black,line width=\ep pt] (50,24) circle (22);
+\draw[fill=\persocoul,draw=black,line width=\ep pt] (50,24) circle (22);
 \end{scope}}
 \begin{document}
 \frontmatter
@@ -218,7 +221,7 @@ L'abonnement payant à Claude est obligatoire. Sans lui, tu n'as accès ni à Cl
 \begin{enumerate}
   \item Sur la page de Claude Code, clique sur « Essayer Claude » pour créer ton compte et prendre l'abonnement.
   \item Clique sur « Télécharger » et installe l'application.
-  \item Ouvre-la, connecte-toi, puis choisis un dossier vide, par exemple \texttt{mes-videos} dans tes Documents. Tes vidéos y seront enregistrées.
+  \item Ouvre-la et connecte-toi. Choisis ensuite un dossier vide dans tes Documents, par exemple un dossier nommé \texttt{mes-videos}. Tes vidéos y seront enregistrées.
 \end{enumerate}
 \capture{images/claude-code.jpg}{\pastille{1} « Essayer Claude ». \pastille{2} « Télécharger », qui indique ton système. \pastille{3} La version Web.}
 
@@ -267,15 +270,76 @@ Vérifie que tout marche avec une vidéo test de 10 secondes : « Fais une vidé
 \end{bilan}
 
 % ======================================================================== 2
-\chapter{Notre style, avec le personnage vert}
-\objectif{donner notre style à Claude en un seul prompt.}
+\chapter[Notre style et le personnage vert]{Notre style\\ et le personnage vert}
+\objectif{donner notre style à Claude en un prompt.}
 Ce chapitre donne à Claude les règles de notre style en un seul message. Il les garde dans un fichier de consignes et les relit avant chaque vidéo.
 
 \begin{figure}[H]\centering
-\begin{minipage}{0.32\linewidth}\centering\fcolorbox{encre!20}{white}{\includegraphics[width=0.95\linewidth]{images/perso-vert.jpg}}\end{minipage}\hfill
-\begin{minipage}{0.3\linewidth}\centering\includegraphics[width=0.95\linewidth]{images/resultat-6.6.jpg}\end{minipage}\hfill
-\begin{minipage}{0.3\linewidth}\centering\includegraphics[width=0.95\linewidth]{images/resultat-26.9.jpg}\end{minipage}
-\caption{Le personnage vert, puis deux images de notre style : titre blanc en haut, film au centre, cases mystère en dessous.}
+\begin{tikzpicture}[lbl/.style={font=\bfseries\scriptsize,text=citron,anchor=west},pt/.style={font=\scriptsize,text=white}]
+  \fill[encre,rounded corners=6pt] (-5.9,-10.35) rectangle (5.9,4.45);
+  \node[anchor=north west] at (-5.6,4.2) {\anton\fontsize{15}{17}\selectfont\color{white}NOTRE\hspace{0.18em}STYLE\hspace{0.18em}EN\hspace{0.18em}UN\hspace{0.18em}COUP\hspace{0.18em}D'ŒIL};
+  % --- le personnage
+  \node[lbl] at (-5.6,3.15) {LE PERSONNAGE VERT};
+  \begin{scope}[shift={(-5.45,2.75)}]\persovert{0.27}{0}{-150}\end{scope}
+  \begin{scope}[shift={(-3.7,2.75)}]\persovert{0.27}{150}{-150}\end{scope}
+  \begin{scope}[shift={(-1.95,2.75)}]\persovert{0.27}{0}{-95}\end{scope}
+  \node[pt] at (-4.95,0.2) {il salue};
+  \node[pt] at (-3.2,0.2) {il jubile};
+  \node[pt] at (-1.45,0.2) {il pointe};
+  % --- les couleurs
+  \node[lbl] at (0.3,3.15) {LES COULEURS};
+  \fill[black] (0.4,1.85) rectangle ++(1.05,1.05); \draw[white,line width=0.6pt] (0.4,1.85) rectangle ++(1.05,1.05);
+  \fill[citron] (1.75,1.85) rectangle ++(1.05,1.05);
+  \fill[white] (3.1,1.85) rectangle ++(1.05,1.05);
+  \fill[violet] (4.45,1.85) rectangle ++(1.05,1.05);
+  \node[pt,font=\tiny] at (0.92,1.6) {noir};
+  \node[pt,font=\tiny] at (2.27,1.6) {\#DCFC1C};
+  \node[pt,font=\tiny] at (3.62,1.6) {blanc};
+  \node[pt,font=\tiny] at (4.97,1.6) {encadrés};
+  % --- les mots qui claquent et les sous-titres
+  \node[anchor=west] at (0.3,0.95) {\anton\fontsize{17}{19}\selectfont\color{white}MOTS\hspace{0.15em}QUI\hspace{0.15em}\textcolor{citron}{CLAQUENT}};
+  \node[anchor=west,fill=white,text=encre,font=\anton\fontsize{10}{11}\selectfont,inner sep=3pt] (st1) at (0.4,0.2) {SOUS-TITRES};
+  \node[anchor=west,fill=citron,text=encre,font=\anton\fontsize{10}{11}\selectfont,inner sep=3pt] at ($(st1.east)+(0.12,0)$) {MOT\hspace{0.15em}À\hspace{0.15em}MOT};
+  % --- les cases mystère
+  \node[lbl] at (-5.6,-0.65) {LES CASES MYSTÈRE};
+  \foreach \x in {-5.5,-4.25,-3.0}{\draw[citron,line width=1.4pt,fill=black,rounded corners=2pt] (\x,-2.25) rectangle ++(1.05,1.25);
+    \node at (\x+0.525,-1.62) {\anton\fontsize{22}{22}\selectfont\color{citron}?};}
+  % --- le volet rayé
+  \node[lbl] at (0.3,-0.65) {LE VOLET DE TRANSITION};
+  \begin{scope}
+    \clip (0.4,-1.75) rectangle (5.5,-1.0);
+    \fill[encre] (0.4,-1.75) rectangle (5.5,-1.0);
+    \foreach \x in {0,0.5,...,6}{\fill[citron] (0.4+\x,-1.75) -- ++(0.25,0) -- ++(0.55,0.75) -- ++(-0.25,0) -- cycle;}
+  \end{scope}
+  % --- les vraies vidéos
+  \node[lbl] at (-5.6,-2.75) {DE VRAIES VIDÉOS QUI CHANGENT À CHAQUE MOT};
+  \node[anchor=north west,inner sep=0pt] at (-5.5,-3.05) {\includegraphics[width=2.55cm]{images/style/film-0.3.jpg}};
+  \node[anchor=north west,inner sep=0pt] at (-2.75,-3.05) {\includegraphics[width=2.55cm]{images/style/film-1.0.jpg}};
+  \node[anchor=north west,inner sep=0pt] at (0.0,-3.05) {\includegraphics[width=2.55cm]{images/style/film-3.0.jpg}};
+  \node[anchor=north west,inner sep=0pt] at (2.75,-3.05) {\includegraphics[width=2.55cm]{images/style/film-4.3.jpg}};
+  % --- le format vertical
+  \node[lbl] at (-5.6,-4.95) {LE FORMAT VERTICAL};
+  \node[inner sep=0pt,draw=white,line width=1.2pt,rounded corners=4pt] (tel) at (-4.35,-7.75) {\includegraphics[width=2.35cm]{images/resultat-6.6.jpg}};
+  \foreach \y/\t in {-6.8/titre-promesse,-7.6/film \NoAutoSpacing{16:9},-8.45/cases mystère}{
+    \draw[citron,-{Stealth[length=4pt]},line width=0.9pt] (-2.15,\y) -- (-3.05,\y);
+    \node[pt,anchor=west] at (-2.1,\y) {\t};}
+  % --- la caméra suit
+  \node[lbl] at (0.3,-4.95) {LA CAMÉRA SUIT LE PERSONNAGE};
+  \foreach \cx/\bx in {0.45/1.3,3.35/4.2}{
+    \foreach \a/\b/\c/\d in {0/0/1/-1,2.1/0/-1/-1,0/-1.75/1/1,2.1/-1.75/-1/1}{
+      \draw[citron,line width=1.3pt] (\cx+\a+0.3*\c,-5.4+\b) -- (\cx+\a,-5.4+\b) -- (\cx+\a,-5.4+\b+0.3*\d);}}
+  \begin{scope}[shift={(1.3,-5.6)}]\persovert{0.13}{0}{0}\end{scope}
+  \begin{scope}[shift={(4.2,-5.6)}]\persovert{0.13}{0}{-95}\end{scope}
+  \draw[white,dashed,-{Stealth[length=5pt]},line width=0.9pt] (2.7,-6.27) -- (3.2,-6.27);
+  % --- les bruitages
+  \node[lbl] at (0.3,-7.75) {DES BRUITAGES PARTOUT};
+  \foreach[count=\i] \h in {0.15,0.35,0.9,0.4,0.2,0.55,0.25,0.15,0.75,0.3,0.6,0.2,0.45,0.95,0.35,0.2,0.5,0.25,0.7,0.3,0.15,0.4,0.85,0.25,0.15}{
+    \fill[citron,rounded corners=0.5pt] (0.35+\i*0.2,-8.85-\h/2) rectangle ++(0.11,\h);}
+  \node[pt,font=\tiny] at (1.0,-9.65) {souffle};
+  \node[pt,font=\tiny] at (3.15,-9.65) {impact};
+  \node[pt,font=\tiny] at (5.0,-9.65) {pop};
+\end{tikzpicture}
+\caption{Notre style en une seule image.}
 \end{figure}
 
 \begin{acopier}[Prompt : notre style]
@@ -294,11 +358,23 @@ Crée un fichier de consignes que tu reliras avant chaque vidéo :\\
 \end{acopier}
 
 \section{Varier les couleurs}
+\begin{figure}[H]\centering
+\begin{tikzpicture}
+  \fill[encre,rounded corners=6pt] (-4.2,-0.4) rectangle (4.2,3.3);
+  \begin{scope}[shift={(-2.85,3.0)}]\persovert{0.27}{150}{-150}\end{scope}
+  \begin{scope}[shift={(-0.45,3.0)}]\def\persocoul{rose}\persovert{0.27}{150}{-150}\end{scope}
+  \begin{scope}[shift={(1.95,3.0)}]\def\persocoul{bleu}\persovert{0.27}{150}{-150}\end{scope}
+  \node[font=\scriptsize,text=white] at (-2.35,-0.15) {jaune citron};
+  \node[font=\scriptsize,text=white] at (0.05,-0.15) {rose fluo};
+  \node[font=\scriptsize,text=white] at (2.45,-0.15) {bleu};
+\end{tikzpicture}
+\caption{Le même personnage dans trois couleurs.}
+\end{figure}
 \begin{acopier}[Prompt : autre couleur d'accent]
 Garde mon style mais remplace le jaune citron par du rose fluo (\#FF3D8B), y compris pour le personnage.
 \end{acopier}
 \begin{acopier}[Prompt : version claire]
-Garde mon style mais sur fond blanc, avec des textes noirs et le personnage en bleu.
+Garde mon style mais sur fond blanc, avec des textes noirs et le personnage en bleu (\#3B82F6).
 \end{acopier}
 
 \section{Faire évoluer tes règles}
@@ -384,8 +460,9 @@ Propose-moi 10 accroches de moins de 12 mots pour cette vidéo : [ton sujet]. Cl
 Réécris ce texte pour qu'il sonne comme si je parlais à un ami : phrases courtes, mots simples, mêmes conseils. [ton texte]
 \end{acopier}
 
+\enlargethispage{2\baselineskip}
 \begin{bilan}
-  \item \coche Mon texte fait moins de 130 mots et commence par une accroche.
+  \item \coche Mon texte fait moins de 130 mots, avec une accroche.
   \item \coche Je l'ai relu à voix haute.
 \end{bilan}
 
@@ -504,6 +581,9 @@ Fin molle & Termine sur un gros « Abonne-toi » avec un bruitage et un bouton q
 \begin{acopier}[Prompt : relecture par Claude]
 Avant de fabriquer le fichier final, regarde une image de chaque scène et corrige les textes coupés, les chevauchements et les sons trop forts.
 \end{acopier}
+\begin{acopier}[Prompt : vérifier les faits]
+Vérifie sur Internet chaque chiffre et chaque date de mon texte, donne-moi la source de chacun et signale ce qui est faux ou incertain.
+\end{acopier}
 
 \begin{bilan}
   \item \coche J'ai regardé la vidéo sur mon téléphone, le son allumé.
@@ -584,9 +664,6 @@ Infos & Faire vérifier chaque chiffre par Claude & Présenter une rumeur comme 
 \end{tabularx}
 \end{center}
 
-\begin{acopier}[Prompt : vérifier les faits]
-Vérifie sur Internet chaque chiffre et chaque date de mon texte, donne-moi la source de chacun et signale ce qui est faux ou incertain.
-\end{acopier}
 
 % ======================================================================== LEXIQUE
 \chapter*{Petit lexique}
