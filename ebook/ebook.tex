@@ -1,4 +1,4 @@
-% Ebook « Crée tes vidéos TikTok avec l'IA » — XeLaTeX (xelatex ebook.tex, deux fois pour le sommaire)
+% Ebook « Crée tes vidéos TikTok avec l'IA », XeLaTeX (xelatex ebook.tex, deux fois pour le sommaire)
 \documentclass[11pt,oneside,openany]{book}
 \usepackage[a5paper,top=17mm,bottom=19mm,left=15mm,right=15mm,headsep=6mm,footskip=10mm]{geometry}
 \usepackage{fontspec}
@@ -27,7 +27,7 @@
 \usepackage{caption}
 \usepackage{float}
 \setcounter{tocdepth}{0}
-\captionsetup{font={small,color=gris},labelfont={bf,color=violet},labelsep=endash,justification=centering}
+\captionsetup{font={small,color=gris},labelfont={bf,color=violet},labelsep=period,justification=centering}
 \usepackage[hidelinks,bookmarksnumbered,pdftitle={Crée tes vidéos TikTok avec l'IA},pdfauthor={Gausscode},pdfsubject={Formation pas à pas : créer des vidéos courtes avec Claude},pdfkeywords={TikTok, IA, Claude, vidéo, ebook}]{hyperref}
 
 \setlength{\parindent}{0pt}
@@ -81,12 +81,12 @@
   \node[anchor=north west,text width=12.4cm,align=left] at ($(current page.north west)+(1.25cm,-2.3cm)$)
     {\anton\fontsize{40}{43}\selectfont\color{white}CRÉE TES VIDÉOS\\TIKTOK AVEC\\[-0.05em]\colorbox{citron}{\color{encre}\,L'IA\,}};
   \node[anchor=north west,text width=11.6cm,align=left] at ($(current page.north west)+(1.3cm,-8.6cm)$)
-    {\fontsize{12.5}{16}\selectfont\color{white}Sans savoir monter une vidéo : Claude fait le montage, toi tu donnes l'idée. De A à Z, avec des captures pour chaque étape.};
+    {\fontsize{12.5}{16}\selectfont\color{white}Claude fait le montage, toi tu donnes l'idée. Plus de 40 prompts prêts à copier.};
   \node[rotate=-7,inner sep=0pt,draw=white,line width=2.4pt] at ($(current page.south west)+(3.2cm,6.6cm)$) {\includegraphics[width=3.1cm]{images/resultat-1.9.jpg}};
   \node[rotate=0,inner sep=0pt,draw=white,line width=2.4pt] at ($(current page.south)+(0,7.0cm)$) {\includegraphics[width=3.1cm]{images/resultat-6.6.jpg}};
   \node[rotate=7,inner sep=0pt,draw=white,line width=2.4pt] at ($(current page.south east)+(-3.2cm,6.6cm)$) {\includegraphics[width=3.1cm]{images/resultat-46.5.jpg}};
   \node[anchor=south west] at ($(current page.south west)+(1.3cm,0.9cm)$) {\anton\fontsize{14}{16}\selectfont\color{white}GAUSSCODE};
-  \node[anchor=south east] at ($(current page.south east)+(-1.3cm,0.95cm)$) {\small\color{white}TikTok · Reels · Shorts};
+  \node[anchor=south east] at ($(current page.south east)+(-1.3cm,0.95cm)$) {\small\color{white}TikTok, Reels et Shorts};
 \end{tikzpicture}
 \restoregeometry
 \end{titlepage}
@@ -96,14 +96,14 @@
 \vspace*{2cm}
 {\footnotesize\color{gris}
 \textbf{\color{encre}Crée tes vidéos TikTok avec l'IA}\\
-La formation pas à pas pour créer des vidéos courtes avec Claude.\\
-Version 1.0 — novembre 2026.
+Formation pas à pas pour créer des vidéos courtes avec Claude.\\
+Version 1.1, novembre 2026.
 
 © 2026 Gausscode. Tous droits réservés. Toute reproduction, même partielle, est interdite sans autorisation.
 
-\textbf{Crédits des images.} Captures d'écran des sites claude.com (Anthropic), elevenlabs.io, mixkit.co et tiktok.com réalisées par l'auteur en novembre 2026, utilisées à titre d'illustration ; les marques citées appartiennent à leurs propriétaires. Images de l'interface GitHub tirées de la documentation officielle GitHub Docs (© GitHub, Inc., licence CC BY 4.0), annotations ajoutées. Images de vidéos : réalisations de l'auteur.
+Crédits des images. Captures d'écran des sites claude.com (Anthropic), elevenlabs.io et tiktok.com réalisées par l'auteur en novembre 2026 et utilisées à titre d'illustration ; les marques citées appartiennent à leurs propriétaires. Les deux images de l'interface GitHub viennent de la documentation officielle GitHub Docs (© GitHub, Inc., licence CC BY 4.0) ; les annotations sont de l'auteur. Les images de vidéos sont des réalisations de l'auteur.
 
-Les interfaces des sites évoluent souvent : si un bouton a changé de place, cherche le même mot sur la page. Les prix et offres cités peuvent changer ; vérifie-les sur le site de chaque service.
+Les sites changent souvent de présentation. Si un bouton n'est plus au même endroit, cherche le même mot sur la page. Les prix et les offres peuvent aussi changer : vérifie-les sur le site de chaque service.
 
 Ce guide n'est affilié à aucune des entreprises citées.}
 
@@ -115,33 +115,29 @@ Ce guide n'est affilié à aucune des entreprises citées.}
 \addcontentsline{toc}{chapter}{Avant de commencer}
 \markboth{Avant de commencer}{}
 
-Avec ce guide, tu vas créer des petites vidéos pour TikTok, Instagram Reels ou YouTube Shorts \textbf{sans savoir monter une vidéo}. Une intelligence artificielle, Claude, fait le montage à ta place. Toi, tu donnes l'idée, tu crées la voix et tu dis ce qui te plaît ou non.
+Ce guide t'apprend à obtenir de Claude des vidéos courtes prêtes à publier sur TikTok, Instagram Reels ou YouTube Shorts. Tu lui donnes l'idée, la voix et tes remarques, en français, par messages ; il s'occupe du montage. Tu n'as besoin ni de logiciel de montage ni de savoir coder.
 
-\textbf{Ce que tu vas obtenir :} une vidéo au format téléphone, de 30 à 60 secondes, avec un titre en haut, des sous-titres qui s'affichent mot par mot, de vraies images qui changent très vite, de la musique et des bruitages libres de droits.
+La vidéo sort au format téléphone, avec ton titre en haut, des sous-titres qui s'affichent mot par mot, des images qui changent vite, de la musique et des bruitages.
 
 \begin{figure}[H]\centering
 \includegraphics[width=0.235\linewidth]{images/resultat-1.9.jpg}\hfill
 \includegraphics[width=0.235\linewidth]{images/resultat-6.6.jpg}\hfill
 \includegraphics[width=0.235\linewidth]{images/resultat-26.9.jpg}\hfill
 \includegraphics[width=0.235\linewidth]{images/resultat-46.5.jpg}
-\caption{Quatre moments d'une vraie vidéo réalisée avec cette méthode : l'accroche, le mystère, le conseil, l'appel à commenter.}
+\caption{Quatre moments d'une vidéo faite avec cette méthode : l'accroche, les cases mystère, un conseil et l'appel à commenter.}
 \end{figure}
-
-\textbf{Pas besoin d'être doué en informatique.} Tu parles à Claude en français, comme à une personne. Tu n'écris pas une seule ligne de code.
 
 \section*{Ce qu'il te faut}
 \begin{itemize}[label={}]
-  \item \coche un ordinateur (Windows, Mac ou Linux), ou à défaut un téléphone, avec Internet ;
+  \item \coche un ordinateur (Windows, Mac ou Linux) ou, à défaut, un téléphone ;
   \item \coche un abonnement payant à Claude qui donne accès à Claude Code ;
-  \item \coche un compte ElevenLabs pour la voix (on peut commencer gratuitement) ;
-  \item \coche \textbf{seulement si tu travailles depuis un téléphone :} un compte GitHub, gratuit.
+  \item \coche un compte ElevenLabs pour la voix (une offre gratuite permet de commencer) ;
+  \item \coche un compte GitHub gratuit, seulement si tu travailles depuis un téléphone.
 \end{itemize}
 
-\textbf{Combien de temps :} la première fois, compte 1 à 2 heures pour tout mettre en place. Ensuite, chaque vidéo te demande environ 20 minutes : choisir le texte, créer la voix, regarder le résultat.
+Compte une à deux heures pour la première vidéo, installation comprise. Ensuite, une vidéo te prend une vingtaine de minutes : écrire ou valider le texte, créer la voix, regarder le résultat.
 
 \section*{Le parcours d'une vidéo}
-Tu interviens au début et à la fin. Tout le montage, au milieu, est fait par Claude.
-
 \begin{figure}[H]\centering
 \begin{tikzpicture}[font=\footnotesize,
   b/.style={draw=encre!40,rounded corners=3pt,minimum width=2.6cm,minimum height=1.05cm,align=center,fill=white},
@@ -149,353 +145,289 @@ Tu interviens au début et à la fin. Tout le montage, au milieu, est fait par C
   fl/.style={-{Latex[length=2mm]},draw=encre!55,line width=0.7pt}]
 \node[b] (s) at (0,0) {\textbf{1. Texte}\\\textcolor{gris}{toi (+ Claude)}};
 \node[b] (v) at (3.0,0) {\textbf{2. Voix}\\\textcolor{gris}{toi, ElevenLabs}};
-\node[b] (d) at (6.0,0) {\textbf{3. Demande}\\\textcolor{gris}{toi, un message}};
-\node[c] (m) at (6.0,-1.8) {\textbf{4. Montage}\\\textcolor{encre}{Claude, 30-60 min}};
-\node[b] (k) at (3.0,-1.8) {\textbf{5. Vérification}\\\textcolor{gris}{Claude, puis toi}};
+\node[b] (d) at (6.0,0) {\textbf{3. Commande}\\\textcolor{gris}{toi, un prompt}};
+\node[c] (m) at (6.0,-1.8) {\textbf{4. Montage}\\\textcolor{encre}{Claude}};
+\node[b] (k) at (3.0,-1.8) {\textbf{5. Corrections}\\\textcolor{gris}{toi, un prompt}};
 \node[b] (p) at (0,-1.8) {\textbf{6. Publication}\\\textcolor{gris}{toi}};
 \draw[fl] (s) -- (v); \draw[fl] (v) -- (d); \draw[fl] (d) -- (m); \draw[fl] (m) -- (k); \draw[fl] (k) -- (p);
-\draw[fl,dashed] (k.south) -- ++(0,-0.45) -| node[pos=0.25,below,text=gris]{à corriger} (m.south);
+\draw[fl,dashed] (k.south) -- ++(0,-0.45) -| node[pos=0.25,below,text=gris]{si besoin} (m.south);
 \end{tikzpicture}
-\caption{Le parcours d'une vidéo, de l'idée à la publication.}
+\caption{Tu interviens au début et à la fin ; Claude fait le montage.}
 \end{figure}
 
 \mainmatter
 % ======================================================================== 1
-\chapter{Les outils}
-Trois services suffisent sur ordinateur, quatre si tu travailles depuis un téléphone. Sur ordinateur, tu installes seulement l'application Claude Code ; sur téléphone, tout se passe en ligne.
+\chapter{Installer Claude Code}
+Claude Code est la version de Claude qui fabrique des fichiers, et donc des vidéos. La discussion habituelle sur claude.ai ne sait pas le faire.
 
-\renewcommand{\arraystretch}{1.35}
-\begin{center}\small
-\begin{tabularx}{\linewidth}{>{\bfseries}p{2.2cm}X>{\leavevmode\color{gris}}p{2.2cm}}
-\toprule
-Outil & À quoi il sert & Prix \\ \midrule
-Claude (Claude Code) & Ton monteur : tu lui expliques ce que tu veux, il fabrique la vidéo & Abonnement payant \\
-ElevenLabs & Transforme ton texte en voix naturelle, ou reprend ta propre voix & Gratuit pour essayer \\
-Mixkit & Musiques, sons et vidéos gratuits que tu as le droit d'utiliser & Gratuit \\
-GitHub & \textbf{Seulement sur téléphone} : un classeur en ligne où Claude range tes projets & Gratuit \\ \bottomrule
-\end{tabularx}
-\end{center}
+\capture{images/claude-code.jpg}{La page de Claude Code. \pastille{1} « Essayer Claude » pour créer ton compte et choisir un abonnement. \pastille{2} « Télécharger » pour installer Claude Code sur ton ordinateur ; le bouton indique ton système. \pastille{3} La version « Web », pour travailler depuis un téléphone.}
 
-\section{Pourquoi « Claude Code » ?}
-La discussion classique avec Claude peut seulement te répondre. \textbf{Claude Code}, lui, peut agir : télécharger des vidéos, fabriquer des fichiers, regarder le résultat et corriger ses erreurs. C'est la différence entre demander conseil à un monteur et lui confier le travail.
-
-\capture{images/claude-code.jpg}{La page de Claude Code. \pastille{1} « Essayer Claude » pour créer ton compte et choisir un abonnement. \pastille{2} « Télécharger » pour installer Claude Code sur ton ordinateur (le bouton indique ton système : Windows, Mac ou Linux). \pastille{3} La version « Web », pour travailler depuis un téléphone.}
-
-\begin{retenir}
-Pour fabriquer la vidéo, Claude utilise un logiciel gratuit appelé HyperFrames. Tu n'as pas à t'en occuper : Claude l'installe et s'en sert tout seul.
-\end{retenir}
-
-% ======================================================================== 2
-\chapter{Tout préparer (une seule fois)}
-Tu fais cette étape une seule fois. Ensuite, chaque nouvelle vidéo commence par un simple message. Choisis ton chemin selon l'appareil que tu utilises.
-
-\begin{center}\small
-\begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X}
-\toprule
-\textbf{\color{violet}Chemin A : sur ordinateur} (conseillé) & \textbf{\color{violet}Chemin B : sur téléphone} \\ \midrule
-Tu installes l'application Claude Code & Rien à installer, tout se passe en ligne \\
-Tes vidéos restent dans un dossier de ton ordinateur & Tes vidéos sont rangées sur GitHub \\
-Pas besoin de GitHub & Un compte GitHub gratuit est nécessaire \\ \bottomrule
-\end{tabularx}
-\end{center}
-
-\section{Chemin A : sur ordinateur}
+\section{Sur ordinateur (conseillé)}
 \begin{enumerate}
-  \item Sur la page de Claude Code (image 1.1), clique sur \textbf{« Télécharger »} et installe l'application, comme n'importe quel logiciel.
-  \item Ouvre Claude Code et \textbf{connecte-toi avec ton compte Claude}.
-  \item Crée sur ton ordinateur un \textbf{dossier vide}, par exemple \texttt{mes-videos} dans tes Documents, puis choisis-le dans Claude Code.
-  \item C'est tout : Claude travaille directement dans ce dossier, et tes vidéos y restent même après avoir fermé l'application.
+  \item Sur la page de Claude Code, clique sur « Télécharger » et installe l'application.
+  \item Ouvre-la et connecte-toi avec ton compte Claude.
+  \item Crée un dossier vide, par exemple \texttt{mes-videos} dans tes Documents, puis choisis-le dans Claude Code.
 \end{enumerate}
+Tes vidéos seront enregistrées dans ce dossier.
 
 \begin{astuce}
-Claude te demandera parfois l'autorisation d'installer un outil (par exemple un lecteur vidéo ou « Node.js ») ou de lancer une commande. Lis la demande : si elle sert à fabriquer ta vidéo, accepte. Laisse ton ordinateur allumé pendant le montage, car c'est lui qui fait le travail.
+Claude te demandera parfois l'autorisation d'installer un outil ou de lancer une commande. Si la demande concerne ta vidéo, accepte. Laisse l'ordinateur allumé pendant le montage.
 \end{astuce}
 
-\section{Chemin B : sur téléphone}
-Sur téléphone, Claude travaille dans un ordinateur en ligne. Il lui faut un classeur en ligne pour ranger tes projets : c'est le rôle de GitHub.
+\section{Sur téléphone}
+Sur téléphone, Claude travaille sur un ordinateur en ligne et range tes projets dans un dossier GitHub.
 \begin{enumerate}
-  \item Crée un compte gratuit sur \textbf{github.com} (bouton « Sign up »).
-  \item Une fois connecté, touche le \textbf{+} en haut, puis \textbf{« New repository »} (nouveau dossier).
-  \item Donne-lui un nom simple, par exemple \texttt{mes-videos}, puis valide avec le bouton vert « Create repository ».
-  \item Ouvre \textbf{Claude Code} dans l'application Claude ou sur \textbf{claude.ai}, \textbf{relie ton compte GitHub} quand on te le demande, et choisis le dossier \texttt{mes-videos}.
+  \item Crée un compte gratuit sur github.com.
+  \item Touche le « + » en haut, puis « New repository ».
+  \item Appelle le dossier \texttt{mes-videos} et valide avec le bouton vert « Create repository ».
+  \item Ouvre Claude Code dans l'application Claude ou sur claude.ai, relie ton compte GitHub quand on te le demande et choisis \texttt{mes-videos}.
 \end{enumerate}
 
-\capture[0.72]{images/github-nouveau-depot.jpg}{\pastille{1} Le bouton « + » en haut de GitHub. \pastille{2} « New repository » pour créer ton dossier de projets.}
-\capture{images/github-nom-depot.jpg}{\pastille{3} Le nom de ton dossier, par exemple « mes-videos ».}
-
-\section{Tes trois premiers messages à Claude}
-\begin{acopier}[Message 1 : préparer le dossier]
-Prépare ce dossier pour fabriquer des vidéos verticales pour TikTok avec HyperFrames.
-\end{acopier}
-\begin{acopier}[Message 2 : tes règles]
-Crée un fichier de consignes avec mes règles pour toutes mes vidéos (voir le modèle à la fin du guide). Relis-le avant chaque vidéo.
-\end{acopier}
-\begin{acopier}[Message 3 : le carnet de suivi]
-Tiens un carnet de suivi : note chaque vidéo, ce que j'ai aimé et ce que je n'ai pas aimé.
-\end{acopier}
+\capture[0.72]{images/github-nouveau-depot.jpg}{\pastille{1} Le bouton « + » en haut de GitHub. \pastille{2} « New repository ».}
+\capture{images/github-nom-depot.jpg}{\pastille{3} Le nom du dossier.}
 
 \begin{attention}
-\textbf{Chemin B (téléphone) seulement :} l'ordinateur en ligne de Claude est vidé après chaque séance. Prends le réflexe de lui dire régulièrement « Enregistre tout sur GitHub » : ce qui n'est pas enregistré est perdu. Sur ordinateur (chemin A), tes fichiers restent dans ton dossier.
+Sur téléphone, l'ordinateur en ligne est vidé après chaque séance. Termine chaque séance par « Enregistre tout sur GitHub », sinon tu perds ton travail.
 \end{attention}
 
+% ======================================================================== 2
+\chapter{Donner tes règles à Claude}
+Avant ta première vidéo, envoie tes règles de style à Claude. Il les garde dans un fichier de consignes et les relit à chaque vidéo, ce qui t'évite de les répéter.
+
+\begin{acopier}[Prompt : mes consignes]
+Crée un fichier de consignes que tu reliras avant chaque vidéo :\\
+- Réponds-moi en français, simplement.\\
+- Format vertical 1080×1920 : mon titre en haut, le film au centre, les sous-titres mot à mot.\\
+- Pendant les 3 premières secondes, de vraies vidéos qui changent à chaque mot.\\
+- Ensuite, une nouvelle image toutes les 1 à 2 secondes, du début à la fin.\\
+- Des personnages animés qui marchent, pointent et réagissent ; une caméra qui zoome et suit l'action.\\
+- Quand je donne une liste, cache chaque point derrière une case « ? » et dévoile-le quand la voix l'annonce.\\
+- Musique libre de droits, bien audible, environ 5 dB sous la voix ; un bruitage à chaque changement d'image.\\
+- Vérifie toujours la vidéo avant de fabriquer le fichier final.
+\end{acopier}
+
+\section{Choisir un style}
+Ajoute l'un de ces styles à tes consignes, ou invente le tien.
+
+\begin{acopier}[Prompt : style dynamique]
+Ajoute à mes consignes : style très rythmé, fond noir, couleurs vives (jaune citron et blanc), gros titres en majuscules qui claquent, secousses de caméra sur les mots forts.
+\end{acopier}
+\begin{acopier}[Prompt : style élégant]
+Ajoute à mes consignes : style sobre et haut de gamme, fond crème, police à empattements pour les titres, transitions lentes en fondu, musique douce au piano.
+\end{acopier}
+\begin{acopier}[Prompt : style alerte]
+Ajoute à mes consignes : style « info urgente », bandes rouges et noires, gros chiffres, sirène discrète au début, texte qui tape comme une machine à écrire.
+\end{acopier}
+
+\section{Faire évoluer tes règles}
+Quand une remarque vaut pour toutes tes vidéos, demande à Claude de l'ajouter.
+
+\begin{acopier}[Prompt : nouvelle règle]
+Ajoute à mes consignes : [ta remarque, par exemple « la musique est toujours trop forte, baisse-la »]. Applique-la à toutes mes prochaines vidéos.
+\end{acopier}
+
 % ======================================================================== 3
-\chapter{Trouver l'idée et écrire le texte}
-Une bonne vidéo courte parle d'un seul sujet et donne envie de rester dès la première seconde.
-
-\section{Deux sortes de vidéos, à mélanger}
-\begin{itemize}
-  \item \textbf{Les vidéos « spectacle »} : des images impressionnantes montées sur une musique, sans voix. Elles attirent du monde.
-  \item \textbf{Les vidéos « conseil »} : une voix qui apprend quelque chose d'utile. Elles font revenir les gens et leur donnent confiance en toi.
-\end{itemize}
-
-\section{La recette d'une vidéo conseil de 45 secondes}
-Environ 130 mots, en cinq temps :
+\chapter{Écrire le texte}
+Une vidéo conseil de 45 secondes fait environ 130 mots. Celles qui retiennent le mieux suivent souvent le même ordre :
 \begin{enumerate}
-  \item \textbf{L'accroche (3 premières secondes)} : une phrase qui touche un problème que ton public connaît. \emph{« Tu fais tous ces efforts au sport et tu ne vois aucun résultat ? »}
-  \item \textbf{Pourquoi c'est important} : \emph{« C'est normal, tu fais sans doute une de ces 3 erreurs. »}
-  \item \textbf{Le petit mystère} : \emph{« … et la dernière, presque tout le monde la fait. »} Les gens restent pour savoir laquelle.
-  \item \textbf{Les 3 points}, un par un : le problème, puis la solution simple.
-  \item \textbf{La fin} : une phrase de conclusion, puis une demande claire, comme \emph{« Abonne-toi »} ou \emph{« Écris RECETTE en commentaire »}.
+  \item une accroche de 3 secondes sur un problème que ton public connaît ;
+  \item une phrase qui explique pourquoi ce problème compte ;
+  \item l'annonce des points, avec un petit mystère sur le dernier (« et le dernier, presque tout le monde le fait ») ;
+  \item les points, chacun avec sa solution ;
+  \item une demande claire à la fin : s'abonner, ou écrire un mot en commentaire.
 \end{enumerate}
 
-\begin{astuce}
-Pas d'idée de texte ? Demande à Claude de l'écrire (message prêt à copier dans l'annexe). Relis toujours le texte avant de créer la voix : c'est ton nom qui est dessus.
-\end{astuce}
+\begin{acopier}[Prompt : texte d'une vidéo conseil]
+Écris le texte d'une vidéo conseil de 45 secondes (130 mots maximum) pour TikTok.\\
+Sujet : [ton sujet]. Pour qui : [ton public].\\
+Commence par une accroche sur un problème qu'ils connaissent, annonce 3 conseils avec un mystère sur le dernier, donne-les simplement et termine par : [ta demande].
+\end{acopier}
+
+\section{Exemples par thème}
+\begin{acopier}[Sport]
+Écris un texte de 45 secondes : « 3 erreurs qui t'empêchent de progresser à la salle ». Public : débutants de 18 à 30 ans. Fin : « Abonne-toi pour ton programme de la semaine ».
+\end{acopier}
+\begin{acopier}[Cuisine]
+Écris un texte de 40 secondes pour une recette de pâtes crémeuses prête en 10 minutes, étape par étape. Fin : « Écris RECETTE en commentaire et je t'envoie la liste des courses ».
+\end{acopier}
+\begin{acopier}[Beauté]
+Écris un texte de 45 secondes : « 3 gestes qui abîment ta peau sans que tu le saches ». Ton : grande sœur bienveillante.
+\end{acopier}
+\begin{acopier}[Argent]
+Écris un texte de 50 secondes : « Pourquoi ton salaire disparaît avant le 15 du mois », avec 3 conseils concrets pour un étudiant. Pas de promesse de gains.
+\end{acopier}
+\begin{acopier}[Commerce local]
+Écris un texte de 30 secondes pour présenter ma boulangerie [nom] à [ville] : ce qui la rend unique, l'horaire d'ouverture et une offre pour ceux qui viennent de TikTok.
+\end{acopier}
+\begin{acopier}[Histoire vraie]
+Transforme cette histoire en texte de 50 secondes, raconté à la première personne, avec du suspense jusqu'à la fin : [ton histoire en quelques lignes].
+\end{acopier}
+
+\section{Améliorer un texte}
+\begin{acopier}[Prompt : 10 accroches]
+Propose-moi 10 accroches de moins de 12 mots pour cette vidéo : [ton sujet]. Classe-les de la plus forte à la plus faible.
+\end{acopier}
+\begin{acopier}[Prompt : raccourcir]
+Raccourcis ce texte à 120 mots sans perdre les conseils, et rends la première phrase plus directe : [ton texte].
+\end{acopier}
 
 \begin{attention}
-Si tu promets quelque chose en commentaire (« Écris RECETTE et je te l'envoie »), prépare-le avant de publier et tiens ta promesse.
+Si tu promets quelque chose en commentaire (« écris RECETTE et je te l'envoie »), prépare-le avant de publier.
 \end{attention}
 
 % ======================================================================== 4
 \chapter{Créer la voix}
-La voix donne le rythme de toute la vidéo : chaque image et chaque sous-titre se calent sur elle.
+Tu peux t'enregistrer avec ton téléphone dans une pièce calme, à 20 cm du micro. Tu peux aussi faire lire ton texte par ElevenLabs, qui propose des voix très naturelles et peut copier la tienne.
 
-\section{Possibilité A : ta propre voix}
-Enregistre-toi avec ton téléphone : c'est gratuit et c'est toi. Mets-toi dans une pièce calme, le téléphone à 20 cm de la bouche, et parle avec énergie.
-
-\section{Possibilité B : ElevenLabs}
-ElevenLabs lit ton texte avec une voix très naturelle.
 \begin{enumerate}
-  \item Crée un compte sur \textbf{elevenlabs.io}.
-  \item Ouvre l'outil qui \textbf{convertit le texte en parole}.
-  \item \textbf{Choisis une voix} dans la liste, ou crée une copie de ta propre voix.
-  \item Colle ton texte, exactement celui que tu as validé, puis génère et télécharge le fichier audio (format MP3).
+  \item Crée un compte sur elevenlabs.io.
+  \item Ouvre l'outil « Convertir du texte en parole ».
+  \item Choisis une voix, colle ton texte et génère l'audio.
+  \item Télécharge le fichier MP3.
 \end{enumerate}
 
-\capture[0.86]{images/elevenlabs.jpg}{\pastille{1} « Convertir du texte en parole » ouvre l'outil. \pastille{2} La liste des voix : clique sur une voix pour l'écouter, puis choisis-la.}
+\capture[0.86]{images/elevenlabs.jpg}{\pastille{1} « Convertir du texte en parole ». \pastille{2} La liste des voix : clique sur une voix pour l'écouter.}
 
-\begin{astuce}
-La ponctuation dirige la voix : un point fait une pause, des points de suspension créent du suspense, un point d'exclamation donne de l'énergie.
-\end{astuce}
+La ponctuation règle le rythme de la voix : un point marque une pause, des points de suspension ajoutent du suspense. Chaque génération consomme des crédits, alors relis le texte avant.
 
-\section{Pour dépenser moins}
-\begin{itemize}
-  \item Relis ton texte avant de générer : chaque essai consomme des crédits.
-  \item Garde des textes courts (120 à 150 mots).
-  \item Ne recommence pas pour un silence trop long : Claude l'enlèvera au montage.
-\end{itemize}
+\begin{acopier}[Prompt : préparer le texte pour la voix]
+Prépare ce texte pour ElevenLabs : ajoute la ponctuation qui donne du rythme, écris les nombres en lettres et coupe les phrases trop longues. [ton texte]
+\end{acopier}
 
 \begin{attention}
 N'utilise jamais la voix d'une autre personne sans son accord.
 \end{attention}
 
 % ======================================================================== 5
-\chapter{Demander la vidéo à Claude}
-Tu envoies un seul message, comme si tu briefais un monteur. Plus tu es clair, moins tu auras de corrections.
+\chapter{Commander la vidéo}
+Joins le fichier de la voix à ton message et colle le texte exact : Claude s'en sert pour écrire les sous-titres sans faute.
 
-\section{Ce que ton message contient}
-\begin{itemize}
-  \item \textbf{le fichier de la voix}, en pièce jointe (le trombone à côté de la zone de texte) ;
-  \item \textbf{le texte exact} de la voix, collé dans le message : Claude s'en sert pour écrire les sous-titres sans faute ;
-  \item \textbf{le titre} à afficher en haut de la vidéo, court et accrocheur ;
-  \item \textbf{ton idée d'images}, en une phrase : « un avant / après », « une recette qui se prépare étape par étape » ;
-  \item \textbf{la fin voulue} : « Abonne-toi », « Écris RECETTE en commentaire »…
-\end{itemize}
-
-\begin{acopier}[Exemple de message]
-Voici ma voix (fichier joint) et le texte exact : « Tu fais tous ces efforts au sport… »\\
+\begin{acopier}[Prompt : commande de base]
+Voici ma voix (fichier joint) et le texte exact : [ton texte].\\
 Fais la vidéo en suivant mes consignes.\\
-Titre en haut : « 3 erreurs qui ruinent tes séances ».\\
-Idée d'images : un avant / après pour chaque erreur.\\
-Cases « ? » sous la vidéo : Échauffement, Sommeil, Régularité.
+Titre en haut : « [ton titre] ».\\
+Idée d'images : [ton idée].\\
+Cases « ? » sous la vidéo : [point 1], [point 2], [point 3].\\
+Fin : [ta demande].
 \end{acopier}
 
-\section{Les règles qui marchent}
-À mettre une fois pour toutes dans ton fichier de consignes :
-\begin{itemize}
-  \item format téléphone, ton titre en haut et la vidéo au centre ;
-  \item dès la première seconde, de vraies images qui changent à chaque mot ;
-  \item pendant toute la vidéo, des images qui changent toutes les 1 à 2 secondes ;
-  \item des personnages animés qui bougent et une « caméra » qui zoome sur l'essentiel ;
-  \item les points d'une liste cachés derrière des cases « ? », dévoilés au moment où la voix les annonce ;
-  \item une musique bien audible mais plus basse que la voix, et beaucoup de petits bruitages.
-\end{itemize}
+\section{Exemples par format}
+\begin{acopier}[Top 3 avec cases mystère]
+Voici ma voix et mon texte : [texte]. Titre : « 3 erreurs qui ruinent tes séances ». Cache les 3 erreurs derrière des cases « ? » et dévoile chacune quand je la nomme, avec un bruitage de révélation. Pour chaque erreur, montre de vraies vidéos de salle de sport et un personnage qui fait le mauvais geste puis le bon.
+\end{acopier}
+\begin{acopier}[Avant / après]
+Voici ma voix et mon texte : [texte]. Titre : « Mon salon avant et après ». Montre la photo avant (jointe), puis fais apparaître la photo après (jointe) avec un balayage de gauche à droite au moment où je dis « et maintenant ».
+\end{acopier}
+\begin{acopier}[Recette pas à pas]
+Voici ma voix et mon texte : [texte]. Titre : « Pâtes crémeuses en 10 minutes ». Une étape par scène, avec de vraies vidéos de cuisine et la liste des ingrédients qui se coche au fur et à mesure.
+\end{acopier}
+\begin{acopier}[Histoire vraie]
+Voici ma voix et mon texte : [texte]. Titre : « Le jour où j'ai tout perdu ». Ambiance cinéma : images sombres, musique tendue, zooms lents, et la révélation finale avec un gros impact sonore.
+\end{acopier}
+\begin{acopier}[Actualité en 3 points]
+Voici ma voix et mon texte : [texte]. Titre : « 3 choses à savoir sur [sujet] ». Style alerte : gros chiffres, captures d'écran des sources que je te donne, une case « ? » par point.
+\end{acopier}
+\begin{acopier}[Promotion d'un commerce]
+Voici ma voix et mon texte : [texte]. Titre : « [nom du commerce] à [ville] ». Utilise mes photos (jointes) en plein écran avec des zooms, affiche l'adresse et l'horaire à la fin, et termine sur l'offre.
+\end{acopier}
+\begin{acopier}[Edit sans voix]
+Fais un edit de 20 secondes sans voix et sans texte dans la vidéo, calé sur cette musique (jointe). Utilise de vraies vidéos de [thème], coupe sur chaque temps, ajoute des zooms et des flashs sur les temps forts et fais monter la tension jusqu'au drop.
+\end{acopier}
 
 \begin{astuce}
-Quand une remarque vaut pour toutes tes vidéos (« la musique est trop forte »), demande à Claude de l'ajouter à tes consignes : tu n'auras plus jamais à la répéter.
+Tes propres photos et vidéos rendent la vidéo plus personnelle. Joins-les au message et dis à quel moment les montrer.
 \end{astuce}
 
 % ======================================================================== 6
-\chapter{Pendant que Claude travaille}
-Claude met en général 30 à 60 minutes pour monter une vidéo. Tu peux faire autre chose pendant ce temps. Voici ce qu'il fait, dans l'ordre :
-\begin{enumerate}
-  \item \textbf{Il nettoie ta voix} : volume réglé, bruits de fond atténués.
-  \item \textbf{Il repère le moment exact où tu dis chaque mot}, pour que les sous-titres et les images tombent pile.
-  \item \textbf{Il découpe la vidéo en scènes}, une par idée.
-  \item \textbf{Il cherche les images, musiques et sons} gratuits et autorisés, par exemple sur Mixkit.
-  \item \textbf{Il anime chaque scène} : images qui défilent, titres, personnages qui bougent, zooms.
-  \item \textbf{Il ajoute les bruitages} : un « whoosh » à chaque changement d'image, des « boum » sur les mots forts, des clics… souvent plus de 100 dans une vidéo de 45 secondes.
-  \item \textbf{Il règle la musique} pour qu'on entende toujours bien ta voix.
-  \item \textbf{Il assemble la version téléphone} : ton titre en haut, la vidéo au milieu.
-\end{enumerate}
+\chapter{Corriger la vidéo}
+Regarde la vidéo sur ton téléphone, le son allumé. Pour une correction rapide, donne le moment, ce qui ne va pas et ce que tu veux à la place. Regroupe tes remarques dans un seul message.
 
-\capture{images/mixkit-musique.jpg}{Mixkit, la banque de musiques gratuites où Claude va chercher pour toi. \pastille{1} Écouter un morceau. \pastille{2} Le télécharger. Tu peux aussi y choisir toi-même ta musique et la donner à Claude.}
-\capture{images/mixkit-sons.jpg}{La même banque pour les bruitages (ici, les « whoosh » des transitions). \pastille{1} Télécharger un son.}
-
-\begin{retenir}
-Si tu demandes un changement, Claude ne recommence pas tout : il modifie seulement le passage concerné.
-\end{retenir}
-
-% ======================================================================== 7
-\chapter{Vérifier et corriger}
-Avant de fabriquer la vidéo finale, Claude vérifie son travail : textes qui se chevauchent, mots coupés, sons trop forts. Il regarde aussi des images de chaque scène. Demande-lui toujours cette vérification : une erreur repérée tôt se corrige en quelques secondes.
-
-\section{Ce que toi, tu regardes}
-\begin{itemize}[label={}]
-  \item \coche \textbf{Les 3 premières secondes} : te donneraient-elles envie de rester ?
-  \item \coche \textbf{Les textes} : fautes, mots coupés, titre mal placé.
-  \item \coche \textbf{Le son} : la musique s'entend, mais ta voix reste claire.
-  \item \coche \textbf{Sur un téléphone} : c'est là que ton public la verra.
-\end{itemize}
-
-\section{Bien demander une correction}
-Dis ce qui ne va pas, à quel moment, et ce que tu veux à la place.
-
+\renewcommand{\arraystretch}{1.3}
 \begin{center}\small
-\begin{tabularx}{\linewidth}{>{\leavevmode\color{vert}\bfseries}p{1.6cm}X}
-Clair & « À 12 secondes, le titre cache le personnage. Mets-le plus haut. » \\
-\textcolor{rouge}{Flou} & « C'est bof. » (Claude devra deviner.)
+\begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{2.7cm}>{\raggedright\arraybackslash\ttfamily}X}
+\toprule
+\textbf{Ce que tu vois} & \textrm{\textbf{Le prompt à envoyer}} \\ \midrule
+Le début n'accroche pas & Rends les 3 premières secondes plus fortes : une vraie vidéo par mot et un gros bruitage sur le titre. \\
+La musique couvre la voix & Baisse la musique : on doit entendre ma voix sans effort. \\
+On n'entend pas la musique & Monte un peu la musique, elle doit s'entendre. \\
+Sous-titres trop petits & Grossis les sous-titres et mets le mot prononcé en jaune. \\
+Images trop lentes & Change d'image toutes les secondes. \\
+Écran trop chargé & Mets moins d'éléments à l'écran en même temps. \\
+Un texte en cache un autre & À 12 s, le titre cache le personnage : remonte le titre. \\
+Image hors sujet & À 8 s, remplace l'image par une vraie vidéo de [sujet]. \\
+Faute dans un sous-titre & À 20 s, le sous-titre affiche [mot] au lieu de [mot]. \\
+Pas assez de sons & Ajoute un bruitage à chaque changement d'image et un impact sur les chiffres. \\
+Personnage trop figé & Fais bouger le personnage à chaque phrase : il pointe, saute, réagit. \\
+Fin molle & Termine sur un gros « Abonne-toi » avec un bruitage et un bouton qui se clique. \\ \bottomrule
 \end{tabularx}
 \end{center}
 
-\begin{astuce}
-Regroupe toutes tes remarques dans un seul message : Claude les corrige en une fois.
-\end{astuce}
+\begin{acopier}[Prompt : relecture par Claude]
+Avant de fabriquer le fichier final, regarde une image de chaque scène et corrige les textes coupés, les chevauchements et les sons trop forts.
+\end{acopier}
 
-% ======================================================================== 8
-\chapter{Récupérer la vidéo et la publier}
-Quand tout te convient, Claude fabrique la vidéo finale et te l'envoie dans la conversation. Sur ordinateur, tu la retrouves aussi directement dans ton dossier.
-\begin{enumerate}
-  \item \textbf{Télécharge la vidéo} et regarde-la une dernière fois sur ton téléphone, le son allumé.
-  \item \textbf{Demande une miniature} (l'image de couverture) : Claude la fabrique avec ton titre en gros.
-  \item \textbf{Publie sur TikTok} avec une légende courte qui reprend la promesse de la vidéo, et 3 à 5 mots-clés (hashtags) de ton thème.
-  \item \textbf{Publie la même vidéo sur Instagram Reels et YouTube Shorts} : aucun travail en plus.
-  \item \textbf{Réponds aux commentaires} dans la première heure : les plateformes montrent davantage les vidéos qui font réagir.
-\end{enumerate}
+% ======================================================================== 7
+\chapter{Publier}
+Une fois la vidéo validée, demande le fichier final et la miniature, puis publie la même vidéo sur TikTok, Instagram Reels et YouTube Shorts.
+
+\begin{acopier}[Prompt : fichier final et miniature]
+La vidéo me convient. Fabrique la version finale et une miniature verticale avec mon titre en gros, puis envoie-les-moi.
+\end{acopier}
+\begin{acopier}[Prompt : légende et hashtags]
+Écris une légende TikTok de moins de 150 caractères pour cette vidéo, avec une question pour faire commenter et 5 hashtags de mon thème.
+\end{acopier}
+\begin{acopier}[Prompt : réponse aux commentaires]
+Rédige le message que j'enverrai à ceux qui écrivent [mot] en commentaire, avec [ce que tu as promis].
+\end{acopier}
 
 \begin{figure}[H]\centering
 \begin{minipage}{0.36\linewidth}\centering\fcolorbox{encre!20}{white}{\includegraphics[width=0.95\linewidth]{images/miniature-exemple.jpg}}\end{minipage}\hfill
 \begin{minipage}{0.6\linewidth}\centering\fcolorbox{encre!20}{white}{\includegraphics[width=0.95\linewidth]{images/tiktok.jpg}}\end{minipage}
-\caption{À gauche, une miniature fabriquée par Claude. À droite, la connexion à TikTok Studio pour publier depuis l'ordinateur : \pastille{1} le plus simple est de te connecter avec le même compte que sur ton téléphone.}
+\caption{À gauche, une miniature fabriquée par Claude. À droite, la connexion à TikTok Studio pour publier depuis l'ordinateur : \pastille{1} connecte-toi avec le même compte que sur ton téléphone.}
 \end{figure}
 
-\section{À quelle heure publier ?}
-Il n'y a pas d'heure magique. Essaie le matin (trajets), le midi (pause déjeuner) et le soir (après 19 h), puis garde les créneaux où tes vidéos marchent le mieux. Les statistiques de ton compte te montrent quand ton public est connecté.
+Réponds aux commentaires dans la première heure ; les plateformes montrent davantage les vidéos qui font réagir. Pour l'heure de publication, essaie le matin, le midi et le soir, puis garde les créneaux où tes vidéos marchent le mieux d'après les statistiques de ton compte.
 
-% ======================================================================== 9
-\chapter{Publier sans t'épuiser}
-Sur les réseaux, la régularité compte plus qu'une vidéo parfaite. Le plus simple pour tenir : préparer plusieurs vidéos d'un coup.
+% ======================================================================== 8
+\chapter{Tenir le rythme}
+Une vidéo par jour pendant un mois est un bon début. Le plus simple est de préparer la semaine d'un coup, en une séance.
 
-\begin{retenir}
-Commence doucement : une vidéo par jour pendant un mois. Quand ce rythme devient facile, passe à deux, puis trois si tu le souhaites.
-\end{retenir}
+\begin{acopier}[Prompt : 7 idées]
+Propose-moi 7 idées de vidéos sur [ton thème] pour [ton public], avec pour chacune un titre de moins de 8 mots.
+\end{acopier}
+\begin{acopier}[Prompt : 7 textes]
+Écris les textes des idées 1 à 7 (130 mots chacun), prêts pour ElevenLabs.
+\end{acopier}
+\begin{acopier}[Prompt : la semaine en série]
+Voici les 7 voix (jointes) et leurs textes. Monte les 7 vidéos l'une après l'autre en suivant mes consignes, et envoie-moi chacune quand elle est prête.
+\end{acopier}
+\begin{acopier}[Prompt : analyser tes chiffres]
+Voici les statistiques de mes 7 dernières vidéos (vues, durée moyenne de visionnage, abonnés gagnés) : [tes chiffres]. Dis-moi quels sujets et quelles accroches marchent le mieux, et propose la semaine suivante.
+\end{acopier}
 
-\section{Une semaine type, en une heure de travail}
-\begin{enumerate}
-  \item \textbf{Le dimanche} : demande à Claude 7 idées sur ton thème, choisis-en, et fais-lui écrire les textes. Relis-les.
-  \item \textbf{Le même jour} : crée les 7 voix d'un coup et envoie-les à Claude.
-  \item \textbf{En début de semaine} : Claude monte les vidéos ; tu regardes et tu demandes tes corrections.
-  \item \textbf{Chaque jour} : tu publies et tu réponds aux commentaires.
-  \item \textbf{En fin de semaine} : regarde quelles vidéos ont le mieux marché, et demande à Claude d'en tirer des idées.
-\end{enumerate}
-
-\section{Savoir si ça marche}
-Juge un ensemble de vidéos, jamais une seule : même les grands créateurs ont des vidéos qui ne décollent pas. Le chiffre le plus utile est \textbf{la rétention}, c'est-à-dire combien de temps les gens regardent ta vidéo. Refais davantage les sujets qui retiennent le plus.
-
-\begin{attention}
-Le vrai piège : changer de sujet toutes les deux semaines. Choisis un thème, garde-le au moins un mois, puis décide en regardant tes chiffres.
-\end{attention}
+Juge tes résultats sur une série de vidéos, car même les comptes connus ont des vidéos qui ne décollent pas. Le chiffre le plus utile est la durée moyenne de visionnage. Garde le même thème au moins un mois avant de changer de direction.
 
 % ======================================================================== RÈGLES
 \chapter*{Les règles à respecter}
 \addcontentsline{toc}{chapter}{Les règles à respecter}
 \markboth{Les règles à respecter}{}
-Une vidéo supprimée ou bloquée pour une question de droits, c'est tout ton travail perdu. Ces règles sont simples et valent pour tout le monde.
+Une vidéo peut être bloquée ou retirée pour une question de droits. Ces règles valent pour tout le monde.
 
+\renewcommand{\arraystretch}{1.35}
 \begin{center}\small
 \begin{tabularx}{\linewidth}{>{\bfseries}p{1.7cm}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X}
 \toprule
  & \textcolor{vert}{Tu peux} & \textcolor{rouge}{Évite} \\ \midrule
-Musique & Musiques gratuites et autorisées (Mixkit) ; sons proposés dans TikTok & Une chanson connue téléchargée sur Internet : la vidéo peut être bloquée \\
-Images & Banques gratuites et autorisées ; tes propres images & Extraits de films ou de séries, images prises au hasard sur Internet \\
+Musique & Musiques libres de droits ; sons proposés dans TikTok & Une chanson connue téléchargée sur Internet : la vidéo peut être bloquée \\
+Images & Banques d'images libres de droits ; tes propres images & Extraits de films ou de séries, images prises au hasard sur Internet \\
 Voix & Ta voix, ou une voix de la bibliothèque ElevenLabs & Copier la voix d'une vraie personne sans son accord \\
-Infos & Faire vérifier chaque chiffre par Claude ; dire « selon des estimations » & Présenter une rumeur comme un fait \\
+Infos & Demander à Claude de vérifier chaque chiffre ; écrire « selon des estimations » quand c'en est une & Présenter une rumeur comme un fait \\
 Contenu & Rester tout public & Images choquantes ou dénudées \\ \bottomrule
 \end{tabularx}
 \end{center}
 
-\section*{Trois erreurs de débutant}
-\begin{itemize}
-  \item \textbf{Sur téléphone, oublier de demander à Claude d'enregistrer le projet} sur GitHub.
-  \item \textbf{Valider la vidéo sans la regarder sur un téléphone.}
-  \item \textbf{Abandonner après quelques vidéos} : il faut souvent plusieurs semaines avant qu'une vidéo décolle.
-\end{itemize}
-
-% ======================================================================== ANNEXE
-\chapter*{Messages prêts à copier}
-\addcontentsline{toc}{chapter}{Messages prêts à copier}
-\markboth{Messages prêts à copier}{}
-Copie ces messages dans Claude Code et remplace ce qui est entre crochets.
-
-\begin{acopier}[1. Tes consignes (une seule fois)]
-Crée un fichier de consignes que tu reliras avant chaque vidéo :\\
-- Réponds-moi en français, simplement.\\
-- Format téléphone (vertical), mon titre en haut, la vidéo au centre.\\
-- Dès la première seconde, de vraies images qui changent à chaque mot.\\
-- Pendant toute la vidéo, des images qui changent toutes les 1 à 2 secondes.\\
-- Des personnages animés qui bougent et une caméra qui zoome sur l'essentiel.\\
-- Les points d'une liste cachés derrière des cases « ? », dévoilés quand la voix les annonce.\\
-- Musique gratuite et autorisée, bien audible mais plus basse que la voix ; beaucoup de petits bruitages.\\
-- Vérifie toujours ton travail avant de fabriquer la vidéo finale.\\
-- Tiens un carnet de suivi de mes vidéos.\\
-- (Seulement sur téléphone) Enregistre tout sur GitHub à chaque étape.
-\end{acopier}
-
-\begin{acopier}[2. Faire écrire un texte]
-Écris le texte d'une vidéo conseil de 45 secondes (130 mots maximum) pour TikTok.\\
-Sujet : [ton sujet]. Pour qui : [ton public].\\
-Commence par une phrase choc, annonce 3 conseils avec un petit mystère sur le dernier, donne les 3 conseils simplement, puis termine par : [Abonne-toi / Écris MOT en commentaire].
-\end{acopier}
-
-\begin{acopier}[3. Demander la vidéo]
-Voici ma voix (fichier joint) et le texte exact : [ton texte].\\
-Fais la vidéo en suivant mes consignes.\\
-Titre en haut : « [ton titre] ». Idée d'images : [ton idée].\\
-Cases « ? » sous la vidéo : [conseil 1], [conseil 2], [conseil 3].
-\end{acopier}
-
-\begin{acopier}[4. Demander une correction]
-À [seconde], [ce qui ne va pas]. Je préfère [ce que tu veux].\\
-Si c'est valable pour toutes mes vidéos, ajoute-le à mes consignes.
-\end{acopier}
-
-\begin{acopier}[5. Préparer la semaine]
-Propose-moi 7 idées de vidéos sur [ton thème], puis écris les 7 textes (130 mots chacun).
-\end{acopier}
-
-\begin{acopier}[6. Récupérer la vidéo et la miniature]
-La vidéo me convient : fabrique la version finale et la miniature, puis envoie-les-moi.\\
-(Sur téléphone, ajoute : « puis enregistre tout sur GitHub ».)
+\begin{acopier}[Prompt : vérifier les faits]
+Vérifie sur Internet chaque chiffre et chaque date de mon texte, donne-moi la source de chacun et signale ce qui est faux ou incertain.
 \end{acopier}
 
 % ======================================================================== LEXIQUE
@@ -505,32 +437,30 @@ La vidéo me convient : fabrique la version finale et la miniature, puis envoie-
 \begin{center}\small
 \begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash\leavevmode\bfseries\color{violet}}p{2.6cm}X}
 \toprule
-Accroche (hook) & Les toutes premières secondes, qui donnent envie de rester \\
-Claude Code & La version de Claude qui peut agir (télécharger, fabriquer, vérifier), pas seulement répondre \\
-Fichier de consignes & Le texte où tu écris tes règles une fois pour toutes ; Claude le relit avant chaque vidéo \\
-GitHub & Un classeur en ligne où Claude range tes projets ; utile seulement si tu travailles depuis un téléphone \\
-Libre de droits & Que tu as le droit d'utiliser gratuitement, sans demander d'autorisation \\
-Miniature & L'image de couverture qui s'affiche avant qu'on lance la vidéo \\
-Rendu & La fabrication du fichier vidéo final \\
-Rétention & Combien de temps les gens regardent ta vidéo avant de passer à la suivante \\
+Accroche (hook) & Les premières secondes de la vidéo, faites pour donner envie de rester \\
+Claude Code & La version de Claude qui fabrique des fichiers, dont des vidéos \\
+Edit & Une vidéo sans voix, montée sur le rythme d'une musique \\
+Fichier de consignes & Le texte où tu écris tes règles ; Claude le relit avant chaque vidéo \\
+GitHub & Un classeur en ligne, utile seulement si tu travailles depuis un téléphone \\
+Libre de droits & Que tu peux utiliser gratuitement sans demander d'autorisation \\
+Miniature & L'image de couverture affichée avant le lancement de la vidéo \\
+Prompt & Le message que tu envoies à Claude \\
+Rétention & La durée pendant laquelle les gens regardent ta vidéo \\
 Voix off & Une voix qu'on entend sans voir la personne qui parle \\ \bottomrule
 \end{tabularx}
 \end{center}
 
 % ======================================================================== FIN
-\chapter*{Et maintenant ?}
-\addcontentsline{toc}{chapter}{Et maintenant ?}
-\markboth{Et maintenant ?}{}
-Tu as tout ce qu'il faut. Ta première vidéo ne sera pas parfaite, et c'est normal : la dixième sera bien meilleure, et la trentième encore plus.
+\chapter*{Ta première semaine}
+\addcontentsline{toc}{chapter}{Ta première semaine}
+\markboth{Ta première semaine}{}
+\begin{itemize}[label={}]
+  \item \coche Crée tes comptes Claude et ElevenLabs, puis installe Claude Code (ou crée ton compte GitHub si tu es sur téléphone).
+  \item \coche Envoie le prompt « mes consignes » et choisis un style.
+  \item \coche Fais écrire ton premier texte, relis-le et crée la voix.
+  \item \coche Commande la vidéo, corrige-la et publie-la.
+\end{itemize}
 
-\begin{retenir}
-\textbf{Ton plan pour cette semaine :}\\
-\coche Créer tes comptes (Claude, ElevenLabs) et installer Claude Code sur ton ordinateur (ou créer un compte GitHub si tu es sur téléphone).\\
-\coche Envoyer les trois premiers messages à Claude.\\
-\coche Écrire et enregistrer ton premier texte.\\
-\coche Publier ta première vidéo.
-\end{retenir}
-
-Tu veux voir la méthode en action ? Retrouve des exemples de vidéos et de nouveaux conseils sur le compte \textbf{Gausscode}.
+D'autres exemples de vidéos et de prompts sont publiés sur le compte \textbf{Gausscode}.
 
 \end{document}
