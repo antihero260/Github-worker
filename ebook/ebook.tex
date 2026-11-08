@@ -16,7 +16,7 @@
 \definecolor{fondgris}{HTML}{F3F4F6}
 \usepackage{graphicx}
 \usepackage{tikz}
-\usetikzlibrary{positioning,arrows.meta,calc,shapes.geometric,babel}
+\usetikzlibrary{positioning,arrows.meta,calc,shapes.geometric,babel,shadows}
 \usepackage[most]{tcolorbox}
 \usepackage{enumitem}
 \usepackage{tabularx,booktabs,array}
@@ -72,6 +72,8 @@
   fonttitle=\bfseries\small,coltitle=encre,colbacktitle=citron!25,title={Victoire rapide},attach title to upper={\ \ }}
 \newcommand{\objectif}[1]{\begin{tcolorbox}[enhanced,colback=encre,colframe=encre,arc=2pt,boxrule=0pt,left=9pt,right=9pt,top=6pt,bottom=6pt,fontupper=\small\color{white}]{\color{citron}\bfseries Dans ce chapitre}\quad #1\end{tcolorbox}}
 \newenvironment{bilan}{\section*{Avant de passer à la suite}\begin{itemize}[label={}]}{\end{itemize}}
+% ---- téléphone (image verticale dans un cadre arrondi)
+\newcommand{\telephone}[4][0]{\node[rotate=#1,inner sep=1.6pt,fill=black,draw=white,line width=1.2pt,rounded corners=6pt,drop shadow={opacity=0.45,shadow xshift=2pt,shadow yshift=-2pt}] at (#2) {\includegraphics[width=#3]{#4}};}
 % ---- le personnage vert (mêmes formes que dans les vidéos : unités du SVG, y vers le bas)
 \newcommand{\persovert}[3]{% #1 = échelle, #2 = angle du bras gauche, #3 = angle du bras droit (degrés, sens SVG)
 \begin{scope}[yscale=-1,x=#1pt,y=#1pt]
@@ -137,11 +139,38 @@ Ce guide n'est affilié à aucune des entreprises citées.}
 À la fin de ce guide, tu sauras faire monter par Claude Code et HyperFrames une vidéo de 30 à 60 secondes dans notre style, prête à publier sur TikTok, Instagram Reels ou YouTube Shorts. Tu lui donnes l'idée, la voix et tes remarques par messages ; il fait le montage.
 
 \begin{figure}[H]\centering
-\includegraphics[width=0.235\linewidth]{images/resultat-1.9.jpg}\hfill
-\includegraphics[width=0.235\linewidth]{images/resultat-6.6.jpg}\hfill
-\includegraphics[width=0.235\linewidth]{images/resultat-26.9.jpg}\hfill
-\includegraphics[width=0.235\linewidth]{images/resultat-46.5.jpg}
-\caption{Une vidéo faite avec cette méthode : l'accroche, les cases mystère, un conseil et l'appel à commenter. Le personnage vert est en bas à gauche.}
+\begin{tikzpicture}
+  \fill[encre,rounded corners=6pt] (-5.9,-3.55) rectangle (5.9,3.55);
+  \shade[inner color=citron!70,outer color=encre,opacity=0.9] (0,-0.2) ellipse (4.4cm and 2.7cm);
+  \node[anchor=north west] at (-5.6,3.35) {\anton\fontsize{15}{17}\selectfont\color{citron}TES\hspace{0.18em}VIDÉOS,\hspace{0.18em}MONTÉES\hspace{0.18em}PAR\hspace{0.18em}CLAUDE};
+  \telephone[-16]{-4.1,-0.55}{1.55cm}{images/galerie/attention.jpg}
+  \telephone[16]{4.1,-0.55}{1.55cm}{images/galerie/english.jpg}
+  \telephone[-8]{-2.2,-0.35}{1.8cm}{images/galerie/mot-secret.jpg}
+  \telephone[8]{2.2,-0.35}{1.8cm}{images/galerie/skills.jpg}
+  \telephone[0]{0,-0.25}{2.1cm}{images/galerie/jeu-video.jpg}
+  \begin{scope}[shift={(-5.5,-1.75)}]\persovert{0.17}{150}{-150}\end{scope}
+  \node[anchor=south east,fill=citron,text=encre,font=\bfseries\scriptsize,inner sep=3pt] at (5.6,-3.35) {Toutes réalisées avec Claude Code + HyperFrames};
+\end{tikzpicture}
+\caption{Des vidéos réalisées avec cette méthode.}
+\end{figure}
+
+\section*{Ce qu'il y a dans chaque vidéo}
+\begin{figure}[H]\centering
+\begin{tikzpicture}[lab/.style={fill=encre,text=white,rounded corners=3pt,font=\bfseries\scriptsize,text width=2.55cm,align=center,inner sep=4pt},
+  fl/.style={draw=violet,line width=1pt,-{Circle[length=4pt]}}]
+  \node[inner sep=2pt,fill=black,draw=encre,line width=1.2pt,rounded corners=8pt] (tel) at (0,0) {\includegraphics[width=4.2cm]{images/resultat-6.6.jpg}};
+  \node[lab] (l1) at (-4.15,2.6) {Un titre-promesse en haut};
+  \node[lab] (l2) at (4.15,1.7) {De vraies vidéos qui changent à chaque mot};
+  \node[lab] (l3) at (-4.15,-0.3) {Le personnage vert qui joue chaque phrase};
+  \node[lab] (l4) at (4.15,-1.0) {Des sous-titres mot à mot};
+  \node[lab] (l5) at (-4.15,-2.6) {Des cases mystère dévoilées une à une};
+  \draw[fl] (l1.east) -- (-1.1,1.79);
+  \draw[fl] (l2.west) -- (1.24,0.62);
+  \draw[fl] (l3.east) -- (-1.75,-0.66);
+  \draw[fl] (l4.west) -- (0.6,-0.82);
+  \draw[fl] (l5.east) -- (-1.5,-1.91);
+\end{tikzpicture}
+\caption{Musique et bruitages complètent le tout : plus de 150 sons dans une vidéo de 45 secondes.}
 \end{figure}
 
 Le guide s'adresse aux créateurs, aux indépendants et aux commerçants qui veulent publier souvent sans passer leurs soirées sur un logiciel de montage. Aucune connaissance en code n'est nécessaire : tu copies des prompts, c'est-à-dire des messages tout prêts que tu envoies à Claude.
@@ -150,6 +179,7 @@ Le guide s'adresse aux créateurs, aux indépendants et aux commerçants qui veu
 \begin{itemize}[label={}]
   \item \coche un abonnement payant à Claude : il est obligatoire, car Claude Code et le modèle Opus 5.5 ne sont pas inclus dans l'offre gratuite ;
   \item \coche un ordinateur (Windows, Mac ou Linux) ou un téléphone avec l'application Claude ;
+  \item \coche un compte ChatGPT pour écrire le texte de la voix (l'offre gratuite suffit pour commencer) ;
   \item \coche un compte ElevenLabs pour la voix (une offre gratuite permet de commencer) ;
   \item \coche sur téléphone seulement, un compte GitHub gratuit.
 \end{itemize}
@@ -162,7 +192,7 @@ Compte une à deux heures pour la première vidéo, installation comprise, puis 
   b/.style={draw=encre!40,rounded corners=3pt,minimum width=2.6cm,minimum height=1.05cm,align=center,fill=white},
   c/.style={b,draw=violet,fill=violet!10,line width=1pt},
   fl/.style={-{Latex[length=2mm]},draw=encre!55,line width=0.7pt}]
-\node[b] (s) at (0,0) {\textbf{1. Texte}\\\textcolor{gris}{toi (+ Claude)}};
+\node[b] (s) at (0,0) {\textbf{1. Texte}\\\textcolor{gris}{toi + ChatGPT}};
 \node[b] (v) at (3.0,0) {\textbf{2. Voix}\\\textcolor{gris}{toi, ElevenLabs}};
 \node[b] (d) at (6.0,0) {\textbf{3. Commande}\\\textcolor{gris}{toi, un prompt}};
 \node[c] (m) at (6.0,-1.8) {\textbf{4. Montage}\\\textcolor{encre}{Opus 5.5, Élevé}};
@@ -306,9 +336,9 @@ Copie un style (rythme, couleurs, ambiance), pas le contenu : n'utilise pas les 
 \end{bilan}
 
 % ======================================================================== 4
-\chapter{Écrire le texte}
-\objectif{obtenir un texte de 45 secondes qui accroche dès la première phrase.}
-Une vidéo conseil de 45 secondes fait environ 130 mots. Celles qui retiennent le mieux suivent souvent cet ordre :
+\chapter{Écrire le texte avec ChatGPT}
+\objectif{obtenir avec ChatGPT un texte de 45 secondes qui accroche dès la première phrase.}
+Pour le texte de la voix off, ChatGPT donne les meilleurs résultats. Ouvre chatgpt.com ou l'application ChatGPT et colle les prompts de ce chapitre. Une vidéo conseil de 45 secondes fait environ 130 mots. Celles qui retiennent le mieux suivent souvent cet ordre :
 \begin{enumerate}
   \item une accroche de 3 secondes sur un problème que ton public connaît ;
   \item une phrase qui explique pourquoi ce problème compte ;
@@ -317,13 +347,13 @@ Une vidéo conseil de 45 secondes fait environ 130 mots. Celles qui retiennent l
   \item une demande claire à la fin : s'abonner, ou écrire un mot en commentaire.
 \end{enumerate}
 
-\begin{acopier}[Prompt : texte d'une vidéo conseil]
+\begin{acopier}[Prompt ChatGPT : texte d'une vidéo conseil]
 Écris le texte d'une vidéo conseil de 45 secondes (130 mots maximum) pour TikTok.\\
 Sujet : [ton sujet]. Pour qui : [ton public].\\
 Commence par une accroche sur un problème qu'ils connaissent, annonce 3 conseils avec un mystère sur le dernier, donne-les simplement et termine par : [ta demande].
 \end{acopier}
 
-\section{Exemples par thème}
+\section{Exemples par thème, à coller dans ChatGPT}
 \begin{acopier}[Sport]
 Écris un texte de 45 secondes : « 3 erreurs qui t'empêchent de progresser à la salle ». Public : débutants de 18 à 30 ans. Fin : « Abonne-toi pour ton programme de la semaine ».
 \end{acopier}
@@ -347,10 +377,10 @@ Transforme cette histoire en texte de 50 secondes, raconté à la première pers
 \end{acopier}
 
 \section{Améliorer un texte}
-\begin{acopier}[Prompt : 10 accroches]
+\begin{acopier}[Prompt ChatGPT : 10 accroches]
 Propose-moi 10 accroches de moins de 12 mots pour cette vidéo : [ton sujet]. Classe-les de la plus forte à la plus faible.
 \end{acopier}
-\begin{acopier}[Prompt : texte plus naturel]
+\begin{acopier}[Prompt ChatGPT : texte plus naturel]
 Réécris ce texte pour qu'il sonne comme si je parlais à un ami : phrases courtes, mots simples, mêmes conseils. [ton texte]
 \end{acopier}
 
@@ -373,7 +403,7 @@ Tu peux t'enregistrer avec ton téléphone dans une pièce calme, à 20 cm du mi
 
 Un point marque une pause et des points de suspension ajoutent du suspense. Chaque génération consomme des crédits : relis le texte avant.
 
-\begin{acopier}[Prompt : préparer le texte pour la voix]
+\begin{acopier}[Prompt ChatGPT : préparer le texte pour la voix]
 Prépare ce texte pour ElevenLabs : ajoute la ponctuation qui donne du rythme, écris les nombres en lettres et coupe les phrases trop longues. [ton texte]
 \end{acopier}
 
@@ -572,6 +602,7 @@ Fichier de consignes & Le texte où sont tes règles ; Claude le relit avant cha
 GitHub & Un dossier en ligne, nécessaire seulement sur téléphone \\
 HyperFrames & L'outil de montage que Claude utilise \\
 Libre de droits & Que tu peux utiliser gratuitement sans demander d'autorisation \\
+ChatGPT & L'assistant d'OpenAI qui sert à écrire le texte de la voix \\
 Opus 5.5 & Le modèle de Claude utilisé dans ce guide, réglé sur l'effort « Élevé » \\
 Prompt & Le message que tu envoies à Claude \\ \bottomrule
 \end{tabularx}
