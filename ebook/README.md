@@ -1,6 +1,6 @@
 # Ebook « Crée tes vidéos TikTok avec l'IA »
 
-Formation grand public v2.0 (36 pages A5, français) : Claude Code + Opus 5.5 (abonnement obligatoire), application mobile (menu Code), installation d'HyperFrames et de Humanizer par prompt, notre style avec le personnage vert, copier un style, vidéos libres qui collent au texte, plus de 50 prompts, bilan à chaque chapitre, dépannage. Texte relu avec Humanizer.
+Formation grand public v2.1 (34 pages A5, français, centrée sur la fabrication des vidéos avec Claude Code + HyperFrames ; sans chapitres de stratégie de publication) : Claude Code + Opus 5.5 (abonnement obligatoire), application mobile (menu Code), installation d'HyperFrames et de Humanizer par prompt, notre style avec le personnage vert, copier un style, vidéos libres qui collent au texte, plus de 50 prompts, bilan à chaque chapitre, dépannage. Texte relu avec Humanizer.
 
 - `ebook.tex` : la source (XeLaTeX, polices Inter + Anton, encadrés tcolorbox, schéma TikZ).
 - `images/` : captures annotées (cercles rouges + pastilles numérotées) et images de la vidéo 21.

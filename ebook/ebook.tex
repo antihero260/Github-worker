@@ -84,7 +84,7 @@
   \node[anchor=north west,text width=12.4cm,align=left] at ($(current page.north west)+(1.25cm,-2.3cm)$)
     {\anton\fontsize{40}{43}\selectfont\color{white}CRÉE TES VIDÉOS\\TIKTOK AVEC\\[-0.05em]\colorbox{citron}{\color{encre}\,L'IA\,}};
   \node[anchor=north west,text width=11.6cm,align=left] at ($(current page.north west)+(1.3cm,-8.6cm)$)
-    {\fontsize{12.5}{16}\selectfont\color{white}Avec Claude Opus 5.5 : notre style, nos réglages et plus de 50 prompts prêts à copier.};
+    {\fontsize{12.5}{16}\selectfont\color{white}Avec Claude Code, Opus 5.5 et HyperFrames : notre style et plus de 50 prompts prêts à copier.};
   \node[rotate=-7,inner sep=0pt,draw=white,line width=2.4pt] at ($(current page.south west)+(3.2cm,6.6cm)$) {\includegraphics[width=3.1cm]{images/resultat-1.9.jpg}};
   \node[rotate=0,inner sep=0pt,draw=white,line width=2.4pt] at ($(current page.south)+(0,7.0cm)$) {\includegraphics[width=3.1cm]{images/resultat-6.6.jpg}};
   \node[rotate=7,inner sep=0pt,draw=white,line width=2.4pt] at ($(current page.south east)+(-3.2cm,6.6cm)$) {\includegraphics[width=3.1cm]{images/resultat-46.5.jpg}};
@@ -104,7 +104,7 @@ Version 2.0, novembre 2026.
 
 © 2026 Gausscode. Tous droits réservés. Toute reproduction, même partielle, est interdite sans autorisation.
 
-Crédits des images. Captures d'écran de claude.com (Anthropic), elevenlabs.io, tiktok.com, de l'App Store (Apple) et de Google Play réalisées par l'auteur en novembre 2026 et utilisées à titre d'illustration ; les marques citées appartiennent à leurs propriétaires. La capture de l'application Claude vient du téléphone de l'auteur. Les deux images de l'interface GitHub viennent de la documentation officielle GitHub Docs (© GitHub, Inc., licence CC BY 4.0). Annotations et images de vidéos : l'auteur.
+Crédits des images. Captures d'écran de claude.com (Anthropic), elevenlabs.io, de l'App Store (Apple) et de Google Play réalisées par l'auteur en novembre 2026 et utilisées à titre d'illustration ; les marques citées appartiennent à leurs propriétaires. La capture de l'application Claude vient du téléphone de l'auteur. Les deux images de l'interface GitHub viennent de la documentation officielle GitHub Docs (© GitHub, Inc., licence CC BY 4.0). Annotations et images de vidéos : l'auteur.
 
 Les applications changent souvent de présentation. Si un bouton n'est plus au même endroit, cherche le même mot. Vérifie aussi les prix et les offres sur le site de chaque service.
 
@@ -118,7 +118,7 @@ Ce guide n'est affilié à aucune des entreprises citées.}
 \addcontentsline{toc}{chapter}{Ce que tu sauras faire}
 \markboth{Ce que tu sauras faire}{}
 
-À la fin de ce guide, tu sauras faire monter par Claude une vidéo de 30 à 60 secondes dans notre style, prête à publier sur TikTok, Instagram Reels ou YouTube Shorts. Tu lui donnes l'idée, la voix et tes remarques par messages ; il fait le montage.
+À la fin de ce guide, tu sauras faire monter par Claude Code et HyperFrames une vidéo de 30 à 60 secondes dans notre style, prête à publier sur TikTok, Instagram Reels ou YouTube Shorts. Tu lui donnes l'idée, la voix et tes remarques par messages ; il fait le montage.
 
 \begin{figure}[H]\centering
 \includegraphics[width=0.235\linewidth]{images/resultat-1.9.jpg}\hfill
@@ -151,7 +151,7 @@ Compte une à deux heures pour la première vidéo, installation comprise, puis 
 \node[b] (d) at (6.0,0) {\textbf{3. Commande}\\\textcolor{gris}{toi, un prompt}};
 \node[c] (m) at (6.0,-1.8) {\textbf{4. Montage}\\\textcolor{encre}{Claude Opus 5.5}};
 \node[b] (k) at (3.0,-1.8) {\textbf{5. Corrections}\\\textcolor{gris}{toi, un prompt}};
-\node[b] (p) at (0,-1.8) {\textbf{6. Publication}\\\textcolor{gris}{toi}};
+\node[b] (p) at (0,-1.8) {\textbf{6. Vidéo finale}\\\textcolor{gris}{Claude}};
 \draw[fl] (s) -- (v); \draw[fl] (v) -- (d); \draw[fl] (d) -- (m); \draw[fl] (m) -- (k); \draw[fl] (k) -- (p);
 \draw[fl,dashed] (k.south) -- ++(0,-0.45) -| node[pos=0.25,below,text=gris]{si besoin} (m.south);
 \end{tikzpicture}
@@ -462,57 +462,45 @@ Avant de fabriquer le fichier final, regarde une image de chaque scène et corri
 \end{bilan}
 
 % ======================================================================== 8
-\chapter{Publier}
-Une fois la vidéo validée, demande le fichier final et la miniature, puis publie la même vidéo sur TikTok, Instagram Reels et YouTube Shorts.
+\chapter{Récupérer la vidéo}
+Quand la vidéo te convient, demande le fichier final. Sur ordinateur, il est aussi enregistré dans ton dossier \texttt{mes-videos}.
 
 \begin{acopier}[Prompt : fichier final et miniature]
-La vidéo me convient. Fabrique la version finale et une miniature verticale avec mon titre en gros, puis envoie-les-moi.
+La vidéo me convient. Fabrique la version finale en 1080×1920 et une miniature verticale avec mon titre en gros, puis envoie-les-moi.
 \end{acopier}
-\begin{acopier}[Prompt : légende et hashtags]
-Écris une légende TikTok de moins de 150 caractères pour cette vidéo, avec une question pour faire commenter et 5 hashtags de mon thème.
-\end{acopier}
-\begin{acopier}[Prompt : réponse aux commentaires]
-Rédige le message que j'enverrai à ceux qui écrivent [mot] en commentaire, avec [ce que tu as promis].
+\begin{acopier}[Prompt : version YouTube]
+Fais aussi une version horizontale 1920×1080 de cette vidéo, avec les mêmes scènes et le même son.
 \end{acopier}
 
 \begin{figure}[H]\centering
-\begin{minipage}{0.36\linewidth}\centering\fcolorbox{encre!20}{white}{\includegraphics[width=0.95\linewidth]{images/miniature-exemple.jpg}}\end{minipage}\hfill
-\begin{minipage}{0.6\linewidth}\centering\fcolorbox{encre!20}{white}{\includegraphics[width=0.95\linewidth]{images/tiktok.jpg}}\end{minipage}
-\caption{À gauche, une miniature fabriquée par Claude. À droite, la connexion à TikTok Studio pour publier depuis l'ordinateur : \pastille{1} utilise le même compte que sur ton téléphone.}
+\fcolorbox{encre!20}{white}{\includegraphics[width=0.36\linewidth]{images/miniature-exemple.jpg}}
+\caption{Une miniature fabriquée par Claude.}
 \end{figure}
 
-Réponds aux commentaires dans la première heure ; les plateformes montrent davantage les vidéos qui font réagir. Pour l'heure de publication, essaie le matin, le midi et le soir, puis garde les créneaux qui marchent le mieux d'après les statistiques de ton compte.
+\section{Aller plus loin avec HyperFrames}
+\begin{acopier}[Prompt : voir avant le rendu]
+Ouvre l'aperçu HyperFrames pour que je regarde la vidéo avant que tu fabriques le fichier final.
+\end{acopier}
+\begin{acopier}[Prompt : blocs prêts à l'emploi]
+Cherche dans le registre HyperFrames des transitions, des sous-titres animés et des effets de caméra qui iraient avec ma vidéo, et utilise les meilleurs.
+\end{acopier}
+\begin{acopier}[Prompt : vérification complète]
+Lance la vérification HyperFrames, corrige toutes les erreurs, puis montre-moi une image de chaque scène.
+\end{acopier}
+\begin{acopier}[Prompt : réutiliser une vidéo]
+Reprends le projet de ma vidéo « [titre] » et refais-la avec ce nouveau texte et cette nouvelle voix (jointe), en gardant les mêmes scènes.
+\end{acopier}
 
 \begin{bilan}
-  \item \coche Ma vidéo est en ligne sur TikTok, Reels et Shorts.
-  \item \coche J'ai répondu aux premiers commentaires.
+  \item \coche J'ai reçu le fichier final et la miniature.
 \end{bilan}
-
-% ======================================================================== 9
-\chapter{Tenir le rythme}
-Une vidéo par jour pendant un mois est un bon début. Le plus simple est de préparer la semaine en une seule séance.
-
-\begin{acopier}[Prompt : 7 idées]
-Propose-moi 7 idées de vidéos sur [ton thème] pour [ton public], avec pour chacune un titre de moins de 8 mots.
-\end{acopier}
-\begin{acopier}[Prompt : 7 textes]
-Écris les textes des idées 1 à 7 (130 mots chacun), prêts pour ElevenLabs, et passe-les dans humanizer.
-\end{acopier}
-\begin{acopier}[Prompt : la semaine en série]
-Voici les 7 voix (jointes) et leurs textes. Monte les 7 vidéos l'une après l'autre dans mon style et envoie-moi chacune quand elle est prête.
-\end{acopier}
-\begin{acopier}[Prompt : analyser tes chiffres]
-Voici les statistiques de mes 7 dernières vidéos (vues, durée moyenne de visionnage, abonnés gagnés) : [tes chiffres]. Dis-moi quels sujets et quelles accroches marchent le mieux, et propose la semaine suivante.
-\end{acopier}
-
-Juge tes résultats sur une série de vidéos, car même les comptes connus ont des vidéos qui ne décollent pas. Le chiffre le plus utile est la durée moyenne de visionnage. Garde le même thème au moins un mois avant de changer de direction.
 
 % ======================================================================== DÉPANNAGE
 \chapter*{En cas de problème}
 \addcontentsline{toc}{chapter}{En cas de problème}
 \markboth{En cas de problème}{}
-\renewcommand{\arraystretch}{1.3}
-\begin{center}\small
+\renewcommand{\arraystretch}{1.15}
+\begin{center}\footnotesize
 \begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{3.2cm}>{\raggedright\arraybackslash}X}
 \toprule
 \textbf{Problème} & \textbf{Solution} \\ \midrule
@@ -522,6 +510,7 @@ Claude a oublié mon style & Demande-lui : « Relis mon fichier de consignes et 
 Sur téléphone, mon projet a disparu & Il n'avait pas été enregistré : termine chaque séance par « Enregistre tout sur GitHub ». \\
 Claude demande une autorisation & Si elle sert à fabriquer ta vidéo, accepte. \\
 Le montage est long & C'est normal pour une première vidéo ; sur ordinateur, laisse-le allumé. \\
+Je veux voir la vidéo avant le rendu & Demande « Ouvre l'aperçu HyperFrames ». \\
 Une vidéo de fond est bloquée par les droits & Demande « remplace-la par une vidéo libre de droits ». \\ \bottomrule
 \end{tabularx}
 \end{center}
@@ -565,23 +554,8 @@ HyperFrames & L'outil de montage que Claude utilise \\
 Humanizer & Un outil qui rend les textes plus naturels \\
 Libre de droits & Que tu peux utiliser gratuitement sans demander d'autorisation \\
 Opus 5.5 & Le modèle de Claude utilisé dans ce guide \\
-Prompt & Le message que tu envoies à Claude \\
-Rétention & La durée pendant laquelle les gens regardent ta vidéo \\ \bottomrule
+Prompt & Le message que tu envoies à Claude \\ \bottomrule
 \end{tabularx}
 \end{center}
-
-% ======================================================================== FIN
-\chapter*{Ta première semaine}
-\addcontentsline{toc}{chapter}{Ta première semaine}
-\markboth{Ta première semaine}{}
-\begin{itemize}[label={}]
-  \item \coche Prends l'abonnement Claude et installe Claude Code (ou l'application sur ton téléphone).
-  \item \coche Choisis Opus 5.5 et installe HyperFrames.
-  \item \coche Envoie le prompt « notre style ».
-  \item \coche Écris ton premier texte, crée la voix et commande la vidéo.
-  \item \coche Corrige, publie, puis prépare les 6 vidéos suivantes.
-\end{itemize}
-
-D'autres exemples de vidéos et de prompts sont publiés sur le compte \textbf{Gausscode}.
 
 \end{document}
