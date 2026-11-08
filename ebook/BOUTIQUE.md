@@ -86,3 +86,14 @@ Titre (55) : Crée tes vidéos TikTok avec l'IA : méthode + 53 prompts
 Description (137) : Ebook PDF en français : fais monter tes vidéos TikTok, Reels et Shorts par l'IA, sans savoir coder ni monter. 53 prompts prêts à copier.
 Miniature (1200x627) : vitrine/partage.jpg
 Mots clés : vidéo TikTok IA, montage vidéo IA, créer des vidéos avec l'IA, IA pour TikTok, ebook IA, formation IA, prompts IA, Claude, ChatGPT, Reels, YouTube Shorts, créateur de contenu, Côte d'Ivoire, Abidjan
+
+## Profil du créateur (Chariow, 500 caractères max)
+
+Image : vitrine/profil.jpg (800x800, rognée en rond) ou ta photo de profil TikTok.
+
+Description (460 caractères) :
+Moi c'est Lecodeur, créateur ivoirien sur TikTok. Je fabrique mes vidéos et mes sites web avec l'IA, et je montre tout en vidéo.
+
+J'ai passé des heures à tester les outils et les prompts pour trouver une méthode simple, qui marche même sur téléphone. Ce que tu trouves ici, c'est exactement ce que j'utilise pour mes propres vidéos, expliqué étape par étape pour que tu puisses le refaire sans savoir coder.
+
+Une question ou un blocage ? Écris-moi, je réponds.

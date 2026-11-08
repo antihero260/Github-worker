@@ -63,7 +63,14 @@ partage = page(1200, 627, f'''
 <div class="a" style="left:0;right:0;bottom:28px;text-align:center;font-size:30px;z-index:3">Lecodeur</div>
 ''')
 
-for nom, html, (w, h) in [("vignette", vignette, (1200, 1200)), ("banniere", banniere, (2106, 900)), ("partage", partage, (1200, 627))]:
+# Image de profil (rognée en rond par Chariow) : 800x800, personnage centré.
+profil = page(800, 800, f"""
+<div style="position:absolute;inset:0;background:radial-gradient(circle at 50% 50%,#2f3c06 0%,#111 70%)"></div>
+<div style="position:absolute;left:50%;top:95px;transform:translateX(-50%)">{perso(150,-150,470)}</div>
+<div class="a" style="left:0;right:0;top:600px;text-align:center;font-size:92px"><span class="lime" style="margin-top:0;padding:8px 22px 0">Lecodeur</span></div>
+""")
+
+for nom, html, (w, h) in [("vignette", vignette, (1200, 1200)), ("banniere", banniere, (2106, 900)), ("partage", partage, (1200, 627)), ("profil", profil, (800, 800))]:
     (ICI / f"{nom}.html").write_text(html)
     js = f"""const {{chromium}}=require('playwright');(async()=>{{const b=await chromium.launch();const p=await b.newPage({{viewport:{{width:{w},height:{h}}}}});
 await p.goto('file://{ICI}/{nom}.html');await p.waitForTimeout(400);await p.screenshot({{path:'{ICI}/{nom}.jpg',type:'jpeg',quality:92}});await b.close();}})();"""
