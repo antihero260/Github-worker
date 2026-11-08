@@ -2,13 +2,17 @@
 
 ## Bio courte (en-tête de la boutique)
 
-Je fais mes vidéos TikTok avec l'IA. Ici, je te donne ma méthode et mes prompts pour faire les tiennes.
+Je crée avec l'IA : vidéos, sites web, et bien plus. Ici, je te donne mes méthodes et mes prompts pour faire pareil.
 
 ## À propos de la boutique
 
-Je suis Lecodeur, créateur ivoirien sur TikTok. Mes vidéos sont montées par Claude, une IA : sous-titres, musique, bruitages, vraies vidéos qui changent à chaque mot.
+Je suis Lecodeur, créateur ivoirien sur TikTok. Je fabrique mes vidéos et mes sites web avec l'IA, et je montre tout en vidéo.
 
-Dans cette boutique, tu trouves des guides simples pour faire la même chose, même si tu n'as jamais monté une vidéo. Tout se fait avec des prompts à copier-coller.
+Dans cette boutique, tu trouves des formations simples pour faire la même chose, même si tu pars de zéro :
+- **Vidéos** : faire monter tes vidéos TikTok par Claude (disponible) ;
+- **Sites web** : créer et mettre en ligne ton propre site avec l'IA (bientôt).
+
+Pas besoin de savoir coder : tout se fait avec des prompts à copier-coller, étape par étape, avec des captures d'écran.
 
 Paiement par Wave, Orange Money, MTN, Moov ou carte. Le fichier arrive juste après le paiement.
 
