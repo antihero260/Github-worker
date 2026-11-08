@@ -64,3 +64,18 @@ Ma vidéo risque d'être bloquée pour les droits ? Le guide t'apprend à utilis
 Je reçois le guide quand ? Tout de suite après le paiement, en téléchargement.
 
 Prix de lancement : 5 000 FCFA au lieu de 7 500 FCFA. Clique sur Acheter et commence ta première vidéo aujourd'hui.
+
+## Ajouts après l'analyse de Chariow
+
+**En bref (à mettre tout en haut de la description) :**
+- une vidéo verticale de 30 à 60 secondes montée par l'IA, sans logiciel de montage ;
+- une vingtaine de minutes de ton temps par vidéo, une fois tout installé ;
+- 53 prompts prêts à copier, même si tu débutes.
+
+**FAQ en plus :**
+Comment je reçois le guide ? Juste après le paiement, tu télécharges le PDF de 36 pages. Il se lit sur téléphone comme sur ordinateur.
+Remboursement ? (à choisir) C'est un fichier numérique : il n'est pas remboursé une fois téléchargé. Si tu bloques à une étape, écris-moi et je t'aide.
+
+**SEO :**
+Méta-titre (55 caractères) : Crée tes vidéos TikTok avec l'IA : méthode + 53 prompts
+Méta-description (145 caractères) : Ebook PDF pour faire monter tes vidéos TikTok, Reels et Shorts par l'IA, sans savoir coder ni monter. 53 prompts prêts à copier, étape par étape.
