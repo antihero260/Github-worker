@@ -79,3 +79,10 @@ Remboursement ? (à choisir) C'est un fichier numérique : il n'est pas rembours
 **SEO :**
 Méta-titre (55 caractères) : Crée tes vidéos TikTok avec l'IA : méthode + 53 prompts
 Méta-description (145 caractères) : Ebook PDF pour faire monter tes vidéos TikTok, Reels et Shorts par l'IA, sans savoir coder ni monter. 53 prompts prêts à copier, étape par étape.
+
+## SEO Chariow (version finale)
+
+Titre (55) : Crée tes vidéos TikTok avec l'IA : méthode + 53 prompts
+Description (137) : Ebook PDF en français : fais monter tes vidéos TikTok, Reels et Shorts par l'IA, sans savoir coder ni monter. 53 prompts prêts à copier.
+Miniature (1200x627) : vitrine/partage.jpg
+Mots clés : vidéo TikTok IA, montage vidéo IA, créer des vidéos avec l'IA, IA pour TikTok, ebook IA, formation IA, prompts IA, Claude, ChatGPT, Reels, YouTube Shorts, créateur de contenu, Côte d'Ivoire, Abidjan

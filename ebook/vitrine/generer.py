@@ -50,7 +50,20 @@ banniere = page(2106, 900, f'''
 <div class="a" style="right:210px;bottom:100px;font-size:40px;z-index:5">Lecodeur</div>
 ''')
 
-for nom, html, (w, h) in [("vignette", vignette, (1200, 1200)), ("banniere", banniere, (2106, 900))]:
+# Miniature de partage (SEO / WhatsApp) : 1200x627. WhatsApp peut rogner en carré au centre :
+# le titre et le personnage restent dans le carré central de 627 px quand c'est possible.
+partage = page(1200, 627, f'''
+<div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 60%,rgba(220,252,28,.30) 0%,rgba(17,17,17,0) 55%)"></div>
+{tel("galerie/mot-secret.jpg", 150, -12, 70, 150, 1)}
+{tel("galerie/attention.jpg", 150, 10, 975, 150, 1)}
+<div class="a" style="left:0;right:0;top:75px;text-align:center;font-size:84px;z-index:3">Crée tes vidéos<br><span class="lime">avec l'IA</span></div>
+<div style="position:absolute;left:0;right:0;top:330px;text-align:center;font-size:27px;color:#fff;z-index:3">TikTok, Reels et Shorts sans savoir monter</div>
+<div class="a lime" style="left:50%;transform:translateX(-50%);top:410px;font-size:38px;padding:10px 20px 4px;margin-top:0;z-index:3;white-space:nowrap">53 prompts prêts à copier</div>
+<div style="position:absolute;left:900px;top:430px;z-index:4">{perso(150,-150,170)}</div>
+<div class="a" style="left:0;right:0;bottom:28px;text-align:center;font-size:30px;z-index:3">Lecodeur</div>
+''')
+
+for nom, html, (w, h) in [("vignette", vignette, (1200, 1200)), ("banniere", banniere, (2106, 900)), ("partage", partage, (1200, 627))]:
     (ICI / f"{nom}.html").write_text(html)
     js = f"""const {{chromium}}=require('playwright');(async()=>{{const b=await chromium.launch();const p=await b.newPage({{viewport:{{width:{w},height:{h}}}}});
 await p.goto('file://{ICI}/{nom}.html');await p.waitForTimeout(400);await p.screenshot({{path:'{ICI}/{nom}.jpg',type:'jpeg',quality:92}});await b.close();}})();"""
