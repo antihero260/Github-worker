@@ -4,7 +4,7 @@ Voix de l'utilisateur (c'est **sa propre voix**, confirmé le 8 novembre 2026), 
 (Resemble AI, licence **MIT**, usage commercial autorisé). Les sorties portent le filigrane inaudible « Perth » de Resemble AI.
 
 - `reference-voix.wav` : 12,6 s de référence (extrait propre de sa narration, 24 kHz mono, −18 LUFS).
-- `cloner.py` : texte → voix (découpe en phrases, petits silences entre elles).
+- `cloner.py` : texte → voix (découpe en phrases, silences de début et de fin de phrase retirés avec une marge, pause de 0,07 s entre les phrases ; `PAUSE=0.15` pour une pause plus longue).
 - `essais/` : essai 1 (réglage naturel : exaggeration 0,6, cfg 0,5) et essai 2 (plus énergique : 0,85 / 0,35), plus l'extrait original.
 
 ## Installation (machine remise à zéro à chaque session, ~5 min, ~1,5 Go)
@@ -19,3 +19,4 @@ ffmpeg -i voix.wav -af "highpass=f=70,loudnorm=I=-16:TP=-1.5" -ar 44100 -b:a 192
 - Python 3.13 ne marche pas (torch 2.6 absent) : utiliser 3.11. Sans `setuptools<81`, le filigrane plante (`pkg_resources`).
 - Vitesse sur le processeur (4 cœurs, sans carte graphique) : ~5× le temps réel (20 s de voix ≈ 1 min 45).
 - Toujours vérifier la voix générée avec whisper avant le montage (mots oubliés ou répétés).
+- Demande de l’utilisateur (8 nov.) : **enlever les silences**. Un `silenceremove` global coupait des mots (« Et », début de « Ton ») : on rogne donc phrase par phrase dans `cloner.py`.
