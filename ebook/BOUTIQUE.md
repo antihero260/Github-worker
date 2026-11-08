@@ -16,28 +16,51 @@ Pas besoin de savoir coder : tout se fait avec des prompts à copier-coller, ét
 
 Paiement par Wave, Orange Money, MTN, Moov ou carte. Le fichier arrive juste après le paiement.
 
-## Fiche produit : l'ebook
+## Fiche produit : l'ebook (Chariow)
 
-**Titre :** Crée tes vidéos avec l'IA
-
-**Sous-titre :** La méthode pas à pas pour faire tes vidéos TikTok, Reels et Shorts avec Claude.
+**Nom :** Crée tes vidéos TikTok avec l'IA : la méthode + 53 prompts
+**Catégorie :** Éducation & Apprentissage (définitive)
+**Prix :** 7 500 FCFA, prix promotionnel 5 000 FCFA (période de validité à régler dans Tarification)
+**Images de la description :** vitrine/vitrine-galerie.jpg, vitrine/vitrine-miniatures.jpg
 
 **Description :**
 
-Tu as une idée de vidéo mais le montage te prend des heures ? Avec ce guide, c'est Claude qui monte. Tu écris ton texte, tu enregistres ta voix, tu envoies ta commande, et tu reçois une vidéo verticale prête à publier.
+Tu as des idées de vidéos, mais le montage te prend des heures ?
 
-Dans le guide :
-- l'installation sur ordinateur ou sur téléphone, avec des captures d'écran entourées ;
-- 53 prompts prêts à copier : texte, voix, montage, corrections, miniatures ;
-- notre style complet avec le personnage vert, à donner à Claude en un seul message ;
-- comment copier le style d'une vidéo que tu aimes ;
-- comment faire trouver à Claude de vraies vidéos libres de droits qui collent à ton texte ;
-- un tableau pour corriger chaque problème en une phrase.
+Avec ce guide, c'est Claude, l'IA d'Anthropic, qui monte tes vidéos. Tu écris ton texte avec ChatGPT, tu enregistres ta voix, tu copies un prompt, et tu reçois une vidéo verticale de 30 à 60 secondes prête à publier sur TikTok, Reels ou Shorts : sous-titres mot à mot, musique, bruitages, vraies vidéos qui changent à chaque mot et un personnage animé. Les vidéos de mon TikTok sont faites avec cette méthode.
 
-**Pour qui :** créateurs, commerçants, étudiants, tous ceux qui veulent publier souvent sans passer leurs soirées sur un logiciel de montage.
+[image : vitrine-galerie.jpg]
 
-**Ce qu'il te faut :** un abonnement Claude (payable avec Wave) et un ordinateur ou un téléphone.
+Ce que tu vas apprendre
+- installer Claude sur ton ordinateur ou sur ton téléphone, avec des captures d'écran entourées en rouge ;
+- régler le bon modèle (Opus 5.5) pour avoir les meilleures vidéos ;
+- donner à Claude notre style complet en un seul message ;
+- copier le style d'une vidéo que tu aimes ;
+- faire trouver à Claude de vraies vidéos et des musiques libres de droits qui collent à ton texte ;
+- corriger ta vidéo en une phrase : musique trop forte, sous-titres trop petits, début qui n'accroche pas ;
+- fabriquer des miniatures qui donnent envie de cliquer.
 
-**Format :** PDF de 36 pages, à lire sur téléphone ou sur ordinateur. Téléchargement immédiat après le paiement.
+[image : vitrine-miniatures.jpg]
 
-**Prix :** 5 000 FCFA au lancement, puis 7 500 FCFA.
+Ce que tu reçois
+- un guide PDF de 36 pages, facile à lire sur téléphone ;
+- 53 prompts prêts à copier-coller ;
+- une liste à cocher à la fin de chaque étape ;
+- un tableau « En cas de problème » avec la solution à chaque blocage.
+
+C'est pour toi si tu es créateur, commerçant, étudiant ou freelance, et que tu veux publier souvent sans passer tes soirées sur un logiciel de montage. Tu n'as besoin ni de savoir coder ni de savoir monter une vidéo.
+
+Ce qu'il te faut
+- un abonnement Claude (environ 20 $ par mois, payable avec Wave) ;
+- un ordinateur ou un téléphone ;
+- un compte ChatGPT et un compte ElevenLabs : les versions gratuites suffisent pour commencer.
+
+Compte une à deux heures pour ta première vidéo, installation comprise. Ensuite, une vingtaine de minutes de ton temps par vidéo.
+
+Questions fréquentes
+Ça marche sur téléphone ? Oui. Le guide montre chaque étape dans l'application Claude. Il te faudra aussi un compte GitHub gratuit.
+Je n'ai jamais monté de vidéo, je peux suivre ? Oui, c'est fait pour ça. Tu copies les prompts, Claude fait le montage.
+Ma vidéo risque d'être bloquée pour les droits ? Le guide t'apprend à utiliser uniquement des vidéos et des musiques libres de droits, et donne les règles à respecter.
+Je reçois le guide quand ? Tout de suite après le paiement, en téléchargement.
+
+Prix de lancement : 5 000 FCFA au lieu de 7 500 FCFA. Clique sur Acheter et commence ta première vidéo aujourd'hui.
