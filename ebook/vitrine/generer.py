@@ -70,7 +70,18 @@ profil = page(800, 800, f"""
 <div class="a" style="left:0;right:0;top:600px;text-align:center;font-size:92px"><span class="lime" style="margin-top:0;padding:8px 22px 0">Lecodeur</span></div>
 """)
 
-for nom, html, (w, h) in [("vignette", vignette, (1200, 1200)), ("banniere", banniere, (2106, 900)), ("partage", partage, (1200, 627)), ("profil", profil, (800, 800))]:
+# Image de partage de la boutique entière (SEO de la boutique) : 1200x627.
+boutique = page(1200, 627, f"""
+<div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 60%,rgba(220,252,28,.28) 0%,rgba(17,17,17,0) 55%)"></div>
+{tel("galerie/jeu-video.jpg", 150, -10, 70, 160, 1)}
+{tel("galerie/skills.jpg", 150, 10, 975, 160, 1)}
+<div class="a" style="left:0;right:0;top:85px;text-align:center;font-size:110px;z-index:3"><span class="lime" style="margin-top:0;padding:8px 26px 0">Lecodeur</span></div>
+<div class="a" style="left:0;right:0;top:260px;text-align:center;font-size:62px;z-index:3">Crée avec l'IA</div>
+<div style="position:absolute;left:0;right:0;top:350px;text-align:center;font-size:30px;color:#fff;z-index:3;line-height:1.4">Vidéos, sites web et plus,<br>même sans savoir coder</div>
+<div style="position:absolute;left:880px;top:440px;z-index:4">{perso(150,-150,160)}</div>
+""")
+
+for nom, html, (w, h) in [("vignette", vignette, (1200, 1200)), ("banniere", banniere, (2106, 900)), ("partage", partage, (1200, 627)), ("profil", profil, (800, 800)), ("partage-boutique", boutique, (1200, 627))]:
     (ICI / f"{nom}.html").write_text(html)
     js = f"""const {{chromium}}=require('playwright');(async()=>{{const b=await chromium.launch();const p=await b.newPage({{viewport:{{width:{w},height:{h}}}}});
 await p.goto('file://{ICI}/{nom}.html');await p.waitForTimeout(400);await p.screenshot({{path:'{ICI}/{nom}.jpg',type:'jpeg',quality:92}});await b.close();}})();"""

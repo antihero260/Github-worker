@@ -97,3 +97,14 @@ Moi c'est Lecodeur, créateur ivoirien sur TikTok. Je fabrique mes vidéos et me
 J'ai passé des heures à tester les outils et les prompts pour trouver une méthode simple, qui marche même sur téléphone. Ce que tu trouves ici, c'est exactement ce que j'utilise pour mes propres vidéos, expliqué étape par étape pour que tu puisses le refaire sans savoir coder.
 
 Une question ou un blocage ? Écris-moi, je réponds.
+
+## Audit SEO (8 novembre 2026, via le MCP Chariow et la page publique)
+
+Déjà bon : titre et méta-description du produit, image de partage 1200x627, balises Open Graph et Twitter, langue « fr », produit présent dans le sitemap, robots.txt autorise Google.
+
+À faire :
+- URL du produit : `creer-videos-tiktok-ia` (aujourd'hui /prd_n9vsxaov).
+- Mots clés du produit : la liste enregistrée est vide.
+- Nom du produit sans point final (il apparaît tel quel dans les données Google).
+- SEO de la boutique : titre « Lecodeur : formations IA pour créer tes vidéos et sites web » (59), image vitrine/partage-boutique.jpg (la page d'accueil n'a aucune image de partage).
+- Logo de la boutique et lien TikTok dans les réseaux sociaux.
