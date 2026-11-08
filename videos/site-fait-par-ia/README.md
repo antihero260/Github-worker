@@ -1,25 +1,24 @@
-# « Ce site cache un mot secret » : le film 16:9
+# « Ton site crie "fait par l'IA" » : le film 16:9
 
-Dix-septième vidéo (24,6 s). Nouveau type d'appel à l'action : **un jeu**. Un vrai site e-commerce (VOLT, sneakers) généré
-avec un seul prompt cache le mot **NÉON** pendant une demi-seconde ; le premier qui l'écrit en commentaire reçoit le prompt
-complet (`PROMPT.txt`). But : faire revoir la vidéo (rétention) et faire commenter (engagement).
+Vingt-et-unième vidéo (47,6 s), un **conseil** (pilier « expertise », publication du matin). Voix ElevenLabs « Nicolas – Narrator »
+de l'utilisateur, script dans `script.txt`.
 
-- `site-volt/index.html` : le site (menu, titre animé, 4 produits, panier latéral, bandeau promo, adapté au téléphone).
-  Au survol du bouton de la VOLT Pastel, « Ajouter » devient « NÉON » en rose néon pendant 500 ms.
-  `#tournage` ajoute le voile noir de calage (`window.top_depart()`) et un pointeur visible.
-- Scènes : hook (rafale, site < 1 minute, nuit + flou sur « cache », « Un mot secret », 4 cases « ? ») → visite filmée avec la
-  caméra qui suit le menu, les produits et le panier (NÉON passe à 8,45–8,85 s) → rembobinage (bande de vignettes, tête de
-  lecture, « ? ? ? ? » flou, « 0,5 s ») → « 1er gagne le prompt », faux commentaires barrés, carte « Le prompt complet »,
-  « Indice » avec la loupe sur les boutons → « Abonne-toi à Gausscode », « Prochain défi ».
-- Sous le film (vertical) : 4 cases « ? » (« Le mot secret · 4 lettres ») qui ne se dévoilent jamais : la réponse reste
-  dans les commentaires.
-- Miniature : `miniature/miniature-ce-site-cache-un-mot-secret.jpg`.
-- Musiques : trap Mixkit (Arulo), voir `assets/music/SOURCES-mixkit.md`.
+- **Idée** : un même faux site (IRON CLUB, salle de boxe à Cocody) corrigé point par point :
+  violet générique « Révolutionnez votre business » → palette imposée (noir, crème + accent rouge) → vrais textes
+  (offre, clients, prix) → nouvelle structure inspirée d'un site qu'on aime (Locomotive).
+- Scènes : hook (rafale d'outils IA, mur de 12 vrais sites IA violets identiques, tampon « Fait par l'IA », compteur
+  « visiteurs en direct » qui s'effondre, 3 cases « ? ») → 01 Couleurs → 02 Textes → 03 Structure (squelette titre /
+  3 cartes / avis qui s'allume, « Copié-collé », site de référence avec ce qu'il faut garder) → avant / après + « Commente PROMPT ».
+- Sous le film (vertical) : 3 cases « ? » « Les 3 signes d'un site IA » (Couleurs, Textes, Structure) dévoilées au moment
+  où la voix les annonce, validées quand le conseil est donné.
+- Fonds : vraies vidéos (outils IA filmés, Mixkit) qui changent tous les 1–2 mots ; captures `site-ia-*` (vrais sites
+  générés par IA) reprises de `skills-design`.
+- Musiques Mixkit (Need for Speed, Hip Hop 02, Complicated), ≈ 5,6 dB sous la voix ; 162 bruitages.
 
-**Après la publication** : répondre au premier commentaire « NÉON » avec le prompt (`PROMPT.txt`) et épingler cette réponse.
+**Après la publication** : répondre aux commentaires « PROMPT » avec le prompt complet (couleurs + vraies infos + site de référence).
 
 ```bash
-python3 tools/construire-scenes.py && python3 tools/mixage.py
+python3 tools/construire-scenes.py && python3 tools/mixage.py /tmp/corelink
 hyperframes check
-hyperframes render ../site-mot-secret -o renders/site-mot-secret-16x9.mp4   # commande séparée
+hyperframes render . -o renders/site-fait-par-ia-16x9.mp4   # commande séparée
 ```
