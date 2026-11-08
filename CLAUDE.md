@@ -41,4 +41,5 @@ production de vidéos avec HyperFrames (`hyperframes-style/`, `videos/`, `script
 - Le style peut varier d'une vidéo à l'autre si l'utilisateur le demande (vidéo 7 : style « Alerte », voir `videos/site-conforme/README.md`), en gardant le format vertical, les personnages qui bougent et les recadrages.
 - **Tout vérifier et corriger avant de lancer un rendu** : `hyperframes check` sans erreur, puis regarder les
   images clés. Ne jamais lancer le rendu dans la même commande que le contrôle.
+- **Nouvelle niche depuis novembre 2026 : vulgarisation financière** (l'utilisateur est actuaire). Exemples en FCFA, petits constats chiffrés, chaque chiffre vérifié à la source (INS, BCEAO) ; jamais de conseil d'investissement personnalisé. Les sites web sont arrêtés pour l'instant. Même outil (HyperFrames, même style vidéo).
 - Mettre à jour `SUIVI.md` à chaque étape importante.
