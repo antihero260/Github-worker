@@ -32,7 +32,7 @@
 
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0.55em}
-\linespread{1.12}
+\linespread{1.2}
 \setlist{itemsep=0.25em,topsep=0.3em,leftmargin=1.3em}
 \setlist[enumerate]{label=\textbf{\color{violet}\arabic*.}}
 \setlist[itemize]{label=\textcolor{violet}{\textbullet}}
@@ -41,8 +41,8 @@
 \titleformat{\chapter}[display]{\color{encre}}{\anton\fontsize{15}{18}\selectfont\color{violet}\MakeUppercase{\chaptertitlename\ \thechapter}}{0.2em}{\anton\fontsize{27}{31}\selectfont\MakeUppercase}[\vspace{0.4em}{\color{citron}\rule{3.2cm}{4pt}}]
 \titleformat{name=\chapter,numberless}[display]{\color{encre}}{}{0pt}{\anton\fontsize{27}{31}\selectfont\MakeUppercase}[\vspace{0.4em}{\color{citron}\rule{3.2cm}{4pt}}]
 \titlespacing*{\chapter}{0pt}{0pt}{1.4em}
-\titleformat{\section}{\bfseries\large\color{violet}}{}{0pt}{}
-\titlespacing*{\section}{0pt}{1.1em}{0.35em}
+\titleformat{\section}{\bfseries\Large\color{violet}}{}{0pt}{}
+\titlespacing*{\section}{0pt}{1.3em}{0.4em}
 \addto\captionsfrench{\def\chaptername{Étape}\def\contentsname{Sommaire}\def\figurename{Image}}
 
 % ---- en-têtes
@@ -56,8 +56,8 @@
 \fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\small\color{gris}\thepage}\renewcommand{\headrulewidth}{0pt}}
 
 % ---- encadrés
-\newtcolorbox{astuce}{enhanced,breakable,colback=vert!6,colframe=vert,boxrule=0pt,leftrule=3.5pt,arc=2pt,left=8pt,right=8pt,top=5pt,bottom=5pt,
-  fonttitle=\bfseries\small,coltitle=vert,colbacktitle=vert!6,title={Astuce},attach title to upper={\ \ }}
+\newtcolorbox{astuce}{enhanced,breakable,colback=violet!6,colframe=violet,boxrule=0pt,leftrule=3.5pt,arc=2pt,left=8pt,right=8pt,top=5pt,bottom=5pt,
+  fonttitle=\bfseries\small,coltitle=violet,colbacktitle=violet!6,title={Astuce},attach title to upper={\ \ }}
 \newtcolorbox{attention}{enhanced,breakable,colback=rouge!6,colframe=rouge,boxrule=0pt,leftrule=3.5pt,arc=2pt,left=8pt,right=8pt,top=5pt,bottom=5pt,
   fonttitle=\bfseries\small,coltitle=rouge,colbacktitle=rouge!6,title={Attention},attach title to upper={\ \ }}
 \newtcolorbox{retenir}{enhanced,breakable,colback=violet!6,colframe=violet,boxrule=0pt,leftrule=3.5pt,arc=2pt,left=8pt,right=8pt,top=5pt,bottom=5pt,
@@ -70,7 +70,20 @@
 
 \newtcolorbox{victoire}{enhanced,breakable,colback=citron!25,colframe=encre,boxrule=0pt,leftrule=3.5pt,arc=2pt,left=8pt,right=8pt,top=5pt,bottom=5pt,
   fonttitle=\bfseries\small,coltitle=encre,colbacktitle=citron!25,title={Victoire rapide},attach title to upper={\ \ }}
+\newcommand{\objectif}[1]{\begin{tcolorbox}[enhanced,colback=encre,colframe=encre,arc=2pt,boxrule=0pt,left=9pt,right=9pt,top=6pt,bottom=6pt,fontupper=\small\color{white}]{\color{citron}\bfseries Dans ce chapitre}\quad #1\end{tcolorbox}}
 \newenvironment{bilan}{\section*{Avant de passer à la suite}\begin{itemize}[label={}]}{\end{itemize}}
+% ---- le personnage vert (mêmes formes que dans les vidéos : unités du SVG, y vers le bas)
+\newcommand{\persovert}[3]{% #1 = échelle, #2 = angle du bras gauche, #3 = angle du bras droit (degrés, sens SVG)
+\begin{scope}[yscale=-1,x=#1pt,y=#1pt]
+\pgfmathsetmacro{\ep}{10*#1}
+\tikzset{membre/.style={fill=citron,draw=black,line width=\ep pt,rounded corners=8*#1pt}}
+\draw[membre] (24,136) rectangle ++(24,112);
+\draw[membre] (52,136) rectangle ++(24,112);
+\draw[membre,rounded corners=12*#1pt] (22,52) rectangle ++(56,94);
+\draw[membre,rotate around={#2:(11,62)}] (2,54) rectangle ++(18,86);
+\draw[membre,rotate around={#3:(89,62)}] (80,54) rectangle ++(18,86);
+\draw[fill=citron,draw=black,line width=\ep pt] (50,24) circle (22);
+\end{scope}}
 \begin{document}
 \frontmatter
 % ======================================================================== COUVERTURE
@@ -78,18 +91,21 @@
 \newgeometry{margin=0pt}
 \begin{tikzpicture}[remember picture,overlay]
   \fill[encre] (current page.south west) rectangle (current page.north east);
-  \fill[violet] ($(current page.south west)+(0,0)$) rectangle ($(current page.south east)+(0,6.2cm)$);
-  \node[anchor=north west,text width=12cm,align=left] at ($(current page.north west)+(1.3cm,-1.5cm)$)
-    {\anton\fontsize{13}{15}\selectfont\color{citron}LA FORMATION PAS À PAS};
-  \node[anchor=north west,text width=12.4cm,align=left] at ($(current page.north west)+(1.25cm,-2.3cm)$)
-    {\anton\fontsize{40}{43}\selectfont\color{white}CRÉE TES VIDÉOS\\TIKTOK AVEC\\[-0.05em]\colorbox{citron}{\color{encre}\,L'IA\,}};
-  \node[anchor=north west,text width=11.6cm,align=left] at ($(current page.north west)+(1.3cm,-8.6cm)$)
-    {\fontsize{12.5}{16}\selectfont\color{white}Avec Claude Code, Opus 5.5 et HyperFrames : notre style et plus de 50 prompts prêts à copier.};
-  \node[rotate=-7,inner sep=0pt,draw=white,line width=2.4pt] at ($(current page.south west)+(3.2cm,6.6cm)$) {\includegraphics[width=3.1cm]{images/resultat-1.9.jpg}};
-  \node[rotate=0,inner sep=0pt,draw=white,line width=2.4pt] at ($(current page.south)+(0,7.0cm)$) {\includegraphics[width=3.1cm]{images/resultat-6.6.jpg}};
-  \node[rotate=7,inner sep=0pt,draw=white,line width=2.4pt] at ($(current page.south east)+(-3.2cm,6.6cm)$) {\includegraphics[width=3.1cm]{images/resultat-46.5.jpg}};
-  \node[anchor=south west] at ($(current page.south west)+(1.3cm,0.9cm)$) {\anton\fontsize{14}{16}\selectfont\color{white}GAUSSCODE};
-  \node[anchor=south east] at ($(current page.south east)+(-1.3cm,0.95cm)$) {\small\color{white}TikTok, Reels et Shorts};
+  \node[anchor=north west] at ($(current page.north west)+(1.2cm,-1.3cm)$)
+    {\anton\fontsize{12}{14}\selectfont\color{citron}CLAUDE\hspace{0.2em}CODE\hspace{0.2em}+\hspace{0.2em}HYPERFRAMES};
+  \node[anchor=north west,text width=12.8cm,align=left] at ($(current page.north west)+(1.1cm,-2.0cm)$)
+    {\anton\fontsize{58}{58}\selectfont\color{white}CRÉE\hspace{0.22em}TES\\VIDÉOS\\[0.06em]{\setlength{\fboxsep}{2pt}\colorbox{citron}{\color{encre}AVEC\hspace{0.22em}L'IA}}};
+  % le téléphone avec une vraie image de vidéo
+  \node[rotate=6,inner sep=3pt,fill=black,draw=white,line width=1.8pt,rounded corners=10pt] at ($(current page.south east)+(-4.1cm,8.2cm)$)
+    {\includegraphics[width=4.1cm]{images/resultat-6.6.jpg}};
+  % le personnage vert, bras levés
+  \begin{scope}[shift={($(current page.south west)+(1.4cm,10.2cm)$)}]
+    \persovert{0.58}{150}{-150}
+  \end{scope}
+  \node[anchor=south west,text width=12.4cm,align=left] at ($(current page.south west)+(1.2cm,2.3cm)$)
+    {\fontsize{13.5}{17}\selectfont\color{white}La méthode pas à pas pour faire tes vidéos TikTok, Reels et Shorts avec Claude Opus 5.5.};
+  \node[anchor=south west,fill=citron,text=encre,inner sep=5pt,font=\bfseries\small] at ($(current page.south west)+(1.2cm,1.2cm)$) {52 PROMPTS PRÊTS À COPIER};
+  \node[anchor=south east] at ($(current page.south east)+(-1.2cm,1.25cm)$) {\anton\fontsize{14}{16}\selectfont\color{white}GAUSSCODE};
 \end{tikzpicture}
 \restoregeometry
 \end{titlepage}
@@ -149,7 +165,7 @@ Compte une à deux heures pour la première vidéo, installation comprise, puis 
 \node[b] (s) at (0,0) {\textbf{1. Texte}\\\textcolor{gris}{toi (+ Claude)}};
 \node[b] (v) at (3.0,0) {\textbf{2. Voix}\\\textcolor{gris}{toi, ElevenLabs}};
 \node[b] (d) at (6.0,0) {\textbf{3. Commande}\\\textcolor{gris}{toi, un prompt}};
-\node[c] (m) at (6.0,-1.8) {\textbf{4. Montage}\\\textcolor{encre}{Claude Opus 5.5}};
+\node[c] (m) at (6.0,-1.8) {\textbf{4. Montage}\\\textcolor{encre}{Opus 5.5, Élevé}};
 \node[b] (k) at (3.0,-1.8) {\textbf{5. Corrections}\\\textcolor{gris}{toi, un prompt}};
 \node[b] (p) at (0,-1.8) {\textbf{6. Vidéo finale}\\\textcolor{gris}{Claude}};
 \draw[fl] (s) -- (v); \draw[fl] (v) -- (d); \draw[fl] (d) -- (m); \draw[fl] (m) -- (k); \draw[fl] (k) -- (p);
@@ -161,6 +177,7 @@ Compte une à deux heures pour la première vidéo, installation comprise, puis 
 \mainmatter
 % ======================================================================== 1
 \chapter{Claude Code et Opus 5.5}
+\objectif{installer Claude Code, choisir Opus 5.5 en effort « Élevé » et ajouter HyperFrames.}
 Claude Code est la partie de Claude qui fabrique des fichiers, et donc des vidéos. La discussion habituelle ne sait pas le faire. Ce chapitre l'installe sur ton ordinateur ou ton téléphone, choisit le bon modèle et ajoute l'outil de montage.
 
 \begin{attention}
@@ -196,21 +213,17 @@ Dans l'application, ouvre le menu, touche « Code », puis « Nouvelle session �
 Sur téléphone, Claude travaille sur un ordinateur en ligne qui est vidé après chaque séance. Termine toujours par « Enregistre tout sur GitHub ».
 \end{attention}
 
-\section{Choisir Opus 5.5}
-Toutes les vidéos de ce guide ont été faites avec Opus 5.5. Choisis-le dans le sélecteur de modèle au début de chaque session. Sur ordinateur, tu peux aussi taper :
+\section{Choisir Opus 5.5 en effort « Élevé »}
+Toutes les vidéos de ce guide ont été faites avec Opus 5.5 réglé sur l'effort « Élevé ». Au début de chaque session, ouvre le sélecteur de modèle, choisis Opus 5.5, puis règle l'effort sur « Élevé ». Sur ordinateur, tu peux aussi taper :
 \begin{acopier}[Commande]
 /model
 \end{acopier}
-puis sélectionner Opus 5.5 dans la liste.
+puis sélectionner Opus 5.5 et l'effort « Élevé ».
 
 \section{Installer l'outil de montage}
 Claude monte les vidéos avec HyperFrames, un outil gratuit. Envoie ce message une seule fois :
 \begin{acopier}[Prompt : installer HyperFrames]
 Installe ça : https://github.com/heygen-com/hyperframes.git
-\end{acopier}
-Pour des textes qui sonnent moins « écrits par une IA », ajoute aussi :
-\begin{acopier}[Prompt : installer Humanizer (conseillé)]
-Installe ça : https://github.com/blader/humanizer.git
 \end{acopier}
 
 \begin{victoire}
@@ -219,12 +232,13 @@ Vérifie que tout marche avec une vidéo test de 10 secondes : « Fais une vidé
 
 \begin{bilan}
   \item \coche J'ai pris l'abonnement et installé Claude Code (ou l'application sur mon téléphone).
-  \item \coche J'ai choisi Opus 5.5.
+  \item \coche J'ai choisi Opus 5.5 en effort « Élevé ».
   \item \coche J'ai installé HyperFrames et reçu ma vidéo test.
 \end{bilan}
 
 % ======================================================================== 2
 \chapter{Notre style, avec le personnage vert}
+\objectif{donner notre style à Claude en un seul prompt.}
 Ce chapitre donne à Claude les règles de notre style en un seul message. Il les garde dans un fichier de consignes et les relit avant chaque vidéo.
 
 \begin{figure}[H]\centering
@@ -269,6 +283,7 @@ Ajoute à mes consignes : [ta remarque]. Applique-la à toutes mes prochaines vi
 
 % ======================================================================== 3
 \chapter{Copier le style d'une vidéo que tu aimes}
+\objectif{faire reprendre par Claude le style d'une vidéo existante.}
 Tu peux montrer à Claude des vidéos dont tu aimes le style et lui demander de les imiter. Télécharge-les d'abord sur ton appareil, puis joins-les au message.
 
 \begin{acopier}[Prompt : analyser un style]
@@ -292,6 +307,7 @@ Copie un style (rythme, couleurs, ambiance), pas le contenu : n'utilise pas les 
 
 % ======================================================================== 4
 \chapter{Écrire le texte}
+\objectif{obtenir un texte de 45 secondes qui accroche dès la première phrase.}
 Une vidéo conseil de 45 secondes fait environ 130 mots. Celles qui retiennent le mieux suivent souvent cet ordre :
 \begin{enumerate}
   \item une accroche de 3 secondes sur un problème que ton public connaît ;
@@ -304,7 +320,7 @@ Une vidéo conseil de 45 secondes fait environ 130 mots. Celles qui retiennent l
 \begin{acopier}[Prompt : texte d'une vidéo conseil]
 Écris le texte d'une vidéo conseil de 45 secondes (130 mots maximum) pour TikTok.\\
 Sujet : [ton sujet]. Pour qui : [ton public].\\
-Commence par une accroche sur un problème qu'ils connaissent, annonce 3 conseils avec un mystère sur le dernier, donne-les simplement et termine par : [ta demande]. Passe ensuite le texte dans humanizer.
+Commence par une accroche sur un problème qu'ils connaissent, annonce 3 conseils avec un mystère sur le dernier, donne-les simplement et termine par : [ta demande].
 \end{acopier}
 
 \section{Exemples par thème}
@@ -335,7 +351,7 @@ Transforme cette histoire en texte de 50 secondes, raconté à la première pers
 Propose-moi 10 accroches de moins de 12 mots pour cette vidéo : [ton sujet]. Classe-les de la plus forte à la plus faible.
 \end{acopier}
 \begin{acopier}[Prompt : texte plus naturel]
-Passe ce texte dans humanizer pour qu'il sonne comme moi, sans changer les conseils : [ton texte].
+Réécris ce texte pour qu'il sonne comme si je parlais à un ami : phrases courtes, mots simples, mêmes conseils. [ton texte]
 \end{acopier}
 
 \begin{bilan}
@@ -345,6 +361,7 @@ Passe ce texte dans humanizer pour qu'il sonne comme moi, sans changer les conse
 
 % ======================================================================== 5
 \chapter{Créer la voix}
+\objectif{transformer ton texte en fichier audio.}
 Tu peux t'enregistrer avec ton téléphone dans une pièce calme, à 20 cm du micro. Tu peux aussi faire lire ton texte par ElevenLabs, qui propose des voix très naturelles et peut copier la tienne.
 
 \begin{enumerate}
@@ -370,6 +387,7 @@ N'utilise jamais la voix d'une autre personne sans son accord.
 
 % ======================================================================== 6
 \chapter{Commander la vidéo}
+\objectif{envoyer la commande et faire trouver de vraies vidéos qui collent au texte.}
 Joins le fichier de la voix et colle le texte exact : Claude s'en sert pour écrire les sous-titres sans faute.
 
 \begin{acopier}[Prompt : commande de base]
@@ -430,6 +448,7 @@ Tes propres photos et vidéos rendent la vidéo plus personnelle. Joins-les au m
 
 % ======================================================================== 7
 \chapter{Corriger la vidéo}
+\objectif{corriger la vidéo en un seul message.}
 Regarde la vidéo sur ton téléphone, le son allumé. Donne le moment, ce qui ne va pas et ce que tu veux à la place, et regroupe tes remarques dans un seul message.
 
 \renewcommand{\arraystretch}{1.3}
@@ -463,6 +482,7 @@ Avant de fabriquer le fichier final, regarde une image de chaque scène et corri
 
 % ======================================================================== 8
 \chapter{Récupérer la vidéo}
+\objectif{obtenir le fichier final, la miniature et les versions utiles.}
 Quand la vidéo te convient, demande le fichier final. Sur ordinateur, il est aussi enregistré dans ton dossier \texttt{mes-videos}.
 
 \begin{acopier}[Prompt : fichier final et miniature]
@@ -505,7 +525,7 @@ Reprends le projet de ma vidéo « [titre] » et refais-la avec ce nouveau texte
 \toprule
 \textbf{Problème} & \textbf{Solution} \\ \midrule
 Claude répond mais ne fabrique pas de vidéo & Vérifie que tu es dans Claude Code (menu « Code » sur téléphone) et que HyperFrames est installé. \\
-Le résultat est moins bon que prévu & Vérifie que le modèle choisi est Opus 5.5. \\
+Le résultat est moins bon que prévu & Vérifie que le modèle choisi est Opus 5.5 avec l'effort « Élevé ». \\
 Claude a oublié mon style & Demande-lui : « Relis mon fichier de consignes et applique-le. » \\
 Sur téléphone, mon projet a disparu & Il n'avait pas été enregistré : termine chaque séance par « Enregistre tout sur GitHub ». \\
 Claude demande une autorisation & Si elle sert à fabriquer ta vidéo, accepte. \\
@@ -551,9 +571,8 @@ Edit & Une vidéo sans voix, montée sur le rythme d'une musique \\
 Fichier de consignes & Le texte où sont tes règles ; Claude le relit avant chaque vidéo \\
 GitHub & Un dossier en ligne, nécessaire seulement sur téléphone \\
 HyperFrames & L'outil de montage que Claude utilise \\
-Humanizer & Un outil qui rend les textes plus naturels \\
 Libre de droits & Que tu peux utiliser gratuitement sans demander d'autorisation \\
-Opus 5.5 & Le modèle de Claude utilisé dans ce guide \\
+Opus 5.5 & Le modèle de Claude utilisé dans ce guide, réglé sur l'effort « Élevé » \\
 Prompt & Le message que tu envoies à Claude \\ \bottomrule
 \end{tabularx}
 \end{center}
