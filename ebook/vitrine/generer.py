@@ -36,20 +36,21 @@ vignette = page(1200, 1200, f'''
 <div class="a" style="right:70px;top:80px;font-size:46px">Lecodeur</div>
 ''')
 
-banniere = page(2106, 780, f'''
-<div style="position:absolute;inset:0;background:radial-gradient(ellipse at 72% 60%,rgba(220,252,28,.33) 0%,rgba(17,17,17,0) 50%)"></div>
-<div class="a" style="left:140px;top:90px;font-size:150px">Crée tes vidéos<br><span class="lime">avec l'IA</span></div>
-<div style="position:absolute;left:140px;top:480px;font-size:40px;color:#fff;line-height:1.35;width:760px">La méthode pas à pas pour TikTok, Reels et Shorts.</div>
-<div class="a lime" style="left:140px;top:600px;font-size:48px;padding:12px 22px 6px;margin-top:0">53 prompts prêts à copier</div>
-{tel("galerie/attention.jpg", 210, -12, 1130, 210, 1)}
-{tel("galerie/mot-secret.jpg", 240, -5, 1340, 150, 2)}
-{tel("galerie/jeu-video.jpg", 270, 0, 1560, 100, 3)}
-{tel("galerie/skills.jpg", 240, 6, 1790, 150, 2)}
-<div style="position:absolute;left:1000px;top:470px;z-index:4">{perso(150,-150,250)}</div>
-<div class="a" style="right:60px;bottom:40px;font-size:40px;z-index:5">Lecodeur</div>
+# Chariow affiche la bannière en ~2,34:1 (rognée sur les côtés) ; minimum 702x260 (2,7:1).
+# Image en 2106x900 (2,34:1), tout le contenu dans la zone sûre centrale (marges 200 px sur les côtés, 90 px en haut et en bas).
+banniere = page(2106, 900, f'''
+<div style="position:absolute;inset:0;background:radial-gradient(ellipse at 70% 60%,rgba(220,252,28,.33) 0%,rgba(17,17,17,0) 50%)"></div>
+<div class="a" style="left:210px;top:120px;font-size:140px">Crée tes vidéos<br><span class="lime">avec l'IA</span></div>
+<div style="position:absolute;left:210px;top:500px;font-size:38px;color:#fff;line-height:1.35;width:700px">La méthode pas à pas pour TikTok, Reels et Shorts.</div>
+<div class="a lime" style="left:210px;top:640px;font-size:46px;padding:12px 22px 6px;margin-top:0">53 prompts prêts à copier</div>
+{tel("galerie/mot-secret.jpg", 220, -9, 1150, 210, 1)}
+{tel("galerie/jeu-video.jpg", 250, -2, 1360, 150, 3)}
+{tel("galerie/skills.jpg", 220, 7, 1600, 210, 2)}
+<div style="position:absolute;left:1000px;top:560px;z-index:4">{perso(150,-150,240)}</div>
+<div class="a" style="right:210px;bottom:100px;font-size:40px;z-index:5">Lecodeur</div>
 ''')
 
-for nom, html, (w, h) in [("vignette", vignette, (1200, 1200)), ("banniere", banniere, (2106, 780))]:
+for nom, html, (w, h) in [("vignette", vignette, (1200, 1200)), ("banniere", banniere, (2106, 900))]:
     (ICI / f"{nom}.html").write_text(html)
     js = f"""const {{chromium}}=require('playwright');(async()=>{{const b=await chromium.launch();const p=await b.newPage({{viewport:{{width:{w},height:{h}}}}});
 await p.goto('file://{ICI}/{nom}.html');await p.waitForTimeout(400);await p.screenshot({{path:'{ICI}/{nom}.jpg',type:'jpeg',quality:92}});await b.close();}})();"""
