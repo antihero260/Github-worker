@@ -108,3 +108,7 @@ Déjà bon : titre et méta-description du produit, image de partage 1200x627, b
 - Nom du produit sans point final (il apparaît tel quel dans les données Google).
 - SEO de la boutique : titre « Lecodeur : formations IA pour créer tes vidéos et sites web » (59), image vitrine/partage-boutique.jpg (la page d'accueil n'a aucune image de partage).
 - Logo de la boutique et lien TikTok dans les réseaux sociaux.
+
+## Description de la boutique sans les sites web (146 caractères)
+
+Apprends à créer avec l'IA, même sans savoir coder : vidéos TikTok, Reels et bien plus. Des formations pas à pas, avec des prompts prêts à copier.
