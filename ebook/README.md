@@ -6,7 +6,7 @@ Formation grand public v3.3 (36 pages A5 ; 4 miniatures verticales refaites (dos
 - `images/` : captures annotées (cercles rouges + pastilles numérotées) et images de la vidéo 21.
 - `captures-brutes/` + `annoter.py` : captures d'origine (Playwright) et script d'annotation.
 - `polices/` : Anton (SIL OFL) convertie en TTF.
-- Livrable : `Cree-tes-videos-TikTok-avec-l-IA.pdf`.
+- Livrable : `Lecodeur-Cree-tes-videos-avec-l-IA.pdf`.
 
 Compiler : `xelatex ebook.tex` deux fois (sommaire). Dépend de `texlive-xetex texlive-latex-extra texlive-lang-french fonts-inter`.
 Crédits : GitHub Docs (CC BY 4.0) pour les 2 images GitHub ; GitHub, la page de connexion Claude et TikTok bloquent les robots :
