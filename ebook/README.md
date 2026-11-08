@@ -1,6 +1,6 @@
 # Ebook « Crée tes vidéos TikTok avec l'IA »
 
-Formation grand public (31 pages A5, français) tirée du document Claude Docs « Formation : créer tes vidéos avec Claude Opus 5.5 ».
+Formation grand public (32 pages A5, français ; deux chemins : ordinateur sans GitHub, téléphone avec GitHub) tirée du document Claude Docs « Formation : créer tes vidéos avec Claude Opus 5.5 ».
 
 - `ebook.tex` : la source (XeLaTeX, polices Inter + Anton, encadrés tcolorbox, schéma TikZ).
 - `images/` : captures annotées (cercles rouges + pastilles numérotées) et images de la vidéo 21.

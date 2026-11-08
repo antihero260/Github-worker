@@ -131,10 +131,10 @@ Avec ce guide, tu vas créer des petites vidéos pour TikTok, Instagram Reels ou
 
 \section*{Ce qu'il te faut}
 \begin{itemize}[label={}]
-  \item \coche un ordinateur (plus confortable) ou un téléphone, avec Internet ;
+  \item \coche un ordinateur (Windows, Mac ou Linux), ou à défaut un téléphone, avec Internet ;
   \item \coche un abonnement payant à Claude qui donne accès à Claude Code ;
   \item \coche un compte ElevenLabs pour la voix (on peut commencer gratuitement) ;
-  \item \coche un compte GitHub, gratuit.
+  \item \coche \textbf{seulement si tu travailles depuis un téléphone :} un compte GitHub, gratuit.
 \end{itemize}
 
 \textbf{Combien de temps :} la première fois, compte 1 à 2 heures pour tout mettre en place. Ensuite, chaque vidéo te demande environ 20 minutes : choisir le texte, créer la voix, regarder le résultat.
@@ -162,7 +162,7 @@ Tu interviens au début et à la fin. Tout le montage, au milieu, est fait par C
 \mainmatter
 % ======================================================================== 1
 \chapter{Les outils}
-Quatre services en ligne suffisent. Tu n'installes rien sur ton ordinateur : tout se passe dans ton navigateur.
+Trois services suffisent sur ordinateur, quatre si tu travailles depuis un téléphone. Sur ordinateur, tu installes seulement l'application Claude Code ; sur téléphone, tout se passe en ligne.
 
 \renewcommand{\arraystretch}{1.35}
 \begin{center}\small
@@ -172,14 +172,14 @@ Outil & À quoi il sert & Prix \\ \midrule
 Claude (Claude Code) & Ton monteur : tu lui expliques ce que tu veux, il fabrique la vidéo & Abonnement payant \\
 ElevenLabs & Transforme ton texte en voix naturelle, ou reprend ta propre voix & Gratuit pour essayer \\
 Mixkit & Musiques, sons et vidéos gratuits que tu as le droit d'utiliser & Gratuit \\
-GitHub & Un classeur en ligne où tes projets sont rangés et sauvegardés & Gratuit \\ \bottomrule
+GitHub & \textbf{Seulement sur téléphone} : un classeur en ligne où Claude range tes projets & Gratuit \\ \bottomrule
 \end{tabularx}
 \end{center}
 
 \section{Pourquoi « Claude Code » ?}
 La discussion classique avec Claude peut seulement te répondre. \textbf{Claude Code}, lui, peut agir : télécharger des vidéos, fabriquer des fichiers, regarder le résultat et corriger ses erreurs. C'est la différence entre demander conseil à un monteur et lui confier le travail.
 
-\capture{images/claude-code.jpg}{La page de Claude Code. \pastille{1} « Essayer Claude » pour créer ton compte et choisir un abonnement. \pastille{2} La version « Web » : elle s'utilise directement dans le navigateur.}
+\capture{images/claude-code.jpg}{La page de Claude Code. \pastille{1} « Essayer Claude » pour créer ton compte et choisir un abonnement. \pastille{2} « Télécharger » pour installer Claude Code sur ton ordinateur (le bouton indique ton système : Windows, Mac ou Linux). \pastille{3} La version « Web », pour travailler depuis un téléphone.}
 
 \begin{retenir}
 Pour fabriquer la vidéo, Claude utilise un logiciel gratuit appelé HyperFrames. Tu n'as pas à t'en occuper : Claude l'installe et s'en sert tout seul.
@@ -187,24 +187,41 @@ Pour fabriquer la vidéo, Claude utilise un logiciel gratuit appelé HyperFrames
 
 % ======================================================================== 2
 \chapter{Tout préparer (une seule fois)}
-Tu fais cette étape une seule fois. Ensuite, chaque nouvelle vidéo commence par un simple message.
+Tu fais cette étape une seule fois. Ensuite, chaque nouvelle vidéo commence par un simple message. Choisis ton chemin selon l'appareil que tu utilises.
 
-\section{Créer ton classeur sur GitHub}
+\begin{center}\small
+\begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X}
+\toprule
+\textbf{\color{violet}Chemin A : sur ordinateur} (conseillé) & \textbf{\color{violet}Chemin B : sur téléphone} \\ \midrule
+Tu installes l'application Claude Code & Rien à installer, tout se passe en ligne \\
+Tes vidéos restent dans un dossier de ton ordinateur & Tes vidéos sont rangées sur GitHub \\
+Pas besoin de GitHub & Un compte GitHub gratuit est nécessaire \\ \bottomrule
+\end{tabularx}
+\end{center}
+
+\section{Chemin A : sur ordinateur}
+\begin{enumerate}
+  \item Sur la page de Claude Code (image 1.1), clique sur \textbf{« Télécharger »} et installe l'application, comme n'importe quel logiciel.
+  \item Ouvre Claude Code et \textbf{connecte-toi avec ton compte Claude}.
+  \item Crée sur ton ordinateur un \textbf{dossier vide}, par exemple \texttt{mes-videos} dans tes Documents, puis choisis-le dans Claude Code.
+  \item C'est tout : Claude travaille directement dans ce dossier, et tes vidéos y restent même après avoir fermé l'application.
+\end{enumerate}
+
+\begin{astuce}
+Claude te demandera parfois l'autorisation d'installer un outil (par exemple un lecteur vidéo ou « Node.js ») ou de lancer une commande. Lis la demande : si elle sert à fabriquer ta vidéo, accepte. Laisse ton ordinateur allumé pendant le montage, car c'est lui qui fait le travail.
+\end{astuce}
+
+\section{Chemin B : sur téléphone}
+Sur téléphone, Claude travaille dans un ordinateur en ligne. Il lui faut un classeur en ligne pour ranger tes projets : c'est le rôle de GitHub.
 \begin{enumerate}
   \item Crée un compte gratuit sur \textbf{github.com} (bouton « Sign up »).
-  \item Une fois connecté, clique sur le \textbf{+} en haut à droite, puis sur \textbf{« New repository »} (nouveau dossier).
-  \item Donne-lui un nom simple, par exemple \texttt{mes-videos}, puis clique sur le bouton vert « Create repository » en bas de la page.
+  \item Une fois connecté, touche le \textbf{+} en haut, puis \textbf{« New repository »} (nouveau dossier).
+  \item Donne-lui un nom simple, par exemple \texttt{mes-videos}, puis valide avec le bouton vert « Create repository ».
+  \item Ouvre \textbf{Claude Code} dans l'application Claude ou sur \textbf{claude.ai}, \textbf{relie ton compte GitHub} quand on te le demande, et choisis le dossier \texttt{mes-videos}.
 \end{enumerate}
 
 \capture[0.72]{images/github-nouveau-depot.jpg}{\pastille{1} Le bouton « + » en haut de GitHub. \pastille{2} « New repository » pour créer ton dossier de projets.}
 \capture{images/github-nom-depot.jpg}{\pastille{3} Le nom de ton dossier, par exemple « mes-videos ».}
-
-\section{Ouvrir Claude Code et le relier à GitHub}
-\begin{enumerate}
-  \item Connecte-toi sur \textbf{claude.ai}, puis ouvre \textbf{Claude Code}.
-  \item Quand on te le demande, \textbf{relie ton compte GitHub} et choisis le dossier \texttt{mes-videos}.
-  \item Claude travaille alors dans un ordinateur en ligne : rien à installer chez toi.
-\end{enumerate}
 
 \section{Tes trois premiers messages à Claude}
 \begin{acopier}[Message 1 : préparer le dossier]
@@ -218,7 +235,7 @@ Tiens un carnet de suivi : note chaque vidéo, ce que j'ai aimé et ce que je n'
 \end{acopier}
 
 \begin{attention}
-L'espace de travail de Claude est vidé après chaque séance. Prends le réflexe de lui dire régulièrement : « Enregistre tout sur GitHub ». Ce qui n'est pas enregistré est perdu.
+\textbf{Chemin B (téléphone) seulement :} l'ordinateur en ligne de Claude est vidé après chaque séance. Prends le réflexe de lui dire régulièrement « Enregistre tout sur GitHub » : ce qui n'est pas enregistré est perdu. Sur ordinateur (chemin A), tes fichiers restent dans ton dossier.
 \end{attention}
 
 % ======================================================================== 3
@@ -367,7 +384,7 @@ Regroupe toutes tes remarques dans un seul message : Claude les corrige en une f
 
 % ======================================================================== 8
 \chapter{Récupérer la vidéo et la publier}
-Quand tout te convient, Claude fabrique la vidéo finale et te l'envoie dans la conversation.
+Quand tout te convient, Claude fabrique la vidéo finale et te l'envoie dans la conversation. Sur ordinateur, tu la retrouves aussi directement dans ton dossier.
 \begin{enumerate}
   \item \textbf{Télécharge la vidéo} et regarde-la une dernière fois sur ton téléphone, le son allumé.
   \item \textbf{Demande une miniature} (l'image de couverture) : Claude la fabrique avec ton titre en gros.
@@ -429,7 +446,7 @@ Contenu & Rester tout public & Images choquantes ou dénudées \\ \bottomrule
 
 \section*{Trois erreurs de débutant}
 \begin{itemize}
-  \item \textbf{Oublier de demander à Claude d'enregistrer le projet} sur GitHub.
+  \item \textbf{Sur téléphone, oublier de demander à Claude d'enregistrer le projet} sur GitHub.
   \item \textbf{Valider la vidéo sans la regarder sur un téléphone.}
   \item \textbf{Abandonner après quelques vidéos} : il faut souvent plusieurs semaines avant qu'une vidéo décolle.
 \end{itemize}
@@ -450,7 +467,8 @@ Crée un fichier de consignes que tu reliras avant chaque vidéo :\\
 - Les points d'une liste cachés derrière des cases « ? », dévoilés quand la voix les annonce.\\
 - Musique gratuite et autorisée, bien audible mais plus basse que la voix ; beaucoup de petits bruitages.\\
 - Vérifie toujours ton travail avant de fabriquer la vidéo finale.\\
-- Tiens un carnet de suivi et enregistre tout sur GitHub à chaque étape.
+- Tiens un carnet de suivi de mes vidéos.\\
+- (Seulement sur téléphone) Enregistre tout sur GitHub à chaque étape.
 \end{acopier}
 
 \begin{acopier}[2. Faire écrire un texte]
@@ -476,7 +494,8 @@ Propose-moi 7 idées de vidéos sur [ton thème], puis écris les 7 textes (130 
 \end{acopier}
 
 \begin{acopier}[6. Récupérer la vidéo et la miniature]
-La vidéo me convient : fabrique la version finale et la miniature, envoie-les-moi, puis enregistre tout sur GitHub.
+La vidéo me convient : fabrique la version finale et la miniature, puis envoie-les-moi.\\
+(Sur téléphone, ajoute : « puis enregistre tout sur GitHub ».)
 \end{acopier}
 
 % ======================================================================== LEXIQUE
@@ -489,7 +508,7 @@ La vidéo me convient : fabrique la version finale et la miniature, envoie-les-m
 Accroche (hook) & Les toutes premières secondes, qui donnent envie de rester \\
 Claude Code & La version de Claude qui peut agir (télécharger, fabriquer, vérifier), pas seulement répondre \\
 Fichier de consignes & Le texte où tu écris tes règles une fois pour toutes ; Claude le relit avant chaque vidéo \\
-GitHub & Un classeur en ligne où tes projets sont rangés et sauvegardés \\
+GitHub & Un classeur en ligne où Claude range tes projets ; utile seulement si tu travailles depuis un téléphone \\
 Libre de droits & Que tu as le droit d'utiliser gratuitement, sans demander d'autorisation \\
 Miniature & L'image de couverture qui s'affiche avant qu'on lance la vidéo \\
 Rendu & La fabrication du fichier vidéo final \\
@@ -506,7 +525,7 @@ Tu as tout ce qu'il faut. Ta première vidéo ne sera pas parfaite, et c'est nor
 
 \begin{retenir}
 \textbf{Ton plan pour cette semaine :}\\
-\coche Créer les comptes (Claude, ElevenLabs, GitHub).\\
+\coche Créer tes comptes (Claude, ElevenLabs) et installer Claude Code sur ton ordinateur (ou créer un compte GitHub si tu es sur téléphone).\\
 \coche Envoyer les trois premiers messages à Claude.\\
 \coche Écrire et enregistrer ton premier texte.\\
 \coche Publier ta première vidéo.

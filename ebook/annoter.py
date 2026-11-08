@@ -24,7 +24,7 @@ def annote(src, dst, cercles, crop=None, echelle=1.0):
 
 
 B = "captures-brutes/"
-annote(B + "claude-code.png", "images/claude-code.jpg", [(1234, 24, 142, 36, 1), (425, 770, 90, 85, 2)])
+annote(B + "claude-code.png", "images/claude-code.jpg", [(1234, 24, 142, 36, 1), (425, 770, 90, 85, 3), (64, 518, 420, 40, 2)])
 annote(B + "ghdoc-repo-create-global-nav-update.png", "images/github-nouveau-depot.jpg", [(300, 20, 100, 52, 1), (44, 108, 258, 52, 2)])
 annote(B + "ghdoc-create-repository-name.png", "images/github-nom-depot.jpg", [(362, 150, 1140, 70, 3)])
 annote(B + "elevenlabs-tts.png", "images/elevenlabs.jpg", [(752, 160, 560, 80, 2), (164, 366, 246, 38, 1)])
