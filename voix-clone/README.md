@@ -20,3 +20,4 @@ ffmpeg -i voix.wav -af "highpass=f=70,loudnorm=I=-16:TP=-1.5" -ar 44100 -b:a 192
 - Vitesse sur le processeur (4 cœurs, sans carte graphique) : ~5× le temps réel (20 s de voix ≈ 1 min 45).
 - Toujours vérifier la voix générée avec whisper avant le montage (mots oubliés ou répétés).
 - Demande de l’utilisateur (8 nov.) : **enlever les silences**. Un `silenceremove` global coupait des mots (« Et », début de « Ton ») : on rogne donc phrase par phrase dans `cloner.py`.
+- **Verdict de l’utilisateur (8 nov.) : « trop robotique » → on reste sur ElevenLabs.** Clone gardé ici seulement pour mémoire.
