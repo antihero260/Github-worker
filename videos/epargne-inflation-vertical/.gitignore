@@ -1,5 +1,3 @@
 .hyperframes/
-.media/
-.media/audio/bgm/
-__pycache__/
 renders/
+assets/*-16x9.mp4
