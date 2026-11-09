@@ -4981,6 +4981,10 @@
       .fi-equ { position: absolute; display: flex; align-items: center; gap: 30px; font-family: "Anton", sans-serif; font-size: 86px; color: #fff; text-transform: uppercase; }
       .fi-equ span { padding: 14px 30px 6px; background: #0f1b33; border: 4px solid #38bdf8; border-radius: 20px; }
       .fi-equ b { font-weight: 400; color: #38bdf8; }
+      .fi-billet { position: absolute; width: 300px; height: 150px; border-radius: 12px; background: linear-gradient(135deg, #2f7fb8 0%, #38bdf8 45%, #f2b705 100%); border: 4px solid #0b1220; box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6); font-family: "Anton", sans-serif; color: #0b1220; overflow: hidden; }
+      .fi-billet b { position: absolute; left: 16px; top: 12px; font-weight: 400; font-size: 58px; line-height: 1; }
+      .fi-billet span { position: absolute; left: 18px; bottom: 12px; font-size: 26px; text-transform: uppercase; letter-spacing: 0.05em; }
+      .fi-billet i { position: absolute; right: 18px; top: 26px; width: 90px; height: 90px; border-radius: 50%; border: 6px solid rgba(11, 18, 32, 0.6); background: rgba(255, 255, 255, 0.35); }
       /* ---- styles générés : fin ---- */
     </style>
   </head>
@@ -5046,216 +5050,278 @@
       <audio id="sfx-13" src="assets/sfx/balaie-air.mp3" data-start="3.46" data-duration="0.86" data-volume="0.34" data-track-index="36"></audio><!-- coupe choc-femme -->
       <audio id="sfx-14" src="assets/sfx/compteur.mp3" data-start="4.09" data-duration="0.7" data-volume="0.357" data-track-index="30"></audio><!-- 1 million qui défile -->
       <audio id="sfx-15" src="assets/sfx/souffle-rapide.mp3" data-start="4.34" data-duration="1.76" data-volume="0.34" data-track-index="31"></audio><!-- coupe compteuse-2 -->
-      <audio id="sfx-16" src="assets/sfx/zoom-air.mp3" data-start="4.65" data-duration="1.28" data-volume="0.383" data-track-index="32"></audio><!-- rush de zoom -->
-      <audio id="sfx-17" src="assets/sfx/balaie-rapide.mp3" data-start="4.88" data-duration="1.92" data-volume="0.34" data-track-index="30"></audio><!-- coupe billets-liasse -->
-      <audio id="sfx-18" src="assets/sfx/glitch-court.mp3" data-start="5.13" data-duration="0.83" data-volume="0.272" data-track-index="33"></audio><!-- choc -->
-      <audio id="sfx-19" src="assets/sfx/piece-gagne.mp3" data-start="5.58" data-duration="0.51" data-volume="0.383" data-track-index="34"></audio><!-- million -->
-      <audio id="sfx-20" src="assets/sfx/fouet.mp3" data-start="5.68" data-duration="1.05" data-volume="0.34" data-track-index="35"></audio><!-- coupe compte-pieces -->
-      <audio id="sfx-21" src="assets/sfx/balaie-court.mp3" data-start="6.27" data-duration="0.61" data-volume="0.34" data-track-index="31"></audio><!-- coupe paiement-tel -->
-      <audio id="sfx-22" src="assets/sfx/notif-positive.mp3" data-start="6.42" data-duration="2.8" data-volume="0.357" data-track-index="32"></audio><!-- le solde apparaît -->
-      <audio id="sfx-23" src="assets/sfx/pieces.mp3" data-start="6.52" data-duration="2.5" data-volume="0.306" data-track-index="33"></audio><!-- argent -->
-      <audio id="sfx-24" src="assets/sfx/swoosh-court.mp3" data-start="6.57" data-duration="1.25" data-volume="0.34" data-track-index="34"></audio><!-- rush de zoom -->
-      <audio id="sfx-25" src="assets/sfx/impact-whoosh.mp3" data-start="6.78" data-duration="3.53" data-volume="0.272" data-track-index="35"></audio><!-- choc -->
-      <audio id="sfx-26" src="assets/sfx/swoosh-court.mp3" data-start="6.89" data-duration="1.25" data-volume="0.34" data-track-index="30"></audio><!-- coupe tel-banque -->
-      <audio id="sfx-27" src="assets/sfx/declencheur.mp3" data-start="7.58" data-duration="0.63" data-volume="0.34" data-track-index="31"></audio><!-- coupe horloge-billets -->
-      <audio id="sfx-28" src="assets/sfx/glitch-mini.mp3" data-start="7.67" data-duration="1.72" data-volume="0.34" data-track-index="36"></audio><!-- coupe plus-d-argent -->
-      <audio id="sfx-29" src="assets/sfx/balaie-air.mp3" data-start="7.86" data-duration="0.86" data-volume="0.34" data-track-index="34"></audio><!-- coupe billets-brules -->
-      <audio id="sfx-30" src="assets/sfx/souffle-air.mp3" data-start="8.26" data-duration="2.32" data-volume="0.255" data-track-index="30"></audio><!-- la caméra suit -->
-      <audio id="sfx-31" src="assets/sfx/souffle-rapide.mp3" data-start="8.26" data-duration="1.76" data-volume="0.34" data-track-index="31"></audio><!-- coupe portefeuille-vide -->
-      <audio id="sfx-32" src="assets/sfx/zoom-swipe.mp3" data-start="8.53" data-duration="1.06" data-volume="0.357" data-track-index="37"></audio><!-- rush de zoom -->
-      <audio id="sfx-33" src="assets/sfx/impact-basse.mp3" data-start="8.72" data-duration="1.1" data-volume="0.468" data-track-index="38"></audio><!-- PLUS PAUVRE -->
-      <audio id="sfx-34" src="assets/sfx/balaie-rapide.mp3" data-start="8.96" data-duration="1.92" data-volume="0.34" data-track-index="34"></audio><!-- coupe horloge-temps -->
-      <audio id="sfx-35" src="assets/sfx/impact-futur.mp3" data-start="9.16" data-duration="2.75" data-volume="0.272" data-track-index="33"></audio><!-- choc -->
-      <audio id="sfx-36" src="assets/sfx/page.mp3" data-start="9.16" data-duration="0.45" data-volume="0.34" data-track-index="39"></audio><!-- année 2024 -->
-      <audio id="sfx-37" src="assets/sfx/page.mp3" data-start="9.26" data-duration="0.45" data-volume="0.34" data-track-index="32"></audio><!-- année 2025 -->
-      <audio id="sfx-38" src="assets/sfx/page.mp3" data-start="9.36" data-duration="0.45" data-volume="0.34" data-track-index="40"></audio><!-- année 2026 -->
-      <audio id="sfx-39" src="assets/sfx/balaie-court.mp3" data-start="9.63" data-duration="0.61" data-volume="0.34" data-track-index="36"></audio><!-- coupe inquiet-homme -->
-      <audio id="sfx-40" src="assets/sfx/fouet.mp3" data-start="9.68" data-duration="1.05" data-volume="0.34" data-track-index="37"></audio><!-- coupe myst-sablier -->
-      <audio id="sfx-41" src="assets/sfx/souffle-air.mp3" data-start="9.71" data-duration="2.32" data-volume="0.34" data-track-index="39"></audio><!-- rush de zoom -->
-      <audio id="sfx-42" src="assets/sfx/coup-mystere.mp3" data-start="9.8" data-duration="3.5" data-volume="0.425" data-track-index="32"></audio><!-- le pire -->
-      <audio id="sfx-43" src="assets/sfx/swoosh-court.mp3" data-start="10.25" data-duration="1.25" data-volume="0.34" data-track-index="31"></audio><!-- coupe stress-tete -->
-      <audio id="sfx-44" src="assets/sfx/declencheur.mp3" data-start="10.7" data-duration="0.63" data-volume="0.34" data-track-index="30"></audio><!-- coupe inquiete-fille -->
-      <audio id="sfx-45" src="assets/sfx/impact-cartoon.mp3" data-start="10.75" data-duration="1.41" data-volume="0.272" data-track-index="35"></audio><!-- choc -->
-      <audio id="sfx-46" src="assets/sfx/glitch-mini.mp3" data-start="10.87" data-duration="1.72" data-volume="0.34" data-track-index="36"></audio><!-- coupe frustree-ordi -->
-      <audio id="sfx-47" src="assets/sfx/glitch-cine.mp3" data-start="11.16" data-duration="0.56" data-volume="0.383" data-track-index="34"></audio><!-- tu ne t'en rends pas compte -->
-      <audio id="sfx-48" src="assets/sfx/balaie-air.mp3" data-start="11.3" data-duration="0.86" data-volume="0.34" data-track-index="37"></audio><!-- coupe perdu-laptop -->
-      <audio id="sfx-49" src="assets/sfx/souffle-rapide.mp3" data-start="12.14" data-duration="1.76" data-volume="0.374" data-track-index="30"></audio><!-- volet vers s02-panier -->
-      <audio id="sfx-50" src="assets/sfx/swoosh-vitesse.mp3" data-start="12.41" data-duration="2.6" data-volume="0.306" data-track-index="31"></audio><!-- titre -->
-      <audio id="sfx-51" src="assets/sfx/souffle-rapide.mp3" data-start="14.02" data-duration="1.76" data-volume="0.34" data-track-index="30"></audio><!-- coupe compteuse-billets -->
-      <audio id="sfx-52" src="assets/sfx/zoom-futur.mp3" data-start="14.19" data-duration="2.17" data-volume="0.357" data-track-index="32"></audio><!-- rush de zoom -->
-      <audio id="sfx-53" src="assets/sfx/pieces.mp3" data-start="14.52" data-duration="2.5" data-volume="0.306" data-track-index="33"></audio><!-- argent -->
-      <audio id="sfx-54" src="assets/sfx/glitch-court.mp3" data-start="14.57" data-duration="0.83" data-volume="0.272" data-track-index="34"></audio><!-- choc -->
-      <audio id="sfx-55" src="assets/sfx/pop-long.mp3" data-start="14.72" data-duration="0.48" data-volume="0.357" data-track-index="35"></audio><!-- le solde apparaît -->
-      <audio id="sfx-56" src="assets/sfx/balaie-rapide.mp3" data-start="16.72" data-duration="1.92" data-volume="0.34" data-track-index="30"></audio><!-- coupe paiement-tel -->
-      <audio id="sfx-57" src="assets/sfx/scanner-caisse.mp3" data-start="17.72" data-duration="1.4" data-volume="0.323" data-track-index="31"></audio><!-- article Riz -->
-      <audio id="sfx-58" src="assets/sfx/scanner-caisse.mp3" data-start="18.12" data-duration="1.4" data-volume="0.323" data-track-index="32"></audio><!-- article Viande -->
-      <audio id="sfx-59" src="assets/sfx/zoom-impact.mp3" data-start="18.14" data-duration="1.22" data-volume="0.357" data-track-index="33"></audio><!-- rush de zoom -->
-      <audio id="sfx-60" src="assets/sfx/swoosh-accent.mp3" data-start="18.27" data-duration="1.1" data-volume="0.357" data-track-index="34"></audio><!-- le panier arrive -->
-      <audio id="sfx-61" src="assets/sfx/fouet.mp3" data-start="18.32" data-duration="1.05" data-volume="0.34" data-track-index="35"></audio><!-- coupe chariot -->
-      <audio id="sfx-62" src="assets/sfx/balaie-court.mp3" data-start="18.35" data-duration="0.61" data-volume="0.34" data-track-index="36"></audio><!-- coupe marche-fruits -->
-      <audio id="sfx-63" src="assets/sfx/scanner-caisse.mp3" data-start="18.52" data-duration="1.4" data-volume="0.323" data-track-index="37"></audio><!-- article Lait -->
-      <audio id="sfx-64" src="assets/sfx/pop-click.mp3" data-start="18.77" data-duration="1.18" data-volume="0.323" data-track-index="30"></audio><!-- article Huile -->
-      <audio id="sfx-65" src="assets/sfx/impact-whoosh.mp3" data-start="19.02" data-duration="3.53" data-volume="0.272" data-track-index="36"></audio><!-- choc -->
-      <audio id="sfx-66" src="assets/sfx/pop-sec.mp3" data-start="19.07" data-duration="0.3" data-volume="0.323" data-track-index="38"></audio><!-- article Tomates -->
-      <audio id="sfx-67" src="assets/sfx/swoosh-court.mp3" data-start="19.77" data-duration="1.25" data-volume="0.34" data-track-index="31"></audio><!-- coupe achat-tomates -->
-      <audio id="sfx-68" src="assets/sfx/tic-tac.mp3" data-start="20.12" data-duration="0.8" data-volume="0.34" data-track-index="30"></audio><!-- l'année prochaine -->
-      <audio id="sfx-69" src="assets/sfx/declencheur.mp3" data-start="21.02" data-duration="0.63" data-volume="0.34" data-track-index="30"></audio><!-- coupe horloge-temps -->
-      <audio id="sfx-70" src="assets/sfx/glitch-mini.mp3" data-start="21.27" data-duration="1.72" data-volume="0.34" data-track-index="31"></audio><!-- coupe prix-fruits -->
-      <audio id="sfx-71" src="assets/sfx/balaie-air.mp3" data-start="21.78" data-duration="0.86" data-volume="0.34" data-track-index="30"></audio><!-- coupe promo-supermarche -->
-      <audio id="sfx-72" src="assets/sfx/balaie-air.mp3" data-start="22.16" data-duration="0.86" data-volume="0.255" data-track-index="32"></audio><!-- la caméra suit -->
-      <audio id="sfx-73" src="assets/sfx/souffle-rapide.mp3" data-start="22.26" data-duration="1.76" data-volume="0.34" data-track-index="33"></audio><!-- coupe rayon-legumes -->
-      <audio id="sfx-74" src="assets/sfx/impact-futur.mp3" data-start="22.76" data-duration="2.75" data-volume="0.272" data-track-index="30"></audio><!-- choc -->
-      <audio id="sfx-75" src="assets/sfx/swoosh-monte.mp3" data-start="22.86" data-duration="1.03" data-volume="0.383" data-track-index="34"></audio><!-- ça monte -->
-      <audio id="sfx-76" src="assets/sfx/impact-basse.mp3" data-start="23.01" data-duration="1.1" data-volume="0.468" data-track-index="31"></audio><!-- +5 % -->
-      <audio id="sfx-77" src="assets/sfx/balaie-rapide.mp3" data-start="23.84" data-duration="1.92" data-volume="0.34" data-track-index="32"></audio><!-- coupe courses-sac -->
-      <audio id="sfx-78" src="assets/sfx/swoosh-vol.mp3" data-start="23.88" data-duration="1.63" data-volume="0.255" data-track-index="35"></audio><!-- la caméra suit -->
-      <audio id="sfx-79" src="assets/sfx/compteur.mp3" data-start="23.93" data-duration="0.9" data-volume="0.357" data-track-index="34"></audio><!-- le total monte -->
-      <audio id="sfx-80" src="assets/sfx/scanner-caisse.mp3" data-start="24.85" data-duration="1.4" data-volume="0.425" data-track-index="31"></audio><!-- 105 000 -->
-      <audio id="sfx-81" src="assets/sfx/fouet.mp3" data-start="24.88" data-duration="1.05" data-volume="0.34" data-track-index="33"></audio><!-- coupe caisse-carte -->
-      <audio id="sfx-82" src="assets/sfx/balaie-court.mp3" data-start="25.15" data-duration="0.61" data-volume="0.34" data-track-index="34"></audio><!-- coupe epicerie-sourire -->
-      <audio id="sfx-83" src="assets/sfx/impact-basse.mp3" data-start="25.6" data-duration="1.1" data-volume="0.425" data-track-index="30"></audio><!-- 105 000 -->
-      <audio id="sfx-84" src="assets/sfx/swoosh-accent.mp3" data-start="25.66" data-duration="1.1" data-volume="0.34" data-track-index="35"></audio><!-- rush de zoom -->
-      <audio id="sfx-85" src="assets/sfx/souffle-cine.mp3" data-start="26.27" data-duration="1.33" data-volume="0.374" data-track-index="31"></audio><!-- volet vers s03-meme-solde -->
-      <audio id="sfx-86" src="assets/sfx/pieces.mp3" data-start="27.8" data-duration="2.5" data-volume="0.306" data-track-index="30"></audio><!-- argent -->
-      <audio id="sfx-87" src="assets/sfx/clic-positif.mp3" data-start="28.0" data-duration="1.77" data-volume="0.357" data-track-index="31"></audio><!-- le solde apparaît -->
-      <audio id="sfx-88" src="assets/sfx/notif-indice.mp3" data-start="28.2" data-duration="1.72" data-volume="0.34" data-track-index="32"></audio><!-- toujours -->
-      <audio id="sfx-89" src="assets/sfx/swoosh-court.mp3" data-start="28.25" data-duration="1.25" data-volume="0.34" data-track-index="33"></audio><!-- coupe billets-liasse -->
-      <audio id="sfx-90" src="assets/sfx/impact-cartoon.mp3" data-start="28.35" data-duration="1.41" data-volume="0.272" data-track-index="34"></audio><!-- choc -->
-      <audio id="sfx-91" src="assets/sfx/declencheur.mp3" data-start="29.98" data-duration="0.63" data-volume="0.34" data-track-index="31"></audio><!-- coupe tel-banque -->
-      <audio id="sfx-92" src="assets/sfx/glitch-mini.mp3" data-start="30.31" data-duration="1.72" data-volume="0.34" data-track-index="32"></audio><!-- coupe billets-tombent -->
-      <audio id="sfx-93" src="assets/sfx/balaie-air.mp3" data-start="30.74" data-duration="0.86" data-volume="0.34" data-track-index="30"></audio><!-- coupe compte-pieces -->
-      <audio id="sfx-94" src="assets/sfx/zoom-vide.mp3" data-start="30.98" data-duration="1.27" data-volume="0.357" data-track-index="31"></audio><!-- rush de zoom -->
-      <audio id="sfx-95" src="assets/sfx/coche.mp3" data-start="31.26" data-duration="0.24" data-volume="0.357" data-track-index="33"></audio><!-- validé : Aucun billet perdu -->
-      <audio id="sfx-96" src="assets/sfx/souffle-rapide.mp3" data-start="31.86" data-duration="1.76" data-volume="0.34" data-track-index="30"></audio><!-- coupe vol-sac -->
-      <audio id="sfx-97" src="assets/sfx/mission-ok.mp3" data-start="32.36" data-duration="1.55" data-volume="0.357" data-track-index="31"></audio><!-- validé : Personne ne t’a volé -->
-      <audio id="sfx-98" src="assets/sfx/glitch-court.mp3" data-start="32.41" data-duration="0.83" data-volume="0.272" data-track-index="32"></audio><!-- choc -->
-      <audio id="sfx-99" src="assets/sfx/balaie-rapide.mp3" data-start="32.64" data-duration="1.92" data-volume="0.34" data-track-index="33"></audio><!-- coupe factures-couple -->
-      <audio id="sfx-100" src="assets/sfx/scanner-caisse.mp3" data-start="33.78" data-duration="1.4" data-volume="0.323" data-track-index="30"></audio><!-- article Huile -->
-      <audio id="sfx-101" src="assets/sfx/fouet.mp3" data-start="33.84" data-duration="1.05" data-volume="0.34" data-track-index="32"></audio><!-- coupe promo-supermarche -->
-      <audio id="sfx-102" src="assets/sfx/balaie-court.mp3" data-start="33.87" data-duration="0.61" data-volume="0.34" data-track-index="34"></audio><!-- coupe calcul-depenses -->
-      <audio id="sfx-103" src="assets/sfx/balaie-petit.mp3" data-start="33.87" data-duration="0.78" data-volume="0.255" data-track-index="35"></audio><!-- la caméra suit -->
-      <audio id="sfx-104" src="assets/sfx/souffle-air.mp3" data-start="33.87" data-duration="2.32" data-volume="0.255" data-track-index="36"></audio><!-- la caméra suit -->
-      <audio id="sfx-105" src="assets/sfx/scanner-caisse.mp3" data-start="33.9" data-duration="1.4" data-volume="0.323" data-track-index="37"></audio><!-- article Tomates -->
-      <audio id="sfx-106" src="assets/sfx/impact-whoosh.mp3" data-start="34.14" data-duration="3.53" data-volume="0.272" data-track-index="31"></audio><!-- choc -->
-      <audio id="sfx-107" src="assets/sfx/swoosh-accent.mp3" data-start="34.27" data-duration="1.1" data-volume="0.357" data-track-index="38"></audio><!-- le panier arrive -->
-      <audio id="sfx-108" src="assets/sfx/buzz-faux.mp3" data-start="34.57" data-duration="1.74" data-volume="0.383" data-track-index="33"></audio><!-- un article en moins -->
-      <audio id="sfx-109" src="assets/sfx/pop-click.mp3" data-start="34.57" data-duration="1.18" data-volume="0.323" data-track-index="34"></audio><!-- article Riz -->
-      <audio id="sfx-110" src="assets/sfx/pop-sec.mp3" data-start="34.59" data-duration="0.3" data-volume="0.323" data-track-index="39"></audio><!-- article Viande -->
-      <audio id="sfx-111" src="assets/sfx/impact-basse.mp3" data-start="34.62" data-duration="1.1" data-volume="0.425" data-track-index="40"></audio><!-- moins de choses -->
-      <audio id="sfx-112" src="assets/sfx/pop-click.mp3" data-start="34.81" data-duration="1.18" data-volume="0.323" data-track-index="35"></audio><!-- article Lait -->
-      <audio id="sfx-113" src="assets/sfx/swoosh-court.mp3" data-start="34.89" data-duration="1.25" data-volume="0.34" data-track-index="41"></audio><!-- coupe courses-sac -->
-      <audio id="sfx-114" src="assets/sfx/intro-mystere.mp3" data-start="34.95" data-duration="1.2" data-volume="0.383" data-track-index="32"></audio><!-- bienvenue -->
-      <audio id="sfx-115" src="assets/sfx/swoosh-vol.mp3" data-start="35.38" data-duration="1.63" data-volume="0.374" data-track-index="30"></audio><!-- volet vers s04-inflation -->
-      <audio id="sfx-116" src="assets/sfx/tonnerre-transition.mp3" data-start="36.78" data-duration="5.0" data-volume="0.34" data-track-index="32"></audio><!-- inflation -->
-      <audio id="sfx-117" src="assets/sfx/impact-futur.mp3" data-start="37.08" data-duration="2.75" data-volume="0.272" data-track-index="30"></audio><!-- choc -->
-      <audio id="sfx-118" src="assets/sfx/declencheur.mp3" data-start="37.18" data-duration="0.63" data-volume="0.34" data-track-index="33"></audio><!-- coupe bourse-baisse -->
-      <audio id="sfx-119" src="assets/sfx/impact-basse.mp3" data-start="37.18" data-duration="1.1" data-volume="0.51" data-track-index="34"></audio><!-- L'INFLATION -->
-      <audio id="sfx-120" src="assets/sfx/zoom-in-out.mp3" data-start="37.18" data-duration="1.25" data-volume="0.357" data-track-index="35"></audio><!-- rush de zoom -->
-      <audio id="sfx-121" src="assets/sfx/swoosh-monte.mp3" data-start="38.36" data-duration="1.03" data-volume="0.306" data-track-index="31"></audio><!-- titre -->
-      <audio id="sfx-122" src="assets/sfx/compteur.mp3" data-start="38.65" data-duration="3.0" data-volume="0.289" data-track-index="33"></audio><!-- étiquette Loyer -->
-      <audio id="sfx-123" src="assets/sfx/balaie-air.mp3" data-start="38.66" data-duration="0.86" data-volume="0.34" data-track-index="34"></audio><!-- coupe graphe-perte -->
-      <audio id="sfx-124" src="assets/sfx/glitch-mini.mp3" data-start="38.71" data-duration="1.72" data-volume="0.34" data-track-index="35"></audio><!-- coupe prix-fruits -->
-      <audio id="sfx-125" src="assets/sfx/notif-indice.mp3" data-start="38.9" data-duration="1.72" data-volume="0.289" data-track-index="36"></audio><!-- étiquette Riz -->
-      <audio id="sfx-126" src="assets/sfx/pop-click.mp3" data-start="39.4" data-duration="1.18" data-volume="0.289" data-track-index="31"></audio><!-- étiquette Transport -->
-      <audio id="sfx-127" src="assets/sfx/notif-indice.mp3" data-start="39.5" data-duration="1.72" data-volume="0.289" data-track-index="37"></audio><!-- étiquette Pain -->
-      <audio id="sfx-128" src="assets/sfx/zoom-scifi.mp3" data-start="39.53" data-duration="1.8" data-volume="0.357" data-track-index="34"></audio><!-- rush de zoom -->
-      <audio id="sfx-129" src="assets/sfx/souffle-rapide.mp3" data-start="39.86" data-duration="1.76" data-volume="0.34" data-track-index="30"></audio><!-- coupe marche-fruits -->
-      <audio id="sfx-130" src="assets/sfx/vent-roulement.mp3" data-start="40.78" data-duration="2.0" data-volume="0.306" data-track-index="31"></audio><!-- le pouvoir d'achat fond -->
-      <audio id="sfx-131" src="assets/sfx/balaie-rapide.mp3" data-start="41.28" data-duration="1.92" data-volume="0.34" data-track-index="35"></audio><!-- coupe pieces-tombent -->
-      <audio id="sfx-132" src="assets/sfx/impact-cartoon.mp3" data-start="41.63" data-duration="1.41" data-volume="0.272" data-track-index="30"></audio><!-- choc -->
-      <audio id="sfx-133" src="assets/sfx/fouet.mp3" data-start="42.72" data-duration="1.05" data-volume="0.34" data-track-index="32"></audio><!-- coupe billets-brules -->
-      <audio id="sfx-134" src="assets/sfx/balaie-court.mp3" data-start="42.99" data-duration="0.61" data-volume="0.34" data-track-index="31"></audio><!-- coupe horloge-billets -->
-      <audio id="sfx-135" src="assets/sfx/swoosh-tourbillon.mp3" data-start="44.53" data-duration="3.77" data-volume="0.34" data-track-index="30"></audio><!-- rush de zoom -->
-      <audio id="sfx-136" src="assets/sfx/swoosh-court.mp3" data-start="44.97" data-duration="1.25" data-volume="0.34" data-track-index="31"></audio><!-- coupe stress-tete -->
-      <audio id="sfx-137" src="assets/sfx/glitch-court.mp3" data-start="45.85" data-duration="0.83" data-volume="0.272" data-track-index="32"></audio><!-- choc -->
-      <audio id="sfx-138" src="assets/sfx/declencheur.mp3" data-start="45.9" data-duration="0.63" data-volume="0.34" data-track-index="33"></audio><!-- coupe foule-rue -->
-      <audio id="sfx-139" src="assets/sfx/balaie-air.mp3" data-start="46.42" data-duration="0.86" data-volume="0.34" data-track-index="31"></audio><!-- coupe frustree-compte -->
-      <audio id="sfx-140" src="assets/sfx/erreur-echec.mp3" data-start="46.47" data-duration="1.95" data-volume="0.425" data-track-index="34"></audio><!-- une erreur -->
-      <audio id="sfx-141" src="assets/sfx/glitch-mini.mp3" data-start="46.47" data-duration="1.72" data-volume="0.34" data-track-index="35"></audio><!-- coupe coffre-fort -->
-      <audio id="sfx-142" src="assets/sfx/zoom-air.mp3" data-start="47.49" data-duration="1.28" data-volume="0.357" data-track-index="31"></audio><!-- rush de zoom -->
-      <audio id="sfx-143" src="assets/sfx/souffle-rapide.mp3" data-start="47.78" data-duration="1.76" data-volume="0.34" data-track-index="32"></audio><!-- coupe tirelire -->
-      <audio id="sfx-144" src="assets/sfx/swoosh-accent.mp3" data-start="47.87" data-duration="1.1" data-volume="0.357" data-track-index="33"></audio><!-- garder sur un compte -->
-      <audio id="sfx-145" src="assets/sfx/impact-whoosh.mp3" data-start="48.62" data-duration="3.53" data-volume="0.272" data-track-index="30"></audio><!-- choc -->
-      <audio id="sfx-146" src="assets/sfx/balaie-rapide.mp3" data-start="49.12" data-duration="1.92" data-volume="0.34" data-track-index="31"></audio><!-- coupe bocal-pieces -->
-      <audio id="sfx-147" src="assets/sfx/notif-indice.mp3" data-start="49.22" data-duration="1.72" data-volume="0.357" data-track-index="33"></audio><!-- suffit ? -->
-      <audio id="sfx-148" src="assets/sfx/balaie-air.mp3" data-start="50.0" data-duration="0.86" data-volume="0.255" data-track-index="32"></audio><!-- la caméra suit -->
-      <audio id="sfx-149" src="assets/sfx/fouet.mp3" data-start="50.16" data-duration="1.05" data-volume="0.34" data-track-index="34"></audio><!-- coupe portefeuille-vide -->
-      <audio id="sfx-150" src="assets/sfx/souffle-air.mp3" data-start="50.7" data-duration="2.32" data-volume="0.374" data-track-index="35"></audio><!-- volet vers s05-valeur-reelle -->
-      <audio id="sfx-151" src="assets/sfx/buzzer-faux.mp3" data-start="50.8" data-duration="1.22" data-volume="0.425" data-track-index="36"></audio><!-- faux -->
-      <audio id="sfx-152" src="assets/sfx/balaie-court.mp3" data-start="52.03" data-duration="0.61" data-volume="0.34" data-track-index="31"></audio><!-- coupe tirelire -->
-      <audio id="sfx-153" src="assets/sfx/impact-futur.mp3" data-start="52.28" data-duration="2.75" data-volume="0.272" data-track-index="30"></audio><!-- choc -->
-      <audio id="sfx-154" src="assets/sfx/riser-synth.mp3" data-start="52.7" data-duration="1.0" data-volume="0.306" data-track-index="31"></audio><!-- les prix montent -->
-      <audio id="sfx-155" src="assets/sfx/zoom-swipe.mp3" data-start="52.71" data-duration="1.06" data-volume="0.357" data-track-index="32"></audio><!-- rush de zoom -->
-      <audio id="sfx-156" src="assets/sfx/swoosh-court.mp3" data-start="52.73" data-duration="1.25" data-volume="0.34" data-track-index="33"></audio><!-- coupe bocal-pieces -->
-      <audio id="sfx-157" src="assets/sfx/buzz-basse.mp3" data-start="52.83" data-duration="2.55" data-volume="0.357" data-track-index="34"></audio><!-- aucun intérêt -->
-      <audio id="sfx-158" src="assets/sfx/swoosh-vol.mp3" data-start="53.5" data-duration="1.63" data-volume="0.255" data-track-index="35"></audio><!-- la caméra suit -->
-      <audio id="sfx-159" src="assets/sfx/declencheur.mp3" data-start="53.98" data-duration="0.63" data-volume="0.34" data-track-index="31"></audio><!-- coupe graphe-hausse -->
-      <audio id="sfx-160" src="assets/sfx/balaie-air.mp3" data-start="54.18" data-duration="0.86" data-volume="0.34" data-track-index="32"></audio><!-- coupe prix-fruits -->
-      <audio id="sfx-161" src="assets/sfx/glitch-mini.mp3" data-start="54.23" data-duration="1.72" data-volume="0.34" data-track-index="33"></audio><!-- coupe pieces-tombent -->
-      <audio id="sfx-162" src="assets/sfx/notif-indice.mp3" data-start="54.38" data-duration="1.72" data-volume="0.357" data-track-index="36"></audio><!-- le vrai chiffre -->
-      <audio id="sfx-163" src="assets/sfx/swoosh-tourbillon.mp3" data-start="54.68" data-duration="3.77" data-volume="0.306" data-track-index="31"></audio><!-- l'épargne descend -->
-      <audio id="sfx-164" src="assets/sfx/balaie-petit.mp3" data-start="54.93" data-duration="0.78" data-volume="0.255" data-track-index="37"></audio><!-- la caméra suit -->
-      <audio id="sfx-165" src="assets/sfx/impact-cartoon.mp3" data-start="55.23" data-duration="1.41" data-volume="0.272" data-track-index="30"></audio><!-- choc -->
-      <audio id="sfx-166" src="assets/sfx/souffle-rapide.mp3" data-start="55.46" data-duration="1.76" data-volume="0.34" data-track-index="32"></audio><!-- coupe bourse-baisse -->
-      <audio id="sfx-167" src="assets/sfx/balaie-rapide.mp3" data-start="56.32" data-duration="1.92" data-volume="0.34" data-track-index="33"></audio><!-- coupe billets-brules -->
-      <audio id="sfx-168" src="assets/sfx/impact-basse.mp3" data-start="56.62" data-duration="1.1" data-volume="0.468" data-track-index="34"></audio><!-- valeur réelle -->
-      <audio id="sfx-169" src="assets/sfx/signal-alerte.mp3" data-start="56.9" data-duration="1.6" data-volume="0.383" data-track-index="30"></audio><!-- attention -->
-      <audio id="sfx-170" src="assets/sfx/zoom-futur.mp3" data-start="57.2" data-duration="2.17" data-volume="0.357" data-track-index="35"></audio><!-- rush de zoom -->
-      <audio id="sfx-171" src="assets/sfx/swoosh-court.mp3" data-start="57.23" data-duration="1.25" data-volume="0.323" data-track-index="32"></audio><!-- rush de zoom -->
-      <audio id="sfx-172" src="assets/sfx/swoosh-court.mp3" data-start="57.48" data-duration="1.25" data-volume="0.374" data-track-index="36"></audio><!-- volet vers s06-epargner-investir -->
-      <audio id="sfx-173" src="assets/sfx/glitch-court.mp3" data-start="58.64" data-duration="0.83" data-volume="0.272" data-track-index="30"></audio><!-- choc -->
-      <audio id="sfx-174" src="assets/sfx/fouet.mp3" data-start="58.79" data-duration="1.05" data-volume="0.34" data-track-index="31"></audio><!-- coupe coffre-fort -->
-      <audio id="sfx-175" src="assets/sfx/fusee-whoosh.mp3" data-start="59.02" data-duration="4.75" data-volume="0.306" data-track-index="32"></audio><!-- titre -->
-      <audio id="sfx-176" src="assets/sfx/souffle-air.mp3" data-start="59.38" data-duration="2.32" data-volume="0.34" data-track-index="33"></audio><!-- rush de zoom -->
-      <audio id="sfx-177" src="assets/sfx/balaie-court.mp3" data-start="59.62" data-duration="0.61" data-volume="0.34" data-track-index="30"></audio><!-- coupe bocal-pieces -->
-      <audio id="sfx-178" src="assets/sfx/swoosh-court.mp3" data-start="61.68" data-duration="1.25" data-volume="0.34" data-track-index="30"></audio><!-- coupe medecin -->
-      <audio id="sfx-179" src="assets/sfx/pop-click.mp3" data-start="61.83" data-duration="1.18" data-volume="0.357" data-track-index="31"></audio><!-- Santé -->
-      <audio id="sfx-180" src="assets/sfx/pop-bulle.mp3" data-start="62.18" data-duration="0.38" data-volume="0.357" data-track-index="33"></audio><!-- Panne -->
-      <audio id="sfx-181" src="assets/sfx/impact-whoosh.mp3" data-start="62.21" data-duration="3.53" data-volume="0.272" data-track-index="34"></audio><!-- choc -->
-      <audio id="sfx-182" src="assets/sfx/declencheur.mp3" data-start="62.29" data-duration="0.63" data-volume="0.34" data-track-index="35"></audio><!-- coupe pluie-fenetre -->
-      <audio id="sfx-183" src="assets/sfx/pop-cartoon.mp3" data-start="62.49" data-duration="0.52" data-volume="0.357" data-track-index="36"></audio><!-- Imprévus -->
-      <audio id="sfx-184" src="assets/sfx/balaie-air.mp3" data-start="62.81" data-duration="0.86" data-volume="0.34" data-track-index="33"></audio><!-- coupe investisseur -->
-      <audio id="sfx-185" src="assets/sfx/zoom-impact.mp3" data-start="62.88" data-duration="1.22" data-volume="0.357" data-track-index="37"></audio><!-- rush de zoom -->
-      <audio id="sfx-186" src="assets/sfx/souffle-air.mp3" data-start="63.21" data-duration="2.32" data-volume="0.255" data-track-index="30"></audio><!-- la caméra suit -->
-      <audio id="sfx-187" src="assets/sfx/swoosh-accent.mp3" data-start="63.3" data-duration="1.1" data-volume="0.357" data-track-index="31"></audio><!-- Épargner -->
-      <audio id="sfx-188" src="assets/sfx/impact-whoosh.mp3" data-start="63.41" data-duration="3.53" data-volume="0.357" data-track-index="35"></audio><!-- Investir -->
-      <audio id="sfx-189" src="assets/sfx/balaie-air.mp3" data-start="64.47" data-duration="0.86" data-volume="0.255" data-track-index="31"></audio><!-- la caméra suit -->
-      <audio id="sfx-190" src="assets/sfx/impact-basse.mp3" data-start="65.17" data-duration="1.1" data-volume="0.468" data-track-index="32"></audio><!-- ce n'est pas la même chose -->
-      <audio id="sfx-191" src="assets/sfx/zoom-vide.mp3" data-start="67.14" data-duration="1.27" data-volume="0.357" data-track-index="30"></audio><!-- rush de zoom -->
-      <audio id="sfx-192" src="assets/sfx/swoosh-vol.mp3" data-start="67.25" data-duration="1.63" data-volume="0.255" data-track-index="31"></audio><!-- la caméra suit -->
-      <audio id="sfx-193" src="assets/sfx/pieces-2.mp3" data-start="67.71" data-duration="1.02" data-volume="0.289" data-track-index="32"></audio><!-- pile 3 -->
-      <audio id="sfx-194" src="assets/sfx/pieces.mp3" data-start="67.74" data-duration="2.5" data-volume="0.289" data-track-index="33"></audio><!-- pile 1 -->
-      <audio id="sfx-195" src="assets/sfx/power-up.mp3" data-start="68.0" data-duration="2.0" data-volume="0.357" data-track-index="34"></audio><!-- travailler pour toi -->
-      <audio id="sfx-196" src="assets/sfx/pieces-2.mp3" data-start="68.04" data-duration="1.02" data-volume="0.289" data-track-index="35"></audio><!-- pile 6 -->
-      <audio id="sfx-197" src="assets/sfx/pieces.mp3" data-start="68.07" data-duration="2.5" data-volume="0.289" data-track-index="36"></audio><!-- pile 4 -->
-      <audio id="sfx-198" src="assets/sfx/piece-gagne.mp3" data-start="68.1" data-duration="0.51" data-volume="0.289" data-track-index="37"></audio><!-- pile 2 -->
-      <audio id="sfx-199" src="assets/sfx/piece-gagne.mp3" data-start="68.43" data-duration="0.51" data-volume="0.289" data-track-index="30"></audio><!-- pile 5 -->
-      <audio id="sfx-200" src="assets/sfx/fouet.mp3" data-start="69.15" data-duration="1.05" data-volume="0.374" data-track-index="30"></audio><!-- volet vers s07-abonne -->
-      <audio id="sfx-201" src="assets/sfx/glitch-mini.mp3" data-start="69.26" data-duration="1.72" data-volume="0.34" data-track-index="31"></audio><!-- coupe analyse-graphes -->
-      <audio id="sfx-202" src="assets/sfx/notif-magique.mp3" data-start="69.73" data-duration="3.01" data-volume="0.357" data-track-index="32"></audio><!-- comprendre -->
-      <audio id="sfx-203" src="assets/sfx/impact-futur.mp3" data-start="70.11" data-duration="2.75" data-volume="0.272" data-track-index="34"></audio><!-- choc -->
-      <audio id="sfx-204" src="assets/sfx/souffle-rapide.mp3" data-start="70.81" data-duration="1.76" data-volume="0.34" data-track-index="30"></audio><!-- coupe billets-liasse -->
-      <audio id="sfx-205" src="assets/sfx/notif-positive.mp3" data-start="71.21" data-duration="2.8" data-volume="0.357" data-track-index="31"></audio><!-- gérer -->
-      <audio id="sfx-206" src="assets/sfx/balaie-rapide.mp3" data-start="72.15" data-duration="1.92" data-volume="0.34" data-track-index="33"></audio><!-- coupe tours-pieces -->
-      <audio id="sfx-207" src="assets/sfx/fouet.mp3" data-start="73.35" data-duration="1.05" data-volume="0.34" data-track-index="30"></audio><!-- coupe famille-coucher -->
-      <audio id="sfx-208" src="assets/sfx/zoom-in-out.mp3" data-start="73.83" data-duration="1.25" data-volume="0.357" data-track-index="32"></audio><!-- rush de zoom -->
-      <audio id="sfx-209" src="assets/sfx/pop-long.mp3" data-start="73.86" data-duration="0.48" data-volume="0.383" data-track-index="34"></audio><!-- la carte du compte -->
-      <audio id="sfx-210" src="assets/sfx/paillettes.mp3" data-start="74.21" data-duration="1.6" data-volume="0.357" data-track-index="31"></audio><!-- confettis -->
-      <audio id="sfx-211" src="assets/sfx/notif-positive.mp3" data-start="74.49" data-duration="2.8" data-volume="0.383" data-track-index="30"></audio><!-- abonné -->
-      <audio id="sfx-212" src="assets/sfx/clic-souris.mp3" data-start="74.61" data-duration="1.38" data-volume="0.425" data-track-index="33"></audio><!-- clic S'abonner -->
-      <audio id="sfx-213" src="assets/sfx/balaie-court.mp3" data-start="75.22" data-duration="0.61" data-volume="0.34" data-track-index="32"></audio><!-- coupe pieces-or -->
-      <audio id="sfx-214" src="assets/sfx/impact-cartoon.mp3" data-start="75.62" data-duration="1.41" data-volume="0.272" data-track-index="34"></audio><!-- choc -->
-      <audio id="sfx-215" src="assets/sfx/impact-basse.mp3" data-start="76.29" data-duration="1.1" data-volume="0.425" data-track-index="31"></audio><!-- faire travailler -->
-      <audio id="sfx-216" src="assets/sfx/swoosh-accent.mp3" data-start="76.35" data-duration="1.1" data-volume="0.34" data-track-index="32"></audio><!-- rush de zoom -->
-      <audio id="sfx-217" src="assets/sfx/swoosh-court.mp3" data-start="76.72" data-duration="1.25" data-volume="0.34" data-track-index="33"></audio><!-- coupe plante-pousse -->
-      <audio id="sfx-218" src="assets/sfx/pieces-2.mp3" data-start="76.81" data-duration="1.02" data-volume="0.289" data-track-index="35"></audio><!-- pile 3 -->
-      <audio id="sfx-219" src="assets/sfx/pieces.mp3" data-start="76.86" data-duration="2.5" data-volume="0.289" data-track-index="36"></audio><!-- pile 1 -->
-      <audio id="sfx-220" src="assets/sfx/pieces-2.mp3" data-start="77.11" data-duration="1.02" data-volume="0.289" data-track-index="34"></audio><!-- pile 6 -->
-      <audio id="sfx-221" src="assets/sfx/pieces.mp3" data-start="77.16" data-duration="2.5" data-volume="0.289" data-track-index="37"></audio><!-- pile 4 -->
-      <audio id="sfx-222" src="assets/sfx/piece-gagne.mp3" data-start="77.21" data-duration="0.51" data-volume="0.289" data-track-index="38"></audio><!-- pile 2 -->
-      <audio id="sfx-223" src="assets/sfx/piece-gagne.mp3" data-start="77.51" data-duration="0.51" data-volume="0.289" data-track-index="30"></audio><!-- pile 5 -->
-      <audio id="sfx-224" src="assets/sfx/cloche-succes.mp3" data-start="77.6" data-duration="2.4" data-volume="0.357" data-track-index="31"></audio><!-- la fin -->
-      <audio id="sfx-225" src="assets/sfx/declencheur.mp3" data-start="78.13" data-duration="0.63" data-volume="0.34" data-track-index="30"></audio><!-- coupe arrose-plante -->
+      <audio id="sfx-16" src="assets/sfx/papiers.mp3" data-start="4.58" data-duration="1.45" data-volume="0.357" data-track-index="32"></audio><!-- pluie de billets FCFA -->
+      <audio id="sfx-17" src="assets/sfx/zoom-air.mp3" data-start="4.65" data-duration="1.28" data-volume="0.383" data-track-index="33"></audio><!-- rush de zoom -->
+      <audio id="sfx-18" src="assets/sfx/balaie-rapide.mp3" data-start="4.88" data-duration="1.92" data-volume="0.34" data-track-index="30"></audio><!-- coupe billets-liasse -->
+      <audio id="sfx-19" src="assets/sfx/glitch-court.mp3" data-start="5.13" data-duration="0.83" data-volume="0.272" data-track-index="34"></audio><!-- choc -->
+      <audio id="sfx-20" src="assets/sfx/pieces.mp3" data-start="5.13" data-duration="2.5" data-volume="0.306" data-track-index="35"></audio><!-- argent -->
+      <audio id="sfx-21" src="assets/sfx/piece-gagne.mp3" data-start="5.58" data-duration="0.51" data-volume="0.383" data-track-index="36"></audio><!-- million -->
+      <audio id="sfx-22" src="assets/sfx/fouet.mp3" data-start="5.68" data-duration="1.05" data-volume="0.34" data-track-index="37"></audio><!-- coupe compte-pieces -->
+      <audio id="sfx-23" src="assets/sfx/balaie-court.mp3" data-start="6.27" data-duration="0.61" data-volume="0.34" data-track-index="31"></audio><!-- coupe homme-sms -->
+      <audio id="sfx-24" src="assets/sfx/notif-positive.mp3" data-start="6.42" data-duration="2.8" data-volume="0.357" data-track-index="32"></audio><!-- le solde apparaît -->
+      <audio id="sfx-25" src="assets/sfx/pieces.mp3" data-start="6.52" data-duration="2.5" data-volume="0.306" data-track-index="33"></audio><!-- argent -->
+      <audio id="sfx-26" src="assets/sfx/swoosh-court.mp3" data-start="6.57" data-duration="1.25" data-volume="0.34" data-track-index="34"></audio><!-- rush de zoom -->
+      <audio id="sfx-27" src="assets/sfx/impact-whoosh.mp3" data-start="6.78" data-duration="3.53" data-volume="0.272" data-track-index="36"></audio><!-- choc -->
+      <audio id="sfx-28" src="assets/sfx/swoosh-court.mp3" data-start="6.89" data-duration="1.25" data-volume="0.34" data-track-index="30"></audio><!-- coupe tel-rue -->
+      <audio id="sfx-29" src="assets/sfx/declencheur.mp3" data-start="7.58" data-duration="0.63" data-volume="0.34" data-track-index="31"></audio><!-- coupe horloge-billets -->
+      <audio id="sfx-30" src="assets/sfx/glitch-mini.mp3" data-start="7.67" data-duration="1.72" data-volume="0.34" data-track-index="35"></audio><!-- coupe plus-d-argent -->
+      <audio id="sfx-31" src="assets/sfx/balaie-air.mp3" data-start="7.86" data-duration="0.86" data-volume="0.34" data-track-index="34"></audio><!-- coupe billets-brules -->
+      <audio id="sfx-32" src="assets/sfx/souffle-air.mp3" data-start="8.26" data-duration="2.32" data-volume="0.255" data-track-index="30"></audio><!-- la caméra suit -->
+      <audio id="sfx-33" src="assets/sfx/souffle-rapide.mp3" data-start="8.26" data-duration="1.76" data-volume="0.34" data-track-index="31"></audio><!-- coupe portefeuille-vide -->
+      <audio id="sfx-34" src="assets/sfx/zoom-swipe.mp3" data-start="8.53" data-duration="1.06" data-volume="0.357" data-track-index="37"></audio><!-- rush de zoom -->
+      <audio id="sfx-35" src="assets/sfx/impact-basse.mp3" data-start="8.72" data-duration="1.1" data-volume="0.468" data-track-index="38"></audio><!-- PLUS PAUVRE -->
+      <audio id="sfx-36" src="assets/sfx/balaie-rapide.mp3" data-start="8.96" data-duration="1.92" data-volume="0.34" data-track-index="34"></audio><!-- coupe horloge-temps -->
+      <audio id="sfx-37" src="assets/sfx/impact-futur.mp3" data-start="9.16" data-duration="2.75" data-volume="0.272" data-track-index="33"></audio><!-- choc -->
+      <audio id="sfx-38" src="assets/sfx/page.mp3" data-start="9.16" data-duration="0.45" data-volume="0.34" data-track-index="39"></audio><!-- année 2024 -->
+      <audio id="sfx-39" src="assets/sfx/page.mp3" data-start="9.26" data-duration="0.45" data-volume="0.34" data-track-index="32"></audio><!-- année 2025 -->
+      <audio id="sfx-40" src="assets/sfx/page.mp3" data-start="9.36" data-duration="0.45" data-volume="0.34" data-track-index="40"></audio><!-- année 2026 -->
+      <audio id="sfx-41" src="assets/sfx/balaie-court.mp3" data-start="9.63" data-duration="0.61" data-volume="0.34" data-track-index="35"></audio><!-- coupe inquiet-homme -->
+      <audio id="sfx-42" src="assets/sfx/fouet.mp3" data-start="9.68" data-duration="1.05" data-volume="0.34" data-track-index="37"></audio><!-- coupe myst-sablier -->
+      <audio id="sfx-43" src="assets/sfx/souffle-air.mp3" data-start="9.71" data-duration="2.32" data-volume="0.34" data-track-index="39"></audio><!-- rush de zoom -->
+      <audio id="sfx-44" src="assets/sfx/coup-mystere.mp3" data-start="9.8" data-duration="3.5" data-volume="0.425" data-track-index="32"></audio><!-- le pire -->
+      <audio id="sfx-45" src="assets/sfx/swoosh-court.mp3" data-start="10.09" data-duration="1.25" data-volume="0.34" data-track-index="31"></audio><!-- coupe tambour -->
+      <audio id="sfx-46" src="assets/sfx/declencheur.mp3" data-start="10.3" data-duration="0.63" data-volume="0.34" data-track-index="35"></audio><!-- coupe stress-tete -->
+      <audio id="sfx-47" src="assets/sfx/impact-cartoon.mp3" data-start="10.35" data-duration="1.41" data-volume="0.272" data-track-index="36"></audio><!-- choc -->
+      <audio id="sfx-48" src="assets/sfx/balaie-air.mp3" data-start="10.5" data-duration="0.86" data-volume="0.34" data-track-index="38"></audio><!-- coupe inquiete-fille -->
+      <audio id="sfx-49" src="assets/sfx/glitch-mini.mp3" data-start="10.55" data-duration="1.72" data-volume="0.34" data-track-index="40"></audio><!-- coupe perdu-laptop -->
+      <audio id="sfx-50" src="assets/sfx/glitch-cine.mp3" data-start="11.16" data-duration="0.56" data-volume="0.383" data-track-index="30"></audio><!-- tu ne t'en rends pas compte -->
+      <audio id="sfx-51" src="assets/sfx/souffle-rapide.mp3" data-start="11.22" data-duration="1.76" data-volume="0.34" data-track-index="34"></audio><!-- coupe frustree-ordi -->
+      <audio id="sfx-52" src="assets/sfx/souffle-rapide.mp3" data-start="12.14" data-duration="1.76" data-volume="0.374" data-track-index="30"></audio><!-- volet vers s02-panier -->
+      <audio id="sfx-53" src="assets/sfx/swoosh-vitesse.mp3" data-start="12.41" data-duration="2.6" data-volume="0.306" data-track-index="31"></audio><!-- titre -->
+      <audio id="sfx-54" src="assets/sfx/balaie-rapide.mp3" data-start="13.52" data-duration="1.92" data-volume="0.34" data-track-index="32"></audio><!-- coupe marche-foule -->
+      <audio id="sfx-55" src="assets/sfx/glitch-court.mp3" data-start="13.77" data-duration="0.83" data-volume="0.272" data-track-index="33"></audio><!-- choc -->
+      <audio id="sfx-56" src="assets/sfx/papiers.mp3" data-start="14.12" data-duration="1.45" data-volume="0.357" data-track-index="30"></audio><!-- pluie de billets FCFA -->
+      <audio id="sfx-57" src="assets/sfx/zoom-futur.mp3" data-start="14.19" data-duration="2.17" data-volume="0.357" data-track-index="34"></audio><!-- rush de zoom -->
+      <audio id="sfx-58" src="assets/sfx/pieces-2.mp3" data-start="14.42" data-duration="1.02" data-volume="0.306" data-track-index="35"></audio><!-- argent -->
+      <audio id="sfx-59" src="assets/sfx/pieces.mp3" data-start="14.52" data-duration="2.5" data-volume="0.306" data-track-index="36"></audio><!-- argent -->
+      <audio id="sfx-60" src="assets/sfx/fouet.mp3" data-start="14.72" data-duration="1.05" data-volume="0.34" data-track-index="33"></audio><!-- coupe compteuse-billets -->
+      <audio id="sfx-61" src="assets/sfx/pop-long.mp3" data-start="14.72" data-duration="0.48" data-volume="0.357" data-track-index="37"></audio><!-- le solde apparaît -->
+      <audio id="sfx-62" src="assets/sfx/balaie-court.mp3" data-start="15.63" data-duration="0.61" data-volume="0.34" data-track-index="30"></audio><!-- coupe femme-tel -->
+      <audio id="sfx-63" src="assets/sfx/impact-whoosh.mp3" data-start="16.22" data-duration="3.53" data-volume="0.272" data-track-index="31"></audio><!-- choc -->
+      <audio id="sfx-64" src="assets/sfx/swoosh-court.mp3" data-start="16.41" data-duration="1.25" data-volume="0.34" data-track-index="30"></audio><!-- coupe homme-sms -->
+      <audio id="sfx-65" src="assets/sfx/declencheur.mp3" data-start="17.02" data-duration="0.63" data-volume="0.34" data-track-index="32"></audio><!-- coupe paiement-tel -->
+      <audio id="sfx-66" src="assets/sfx/glitch-mini.mp3" data-start="17.27" data-duration="1.72" data-volume="0.34" data-track-index="33"></audio><!-- coupe chariot -->
+      <audio id="sfx-67" src="assets/sfx/balaie-air.mp3" data-start="17.7" data-duration="0.86" data-volume="0.34" data-track-index="30"></audio><!-- coupe marche-legumes -->
+      <audio id="sfx-68" src="assets/sfx/scanner-caisse.mp3" data-start="17.72" data-duration="1.4" data-volume="0.323" data-track-index="32"></audio><!-- article Riz -->
+      <audio id="sfx-69" src="assets/sfx/souffle-rapide.mp3" data-start="18.1" data-duration="1.76" data-volume="0.34" data-track-index="34"></audio><!-- coupe marche-fruits -->
+      <audio id="sfx-70" src="assets/sfx/scanner-caisse.mp3" data-start="18.12" data-duration="1.4" data-volume="0.323" data-track-index="35"></audio><!-- article Viande -->
+      <audio id="sfx-71" src="assets/sfx/zoom-impact.mp3" data-start="18.14" data-duration="1.22" data-volume="0.357" data-track-index="36"></audio><!-- rush de zoom -->
+      <audio id="sfx-72" src="assets/sfx/swoosh-accent.mp3" data-start="18.27" data-duration="1.1" data-volume="0.357" data-track-index="37"></audio><!-- le panier arrive -->
+      <audio id="sfx-73" src="assets/sfx/scanner-caisse.mp3" data-start="18.52" data-duration="1.4" data-volume="0.323" data-track-index="38"></audio><!-- article Lait -->
+      <audio id="sfx-74" src="assets/sfx/pop-click.mp3" data-start="18.77" data-duration="1.18" data-volume="0.323" data-track-index="30"></audio><!-- article Huile -->
+      <audio id="sfx-75" src="assets/sfx/balaie-rapide.mp3" data-start="18.88" data-duration="1.92" data-volume="0.34" data-track-index="39"></audio><!-- coupe achat-tomates -->
+      <audio id="sfx-76" src="assets/sfx/pop-sec.mp3" data-start="19.07" data-duration="0.3" data-volume="0.323" data-track-index="33"></audio><!-- article Tomates -->
+      <audio id="sfx-77" src="assets/sfx/impact-futur.mp3" data-start="19.08" data-duration="2.75" data-volume="0.272" data-track-index="40"></audio><!-- choc -->
+      <audio id="sfx-78" src="assets/sfx/fouet.mp3" data-start="19.92" data-duration="1.05" data-volume="0.34" data-track-index="31"></audio><!-- coupe horloge-temps -->
+      <audio id="sfx-79" src="assets/sfx/tic-tac.mp3" data-start="20.12" data-duration="0.8" data-volume="0.34" data-track-index="30"></audio><!-- l'année prochaine -->
+      <audio id="sfx-80" src="assets/sfx/balaie-court.mp3" data-start="20.51" data-duration="0.61" data-volume="0.34" data-track-index="32"></audio><!-- coupe myst-sablier -->
+      <audio id="sfx-81" src="assets/sfx/swoosh-court.mp3" data-start="20.97" data-duration="1.25" data-volume="0.34" data-track-index="30"></audio><!-- coupe horloge-billets -->
+      <audio id="sfx-82" src="assets/sfx/glitch-mini.mp3" data-start="21.27" data-duration="1.72" data-volume="0.34" data-track-index="31"></audio><!-- coupe rayon-legumes -->
+      <audio id="sfx-83" src="assets/sfx/declencheur.mp3" data-start="21.34" data-duration="0.63" data-volume="0.34" data-track-index="32"></audio><!-- coupe promo-supermarche -->
+      <audio id="sfx-84" src="assets/sfx/impact-cartoon.mp3" data-start="21.39" data-duration="1.41" data-volume="0.272" data-track-index="33"></audio><!-- choc -->
+      <audio id="sfx-85" src="assets/sfx/balaie-air.mp3" data-start="21.78" data-duration="0.86" data-volume="0.34" data-track-index="34"></audio><!-- coupe prix-fruits -->
+      <audio id="sfx-86" src="assets/sfx/balaie-air.mp3" data-start="22.16" data-duration="0.86" data-volume="0.255" data-track-index="32"></audio><!-- la caméra suit -->
+      <audio id="sfx-87" src="assets/sfx/souffle-rapide.mp3" data-start="22.26" data-duration="1.76" data-volume="0.34" data-track-index="30"></audio><!-- coupe bourse-baisse -->
+      <audio id="sfx-88" src="assets/sfx/swoosh-monte.mp3" data-start="22.86" data-duration="1.03" data-volume="0.383" data-track-index="33"></audio><!-- ça monte -->
+      <audio id="sfx-89" src="assets/sfx/impact-basse.mp3" data-start="23.01" data-duration="1.1" data-volume="0.468" data-track-index="31"></audio><!-- +5 % -->
+      <audio id="sfx-90" src="assets/sfx/balaie-rapide.mp3" data-start="23.44" data-duration="1.92" data-volume="0.34" data-track-index="32"></audio><!-- coupe courses-sac -->
+      <audio id="sfx-91" src="assets/sfx/glitch-court.mp3" data-start="23.69" data-duration="0.83" data-volume="0.272" data-track-index="34"></audio><!-- choc -->
+      <audio id="sfx-92" src="assets/sfx/swoosh-vol.mp3" data-start="23.88" data-duration="1.63" data-volume="0.255" data-track-index="35"></audio><!-- la caméra suit -->
+      <audio id="sfx-93" src="assets/sfx/compteur.mp3" data-start="23.93" data-duration="0.9" data-volume="0.357" data-track-index="33"></audio><!-- le total monte -->
+      <audio id="sfx-94" src="assets/sfx/fouet.mp3" data-start="24.24" data-duration="1.05" data-volume="0.34" data-track-index="30"></audio><!-- coupe caisse-carte -->
+      <audio id="sfx-95" src="assets/sfx/balaie-court.mp3" data-start="24.43" data-duration="0.61" data-volume="0.34" data-track-index="31"></audio><!-- coupe epicerie-sourire -->
+      <audio id="sfx-96" src="assets/sfx/scanner-caisse.mp3" data-start="24.85" data-duration="1.4" data-volume="0.425" data-track-index="33"></audio><!-- 105 000 -->
+      <audio id="sfx-97" src="assets/sfx/swoosh-court.mp3" data-start="25.45" data-duration="1.25" data-volume="0.34" data-track-index="30"></audio><!-- coupe choc-mains-tete -->
+      <audio id="sfx-98" src="assets/sfx/impact-basse.mp3" data-start="25.6" data-duration="1.1" data-volume="0.425" data-track-index="31"></audio><!-- 105 000 -->
+      <audio id="sfx-99" src="assets/sfx/swoosh-accent.mp3" data-start="25.66" data-duration="1.1" data-volume="0.34" data-track-index="32"></audio><!-- rush de zoom -->
+      <audio id="sfx-100" src="assets/sfx/souffle-cine.mp3" data-start="26.27" data-duration="1.33" data-volume="0.374" data-track-index="33"></audio><!-- volet vers s03-meme-solde -->
+      <audio id="sfx-101" src="assets/sfx/impact-whoosh.mp3" data-start="27.1" data-duration="3.53" data-volume="0.272" data-track-index="30"></audio><!-- choc -->
+      <audio id="sfx-102" src="assets/sfx/glitch-mini.mp3" data-start="27.75" data-duration="1.72" data-volume="0.34" data-track-index="31"></audio><!-- coupe homme-sms -->
+      <audio id="sfx-103" src="assets/sfx/pieces.mp3" data-start="27.8" data-duration="2.5" data-volume="0.306" data-track-index="32"></audio><!-- argent -->
+      <audio id="sfx-104" src="assets/sfx/declencheur.mp3" data-start="27.9" data-duration="0.63" data-volume="0.34" data-track-index="33"></audio><!-- coupe portefeuille-plein -->
+      <audio id="sfx-105" src="assets/sfx/clic-positif.mp3" data-start="28.0" data-duration="1.77" data-volume="0.357" data-track-index="34"></audio><!-- le solde apparaît -->
+      <audio id="sfx-106" src="assets/sfx/balaie-air.mp3" data-start="28.1" data-duration="0.86" data-volume="0.34" data-track-index="35"></audio><!-- coupe billets-liasse -->
+      <audio id="sfx-107" src="assets/sfx/notif-indice.mp3" data-start="28.2" data-duration="1.72" data-volume="0.34" data-track-index="36"></audio><!-- toujours -->
+      <audio id="sfx-108" src="assets/sfx/souffle-rapide.mp3" data-start="29.38" data-duration="1.76" data-volume="0.34" data-track-index="33"></audio><!-- coupe tel-banque -->
+      <audio id="sfx-109" src="assets/sfx/balaie-rapide.mp3" data-start="29.84" data-duration="1.92" data-volume="0.34" data-track-index="31"></audio><!-- coupe compte-pieces -->
+      <audio id="sfx-110" src="assets/sfx/impact-futur.mp3" data-start="30.04" data-duration="2.75" data-volume="0.272" data-track-index="34"></audio><!-- choc -->
+      <audio id="sfx-111" src="assets/sfx/balaie-court.mp3" data-start="30.91" data-duration="0.61" data-volume="0.34" data-track-index="30"></audio><!-- coupe portefeuille-vide -->
+      <audio id="sfx-112" src="assets/sfx/zoom-vide.mp3" data-start="30.98" data-duration="1.27" data-volume="0.357" data-track-index="32"></audio><!-- rush de zoom -->
+      <audio id="sfx-113" src="assets/sfx/fouet.mp3" data-start="31.04" data-duration="1.05" data-volume="0.34" data-track-index="35"></audio><!-- coupe billets-tombent -->
+      <audio id="sfx-114" src="assets/sfx/coche.mp3" data-start="31.26" data-duration="0.24" data-volume="0.357" data-track-index="33"></audio><!-- validé : Aucun billet perdu -->
+      <audio id="sfx-115" src="assets/sfx/swoosh-court.mp3" data-start="31.85" data-duration="1.25" data-volume="0.34" data-track-index="30"></audio><!-- coupe plus-d-argent -->
+      <audio id="sfx-116" src="assets/sfx/mission-ok.mp3" data-start="32.36" data-duration="1.55" data-volume="0.357" data-track-index="31"></audio><!-- validé : Personne ne t’a volé -->
+      <audio id="sfx-117" src="assets/sfx/declencheur.mp3" data-start="32.46" data-duration="0.63" data-volume="0.34" data-track-index="32"></audio><!-- coupe vol-sac -->
+      <audio id="sfx-118" src="assets/sfx/impact-cartoon.mp3" data-start="32.51" data-duration="1.41" data-volume="0.272" data-track-index="33"></audio><!-- choc -->
+      <audio id="sfx-119" src="assets/sfx/balaie-air.mp3" data-start="32.74" data-duration="0.86" data-volume="0.34" data-track-index="35"></audio><!-- coupe factures-couple -->
+      <audio id="sfx-120" src="assets/sfx/glitch-mini.mp3" data-start="32.79" data-duration="1.72" data-volume="0.34" data-track-index="36"></audio><!-- coupe promo-supermarche -->
+      <audio id="sfx-121" src="assets/sfx/souffle-rapide.mp3" data-start="33.46" data-duration="1.76" data-volume="0.34" data-track-index="30"></audio><!-- coupe marche-foule -->
+      <audio id="sfx-122" src="assets/sfx/scanner-caisse.mp3" data-start="33.78" data-duration="1.4" data-volume="0.323" data-track-index="32"></audio><!-- article Huile -->
+      <audio id="sfx-123" src="assets/sfx/balaie-petit.mp3" data-start="33.87" data-duration="0.78" data-volume="0.255" data-track-index="34"></audio><!-- la caméra suit -->
+      <audio id="sfx-124" src="assets/sfx/souffle-air.mp3" data-start="33.87" data-duration="2.32" data-volume="0.255" data-track-index="35"></audio><!-- la caméra suit -->
+      <audio id="sfx-125" src="assets/sfx/scanner-caisse.mp3" data-start="33.9" data-duration="1.4" data-volume="0.323" data-track-index="37"></audio><!-- article Tomates -->
+      <audio id="sfx-126" src="assets/sfx/balaie-rapide.mp3" data-start="33.92" data-duration="1.92" data-volume="0.34" data-track-index="31"></audio><!-- coupe calcul-depenses -->
+      <audio id="sfx-127" src="assets/sfx/glitch-court.mp3" data-start="34.17" data-duration="0.83" data-volume="0.272" data-track-index="33"></audio><!-- choc -->
+      <audio id="sfx-128" src="assets/sfx/swoosh-accent.mp3" data-start="34.27" data-duration="1.1" data-volume="0.357" data-track-index="38"></audio><!-- le panier arrive -->
+      <audio id="sfx-129" src="assets/sfx/buzz-faux.mp3" data-start="34.57" data-duration="1.74" data-volume="0.383" data-track-index="36"></audio><!-- un article en moins -->
+      <audio id="sfx-130" src="assets/sfx/pop-click.mp3" data-start="34.57" data-duration="1.18" data-volume="0.323" data-track-index="39"></audio><!-- article Riz -->
+      <audio id="sfx-131" src="assets/sfx/balaie-court.mp3" data-start="34.59" data-duration="0.61" data-volume="0.34" data-track-index="40"></audio><!-- coupe courses-sac -->
+      <audio id="sfx-132" src="assets/sfx/pop-sec.mp3" data-start="34.59" data-duration="0.3" data-volume="0.323" data-track-index="41"></audio><!-- article Viande -->
+      <audio id="sfx-133" src="assets/sfx/impact-basse.mp3" data-start="34.62" data-duration="1.1" data-volume="0.425" data-track-index="42"></audio><!-- moins de choses -->
+      <audio id="sfx-134" src="assets/sfx/fouet.mp3" data-start="34.72" data-duration="1.05" data-volume="0.34" data-track-index="34"></audio><!-- coupe frustree-compte -->
+      <audio id="sfx-135" src="assets/sfx/pop-click.mp3" data-start="34.81" data-duration="1.18" data-volume="0.323" data-track-index="43"></audio><!-- article Lait -->
+      <audio id="sfx-136" src="assets/sfx/intro-mystere.mp3" data-start="34.95" data-duration="1.2" data-volume="0.383" data-track-index="41"></audio><!-- bienvenue -->
+      <audio id="sfx-137" src="assets/sfx/swoosh-vol.mp3" data-start="35.38" data-duration="1.63" data-volume="0.374" data-track-index="30"></audio><!-- volet vers s04-inflation -->
+      <audio id="sfx-138" src="assets/sfx/impact-whoosh.mp3" data-start="35.98" data-duration="3.53" data-volume="0.272" data-track-index="31"></audio><!-- choc -->
+      <audio id="sfx-139" src="assets/sfx/swoosh-court.mp3" data-start="36.73" data-duration="1.25" data-volume="0.34" data-track-index="32"></audio><!-- coupe billets-tombent -->
+      <audio id="sfx-140" src="assets/sfx/tonnerre-transition.mp3" data-start="36.78" data-duration="5.0" data-volume="0.34" data-track-index="33"></audio><!-- inflation -->
+      <audio id="sfx-141" src="assets/sfx/declencheur.mp3" data-start="37.18" data-duration="0.63" data-volume="0.34" data-track-index="30"></audio><!-- coupe bourse-baisse -->
+      <audio id="sfx-142" src="assets/sfx/impact-basse.mp3" data-start="37.18" data-duration="1.1" data-volume="0.51" data-track-index="34"></audio><!-- L'INFLATION -->
+      <audio id="sfx-143" src="assets/sfx/zoom-in-out.mp3" data-start="37.18" data-duration="1.25" data-volume="0.357" data-track-index="35"></audio><!-- rush de zoom -->
+      <audio id="sfx-144" src="assets/sfx/glitch-mini.mp3" data-start="38.31" data-duration="1.72" data-volume="0.34" data-track-index="30"></audio><!-- coupe marche-legumes -->
+      <audio id="sfx-145" src="assets/sfx/swoosh-monte.mp3" data-start="38.36" data-duration="1.03" data-volume="0.306" data-track-index="32"></audio><!-- titre -->
+      <audio id="sfx-146" src="assets/sfx/compteur.mp3" data-start="38.65" data-duration="3.0" data-volume="0.289" data-track-index="34"></audio><!-- étiquette Loyer -->
+      <audio id="sfx-147" src="assets/sfx/balaie-air.mp3" data-start="38.66" data-duration="0.86" data-volume="0.34" data-track-index="35"></audio><!-- coupe graphe-perte -->
+      <audio id="sfx-148" src="assets/sfx/notif-indice.mp3" data-start="38.9" data-duration="1.72" data-volume="0.289" data-track-index="36"></audio><!-- étiquette Riz -->
+      <audio id="sfx-149" src="assets/sfx/souffle-rapide.mp3" data-start="39.06" data-duration="1.76" data-volume="0.34" data-track-index="37"></audio><!-- coupe prix-fruits -->
+      <audio id="sfx-150" src="assets/sfx/pop-click.mp3" data-start="39.4" data-duration="1.18" data-volume="0.289" data-track-index="32"></audio><!-- étiquette Transport -->
+      <audio id="sfx-151" src="assets/sfx/notif-indice.mp3" data-start="39.5" data-duration="1.72" data-volume="0.289" data-track-index="38"></audio><!-- étiquette Pain -->
+      <audio id="sfx-152" src="assets/sfx/zoom-scifi.mp3" data-start="39.53" data-duration="1.8" data-volume="0.357" data-track-index="31"></audio><!-- rush de zoom -->
+      <audio id="sfx-153" src="assets/sfx/impact-futur.mp3" data-start="39.56" data-duration="2.75" data-volume="0.272" data-track-index="35"></audio><!-- choc -->
+      <audio id="sfx-154" src="assets/sfx/balaie-rapide.mp3" data-start="40.16" data-duration="1.92" data-volume="0.34" data-track-index="30"></audio><!-- coupe marche-fruits -->
+      <audio id="sfx-155" src="assets/sfx/vent-roulement.mp3" data-start="40.78" data-duration="2.0" data-volume="0.306" data-track-index="32"></audio><!-- le pouvoir d'achat fond -->
+      <audio id="sfx-156" src="assets/sfx/fouet.mp3" data-start="41.2" data-duration="1.05" data-volume="0.34" data-track-index="36"></audio><!-- coupe rayon-legumes -->
+      <audio id="sfx-157" src="assets/sfx/balaie-court.mp3" data-start="41.23" data-duration="0.61" data-volume="0.34" data-track-index="37"></audio><!-- coupe pieces-tombent -->
+      <audio id="sfx-158" src="assets/sfx/swoosh-court.mp3" data-start="42.33" data-duration="1.25" data-volume="0.34" data-track-index="30"></audio><!-- coupe homme-sms -->
+      <audio id="sfx-159" src="assets/sfx/impact-cartoon.mp3" data-start="42.43" data-duration="1.41" data-volume="0.272" data-track-index="31"></audio><!-- choc -->
+      <audio id="sfx-160" src="assets/sfx/declencheur.mp3" data-start="42.62" data-duration="0.63" data-volume="0.34" data-track-index="33"></audio><!-- coupe billets-brules -->
+      <audio id="sfx-161" src="assets/sfx/balaie-air.mp3" data-start="43.14" data-duration="0.86" data-volume="0.34" data-track-index="32"></audio><!-- coupe horloge-billets -->
+      <audio id="sfx-162" src="assets/sfx/glitch-mini.mp3" data-start="43.19" data-duration="1.72" data-volume="0.34" data-track-index="34"></audio><!-- coupe myst-sablier -->
+      <audio id="sfx-163" src="assets/sfx/souffle-rapide.mp3" data-start="44.42" data-duration="1.76" data-volume="0.34" data-track-index="30"></audio><!-- coupe stress-tete -->
+      <audio id="sfx-164" src="assets/sfx/swoosh-tourbillon.mp3" data-start="44.53" data-duration="3.77" data-volume="0.34" data-track-index="31"></audio><!-- rush de zoom -->
+      <audio id="sfx-165" src="assets/sfx/glitch-court.mp3" data-start="44.97" data-duration="0.83" data-volume="0.272" data-track-index="32"></audio><!-- choc -->
+      <audio id="sfx-166" src="assets/sfx/balaie-rapide.mp3" data-start="45.12" data-duration="1.92" data-volume="0.34" data-track-index="33"></audio><!-- coupe inquiete-fille -->
+      <audio id="sfx-167" src="assets/sfx/impact-whoosh.mp3" data-start="45.82" data-duration="3.53" data-volume="0.272" data-track-index="32"></audio><!-- choc -->
+      <audio id="sfx-168" src="assets/sfx/fouet.mp3" data-start="46.0" data-duration="1.05" data-volume="0.34" data-track-index="34"></audio><!-- coupe foule-rue -->
+      <audio id="sfx-169" src="assets/sfx/balaie-court.mp3" data-start="46.11" data-duration="0.61" data-volume="0.34" data-track-index="35"></audio><!-- coupe tel-rue -->
+      <audio id="sfx-170" src="assets/sfx/erreur-echec.mp3" data-start="46.47" data-duration="1.95" data-volume="0.425" data-track-index="30"></audio><!-- une erreur -->
+      <audio id="sfx-171" src="assets/sfx/swoosh-court.mp3" data-start="46.57" data-duration="1.25" data-volume="0.34" data-track-index="36"></audio><!-- coupe frustree-compte -->
+      <audio id="sfx-172" src="assets/sfx/declencheur.mp3" data-start="47.42" data-duration="0.63" data-volume="0.34" data-track-index="33"></audio><!-- coupe coffre-fort -->
+      <audio id="sfx-173" src="assets/sfx/glitch-mini.mp3" data-start="47.43" data-duration="1.72" data-volume="0.34" data-track-index="34"></audio><!-- coupe tirelire -->
+      <audio id="sfx-174" src="assets/sfx/zoom-air.mp3" data-start="47.49" data-duration="1.28" data-volume="0.357" data-track-index="35"></audio><!-- rush de zoom -->
+      <audio id="sfx-175" src="assets/sfx/balaie-air.mp3" data-start="47.62" data-duration="0.86" data-volume="0.34" data-track-index="37"></audio><!-- coupe tel-banque -->
+      <audio id="sfx-176" src="assets/sfx/swoosh-accent.mp3" data-start="47.87" data-duration="1.1" data-volume="0.357" data-track-index="36"></audio><!-- garder sur un compte -->
+      <audio id="sfx-177" src="assets/sfx/souffle-rapide.mp3" data-start="48.26" data-duration="1.76" data-volume="0.34" data-track-index="33"></audio><!-- coupe bocal-pieces -->
+      <audio id="sfx-178" src="assets/sfx/impact-futur.mp3" data-start="48.76" data-duration="2.75" data-volume="0.272" data-track-index="30"></audio><!-- choc -->
+      <audio id="sfx-179" src="assets/sfx/balaie-rapide.mp3" data-start="49.12" data-duration="1.92" data-volume="0.34" data-track-index="31"></audio><!-- coupe portefeuille-plein -->
+      <audio id="sfx-180" src="assets/sfx/notif-indice.mp3" data-start="49.22" data-duration="1.72" data-volume="0.357" data-track-index="34"></audio><!-- suffit ? -->
+      <audio id="sfx-181" src="assets/sfx/balaie-air.mp3" data-start="50.0" data-duration="0.86" data-volume="0.255" data-track-index="32"></audio><!-- la caméra suit -->
+      <audio id="sfx-182" src="assets/sfx/fouet.mp3" data-start="50.16" data-duration="1.05" data-volume="0.34" data-track-index="33"></audio><!-- coupe portefeuille-vide -->
+      <audio id="sfx-183" src="assets/sfx/balaie-court.mp3" data-start="50.35" data-duration="0.61" data-volume="0.34" data-track-index="35"></audio><!-- coupe choc-mains-tete -->
+      <audio id="sfx-184" src="assets/sfx/souffle-air.mp3" data-start="50.7" data-duration="2.32" data-volume="0.374" data-track-index="36"></audio><!-- volet vers s05-valeur-reelle -->
+      <audio id="sfx-185" src="assets/sfx/buzzer-faux.mp3" data-start="50.8" data-duration="1.22" data-volume="0.425" data-track-index="37"></audio><!-- faux -->
+      <audio id="sfx-186" src="assets/sfx/swoosh-court.mp3" data-start="52.09" data-duration="1.25" data-volume="0.34" data-track-index="30"></audio><!-- coupe tel-rue -->
+      <audio id="sfx-187" src="assets/sfx/impact-cartoon.mp3" data-start="52.19" data-duration="1.41" data-volume="0.272" data-track-index="31"></audio><!-- choc -->
+      <audio id="sfx-188" src="assets/sfx/declencheur.mp3" data-start="52.38" data-duration="0.63" data-volume="0.34" data-track-index="32"></audio><!-- coupe tirelire -->
+      <audio id="sfx-189" src="assets/sfx/balaie-air.mp3" data-start="52.58" data-duration="0.86" data-volume="0.34" data-track-index="33"></audio><!-- coupe bocal-pieces -->
+      <audio id="sfx-190" src="assets/sfx/glitch-mini.mp3" data-start="52.63" data-duration="1.72" data-volume="0.34" data-track-index="34"></audio><!-- coupe compte-pieces -->
+      <audio id="sfx-191" src="assets/sfx/riser-synth.mp3" data-start="52.7" data-duration="1.0" data-volume="0.306" data-track-index="35"></audio><!-- les prix montent -->
+      <audio id="sfx-192" src="assets/sfx/zoom-swipe.mp3" data-start="52.71" data-duration="1.06" data-volume="0.357" data-track-index="37"></audio><!-- rush de zoom -->
+      <audio id="sfx-193" src="assets/sfx/buzz-basse.mp3" data-start="52.83" data-duration="2.55" data-volume="0.357" data-track-index="38"></audio><!-- aucun intérêt -->
+      <audio id="sfx-194" src="assets/sfx/souffle-rapide.mp3" data-start="53.38" data-duration="1.76" data-volume="0.34" data-track-index="30"></audio><!-- coupe graphe-hausse -->
+      <audio id="sfx-195" src="assets/sfx/swoosh-vol.mp3" data-start="53.5" data-duration="1.63" data-volume="0.255" data-track-index="32"></audio><!-- la caméra suit -->
+      <audio id="sfx-196" src="assets/sfx/glitch-court.mp3" data-start="53.93" data-duration="0.83" data-volume="0.272" data-track-index="31"></audio><!-- choc -->
+      <audio id="sfx-197" src="assets/sfx/balaie-rapide.mp3" data-start="54.0" data-duration="1.92" data-volume="0.34" data-track-index="33"></audio><!-- coupe marche-fruits -->
+      <audio id="sfx-198" src="assets/sfx/notif-indice.mp3" data-start="54.38" data-duration="1.72" data-volume="0.357" data-track-index="34"></audio><!-- le vrai chiffre -->
+      <audio id="sfx-199" src="assets/sfx/fouet.mp3" data-start="54.48" data-duration="1.05" data-volume="0.34" data-track-index="35"></audio><!-- coupe prix-fruits -->
+      <audio id="sfx-200" src="assets/sfx/swoosh-tourbillon.mp3" data-start="54.68" data-duration="3.77" data-volume="0.306" data-track-index="36"></audio><!-- l'épargne descend -->
+      <audio id="sfx-201" src="assets/sfx/balaie-court.mp3" data-start="54.83" data-duration="0.61" data-volume="0.34" data-track-index="31"></audio><!-- coupe pieces-tombent -->
+      <audio id="sfx-202" src="assets/sfx/balaie-petit.mp3" data-start="54.93" data-duration="0.78" data-volume="0.255" data-track-index="37"></audio><!-- la caméra suit -->
+      <audio id="sfx-203" src="assets/sfx/impact-whoosh.mp3" data-start="55.26" data-duration="3.53" data-volume="0.272" data-track-index="30"></audio><!-- choc -->
+      <audio id="sfx-204" src="assets/sfx/swoosh-court.mp3" data-start="56.01" data-duration="1.25" data-volume="0.34" data-track-index="31"></audio><!-- coupe bourse-baisse -->
+      <audio id="sfx-205" src="assets/sfx/balaie-air.mp3" data-start="56.42" data-duration="0.86" data-volume="0.34" data-track-index="32"></audio><!-- coupe billets-brules -->
+      <audio id="sfx-206" src="assets/sfx/declencheur.mp3" data-start="56.46" data-duration="0.63" data-volume="0.34" data-track-index="33"></audio><!-- coupe horloge-billets -->
+      <audio id="sfx-207" src="assets/sfx/impact-basse.mp3" data-start="56.62" data-duration="1.1" data-volume="0.468" data-track-index="34"></audio><!-- valeur réelle -->
+      <audio id="sfx-208" src="assets/sfx/signal-alerte.mp3" data-start="56.9" data-duration="1.6" data-volume="0.383" data-track-index="35"></audio><!-- attention -->
+      <audio id="sfx-209" src="assets/sfx/zoom-futur.mp3" data-start="57.2" data-duration="2.17" data-volume="0.357" data-track-index="33"></audio><!-- rush de zoom -->
+      <audio id="sfx-210" src="assets/sfx/swoosh-court.mp3" data-start="57.23" data-duration="1.25" data-volume="0.323" data-track-index="37"></audio><!-- rush de zoom -->
+      <audio id="sfx-211" src="assets/sfx/glitch-mini.mp3" data-start="57.42" data-duration="1.72" data-volume="0.34" data-track-index="31"></audio><!-- coupe inquiet-homme -->
+      <audio id="sfx-212" src="assets/sfx/swoosh-court.mp3" data-start="57.48" data-duration="1.25" data-volume="0.374" data-track-index="32"></audio><!-- volet vers s06-epargner-investir -->
+      <audio id="sfx-213" src="assets/sfx/souffle-rapide.mp3" data-start="58.09" data-duration="1.76" data-volume="0.34" data-track-index="34"></audio><!-- coupe coffre-fort -->
+      <audio id="sfx-214" src="assets/sfx/impact-futur.mp3" data-start="58.27" data-duration="2.75" data-volume="0.272" data-track-index="38"></audio><!-- choc -->
+      <audio id="sfx-215" src="assets/sfx/balaie-rapide.mp3" data-start="58.95" data-duration="1.92" data-volume="0.34" data-track-index="30"></audio><!-- coupe tirelire -->
+      <audio id="sfx-216" src="assets/sfx/fusee-whoosh.mp3" data-start="59.02" data-duration="4.75" data-volume="0.306" data-track-index="32"></audio><!-- titre -->
+      <audio id="sfx-217" src="assets/sfx/souffle-air.mp3" data-start="59.38" data-duration="2.32" data-volume="0.34" data-track-index="31"></audio><!-- rush de zoom -->
+      <audio id="sfx-218" src="assets/sfx/fouet.mp3" data-start="60.07" data-duration="1.05" data-volume="0.34" data-track-index="33"></audio><!-- coupe bocal-pieces -->
+      <audio id="sfx-219" src="assets/sfx/balaie-court.mp3" data-start="60.5" data-duration="0.61" data-volume="0.34" data-track-index="34"></audio><!-- coupe compte-pieces -->
+      <audio id="sfx-220" src="assets/sfx/impact-cartoon.mp3" data-start="60.9" data-duration="1.41" data-volume="0.272" data-track-index="30"></audio><!-- choc -->
+      <audio id="sfx-221" src="assets/sfx/swoosh-court.mp3" data-start="61.68" data-duration="1.25" data-volume="0.34" data-track-index="33"></audio><!-- coupe medecin -->
+      <audio id="sfx-222" src="assets/sfx/pop-click.mp3" data-start="61.83" data-duration="1.18" data-volume="0.357" data-track-index="31"></audio><!-- Santé -->
+      <audio id="sfx-223" src="assets/sfx/glitch-mini.mp3" data-start="62.06" data-duration="1.72" data-volume="0.34" data-track-index="34"></audio><!-- coupe investisseur -->
+      <audio id="sfx-224" src="assets/sfx/balaie-air.mp3" data-start="62.09" data-duration="0.86" data-volume="0.34" data-track-index="35"></audio><!-- coupe stress-tete -->
+      <audio id="sfx-225" src="assets/sfx/declencheur.mp3" data-start="62.13" data-duration="0.63" data-volume="0.34" data-track-index="36"></audio><!-- coupe pluie-fenetre -->
+      <audio id="sfx-226" src="assets/sfx/pop-bulle.mp3" data-start="62.18" data-duration="0.38" data-volume="0.357" data-track-index="37"></audio><!-- Panne -->
+      <audio id="sfx-227" src="assets/sfx/pop-cartoon.mp3" data-start="62.49" data-duration="0.52" data-volume="0.357" data-track-index="30"></audio><!-- Imprévus -->
+      <audio id="sfx-228" src="assets/sfx/zoom-impact.mp3" data-start="62.88" data-duration="1.22" data-volume="0.357" data-track-index="36"></audio><!-- rush de zoom -->
+      <audio id="sfx-229" src="assets/sfx/glitch-court.mp3" data-start="62.96" data-duration="0.83" data-volume="0.272" data-track-index="33"></audio><!-- choc -->
+      <audio id="sfx-230" src="assets/sfx/souffle-air.mp3" data-start="63.21" data-duration="2.32" data-volume="0.255" data-track-index="30"></audio><!-- la caméra suit -->
+      <audio id="sfx-231" src="assets/sfx/swoosh-accent.mp3" data-start="63.3" data-duration="1.1" data-volume="0.357" data-track-index="31"></audio><!-- Épargner -->
+      <audio id="sfx-232" src="assets/sfx/impact-whoosh.mp3" data-start="63.41" data-duration="3.53" data-volume="0.357" data-track-index="35"></audio><!-- Investir -->
+      <audio id="sfx-233" src="assets/sfx/souffle-rapide.mp3" data-start="63.61" data-duration="1.76" data-volume="0.34" data-track-index="37"></audio><!-- coupe homme-projet -->
+      <audio id="sfx-234" src="assets/sfx/balaie-air.mp3" data-start="64.47" data-duration="0.86" data-volume="0.255" data-track-index="31"></audio><!-- la caméra suit -->
+      <audio id="sfx-235" src="assets/sfx/balaie-rapide.mp3" data-start="64.87" data-duration="1.92" data-volume="0.34" data-track-index="32"></audio><!-- coupe analyse-graphes -->
+      <audio id="sfx-236" src="assets/sfx/impact-basse.mp3" data-start="65.17" data-duration="1.1" data-volume="0.468" data-track-index="33"></audio><!-- ce n'est pas la même chose -->
+      <audio id="sfx-237" src="assets/sfx/impact-whoosh.mp3" data-start="65.33" data-duration="3.53" data-volume="0.272" data-track-index="34"></audio><!-- choc -->
+      <audio id="sfx-238" src="assets/sfx/balaie-court.mp3" data-start="65.78" data-duration="0.61" data-volume="0.34" data-track-index="30"></audio><!-- coupe plante-pousse -->
+      <audio id="sfx-239" src="assets/sfx/fouet.mp3" data-start="65.83" data-duration="1.05" data-volume="0.34" data-track-index="31"></audio><!-- coupe graphe-hausse -->
+      <audio id="sfx-240" src="assets/sfx/swoosh-court.mp3" data-start="66.72" data-duration="1.25" data-volume="0.34" data-track-index="30"></audio><!-- coupe arrose-plante -->
+      <audio id="sfx-241" src="assets/sfx/zoom-vide.mp3" data-start="67.14" data-duration="1.27" data-volume="0.357" data-track-index="31"></audio><!-- rush de zoom -->
+      <audio id="sfx-242" src="assets/sfx/swoosh-vol.mp3" data-start="67.25" data-duration="1.63" data-volume="0.255" data-track-index="32"></audio><!-- la caméra suit -->
+      <audio id="sfx-243" src="assets/sfx/declencheur.mp3" data-start="67.41" data-duration="0.63" data-volume="0.34" data-track-index="33"></audio><!-- coupe tours-pieces -->
+      <audio id="sfx-244" src="assets/sfx/pieces-2.mp3" data-start="67.49" data-duration="1.02" data-volume="0.289" data-track-index="35"></audio><!-- pile 1 -->
+      <audio id="sfx-245" src="assets/sfx/pieces-2.mp3" data-start="67.82" data-duration="1.02" data-volume="0.289" data-track-index="36"></audio><!-- pile 4 -->
+      <audio id="sfx-246" src="assets/sfx/balaie-air.mp3" data-start="67.85" data-duration="0.86" data-volume="0.34" data-track-index="37"></audio><!-- coupe pieces-or -->
+      <audio id="sfx-247" src="assets/sfx/pieces.mp3" data-start="67.85" data-duration="2.5" data-volume="0.289" data-track-index="38"></audio><!-- pile 2 -->
+      <audio id="sfx-248" src="assets/sfx/power-up.mp3" data-start="68.0" data-duration="2.0" data-volume="0.357" data-track-index="30"></audio><!-- travailler pour toi -->
+      <audio id="sfx-249" src="assets/sfx/pieces.mp3" data-start="68.18" data-duration="2.5" data-volume="0.289" data-track-index="33"></audio><!-- pile 5 -->
+      <audio id="sfx-250" src="assets/sfx/piece-gagne.mp3" data-start="68.21" data-duration="0.51" data-volume="0.289" data-track-index="39"></audio><!-- pile 3 -->
+      <audio id="sfx-251" src="assets/sfx/glitch-mini.mp3" data-start="68.54" data-duration="1.72" data-volume="0.34" data-track-index="31"></audio><!-- coupe investisseuse -->
+      <audio id="sfx-252" src="assets/sfx/piece-gagne.mp3" data-start="68.54" data-duration="0.51" data-volume="0.289" data-track-index="35"></audio><!-- pile 6 -->
+      <audio id="sfx-253" src="assets/sfx/fouet.mp3" data-start="69.15" data-duration="1.05" data-volume="0.374" data-track-index="32"></audio><!-- volet vers s07-abonne -->
+      <audio id="sfx-254" src="assets/sfx/impact-futur.mp3" data-start="69.39" data-duration="2.75" data-volume="0.272" data-track-index="34"></audio><!-- choc -->
+      <audio id="sfx-255" src="assets/sfx/souffle-rapide.mp3" data-start="69.61" data-duration="1.76" data-volume="0.34" data-track-index="35"></audio><!-- coupe homme-projet -->
+      <audio id="sfx-256" src="assets/sfx/notif-magique.mp3" data-start="69.73" data-duration="3.01" data-volume="0.357" data-track-index="36"></audio><!-- comprendre -->
+      <audio id="sfx-257" src="assets/sfx/balaie-rapide.mp3" data-start="70.71" data-duration="1.92" data-volume="0.34" data-track-index="30"></audio><!-- coupe analyse-graphes -->
+      <audio id="sfx-258" src="assets/sfx/notif-positive.mp3" data-start="71.21" data-duration="2.8" data-volume="0.357" data-track-index="31"></audio><!-- gérer -->
+      <audio id="sfx-259" src="assets/sfx/fouet.mp3" data-start="71.51" data-duration="1.05" data-volume="0.34" data-track-index="32"></audio><!-- coupe billets-liasse -->
+      <audio id="sfx-260" src="assets/sfx/balaie-court.mp3" data-start="71.7" data-duration="0.61" data-volume="0.34" data-track-index="33"></audio><!-- coupe tel-rue -->
+      <audio id="sfx-261" src="assets/sfx/impact-cartoon.mp3" data-start="72.1" data-duration="1.41" data-volume="0.272" data-track-index="35"></audio><!-- choc -->
+      <audio id="sfx-262" src="assets/sfx/swoosh-court.mp3" data-start="72.48" data-duration="1.25" data-volume="0.34" data-track-index="33"></audio><!-- coupe tours-pieces -->
+      <audio id="sfx-263" src="assets/sfx/declencheur.mp3" data-start="73.09" data-duration="0.63" data-volume="0.34" data-track-index="30"></audio><!-- coupe homme-sms -->
+      <audio id="sfx-264" src="assets/sfx/balaie-air.mp3" data-start="73.61" data-duration="0.86" data-volume="0.34" data-track-index="32"></audio><!-- coupe famille-coucher -->
+      <audio id="sfx-265" src="assets/sfx/zoom-in-out.mp3" data-start="73.83" data-duration="1.25" data-volume="0.357" data-track-index="30"></audio><!-- rush de zoom -->
+      <audio id="sfx-266" src="assets/sfx/pop-long.mp3" data-start="73.86" data-duration="0.48" data-volume="0.383" data-track-index="33"></audio><!-- la carte du compte -->
+      <audio id="sfx-267" src="assets/sfx/paillettes.mp3" data-start="74.21" data-duration="1.6" data-volume="0.357" data-track-index="31"></audio><!-- confettis -->
+      <audio id="sfx-268" src="assets/sfx/notif-positive.mp3" data-start="74.49" data-duration="2.8" data-volume="0.383" data-track-index="32"></audio><!-- abonné -->
+      <audio id="sfx-269" src="assets/sfx/clic-souris.mp3" data-start="74.61" data-duration="1.38" data-volume="0.425" data-track-index="33"></audio><!-- clic S'abonner -->
+      <audio id="sfx-270" src="assets/sfx/glitch-mini.mp3" data-start="74.62" data-duration="1.72" data-volume="0.34" data-track-index="34"></audio><!-- coupe pieces-or -->
+      <audio id="sfx-271" src="assets/sfx/glitch-court.mp3" data-start="75.52" data-duration="0.83" data-volume="0.272" data-track-index="30"></audio><!-- choc -->
+      <audio id="sfx-272" src="assets/sfx/souffle-rapide.mp3" data-start="75.69" data-duration="1.76" data-volume="0.34" data-track-index="35"></audio><!-- coupe riche-billets -->
+      <audio id="sfx-273" src="assets/sfx/papiers.mp3" data-start="75.74" data-duration="1.45" data-volume="0.357" data-track-index="36"></audio><!-- pluie de billets FCFA -->
+      <audio id="sfx-274" src="assets/sfx/impact-basse.mp3" data-start="76.29" data-duration="1.1" data-volume="0.425" data-track-index="31"></audio><!-- faire travailler -->
+      <audio id="sfx-275" src="assets/sfx/pieces.mp3" data-start="76.29" data-duration="2.5" data-volume="0.306" data-track-index="33"></audio><!-- argent -->
+      <audio id="sfx-276" src="assets/sfx/swoosh-accent.mp3" data-start="76.35" data-duration="1.1" data-volume="0.34" data-track-index="37"></audio><!-- rush de zoom -->
+      <audio id="sfx-277" src="assets/sfx/balaie-rapide.mp3" data-start="76.47" data-duration="1.92" data-volume="0.34" data-track-index="30"></audio><!-- coupe plante-pousse -->
+      <audio id="sfx-278" src="assets/sfx/pieces-2.mp3" data-start="76.81" data-duration="1.02" data-volume="0.289" data-track-index="34"></audio><!-- pile 3 -->
+      <audio id="sfx-279" src="assets/sfx/pieces.mp3" data-start="76.86" data-duration="2.5" data-volume="0.289" data-track-index="38"></audio><!-- pile 1 -->
+      <audio id="sfx-280" src="assets/sfx/pieces-2.mp3" data-start="77.11" data-duration="1.02" data-volume="0.289" data-track-index="39"></audio><!-- pile 6 -->
+      <audio id="sfx-281" src="assets/sfx/pieces.mp3" data-start="77.16" data-duration="2.5" data-volume="0.289" data-track-index="40"></audio><!-- pile 4 -->
+      <audio id="sfx-282" src="assets/sfx/piece-gagne.mp3" data-start="77.21" data-duration="0.51" data-volume="0.289" data-track-index="36"></audio><!-- pile 2 -->
+      <audio id="sfx-283" src="assets/sfx/impact-whoosh.mp3" data-start="77.33" data-duration="3.27" data-volume="0.272" data-track-index="32"></audio><!-- choc -->
+      <audio id="sfx-284" src="assets/sfx/fouet.mp3" data-start="77.51" data-duration="1.05" data-volume="0.34" data-track-index="31"></audio><!-- coupe graphe-hausse -->
+      <audio id="sfx-285" src="assets/sfx/piece-gagne.mp3" data-start="77.51" data-duration="0.51" data-volume="0.289" data-track-index="35"></audio><!-- pile 5 -->
+      <audio id="sfx-286" src="assets/sfx/cloche-succes.mp3" data-start="77.6" data-duration="2.4" data-volume="0.357" data-track-index="37"></audio><!-- la fin -->
+      <audio id="sfx-287" src="assets/sfx/balaie-court.mp3" data-start="77.78" data-duration="0.61" data-volume="0.34" data-track-index="36"></audio><!-- coupe arrose-plante -->
     </div>
     <script>
       const tl = gsap.timeline({ paused: true });

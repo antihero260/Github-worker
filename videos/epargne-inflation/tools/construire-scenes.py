@@ -1872,6 +1872,20 @@ def barre_x(s, xid, x, y, g, taille=300):
     son(g, "buzzer-faux", 0.5, "faux")
 
 
+def pluie_fcfa(s, pid, g, n=18, d=1.4, valeur="10 000"):
+    """Pluie de billets FCFA dessinés (stylisés, pas une reproduction de vrais billets)."""
+    for k in range(n):
+        x = (k * 137) % 1840 - 40
+        r0, r1 = (-35 + (k * 23) % 70), (-200 + (k * 61) % 400)
+        dk = d + (k % 4) * 0.12
+        gk = g + (k % 6) * 0.06
+        cam(s, f'<div id="{pid}-{k}" class="fi-billet" data-layout-ignore style="left: {x}px; top: -260px; opacity: 0"><b>{valeur}</b><span>Francs CFA</span><i></i></div>')
+        s.j(f'tl.fromTo("#{pid}-{k}", {{ opacity: 1, y: 0, rotation: {r0} }}, {{ opacity: 1, y: 1500, rotation: {r1}, duration: {dk}, ease: "power1.in", immediateRender: false }}, {s.L(gk)});')
+        s.j(f'tl.set("#{pid}-{k}", {{ opacity: 0 }}, {s.L(gk + dk)});')
+    son(g, "billets" if "billets" in PICS else "papiers", 0.42, "pluie de billets FCFA")
+    son(g + 0.1, tour(["pieces", "pieces-2"]), 0.36, "argent")
+
+
 FI_CSS = """      .fi-solde { position: absolute; padding: 28px 34px 26px; background: #0f1b33; border: 4px solid #38bdf8; border-radius: 30px; font-family: "Inter", sans-serif; color: #ecece8; box-shadow: 0 40px 110px rgba(0, 0, 0, 0.7); }
       .fi-solde-tete { display: flex; align-items: center; gap: 14px; font-weight: 800; font-size: 34px; color: #38bdf8; margin-bottom: 14px; }
       .fi-solde-tete i { width: 26px; height: 26px; border-radius: 50%; background: #38bdf8; box-shadow: 0 0 22px rgba(56, 189, 248, 0.9); }
@@ -1933,6 +1947,10 @@ FI_CSS = """      .fi-solde { position: absolute; padding: 28px 34px 26px; backg
       .fi-equ { position: absolute; display: flex; align-items: center; gap: 30px; font-family: "Anton", sans-serif; font-size: 86px; color: #fff; text-transform: uppercase; }
       .fi-equ span { padding: 14px 30px 6px; background: #0f1b33; border: 4px solid #38bdf8; border-radius: 20px; }
       .fi-equ b { font-weight: 400; color: #38bdf8; }
+      .fi-billet { position: absolute; width: 300px; height: 150px; border-radius: 12px; background: linear-gradient(135deg, #2f7fb8 0%, #38bdf8 45%, #f2b705 100%); border: 4px solid #0b1220; box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6); font-family: "Anton", sans-serif; color: #0b1220; overflow: hidden; }
+      .fi-billet b { position: absolute; left: 16px; top: 12px; font-weight: 400; font-size: 58px; line-height: 1; }
+      .fi-billet span { position: absolute; left: 18px; bottom: 12px; font-size: 26px; text-transform: uppercase; letter-spacing: 0.05em; }
+      .fi-billet i { position: absolute; right: 18px; top: 26px; width: 90px; height: 90px; border-radius: 50%; border: 6px solid rgba(11, 18, 32, 0.6); background: rgba(255, 255, 255, 0.35); }
 """
 CSS_AJOUT = FI_CSS
 
@@ -1942,8 +1960,8 @@ T = t_mot
 s = scene(0, "Scène 1 · « Ton épargne ne te rendra pas riche. Oui, tu m'as bien entendu… plus pauvre chaque année… tu ne t'en rends même pas compte. »")
 HOOK = [(0.0, "v", "billets-tombent"), (T(1), "v", "tirelire"), (T(4), "v", "riche-billets"), (T(6), "v", "luxe-yacht"), (T(7), "v", "choc-mains-tete"),
         (T(9), "v", "surpris-homme"), (T(11), "v", "choc-femme"), (T(12), "v", "portefeuille-plein"), (T(15), "v", "compteuse-2"), (T(16), "v", "billets-liasse"),
-        (T(18), "v", "compte-pieces"), (T(21), "v", "paiement-tel"), (T(22), "v", "tel-banque"), (T(24), "v", "horloge-billets"), (T(25), "v", "billets-brules"),
-        (T(26), "v", "plus-d-argent"), (T(27), "v", "portefeuille-vide"), (T(28), "v", "horloge-temps"), (T(29), "v", "myst-sablier"), (T(30), "v", "inquiet-homme"),
+        (T(18), "v", "compte-pieces"), (T(21), "v", "homme-sms"), (T(22), "v", "tel-rue"), (T(24), "v", "horloge-billets"), (T(25), "v", "billets-brules"),
+        (T(26), "v", "plus-d-argent"), (T(27), "v", "portefeuille-vide"), (T(28), "v", "horloge-temps"), (T(29), "v", "myst-sablier"), (T(30), "v", "inquiet-homme"), (T(31), "v", "tambour"),
         (T(32), "v", "stress-tete"), (T(33), "v", "inquiete-fille"), (T(38), "v", "perdu-laptop"), (T(39), "v", "frustree-ordi")]
 rafale_mots(s, "s01-r", HOOK, s.fin)
 cam(s, '<div id="s01-voile" style="position: absolute; inset: 0; background: rgba(12, 12, 12, 0.42)"></div>')
@@ -1957,6 +1975,7 @@ s.eclair(T(6))
 puce(s, "s01-oui", "Oui. Tu m’as bien entendu.", 960, 640, T(7), "font-size: 64px")
 son(T(7), "scratch", 0.45, "oui")
 s.j(f'tl.to("#s01-oui", {{ opacity: 0, scale: 0.8, duration: 0.12 }}, {s.L(T(12) - 0.1)});')
+pluie_fcfa(s, "s01-pl", T(16), 18, 1.4)
 cam(s, f'<div id="s01-m" class="fi-equ" style="left: 0; width: 1920px; top: 330px; justify-content: center; opacity: 0"><b id="s01-mn" style="font-size: 190px">0</b><span style="font-size: 70px">FCFA</span></div>')
 s.j(f'tl.fromTo("#s01-m", {{ opacity: 0, scale: 0.5 }}, {{ opacity: 1, scale: 1, duration: 0.2, ease: "back.out(2)", immediateRender: false }}, {s.L(T(15))});')
 compteur_fcfa(s, "#s01-mn", T(15), 0, 1000000, 0.7)
@@ -1992,11 +2011,12 @@ s.ecrire()
 
 # ---------------------------------------------------------------- S2 : imagine 100 000 FCFA, le panier, +5 %, 105 000
 s = scene(1, "Scène 2 · « Imagine : 100 000 FCFA sur ton compte Wave… ton panier de courses… les prix augmentent de 5 %… 105 000 FCFA. »")
-fond(s, "s02-f", (42, 46, 52, 57, 59, 62, 65, 68, 69, 71, 74, 76, 78),
-     ("marche-foule", "compteuse-billets", "paiement-tel", "chariot", "marche-fruits", "achat-tomates", "horloge-temps", "promo-supermarche",
-      "prix-fruits", "rayon-legumes", "courses-sac", "caisse-carte", "epicerie-sourire"), 0.66)
+fond(s, "s02-f", (42, 43, 46, 48, 51, 52, 55, 57, 59, 61, 62, 64, 65, 66, 68, 69, 71, 72, 74, 76, 78),
+     ("village-mali", "marche-foule", "compteuse-billets", "femme-tel", "homme-sms", "paiement-tel", "marche-legumes", "chariot", "marche-fruits", "achat-tomates", "horloge-temps", "myst-sablier",
+      "horloge-billets", "promo-supermarche", "prix-fruits", "rayon-legumes", "bourse-baisse", "courses-sac", "caisse-carte", "epicerie-sourire", "choc-mains-tete"), 0.66)
 titre(s, "s02-t", "Imagine", T(42), 120, 113, 120)
 solde(s, "s02-wave", 113, 330, T(46), 100000)
+pluie_fcfa(s, "s02-pl", T(46) + 0.1, 12, 1.3)
 s.j(f'tl.to("#s02-t", {{ opacity: 0, duration: 0.15 }}, {s.L(T(55))});')
 panier(s, "s02-p", 1080, 120, T(57), 0.2)
 s.j(f'tl.to("#s02-wave", {{ y: 240, scale: 0.8, transformOrigin: "0% 0%", duration: 0.3, ease: "power3.inOut" }}, {s.L(T(57))});')
@@ -2029,9 +2049,9 @@ s.ecrire()
 
 # ---------------------------------------------------------------- S3 : toujours 100 000, rien perdu, rien volé… mais tu achètes moins
 s = scene(2, "Scène 3 · « Mais toi, tu as toujours tes 100 000 FCFA… Tu n'as perdu aucun billet, personne ne t'a volé, mais tu peux acheter moins de choses qu'avant. »")
-fond(s, "s03-f", (80, 84, 88, 92, 94, 97, 99, 101, 104, 107),
-     ("portefeuille-plein", "billets-liasse", "tel-banque", "compte-pieces", "billets-tombent", "vol-sac", "factures-couple", "promo-supermarche",
-      "calcul-depenses", "courses-sac"), 0.66)
+fond(s, "s03-f", (80, 82, 84, 86, 88, 90, 92, 94, 96, 97, 99, 101, 103, 104, 105, 107),
+     ("tel-rue", "portefeuille-plein", "billets-liasse", "homme-sms", "tel-banque", "compte-pieces", "billets-tombent", "portefeuille-vide", "plus-d-argent", "vol-sac", "factures-couple", "promo-supermarche",
+      "marche-foule", "calcul-depenses", "frustree-compte", "courses-sac"), 0.66)
 solde(s, "s03-wave", 113, 170, T(82), 100000)
 puce(s, "s03-same", "Toujours 100 000", 400, 580, T(84) + 0.1, "font-size: 52px")
 son(T(84) + 0.1, "notif-indice", 0.4, "toujours")
@@ -2059,9 +2079,9 @@ s.ecrire()
 
 # ---------------------------------------------------------------- S4 : bienvenue dans l'inflation, définition, pouvoir d'achat, l'erreur
 s = scene(3, "Scène 4 · « Bienvenue dans le monde de l'inflation ! … l'augmentation générale des prix… pouvoir d'achat… beaucoup font une erreur… »")
-fond(s, "s04-f", (109, 114, 116, 119, 120, 123, 126, 128, 132, 136, 139, 141, 145, 149, 151),
-     ("billets-tombent", "bourse-baisse", "graphe-perte", "prix-fruits", "marche-fruits", "pieces-tombent", "billets-brules", "horloge-billets",
-      "stress-tete", "foule-rue", "frustree-compte", "coffre-fort", "tirelire", "bocal-pieces", "portefeuille-vide"), 0.64)
+fond(s, "s04-f", (109, 112, 114, 116, 118, 119, 120, 122, 123, 125, 126, 128, 130, 132, 134, 136, 138, 139, 141, 143, 145, 147, 149, 151, 153),
+     ("village-mali", "billets-tombent", "bourse-baisse", "graphe-perte", "marche-legumes", "prix-fruits", "marche-fruits", "rayon-legumes", "pieces-tombent", "homme-sms", "billets-brules", "horloge-billets",
+      "myst-sablier", "stress-tete", "inquiete-fille", "foule-rue", "tel-rue", "frustree-compte", "coffre-fort", "tel-banque", "tirelire", "bocal-pieces", "portefeuille-plein", "portefeuille-vide", "choc-mains-tete"), 0.64)
 choc_mot(s, "s04-bv", "Bienvenue dans le monde de", 240, 100, T(109), T(115) - 0.05)
 son(T(109), "intro-mystere" if "intro-mystere" in PICS else "riser-trailer", 0.45, "bienvenue", d=1.2)
 choc_mot(s, "s04-inf", "L’inflation", 360, 260, T(114), T(115) + 0.3, "#38BDF8")
@@ -2102,8 +2122,8 @@ s.ecrire()
 
 # ---------------------------------------------------------------- S5 : sans intérêts, les prix montent, l'épargne perd sa valeur réelle
 s = scene(4, "Scène 5 · « Pourtant, si ton argent ne rapporte aucun intérêt et que les prix augmentent, ton épargne perd de sa valeur réelle. »")
-fond(s, "s05-f", (154, 157, 159, 162, 165, 167, 169, 172),
-     ("bourse-profit", "tirelire", "bocal-pieces", "graphe-hausse", "prix-fruits", "pieces-tombent", "bourse-baisse", "billets-brules"), 0.72)
+fond(s, "s05-f", (154, 156, 157, 159, 161, 162, 164, 165, 167, 169, 171, 172),
+     ("bourse-profit", "tel-rue", "tirelire", "bocal-pieces", "compte-pieces", "graphe-hausse", "marche-fruits", "prix-fruits", "pieces-tombent", "bourse-baisse", "horloge-billets", "billets-brules"), 0.72)
 puce(s, "s05-0", "0 % d’intérêt", 420, 160, T(159), "font-size: 60px")
 son(T(159), "buzz-basse" if "buzz-basse" in PICS else "notif-indice", 0.42, "aucun intérêt")
 graphe(s, "s05-g", 180, 260, 1100, 620, T(164), T(167), 1.0)
@@ -2125,8 +2145,8 @@ s.ecrire()
 
 # ---------------------------------------------------------------- S6 : n'arrête pas d'épargner… mais épargner et investir, ce n'est pas la même chose
 s = scene(5, "Scène 6 · « Attention… L'épargne est indispensable pour les imprévus. Mais épargner et investir, ce n'est pas la même chose. »")
-fond(s, "s06-f", (174, 179, 182, 186, 189, 190),
-     ("myst-fumee" if (ICI / "assets/video/myst-fumee.mp4").exists() else "coffre-fort", "coffre-fort", "bocal-pieces", "medecin", "pluie-fenetre", "investisseur"), 0.66)
+fond(s, "s06-f", (174, 176, 179, 181, 182, 184, 186, 188, 189, 190, 193, 196, 199, 200, 202, 204, 206),
+     ("choc-femme", "inquiet-homme", "coffre-fort", "tirelire", "bocal-pieces", "compte-pieces", "medecin", "pluie-fenetre", "stress-tete", "investisseur", "homme-projet", "analyse-graphes", "graphe-hausse", "plante-pousse", "arrose-plante", "tours-pieces", "pieces-or"), 0.66)
 choc_mot(s, "s06-att", "Attention", 280, 200, T(174), T(180) - 0.05, "#FF4D4D")
 son(T(174), "signal-alerte", 0.45, "attention")
 puce(s, "s06-pas", "N’arrête pas d’épargner", 960, 560, T(180), "font-size: 60px")
@@ -2158,8 +2178,8 @@ s.ecrire()
 
 # ---------------------------------------------------------------- S7 : abonne-toi à LeFinancier
 s = scene(6, "Scène 7 · « Si tu veux comprendre comment fonctionne réellement l'argent… abonne-toi à LeFinancier. Ici, on apprend à faire travailler son argent. »")
-fond(s, "s07-f", (209, 213, 216, 219, 223, 227, 231, 235),
-     ("investisseuse", "analyse-graphes", "billets-liasse", "tours-pieces", "famille-coucher", "pieces-or", "plante-pousse", "arrose-plante"), 0.66)
+fond(s, "s07-f", (209, 211, 213, 215, 216, 218, 220, 222, 224, 227, 229, 231, 233, 235),
+     ("femme-tel", "investisseuse", "homme-projet", "analyse-graphes", "billets-liasse", "tel-rue", "tours-pieces", "homme-sms", "famille-coucher", "pieces-or", "riche-billets", "plante-pousse", "graphe-hausse", "arrose-plante"), 0.66)
 puce(s, "s07-c1", "Comprendre l’argent", 560, 220, T(212), "font-size: 60px")
 puce(s, "s07-c2", "Mieux gérer tes finances", 1360, 360, T(216), "font-size: 60px")
 son(T(212), "notif-magique" if "notif-magique" in PICS else "notif-indice", 0.42, "comprendre")
@@ -2169,6 +2189,7 @@ profil_carte(s, "s07-pr", 300, 320, T(224) - 0.05, T(226))
 confettis(s, "s07-conf", T(226) + 0.1, 960, 420, 26, 480)
 son(T(226) + 0.1, "paillettes", 0.42, "confettis")
 s.j(f'tl.to(["#s07-pr", "#s07-pr-souris"], {{ opacity: 0, y: -80, duration: 0.16 }}, {s.L(T(229) - 0.05)});')
+pluie_fcfa(s, "s07-pl", T(229) + 0.05, 12, 1.5)
 choc_mot(s, "s07-fin1", "Fais travailler ton argent", 300, 140, T(229), None, "#38BDF8")
 son(T(229), "impact-basse", 0.5, "faire travailler")
 pile_pieces(s, "s07-pp", 620, 560, T(232), 6, 0.1)
