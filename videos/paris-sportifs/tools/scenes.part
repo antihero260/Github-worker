@@ -1,0 +1,321 @@
+# ================================================================ ÉLÉMENTS DE LA VIDÉO « PARIS SPORTIFS »
+def ticket(s, tid, x, y, g, mise=1000, gain=2000, w=620):
+    """Ticket de pari : match, mise, gain potentiel."""
+    cam(s, f'<div id="{tid}" class="ps-ticket" style="left: {x}px; top: {y}px; width: {w}px; opacity: 0">'
+           f'<div class="ps-ticket-tete">Ticket de pari</div><div class="ps-ticket-match"><span>Équipe A</span><i>vs</i><span>Équipe B</span></div>'
+           f'<div class="ps-ligne"><span>Mise</span><b id="{tid}-m">{fcfa(mise)} F</b></div>'
+           f'<div class="ps-ligne ps-gain"><span>Gain si tu gagnes</span><b><s id="{tid}-ga">{fcfa(gain)} F</s><em id="{tid}-g" style="opacity: 0">1 900 F</em></b></div></div>')
+    s.j(f'tl.fromTo("#{tid}", {{ opacity: 0, y: 200, rotation: 8, scale: 0.7 }}, {{ opacity: 1, y: 0, rotation: -2, scale: 1, duration: 0.28, ease: "back.out(1.8)", immediateRender: false }}, {s.L(g)});')
+    son(g, tour(["papier-glisse", "pop-long", "swoosh-accent"]), 0.45, "le ticket")
+
+
+def chance(s, cid, x, y, g, taille=300):
+    """Camembert 50 % : une chance sur deux."""
+    cam(s, f'<div id="{cid}" class="ps-chance" style="left: {x}px; top: {y}px; opacity: 0"><svg viewBox="0 0 200 200" width="{taille}" height="{taille}">'
+           f'<circle cx="100" cy="100" r="90" fill="#FF4D4D" stroke="#0B1220" stroke-width="8" /><path id="{cid}-p" d="M100 100 L100 10 A90 90 0 0 1 100 190 Z" fill="#38BDF8" stroke="#0B1220" stroke-width="8" /></svg>'
+           f'<b>50 %</b><span>1 chance sur 2</span></div>')
+    s.j(f'tl.fromTo("#{cid}", {{ opacity: 0, scale: 0.4, rotation: -180 }}, {{ opacity: 1, scale: 1, rotation: 0, duration: 0.35, ease: "back.out(1.6)", immediateRender: false }}, {s.L(g)});')
+    son(g, "swoosh-tourbillon" if "swoosh-tourbillon" in PICS else "swoosh-vol", 0.45, "une chance sur deux")
+    son(g + 0.3, "impact-tambour", 0.45, "50 %")
+
+
+def grille(s, gid, x, y, g, g_ok, g_ko, n=100, col=20, taille=46, gap=8):
+    """100 petits tickets qui apparaissent, puis 50 gagnés (bleu) et 50 perdus (rouge)."""
+    cases = "".join(f'<i id="{gid}-{k}"></i>' for k in range(n))
+    cam(s, f'<div id="{gid}" class="ps-grille" style="left: {x}px; top: {y}px; grid-template-columns: repeat({col}, {taille}px); gap: {gap}px; --t: {taille}px">{cases}</div>')
+    s.j(f'tl.fromTo("#{gid} i", {{ opacity: 0, scale: 0 }}, {{ opacity: 1, scale: 1, duration: 0.12, stagger: 0.008, ease: "back.out(2)", immediateRender: false }}, {s.L(g)});')
+    son(g, "pages-defilent", 0.42, "100 paris")
+    gagnes = [k for k in range(n) if (k * 37) % 100 < 50]
+    perdus = [k for k in range(n) if k not in gagnes]
+    s.j(f'tl.to([{", ".join(chr(34) + "#" + gid + "-" + str(k) + chr(34) for k in gagnes)}], {{ backgroundColor: "#38BDF8", borderColor: "#38BDF8", duration: 0.1, stagger: 0.006 }}, {s.L(g_ok)});')
+    s.j(f'tl.to([{", ".join(chr(34) + "#" + gid + "-" + str(k) + chr(34) for k in perdus)}], {{ backgroundColor: "#FF4D4D", borderColor: "#FF4D4D", duration: 0.1, stagger: 0.006 }}, {s.L(g_ko)});')
+    son(g_ok, "cloche-succes", 0.4, "50 gagnés")
+    son(g_ko, "buzzer-faux", 0.42, "50 perdus")
+
+
+def compteur_carte_ps(s, cid, x, y, g, titre_c, de, a, d, coul="#FFFFFF", w=560):
+    cam(s, f'<div id="{cid}" class="ps-cpt" style="left: {x}px; top: {y}px; width: {w}px; opacity: 0"><span>{titre_c}</span><b id="{cid}-n" style="color: {coul}">{fcfa(de)}</b><em>F</em></div>')
+    s.j(f'tl.fromTo("#{cid}", {{ opacity: 0, x: -160 }}, {{ opacity: 1, x: 0, duration: 0.22, ease: "power4.out", immediateRender: false }}, {s.L(g)});')
+    if de != a:
+        compteur_fcfa(s, f"#{cid}-n", g + 0.1, de, a, d)
+        son(g + 0.1, "compteur", 0.42, f"compteur {titre_c}", d=d)
+
+
+def balance(s, bid, x, y, g):
+    """Balance 50 | 50 parfaitement équilibrée."""
+    cam(s, f'<div id="{bid}" class="ps-bal" style="left: {x}px; top: {y}px; opacity: 0"><div class="ps-bal-barre"></div>'
+           f'<div class="ps-bal-p ps-bal-g"><b>50</b><span>gagnés</span></div><div class="ps-bal-p ps-bal-d"><b>50</b><span>perdus</span></div><div class="ps-bal-pied"></div></div>')
+    s.j(f'tl.fromTo("#{bid}", {{ opacity: 0, y: 140 }}, {{ opacity: 1, y: 0, duration: 0.25, ease: "back.out(1.8)", immediateRender: false }}, {s.L(g)});')
+    s.j(f'tl.fromTo("#{bid} .ps-bal-barre", {{ rotation: -12 }}, {{ rotation: 0, duration: 0.8, ease: "elastic.out(1, 0.4)", immediateRender: false }}, {s.L(g + 0.1)});')
+    son(g, "cloche-bois", 0.42, "balance égale")
+
+
+def fuite(s, fid, x0, y0, x1, y1, g, n=10, pas=0.12):
+    """Pièces de 100 F qui partent d'un point vers un autre (vers la caisse du site)."""
+    for k in range(n):
+        gk = g + k * pas
+        cam(s, f'<div id="{fid}-{k}" class="ps-piece" data-layout-ignore style="left: {x0}px; top: {y0}px; opacity: 0">100</div>')
+        s.j(f'tl.fromTo("#{fid}-{k}", {{ opacity: 1, x: 0, y: 0, scale: 1 }}, {{ opacity: 1, x: {x1 - x0}, y: {y1 - y0}, scale: 0.7, duration: 0.5, ease: "power2.in", immediateRender: false }}, {s.L(gk)});')
+        s.j(f'tl.set("#{fid}-{k}", {{ opacity: 0 }}, {s.L(gk + 0.5)});')
+        son(gk + 0.45, tour(["piece-gagne", "pieces", "pieces-2"]), 0.32, "100 F pour le site")
+
+
+PS_CSS = """      .ps-ticket { position: absolute; padding: 24px 30px; background: #f4f1ea; color: #0b1220; border-radius: 22px; font-family: "Inter", sans-serif; box-shadow: 0 40px 110px rgba(0, 0, 0, 0.7); border-top: 14px solid #38bdf8; }
+      .ps-ticket-tete { font-family: "Anton", sans-serif; font-size: 44px; text-transform: uppercase; }
+      .ps-ticket-match { display: flex; align-items: center; gap: 18px; font-weight: 800; font-size: 36px; margin: 10px 0 14px; }
+      .ps-ticket-match i { font-style: normal; color: #6b7280; font-size: 30px; }
+      .ps-ligne { display: flex; justify-content: space-between; align-items: baseline; padding: 10px 0; border-top: 3px dashed #c9c2b4; font-size: 34px; font-weight: 700; }
+      .ps-ligne b { font-family: "Anton", sans-serif; font-weight: 400; font-size: 64px; position: relative; }
+      .ps-gain b s { text-decoration: none; position: relative; }
+      .ps-gain b em { font-style: normal; color: #ff4d4d; position: absolute; right: 0; top: 70px; font-size: 86px; white-space: nowrap; }
+      .ps-chance { position: absolute; text-align: center; font-family: "Anton", sans-serif; color: #fff; }
+      .ps-chance b { display: block; font-weight: 400; font-size: 110px; line-height: 1; margin-top: 10px; }
+      .ps-chance span { font-size: 48px; text-transform: uppercase; color: #38bdf8; }
+      .ps-grille { position: absolute; display: grid; }
+      .ps-grille i { width: var(--t); height: var(--t); border-radius: 8px; background: #1c2a47; border: 3px solid #3a4462; }
+      .ps-cpt { position: absolute; padding: 20px 28px; background: #0f1b33; border: 4px solid #38bdf8; border-radius: 22px; font-family: "Anton", sans-serif; color: #ecece8; box-shadow: 0 30px 90px rgba(0, 0, 0, 0.7); }
+      .ps-cpt span { display: block; font-size: 40px; text-transform: uppercase; color: #9fb3c8; }
+      .ps-cpt b { font-weight: 400; font-size: 110px; line-height: 1; }
+      .ps-cpt em { font-style: normal; font-size: 60px; color: #38bdf8; margin-left: 12px; }
+      .ps-bal { position: absolute; width: 760px; height: 420px; }
+      .ps-bal-barre { position: absolute; left: 40px; right: 40px; top: 120px; height: 22px; background: #ecece8; border-radius: 11px; transform-origin: 50% 50%; }
+      .ps-bal-p { position: absolute; top: 160px; width: 260px; padding: 18px; border-radius: 22px; text-align: center; font-family: "Anton", sans-serif; color: #0b1220; }
+      .ps-bal-p b { display: block; font-weight: 400; font-size: 120px; line-height: 1; }
+      .ps-bal-p span { font-size: 40px; text-transform: uppercase; }
+      .ps-bal-g { left: 20px; background: #38bdf8; }
+      .ps-bal-d { right: 20px; background: #ff4d4d; }
+      .ps-bal-pied { position: absolute; left: 365px; top: 130px; width: 30px; height: 280px; background: #ecece8; border-radius: 10px; }
+      .ps-piece { position: absolute; width: 110px; height: 110px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #ffe98a, #f2b705 55%, #b07d00); border: 5px solid #0b1220; display: flex; align-items: center; justify-content: center; font-family: "Anton", sans-serif; font-size: 46px; color: #5a3d00; }
+      .ps-caisse { position: absolute; width: 520px; padding: 26px 30px; background: #ff4d4d; color: #fff; border-radius: 26px; font-family: "Anton", sans-serif; text-align: center; box-shadow: 0 0 80px rgba(255, 77, 77, 0.6); }
+      .ps-caisse span { display: block; font-size: 44px; text-transform: uppercase; }
+      .ps-caisse b { font-weight: 400; font-size: 110px; line-height: 1; }
+"""
+CSS_AJOUT = FI_CSS + PS_CSS
+
+# ================================================================ SCÈNES
+T = t_mot
+# ---------------------------------------------------------------- S1 : le hook
+s = scene(0, "Scène 1 · « Voici pourquoi tu ne gagnes jamais vraiment aux paris sportifs… perdre de l'argent. Je t'explique. »")
+HOOK = [(0.0, "v", "stade-foule"), (T(1), "v", "but-filets"), (T(2), "v", "penalty-tir"), (T(4), "v", "retourne"), (T(5), "v", "choc-mains-tete"),
+        (T(6), "v", "amis-but"), (T(8), "v", "jetons-casino"), (T(9), "v", "roulette"), (T(10), "v", "tel-rue"), (T(12), "v", "but-match"),
+        (T(14), "v", "jackpot"), (T(16), "v", "homme-sms"), (T(17), "v", "amis-coupe-monde"), (T(19), "v", "machines-sous"), (T(21), "v", "homme-ordi-joie"),
+        (T(22), "v", "jongle"), (T(23), "v", "surpris-homme"), (T(24), "v", "billets-brules"), (T(25), "v", "portefeuille-vide"), (T(26), "v", "plus-d-argent"),
+        (T(27), "v", "frustree-ordi"), (T(28), "v", "stress-tete"), (T(29), "v", "tout-miser")]
+rafale_mots(s, "s01-r", HOOK, s.fin)
+cam(s, '<div id="s01-voile" style="position: absolute; inset: 0; background: rgba(12, 12, 12, 0.4)"></div>')
+choc_mot(s, "s01-a", "Tu ne gagnes", 230, 210, T(2), T(5) - 0.04)
+son(T(2), "impact-basse", 0.6, "tu ne gagnes")
+choc_mot(s, "s01-j", "Jamais", 200, 330, T(5), T(8) - 0.05, "#FF4D4D")
+son(T(5), "impact-basse", 0.65, "JAMAIS")
+son(T(5), "glitch-rugit", 0.45, "jamais")
+secousse(s, T(5), 24)
+s.eclair(T(5))
+tampon(s, "s01-ps", "Paris sportifs", 600, 380, T(8), -7, 130, "#FF4D4D")
+son(T(8), "marteau", 0.5, "paris sportifs")
+secousse(s, T(8), 16)
+s.j(f'tl.to("#s01-ps", {{ opacity: 0, scale: 0.8, duration: 0.12 }}, {s.L(T(10) - 0.08)});')
+for k, (txt, coul) in enumerate((("✓", "#38BDF8"), ("✗", "#FF4D4D"), ("✓", "#38BDF8"), ("✗", "#FF4D4D"))):
+    puce(s, f"s01-v{k}", txt, 560 + k * 260, 360, T(12) + k * 0.12, f"font-size: 110px; background: {coul}; color: #0B1220; padding: 6px 34px 0")
+    son(T(12) + k * 0.12, tour(["clic-positif", "buzz-faux" if "buzz-faux" in PICS else "buzzer-faux"]), 0.4, "gagné / perdu")
+puce(s, "s01-moitie", "1 pari sur 2 gagné", 960, 560, T(14), "font-size: 60px")
+s.j(f'tl.to(["#s01-v0", "#s01-v1", "#s01-v2", "#s01-v3", "#s01-moitie"], {{ opacity: 0, y: -60, duration: 0.12, stagger: 0.02 }}, {s.L(T(18) - 0.08)});')
+puce(s, "s01-bien", "« Je joue bien »", 960, 330, T(19), "font-size: 74px")
+son(T(19), "notif-positive", 0.42, "bien jouer")
+s.j(f'tl.to("#s01-bien", {{ opacity: 0, duration: 0.1 }}, {s.L(T(23) - 0.06)});')
+choc_mot(s, "s01-perd", "…et tu perds", 300, 220, T(23), None, "#FF4D4D")
+son(T(25), "impact-basse", 0.6, "perdre")
+son(T(25), "billets" if "billets" in PICS else "papiers", 0.4, "l'argent part")
+secousse(s, T(25), 22)
+s.eclair(T(25))
+cam(s, perso("s01-toi", 1760, 930, 220))
+vit(s, "s01-toi", s.debut, s.fin - 0.2)
+non(s, "s01-toi", T(5))
+victoire(s, "s01-toi", T(12), 1)
+pouce(s, "s01-toi", T(19), "bd")
+panique(s, "s01-toi", T(25), 1.0)
+pose(s, "s01-toi", T(29), 0.14, "back.out(2)", bd=-110, tete=-6)
+zoom(s, T(5) - 0.04, 960, 480, 1.3, 0.12, 0.5)
+zoom(s, T(8) - 0.05, 960, 540, 1.0, 0.16, 0.4)
+zoom(s, T(25) - 0.04, 960, 480, 1.25, 0.12, 0.5)
+zoom(s, s.fin - 0.35, 960, 540, 1.0, 0.18, 0.4)
+s.ecrire()
+
+# ---------------------------------------------------------------- S2 : 1 000 F, une chance sur deux, logiquement 2 000 F
+s = scene(1, "Scène 2 · « Imagine que tu paries 1 000 francs… une chance sur deux… tu devrais récupérer 2 000 francs. »")
+fond(s, "s02-f", (30, 32, 33, 34, 36, 38, 39, 41, 42, 43, 45, 47, 48, 50, 51, 53, 54, 55),
+     ("stade-ciel", "homme-sms", "tel-rue", "billets-liasse", "match-equipes", "but-match", "un-contre-un", "dribble", "jetons-tombent", "roulette",
+      "cartes-poker", "but-joueurs", "calcul-depenses", "penalty-tir", "but-filets", "compteuse-2", "tour-jetons", "amis-but"), 0.66)
+titre(s, "s02-t", "Imagine", T(30), 120, 113, 120)
+ticket(s, "s02-k", 1150, 140, T(33))
+s.j(f'tl.to("#s02-t", {{ opacity: 0, duration: 0.12 }}, {s.L(T(39))});')
+chance(s, "s02-c", 330, 220, T(42), 320)
+son(T(34), "pieces", 0.4, "1 000 francs")
+s.j(f'tl.fromTo("#s02-k-ga", {{ color: "#0B1220" }}, {{ color: "#38BDF8", duration: 0.2, immediateRender: false }}, {s.L(T(55))});')
+s.j(f'tl.fromTo("#s02-k-ga", {{ scale: 1 }}, {{ scale: 1.35, duration: 0.12, yoyo: true, repeat: 1, immediateRender: false }}, {s.L(T(55))});')
+son(T(55), "cloche-succes", 0.45, "2 000 francs")
+puce(s, "s02-log", "Logique : ×2", 480, 760, T(48), "font-size: 60px")
+son(T(48), "notif-indice", 0.42, "logiquement")
+cam(s, perso("s02-toi", 900, 930, 190))
+vit(s, "s02-toi", s.debut, s.fin - 0.2)
+pose(s, "s02-toi", T(33), 0.14, "back.out(2)", bd=-110, tete=-6)
+saut(s, "s02-toi", T(42), 36)
+pose(s, "s02-toi", T(48), 0.14, "back.out(2)", bg=130, tete=8)
+victoire(s, "s02-toi", T(55), 1)
+zoom(s, T(33) - 0.05, 1450, 380, 1.25, 0.2, 0.45)
+suit(s, [(T(42) - 0.05, 500, 420), (T(48), 500, 600), (T(54) - 0.1, 1450, 480)], 1.2, 0.22)
+zoom(s, s.fin - 0.35, 960, 540, 1.0, 0.18, 0.4)
+s.ecrire()
+
+# ---------------------------------------------------------------- S3 : mais le site ne propose que 1 900 F
+s = scene(2, "Scène 3 · « Mais le site de paris ne te propose que 1 900 francs. Et c'est là que tout se joue. »")
+fond(s, "s03-f", (57, 59, 61, 62, 64, 66, 67, 68, 70, 72, 73),
+     ("casino-enseigne", "homme-sms", "roulette", "jetons-casino", "tel-banque", "choc-mains-tete", "surpris-homme", "tout-miser", "machines-sous", "stade-foule", "retourne"), 0.68)
+ticket(s, "s03-k", 650, 120, s.debut + 0.05)
+s.j(f'tl.set("#s03-k", {{ opacity: 1 }}, 0);')
+s.j(f'tl.to("#s03-k-ga", {{ color: "#6b7280", duration: 0.15 }}, {s.L(T(64))});')
+cam(s, '<div id="s03-barre" style="position: absolute; left: 1020px; top: 400px; width: 230px; height: 12px; background: #FF4D4D; border-radius: 6px; transform: scaleX(0) rotate(-6deg); transform-origin: 0% 50%"></div>')
+s.j(f'tl.to("#s03-barre", {{ scaleX: 1, duration: 0.18, ease: "power4.out" }}, {s.L(T(66) - 0.1)});')
+s.j(f'tl.fromTo("#s03-k-g", {{ opacity: 0, scale: 2.2 }}, {{ opacity: 1, scale: 1, duration: 0.16, ease: "power4.in", immediateRender: false }}, {s.L(T(66))});')
+son(T(66), "impact-basse", 0.6, "1 900")
+son(T(66), "scratch", 0.45, "1 900")
+secousse(s, T(66), 20)
+s.eclair(T(66))
+tampon(s, "s03-moins", "−100 F", 1380, 600, T(67) + 0.1, 8, 110, "#FF4D4D")
+son(T(67) + 0.1, "marteau", 0.5, "-100")
+choc_mot(s, "s03-tout", "C’est là que tout se joue", 60, 120, T(69), None, "#38BDF8")
+son(T(69), "riser-trailer" if "riser-trailer" in PICS else "riser-synth", 0.42, "tout se joue", d=1.2)
+son(T(74), "impact-tambour", 0.5, "se joue")
+cam(s, perso("s03-toi", 300, 930, 200))
+vit(s, "s03-toi", s.debut, s.fin - 0.2)
+pose(s, "s03-toi", T(59), 0.14, "back.out(2)", bd=-110, tete=-6)
+panique(s, "s03-toi", T(66), 0.9)
+gratte(s, "s03-toi", T(70))
+zoom(s, T(64) - 0.1, 960, 440, 1.35, 0.2, 0.5)
+zoom(s, T(69) - 0.1, 960, 520, 1.0, 0.16, 0.4)
+zoom(s, T(74) - 0.05, 960, 400, 1.15, 0.12, 0.45)
+s.ecrire()
+
+# ---------------------------------------------------------------- S4 : 100 paris, 50 gagnés, 50 perdus, 100 000 misés, 95 000 récupérés
+s = scene(3, "Scène 4 · « 100 paris de ce type… 50 gagnés, 50 perdus… misé 100 000 francs… que 95 000 francs. »")
+fond(s, "s04-f", (75, 77, 79, 80, 81, 84, 86, 87, 88, 90, 92, 93, 94, 96, 97, 99, 101, 104, 106),
+     ("stade-aerien", "match-equipes", "homme-sms", "jetons-tombent", "but-match", "tour-jetons", "amis-but", "homme-but-salon", "amis-coupe-monde",
+      "frustree-ordi", "stress-tete", "dribble", "calcul-depenses", "billets-liasse", "compteuse-2", "tel-banque", "compte-pieces", "pieces-tombent", "portefeuille-vide"), 0.7)
+choc_mot(s, "s04-100", "100 paris", 60, 140, T(80), T(85) - 0.05)
+son(T(80), "impact-basse", 0.55, "100 paris")
+grille(s, "s04-g", 120, 300, T(80) + 0.1, T(88), T(93))
+puce(s, "s04-ok", "50 gagnés", 470, 900 - 120, T(88), "font-size: 54px; background: #38BDF8; color: #0B1220")
+puce(s, "s04-ko", "50 perdus", 900, 900 - 120, T(93), "font-size: 54px; background: #FF4D4D; color: #0B1220")
+s.j(f'tl.to(["#s04-g", "#s04-ok", "#s04-ko"], {{ x: -60, scale: 0.75, transformOrigin: "0% 0%", duration: 0.3, ease: "power3.inOut" }}, {s.L(T(94) - 0.1)});')
+compteur_carte_ps(s, "s04-mise", 1290, 170, T(96), "Tu as misé", 0, 100000, 0.6)
+compteur_carte_ps(s, "s04-gain", 1290, 430, T(104), "Tu récupères", 0, 95000, 0.7, "#FF4D4D")
+cam(s, perso("s04-toi", 1790, 930, 180))
+vit(s, "s04-toi", s.debut, s.fin - 0.2)
+pose(s, "s04-toi", T(80), 0.14, "back.out(2)", bg=130, tete=8)
+victoire(s, "s04-toi", T(88), 1)
+non(s, "s04-toi", T(93))
+pose(s, "s04-toi", T(96), 0.14, "back.out(2)", bg=120, tete=8)
+panique(s, "s04-toi", T(106), 0.8)
+zoom(s, T(80) - 0.05, 700, 500, 1.15, 0.2, 0.45)
+suit(s, [(T(88) - 0.1, 520, 560), (T(93), 760, 560), (T(96) - 0.05, 1500, 330), (T(104), 1500, 560)], 1.2, 0.22)
+s.ecrire()
+
+# ---------------------------------------------------------------- S5 : résultat −5 000 F alors que 50 / 50
+s = scene(4, "Scène 5 · « Résultat : moins 5 000 francs, alors que tu as gagné autant de fois que tu as perdu ! »")
+fond(s, "s05-f", (108, 109, 110, 111, 112, 114, 116, 117, 119, 121, 123),
+     ("billets-brules", "choc-mains-tete", "portefeuille-vide", "plus-d-argent", "surpris-homme", "amis-but", "homme-but-salon", "frustree-compte", "choc-femme", "stress-tete", "inquiet-homme"), 0.68)
+puce(s, "s05-res", "Résultat", 960, 170, T(108), "font-size: 60px")
+choc_mot(s, "s05-n", "−5 000 F", 230, 300, T(109), T(112) + 0.1, "#FF4D4D")
+son(T(109), "impact-basse", 0.65, "-5000")
+son(T(110), "glitch-rugit", 0.45, "-5000")
+son(T(110), "erreur-echec" if "erreur-echec" in PICS else "buzzer-faux", 0.42, "perte")
+secousse(s, T(110), 26)
+s.eclair(T(110))
+balance(s, "s05-b", 580, 300, T(114))
+s.j(f'tl.to("#s05-res", {{ opacity: 0, duration: 0.1 }}, {s.L(T(113))});')
+tampon(s, "s05-quand", "Et pourtant −5 000 F", 600, 120, T(123), -5, 90, "#FF4D4D")
+son(T(123), "impact-tambour", 0.5, "perdu")
+cam(s, perso("s05-toi", 1700, 930, 200))
+vit(s, "s05-toi", s.debut, s.fin - 0.2)
+panique(s, "s05-toi", T(109), 1.0)
+pose(s, "s05-toi", T(114), 0.14, "back.out(2)", bg=130, tete=8)
+gratte(s, "s05-toi", T(120))
+zoom(s, T(109) - 0.04, 960, 450, 1.3, 0.12, 0.5)
+zoom(s, T(113), 960, 540, 1.0, 0.18, 0.4)
+zoom(s, T(123) - 0.05, 960, 400, 1.12, 0.14, 0.42)
+s.ecrire()
+
+# ---------------------------------------------------------------- S6 : ces 100 F = l'avantage du site ; plus tu joues, plus ça coûte
+s = scene(5, "Scène 6 · « Ces 100 francs qui manquent à chaque victoire, c'est l'avantage du site de paris. Et plus tu joues, plus cet avantage peut te coûter cher. »")
+fond(s, "s06-f", (124, 125, 127, 128, 130, 131, 133, 135, 137, 139, 141, 142, 144, 146, 148),
+     ("compte-pieces", "pieces-tombent", "jetons-tombent", "casino-enseigne", "roulette", "jackpot", "machines-sous", "tour-jetons", "riche-billets",
+      "horloge-billets", "homme-sms", "tout-miser", "billets-brules", "portefeuille-vide", "frustree-ordi"), 0.7)
+cam(s, '<div id="s06-p" class="ps-piece" style="left: 300px; top: 300px; width: 220px; height: 220px; font-size: 92px; opacity: 0">100</div>')
+s.j(f'tl.fromTo("#s06-p", {{ opacity: 0, scale: 0.3, rotation: -200 }}, {{ opacity: 1, scale: 1, rotation: 0, duration: 0.3, ease: "back.out(1.8)", immediateRender: false }}, {s.L(T(125))});')
+son(T(125), "piece-gagne", 0.5, "100 francs")
+cam(s, f'<div id="s06-c" class="ps-caisse" style="left: 1230px; top: 230px; opacity: 0"><span>Caisse du site</span><b id="s06-c-n">0</b><b> F</b></div>')
+s.j(f'tl.fromTo("#s06-c", {{ opacity: 0, y: -120 }}, {{ opacity: 1, y: 0, duration: 0.25, ease: "back.out(1.8)", immediateRender: false }}, {s.L(T(132))});')
+fuite(s, "s06-fu", 360, 360, 1430, 330, T(133), 10, 0.13)
+compteur_fcfa(s, "#s06-c-n", T(133) + 0.5, 0, 5000, 1.3)
+puce(s, "s06-av", "L’avantage du site", 1490, 620, T(133), "font-size: 56px")
+s.j(f'tl.to(["#s06-p", "#s06-av"], {{ opacity: 0, duration: 0.12 }}, {s.L(T(138) - 0.08)});')
+choc_mot(s, "s06-plus", "Plus tu joues…", 300, 160, T(139), T(144) - 0.05)
+son(T(139), "riser-synth", 0.42, "plus tu joues", d=1.0)
+choc_mot(s, "s06-cher", "…plus tu paies", 470, 160, T(144), None, "#FF4D4D")
+son(T(147), "impact-basse", 0.6, "cher")
+secousse(s, T(147), 20)
+s.j(f'tl.to("#s06-c", {{ scale: 1.25, duration: 0.25, ease: "back.out(2)" }}, {s.L(T(147))});')
+compteur_fcfa(s, "#s06-c-n", T(144), 5000, 50000, 1.2)
+cam(s, perso("s06-toi", 760, 930, 190))
+vit(s, "s06-toi", s.debut, s.fin - 0.2)
+pose(s, "s06-toi", T(125), 0.14, "back.out(2)", bg=130, tete=8)
+pose(s, "s06-toi", T(133), 0.14, "back.out(2)", bg=0, bd=-110, tete=-6)
+panique(s, "s06-toi", T(147), 0.9)
+zoom(s, T(125) - 0.05, 420, 420, 1.25, 0.2, 0.45)
+suit(s, [(T(133) - 0.1, 900, 420), (T(137), 1450, 420)], 1.15, 0.25)
+zoom(s, T(139) - 0.1, 960, 540, 1.0, 0.18, 0.4)
+zoom(s, T(147) - 0.04, 960, 470, 1.18, 0.12, 0.5)
+s.ecrire()
+
+# ---------------------------------------------------------------- S7 : la question, abonne-toi
+s = scene(6, "Scène 7 · « Tu comprends maintenant pourquoi les sites de paris gagnent… même quand tu gagnes ? Abonne-toi à LeFinancier. »")
+fond(s, "s07-f", (149, 151, 153, 156, 158, 161, 163, 165, 166, 168, 170, 172),
+     ("stade-foule", "casino-enseigne", "roulette", "jackpot", "riche-billets", "amis-but", "homme-ordi-joie", "tel-rue", "femme-tel" if (ICI / "assets/video/femme-tel.mp4").exists() else "homme-sms",
+      "analyse-graphes", "investisseuse", "tours-pieces"), 0.68)
+choc_mot(s, "s07-q1", "Le site gagne…", 230, 170, T(152), T(161) - 0.05, "#FF4D4D")
+son(T(152), "impact-basse", 0.5, "le site gagne")
+choc_mot(s, "s07-q2", "…même quand tu gagnes", 230, 140, T(161), T(166) - 0.05, "#38BDF8")
+son(T(161), "glitch-cine", 0.45, "même quand tu gagnes")
+profil_carte(s, "s07-pr", 300, 320, T(166) - 0.05, T(168))
+confettis(s, "s07-conf", T(168) + 0.1, 960, 420, 26, 480)
+son(T(168) + 0.1, "paillettes", 0.42, "confettis")
+s.j(f'tl.to(["#s07-pr", "#s07-pr-souris"], {{ opacity: 0, y: -80, duration: 0.16 }}, {s.L(T(169) - 0.05)});')
+pluie_fcfa(s, "s07-pl", T(169), 10, 1.4)
+choc_mot(s, "s07-fin", "On décrypte l’argent avec les maths", 330, 110, T(169), None, "#38BDF8")
+son(T(169), "impact-basse", 0.5, "on décrypte")
+son(T(173), "cloche-succes", 0.42, "fin")
+cam(s, perso("s07-toi", 1720, 930, 200))
+vit(s, "s07-toi", s.debut, s.fin - 0.2)
+gratte(s, "s07-toi", T(152))
+pose(s, "s07-toi", T(166), 0.14, "back.out(2)", bd=-120, tete=-6)
+victoire(s, "s07-toi", T(168) + 0.1, 2)
+zoom(s, T(152) - 0.05, 960, 420, 1.15, 0.16, 0.45)
+zoom(s, T(166) - 0.1, 960, 540, 1.0, 0.18, 0.4)
+s.ecrire()
+
+# ================================================================ SONS GÉNÉRAUX
+for k, c in enumerate(COUPES[1:-1], start=1):
+    son(c, tour(TRANSITIONS + ["balaie-rapide", "balaie-air"]), 0.44, f"volet vers {NOMS[k]}")
+
+MUSIQUES = [  # fichiers à −17,5 / −17,5 / −18,0 LUFS → ≈ −21 LUFS (5–6 dB sous la voix)
+    (0, "partie-1-trap", COUPES[3], 0.67),
+    (COUPES[3], "partie-2-young-trizzy-02", round(COUPES[6] - COUPES[3], 2), 0.67),
+    (COUPES[6], "partie-3-basketball-training", round(FIN - COUPES[6], 2), 0.71),
+]
+MASQUES = []
+_vus = set()
+SONS[:] = [x for x in SONS if not ((x[0], x[1]) in _vus or _vus.add((x[0], x[1])))]
+
+CHECK = [("Cote juste", t_mot(55), t_mot(56)), ("Marge", t_mot(66), t_mot(137)), ("Long terme", t_mot(139), t_mot(148))]
+CHECK_TITRE = "Le piège des paris en 3 mots"
+CHECK_DEBUT = t_mot(10)
+

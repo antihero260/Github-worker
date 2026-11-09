@@ -1,0 +1,1052 @@
+[
+{
+"i": 0,
+"text": "VOICI",
+"start": 0,
+"end": 0.4
+},
+{
+"i": 1,
+"text": "POURQUOI",
+"start": 0.4,
+"end": 0.72
+},
+{
+"i": 2,
+"text": "TU",
+"start": 0.72,
+"end": 0.96
+},
+{
+"i": 3,
+"text": "NE",
+"start": 0.96,
+"end": 1.04
+},
+{
+"i": 4,
+"text": "GAGNES",
+"start": 1.04,
+"end": 1.52
+},
+{
+"i": 5,
+"text": "JAMAIS",
+"start": 1.52,
+"end": 1.76
+},
+{
+"i": 6,
+"text": "VRAIMENT",
+"start": 1.76,
+"end": 2.08
+},
+{
+"i": 7,
+"text": "AUX",
+"start": 2.08,
+"end": 2.32
+},
+{
+"i": 8,
+"text": "PARIS",
+"start": 2.32,
+"end": 2.72
+},
+{
+"i": 9,
+"text": "SPORTIFS.",
+"start": 2.72,
+"end": 3.52
+},
+{
+"i": 10,
+"text": "TU",
+"start": 3.52,
+"end": 3.68
+},
+{
+"i": 11,
+"text": "PEUX",
+"start": 3.68,
+"end": 3.92
+},
+{
+"i": 12,
+"text": "GAGNER",
+"start": 3.92,
+"end": 4.24
+},
+{
+"i": 13,
+"text": "LA",
+"start": 4.24,
+"end": 4.32
+},
+{
+"i": 14,
+"text": "MOITIÉ",
+"start": 4.32,
+"end": 4.64
+},
+{
+"i": 15,
+"text": "DE",
+"start": 4.64,
+"end": 4.8
+},
+{
+"i": 16,
+"text": "TES",
+"start": 4.8,
+"end": 4.96
+},
+{
+"i": 17,
+"text": "PARIS,",
+"start": 4.96,
+"end": 5.52
+},
+{
+"i": 18,
+"text": "AVOIR",
+"start": 5.52,
+"end": 5.84
+},
+{
+"i": 19,
+"text": "L'IMPRESSION",
+"start": 5.84,
+"end": 6.32
+},
+{
+"i": 20,
+"text": "DE",
+"start": 6.32,
+"end": 6.56
+},
+{
+"i": 21,
+"text": "BIEN",
+"start": 6.56,
+"end": 6.8
+},
+{
+"i": 22,
+"text": "JOUER…",
+"start": 6.8,
+"end": 7.36
+},
+{
+"i": 23,
+"text": "ET",
+"start": 7.36,
+"end": 7.6
+},
+{
+"i": 24,
+"text": "POURTANT",
+"start": 7.6,
+"end": 7.92
+},
+{
+"i": 25,
+"text": "PERDRE",
+"start": 8.16,
+"end": 8.56
+},
+{
+"i": 26,
+"text": "DE",
+"start": 8.56,
+"end": 8.64
+},
+{
+"i": 27,
+"text": "L'ARGENT.",
+"start": 8.64,
+"end": 9.28
+},
+{
+"i": 28,
+"text": "JE",
+"start": 9.28,
+"end": 9.52
+},
+{
+"i": 29,
+"text": "T'EXPLIQUE.",
+"start": 9.52,
+"end": 10.16
+},
+{
+"i": 30,
+"text": "IMAGINE",
+"start": 10.4,
+"end": 10.88
+},
+{
+"i": 31,
+"text": "QUE",
+"start": 10.88,
+"end": 10.96
+},
+{
+"i": 32,
+"text": "TU",
+"start": 10.96,
+"end": 11.12
+},
+{
+"i": 33,
+"text": "PARIES",
+"start": 11.12,
+"end": 11.52
+},
+{
+"i": 34,
+"text": "1_000",
+"start": 11.52,
+"end": 11.92
+},
+{
+"i": 35,
+"text": "FRANCS",
+"start": 11.92,
+"end": 12.16
+},
+{
+"i": 36,
+"text": "SUR",
+"start": 12.16,
+"end": 12.32
+},
+{
+"i": 37,
+"text": "UN",
+"start": 12.32,
+"end": 12.4
+},
+{
+"i": 38,
+"text": "MATCH.",
+"start": 12.4,
+"end": 12.96
+},
+{
+"i": 39,
+"text": "TU",
+"start": 12.96,
+"end": 13.2
+},
+{
+"i": 40,
+"text": "AS",
+"start": 13.2,
+"end": 13.36
+},
+{
+"i": 41,
+"text": "EXACTEMENT",
+"start": 13.36,
+"end": 13.84
+},
+{
+"i": 42,
+"text": "UNE",
+"start": 13.84,
+"end": 14.08
+},
+{
+"i": 43,
+"text": "CHANCE",
+"start": 14.08,
+"end": 14.4
+},
+{
+"i": 44,
+"text": "SUR",
+"start": 14.4,
+"end": 14.56
+},
+{
+"i": 45,
+"text": "DEUX",
+"start": 14.56,
+"end": 14.64
+},
+{
+"i": 46,
+"text": "DE",
+"start": 14.8,
+"end": 14.96
+},
+{
+"i": 47,
+"text": "GAGNER.",
+"start": 14.96,
+"end": 15.52
+},
+{
+"i": 48,
+"text": "LOGIQUEMENT,",
+"start": 15.52,
+"end": 16.24
+},
+{
+"i": 49,
+"text": "SI",
+"start": 16.24,
+"end": 16.4
+},
+{
+"i": 50,
+"text": "TU",
+"start": 16.4,
+"end": 16.56
+},
+{
+"i": 51,
+"text": "GAGNES,",
+"start": 16.56,
+"end": 17.04
+},
+{
+"i": 52,
+"text": "TU",
+"start": 17.04,
+"end": 17.2
+},
+{
+"i": 53,
+"text": "DEVRAIS",
+"start": 17.2,
+"end": 17.52
+},
+{
+"i": 54,
+"text": "RÉCUPÉRER",
+"start": 17.52,
+"end": 18.08
+},
+{
+"i": 55,
+"text": "2_000",
+"start": 18.08,
+"end": 18.48
+},
+{
+"i": 56,
+"text": "FRANCS.",
+"start": 18.56,
+"end": 19.04
+},
+{
+"i": 57,
+"text": "MAIS",
+"start": 19.04,
+"end": 19.2
+},
+{
+"i": 58,
+"text": "LE",
+"start": 19.2,
+"end": 19.36
+},
+{
+"i": 59,
+"text": "SITE",
+"start": 19.36,
+"end": 19.68
+},
+{
+"i": 60,
+"text": "DE",
+"start": 19.68,
+"end": 19.76
+},
+{
+"i": 61,
+"text": "PARIS",
+"start": 19.76,
+"end": 20.08
+},
+{
+"i": 62,
+"text": "NE",
+"start": 20.08,
+"end": 20.24
+},
+{
+"i": 63,
+"text": "TE",
+"start": 20.24,
+"end": 20.4
+},
+{
+"i": 64,
+"text": "PROPOSE",
+"start": 20.4,
+"end": 20.72
+},
+{
+"i": 65,
+"text": "QUE",
+"start": 20.72,
+"end": 20.96
+},
+{
+"i": 66,
+"text": "1_900",
+"start": 20.96,
+"end": 21.6
+},
+{
+"i": 67,
+"text": "FRANCS.",
+"start": 21.68,
+"end": 22.16
+},
+{
+"i": 68,
+"text": "ET",
+"start": 22.16,
+"end": 22.4
+},
+{
+"i": 69,
+"text": "C'EST",
+"start": 22.4,
+"end": 22.56
+},
+{
+"i": 70,
+"text": "LÀ",
+"start": 22.56,
+"end": 22.8
+},
+{
+"i": 71,
+"text": "QUE",
+"start": 22.8,
+"end": 23.04
+},
+{
+"i": 72,
+"text": "TOUT",
+"start": 23.04,
+"end": 23.28
+},
+{
+"i": 73,
+"text": "SE",
+"start": 23.28,
+"end": 23.44
+},
+{
+"i": 74,
+"text": "JOUE.",
+"start": 23.44,
+"end": 24
+},
+{
+"i": 75,
+"text": "MAINTENANT,",
+"start": 24,
+"end": 24.48
+},
+{
+"i": 76,
+"text": "IMAGINE",
+"start": 24.48,
+"end": 24.88
+},
+{
+"i": 77,
+"text": "QUE",
+"start": 24.96,
+"end": 25.12
+},
+{
+"i": 78,
+"text": "TU",
+"start": 25.12,
+"end": 25.28
+},
+{
+"i": 79,
+"text": "FAIS",
+"start": 25.28,
+"end": 25.44
+},
+{
+"i": 80,
+"text": "100",
+"start": 25.44,
+"end": 25.68
+},
+{
+"i": 81,
+"text": "PARIS",
+"start": 25.76,
+"end": 26.16
+},
+{
+"i": 82,
+"text": "DE",
+"start": 26.16,
+"end": 26.24
+},
+{
+"i": 83,
+"text": "CE",
+"start": 26.24,
+"end": 26.4
+},
+{
+"i": 84,
+"text": "TYPE.",
+"start": 26.4,
+"end": 26.72
+},
+{
+"i": 85,
+"text": "TU",
+"start": 26.72,
+"end": 26.96
+},
+{
+"i": 86,
+"text": "EN",
+"start": 26.96,
+"end": 27.12
+},
+{
+"i": 87,
+"text": "GAGNES",
+"start": 27.12,
+"end": 27.44
+},
+{
+"i": 88,
+"text": "50",
+"start": 27.44,
+"end": 27.92
+},
+{
+"i": 89,
+"text": "ET",
+"start": 27.92,
+"end": 28.08
+},
+{
+"i": 90,
+"text": "TU",
+"start": 28.08,
+"end": 28.24
+},
+{
+"i": 91,
+"text": "EN",
+"start": 28.24,
+"end": 28.4
+},
+{
+"i": 92,
+"text": "PERDS",
+"start": 28.4,
+"end": 28.72
+},
+{
+"i": 93,
+"text": "50.",
+"start": 28.72,
+"end": 29.2
+},
+{
+"i": 94,
+"text": "TU",
+"start": 29.36,
+"end": 29.6
+},
+{
+"i": 95,
+"text": "AS",
+"start": 29.6,
+"end": 29.76
+},
+{
+"i": 96,
+"text": "MISÉ",
+"start": 29.76,
+"end": 30.08
+},
+{
+"i": 97,
+"text": "100_000",
+"start": 30.08,
+"end": 30.56
+},
+{
+"i": 98,
+"text": "FRANCS,",
+"start": 30.64,
+"end": 30.96
+},
+{
+"i": 99,
+"text": "MAIS",
+"start": 30.96,
+"end": 31.12
+},
+{
+"i": 100,
+"text": "TES",
+"start": 31.12,
+"end": 31.28
+},
+{
+"i": 101,
+"text": "GAINS",
+"start": 31.28,
+"end": 31.6
+},
+{
+"i": 102,
+"text": "NE",
+"start": 31.6,
+"end": 31.68
+},
+{
+"i": 103,
+"text": "TE",
+"start": 31.68,
+"end": 31.84
+},
+{
+"i": 104,
+"text": "RAPPORTENT",
+"start": 31.84,
+"end": 32.24
+},
+{
+"i": 105,
+"text": "QUE",
+"start": 32.24,
+"end": 32.4
+},
+{
+"i": 106,
+"text": "95_000",
+"start": 32.4,
+"end": 33.2
+},
+{
+"i": 107,
+"text": "FRANCS.",
+"start": 33.36,
+"end": 33.84
+},
+{
+"i": 108,
+"text": "RÉSULTAT :",
+"start": 33.84,
+"end": 34.64
+},
+{
+"i": 109,
+"text": "MOINS",
+"start": 34.72,
+"end": 35.12
+},
+{
+"i": 110,
+"text": "5_000",
+"start": 35.12,
+"end": 35.44
+},
+{
+"i": 111,
+"text": "FRANCS,",
+"start": 35.6,
+"end": 36
+},
+{
+"i": 112,
+"text": "ALORS",
+"start": 36,
+"end": 36.24
+},
+{
+"i": 113,
+"text": "QUE",
+"start": 36.24,
+"end": 36.4
+},
+{
+"i": 114,
+"text": "TU",
+"start": 36.4,
+"end": 36.56
+},
+{
+"i": 115,
+"text": "AS",
+"start": 36.56,
+"end": 36.64
+},
+{
+"i": 116,
+"text": "GAGNÉ",
+"start": 36.64,
+"end": 37.04
+},
+{
+"i": 117,
+"text": "AUTANT",
+"start": 37.04,
+"end": 37.28
+},
+{
+"i": 118,
+"text": "DE",
+"start": 37.28,
+"end": 37.36
+},
+{
+"i": 119,
+"text": "FOIS",
+"start": 37.36,
+"end": 37.6
+},
+{
+"i": 120,
+"text": "QUE",
+"start": 37.6,
+"end": 37.76
+},
+{
+"i": 121,
+"text": "TU",
+"start": 37.76,
+"end": 37.92
+},
+{
+"i": 122,
+"text": "AS",
+"start": 37.92,
+"end": 38
+},
+{
+"i": 123,
+"text": "PERDU !",
+"start": 38,
+"end": 38.64
+},
+{
+"i": 124,
+"text": "CES",
+"start": 38.64,
+"end": 38.88
+},
+{
+"i": 125,
+"text": "100",
+"start": 38.88,
+"end": 39.12
+},
+{
+"i": 126,
+"text": "FRANCS",
+"start": 39.2,
+"end": 39.52
+},
+{
+"i": 127,
+"text": "QUI",
+"start": 39.52,
+"end": 39.68
+},
+{
+"i": 128,
+"text": "MANQUENT",
+"start": 39.68,
+"end": 40.0
+},
+{
+"i": 129,
+"text": "À",
+"start": 40,
+"end": 40.16
+},
+{
+"i": 130,
+"text": "CHAQUE",
+"start": 40.16,
+"end": 40.32
+},
+{
+"i": 131,
+"text": "VICTOIRE,",
+"start": 40.32,
+"end": 40.88
+},
+{
+"i": 132,
+"text": "C'EST",
+"start": 40.96,
+"end": 41.2
+},
+{
+"i": 133,
+"text": "L'AVANTAGE",
+"start": 41.2,
+"end": 41.68
+},
+{
+"i": 134,
+"text": "DU",
+"start": 41.76,
+"end": 41.92
+},
+{
+"i": 135,
+"text": "SITE",
+"start": 41.92,
+"end": 42.24
+},
+{
+"i": 136,
+"text": "DE",
+"start": 42.24,
+"end": 42.4
+},
+{
+"i": 137,
+"text": "PARIS.",
+"start": 42.4,
+"end": 42.96
+},
+{
+"i": 138,
+"text": "ET",
+"start": 42.96,
+"end": 43.12
+},
+{
+"i": 139,
+"text": "PLUS",
+"start": 43.12,
+"end": 43.36
+},
+{
+"i": 140,
+"text": "TU",
+"start": 43.36,
+"end": 43.6
+},
+{
+"i": 141,
+"text": "JOUES,",
+"start": 43.6,
+"end": 44
+},
+{
+"i": 142,
+"text": "PLUS",
+"start": 44,
+"end": 44.24
+},
+{
+"i": 143,
+"text": "CET",
+"start": 44.24,
+"end": 44.48
+},
+{
+"i": 144,
+"text": "AVANTAGE",
+"start": 44.48,
+"end": 44.88
+},
+{
+"i": 145,
+"text": "PEUT",
+"start": 44.88,
+"end": 45.04
+},
+{
+"i": 146,
+"text": "TE",
+"start": 45.04,
+"end": 45.2
+},
+{
+"i": 147,
+"text": "COÛTER",
+"start": 45.2,
+"end": 45.6
+},
+{
+"i": 148,
+"text": "CHER.",
+"start": 45.6,
+"end": 46.16
+},
+{
+"i": 149,
+"text": "TU",
+"start": 46.16,
+"end": 46.4
+},
+{
+"i": 150,
+"text": "COMPRENDS",
+"start": 46.4,
+"end": 46.72
+},
+{
+"i": 151,
+"text": "MAINTENANT",
+"start": 46.72,
+"end": 47.04
+},
+{
+"i": 152,
+"text": "POURQUOI",
+"start": 47.04,
+"end": 47.36
+},
+{
+"i": 153,
+"text": "LES",
+"start": 47.36,
+"end": 47.44
+},
+{
+"i": 154,
+"text": "SITES",
+"start": 47.44,
+"end": 47.76
+},
+{
+"i": 155,
+"text": "DE",
+"start": 47.76,
+"end": 47.84
+},
+{
+"i": 156,
+"text": "PARIS",
+"start": 47.84,
+"end": 48.16
+},
+{
+"i": 157,
+"text": "PEUVENT",
+"start": 48.16,
+"end": 48.4
+},
+{
+"i": 158,
+"text": "GAGNER",
+"start": 48.4,
+"end": 48.64
+},
+{
+"i": 159,
+"text": "DE",
+"start": 48.64,
+"end": 48.72
+},
+{
+"i": 160,
+"text": "L'ARGENT",
+"start": 48.72,
+"end": 49.2
+},
+{
+"i": 161,
+"text": "MÊME",
+"start": 49.2,
+"end": 49.36
+},
+{
+"i": 162,
+"text": "QUAND",
+"start": 49.36,
+"end": 49.6
+},
+{
+"i": 163,
+"text": "TOI,",
+"start": 49.6,
+"end": 49.92
+},
+{
+"i": 164,
+"text": "TU",
+"start": 49.92,
+"end": 50.08
+},
+{
+"i": 165,
+"text": "GAGNES ?",
+"start": 50.08,
+"end": 50.48
+},
+{
+"i": 166,
+"text": "ABONNE-TOI",
+"start": 50.72,
+"end": 51.36
+},
+{
+"i": 167,
+"text": "À",
+"start": 51.36,
+"end": 51.52
+},
+{
+"i": 168,
+"text": "LEFINANCIER.",
+"start": 51.52,
+"end": 52.32
+},
+{
+"i": 169,
+"text": "ON",
+"start": 52.4,
+"end": 52.56
+},
+{
+"i": 170,
+"text": "DÉCRYPTE",
+"start": 52.56,
+"end": 53.2
+},
+{
+"i": 171,
+"text": "L'ARGENT",
+"start": 53.2,
+"end": 53.6
+},
+{
+"i": 172,
+"text": "AVEC",
+"start": 53.6,
+"end": 53.76
+},
+{
+"i": 173,
+"text": "LES",
+"start": 53.76,
+"end": 53.92
+},
+{
+"i": 174,
+"text": "MATHS.",
+"start": 53.92,
+"end": 54.32
+}
+]
