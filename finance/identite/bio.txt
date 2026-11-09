@@ -9,7 +9,7 @@ L'argent expliqué simplement par un actuaire 🇨🇮 Épargne, crédit, inflat
 Choix 3 (64 caractères) :
 Actuaire ivoirien 📊 Comprends ton argent en 60 secondes, en FCFA
 
-PHOTO DE PROFIL (1080x1080, TikTok l'affiche en rond)
-- profil-A-perso-piece.png : le personnage vert et une pièce FCFA (recommandé)
-- profil-B-perso-courbe.png : le personnage pointe une courbe qui monte
+PHOTO DE PROFIL (1080x1080, TikTok l'affiche en rond) - couleur de la chaîne : bleu ciel #38BDF8 sur bleu nuit #0B1220
+- profil-A-perso-piece.png : le personnage bleu ciel et une pièce FCFA (recommandé)
+- profil-B-perso-courbe.png : le personnage bleu ciel pointe une courbe qui monte
 - profil-C-monogramme.png : « LF » et une pièce
