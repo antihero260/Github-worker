@@ -1,0 +1,41 @@
+VIDÉO - POURQUOI LES PARIS SPORTIFS TE FONT PERDRE (sujet 3 de la liste)
+Chaîne : Lefinancier. Durée visée : environ 70 secondes (environ 190 mots).
+
+TITRE-PROMESSE (en haut de la vidéo)
+LES PARIS SPORTIFS TE FONT PERDRE, MÊME QUAND TU GAGNES
+
+TEXTE DE LA VOIX (à coller dans ElevenLabs)
+
+Tu peux gagner un pari ce soir… et quand même perdre de l'argent à la fin de l'année. Et ce n'est pas de la malchance. Ce sont des maths.
+
+Imagine un pari à une chance sur deux. Par exemple : plus ou moins de deux buts et demi, dans un match très serré. La cote juste, ce serait 2 : tu mises 1 000 francs, tu récupères 2 000.
+
+Mais le bookmaker t'affiche 1,90. Cette petite différence, c'est sa marge.
+
+Maintenant, tu paries 1 000 francs sur 100 matchs. Tu en gagnes environ la moitié : 50 fois 1 900, ça fait 95 000 francs. Mais tu as misé 100 000. Tu as perdu 5 000 francs… en gagnant un pari sur deux.
+
+Et les combinés, c'est encore pire. La marge se multiplie à chaque match ajouté. Sur un combiné de cinq matchs, tu perds en moyenne environ 23 % de ta mise.
+
+En général, les bookmakers gardent entre 5 et 10 % sur les paris de foot. Sur le long terme, la maison gagne toujours.
+
+Si tu paries, fais-le pour le plaisir, avec une somme que tu acceptes de perdre. Pas pour devenir riche.
+
+Abonne-toi à LeFinancier : ici, on fait les calculs à ta place.
+
+CHIFFRES À L'ÉCRAN
+- Cote juste 2,00 / cote affichée 1,90
+- 100 paris de 1 000 F = 100 000 F misés
+- 50 gagnés x 1 900 F = 95 000 F récupérés -> -5 000 F
+- Combiné de 5 matchs -> -23 % en moyenne
+- Marge des bookmakers : 5 à 10 % (foot)
+
+CALCULS
+- Pari à 50 % avec une cote de 1,90 : gain moyen par pari = 0,5 x 1 900 - 1 000 = -50 F, soit -5 % de la mise.
+- 100 paris : -50 x 100 = -5 000 F en moyenne (95 000 F récupérés pour 100 000 F misés).
+- Combiné de 5 matchs avec 5 % de marge chacun : on récupère en moyenne 0,95^5 = 0,774 de la mise, soit environ -23 %.
+- La marge réelle varie selon le bookmaker et le match : vérifier les cotes du jour avant le tournage si on cite un opérateur.
+
+SOURCES (marge des bookmakers sur le foot)
+- Altenar : 1N2 football « élite » entre 104 % et 107 % (marge de 4 à 7 %), autres divisions 107 % à 110 %.
+- Gaming & Co (analyse Propus Partners) : forte différence de marges entre bookmakers, overround moyen de 110,7 avant match tous marchés confondus.
+- Timeform : principe de l'overround (la somme des probabilités 1/cote dépasse 100 %).
