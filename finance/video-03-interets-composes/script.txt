@@ -1,0 +1,24 @@
+VIDÉO 3 - LES INTÉRÊTS COMPOSÉS, EN MODE HISTOIRE : AWA ET MARIAM (sujet 7 de la liste)
+Chaîne : Lefinancier. Durée visée : environ 75 secondes (environ 200 mots).
+Awa et Mariam sont des personnages inventés.
+
+TITRE-PROMESSE (en haut de la vidéo)
+MÊME SOMME, MÊME TAUX : L'UNE FINIT AVEC LE DOUBLE
+
+TEXTE DE LA VOIX (à coller dans ElevenLabs)
+
+Deux sœurs placent la même somme, au même taux, pendant la même durée. Trente ans plus tard, l'une a deux fois plus d'argent que l'autre. Comment c'est possible ? Voici leur histoire. Awa et Mariam ont 25 ans. Chacune place 1 million de francs à 6 % par an. Fin de la première année : chacune gagne 60 000 francs d'intérêts. Awa les retire et se fait plaisir. Mariam, elle, n'y touche pas. Deuxième année. Awa gagne encore 60 000. Mariam gagne 63 600. Pourquoi ? Parce que ses intérêts de l'an dernier ont, eux aussi, rapporté des intérêts. 3 600 francs de différence. Awa rigole : « Tout ça pour ça ? » Mais chaque année, l'écart grandit. Trente ans plus tard, la dernière année, Awa touche toujours 60 000 francs. Mariam, elle, en touche 325 000. Faisons les comptes. Awa : son million, plus 1 800 000 francs retirés au fil des ans. Total : 2 800 000. Mariam : 5 700 000 francs. Plus du double. Ça s'appelle les intérêts composés : des intérêts qui rapportent des intérêts. Le secret de Mariam ? Elle a laissé le temps travailler. Et toi, tu es Awa ou Mariam ? Abonne-toi à LeFinancier. On décrypte l'argent avec les maths.
+
+CHIFFRES À L'ÉCRAN
+- Départ : 1 000 000 F chacune, à 6 % par an, pendant 30 ans
+- Année 1 : 60 000 F d'intérêts chacune
+- Année 2 : Awa 60 000 F / Mariam 63 600 F
+- Année 30 : Awa 60 000 F / Mariam 325 000 F
+- Total : Awa 2 800 000 F / Mariam 5 700 000 F
+
+CALCULS (valeurs exactes)
+- Awa retire ses intérêts chaque année : 60 000 F x 30 = 1 800 000 F, plus son million = 2 800 000 F.
+- Mariam laisse ses intérêts : 1 000 000 x 1,06^30 = 5 743 491 F (la voix arrondit à 5 700 000).
+- Intérêts de Mariam la 2e année : 1 060 000 x 6 % = 63 600 F. La 30e année : 325 103 F (arrondi à 325 000).
+- Rapport : 5 743 491 / 2 800 000 = 2,05, donc « plus du double ».
+- Le taux de 6 % est un exemple de calcul, pas une promesse de rendement ni un conseil de placement.
