@@ -1,24 +1,21 @@
-VIDÉO 3 - LA RÈGLE DE 72 : EN COMBIEN DE TEMPS TON ARGENT DOUBLE (sujet 4 de la liste)
-Chaîne : Lefinancier. Durée visée : environ 60 secondes (environ 165 mots).
+VIDÉO 3 - LA RÈGLE DE 72, EN MODE HISTOIRE : KOFFI ET YAO (sujet 4 de la liste)
+Chaîne : Lefinancier. Durée visée : environ 70 secondes (environ 190 mots).
+Koffi et Yao sont des personnages inventés.
 
 TITRE-PROMESSE (en haut de la vidéo)
-EN COMBIEN DE TEMPS TON ARGENT DOUBLE ?
+MÊME SOMME AU DÉPART, 4 FOIS PLUS D'ARGENT À L'ARRIVÉE
 
 TEXTE DE LA VOIX (à coller dans ElevenLabs)
 
-Ton argent peut doubler tout seul. Et tu peux savoir en combien de temps, de tête, en trois secondes. Ça s'appelle la règle de 72. Tu prends 72, et tu le divises par le taux que ton argent te rapporte chaque année. Le résultat, c'est le nombre d'années qu'il lui faut pour doubler. Exemple : ton argent rapporte 6 % par an. 72 divisé par 6, ça fait 12. En 12 ans, 100 000 francs deviennent 200 000, si tu laisses les intérêts s'ajouter. À 2 % ? 72 divisé par 2 : il te faut 36 ans. À 12 % ? Seulement 6 ans. Mais attention : la règle marche aussi contre toi. Si les prix augmentent de 3 % par an, ils doublent en 24 ans. Et une dette à 24 % d'intérêt double en 3 ans. Alors la prochaine fois qu'on te parle d'un taux, divise 72 par ce taux. Tu sauras tout de suite si le temps travaille pour toi, ou contre toi. Abonne-toi à LeFinancier. On décrypte l'argent avec les maths.
+Deux amis reçoivent la même somme, le même jour. Vingt-quatre ans plus tard, l'un a quatre fois plus d'argent que l'autre. Et pourtant, il n'a pas travaillé plus. Voici leur histoire. Koffi et Yao ont vingt ans. Chacun reçoit 100 000 francs. Koffi se dit : « Moi, je ne prends aucun risque. » Il range ses billets dans une boîte, sous son lit. Yao, lui, place son argent à 6 % par an, et il n'y touche plus. Douze ans passent. Koffi ouvre sa boîte : toujours 100 000 francs. Yao regarde son compte : 200 000. Son argent a doublé tout seul. Encore douze ans. Koffi : toujours 100 000 francs. Mais avec des prix qui montent de 3 % par an, tout coûte deux fois plus cher. Sa boîte n'achète plus que la moitié. Et Yao ? 400 000 francs. Le secret de Yao tient en un seul nombre : 72. Divise 72 par ton taux, et tu sais en combien d'années ton argent double. 72 divisé par 6 : douze ans. Koffi a gardé son argent. Yao l'a fait travailler. Et toi, tu es Koffi ou Yao ? Abonne-toi à LeFinancier. On décrypte l'argent avec les maths.
 
 CHIFFRES À L'ÉCRAN
-- 72 / taux = nombre d'années pour doubler
-- 6 % -> 12 ans (100 000 F -> 200 000 F)
-- 2 % -> 36 ans ; 12 % -> 6 ans
-- Prix à +3 % par an -> doublent en 24 ans
-- Dette à 24 % -> double en 3 ans
+- Départ : Koffi 100 000 F (boîte) / Yao 100 000 F (placé à 6 % par an)
+- 12 ans : Koffi 100 000 F / Yao 200 000 F
+- 24 ans : Koffi 100 000 F, qui n'achètent plus que la moitié / Yao 400 000 F
+- 72 / 6 = 12 ans
 
-CALCULS (la règle de 72 est une approximation ; valeurs exactes entre parenthèses)
-- 6 % : 72/6 = 12 ans (exact : 11,9 ans)
-- 2 % : 72/2 = 36 ans (exact : 35,0 ans)
-- 12 % : 72/12 = 6 ans (exact : 6,1 ans)
-- 3 % : 72/3 = 24 ans (exact : 23,4 ans)
-- 24 % : 72/24 = 3 ans (exact : 3,2 ans)
-- Les taux sont des exemples de calcul, pas des promesses de rendement ni des conseils de placement.
+CALCULS (valeurs exactes)
+- 100 000 F à 6 % par an, intérêts laissés sur le compte : 201 220 F après 12 ans, 404 893 F après 24 ans. La voix arrondit à 200 000 et 400 000.
+- Prix à +3 % par an pendant 24 ans : multipliés par 2,03. Les 100 000 F de Koffi valent alors environ 49 000 F d'aujourd'hui.
+- Le taux de 6 % et l'inflation de 3 % sont des exemples de calcul, pas des promesses de rendement ni des conseils de placement.
