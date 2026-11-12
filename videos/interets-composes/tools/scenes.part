@@ -1,0 +1,485 @@
+# ================================================================ ÉLÉMENTS DE LA VIDÉO « INTÉRÊTS COMPOSÉS » (Emma en rouge, Julie en bleu)
+ROUGE_E, BLEU_J = "#FF4D4D", "#38BDF8"
+BOUCHES = {"content": "M41 32 Q50 40 59 32", "triste": "M41 38 Q50 30 59 38", "o": "M45 34 Q50 42 55 34 Q50 27 45 34", "rire": "M39 30 Q50 46 61 30 Z"}
+
+
+def perso2(id_, cx, pieds, h, coul, genre="emma"):
+    """Personnage articulé avec un visage (yeux qui clignent, pupilles, bouche) et un accessoire : nœud (Emma) ou lunettes (Julie)."""
+    w = round(h * 160 / 290)
+    groupes = []
+    for k, (forme, _) in PARTIES.items():
+        visage = ""
+        if k == "tete":
+            forme = TETES["toi"]
+            acc = ('<path d="M50 3 L37 -7 L37 12 Z M50 3 L63 -7 L63 12 Z" fill="#fff" stroke="#0B1220" stroke-width="2.5" stroke-linejoin="round" /><circle cx="50" cy="3" r="4" fill="#0B1220" />'
+                   if genre == "emma" else
+                   '<circle cx="41" cy="20" r="9" fill="none" stroke="#0B1220" stroke-width="2.6" /><circle cx="59" cy="20" r="9" fill="none" stroke="#0B1220" stroke-width="2.6" />')
+            visage = (f'<g class="vis"><g id="{id_}-yeux"><circle cx="41" cy="20" r="6.5" fill="#fff" /><circle cx="59" cy="20" r="6.5" fill="#fff" />'
+                      f'<g id="{id_}-pup"><circle cx="42" cy="21" r="3" fill="#0B1220" /><circle cx="60" cy="21" r="3" fill="#0B1220" /></g></g>'
+                      f'<path id="{id_}-bouche" d="{BOUCHES["content"]}" fill="none" stroke="#0B1220" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" />{acc}</g>')
+        groupes.append(f'<g id="{id_}-{k}"><g class="c">{forme}</g><g class="p" style="--pc: {coul}">{forme}</g>{visage}</g>')
+    return (f'<svg id="{id_}" class="pj-perso pj-duo-perso" viewBox="-30 -20 160 290" '
+            f'style="left: {cx - w // 2}px; top: {pieds - round(h * 268 / 290)}px; width: {w}px; height: {h}px">'
+            f'<g id="{id_}-vie"><g id="{id_}-corps">{"".join(groupes)}</g></g></svg>')
+
+
+def humeur(s, pid, g, h="content"):
+    plein = "#0B1220" if h == "rire" else "none"
+    s.j(f'tl.set("#{pid}-bouche", {{ attr: {{ d: "{BOUCHES[h]}", fill: "{plein}" }} }}, {s.L(g)});')
+
+
+def cligne(s, pid, g0, g1, periode=2.3, decal=0.9):
+    t = g0 + decal
+    while t < g1 - 0.3:
+        s.j(f'tl.to("#{pid}-yeux", {{ scaleY: 0.1, duration: 0.06, yoyo: true, repeat: 1, svgOrigin: "50 20" }}, {s.L(t)});')
+        t += periode
+
+
+def regarde(s, pid, g, dx, dy=0):
+    s.j(f'tl.to("#{pid}-pup", {{ x: {dx}, y: {dy}, duration: 0.15 }}, {s.L(g)});')
+
+
+def pile_videos(s, p, items, piste0, sons=True):
+    """Vraies vidéos empilées dans un cadre : une nouvelle à chaque temps donné (coupe sèche + petit zoom)."""
+    out = []
+    for k, (t, f) in enumerate(items):
+        t2 = items[k + 1][0] if k + 1 < len(items) else s.fin
+        out.append(f'<div id="{p}-{k}" class="ic-plein" style="opacity: 0"><video id="{p}-{k}-v" class="clip" src="assets/video/{f}.mp4" data-start="{round(s.L(t), 2)}" '
+                   f'data-duration="{round(t2 - t + 0.1, 2)}" data-track-index="{piste0 + k % 3}" muted playsinline></video></div>')
+        s.j(f'tl.set("#{p}-{k}", {{ opacity: 1 }}, {s.L(t)});')
+        s.j(f'tl.fromTo("#{p}-{k}", {{ scale: 1.2 }}, {{ scale: 1.02, duration: {round(max(0.2, t2 - t), 3)}, ease: "power2.out", immediateRender: false }}, {s.L(t)});')
+        if k + 1 < len(items):
+            s.j(f'tl.set("#{p}-{k}", {{ opacity: 0 }}, {s.L(t2 + 0.02)});')
+        if sons and k > 0:
+            son(t, tour(["balaie-rapide", "fouet", "balaie-court", "swoosh-court", "declencheur", "balaie-air", "glitch-mini", "souffle-rapide"]), 0.36, f"écran : {f}")
+    return "".join(out)
+
+
+def duel(s, k, items_e, items_j, taille=380, cx_e=330, cx_j=1590, ecrans=True, noms=True):
+    """Le décor du duel : moitié rouge (Emma) à gauche, moitié bleue (Julie) à droite, un écran vidéo encadré par personnage."""
+    cam(s, '<div class="ic-fond"></div><div class="ic-sol"></div>')
+    if ecrans:
+        cam(s, f'<div id="{k}-ee" class="ic-ecran" style="left: 90px; top: 70px; width: 640px; height: 360px; border-color: {ROUGE_E}">{pile_videos(s, k + "-ev", items_e, 5)}</div>')
+        cam(s, f'<div id="{k}-ej" class="ic-ecran" style="left: 1190px; top: 70px; width: 640px; height: 360px; border-color: {BLEU_J}">{pile_videos(s, k + "-jv", items_j, 8, False)}</div>')
+        s.j(f'tl.set("#{k}-ee", {{ rotation: -2 }}, 0);')
+        s.j(f'tl.set("#{k}-ej", {{ rotation: 2 }}, 0);')
+    e, j = f"{k}-emma", f"{k}-julie"
+    cam(s, perso2(e, cx_e, 900, taille, ROUGE_E, "emma"))
+    cam(s, perso2(j, cx_j, 900, taille, BLEU_J, "julie"))
+    vit(s, e, s.debut, s.fin - 0.2)
+    vit(s, j, s.debut, s.fin - 0.2, 4, 0.5)
+    cligne(s, e, s.debut, s.fin)
+    cligne(s, j, s.debut, s.fin, 2.7, 1.5)
+    if noms:
+        haut = 900 - round(taille * 268 / 290) - 6
+        puce(s, f"{k}-ne", "Emma", cx_e, haut, s.debut, f"font-size: 44px; background: {ROUGE_E}; color: #0B1220")
+        puce(s, f"{k}-nj", "Julie", cx_j, haut, s.debut, f"font-size: 44px; background: {BLEU_J}; color: #0B1220")
+    return e, j
+
+
+def carte_argent(s, cid, x, y, coul, titre_c, montant, g, sous="", w=400):
+    cam(s, f'<div id="{cid}" class="ic-carte" style="left: {x}px; top: {y}px; width: {w}px; border-color: {coul}; opacity: 0"><span>{titre_c}</span>'
+           f'<b><i id="{cid}-n">{fcfa(montant)}</i><em>F</em></b><u id="{cid}-s">{sous}</u></div>')
+    s.j(f'tl.fromTo("#{cid}", {{ opacity: 0, y: 120, scale: 0.7 }}, {{ opacity: 1, y: 0, scale: 1, duration: 0.25, ease: "back.out(1.8)", immediateRender: false }}, {s.L(g)});')
+    son(g, tour(["pop-long", "pop-bulle", "clic-positif"]), 0.4, f"carte {titre_c}")
+
+
+def plus(s, pid, texte, x, y, g, coul, taille=90, tenue=1.3):
+    """Gain qui surgit (« +60 000 F »), flotte vers le haut, puis disparaît."""
+    cam(s, f'<div id="{pid}" class="ic-plus" style="left: {x}px; top: {y}px; font-size: {taille}px; color: {coul}; opacity: 0">{texte}</div>')
+    s.j(f'tl.fromTo("#{pid}", {{ opacity: 0, scale: 0.3, y: 40 }}, {{ opacity: 1, scale: 1, y: 0, duration: 0.2, ease: "back.out(2.6)", immediateRender: false }}, {s.L(g)});')
+    s.j(f'tl.to("#{pid}", {{ y: -50, opacity: 0, duration: 0.3, ease: "power1.in" }}, {s.L(g + tenue)});')
+
+
+def vole(s, vid, x0, y0, x1, y1, g, n=6, pas=0.1, texte=""):
+    """Pièces qui s'envolent d'un point à un autre."""
+    for k in range(n):
+        gk = g + k * pas
+        cam(s, f'<div id="{vid}-{k}" class="ic-piece" data-layout-ignore style="left: {x0}px; top: {y0}px; opacity: 0">{texte}</div>')
+        s.j(f'tl.fromTo("#{vid}-{k}", {{ opacity: 1, x: 0, y: 0, scale: 1 }}, {{ opacity: 1, x: {x1 - x0}, y: {y1 - y0}, scale: 0.6, duration: 0.5, ease: "power2.in", immediateRender: false }}, {s.L(gk)});')
+        s.j(f'tl.set("#{vid}-{k}", {{ opacity: 0 }}, {s.L(gk + 0.5)});')
+        son(gk + 0.4, tour(["piece-gagne", "pieces", "pieces-2"]), 0.3, "pièce qui part")
+
+
+def ligne(s, lid, texte, x, y, g, coul="#F2B705"):
+    cam(s, f'<div id="{lid}" class="ic-ligne" style="left: {x}px; top: {y}px; border-color: {coul}; opacity: 0">{texte}</div>')
+    s.j(f'tl.fromTo("#{lid}", {{ opacity: 0, x: 120 }}, {{ opacity: 1, x: 0, duration: 0.2, ease: "power4.out", immediateRender: false }}, {s.L(g)});')
+    son(g, tour(["notif-indice", "pop-click", "clic-positif"]), 0.38, "ligne de calcul")
+
+
+def barre(s, bid, x, base, w, h, coul, g, d=0.6):
+    cam(s, f'<div id="{bid}" class="ic-barre" style="left: {x}px; top: {base - h}px; width: {w}px; height: {h}px; background: {coul}"></div>')
+    s.j(f'tl.set("#{bid}", {{ transformOrigin: "50% 100%", scaleY: 0 }}, 0);')
+    s.j(f'tl.to("#{bid}", {{ scaleY: 1, duration: {d}, ease: "power2.out" }}, {s.L(g)});')
+
+
+def courbes(s, gid, x, y, w, h, g, d):
+    """Emma : ligne plate. Julie : courbe qui s'envole. Compteur d'années 2 → 30."""
+    L = 1300
+    cam(s, f'<div id="{gid}" class="ic-graphe" style="left: {x}px; top: {y}px; width: {w}px; height: {h}px; opacity: 0">'
+           f'<svg viewBox="0 0 800 380" width="{w}" height="{h}"><line x1="40" y1="340" x2="780" y2="340" stroke="#3a4462" stroke-width="4" />'
+           f'<path id="{gid}-e" d="M40 300 L760 300" fill="none" stroke="{ROUGE_E}" stroke-width="14" stroke-linecap="round" stroke-dasharray="{L}" stroke-dashoffset="{L}" />'
+           f'<path id="{gid}-j" d="M40 300 C 380 290, 600 210, 760 40" fill="none" stroke="{BLEU_J}" stroke-width="14" stroke-linecap="round" stroke-dasharray="{L}" stroke-dashoffset="{L}" /></svg>'
+           f'<b class="ic-an" style="left: 30px; top: 14px">Année <i id="{gid}-n">2</i></b></div>')
+    s.j(f'tl.fromTo("#{gid}", {{ opacity: 0, y: 80 }}, {{ opacity: 1, y: 0, duration: 0.22, ease: "back.out(1.6)", immediateRender: false }}, {s.L(g - 0.2)});')
+    s.j(f'tl.to(["#{gid}-e", "#{gid}-j"], {{ strokeDashoffset: 0, duration: {d}, ease: "power1.inOut" }}, {s.L(g)});')
+    s.compteur(f"#{gid}-n", g, 2, 30, d)
+    son(g, "riser-synth", 0.4, "l'écart grandit", d=d)
+    son(g, "compteur", 0.36, "les années défilent", d=d)
+
+
+IC_CSS = """      .pj-duo-perso .p * { fill: var(--pc); }
+      .ic-fond { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; background: linear-gradient(90deg, #3a0f1a 0%, #1c0b15 44%, #0b1220 56%, #0c2a4a 100%); }
+      .ic-sol { position: absolute; left: 0; top: 900px; width: 1920px; height: 180px; background: rgba(0, 0, 0, 0.38); }
+      .ic-ecran { position: absolute; border: 8px solid; border-radius: 26px; overflow: hidden; background: #000; box-shadow: 0 30px 90px rgba(0, 0, 0, 0.7); }
+      .ic-plein { position: absolute; left: 0; top: 0; width: 100%; height: 100%; }
+      .ic-plein video { position: absolute; left: 0; top: 0; width: 100%; height: 100%; object-fit: cover; }
+      .ic-moitie { position: absolute; top: 0; width: 960px; height: 1080px; overflow: hidden; }
+      .ic-sep { position: absolute; left: 948px; top: -80px; width: 24px; height: 1240px; background: #fff; box-shadow: 0 0 50px rgba(0, 0, 0, 0.9); }
+      .ic-teinte { position: absolute; left: 0; top: 0; width: 100%; height: 100%; }
+      .ic-carte { position: absolute; padding: 16px 24px 14px; background: #0f1b33; border: 5px solid; border-radius: 22px; font-family: "Anton", sans-serif; color: #ecece8; box-shadow: 0 30px 90px rgba(0, 0, 0, 0.7); }
+      .ic-carte span { display: block; font-size: 32px; text-transform: uppercase; color: #b9c7d8; }
+      .ic-carte b { display: block; font-weight: 400; font-size: 76px; line-height: 1.08; color: #fff; }
+      .ic-carte b i { font-style: normal; }
+      .ic-carte b em { font-style: normal; font-size: 42px; margin-left: 10px; }
+      .ic-carte u { display: block; text-decoration: none; font-size: 34px; color: #f2b705; min-height: 40px; }
+      .ic-plus { position: absolute; font-family: "Anton", sans-serif; -webkit-text-stroke: 9px #0b1220; paint-order: stroke fill; white-space: nowrap; }
+      .ic-piece { position: absolute; width: 74px; height: 74px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #ffe98a, #f2b705 55%, #b07d00); border: 5px solid #0b1220; }
+      .ic-ligne { position: absolute; font-family: "Anton", sans-serif; font-size: 40px; color: #ecece8; background: #13203a; border-left: 10px solid; padding: 6px 18px 2px; white-space: nowrap; }
+      .ic-barre { position: absolute; border: 5px solid #0b1220; border-radius: 16px 16px 0 0; }
+      .ic-graphe { position: absolute; background: rgba(11, 18, 32, 0.88); border: 4px solid #3a4462; border-radius: 24px; }
+      .ic-an { position: absolute; font-family: "Anton", sans-serif; font-weight: 400; font-size: 56px; color: #fff; }
+      .ic-an i { font-style: normal; color: #f2b705; }
+      .ic-chaine { position: absolute; display: flex; align-items: center; gap: 22px; font-family: "Anton", sans-serif; font-size: 60px; color: #0b1220; }
+      .ic-chaine b { font-weight: 400; background: #f2b705; padding: 8px 22px 2px; border-radius: 14px; }
+      .ic-chaine i { font-style: normal; color: #fff; }
+"""
+CSS_AJOUT = FI_CSS + IC_CSS
+
+# ================================================================ SCÈNES
+T = t_mot
+# ---------------------------------------------------------------- S1 : le hook — deux moitiés de vraies vidéos, les deux sœurs devant
+s = scene(0, "Scène 1 · « Deux sœurs placent la même somme, au même taux, pendant la même durée. Trente ans plus tard, l'une a deux fois plus… Voici leur histoire. »")
+D = s.debut
+GA = [(D, "sacs-shopping"), (T(2), "vetements"), (T(4), "compteuse-2"), (T(7), "centre-commercial"), (T(9), "mode-galerie"), (T(13), "mall-accelere"), (T(17), "portefeuille-vide"),
+      (T(19), "frustree-ordi"), (T(22), "plus-d-argent"), (T(25), "choc-femme"), (T(28), "inquiete-fille")]
+DR = [(D, "tirelire"), (T(1), "bocal-pieces"), (T(5), "billets-liasse"), (T(8), "plante-terre"), (T(11), "germination"), (T(13), "vallee-accelere"), (T(17), "herbe-pousse"),
+      (T(19), "tours-pieces"), (T(21), "pieces-rangees"), (T(24), "riche-billets"), (T(27), "pieces-or"), (T(29), "investisseuse")]
+cam(s, f'<div class="ic-moitie" style="left: 0">{pile_videos(s, "s01-g", GA, 5)}<div class="ic-teinte" style="background: linear-gradient(180deg, rgba(255, 77, 77, 0.28), rgba(11, 18, 32, 0.55))"></div></div>')
+cam(s, f'<div class="ic-moitie" style="left: 960px">{pile_videos(s, "s01-d", DR, 8, False)}<div class="ic-teinte" style="background: linear-gradient(180deg, rgba(56, 189, 248, 0.25), rgba(11, 18, 32, 0.55))"></div></div>')
+cam(s, '<div id="s01-sep" class="ic-sep"></div>')
+s.j('tl.set("#s01-sep", { rotation: 4 }, 0);')
+cam(s, perso2("s01-emma", 480, 900, 430, ROUGE_E, "emma"))
+cam(s, perso2("s01-julie", 1440, 900, 430, BLEU_J, "julie"))
+for p_, per, dec in (("s01-emma", 2.3, 0.7), ("s01-julie", 2.7, 1.3)):
+    vit(s, p_, s.debut, s.fin - 0.2)
+    cligne(s, p_, s.debut, s.fin, per, dec)
+choc_mot(s, "s01-ds", "Deux sœurs", 60, 170, 0.02, T(13) - 0.05)
+son(0.02, "impact-basse", 0.6, "DEUX SŒURS")
+for k, (txt, i) in enumerate((("Même somme", 4), ("Même taux", 7), ("Même durée", 11))):
+    puce(s, f"s01-m{k}", txt, 960, 330 + k * 110, T(i), "font-size: 60px; background: #fff; color: #0B1220")
+    son(T(i), tour(["impact-tambour", "impact-futur", "impact-cartoon"]), 0.45, txt)
+s.j(f'tl.to(["#s01-m0", "#s01-m1", "#s01-m2"], {{ opacity: 0, scale: 0.6, duration: 0.12, stagger: 0.02 }}, {s.L(T(13) - 0.08)});')
+pose(s, "s01-emma", T(2), 0.14, "back.out(2)", bd=-150, tete=-6)
+pose(s, "s01-julie", T(2), 0.14, "back.out(2)", bg=150, tete=6)
+pose(s, "s01-emma", T(9), 0.14, "back.out(2)", bd=0, tete=0)
+pose(s, "s01-julie", T(9), 0.14, "back.out(2)", bg=0, tete=0)
+choc_mot(s, "s01-30", "30 ans plus tard", 70, 170, T(13), T(25) - 0.05)
+son(T(13), "glitch-rugit", 0.45, "30 ans plus tard")
+son(T(13), "impact-basse", 0.55, "30 ans")
+secousse(s, T(13), 18)
+s.eclair(T(13))
+choc_mot(s, "s01-x2", "×2", 260, 330, T(19), T(25) - 0.05, BLEU_J, 960, 960)
+son(T(19), "impact-basse", 0.65, "DEUX FOIS PLUS")
+son(T(19), "pieces", 0.42, "deux fois plus d'argent")
+secousse(s, T(19), 22)
+victoire(s, "s01-julie", T(19), 2)
+humeur(s, "s01-julie", T(19), "rire")
+humeur(s, "s01-emma", T(19), "o")
+regarde(s, "s01-emma", T(19), 3)
+panique(s, "s01-emma", T(21), 0.9)
+humeur(s, "s01-emma", T(22), "triste")
+choc_mot(s, "s01-c", "Comment ?", 280, 260, T(25), T(28) - 0.05)
+son(T(25), "coup-mystere", 0.5, "comment")
+gratte(s, "s01-emma", T(25))
+humeur(s, "s01-julie", T(25), "content")
+puce(s, "s01-h", "Voici leur histoire", 960, 500, T(28), "font-size: 70px")
+son(T(28), "riser-synth", 0.42, "voici leur histoire", d=1.0)
+zoom(s, T(13) - 0.04, 960, 470, 1.15, 0.12, 0.5)
+zoom(s, T(17) - 0.1, 960, 540, 1.0, 0.16, 0.4)
+zoom(s, T(19) - 0.04, 1300, 520, 1.3, 0.14, 0.5)
+suit(s, [(T(21), 620, 560), (T(25) - 0.05, 960, 520)], 1.2, 0.22)
+zoom(s, s.fin - 0.4, 960, 540, 1.0, 0.2, 0.4)
+s.ecrire()
+
+# ---------------------------------------------------------------- S2 : 25 ans, 1 million chacune, à 6 % par an
+s = scene(1, "Scène 2 · « Emma et Julie ont 25 ans. Chacune place 1 million de francs à 6 % par an. »")
+D = s.debut
+e, j = duel(s, "s02", [(D, "sacs-shopping"), (T(35), "centre-commercial"), (T(38), "compteuse-2"), (T(42), "billets-liasse")],
+            [(D, "investisseuse"), (T(35), "analyse-graphes"), (T(38), "billets-tombent"), (T(42), "graphe-hausse")])
+pose(s, e, T(31), 0.14, "back.out(2)", bd=-150, tete=-8)
+saut(s, e, T(31), 30)
+pose(s, j, T(33), 0.14, "back.out(2)", bg=150, tete=8)
+saut(s, j, T(33), 30)
+son(T(31), "pop-cartoon", 0.45, "Emma")
+son(T(33), "pop-bulle", 0.45, "Julie")
+puce(s, "s02-25", "25 ans", 960, 250, T(35), "font-size: 80px")
+son(T(35), "notif-indice", 0.42, "25 ans")
+s.j(f'tl.to("#s02-25", {{ opacity: 0, duration: 0.1 }}, {s.L(T(42) - 0.1)});')
+carte_argent(s, "s02-ce", 470, 520, ROUGE_E, "Emma place", 0, T(39))
+carte_argent(s, "s02-cj", 1050, 520, BLEU_J, "Julie place", 0, T(39) + 0.08)
+compteur_fcfa(s, "#s02-ce-n", T(39) + 0.1, 0, 1000000, 0.5)
+compteur_fcfa(s, "#s02-cj-n", T(39) + 0.18, 0, 1000000, 0.5)
+son(T(39) + 0.1, "compteur", 0.42, "1 million", d=0.5)
+pose(s, e, T(39), 0.14, "back.out(2)", bd=-100, tete=-6)
+pose(s, j, T(39), 0.14, "back.out(2)", bg=100, tete=6)
+choc_mot(s, "s02-6", "6 % par an", 200, 130, T(43), None, "#F2B705", 660, 600)
+son(T(43), "impact-basse", 0.55, "6 %")
+secousse(s, T(43), 12)
+suit(s, [(T(31) - 0.05, 500, 560), (T(33), 1420, 560), (T(38), 960, 560)], 1.25, 0.22)
+zoom(s, T(42) - 0.1, 960, 540, 1.0, 0.18, 0.4)
+s.ecrire()
+
+# ---------------------------------------------------------------- S3 : année 1, +60 000 chacune ; Emma retire, Julie n'y touche pas
+s = scene(2, "Scène 3 · « Fin de la première année : chacune gagne 60 000 francs d'intérêts. Emma les retire et se fait plaisir. Julie, elle, n'y touche pas. »")
+D = s.debut
+e, j = duel(s, "s03", [(D, "vetements"), (T(51), "compteuse-2"), (T(56), "sacs-shopping"), (T(58), "soldes"), (T(60), "fete-danse"), (T(62), "danse-intense"), (T(64), "centre-commercial")],
+            [(D, "tirelire"), (T(51), "compte-pieces"), (T(56), "bocal-pieces"), (T(63), "coffre-fort"), (T(65), "plante-terre")])
+puce(s, "s03-an", "Année 1", 960, 110, T(46), "font-size: 64px; background: #F2B705; color: #0B1220")
+son(T(46), "page", 0.45, "année 1")
+carte_argent(s, "s03-ce", 470, 520, ROUGE_E, "Compte d’Emma", 1000000, D, "")
+carte_argent(s, "s03-cj", 1050, 520, BLEU_J, "Compte de Julie", 1000000, D, "")
+plus(s, "s03-pe", "+60 000 F", 480, 430, T(53), "#fff", 84, 2.0)
+plus(s, "s03-pj", "+60 000 F", 1080, 430, T(53) + 0.1, "#fff", 84, 3.2)
+son(T(53), "piece-gagne", 0.5, "+60 000")
+son(T(53) + 0.1, "pieces", 0.42, "+60 000")
+saut(s, e, T(53), 26)
+saut(s, j, T(53) + 0.1, 26)
+vole(s, "s03-v", 640, 560, 380, 200, T(58), 6, 0.1)
+s.j(f'tl.set("#s03-ce-s", {{ textContent: "Intérêts retirés : 60 000" }}, {s.L(T(58) + 0.5)});')
+victoire(s, e, T(60), 2)
+humeur(s, e, T(58), "rire")
+puce(s, "s03-pl", "Elle se fait plaisir", 410, 470, T(60), "font-size: 46px")
+son(T(60), "paillettes", 0.42, "se fait plaisir")
+bras_croises(s, j, T(63))
+regarde(s, j, T(63), -3)
+compteur_fcfa(s, "#s03-cj-n", T(65), 1000000, 1060000, 0.6)
+s.j(f'tl.set("#s03-cj-s", {{ textContent: "Intérêts laissés dessus" }}, {s.L(T(65))});')
+son(T(65), "verrou", 0.45, "elle n'y touche pas")
+son(T(65), "compteur", 0.4, "1 060 000", d=0.6)
+puce(s, "s03-nt", "Elle n’y touche pas", 1500, 470, T(65), "font-size: 46px")
+suit(s, [(T(53) - 0.1, 960, 560), (T(56), 520, 520), (T(63), 1400, 540)], 1.22, 0.22)
+zoom(s, s.fin - 0.35, 960, 540, 1.0, 0.18, 0.4)
+s.ecrire()
+
+# ---------------------------------------------------------------- S4 : année 2, 60 000 contre 63 600 ; pourquoi ? ; 3 600 F de différence
+s = scene(3, "Scène 4 · « Deuxième année. Emma gagne encore 60 000. Julie gagne 63 600. Pourquoi ? … 3 600 francs de différence. »")
+D = s.debut
+e, j = duel(s, "s04", [(D, "mode-galerie"), (T(70), "soldes"), (T(73), "caisse-carte"), (T(77), "choc-femme"), (T(81), "vetements"), (T(88), "sacs-shopping"), (T(91), "centre-commercial")],
+            [(D, "plante-terre"), (T(74), "germination"), (T(77), "pieces-ralenti"), (T(81), "compte-pieces"), (T(86), "herbe-pousse"), (T(91), "piles-or-argent")])
+puce(s, "s04-an", "Année 2", 960, 110, T(68), "font-size: 64px; background: #F2B705; color: #0B1220")
+son(T(68), "page", 0.45, "année 2")
+carte_argent(s, "s04-ce", 470, 520, ROUGE_E, "Compte d’Emma", 1000000, D, "Intérêts retirés : 60 000")
+carte_argent(s, "s04-cj", 1050, 520, BLEU_J, "Compte de Julie", 1060000, D, "Intérêts laissés dessus")
+plus(s, "s04-pe", "+60 000 F", 480, 430, T(73), "#fff", 84, 1.6)
+son(T(73), "piece-gagne", 0.45, "encore 60 000")
+s.j(f'tl.set("#s04-ce-s", {{ textContent: "Intérêts retirés : 120 000" }}, {s.L(T(73) + 0.4)});')
+pose(s, e, T(73), 0.14, "back.out(2)", bd=-140, tete=-6)
+plus(s, "s04-pj", "+63 600 F", 1040, 410, T(76), "#F2B705", 110, 1.4)
+son(T(76), "impact-basse", 0.55, "63 600")
+son(T(76), "pieces", 0.45, "63 600")
+compteur_fcfa(s, "#s04-cj-n", T(76), 1060000, 1123600, 0.6)
+secousse(s, T(76), 12)
+saut(s, j, T(76), 34)
+humeur(s, j, T(76), "rire")
+regarde(s, e, T(76), 3)
+humeur(s, e, T(76), "o")
+pose(s, e, T(76), 0.14, "back.out(2)", bd=0, tete=10)
+choc_mot(s, "s04-pq", "Pourquoi ?", 190, 170, T(77), T(78) + 0.4, "#fff", 560, 800)
+son(T(77), "coup-mystere", 0.5, "pourquoi")
+gratte(s, e, T(77))
+humeur(s, j, T(78), "content")
+pose(s, j, T(80), 0.14, "back.out(2)", bg=110, tete=6)
+ligne(s, "s04-l1", "1 000 000 × 6 % = 60 000", 1010, 760, T(81), BLEU_J)
+ligne(s, "s04-l2", "60 000 × 6 % = 3 600", 1010, 818, T(86))
+son(T(88), "magie" if "magie" in PICS else "notif-magique", 0.42, "des intérêts sur les intérêts")
+tampon(s, "s04-d", "+3 600 F", 760, 250, T(91), -6, 110, "#F2B705")
+son(T(91), "marteau", 0.5, "3 600 de différence")
+secousse(s, T(91), 12)
+suit(s, [(T(73) - 0.1, 540, 540), (T(76) - 0.05, 1380, 540), (T(77), 960, 520), (T(81) - 0.1, 1330, 640)], 1.22, 0.22)
+zoom(s, T(91) - 0.1, 960, 540, 1.0, 0.18, 0.4)
+s.ecrire()
+
+# ---------------------------------------------------------------- S5 : Emma rigole ; mais chaque année, l'écart grandit
+s = scene(4, "Scène 5 · « Emma rigole : “Tout ça pour ça ?” Mais chaque année, l'écart grandit. »")
+D = s.debut
+e, j = duel(s, "s05", [(D, "fete-danse"), (T(97), "danse-intense"), (T(101), "mall-accelere"), (T(104), "soldes")],
+            [(D, "herbe-pousse"), (T(101), "vallee-accelere"), (T(104), "plantes-poussent")])
+humeur(s, e, D, "rire")
+s.j(f'tl.to("#s05-emma", {{ keyframes: [{{ rotation: -5, duration: 0.09 }}, {{ rotation: 5, duration: 0.09 }}, {{ rotation: -5, duration: 0.09 }}, {{ rotation: 5, duration: 0.09 }}, {{ rotation: -4, duration: 0.09 }}, {{ rotation: 4, duration: 0.09 }}, {{ rotation: 0, duration: 0.09 }}], transformOrigin: "50% 100%" }}, {s.L(T(95))});')
+pose(s, e, T(95), 0.14, "back.out(2)", bd=-95, tete=-10)
+son(T(95), "surprise-cartoon", 0.42, "Emma rigole")
+bulle(s, "s05-b", "« Tout ça pour ça ? »", 440, 470, T(97), 60, T(101) - 0.1)
+son(T(97), "pop-bulle", 0.45, "tout ça pour ça")
+bras_croises(s, j, T(97))
+regarde(s, j, T(97), -3)
+courbes(s, "s05-g", 560, 470, 800, 380, T(101), round(s.fin - T(101) - 0.5, 2))
+humeur(s, e, T(104), "o")
+pose(s, e, T(104), 0.14, "back.out(2)", bd=0, tete=8)
+regarde(s, e, T(104), 3, -2)
+humeur(s, j, T(104), "rire")
+pouce(s, j, T(104), "bg")
+zoom(s, T(95) - 0.05, 520, 560, 1.3, 0.18, 0.45)
+suit(s, [(T(101) - 0.15, 960, 620)], 1.12, 0.22)
+s.ecrire()
+
+# ---------------------------------------------------------------- S6 : 30 ans plus tard, 60 000 contre 325 000
+s = scene(5, "Scène 6 · « Trente ans plus tard, la dernière année, Emma touche toujours 60 000 francs. Julie, elle, en touche 325 000. »")
+D = s.debut
+e, j = duel(s, "s06", [(D, "mall-accelere"), (T(110), "portefeuille-plein"), (T(113), "portefeuille-vide"), (T(118), "frustree-compte"), (T(122), "choc-femme")],
+            [(D, "vallee-accelere"), (T(110), "plantes-poussent"), (T(113), "tours-pieces"), (T(118), "pieces-rangees"), (T(122), "riche-billets")])
+choc_mot(s, "s06-30", "30 ans plus tard", 440, 190, T(106), T(110) - 0.05)
+son(T(106), "impact-basse", 0.6, "30 ans plus tard")
+son(T(106), "rembobine-magie" if "rembobine-magie" in PICS else "glitch-cine", 0.42, "le temps passe")
+secousse(s, T(106), 18)
+s.eclair(T(106))
+puce(s, "s06-an", "Année 30", 960, 110, T(110), "font-size: 64px; background: #F2B705; color: #0B1220")
+son(T(110), "page", 0.45, "année 30")
+plus(s, "s06-pe", "+60 000 F", 470, 520, T(116), "#fff", 96, 5.0)
+son(T(116), "piece-gagne", 0.42, "toujours 60 000")
+haussement(s, e, T(115))
+plus(s, "s06-pj", "+325 000 F", 880, 500, T(122), "#F2B705", 170, 5.0)
+son(T(122), "impact-basse", 0.65, "325 000")
+son(T(122), "jeu-victoire" if "jeu-victoire" in PICS else "fanfare", 0.42, "325 000")
+pluie_fcfa(s, "s06-pl", T(122), 14, 1.4)
+secousse(s, T(122), 24)
+s.eclair(T(122))
+victoire(s, j, T(122), 2)
+humeur(s, j, T(122), "rire")
+humeur(s, e, T(122), "o")
+regarde(s, e, T(122), 3)
+panique(s, e, T(122) + 0.2, 1.0)
+zoom(s, T(106) - 0.04, 960, 500, 1.15, 0.12, 0.5)
+suit(s, [(T(110) - 0.1, 960, 560), (T(113), 520, 560), (T(118), 1380, 560)], 1.2, 0.22)
+zoom(s, T(122) - 0.05, 1250, 560, 1.25, 0.12, 0.5)
+s.ecrire()
+
+# ---------------------------------------------------------------- S7 : les comptes — 2 800 000 contre 5 700 000, plus du double
+s = scene(6, "Scène 7 · « Faisons les comptes. Emma : son million, plus 1 800 000 francs retirés… Total : 2 800 000. Julie : 5 700 000 francs. Plus du double. »")
+D = s.debut
+e, j = duel(s, "s07", [(D, "calcul-depenses"), (T(126), "sacs-shopping"), (T(130), "soldes"), (T(137), "portefeuille-vide"), (T(139), "inquiete-fille"), (T(142), "frustree-ordi")],
+            [(D, "analyse-graphes"), (T(130), "compte-pieces"), (T(139), "tours-pieces"), (T(141), "riche-billets"), (T(142), "pieces-or")])
+puce(s, "s07-t", "Les comptes", 960, 110, T(123), "font-size: 64px; background: #fff; color: #0B1220")
+son(T(123), "caisse" if "caisse" in PICS else "scanner-caisse", 0.45, "faisons les comptes")
+BASE = 850
+barre(s, "s07-b1", 780, BASE, 160, 95, "#b23a3a", T(128), 0.4)
+barre(s, "s07-b2", 780, BASE - 95, 160, 170, ROUGE_E, T(130), 0.6)
+ligne(s, "s07-l1", "1 000 000", 470, 770, T(128), ROUGE_E)
+ligne(s, "s07-l2", "+ 1 800 000 retirés", 470, 690, T(130), ROUGE_E)
+son(T(128), "construit" if "construit" in PICS else "pop-long", 0.4, "son million")
+son(T(130), "compteuse" if "compteuse" in PICS else "compteur", 0.4, "1 800 000 retirés", d=0.8)
+pose(s, e, T(127), 0.14, "back.out(2)", bd=-110, tete=-6)
+plus(s, "s07-te", "2 800 000 F", 520, 470, T(138), ROUGE_E, 100, 8.0)
+son(T(138), "impact-tambour", 0.5, "total Emma")
+barre(s, "s07-b3", 980, BASE, 160, 540, BLEU_J, T(140), 1.2)
+son(T(140), "riser-synth", 0.45, "la barre de Julie monte", d=1.2)
+plus(s, "s07-tj", "5 700 000 F", 1010, 190, T(140) + 1.0, BLEU_J, 110, 6.0)
+son(T(140) + 1.1, "impact-basse", 0.65, "5 700 000")
+secousse(s, T(140) + 1.1, 20)
+s.eclair(T(140) + 1.1)
+victoire(s, j, T(140) + 1.1, 2)
+humeur(s, j, T(140) + 1.1, "rire")
+humeur(s, e, T(140) + 1.1, "triste")
+regarde(s, e, T(140), 3, -3)
+panique(s, e, T(142), 0.8)
+tampon(s, "s07-x2", "Plus du double", 640, 330, T(142), -6, 100, "#F2B705")
+son(T(142), "marteau", 0.5, "plus du double")
+zoom(s, T(127) - 0.1, 700, 620, 1.25, 0.2, 0.45)
+suit(s, [(T(138) - 0.1, 760, 560), (T(140) - 0.05, 1100, 540)], 1.2, 0.22)
+zoom(s, T(142) - 0.1, 960, 540, 1.0, 0.18, 0.4)
+s.ecrire()
+
+# ---------------------------------------------------------------- S8 : ça s'appelle les intérêts composés ; le secret : le temps
+s = scene(7, "Scène 8 · « Ça s'appelle les intérêts composés : des intérêts qui rapportent des intérêts. Le secret de Julie ? Elle a laissé le temps travailler. »")
+D = s.debut
+e, j = duel(s, "s08", [], [], 340, 230, 1690, False)
+cam(s, f'<div id="s08-ec" class="ic-ecran" style="left: 480px; top: 330px; width: 960px; height: 500px; border-color: #F2B705">'
+       f'{pile_videos(s, "s08-v", [(D, "pieces-ralenti"), (T(148), "tours-pieces"), (T(150), "pieces-rangees"), (T(153), "piles-or-argent"), (T(156), "investisseuse"), (T(160), "horloge-temps"), (T(163), "myst-sablier"), (T(165), "plantes-poussent")], 5)}</div>')
+choc_mot(s, "s08-t", "Intérêts composés", 60, 170, T(147), None, BLEU_J)
+son(T(147), "impact-basse", 0.65, "INTÉRÊTS COMPOSÉS")
+son(T(147), "revelation" if "revelation" in PICS else "choeur-brille", 0.45, "la révélation")
+secousse(s, T(147), 20)
+s.eclair(T(147))
+cam(s, '<div id="s08-ch" class="ic-chaine" style="left: 560px; top: 250px"><b id="s08-c0" style="opacity: 0">Intérêts</b><i id="s08-f0" style="opacity: 0">→</i>'
+       '<b id="s08-c1" style="opacity: 0">Intérêts</b><i id="s08-f1" style="opacity: 0">→</i><b id="s08-c2" style="opacity: 0">Intérêts</b></div>')
+for k, i in enumerate((151, 153, 155)):
+    s.j(f'tl.fromTo("#s08-c{k}", {{ opacity: 0, scale: 0.3 }}, {{ opacity: 1, scale: 1, duration: 0.18, ease: "back.out(2.4)", immediateRender: false }}, {s.L(T(i))});')
+    son(T(i), tour(["piece-gagne", "pieces", "pieces-2"]), 0.42, "des intérêts")
+    if k < 2:
+        s.j(f'tl.set("#s08-f{k}", {{ opacity: 1 }}, {s.L(T(i) + 0.3)});')
+pose(s, j, T(147), 0.14, "back.out(2)", bg=120, tete=8)
+humeur(s, j, T(147), "rire")
+pose(s, e, T(150), 0.14, "back.out(2)", bd=-110, tete=-6)
+humeur(s, e, T(147), "o")
+puce(s, "s08-sec", "Le secret de Julie ?", 960, 880 - 500, T(156), "font-size: 60px")
+son(T(156), "notif-indice", 0.42, "le secret")
+gratte(s, e, T(156))
+s.j(f'tl.to(["#s08-sec"], {{ opacity: 0, duration: 0.1 }}, {s.L(T(160) - 0.05)});')
+tampon(s, "s08-tps", "Le temps", 760, 520, T(164), -6, 150, "#F2B705")
+son(T(164), "impact-basse", 0.55, "le temps")
+son(T(160), "tic-tac", 0.42, "le temps travaille", d=1.6)
+victoire(s, j, T(164), 1)
+zoom(s, T(147) - 0.04, 960, 380, 1.15, 0.12, 0.5)
+zoom(s, T(150) - 0.1, 960, 540, 1.0, 0.18, 0.4)
+suit(s, [(T(156) - 0.1, 1300, 600), (T(160), 960, 580)], 1.15, 0.22)
+s.ecrire()
+
+# ---------------------------------------------------------------- S9 : et toi, Emma ou Julie ? Abonne-toi
+s = scene(8, "Scène 9 · « Et toi, tu es Emma ou Julie ? Abonne-toi à LeFinancier. On décrypte l'argent avec les maths. »")
+D = s.debut
+cam(s, f'<div class="ic-moitie" style="left: 0">{pile_videos(s, "s09-g", [(D, "sacs-shopping"), (T(170), "fete-danse"), (T(173), "centre-commercial"), (T(176), "vetements"), (T(179), "mode-galerie")], 5)}'
+       f'<div class="ic-teinte" style="background: linear-gradient(180deg, rgba(255, 77, 77, 0.3), rgba(11, 18, 32, 0.62))"></div></div>')
+cam(s, f'<div class="ic-moitie" style="left: 960px">{pile_videos(s, "s09-d", [(D, "tours-pieces"), (T(172), "plantes-poussent"), (T(175), "pieces-or"), (T(178), "riche-billets")], 8, False)}'
+       f'<div class="ic-teinte" style="background: linear-gradient(180deg, rgba(56, 189, 248, 0.27), rgba(11, 18, 32, 0.62))"></div></div>')
+cam(s, '<div id="s09-sep" class="ic-sep"></div>')
+s.j('tl.set("#s09-sep", { rotation: 4 }, 0);')
+cam(s, perso2("s09-emma", 430, 900, 400, ROUGE_E, "emma"))
+cam(s, perso2("s09-julie", 1490, 900, 400, BLEU_J, "julie"))
+for p_, per, dec in (("s09-emma", 2.3, 0.7), ("s09-julie", 2.7, 1.2)):
+    vit(s, p_, s.debut, s.fin - 0.2)
+    cligne(s, p_, s.debut, s.fin, per, dec)
+choc_mot(s, "s09-q", "Emma ou Julie ?", 90, 190, T(168), T(173) - 0.08)
+son(T(168), "impact-basse", 0.55, "et toi ?")
+pose(s, "s09-emma", T(170), 0.14, "back.out(2)", bd=-150, bg=150, tete=-6)
+saut(s, "s09-emma", T(170), 34)
+son(T(170), "pop-cartoon", 0.45, "Emma")
+pose(s, "s09-julie", T(172), 0.14, "back.out(2)", bd=-150, bg=150, tete=6)
+saut(s, "s09-julie", T(172), 34)
+son(T(172), "pop-bulle", 0.45, "Julie")
+profil_carte(s, "s09-pr", 310, 130, T(173) - 0.05, T(175) + 0.2)
+confettis(s, "s09-conf", T(175) + 0.3, 960, 300, 26, 480)
+son(T(175) + 0.3, "paillettes", 0.42, "confettis")
+s.j(f'tl.to(["#s09-pr", "#s09-pr-souris"], {{ opacity: 0, y: -80, duration: 0.16 }}, {s.L(T(177) - 0.1)});')
+choc_mot(s, "s09-fin", "On décrypte l’argent avec les maths", 150, 105, T(177), None, BLEU_J)
+son(T(177), "impact-basse", 0.5, "on décrypte")
+victoire(s, "s09-julie", T(177), 2)
+humeur(s, "s09-julie", T(177), "rire")
+pouce(s, "s09-emma", T(178), "bd")
+son(T(181), "cloche-succes", 0.42, "fin")
+zoom(s, T(168) - 0.05, 960, 460, 1.12, 0.14, 0.45)
+zoom(s, T(173) - 0.1, 960, 540, 1.0, 0.18, 0.4)
+s.ecrire()
+
+# ================================================================ SONS GÉNÉRAUX
+for k, c in enumerate(COUPES[1:-1], start=1):
+    son(c, tour(TRANSITIONS + ["balaie-rapide", "balaie-air"]), 0.44, f"volet vers {NOMS[k]}")
+
+MUSIQUES = [  # fichiers à −17,1 / −17,1 / −17,5 LUFS → ≈ −21 LUFS (5 dB sous la voix)
+    (0, "partie-1-lord-knows", COUPES[3], 0.64),
+    (COUPES[3], "partie-2-thunder", round(COUPES[6] - COUPES[3], 2), 0.64),
+    (COUPES[6], "partie-3-head-bang", round(FIN - COUPES[6], 2), 0.67),
+]
+MASQUES = []
+_vus = set()
+SONS[:] = [x for x in SONS if not ((x[0], x[1]) in _vus or _vus.add((x[0], x[1])))]
+
