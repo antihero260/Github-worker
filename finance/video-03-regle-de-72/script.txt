@@ -1,0 +1,24 @@
+VIDÉO 3 - LA RÈGLE DE 72 : EN COMBIEN DE TEMPS TON ARGENT DOUBLE (sujet 4 de la liste)
+Chaîne : Lefinancier. Durée visée : environ 60 secondes (environ 165 mots).
+
+TITRE-PROMESSE (en haut de la vidéo)
+EN COMBIEN DE TEMPS TON ARGENT DOUBLE ?
+
+TEXTE DE LA VOIX (à coller dans ElevenLabs)
+
+Ton argent peut doubler tout seul. Et tu peux savoir en combien de temps, de tête, en trois secondes. Ça s'appelle la règle de 72. Tu prends 72, et tu le divises par le taux que ton argent te rapporte chaque année. Le résultat, c'est le nombre d'années qu'il lui faut pour doubler. Exemple : ton argent rapporte 6 % par an. 72 divisé par 6, ça fait 12. En 12 ans, 100 000 francs deviennent 200 000, si tu laisses les intérêts s'ajouter. À 2 % ? 72 divisé par 2 : il te faut 36 ans. À 12 % ? Seulement 6 ans. Mais attention : la règle marche aussi contre toi. Si les prix augmentent de 3 % par an, ils doublent en 24 ans. Et une dette à 24 % d'intérêt double en 3 ans. Alors la prochaine fois qu'on te parle d'un taux, divise 72 par ce taux. Tu sauras tout de suite si le temps travaille pour toi, ou contre toi. Abonne-toi à LeFinancier. On décrypte l'argent avec les maths.
+
+CHIFFRES À L'ÉCRAN
+- 72 / taux = nombre d'années pour doubler
+- 6 % -> 12 ans (100 000 F -> 200 000 F)
+- 2 % -> 36 ans ; 12 % -> 6 ans
+- Prix à +3 % par an -> doublent en 24 ans
+- Dette à 24 % -> double en 3 ans
+
+CALCULS (la règle de 72 est une approximation ; valeurs exactes entre parenthèses)
+- 6 % : 72/6 = 12 ans (exact : 11,9 ans)
+- 2 % : 72/2 = 36 ans (exact : 35,0 ans)
+- 12 % : 72/12 = 6 ans (exact : 6,1 ans)
+- 3 % : 72/3 = 24 ans (exact : 23,4 ans)
+- 24 % : 72/24 = 3 ans (exact : 3,2 ans)
+- Les taux sont des exemples de calcul, pas des promesses de rendement ni des conseils de placement.
