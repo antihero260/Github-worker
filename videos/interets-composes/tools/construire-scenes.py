@@ -7267,8 +7267,8 @@ for f in [ICI / "index.html", *(ICI / "compositions").glob("*.html")]:
     bleu_ciel(f)
 V = ICI.parent / "interets-composes-vertical/index.html"
 h = V.read_text(encoding="utf-8")
-h = __import__("re").sub(r'("default":")Ton site crie[^"]*(")', r"\1Même somme, même taux : l’une finit avec le double\2", h)
-h = __import__("re").sub(r'(data-var-text="titre">\s*)Ton site crie[^<]*?(\s*</h1>)', r"\1Même somme, même taux : l’une finit avec le double\2", h)
+h = __import__("re").sub(r'("default":")Ton site crie[^"]*(")', r"\1La puissance des intérêts composés\2", h)
+h = __import__("re").sub(r'(data-var-text="titre">\s*)Ton site crie[^<]*?(\s*</h1>)', r"\1La puissance des intérêts composés\2", h)
 h = h.replace("site-fait-par-ia-16x9.mp4", "interets-composes-16x9.mp4")
 h = __import__("re").sub(r'data-duration="[\d.]+"', f'data-duration="{FIN}"', h)
 h = h.replace("background: #000;", "background: #0B1220;")
