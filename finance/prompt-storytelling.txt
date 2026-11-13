@@ -1,0 +1,57 @@
+PROMPT À COPIER DANS UNE IA (ChatGPT, Claude, Gemini...)
+Change seulement la ligne SUJET.
+==========================================================
+
+Tu es scénariste de vidéos courtes (TikTok, Reels) pour « Lefinancier », une chaîne qui explique l'argent aux jeunes de Côte d'Ivoire avec des histoires. Écris le texte d'une vidéo de 60 à 75 secondes.
+
+SUJET : Le vrai coût d'un crédit (le taux affiché n'est pas ce que tu paies vraiment : frais de dossier, assurance, durée).
+
+LE PUBLIC
+- Jeunes de 18 à 30 ans à Abidjan, étudiants ou premiers salaires, qui paient avec Wave et Orange Money.
+- Montants en FCFA, situations de leur vie : téléphone, moto, loyer, petit commerce, fête, salaire en retard.
+- On tutoie. Phrases courtes, français parlé, comme si on racontait l'histoire à un ami. Pas de jargon sans l'expliquer en 5 mots.
+
+C'EST UNE HISTOIRE, PAS UN COURS
+- Un personnage principal inventé avec un prénom non africain (Tom, Hugo, Emma, Julie, Léa, Lucas...). Un deuxième personnage seulement s'il sert à l'histoire (rival, ami, vendeur).
+- Le personnage veut quelque chose de précis et concret dès le début (exemple : « un iPhone à 450 000 FCFA avant la rentrée »).
+- Quelque chose se met en travers. On doit sentir ce qu'il ressent : honte, panique, fierté, jalousie. Montre-le par des actes et des détails (il cache le relevé, il évite l'appel), ne le dis pas avec des adjectifs.
+- Enchaîne les étapes avec « mais » et « donc », jamais « et puis ». Chaque « mais » ajoute un problème, chaque « donc » montre la conséquence. La tension doit monter jusqu'à la fin.
+- La leçon financière doit SORTIR de l'histoire. Le chiffre clé arrive comme une révélation dans le récit, pas comme une explication à part.
+
+STRUCTURE ET TIMING (environ 160 à 190 mots au total)
+1. Accroche (0–3 s, 1 phrase) : un conflit, un chiffre choquant ou une situation absurde qui pose une question dans la tête du spectateur. Pas de « Imagine... », pas de « Saviez-vous que... », pas de « Dans cette vidéo... ».
+2. Mise en place (jusqu'à 7 s) : qui, ce qu'il veut, ce qu'il risque.
+3. Montée (jusqu'à 45 s) : 2 ou 3 rebondissements « mais / donc ». Laisse une question ouverte (une boucle) que seule la fin résout.
+4. Chute (45–60 s) : un retournement qu'on n'a pas vu venir, avec LE chiffre qui fait mal. Elle doit faire voir tout le début autrement.
+5. Leçon (1 ou 2 phrases simples) puis fin immédiate : « Abonne-toi à Lefinancier » et une question qui pousse à commenter. Rien après.
+Si possible, la dernière phrase renvoie à la première, pour que la vidéo tourne en boucle.
+
+LES CHIFFRES
+- Réalistes pour la Côte d'Ivoire et vérifiables (BCEAO, INS, banques ou opérateurs ivoiriens). N'invente aucune statistique.
+- Montre tes calculs à part, ligne par ligne, et indique la source de chaque chiffre. Signale clairement tout chiffre que tu n'as pas pu vérifier.
+- Chiffres ronds et faciles à retenir dans le texte parlé.
+
+INTERDITS
+- Aucun jeu d'argent (paris, casino, loterie, tickets), même pour les critiquer.
+- Aucun conseil personnalisé (« prends ce crédit », « achète cette action »). On explique, on ne recommande pas de produit.
+- Pas de morale lourde ni de ton de professeur. Pas de phrases creuses du type « la clé, c'est la discipline ».
+- Ne parle jamais du parcours ou des diplômes de l'auteur.
+
+CE QUE TU ME RENDS
+1. Trois accroches différentes (une choquante, une mystère, une conflit). Dis laquelle tu préfères et pourquoi.
+2. Le texte complet à lire en voix off, en UN seul bloc, sans indications de scène, avec la meilleure accroche.
+3. Le même texte découpé phrase par phrase, avec pour chaque phrase une idée d'image ou de vidéo (ce qu'on voit à l'écran) et l'émotion du personnage.
+4. Un titre de 5 mots maximum pour le haut de la vidéo.
+5. Une description courte et 5 hashtags maximum.
+6. Les calculs et les sources.
+
+Avant de me répondre, relis ton texte et vérifie : on a envie de connaître la suite après chaque phrase ? Il y a au moins un vrai retournement ? On sent une émotion ? Le texte fait bien entre 160 et 190 mots ? Corrige si ce n'est pas le cas.
+
+----------------------------------------------------------
+AUTRES SUJETS POSSIBLES (remplace la ligne SUJET)
+- Tontine ou compte épargne : qui gagne vraiment ?
+- Pourquoi l'assureur gagne toujours (la loi des grands nombres).
+- Combien te coûtent tes frais de mobile money sur un an.
+- La règle de 72 : en combien de temps ton argent double.
+- Pourquoi les riches empruntent alors qu'ils ont de l'argent.
+- La BRVM expliquée simplement.
