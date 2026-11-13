@@ -1,0 +1,180 @@
+<!-- Premier mois : Tom reçoit 250 000 et achète sa moto, fier comme jamais (15.28 → 20.64 s). Écrit par tools/construire-scenes.py. -->
+<template>
+  <style>
+    #root { position: absolute; inset: 0; }
+  </style>
+  <div id="root" data-composition-id="s03-moto" data-width="1080" data-height="1920">
+    <div class="sc">
+      <div id="s03-moto-cam" class="sc-cam">
+        <div id="s03-moto-cadre" class="sc-cadre">
+        <div class="decor" style="left: -1080px; top: 0px; width: 2160px"><div style="position: absolute; left: 0px; top: 0; width: 3240px; height: 1920px"><div class="ciel" style="background: linear-gradient(180deg, #050a14 0%, #0b1a35 45%, #13305c 100%)"></div><i class="lune" style="left: 1900px; top: 330px"></i><div class="imm" style="left: -20px; top: 650px; width: 210px; height: 520px; background-color: #0f2347"></div><div class="imm" style="left: 170px; top: 790px; width: 170px; height: 380px; background-color: #122a52"></div><div class="imm" style="left: 320px; top: 560px; width: 240px; height: 610px; background-color: #0d1f40"></div><div class="imm" style="left: 540px; top: 730px; width: 190px; height: 440px; background-color: #11284e"></div><div class="imm" style="left: 710px; top: 610px; width: 230px; height: 560px; background-color: #0e2244"></div><div class="imm" style="left: 920px; top: 770px; width: 200px; height: 400px; background-color: #122a52"></div><div class="imm" style="left: 1060px; top: 650px; width: 210px; height: 520px; background-color: #0f2347"></div><div class="imm" style="left: 1250px; top: 790px; width: 170px; height: 380px; background-color: #122a52"></div><div class="imm" style="left: 1400px; top: 560px; width: 240px; height: 610px; background-color: #0d1f40"></div><div class="imm" style="left: 1620px; top: 730px; width: 190px; height: 440px; background-color: #11284e"></div><div class="imm" style="left: 1790px; top: 610px; width: 230px; height: 560px; background-color: #0e2244"></div><div class="imm" style="left: 2000px; top: 770px; width: 200px; height: 400px; background-color: #122a52"></div><div class="imm" style="left: 2140px; top: 650px; width: 210px; height: 520px; background-color: #0f2347"></div><div class="imm" style="left: 2330px; top: 790px; width: 170px; height: 380px; background-color: #122a52"></div><div class="imm" style="left: 2480px; top: 560px; width: 240px; height: 610px; background-color: #0d1f40"></div><div class="imm" style="left: 2700px; top: 730px; width: 190px; height: 440px; background-color: #11284e"></div><div class="imm" style="left: 2870px; top: 610px; width: 230px; height: 560px; background-color: #0e2244"></div><div class="imm" style="left: 3080px; top: 770px; width: 200px; height: 400px; background-color: #122a52"></div><div class="trottoir" style="top: 1170px"></div><div class="sol" style="top: 1290px"></div><i class="lampe" style="left: 2020px; top: 770px"></i></div></div>
+        <div class="decor" style="left: 1080px; top: 0px; width: 2160px"><div style="position: absolute; left: -1080px; top: 0; width: 3240px; height: 1920px"><div class="ciel" style="background: linear-gradient(180deg, #1d4ed8 0%, #38bdf8 55%, #bae6fd 100%)"></div><i class="soleil" style="left: 1880px; top: 320px"></i><div class="imm" style="left: -20px; top: 650px; width: 210px; height: 520px; background-color: #0f2347"></div><div class="imm" style="left: 170px; top: 790px; width: 170px; height: 380px; background-color: #122a52"></div><div class="imm" style="left: 320px; top: 560px; width: 240px; height: 610px; background-color: #0d1f40"></div><div class="imm" style="left: 540px; top: 730px; width: 190px; height: 440px; background-color: #11284e"></div><div class="imm" style="left: 710px; top: 610px; width: 230px; height: 560px; background-color: #0e2244"></div><div class="imm" style="left: 920px; top: 770px; width: 200px; height: 400px; background-color: #122a52"></div><div class="imm" style="left: 1060px; top: 650px; width: 210px; height: 520px; background-color: #0f2347"></div><div class="imm" style="left: 1250px; top: 790px; width: 170px; height: 380px; background-color: #122a52"></div><div class="imm" style="left: 1400px; top: 560px; width: 240px; height: 610px; background-color: #0d1f40"></div><div class="imm" style="left: 1620px; top: 730px; width: 190px; height: 440px; background-color: #11284e"></div><div class="imm" style="left: 1790px; top: 610px; width: 230px; height: 560px; background-color: #0e2244"></div><div class="imm" style="left: 2000px; top: 770px; width: 200px; height: 400px; background-color: #122a52"></div><div class="imm" style="left: 2140px; top: 650px; width: 210px; height: 520px; background-color: #0f2347"></div><div class="imm" style="left: 2330px; top: 790px; width: 170px; height: 380px; background-color: #122a52"></div><div class="imm" style="left: 2480px; top: 560px; width: 240px; height: 610px; background-color: #0d1f40"></div><div class="imm" style="left: 2700px; top: 730px; width: 190px; height: 440px; background-color: #11284e"></div><div class="imm" style="left: 2870px; top: 610px; width: 230px; height: 560px; background-color: #0e2244"></div><div class="imm" style="left: 3080px; top: 770px; width: 200px; height: 400px; background-color: #122a52"></div><div class="trottoir" style="top: 1170px"></div><div class="sol" style="top: 1290px"></div><i class="lampe" style="left: 2020px; top: 770px"></i></div></div>
+        <div id="m-caisse" class="caisse" style="left: 560px; top: 990px"><b>CAISSE</b><i>250 000</i></div>
+        <svg id="m-tom" class="perso" viewBox="-30 -20 160 290" style="left: 124px; top: 699px; width: 353px; height: 640px"><g id="m-tom-vie"><g id="m-tom-corps"><g id="m-tom-jg"><g class="c"><rect x="24" y="136" width="24" height="112" rx="8" /></g><g class="p" style="--pc: #38BDF8"><rect x="24" y="136" width="24" height="112" rx="8" /></g></g><g id="m-tom-jd"><g class="c"><rect x="52" y="136" width="24" height="112" rx="8" /></g><g class="p" style="--pc: #38BDF8"><rect x="52" y="136" width="24" height="112" rx="8" /></g></g><g id="m-tom-tronc"><g class="c"><rect x="22" y="52" width="56" height="94" rx="12" /></g><g class="p" style="--pc: #38BDF8"><rect x="22" y="52" width="56" height="94" rx="12" /></g><rect x="30" y="60" width="40" height="7" rx="3.5" fill="rgba(11,18,32,0.25)" /></g><g id="m-tom-bg"><g class="c"><rect x="2" y="54" width="18" height="86" rx="9" /></g><g class="p" style="--pc: #38BDF8"><rect x="2" y="54" width="18" height="86" rx="9" /></g></g><g id="m-tom-bd"><g class="c"><rect x="80" y="54" width="18" height="86" rx="9" /></g><g class="p" style="--pc: #38BDF8"><rect x="80" y="54" width="18" height="86" rx="9" /></g></g><g id="m-tom-tete"><g class="c"><circle cx="50" cy="24" r="22" /></g><g class="p" style="--pc: #38BDF8"><circle cx="50" cy="24" r="22" /></g><g><g id="m-tom-yeux"><circle cx="41" cy="20" r="6.5" fill="#fff" /><circle cx="59" cy="20" r="6.5" fill="#fff" /><g id="m-tom-pup"><circle cx="42" cy="21" r="3" fill="#0B1220" /><circle cx="60" cy="21" r="3" fill="#0B1220" /></g></g><path id="m-tom-bouche" d="M41 32 Q50 40 59 32" fill="none" stroke="#0B1220" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" /><path d="M28 12 Q34 -6 50 -4 Q66 -6 72 12 Q62 4 50 6 Q38 4 28 12 Z" fill="#0B1220" /></g></g></g></g></svg>
+        <div id="m-cal" class="calendrier petit" style="left: 470px; top: 380px; opacity: 0"><span>MOIS</span><b>1</b></div>
+        <div id="m-v-0" class="piece" style="left: 660px; top: 1000px; width: 80px; height: 80px; font-size: 16px; opacity: 0"><span>F</span></div>
+        <div id="m-v-1" class="piece" style="left: 660px; top: 1000px; width: 80px; height: 80px; font-size: 16px; opacity: 0"><span>F</span></div>
+        <div id="m-v-2" class="piece" style="left: 660px; top: 1000px; width: 80px; height: 80px; font-size: 16px; opacity: 0"><span>F</span></div>
+        <div id="m-v-3" class="piece" style="left: 660px; top: 1000px; width: 80px; height: 80px; font-size: 16px; opacity: 0"><span>F</span></div>
+        <div id="m-v-4" class="piece" style="left: 660px; top: 1000px; width: 80px; height: 80px; font-size: 16px; opacity: 0"><span>F</span></div>
+        <div id="m-v-5" class="piece" style="left: 660px; top: 1000px; width: 80px; height: 80px; font-size: 16px; opacity: 0"><span>F</span></div>
+        <div id="m-v-6" class="piece" style="left: 660px; top: 1000px; width: 80px; height: 80px; font-size: 16px; opacity: 0"><span>F</span></div>
+        <div id="m-cpt" class="compte" style="left: 70px; top: 450px; opacity: 0"><span>COMPTE DE TOM</span><b>+<i id="m-cn">0</i> F</b></div>
+        <div id="m-ens" class="enseigne" style="left: 1150px; top: 340px">MOTOS D’OCCASION</div>
+        <div id="m-ec" class="ecran ecran-panneau" style="left: 1170px; top: 450px; width: 340px; height: 560px; opacity: 0"><div class="ecran-in"><div id="m-ec-v-0" class="vplein" style="opacity: 0"><video id="m-ec-v-0-v" class="clip" src="assets/video/meca-moto.mp4" data-start="2.76" data-duration="0.61" data-track-index="5" muted playsinline></video></div><div id="m-ec-v-1" class="vplein" style="opacity: 0"><video id="m-ec-v-1-v" class="clip" src="assets/video/moto-wheelie.mp4" data-start="3.27" data-duration="0.09" data-track-index="6" muted playsinline></video></div><div id="m-ec-v-2" class="vplein" style="opacity: 0"><video id="m-ec-v-2-v" class="clip" src="assets/video/motos-route.mp4" data-start="3.26" data-duration="2.2" data-track-index="7" muted playsinline></video></div></div></div>
+        <svg id="m-moto" class="moto" viewBox="0 0 260 150" style="left: 1540px; top: 1000px; width: 500px; height: 288px; opacity: 0"><circle cx="52" cy="112" r="34" fill="#0B1220" stroke="#e2e8f0" stroke-width="8" /><circle cx="52" cy="112" r="10" fill="#94a3b8" /><circle cx="208" cy="112" r="34" fill="#0B1220" stroke="#e2e8f0" stroke-width="8" /><circle cx="208" cy="112" r="10" fill="#94a3b8" /><path d="M52 112 L96 70 L170 70 L208 112" fill="none" stroke="#0B1220" stroke-width="10" stroke-linejoin="round" /><path d="M84 64 Q120 40 170 52 L190 74 L104 82 Z" fill="#38BDF8" stroke="#0B1220" stroke-width="6" stroke-linejoin="round" /><path d="M70 58 L128 54 L124 66 L76 68 Z" fill="#0B1220" /><path d="M176 56 L196 22 L214 20" fill="none" stroke="#0B1220" stroke-width="9" stroke-linecap="round" /><circle cx="222" cy="58" r="11" fill="#F2B705" stroke="#0B1220" stroke-width="5" /><rect x="112" y="80" width="46" height="22" rx="6" fill="#64748b" stroke="#0B1220" stroke-width="5" /></svg>
+        <div id="m-sur" style="position: absolute; left: 0; top: 0; width: 1px; height: 1px; opacity: 0"><svg id="m-tom2" class="perso" viewBox="-30 -20 160 290" style="left: 1609px; top: 827px; width: 287px; height: 520px"><g id="m-tom2-vie"><g id="m-tom2-corps"><g id="m-tom2-jg"><g class="c"><rect x="24" y="136" width="24" height="112" rx="8" /></g><g class="p" style="--pc: #38BDF8"><rect x="24" y="136" width="24" height="112" rx="8" /></g></g><g id="m-tom2-jd"><g class="c"><rect x="52" y="136" width="24" height="112" rx="8" /></g><g class="p" style="--pc: #38BDF8"><rect x="52" y="136" width="24" height="112" rx="8" /></g></g><g id="m-tom2-tronc"><g class="c"><rect x="22" y="52" width="56" height="94" rx="12" /></g><g class="p" style="--pc: #38BDF8"><rect x="22" y="52" width="56" height="94" rx="12" /></g><rect x="30" y="60" width="40" height="7" rx="3.5" fill="rgba(11,18,32,0.25)" /></g><g id="m-tom2-bg"><g class="c"><rect x="2" y="54" width="18" height="86" rx="9" /></g><g class="p" style="--pc: #38BDF8"><rect x="2" y="54" width="18" height="86" rx="9" /></g></g><g id="m-tom2-bd"><g class="c"><rect x="80" y="54" width="18" height="86" rx="9" /></g><g class="p" style="--pc: #38BDF8"><rect x="80" y="54" width="18" height="86" rx="9" /></g></g><g id="m-tom2-tete"><g class="c"><circle cx="50" cy="24" r="22" /></g><g class="p" style="--pc: #38BDF8"><circle cx="50" cy="24" r="22" /></g><g><g id="m-tom2-yeux"><circle cx="41" cy="20" r="6.5" fill="#fff" /><circle cx="59" cy="20" r="6.5" fill="#fff" /><g id="m-tom2-pup"><circle cx="42" cy="21" r="3" fill="#0B1220" /><circle cx="60" cy="21" r="3" fill="#0B1220" /></g></g><path id="m-tom2-bouche" d="M41 32 Q50 40 59 32" fill="none" stroke="#0B1220" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" /><path d="M28 12 Q34 -6 50 -4 Q66 -6 72 12 Q62 4 50 6 Q38 4 28 12 Z" fill="#0B1220" /><g id="m-tom2-lun" style="opacity: 0"><rect x="31" y="14" width="17" height="11" rx="4" fill="#0B1220" /><rect x="52" y="14" width="17" height="11" rx="4" fill="#0B1220" /><rect x="46" y="17" width="8" height="3" fill="#0B1220" /></g></g></g></g></g></svg></div>
+        <div id="m-fier" class="gros bande" style="left: 1140px; top: 380px; font-size: 92px; color: #0B1220;  transform: rotate(-5deg); opacity: 0">FIER COMME JAMAIS</div>
+        <i id="m-cf-0" style="position: absolute; left: 1750px; top: 760px; width: 14px; height: 14px; background: #38BDF8; opacity: 0"></i>
+        <i id="m-cf-1" style="position: absolute; left: 1750px; top: 760px; width: 22px; height: 12px; background: #F2B705; opacity: 0"></i>
+        <i id="m-cf-2" style="position: absolute; left: 1750px; top: 760px; width: 14px; height: 14px; background: #F1F5F9; opacity: 0"></i>
+        <i id="m-cf-3" style="position: absolute; left: 1750px; top: 760px; width: 22px; height: 12px; background: #7DD3FC; opacity: 0"></i>
+        <i id="m-cf-4" style="position: absolute; left: 1750px; top: 760px; width: 14px; height: 14px; background: #38BDF8; opacity: 0"></i>
+        <i id="m-cf-5" style="position: absolute; left: 1750px; top: 760px; width: 22px; height: 12px; background: #F2B705; opacity: 0"></i>
+        <i id="m-cf-6" style="position: absolute; left: 1750px; top: 760px; width: 14px; height: 14px; background: #F1F5F9; opacity: 0"></i>
+        <i id="m-cf-7" style="position: absolute; left: 1750px; top: 760px; width: 22px; height: 12px; background: #7DD3FC; opacity: 0"></i>
+        <i id="m-cf-8" style="position: absolute; left: 1750px; top: 760px; width: 14px; height: 14px; background: #38BDF8; opacity: 0"></i>
+        <i id="m-cf-9" style="position: absolute; left: 1750px; top: 760px; width: 22px; height: 12px; background: #F2B705; opacity: 0"></i>
+        <i id="m-cf-10" style="position: absolute; left: 1750px; top: 760px; width: 14px; height: 14px; background: #F1F5F9; opacity: 0"></i>
+        <i id="m-cf-11" style="position: absolute; left: 1750px; top: 760px; width: 22px; height: 12px; background: #7DD3FC; opacity: 0"></i>
+        <i id="m-cf-12" style="position: absolute; left: 1750px; top: 760px; width: 14px; height: 14px; background: #38BDF8; opacity: 0"></i>
+        <i id="m-cf-13" style="position: absolute; left: 1750px; top: 760px; width: 22px; height: 12px; background: #F2B705; opacity: 0"></i>
+        <i id="m-cf-14" style="position: absolute; left: 1750px; top: 760px; width: 14px; height: 14px; background: #F1F5F9; opacity: 0"></i>
+        <i id="m-cf-15" style="position: absolute; left: 1750px; top: 760px; width: 22px; height: 12px; background: #7DD3FC; opacity: 0"></i>
+        <i id="m-cf-16" style="position: absolute; left: 1750px; top: 760px; width: 14px; height: 14px; background: #38BDF8; opacity: 0"></i>
+        <i id="m-cf-17" style="position: absolute; left: 1750px; top: 760px; width: 22px; height: 12px; background: #F2B705; opacity: 0"></i>
+        <i id="m-cf-18" style="position: absolute; left: 1750px; top: 760px; width: 14px; height: 14px; background: #F1F5F9; opacity: 0"></i>
+        <i id="m-cf-19" style="position: absolute; left: 1750px; top: 760px; width: 22px; height: 12px; background: #7DD3FC; opacity: 0"></i>
+        <i id="m-cf-20" style="position: absolute; left: 1750px; top: 760px; width: 14px; height: 14px; background: #38BDF8; opacity: 0"></i>
+        <i id="m-cf-21" style="position: absolute; left: 1750px; top: 760px; width: 22px; height: 12px; background: #F2B705; opacity: 0"></i>
+        <i id="m-cf-22" style="position: absolute; left: 1750px; top: 760px; width: 14px; height: 14px; background: #F1F5F9; opacity: 0"></i>
+        <i id="m-cf-23" style="position: absolute; left: 1750px; top: 760px; width: 22px; height: 12px; background: #7DD3FC; opacity: 0"></i>
+        <i id="m-cf-24" style="position: absolute; left: 1750px; top: 760px; width: 14px; height: 14px; background: #38BDF8; opacity: 0"></i>
+        <i id="m-cf-25" style="position: absolute; left: 1750px; top: 760px; width: 22px; height: 12px; background: #F2B705; opacity: 0"></i>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#s03-moto-cam", { filter: "blur(14px)", scale: 1.12 }, { filter: "blur(0px)", scale: 1, duration: 0.18, ease: "power2.out" }, 0);
+    tl.to("#s03-moto-cam", { scale: 1.04, duration: 4.96, ease: "none" }, 0.18);
+    tl.fromTo("#m-tom-vie", { y: 0 }, { y: -5, duration: 0.42, repeat: 11, yoyo: true, ease: "sine.inOut", immediateRender: false }, 0.0);
+    tl.to("#m-tom-yeux", { scaleY: 0.1, duration: 0.06, yoyo: true, repeat: 1, svgOrigin: "50 20" }, 0.7);
+    tl.to("#m-tom-yeux", { scaleY: 0.1, duration: 0.06, yoyo: true, repeat: 1, svgOrigin: "50 20" }, 3.233);
+    tl.fromTo("#m-cal", { opacity: 0, scale: 1.8 }, { opacity: 1, scale: 1, duration: 0.16, ease: "power4.in", immediateRender: false }, 0.12);
+    tl.to("#m-tom-pup", { x: 4, y: 2, duration: 0.15 }, 0.92);
+    tl.to("#m-tom-corps", { keyframes: [{ y: -30, duration: 0.13, ease: "power2.out" }, { y: 0, duration: 0.15, ease: "power2.in" }] }, 0.92);
+    tl.set("#m-tom-bouche", { attr: { d: "M45 34 Q50 42 55 34 Q50 27 45 34", fill: "none" } }, 0.92);
+    tl.to("#m-caisse", { scale: 1.15, duration: 0.1, yoyo: true, repeat: 1 }, 1.24);
+    tl.set("#m-v-0", { opacity: 1 }, 1.24);
+    tl.fromTo("#m-v-0", { x: 0 }, { x: -370, duration: 0.45, ease: "power1.inOut", immediateRender: false }, 1.24);
+    tl.fromTo("#m-v-0", { y: 0 }, { keyframes: [{ y: -160, duration: 0.225, ease: "power2.out" }, { y: -120, duration: 0.225, ease: "power2.in" }] }, 1.24);
+    tl.set("#m-v-0", { opacity: 0 }, 1.69);
+    tl.set("#m-v-1", { opacity: 1 }, 1.3);
+    tl.fromTo("#m-v-1", { x: 0 }, { x: -370, duration: 0.45, ease: "power1.inOut", immediateRender: false }, 1.3);
+    tl.fromTo("#m-v-1", { y: 0 }, { keyframes: [{ y: -160, duration: 0.225, ease: "power2.out" }, { y: -120, duration: 0.225, ease: "power2.in" }] }, 1.3);
+    tl.set("#m-v-1", { opacity: 0 }, 1.75);
+    tl.set("#m-v-2", { opacity: 1 }, 1.36);
+    tl.fromTo("#m-v-2", { x: 0 }, { x: -370, duration: 0.45, ease: "power1.inOut", immediateRender: false }, 1.36);
+    tl.fromTo("#m-v-2", { y: 0 }, { keyframes: [{ y: -160, duration: 0.225, ease: "power2.out" }, { y: -120, duration: 0.225, ease: "power2.in" }] }, 1.36);
+    tl.set("#m-v-2", { opacity: 0 }, 1.81);
+    tl.set("#m-v-3", { opacity: 1 }, 1.42);
+    tl.fromTo("#m-v-3", { x: 0 }, { x: -370, duration: 0.45, ease: "power1.inOut", immediateRender: false }, 1.42);
+    tl.fromTo("#m-v-3", { y: 0 }, { keyframes: [{ y: -160, duration: 0.225, ease: "power2.out" }, { y: -120, duration: 0.225, ease: "power2.in" }] }, 1.42);
+    tl.set("#m-v-3", { opacity: 0 }, 1.87);
+    tl.set("#m-v-4", { opacity: 1 }, 1.48);
+    tl.fromTo("#m-v-4", { x: 0 }, { x: -370, duration: 0.45, ease: "power1.inOut", immediateRender: false }, 1.48);
+    tl.fromTo("#m-v-4", { y: 0 }, { keyframes: [{ y: -160, duration: 0.225, ease: "power2.out" }, { y: -120, duration: 0.225, ease: "power2.in" }] }, 1.48);
+    tl.set("#m-v-4", { opacity: 0 }, 1.93);
+    tl.set("#m-v-5", { opacity: 1 }, 1.54);
+    tl.fromTo("#m-v-5", { x: 0 }, { x: -370, duration: 0.45, ease: "power1.inOut", immediateRender: false }, 1.54);
+    tl.fromTo("#m-v-5", { y: 0 }, { keyframes: [{ y: -160, duration: 0.225, ease: "power2.out" }, { y: -120, duration: 0.225, ease: "power2.in" }] }, 1.54);
+    tl.set("#m-v-5", { opacity: 0 }, 1.99);
+    tl.set("#m-v-6", { opacity: 1 }, 1.6);
+    tl.fromTo("#m-v-6", { x: 0 }, { x: -370, duration: 0.45, ease: "power1.inOut", immediateRender: false }, 1.6);
+    tl.fromTo("#m-v-6", { y: 0 }, { keyframes: [{ y: -160, duration: 0.225, ease: "power2.out" }, { y: -120, duration: 0.225, ease: "power2.in" }] }, 1.6);
+    tl.set("#m-v-6", { opacity: 0 }, 2.05);
+    tl.fromTo("#m-cpt", { opacity: 0, y: 60, scale: 0.7 }, { opacity: 1, y: 0, scale: 1, duration: 0.25, ease: "back.out(1.8)", immediateRender: false }, 1.64);
+    const p1 = { v: 0 };
+    tl.fromTo(p1, { v: 0 }, { v: 250000, duration: 0.6, ease: "power2.out", immediateRender: false, onUpdate: () => { document.querySelector("#m-cn").textContent = String(Math.round(p1.v)).replace(/\B(?=(\d{3})+(?!\d))/g, "\u202f") + ""; } }, 1.7);
+    tl.to("#m-tom-bg", { rotation: 165, svgOrigin: "11 62", duration: 0.14, ease: "back.out(2)" }, 2.0);
+    tl.to("#m-tom-bd", { rotation: -165, svgOrigin: "89 62", duration: 0.14, ease: "back.out(2)" }, 2.0);
+    tl.to("#m-tom-tete", { rotation: -8, svgOrigin: "50 50", duration: 0.14, ease: "back.out(2)" }, 2.0);
+    tl.to("#m-tom-corps", { keyframes: [{ y: -40, duration: 0.13, ease: "power2.out" }, { y: 0, duration: 0.15, ease: "power2.in" }] }, 2.05);
+    tl.to("#m-tom-corps", { keyframes: [{ y: -40, duration: 0.13, ease: "power2.out" }, { y: 0, duration: 0.15, ease: "power2.in" }] }, 2.37);
+    tl.set("#m-tom-bouche", { attr: { d: "M39 30 Q50 46 61 30 Z", fill: "#0B1220" } }, 1.8);
+    tl.to("#m-cal", { opacity: 0, duration: 0.15 }, 2.66);
+    tl.to("#m-cpt", { opacity: 0, duration: 0.15 }, 2.66);
+    tl.to("#m-tom", { x: "+=1180", duration: 0.6, ease: "power1.inOut" }, 2.51);
+    tl.to("#m-tom-jg", { svgOrigin: "36 142", keyframes: [{ rotation: 38, duration: 0.1 }, { rotation: -38, duration: 0.1 }, { rotation: 38, duration: 0.1 }, { rotation: -38, duration: 0.1 }, { rotation: 38, duration: 0.1 }, { rotation: 0, duration: 0.1 }] }, 2.51);
+    tl.to("#m-tom-jd", { svgOrigin: "64 142", keyframes: [{ rotation: -38, duration: 0.1 }, { rotation: 38, duration: 0.1 }, { rotation: -38, duration: 0.1 }, { rotation: 38, duration: 0.1 }, { rotation: -38, duration: 0.1 }, { rotation: 0, duration: 0.1 }] }, 2.51);
+    tl.to("#m-tom-bg", { svgOrigin: "11 62", keyframes: [{ rotation: -40, duration: 0.1 }, { rotation: 40, duration: 0.1 }, { rotation: -40, duration: 0.1 }, { rotation: 40, duration: 0.1 }, { rotation: -40, duration: 0.1 }, { rotation: 0, duration: 0.1 }] }, 2.51);
+    tl.to("#m-tom-bd", { svgOrigin: "89 62", keyframes: [{ rotation: 40, duration: 0.1 }, { rotation: -40, duration: 0.1 }, { rotation: 40, duration: 0.1 }, { rotation: -40, duration: 0.1 }, { rotation: 40, duration: 0.1 }, { rotation: 0, duration: 0.1 }] }, 2.51);
+    tl.to("#m-tom-corps", { keyframes: [{ y: -12, duration: 0.1 }, { y: 0, duration: 0.1 }, { y: -12, duration: 0.1 }, { y: 0, duration: 0.1 }, { y: -12, duration: 0.1 }, { y: 0, duration: 0.1 }] }, 2.51);
+    tl.to("#s03-moto-cadre", { x: -1080, y: 0, scale: 1.0, duration: 0.55, ease: "power3.inOut" }, 2.51);
+    tl.to("#s03-moto-cadre", { keyframes: [{ filter: "blur(9px)", duration: 0.275 }, { filter: "blur(0px)", duration: 0.275 }] }, 2.51);
+    tl.set("#m-ec-v-0", { opacity: 1 }, 2.76);
+    tl.fromTo("#m-ec-v-0", { scale: 1.18 }, { scale: 1.02, duration: 0.51, ease: "power2.out", immediateRender: false }, 2.76);
+    tl.set("#m-ec-v-0", { opacity: 0 }, 3.29);
+    tl.set("#m-ec-v-1", { opacity: 1 }, 3.27);
+    tl.fromTo("#m-ec-v-1", { scale: 1.18 }, { scale: 1.02, duration: 0.2, ease: "power2.out", immediateRender: false }, 3.27);
+    tl.set("#m-ec-v-1", { opacity: 0 }, 3.28);
+    tl.set("#m-ec-v-2", { opacity: 1 }, 3.26);
+    tl.fromTo("#m-ec-v-2", { scale: 1.18 }, { scale: 1.02, duration: 2.1, ease: "power2.out", immediateRender: false }, 3.26);
+    tl.fromTo("#m-ec", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.22, ease: "back.out(1.8)", immediateRender: false }, 2.46);
+    tl.to("#s03-moto-cadre", { x: -2389, y: 687, scale: 2.986, duration: 0.32, ease: "power3.inOut" }, 2.92);
+    tl.to("#s03-moto-cadre", { keyframes: [{ filter: "blur(9px)", duration: 0.16 }, { filter: "blur(0px)", duration: 0.16 }] }, 2.92);
+    tl.to("#s03-moto-cadre", { x: -1080, y: 0, scale: 1.0, duration: 0.32, ease: "power3.inOut" }, 3.51);
+    tl.to("#s03-moto-cadre", { keyframes: [{ filter: "blur(9px)", duration: 0.16 }, { filter: "blur(0px)", duration: 0.16 }] }, 3.51);
+    tl.fromTo("#m-moto", { opacity: 0, y: 120, scale: 0.7 }, { opacity: 1, y: 0, scale: 1, duration: 0.25, ease: "back.out(1.8)", immediateRender: false }, 3.56);
+    tl.set("#m-tom", { opacity: 0 }, 3.56);
+    tl.set("#m-sur", { opacity: 1 }, 3.56);
+    tl.to("#m-tom2-jg", { rotation: -32, svgOrigin: "36 142", duration: 0.01, ease: "power2.out" }, 3.56);
+    tl.to("#m-tom2-jd", { rotation: -22, svgOrigin: "64 142", duration: 0.01, ease: "power2.out" }, 3.56);
+    tl.to("#m-tom2-bd", { rotation: -72, svgOrigin: "89 62", duration: 0.01, ease: "power2.out" }, 3.56);
+    tl.to("#m-tom2-bg", { rotation: -64, svgOrigin: "11 62", duration: 0.01, ease: "power2.out" }, 3.56);
+    tl.fromTo("#m-tom2-vie", { y: 0 }, { y: -3, duration: 0.42, repeat: 2, yoyo: true, ease: "sine.inOut", immediateRender: false }, 3.76);
+    tl.to("#m-tom2-yeux", { scaleY: 0.1, duration: 0.06, yoyo: true, repeat: 1, svgOrigin: "50 20" }, 4.46);
+    tl.set("#m-tom2-bouche", { attr: { d: "M41 32 Q50 40 59 32", fill: "none" } }, 3.76);
+    tl.fromTo("#m-tom2-lun", { opacity: 0, y: -60 }, { opacity: 1, y: 0, duration: 0.18, ease: "bounce.out", immediateRender: false }, 4.24);
+    tl.to("#m-tom2-bg", { rotation: 150, svgOrigin: "11 62", duration: 0.18, ease: "power2.out" }, 4.34);
+    tl.to("#m-tom2-bd", { rotation: -150, svgOrigin: "89 62", duration: 0.18, ease: "power2.out" }, 4.34);
+    tl.set("#m-tom2-bouche", { attr: { d: "M39 30 Q50 46 61 30 Z", fill: "#0B1220" } }, 4.34);
+    tl.to("#m-ens", { opacity: 0, duration: 0.15 }, 4.24);
+    tl.to("#m-ec", { opacity: 0, duration: 0.15 }, 4.24);
+    tl.fromTo("#m-fier", { opacity: 0, scale: 2.0 }, { opacity: 1, scale: 1, duration: 0.16, ease: "power4.in", immediateRender: false }, 4.29);
+    tl.fromTo("#m-cf-0", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: 207, y: 160, rotation: -270, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 4.587);
+    tl.fromTo("#m-cf-1", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: -227, y: 327, rotation: -173, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 4.587);
+    tl.fromTo("#m-cf-2", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: 36, y: -166, rotation: -76, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 4.587);
+    tl.fromTo("#m-cf-3", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: 141, y: 307, rotation: 21, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 4.587);
+    tl.fromTo("#m-cf-4", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: -328, y: 114, rotation: 118, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 4.587);
+    tl.fromTo("#m-cf-5", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: 367, y: -27, rotation: 215, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 4.587);
+    tl.fromTo("#m-cf-6", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: -67, y: 359, rotation: -228, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 4.587);
+    tl.fromTo("#m-cf-7", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: -165, y: -95, rotation: -131, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 4.587);
+    tl.fromTo("#m-cf-8", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: 432, y: 286, rotation: -34, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 4.587);
+    tl.fromTo("#m-cf-9", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: -261, y: 246, rotation: 63, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 4.587);
+    tl.fromTo("#m-cf-10", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: 163, y: -118, rotation: 160, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 4.587);
+    tl.fromTo("#m-cf-11", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: 62, y: 318, rotation: 257, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 4.587);
+    tl.fromTo("#m-cf-12", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: -267, y: 36, rotation: -186, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 4.587);
+    tl.fromTo("#m-cf-13", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: 400, y: 90, rotation: -89, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 4.587);
+    tl.fromTo("#m-cf-14", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: -134, y: 312, rotation: 8, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 4.587);
+    tl.fromTo("#m-cf-15", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: -43, y: -105, rotation: 105, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 4.587);
+    tl.fromTo("#m-cf-16", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: 332, y: 384, rotation: 202, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 4.587);
+    tl.fromTo("#m-cf-17", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: -257, y: 169, rotation: -241, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 4.587);
+    tl.fromTo("#m-cf-18", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: 254, y: -42, rotation: -144, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 4.587);
+    tl.fromTo("#m-cf-19", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: -21, y: 528, rotation: -47, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 4.587);
+    tl.fromTo("#m-cf-20", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: -181, y: -14, rotation: 50, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 4.587);
+    tl.fromTo("#m-cf-21", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: 381, y: 201, rotation: 147, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 4.587);
+    tl.fromTo("#m-cf-22", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: -170, y: 255, rotation: 244, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 4.587);
+    tl.fromTo("#m-cf-23", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: 68, y: -81, rotation: -199, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 4.587);
+    tl.fromTo("#m-cf-24", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: 204, y: 444, rotation: -102, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 4.587);
+    tl.fromTo("#m-cf-25", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: -221, y: 104, rotation: -5, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 4.587);
+    tl.to("#s03-moto-cadre", { x: -1323, y: 69, scale: 1.15, duration: 0.3, ease: "power3.inOut" }, 4.19);
+    tl.to("#s03-moto-cadre", { keyframes: [{ filter: "blur(9px)", duration: 0.15 }, { filter: "blur(0px)", duration: 0.15 }] }, 4.19);
+    tl.to(["#m-moto", "#m-sur"], { x: 60, duration: 0.5, ease: "power2.in" }, 4.933);
+    tl.to("#s03-moto-cam", { scale: 1.25, filter: "blur(14px)", duration: 0.2, ease: "power3.in" }, 5.16);
+    window.__timelines["s03-moto"] = tl;
+  </script>
+</template>

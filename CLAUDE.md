@@ -10,8 +10,14 @@ production de vidéos avec HyperFrames (`hyperframes-style/`, `videos/`, `script
 ## Exigences de l'utilisateur (à respecter sans qu'il ait à les redire)
 
 - Répondre en **français**, simplement et directement.
-- **Livrable vidéo = une seule vidéo verticale 1080×1920** : titre-promesse blanc en haut, film 16:9 dans un
-  bandeau au centre (format de ses vidéos de référence). Ne jamais envoyer le film 16:9 intermédiaire.
+- **Livrable vidéo = une seule vidéo verticale 1080×1920.** Depuis la vidéo 4 de Lefinancier (13 nov. 2026 : « je veux des
+  vidéos verticales, plus d'horizontal »), **tout est composé directement en 1080×1920**, sans film 16:9 dans un bandeau.
+  Titre blanc en haut, sous-titres vers y = 1400. Modèle : `videos/tontine-epargne` (générateur autonome + `tools/styles.css`).
+- **Scènes de Lefinancier depuis la vidéo 4** : personnages **verticaux et bleus** (bleu ciel, bleu clair, bleu profond,
+  distingués par chignon, casquette, mèche), **décors dessinés** (rue, chambre, cercle de la tontine), **bulles de dialogue**,
+  éléments dans la scène (téléphone avec messages, appels entrants, calendrier, caisse, cartes de compte, cases mystère).
+  **Plus de vidéos en arrière-plan des personnages** : une vraie vidéo se montre DANS la scène (écran vertical, télé,
+  bulle de pensée, panneau) et **la caméra zoome dessus** jusqu'à remplir l'image, puis ressort.
 - Style « Projecteur » : [`hyperframes-style/frame.md`](hyperframes-style/frame.md).
 - **Les personnages doivent bouger** (marcher, pointer, lever les bras, réagir) et la caméra doit recadrer
   pendant les scènes. Des pictogrammes figés ne sont pas acceptables.
@@ -31,7 +37,7 @@ production de vidéos avec HyperFrames (`hyperframes-style/`, `videos/`, `script
   sans crédit) pour musiques, bruitages et vraies vidéos ; logos officiels avec `media-use resolve --type logo`.
 - **Hook visuel fort dès la première seconde** (retour sur la vidéo 6 : « un hook visuel est très important, captiver visuellement dès le début c'est fort ») : rafale ou mosaïque de vraies vidéos qui change sur chaque mot, gros bruitages.
 - **Le hook doit être plein de vraies vidéos et images d'Internet** (retour sur la vidéo 9 : « ton dernier hook ne me plaisait pas trop… mets les vidéos, ça ne manque pas sur Internet, et les images ; d'ailleurs augmente ») : pas un hook fait seulement d'interfaces dessinées ou codées. Au moins 15–20 vraies vidéos/photos dans les premières secondes, une par mot.
-- **Des vraies vidéos qui choquent visuellement TOUT AU LONG de la vidéo, pas seulement dans le hook** (demande pour la vidéo 11 : « pour empêcher les gens de partir, il faut aussi les choquer visuellement avec beaucoup de vidéos tout au long ») : derrière chaque scène, une rafale de vraies vidéos/photos qui change tous les 1–2 mots (`rafale_mots()`), les éléments (panneaux, personnage, textes) par-dessus.
+- **Des vraies vidéos qui choquent visuellement TOUT AU LONG de la vidéo, pas seulement dans le hook** (demande pour la vidéo 11 : « pour empêcher les gens de partir, il faut aussi les choquer visuellement avec beaucoup de vidéos tout au long ») : derrière chaque scène, une rafale de vraies vidéos/photos qui change tous les 1–2 mots (`rafale_mots()`), les éléments (panneaux, personnage, textes) par-dessus. **Remplacé pour Lefinancier depuis la vidéo 4** : les vraies vidéos restent nombreuses mais dans des écrans de la scène avec zoom (voir plus haut) ; le hook garde une rafale plein cadre.
 - **Du mystère, révélation progressive** (demande pour la vidéo 13) : ne jamais montrer toute la liste d'un coup. Les points
   restent cachés (cases verrouillées « ? » sous le film, cartes floutées) et se dévoilent un par un, au moment où la voix les
   annonce, avec un bruitage de révélation.
@@ -42,4 +48,5 @@ production de vidéos avec HyperFrames (`hyperframes-style/`, `videos/`, `script
 - **Tout vérifier et corriger avant de lancer un rendu** : `hyperframes check` sans erreur, puis regarder les
   images clés. Ne jamais lancer le rendu dans la même commande que le contrôle.
 - **Nouvelle niche depuis novembre 2026 : vulgarisation financière** (l'utilisateur a une formation d'actuaire, mais **ne jamais le dire publiquement** : ni en bio, ni dans les vidéos, ni dans les textes). Exemples en FCFA, petits constats chiffrés, chaque chiffre vérifié à la source (INS, BCEAO) ; jamais de conseil d'investissement personnalisé. **Ne jamais montrer de jeux d'argent (casino, paris, tickets de pari), même pour les critiquer : la vidéo 2 sur les paris sportifs a reçu un avertissement TikTok et a été supprimée.** Les sites web sont arrêtés pour l'instant. Même outil (HyperFrames). **Scripts en mode storytelling** (demande du 12 nov. 2026) : raconter une histoire avec des personnages inventés aux **prénoms non africains** (ex. Emma et Julie, Tom et Hugo ; demande de l'utilisateur), un mystère et une chute, plutôt qu'une explication directe. **Couleur de la chaîne finance « Lefinancier » : bleu ciel #38BDF8 sur bleu nuit #0B1220, plus de jaune citron ni de vert** (personnage en bleu ciel, pièces dorées).
+- **Scripts de Lefinancier écrits par une autre IA** (depuis le 13 nov. 2026, l'utilisateur trouve mon storytelling faible) : il utilise `finance/prompt-storytelling.txt` (page pour copier en un clic : `finance/prompt-storytelling.html`) et m'envoie le texte et sa voix ; je fais le montage.
 - Mettre à jour `SUIVI.md` à chaque étape importante.
