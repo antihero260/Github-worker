@@ -1,0 +1,44 @@
+<!-- Comprendre la question, cadrer le travail, analyser, puis expliquer les résultats (39.88 → 44.52 s). Écrit par tools/construire.py. -->
+<template>
+  <style>
+    #root { position: absolute; inset: 0; }
+  </style>
+  <div id="root" data-composition-id="s08-methode" data-width="1920" data-height="1080">
+    <div class="sc">
+      <div id="s08-methode-cam" class="sc-cam">
+        <div id="s08-methode-cadre" class="sc-cadre">
+        <div id="m-img" class="img-plein"><img src="assets/img/onde-donnees-1536.webp" alt="" /><i style="opacity: 0.62"></i></div>
+        <div class="etiq-sc" style="left: 140px; top: 210px; color: #8ea6ff">Notre méthode</div>
+        <div id="m-ligne" class="m-ligne"></div>
+        <div id="m-e0" class="etape" style="left: 140px; top: 470px; opacity: 0.18"><i></i><em>01</em><b>Comprendre</b><span>la question</span></div>
+        <div id="m-e1" class="etape" style="left: 570px; top: 470px; opacity: 0.18"><i></i><em>02</em><b>Cadrer</b><span>le travail</span></div>
+        <div id="m-e2" class="etape" style="left: 1000px; top: 470px; opacity: 0.18"><i></i><em>03</em><b>Analyser</b><span>les données</span></div>
+        <div id="m-e3" class="etape" style="left: 1430px; top: 470px; opacity: 0.18"><i></i><em>04</em><b>Expliquer</b><span>les résultats</span></div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#s08-methode-cam", { filter: "blur(16px)", scale: 1.1 }, { filter: "blur(0px)", scale: 1, duration: 0.3, ease: "power3.out" }, 0);
+    tl.to("#s08-methode-cam", { scale: 1.03, duration: 4.04, ease: "none" }, 0.3);
+    tl.fromTo("#m-img img", { scale: 1.18, xPercent: 4 }, { scale: 1.04, xPercent: -4, duration: 4.640000000000001, ease: "none", immediateRender: true }, 0.0);
+    tl.to("#m-e0", { opacity: 1, duration: 0.25 }, 0.12);
+    tl.fromTo("#m-e0 b", { yPercent: 60, opacity: 0 }, { yPercent: 0, opacity: 1, duration: 0.45, ease: "expo.out", immediateRender: false }, 0.12);
+    tl.fromTo("#m-e0 i", { scale: 0.4 }, { scale: 1, duration: 0.4, ease: "back.out(3)", immediateRender: false }, 0.12);
+    tl.to("#m-e1", { opacity: 1, duration: 0.25 }, 1.4);
+    tl.fromTo("#m-e1 b", { yPercent: 60, opacity: 0 }, { yPercent: 0, opacity: 1, duration: 0.45, ease: "expo.out", immediateRender: false }, 1.4);
+    tl.fromTo("#m-e1 i", { scale: 0.4 }, { scale: 1, duration: 0.4, ease: "back.out(3)", immediateRender: false }, 1.4);
+    tl.to("#m-e2", { opacity: 1, duration: 0.25 }, 2.68);
+    tl.fromTo("#m-e2 b", { yPercent: 60, opacity: 0 }, { yPercent: 0, opacity: 1, duration: 0.45, ease: "expo.out", immediateRender: false }, 2.68);
+    tl.fromTo("#m-e2 i", { scale: 0.4 }, { scale: 1, duration: 0.4, ease: "back.out(3)", immediateRender: false }, 2.68);
+    tl.to("#m-e3", { opacity: 1, duration: 0.25 }, 3.72);
+    tl.fromTo("#m-e3 b", { yPercent: 60, opacity: 0 }, { yPercent: 0, opacity: 1, duration: 0.45, ease: "expo.out", immediateRender: false }, 3.72);
+    tl.fromTo("#m-e3 i", { scale: 0.4 }, { scale: 1, duration: 0.4, ease: "back.out(3)", immediateRender: false }, 3.72);
+    tl.fromTo("#m-ligne", { scaleX: 0 }, { scaleX: 1, duration: 4.0, ease: "none", immediateRender: true }, 0.12);
+    tl.to("#s08-methode-cadre", { x: -58, y: -21, scale: 1.06, duration: 4.640000000000001, ease: "none" }, 0.0);
+    tl.to("#s08-methode-cam", { scale: 1.18, filter: "blur(16px)", duration: 0.24, ease: "power3.in" }, 4.4);
+    window.__timelines["s08-methode"] = tl;
+  </script>
+</template>

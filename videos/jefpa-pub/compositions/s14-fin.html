@@ -1,0 +1,36 @@
+<!-- JE-FPA. L'ambition se construit ensemble. (80.33 → 86.5 s). Écrit par tools/construire.py. -->
+<template>
+  <style>
+    #root { position: absolute; inset: 0; }
+  </style>
+  <div id="root" data-composition-id="s14-fin" data-width="1920" data-height="1080">
+    <div class="sc">
+      <div id="s14-fin-cam" class="sc-cam">
+        <div id="s14-fin-cadre" class="sc-cadre">
+        <div id="f-img" class="img-plein"><img src="assets/img/convergence-1536.webp" alt="" /><i style="opacity: 0.5"></i></div>
+        <div id="f-logo" class="logo-fin"><img src="assets/img/logo.jpeg" alt="JE-FPA" /></div>
+        <div id="f-t" class="titre" style="left: 820px; top: 300px; font-size: 110px; color: #fff; font-weight: 800; line-height: 1.04; "><span class="m"><span id="f-t-0" class="mi">L’ambition</span></span><span class="m"><span id="f-t-1" class="mi">se construit</span></span><span class="m"><span id="f-t-2" class="mi"><span style='color: #8ea6ff'>ensemble.</span></span></span></div>
+        <div id="f-url" class="url-fin" style="opacity: 0">jefpa-site.pages.dev</div>
+        <div id="f-li" class="li-fin" style="opacity: 0">Junior Entreprise FPA · UFHB · Abidjan</div>
+        </div>
+      </div>
+      <div id="s14-fin-bal-0" class="balayage" style="background: linear-gradient(100deg, transparent 0%, rgba(142, 166, 255, 0.55) 50%, transparent 100%)"></div>
+      <div id="s14-fin-noir" style="position: absolute; inset: 0; background: #000; opacity: 0"></div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#s14-fin-cam", { filter: "blur(16px)", scale: 1.1 }, { filter: "blur(0px)", scale: 1, duration: 0.3, ease: "power3.out" }, 0);
+    tl.to("#s14-fin-cam", { scale: 1.03, duration: 5.57, ease: "none" }, 0.3);
+    tl.fromTo("#f-img img", { scale: 1.25, xPercent: 0 }, { scale: 1.05, xPercent: 0, duration: 6.170000000000002, ease: "none", immediateRender: true }, 0.0);
+    tl.fromTo("#f-logo", { opacity: 0, scale: 0.6, y: 40 }, { opacity: 1, scale: 1, y: 0, duration: 0.7, ease: "back.out(1.6)", immediateRender: true }, 0.12);
+    tl.fromTo("#f-t-0", { yPercent: 115 }, { yPercent: 0, duration: 0.55, ease: "expo.out", immediateRender: true }, 1.56);
+    tl.fromTo("#f-t-1", { yPercent: 115 }, { yPercent: 0, duration: 0.55, ease: "expo.out", immediateRender: true }, 2.01);
+    tl.fromTo("#f-t-2", { yPercent: 115 }, { yPercent: 0, duration: 0.55, ease: "expo.out", immediateRender: true }, 2.46);
+    tl.fromTo("#f-url", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5, ease: "expo.out", immediateRender: false }, 3.5);
+    tl.fromTo("#f-li", { opacity: 0 }, { opacity: 1, duration: 0.5, immediateRender: false }, 3.8);
+    tl.fromTo("#s14-fin-bal-0", { xPercent: -120 }, { xPercent: 220, duration: 0.9, ease: "power2.inOut", immediateRender: true }, 1.56);
+    tl.fromTo("#s14-fin-noir", { opacity: 0 }, { opacity: 1, duration: 0.9, ease: "power2.in" }, 5.27);
+    window.__timelines["s14-fin"] = tl;
+  </script>
+</template>

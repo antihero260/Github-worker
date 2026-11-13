@@ -1,0 +1,30 @@
+<!-- La JE-FPA est née en 2023 pour aider les étudiants à franchir ce pas avant même leur diplôme (28.68 → 35.32 s). Écrit par tools/construire.py. -->
+<template>
+  <style>
+    #root { position: absolute; inset: 0; }
+  </style>
+  <div id="root" data-composition-id="s06-conviction" data-width="1920" data-height="1080">
+    <div class="sc">
+      <div id="s06-conviction-cam" class="sc-cam">
+        <div id="s06-conviction-cadre" class="sc-cadre">
+        <div id="v-c" class="capt" style="z-index: 1"><video id="v-c-v" class="clip" src="assets/captures/c03-conviction.mp4" data-start="0.0" data-duration="6.64" data-media-start="0.48" data-track-index="5" muted playsinline></video></div>
+        <div id="v-an" class="annee" style="opacity: 0"><b id="v-an-n">2020</b><span>Naissance de la JE-FPA</span></div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#s06-conviction-cam", { filter: "blur(16px)", scale: 1.1 }, { filter: "blur(0px)", scale: 1, duration: 0.3, ease: "power3.out" }, 0);
+    tl.to("#s06-conviction-cam", { scale: 1.03, duration: 6.04, ease: "none" }, 0.3);
+    tl.fromTo("#v-an", { opacity: 0, x: 80 }, { opacity: 1, x: 0, duration: 0.45, ease: "expo.out", immediateRender: false }, 1.58);
+    const p1 = { v: 2019 };
+    tl.fromTo(p1, { v: 2019 }, { v: 2023, duration: 0.7, ease: "power2.out", immediateRender: false, onUpdate: () => { document.querySelector("#v-an-n").textContent = String(Math.round(p1.v)); } }, 1.58);
+    tl.to("#v-an", { opacity: 0, x: 80, duration: 0.3 }, 3.469);
+    tl.to("#s06-conviction-cadre", { x: 240, y: 50, scale: 1.25, duration: 2.4, ease: "power2.inOut" }, 2.68);
+    tl.to("#s06-conviction-cadre", { x: 0, y: 0, scale: 1.0, duration: 0.7, ease: "power3.inOut" }, 4.72);
+    tl.to("#s06-conviction-cam", { scale: 1.18, filter: "blur(16px)", duration: 0.24, ease: "power3.in" }, 6.4);
+    window.__timelines["s06-conviction"] = tl;
+  </script>
+</template>

@@ -1,0 +1,49 @@
+<!-- Depuis 2023, trois bureaux : Anicet Apeli, Miezan Océane, Kouassi Enoch ; chaque génération construit (58.52 → 70.33 s). Écrit par tools/construire.py. -->
+<template>
+  <style>
+    #root { position: absolute; inset: 0; }
+  </style>
+  <div id="root" data-composition-id="s11-bureaux" data-width="1920" data-height="1080">
+    <div class="sc">
+      <div id="s11-bureaux-cam" class="sc-cam">
+        <div id="s11-bureaux-cadre" class="sc-cadre">
+        <div id="u-c1" class="capt" style="z-index: 1"><video id="u-c1-v" class="clip" src="assets/captures/c11-bureaux.mp4" data-start="0.0" data-duration="8.66" data-media-start="0.52" data-track-index="5" muted playsinline></video></div>
+        <div id="u-c2" class="capt" style="z-index: 2"><video id="u-c2-v" class="clip" src="assets/captures/c12-collectif.mp4" data-start="8.66" data-duration="3.15" data-media-start="0.48" data-track-index="6" muted playsinline></video></div>
+        <div id="u-3" class="gros-chiffre droite" style="opacity: 0"><b>3</b><span>bureaux</span></div>
+        <div id="u-f0" class="focus" style="left: 64.0px; top: 469.3333333333333px; width: 300px; height: 120px; opacity: 0"></div>
+        <div id="u-f1" class="focus" style="left: 660.0px; top: 469.3333333333333px; width: 300px; height: 120px; opacity: 0"></div>
+        <div id="u-f2" class="focus" style="left: 1253.3333333333333px; top: 469.3333333333333px; width: 300px; height: 120px; opacity: 0"></div>
+        <div id="u-p" class="puce" style="left: 120px; top: 900px; background: #05070d; color: #fff; font-size: 30px; opacity: 0">Chaque génération construit sur la précédente</div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#s11-bureaux-cam", { filter: "blur(16px)", scale: 1.1 }, { filter: "blur(0px)", scale: 1, duration: 0.3, ease: "power3.out" }, 0);
+    tl.to("#s11-bureaux-cam", { scale: 1.03, duration: 11.21, ease: "none" }, 0.3);
+    tl.set("#u-c1", { opacity: 0 }, 8.66);
+    tl.set("#u-c2", { opacity: 0 }, 0);
+    tl.set("#u-c2", { opacity: 1 }, 8.66);
+    tl.fromTo("#u-3", { opacity: 0, scale: 1.6 }, { opacity: 1, scale: 1, duration: 0.35, ease: "expo.out", immediateRender: false }, 1.32);
+    tl.to("#u-3", { opacity: 0, duration: 0.25 }, 2.96);
+    tl.to("#s11-bureaux-cadre", { x: 144, y: 81, scale: 1.15, duration: 1.6, ease: "power2.out" }, 0.1);
+    tl.to("#s11-bureaux-cadre", { x: 960, y: 14, scale: 2.0, duration: 0.55, ease: "power3.inOut" }, 3.23);
+    tl.fromTo("#u-f0", { opacity: 0, scale: 1.15 }, { opacity: 1, scale: 1, duration: 0.3, ease: "power3.out", immediateRender: false }, 3.48);
+    tl.to("#u-f0", { opacity: 0, duration: 0.2 }, 4.48);
+    tl.to("#s11-bureaux-cadre", { x: 274, y: 14, scale: 2.0, duration: 0.55, ease: "power3.inOut" }, 4.83);
+    tl.fromTo("#u-f1", { opacity: 0, scale: 1.15 }, { opacity: 1, scale: 1, duration: 0.3, ease: "power3.out", immediateRender: false }, 5.08);
+    tl.to("#u-f1", { opacity: 0, duration: 0.2 }, 6.08);
+    tl.to("#s11-bureaux-cadre", { x: -912, y: 14, scale: 2.0, duration: 0.55, ease: "power3.inOut" }, 7.2);
+    tl.fromTo("#u-f2", { opacity: 0, scale: 1.15 }, { opacity: 1, scale: 1, duration: 0.3, ease: "power3.out", immediateRender: false }, 7.45);
+    tl.to("#u-f2", { opacity: 0, duration: 0.2 }, 8.41);
+    tl.to("#s11-bureaux-cadre", { x: 0, y: 0, scale: 1.0, duration: 0.25, ease: "power3.inOut" }, 8.41);
+    tl.set("#s11-bureaux-cadre", { x: 0, y: 0, scale: 1 }, 8.67);
+    tl.to("#s11-bureaux-cadre", { x: 67, y: -65, scale: 1.12, duration: 2.5, ease: "power1.inOut" }, 9.13);
+    tl.fromTo("#u-p", { opacity: 0, y: 24, scale: 0.9 }, { opacity: 1, y: 0, scale: 1, duration: 0.35, ease: "back.out(2)", immediateRender: false }, 9.13);
+    tl.to("#u-p", { opacity: 0, y: -16, duration: 0.25 }, 11.56);
+    tl.to("#s11-bureaux-cam", { scale: 1.18, filter: "blur(16px)", duration: 0.24, ease: "power3.in" }, 11.57);
+    window.__timelines["s11-bureaux"] = tl;
+  </script>
+</template>

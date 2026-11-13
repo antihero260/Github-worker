@@ -1,0 +1,33 @@
+<!-- Vous êtes une organisation, avec une question sur vos chiffres ou vos données ? Parlons-en (75.69 → 80.33 s). Écrit par tools/construire.py. -->
+<template>
+  <style>
+    #root { position: absolute; inset: 0; }
+  </style>
+  <div id="root" data-composition-id="s13-contact" data-width="1920" data-height="1080">
+    <div class="sc">
+      <div id="s13-contact-cam" class="sc-cam">
+        <div id="s13-contact-cadre" class="sc-cadre">
+        <div id="t-c1" class="capt" style="z-index: 1"><video id="t-c1-v" class="clip" src="assets/captures/c14-clic.mp4" data-start="0.0" data-duration="1.59" data-media-start="0.49" data-track-index="5" muted playsinline></video></div>
+        <div id="t-c2" class="capt" style="z-index: 2"><video id="t-c2-v" class="clip" src="assets/captures/c15-contact.mp4" data-start="1.59" data-duration="3.05" data-media-start="0.38" data-track-index="6" muted playsinline></video></div>
+        <div id="t-parlons" class="parlons" style="opacity: 0">Parlons-en.</div>
+        </div>
+      </div>
+      <div id="s13-contact-fl-0" style="position: absolute; inset: 0; background: #1f4bff; opacity: 0; pointer-events: none"></div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#s13-contact-cam", { filter: "blur(16px)", scale: 1.1 }, { filter: "blur(0px)", scale: 1, duration: 0.3, ease: "power3.out" }, 0);
+    tl.to("#s13-contact-cam", { scale: 1.03, duration: 4.04, ease: "none" }, 0.3);
+    tl.set("#t-c1", { opacity: 0 }, 1.59);
+    tl.set("#t-c2", { opacity: 0 }, 0);
+    tl.set("#t-c2", { opacity: 1 }, 1.59);
+    tl.to("#s13-contact-cadre", { x: -864, y: 486, scale: 1.9, duration: 0.9, ease: "power3.inOut" }, 0.3);
+    tl.fromTo("#s13-contact-fl-0", { opacity: 0.9 }, { opacity: 0, duration: 0.25, immediateRender: false }, 1.59);
+    tl.set("#s13-contact-cadre", { x: 0, y: 0, scale: 1 }, 1.59);
+    tl.to("#s13-contact-cadre", { x: 324, y: -81, scale: 1.35, duration: 0.9, ease: "power3.inOut" }, 2.51);
+    tl.fromTo("#t-parlons", { opacity: 0, scale: 1.4 }, { opacity: 1, scale: 1, duration: 0.3, ease: "expo.out", immediateRender: false }, 3.8);
+    tl.to("#s13-contact-cam", { scale: 1.18, filter: "blur(16px)", duration: 0.24, ease: "power3.in" }, 4.4);
+    window.__timelines["s13-contact"] = tl;
+  </script>
+</template>
