@@ -12,14 +12,14 @@
         <div id="o-r1" class="img-plein" style="z-index: 3"><img src="assets/img/onde-donnees-1536.webp" alt="" /></div>
         <div id="o-r2" class="img-plein" style="z-index: 3"><img src="assets/img/risque-partage-1536.webp" alt="" /></div>
         <div class="degrade-g"></div>
-        <div id="o-lieu" class="puce" style="left: 120px; top: 300px; background: rgba(255,255,255,0.12); color: #fff; font-size: 30px; opacity: 0">Abidjan · Côte d’Ivoire</div>
-        <div id="o-u" class="titre" style="left: 120px; top: 370px; font-size: 104px; color: #fff; font-weight: 800; width: 1300px; text-align: left;"><span class="m"><span id="o-u-0" class="mi" style="color: #fff">Université</span></span> <span class="m"><span id="o-u-1" class="mi" style="color: #fff">Félix</span></span> <span class="m"><span id="o-u-2" class="mi" style="color: #fff">Houphouët-Boigny</span></span></div>
-        <div id="o-ufr-t" class="titre" style="left: 120px; top: 560px; font-size: 92px; color: #fff; font-weight: 800; width: 1500px; text-align: left;"><span class="m"><span id="o-ufr-t-0" class="mi" style="color: #fff">UFR</span></span> <span class="m"><span id="o-ufr-t-1" class="mi" style="color: #1f4bff">Mathématiques</span></span> <span class="m"><span id="o-ufr-t-2" class="mi" style="color: #fff">et</span></span> <span class="m"><span id="o-ufr-t-3" class="mi" style="color: #1f4bff">Informatique</span></span></div>
+        <div id="o-u" class="titre en-ligne" style="left: 120px; top: 370px; font-size: 96px; color: #fff; font-weight: 800; width: 1650px; text-align: left;"><span class="m"><span id="o-u-0" class="mi" style="color: #fff">Université</span></span> <span class="m"><span id="o-u-1" class="mi" style="color: #fff">Félix</span></span> <span class="m"><span id="o-u-2" class="mi" style="color: #fff">Houphouët-Boigny</span></span></div>
+        <div id="o-ufr-t" class="titre en-ligne" style="left: 120px; top: 560px; font-size: 92px; color: #fff; font-weight: 800; width: 1500px; text-align: left;"><span class="m"><span id="o-ufr-t-0" class="mi" style="color: #fff">UFR</span></span> <span class="m"><span id="o-ufr-t-1" class="mi" style="color: #1f4bff">Mathématiques</span></span> <span class="m"><span id="o-ufr-t-2" class="mi" style="color: #fff">et</span></span> <span class="m"><span id="o-ufr-t-3" class="mi" style="color: #1f4bff">Informatique</span></span></div>
         <div id="o-trait" class="trait" style="left: 124px; top: 790px; width: 420px"></div>
         </div>
       </div>
       <div id="s01-ouverture-fl-0" style="position: absolute; inset: 0; background: #fff; opacity: 0; pointer-events: none"></div>
-      <div id="s01-ouverture-bal-1" class="balayage" style="background: linear-gradient(100deg, transparent 0%, rgba(142, 166, 255, 0.55) 50%, transparent 100%)"></div>
+      <div id="o-lieu" class="puce" style="left: 120px; top: 300px; background: rgba(255,255,255,0.12); color: #fff; font-size: 30px; opacity: 0">Abidjan · Côte d’Ivoire</div>
+      <div id="s01-ouverture-bal-2" class="balayage" style="background: linear-gradient(100deg, transparent 0%, rgba(142, 166, 255, 0.55) 50%, transparent 100%)"></div>
     </div>
   </div>
   <script>
@@ -37,6 +37,7 @@
     tl.set("#o-r2", { opacity: 0 }, 0.36);
     tl.fromTo("#s01-ouverture-fl-0", { opacity: 0.7 }, { opacity: 0, duration: 0.25, immediateRender: false }, 0.36);
     tl.fromTo("#o-lieu", { opacity: 0, y: 24, scale: 0.9 }, { opacity: 1, y: 0, scale: 1, duration: 0.35, ease: "back.out(2)", immediateRender: false }, 0.42);
+    tl.to("#o-lieu", { opacity: 0, y: -16, duration: 0.25 }, 2.63);
     tl.fromTo("#o-u-0", { yPercent: 115 }, { yPercent: 0, duration: 0.45, ease: "expo.out", immediateRender: true }, 0.4);
     tl.fromTo("#o-u-1", { yPercent: 115 }, { yPercent: 0, duration: 0.45, ease: "expo.out", immediateRender: true }, 1.04);
     tl.fromTo("#o-u-2", { yPercent: 115 }, { yPercent: 0, duration: 0.45, ease: "expo.out", immediateRender: true }, 1.6);
@@ -46,7 +47,7 @@
     tl.fromTo("#o-ufr-t-2", { yPercent: 115 }, { yPercent: 0, duration: 0.45, ease: "expo.out", immediateRender: true }, 4.28);
     tl.fromTo("#o-ufr-t-3", { yPercent: 115 }, { yPercent: 0, duration: 0.45, ease: "expo.out", immediateRender: true }, 4.8);
     tl.fromTo("#o-trait", { scaleX: 0 }, { scaleX: 1, duration: 0.8, ease: "expo.out", immediateRender: true }, 2.88);
-    tl.fromTo("#s01-ouverture-bal-1", { xPercent: -120 }, { xPercent: 220, duration: 0.9, ease: "power2.inOut", immediateRender: true }, 2.8);
+    tl.fromTo("#s01-ouverture-bal-2", { xPercent: -120 }, { xPercent: 220, duration: 0.9, ease: "power2.inOut", immediateRender: true }, 2.8);
     tl.to("#s01-ouverture-cadre", { x: 38, y: 21, scale: 1.04, duration: 5.4, ease: "none" }, 0.4);
     tl.to("#s01-ouverture-cam", { scale: 1.18, filter: "blur(16px)", duration: 0.24, ease: "power3.in" }, 5.64);
     window.__timelines["s01-ouverture"] = tl;

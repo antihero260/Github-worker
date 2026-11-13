@@ -11,12 +11,11 @@
         <div id="q-c2" class="capt" style="z-index: 2"><video id="q-c2-v" class="clip" src="assets/captures/c06-actuariat.mp4" data-start="2.37" data-duration="3.2" data-media-start="0.39" data-track-index="6" muted playsinline></video></div>
         <div id="q-c3" class="capt" style="z-index: 3"><video id="q-c3-v" class="clip" src="assets/captures/c07-data.mp4" data-start="5.57" data-duration="2.59" data-media-start="0.39" data-track-index="7" muted playsinline></video></div>
         <div id="q-volet" class="volet"></div>
-        <div id="q-2" class="gros-chiffre" style="opacity: 0"><b>2</b><span>pôles</span></div>
-        <div id="q-pa" class="puce" style="left: 120px; top: 900px; background: #1f4bff; color: #fff; font-size: 30px; opacity: 0">Pôle Actuariat</div>
-        <div id="q-pd" class="puce" style="left: 120px; top: 900px; background: #1f4bff; color: #fff; font-size: 30px; opacity: 0">Pôle Data Science</div>
         </div>
       </div>
-      
+      <div id="q-2" class="gros-chiffre" style="opacity: 0"><b>2</b><span>pôles</span></div>
+      <div id="q-pa" class="puce" style="left: 120px; top: 870px; background: #1f4bff; color: #fff; font-size: 30px; opacity: 0">Pôle Actuariat</div>
+      <div id="q-pd" class="puce" style="left: 120px; top: 870px; background: #1f4bff; color: #fff; font-size: 30px; opacity: 0">Pôle Data Science</div>
     </div>
   </div>
   <script>
@@ -29,8 +28,11 @@
     tl.set("#q-c2", { opacity: 0 }, 5.57);
     tl.set("#q-c3", { opacity: 0 }, 0);
     tl.set("#q-c3", { opacity: 1 }, 5.57);
-    tl.fromTo("#q-volet", { xPercent: -101 }, { keyframes: [{ xPercent: 0, duration: 0.18, ease: "power3.in" }, { xPercent: 101, duration: 0.22, ease: "power3.out" }] }, 2.19);
-    tl.fromTo("#q-volet", { xPercent: -101 }, { keyframes: [{ xPercent: 0, duration: 0.18, ease: "power3.in" }, { xPercent: 101, duration: 0.22, ease: "power3.out" }] }, 5.39);
+    tl.set("#q-volet", { xPercent: -101 }, 0);
+    tl.set("#q-volet", { xPercent: -101 }, 2.18);
+    tl.to("#q-volet", { keyframes: [{ xPercent: 0, duration: 0.18, ease: "power3.in" }, { xPercent: 101, duration: 0.22, ease: "power3.out" }] }, 2.19);
+    tl.set("#q-volet", { xPercent: -101 }, 5.38);
+    tl.to("#q-volet", { keyframes: [{ xPercent: 0, duration: 0.18, ease: "power3.in" }, { xPercent: 101, duration: 0.22, ease: "power3.out" }] }, 5.39);
     tl.fromTo("#q-2", { opacity: 0, scale: 1.6 }, { opacity: 1, scale: 1, duration: 0.35, ease: "expo.out", immediateRender: false }, 1.72);
     tl.to("#q-2", { opacity: 0, duration: 0.2 }, 2.22);
     tl.to("#s09-poles-cadre", { x: 192, y: 108, scale: 1.2, duration: 1.6, ease: "power2.out" }, 0.05);

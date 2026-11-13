@@ -43,7 +43,7 @@
       .fond-sombre .halo { position: absolute; left: 50%; top: 40%; width: 900px; height: 900px; margin: -450px; border-radius: 50%;
         background: radial-gradient(circle, rgba(31, 75, 255, 0.35), transparent 70%); }
       .balayage { position: absolute; top: -10%; left: 0; width: 45%; height: 120%; transform: skewX(-18deg); pointer-events: none; mix-blend-mode: screen; }
-      .volet { position: absolute; inset: 0; background: #1f4bff; transform: translateX(-101%); z-index: 20; }
+      .volet { position: absolute; inset: 0; background: #1f4bff; z-index: 20; }
 
       /* scène « le pas » */
       .moitie { position: absolute; top: 0; width: 960px; height: 1080px; }
@@ -61,7 +61,7 @@
       .etape { position: absolute; width: 400px; color: #fff; }
       .etape i { position: absolute; left: 6px; top: -36px; width: 28px; height: 28px; border-radius: 50%; background: #1f4bff; box-shadow: 0 0 0 8px rgba(31, 75, 255, 0.25), 0 0 30px #1f4bff; }
       .etape em { display: block; font-style: normal; font-size: 26px; font-weight: 700; color: #8ea6ff; margin-top: 30px; }
-      .etape b { display: block; font-size: 74px; font-weight: 800; letter-spacing: -0.04em; line-height: 1.05; }
+      .etape b { display: block; font-size: 60px; font-weight: 800; letter-spacing: -0.04em; line-height: 1.05; }
       .etape span { display: block; font-size: 32px; font-weight: 500; color: #c9d1ee; }
       .gros-chiffre { position: absolute; left: 120px; top: 230px; display: flex; align-items: baseline; gap: 22px; color: #fff; padding: 20px 46px 30px; border-radius: 30px;
         background: #1f4bff; box-shadow: 0 40px 100px rgba(31, 75, 255, 0.45); }
@@ -76,9 +76,12 @@
         font-size: 220px; font-weight: 800; letter-spacing: -0.05em; color: #fff; background: rgba(31, 75, 255, 0.92); }
 
       /* fin */
-      .logo-fin { position: absolute; left: 260px; top: 300px; width: 440px; height: 440px; border-radius: 40px; background: #fff; padding: 40px;
+      .logo-fin { position: absolute; left: 160px; top: 390px; width: 660px; height: 300px; border-radius: 36px; background: #fff; padding: 26px 34px;
         box-shadow: 0 50px 140px rgba(0, 0, 0, 0.6); }
       .logo-fin img { width: 100%; height: 100%; object-fit: contain; }
-      .url-fin { position: absolute; left: 826px; top: 700px; font-size: 44px; font-weight: 800; color: #fff; padding: 14px 30px; border-radius: 999px;
+      .url-fin { position: absolute; left: 906px; top: 700px; font-size: 44px; font-weight: 800; color: #fff; padding: 14px 30px; border-radius: 999px;
         background: #1f4bff; letter-spacing: -0.02em; }
-      .li-fin { position: absolute; left: 832px; top: 800px; font-size: 30px; font-weight: 600; color: #c9d1ee; }
+      .li-fin { position: absolute; left: 912px; top: 800px; font-size: 30px; font-weight: 600; color: #c9d1ee; }
+      .titre.en-ligne { white-space: normal; }
+      .titre.en-ligne > .m { display: inline-block; width: auto; margin-right: 0.22em; }
+      .puce, .focus, .annee, .gros-chiffre, .bande, .parlons, .titre, .etiq-sc { z-index: 30; }

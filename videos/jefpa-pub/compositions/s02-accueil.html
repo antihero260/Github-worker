@@ -9,13 +9,12 @@
         <div id="s02-accueil-cadre" class="sc-cadre">
         <div class="fond-sombre"></div>
         <div id="a-fen" class="fen" style="left: 0px; top: 0px; width: 1920px; z-index: 2"><div class="fen-barre"><i></i><i></i><i></i><span>jefpa-site.pages.dev</span></div><div class="fen-ecran" style="height: 1080px"><video id="a-fen-v" class="clip" src="assets/captures/c01-accueil.mp4" data-start="0.0" data-duration="9.76" data-media-start="0.38" data-track-index="5" muted playsinline></video></div></div>
-        <div id="a-url" class="puce" style="left: 760px; top: 70px; background: #05070d; color: #fff; font-size: 30px; opacity: 0">jefpa-site.pages.dev</div>
-        <div id="a-f1" class="focus" style="left: 72.66666666666666px; top: 980.6666666666666px; width: 420px; height: 54px; opacity: 0"></div>
-        <div id="a-p1" class="puce" style="left: 120px; top: 820px; background: #1f4bff; color: #fff; font-size: 30px; opacity: 0">Filière Professionnalisée Actuariat</div>
-        <div id="a-p2" class="puce" style="left: 60px; top: 210px; background: #1f4bff; color: #fff; font-size: 30px; opacity: 0">Junior Entreprise</div>
         </div>
       </div>
-      <div id="s02-accueil-bal-0" class="balayage" style="background: linear-gradient(100deg, transparent 0%, rgba(142, 166, 255, 0.55) 50%, transparent 100%)"></div>
+      <div id="a-url" class="puce" style="left: 760px; top: 70px; background: #05070d; color: #fff; font-size: 30px; opacity: 0">jefpa-site.pages.dev</div>
+      <div id="a-p1" class="puce" style="left: 120px; top: 800px; background: #05070d; color: #fff; font-size: 44px; opacity: 0">Filière Professionnalisée Actuariat</div>
+      <div id="s02-accueil-bal-2" class="balayage" style="background: linear-gradient(100deg, transparent 0%, rgba(142, 166, 255, 0.55) 50%, transparent 100%)"></div>
+      <div id="a-p2" class="puce" style="left: 60px; top: 210px; background: #1f4bff; color: #fff; font-size: 30px; opacity: 0">Junior Entreprise</div>
     </div>
   </div>
   <script>
@@ -25,15 +24,13 @@
     tl.fromTo("#a-fen", { scale: 0.62, rotationY: -18, rotationX: 8, y: 60 }, { scale: 1.045, rotationY: 0, rotationX: 0, y: -23, duration: 1.1, ease: "expo.inOut", immediateRender: true }, 0);
     tl.fromTo("#a-url", { opacity: 0, y: 24, scale: 0.9 }, { opacity: 1, y: 0, scale: 1, duration: 0.35, ease: "back.out(2)", immediateRender: false }, 0.2);
     tl.to("#a-url", { opacity: 0, y: -16, duration: 0.25 }, 1.0);
-    tl.to("#s02-accueil-cadre", { x: 1248, y: -702, scale: 2.3, duration: 0.8, ease: "power3.inOut" }, 2.03);
-    tl.fromTo("#a-f1", { opacity: 0, scale: 1.15 }, { opacity: 1, scale: 1, duration: 0.3, ease: "power3.out", immediateRender: false }, 2.44);
-    tl.to("#a-f1", { opacity: 0, duration: 0.2 }, 4.34);
+    tl.to("#s02-accueil-cadre", { x: 211, y: -98, scale: 1.22, duration: 1.0, ease: "power3.inOut" }, 2.03);
     tl.fromTo("#a-p1", { opacity: 0, y: 24, scale: 0.9 }, { opacity: 1, y: 0, scale: 1, duration: 0.35, ease: "back.out(2)", immediateRender: false }, 2.44);
     tl.to("#a-p1", { opacity: 0, y: -16, duration: 0.25 }, 4.34);
     tl.to("#s02-accueil-cadre", { x: 0, y: 0, scale: 1.0, duration: 0.7, ease: "power3.inOut" }, 4.44);
     tl.to("#s02-accueil-cadre", { x: 336, y: 94, scale: 1.35, duration: 1.6, ease: "power2.inOut" }, 5.98);
     tl.to("#s02-accueil-cadre", { x: 1920, y: 1080, scale: 3.0, duration: 0.7, ease: "power3.inOut" }, 7.84);
-    tl.fromTo("#s02-accueil-bal-0", { xPercent: -120 }, { xPercent: 220, duration: 0.9, ease: "power2.inOut", immediateRender: true }, 8.28);
+    tl.fromTo("#s02-accueil-bal-2", { xPercent: -120 }, { xPercent: 220, duration: 0.9, ease: "power2.inOut", immediateRender: true }, 8.28);
     tl.fromTo("#a-p2", { opacity: 0, y: 24, scale: 0.9 }, { opacity: 1, y: 0, scale: 1, duration: 0.35, ease: "back.out(2)", immediateRender: false }, 6.84);
     tl.to("#a-p2", { opacity: 0, y: -16, duration: 0.25 }, 9.51);
     tl.to("#s02-accueil-cam", { scale: 1.18, filter: "blur(16px)", duration: 0.24, ease: "power3.in" }, 9.52);

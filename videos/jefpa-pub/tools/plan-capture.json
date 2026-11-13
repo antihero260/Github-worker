@@ -25,7 +25,7 @@
  {"nom":"c12-collectif","url":"/pages/apropos.html","prechauffe":0.6,"depart":{"texte":"au fil des générations","offset":-420},"actions":[
    {"t":"defile","texte":"au fil des générations","offset":40,"d":4.1,"ease":"lin"}]},
  {"nom":"c13-candidature","url":"/pages/candidature.html","prechauffe":0.3,"actions":[
-   {"t":"attente","d":1.0},{"t":"defile","texte":"De la Licence 3","offset":-140,"d":1.2},{"t":"attente","d":4.2}]},
+   {"t":"attente","d":0.6},{"t":"defile","texte":"De la Licence 3","offset":-140,"d":0.7},{"t":"attente","d":5.1}]},
  {"nom":"c14-clic","url":"/","prechauffe":1.2,"curseur":[880,520],"actions":[
    {"t":"souris","x":1252,"y":48,"d":1.0,"arc":60},{"t":"clic","d":0.4},{"t":"attente","d":0.8}]},
  {"nom":"c15-contact","url":"/pages/contact.html","prechauffe":0.3,"actions":[
