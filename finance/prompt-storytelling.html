@@ -1,0 +1,143 @@
+<title>Prompt Lefinancier</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;600&display=swap">
+<style>
+/* Une colonne : bouton Copier collé en haut, choix du sujet, prompt lisible dessous. Couleurs de la chaîne. */
+:root {
+  --nuit: #0B1220; --carte: #121C30; --ligne: #22324F;
+  --ciel: #38BDF8; --texte: #E6EEF8; --doux: #93A6C2;
+  --titre: "Space Grotesk", "Segoe UI", system-ui, sans-serif;
+  --corps: "Inter", "Segoe UI", system-ui, sans-serif;
+  color-scheme: dark;
+}
+body { background: var(--nuit); color: var(--texte); font-family: var(--corps); font-size: 15px; line-height: 1.55; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--nuit); }
+.page { max-width: 760px; margin: 0 auto; padding-block: 20px 40px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); display: flex; flex-direction: column; gap: 18px; }
+h1 { font-family: var(--titre); font-size: 26px; margin: 0; text-wrap: balance; }
+h1 span { color: var(--ciel); }
+.aide { color: var(--doux); margin: 4px 0 0; }
+.barre { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--nuit); padding-block: 10px; }
+#copier { width: 100%; font: 700 19px var(--titre); background: var(--ciel); color: var(--nuit); border: 0; border-radius: 12px; padding: 16px; cursor: pointer; }
+#copier:focus-visible { outline: 3px solid var(--texte); outline-offset: 3px; }
+#copier.ok { background: var(--texte); }
+.label { font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--doux); margin-bottom: 8px; }
+.sujets { display: flex; flex-wrap: wrap; gap: 8px; }
+.sujets button { font: 600 14px var(--corps); color: var(--texte); background: var(--carte); border: 1px solid var(--ligne); border-radius: 999px; padding: 8px 14px; cursor: pointer; text-align: left; }
+.sujets button[aria-pressed="true"] { border-color: var(--ciel); color: var(--ciel); }
+.sujets button:focus-visible { outline: 2px solid var(--ciel); outline-offset: 2px; }
+#prompt { background: var(--carte); border: 1px solid var(--ligne); border-radius: 12px; padding: 18px; white-space: pre-wrap; word-wrap: break-word; font: 14px/1.6 var(--corps); margin: 0; min-width: 0; }
+#prompt mark { background: none; color: var(--ciel); font-weight: 600; }
+@media (prefers-reduced-motion: no-preference) { #copier { transition: background .2s; } }
+</style>
+
+<div class="page">
+  <header>
+    <h1>Prompt storytelling <span>Lefinancier</span></h1>
+    <p class="aide">Choisis le sujet, appuie sur le bouton, puis colle dans ChatGPT, Claude ou Gemini.</p>
+  </header>
+
+  <div class="barre"><button id="copier" type="button">Copier le prompt</button></div>
+
+  <section>
+    <div class="label">Sujet de la vidéo</div>
+    <div class="sujets" id="sujets"></div>
+  </section>
+
+  <pre id="prompt"></pre>
+</div>
+
+<script type="text/plain" id="modele">Tu es scénariste de vidéos courtes (TikTok, Reels) pour « Lefinancier », une chaîne qui explique l'argent aux jeunes de Côte d'Ivoire avec des histoires. Écris le texte d'une vidéo de 60 à 75 secondes.
+
+SUJET : {{SUJET}}
+
+LE PUBLIC
+- Jeunes de 18 à 30 ans à Abidjan, étudiants ou premiers salaires, qui paient avec Wave et Orange Money.
+- Montants en FCFA, situations de leur vie : téléphone, moto, loyer, petit commerce, fête, salaire en retard.
+- On tutoie. Phrases courtes, français parlé, comme si on racontait l'histoire à un ami. Pas de jargon sans l'expliquer en 5 mots.
+
+C'EST UNE HISTOIRE, PAS UN COURS
+- Un personnage principal inventé avec un prénom non africain (Tom, Hugo, Emma, Julie, Léa, Lucas...). Un deuxième personnage seulement s'il sert à l'histoire (rival, ami, vendeur).
+- Le personnage veut quelque chose de précis et concret dès le début (exemple : « un iPhone à 450 000 FCFA avant la rentrée »).
+- Quelque chose se met en travers. On doit sentir ce qu'il ressent : honte, panique, fierté, jalousie. Montre-le par des actes et des détails (il cache le relevé, il évite l'appel), ne le dis pas avec des adjectifs.
+- Enchaîne les étapes avec « mais » et « donc », jamais « et puis ». Chaque « mais » ajoute un problème, chaque « donc » montre la conséquence. La tension doit monter jusqu'à la fin.
+- La leçon financière doit SORTIR de l'histoire. Le chiffre clé arrive comme une révélation dans le récit, pas comme une explication à part.
+
+STRUCTURE ET TIMING (environ 160 à 190 mots au total)
+1. Accroche (0–3 s, 1 phrase) : un conflit, un chiffre choquant ou une situation absurde qui pose une question dans la tête du spectateur. Pas de « Imagine... », pas de « Saviez-vous que... », pas de « Dans cette vidéo... ».
+2. Mise en place (jusqu'à 7 s) : qui, ce qu'il veut, ce qu'il risque.
+3. Montée (jusqu'à 45 s) : 2 ou 3 rebondissements « mais / donc ». Laisse une question ouverte (une boucle) que seule la fin résout.
+4. Chute (45–60 s) : un retournement qu'on n'a pas vu venir, avec LE chiffre qui fait mal. Elle doit faire voir tout le début autrement.
+5. Leçon (1 ou 2 phrases simples) puis fin immédiate : « Abonne-toi à Lefinancier » et une question qui pousse à commenter. Rien après.
+Si possible, la dernière phrase renvoie à la première, pour que la vidéo tourne en boucle.
+
+LES CHIFFRES
+- Réalistes pour la Côte d'Ivoire et vérifiables (BCEAO, INS, banques ou opérateurs ivoiriens). N'invente aucune statistique.
+- Montre tes calculs à part, ligne par ligne, et indique la source de chaque chiffre. Signale clairement tout chiffre que tu n'as pas pu vérifier.
+- Chiffres ronds et faciles à retenir dans le texte parlé.
+
+INTERDITS
+- Aucun jeu d'argent (paris, casino, loterie, tickets), même pour les critiquer.
+- Aucun conseil personnalisé (« prends ce crédit », « achète cette action »). On explique, on ne recommande pas de produit.
+- Pas de morale lourde ni de ton de professeur. Pas de phrases creuses du type « la clé, c'est la discipline ».
+- Ne parle jamais du parcours ou des diplômes de l'auteur.
+
+CE QUE TU ME RENDS
+1. Trois accroches différentes (une choquante, une mystère, une conflit). Dis laquelle tu préfères et pourquoi.
+2. Le texte complet à lire en voix off, en UN seul bloc, sans indications de scène, avec la meilleure accroche.
+3. Le même texte découpé phrase par phrase, avec pour chaque phrase une idée d'image ou de vidéo (ce qu'on voit à l'écran) et l'émotion du personnage.
+4. Un titre de 5 mots maximum pour le haut de la vidéo.
+5. Une description courte et 5 hashtags maximum.
+6. Les calculs et les sources.
+
+Avant de me répondre, relis ton texte et vérifie : on a envie de connaître la suite après chaque phrase ? Il y a au moins un vrai retournement ? On sent une émotion ? Le texte fait bien entre 160 et 190 mots ? Corrige si ce n'est pas le cas.</script>
+
+<script>
+(function () {
+  var SUJETS = [
+    ["Le vrai coût du crédit", "Le vrai coût d'un crédit (le taux affiché n'est pas ce que tu paies vraiment : frais de dossier, assurance, durée)."],
+    ["Tontine ou compte épargne", "Tontine ou compte épargne : qui gagne vraiment ? (ce que chaque solution rapporte et coûte, avec un exemple chiffré en FCFA)."],
+    ["L'assureur gagne toujours", "Pourquoi l'assureur gagne toujours (la loi des grands nombres : il ne parie pas sur toi, mais sur des milliers de clients à la fois)."],
+    ["Frais de mobile money", "Combien te coûtent vraiment tes frais de mobile money sur un an (additionner les petits frais de retrait et de transfert sur 12 mois)."],
+    ["La règle de 72", "La règle de 72 : en combien de temps ton argent double (72 divisé par le taux = nombre d'années)."],
+    ["Pourquoi les riches empruntent", "Pourquoi les riches empruntent alors qu'ils ont de l'argent (emprunter à un taux bas pour placer plus haut : l'effet de levier, et ses risques)."],
+    ["La BRVM simplement", "La BRVM expliquée simplement (la Bourse régionale d'Abidjan : ce qu'on y achète et comment ça marche)."]
+  ];
+  var modele = document.getElementById("modele").textContent;
+  var zone = document.getElementById("prompt");
+  var liste = document.getElementById("sujets");
+  var bouton = document.getElementById("copier");
+  var choix = 0;
+
+  function texte() { return modele.replace("{{SUJET}}", SUJETS[choix][1]); }
+  function echapper(s) { return s.replace(/&/g, "&amp;").replace(/</g, "&lt;"); }
+  function afficher() {
+    var parties = modele.split("{{SUJET}}");
+    zone.innerHTML = echapper(parties[0]) + "<mark>" + echapper(SUJETS[choix][1]) + "</mark>" + echapper(parties[1]);
+    Array.prototype.forEach.call(liste.children, function (b, i) { b.setAttribute("aria-pressed", i === choix ? "true" : "false"); });
+  }
+  SUJETS.forEach(function (s, i) {
+    var b = document.createElement("button");
+    b.type = "button"; b.id = "sujet-" + i; b.textContent = s[0];
+    b.addEventListener("click", function () { choix = i; afficher(); });
+    liste.appendChild(b);
+  });
+  afficher();
+
+  function reussi() {
+    bouton.textContent = "Copié ! Colle-le dans l'IA";
+    bouton.classList.add("ok");
+    setTimeout(function () { bouton.textContent = "Copier le prompt"; bouton.classList.remove("ok"); }, 2500);
+  }
+  function selectionner() {
+    var r = document.createRange(); r.selectNodeContents(zone);
+    var sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(r);
+    bouton.textContent = "Texte sélectionné : fais Copier";
+  }
+  bouton.addEventListener("click", function () {
+    var t = texte();
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(t).then(reussi, selectionner);
+    } else { selectionner(); }
+  });
+})();
+</script>
