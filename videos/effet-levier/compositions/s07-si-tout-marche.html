@@ -1,0 +1,97 @@
+<!-- Si tout marche : 350 000 FCFA d'intérêts, 250 000 de différence, avant frais et impôts (25.24 → 33.64 s). Écrit par tools/construire-scenes.py. -->
+<template>
+  <style>
+    #root { position: absolute; inset: 0; }
+  </style>
+  <div id="root" data-composition-id="s07-si-tout-marche" data-width="1080" data-height="1920">
+    <div class="sc">
+      <div id="s07-si-tout-marche-cam" class="sc-cam">
+        <div id="s07-si-tout-marche-cadre" class="sc-cadre">
+        <div class="decor" style="left: -1080px; top: 0px; width: 3240px"><div class="mur"></div><div class="fenetre" style="left: 1150px; top: 380px"><i class="lune" style="left: 150px; top: 40px; width: 70px; height: 70px"></i></div><div class="plinthe" style="top: 1270px"></div><div class="parquet" style="top: 1290px"></div></div>
+        <svg id="t-lucas" class="perso" viewBox="-30 -20 160 290" style="left: 818px; top: 846px; width: 265px; height: 480px"><g id="t-lucas-vie"><g id="t-lucas-corps"><g id="t-lucas-jg"><g class="c"><rect x="24" y="136" width="24" height="112" rx="8" /></g><g class="p" style="--pc: #38BDF8"><rect x="24" y="136" width="24" height="112" rx="8" /></g></g><g id="t-lucas-jd"><g class="c"><rect x="52" y="136" width="24" height="112" rx="8" /></g><g class="p" style="--pc: #38BDF8"><rect x="52" y="136" width="24" height="112" rx="8" /></g></g><g id="t-lucas-tronc"><g class="c"><rect x="22" y="52" width="56" height="94" rx="12" /></g><g class="p" style="--pc: #38BDF8"><rect x="22" y="52" width="56" height="94" rx="12" /></g><path d="M44 56 L56 56 L53 64 L57 104 L50 112 L43 104 L47 64 Z" fill="#0B1220" /></g><g id="t-lucas-bg"><g class="c"><rect x="2" y="54" width="18" height="86" rx="9" /></g><g class="p" style="--pc: #38BDF8"><rect x="2" y="54" width="18" height="86" rx="9" /></g></g><g id="t-lucas-bd"><g class="c"><rect x="80" y="54" width="18" height="86" rx="9" /></g><g class="p" style="--pc: #38BDF8"><rect x="80" y="54" width="18" height="86" rx="9" /></g></g><g id="t-lucas-tete"><g class="c"><circle cx="50" cy="24" r="22" /></g><g class="p" style="--pc: #38BDF8"><circle cx="50" cy="24" r="22" /></g><g><g id="t-lucas-yeux"><circle cx="41" cy="20" r="6.5" fill="#fff" /><circle cx="59" cy="20" r="6.5" fill="#fff" /><g id="t-lucas-pup"><circle cx="42" cy="21" r="3" fill="#0B1220" /><circle cx="60" cy="21" r="3" fill="#0B1220" /></g></g><path id="t-lucas-bouche" d="M41 32 Q50 40 59 32" fill="none" stroke="#0B1220" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" /><path d="M28 14 Q30 -4 50 -3 Q70 -4 72 14 Q66 6 58 8 Q50 2 42 8 Q34 6 28 14 Z" fill="#0B1220" /></g></g></g></g></svg>
+        <div id="t-si" class="gros bande" style="left: 60px; top: 360px; font-size: 84px; color: #0B1220;  transform: rotate(-3deg); opacity: 0">SI TOUT MARCHE…</div>
+        <div id="t-g" class="ligne-calc" style="left: 60px; top: 500px; width: 760px"><span>Gain</span><b id="t-g-v" style="color: #F2B705; font-size: 64px; opacity: 1">+600 000 F</b></div>
+        <div id="t-i" class="ligne-calc" style="left: 60px; top: 640px; width: 760px"><span>Intérêts (7 %)</span><b id="t-i-v" style="color: #FF6B6B; font-size: 64px; opacity: 0">−350 000 F</b><em id="t-i-q"><svg viewBox="0 0 120 150" width="54" height="68"><path d="M30 70 L30 42 Q30 12 60 12 Q90 12 90 42 L90 70" fill="none" stroke="#F1F5F9" stroke-width="14" stroke-linecap="round" /><rect x="14" y="66" width="92" height="76" rx="14" fill="#38BDF8" /></svg></em></div>
+        <div id="t-trait" class="trait-calc" style="left: 60px; top: 780px; width: 760px"></div>
+        <div id="t-d" class="ligne-calc" style="left: 60px; top: 810px; width: 760px"><span>Différence</span><b id="t-d-v" style="color: #38BDF8; font-size: 84px; opacity: 0">+250 000 F</b><em id="t-d-q"><svg viewBox="0 0 120 150" width="54" height="68"><path d="M30 70 L30 42 Q30 12 60 12 Q90 12 90 42 L90 70" fill="none" stroke="#F1F5F9" stroke-width="14" stroke-linecap="round" /><rect x="14" y="66" width="92" height="76" rx="14" fill="#38BDF8" /></svg></em></div>
+        <i id="t-cf-0" style="position: absolute; left: 440px; top: 860px; width: 14px; height: 14px; background: #38BDF8; opacity: 0"></i>
+        <i id="t-cf-1" style="position: absolute; left: 440px; top: 860px; width: 22px; height: 12px; background: #F2B705; opacity: 0"></i>
+        <i id="t-cf-2" style="position: absolute; left: 440px; top: 860px; width: 14px; height: 14px; background: #F1F5F9; opacity: 0"></i>
+        <i id="t-cf-3" style="position: absolute; left: 440px; top: 860px; width: 22px; height: 12px; background: #7DD3FC; opacity: 0"></i>
+        <i id="t-cf-4" style="position: absolute; left: 440px; top: 860px; width: 14px; height: 14px; background: #38BDF8; opacity: 0"></i>
+        <i id="t-cf-5" style="position: absolute; left: 440px; top: 860px; width: 22px; height: 12px; background: #F2B705; opacity: 0"></i>
+        <i id="t-cf-6" style="position: absolute; left: 440px; top: 860px; width: 14px; height: 14px; background: #F1F5F9; opacity: 0"></i>
+        <i id="t-cf-7" style="position: absolute; left: 440px; top: 860px; width: 22px; height: 12px; background: #7DD3FC; opacity: 0"></i>
+        <i id="t-cf-8" style="position: absolute; left: 440px; top: 860px; width: 14px; height: 14px; background: #38BDF8; opacity: 0"></i>
+        <i id="t-cf-9" style="position: absolute; left: 440px; top: 860px; width: 22px; height: 12px; background: #F2B705; opacity: 0"></i>
+        <i id="t-cf-10" style="position: absolute; left: 440px; top: 860px; width: 14px; height: 14px; background: #F1F5F9; opacity: 0"></i>
+        <i id="t-cf-11" style="position: absolute; left: 440px; top: 860px; width: 22px; height: 12px; background: #7DD3FC; opacity: 0"></i>
+        <i id="t-cf-12" style="position: absolute; left: 440px; top: 860px; width: 14px; height: 14px; background: #38BDF8; opacity: 0"></i>
+        <i id="t-cf-13" style="position: absolute; left: 440px; top: 860px; width: 22px; height: 12px; background: #F2B705; opacity: 0"></i>
+        <i id="t-cf-14" style="position: absolute; left: 440px; top: 860px; width: 14px; height: 14px; background: #F1F5F9; opacity: 0"></i>
+        <i id="t-cf-15" style="position: absolute; left: 440px; top: 860px; width: 22px; height: 12px; background: #7DD3FC; opacity: 0"></i>
+        <i id="t-cf-16" style="position: absolute; left: 440px; top: 860px; width: 14px; height: 14px; background: #38BDF8; opacity: 0"></i>
+        <i id="t-cf-17" style="position: absolute; left: 440px; top: 860px; width: 22px; height: 12px; background: #F2B705; opacity: 0"></i>
+        <i id="t-cf-18" style="position: absolute; left: 440px; top: 860px; width: 14px; height: 14px; background: #F1F5F9; opacity: 0"></i>
+        <i id="t-cf-19" style="position: absolute; left: 440px; top: 860px; width: 22px; height: 12px; background: #7DD3FC; opacity: 0"></i>
+        <div id="t-note" class="note" style="left: 60px; top: 990px; opacity: 0">* avant frais et impôts</div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#s07-si-tout-marche-cam", { filter: "blur(14px)", scale: 1.12 }, { filter: "blur(0px)", scale: 1, duration: 0.18, ease: "power2.out" }, 0);
+    tl.to("#s07-si-tout-marche-cam", { scale: 1.04, duration: 8.0, ease: "none" }, 0.18);
+    tl.fromTo("#t-lucas-vie", { y: 0 }, { y: -5, duration: 0.42, repeat: 18, yoyo: true, ease: "sine.inOut", immediateRender: false }, 0.0);
+    tl.to("#t-lucas-yeux", { scaleY: 0.1, duration: 0.06, yoyo: true, repeat: 1, svgOrigin: "50 20" }, 0.7);
+    tl.to("#t-lucas-yeux", { scaleY: 0.1, duration: 0.06, yoyo: true, repeat: 1, svgOrigin: "50 20" }, 3.233);
+    tl.to("#t-lucas-yeux", { scaleY: 0.1, duration: 0.06, yoyo: true, repeat: 1, svgOrigin: "50 20" }, 5.767);
+    tl.to("#t-lucas-pup", { x: -4, y: -3, duration: 0.15 }, 0.0);
+    tl.fromTo("#t-si", { opacity: 0, scale: 2.0 }, { opacity: 1, scale: 1, duration: 0.16, ease: "power4.in", immediateRender: false }, 0.52);
+    tl.fromTo("#t-g", { opacity: 0, y: 40, scale: 0.7 }, { opacity: 1, y: 0, scale: 1, duration: 0.25, ease: "back.out(1.8)", immediateRender: false }, 0.84);
+    tl.fromTo("#t-i", { opacity: 0, y: 40, scale: 0.7 }, { opacity: 1, y: 0, scale: 1, duration: 0.2, ease: "back.out(1.8)", immediateRender: false }, 1.42);
+    tl.to("#t-i-q", { opacity: 0, scale: 0.3, duration: 0.12 }, 2.2);
+    tl.fromTo("#t-i-v", { opacity: 0, scale: 1.7 }, { opacity: 1, scale: 1, duration: 0.18, ease: "back.out(2)", immediateRender: false }, 2.24);
+    tl.fromTo("#t-i", { backgroundColor: "rgba(56, 189, 248, 0.35)" }, { backgroundColor: "rgba(19, 32, 58, 0.92)", duration: 0.6, immediateRender: false }, 2.2);
+    tl.fromTo("#t-trait", { scaleX: 0 }, { scaleX: 1, duration: 0.3, ease: "power3.out", immediateRender: true }, 4.52);
+    tl.fromTo("#t-d", { opacity: 0, y: 40, scale: 0.7 }, { opacity: 1, y: 0, scale: 1, duration: 0.2, ease: "back.out(1.8)", immediateRender: false }, 4.52);
+    tl.to("#t-d-q", { opacity: 0, scale: 0.3, duration: 0.12 }, 5.16);
+    tl.fromTo("#t-d-v", { opacity: 0, scale: 1.7 }, { opacity: 1, scale: 1, duration: 0.18, ease: "back.out(2)", immediateRender: false }, 5.2);
+    tl.fromTo("#t-d", { backgroundColor: "rgba(56, 189, 248, 0.35)" }, { backgroundColor: "rgba(19, 32, 58, 0.92)", duration: 0.6, immediateRender: false }, 5.16);
+    tl.to("#t-lucas-bg", { rotation: 165, svgOrigin: "11 62", duration: 0.14, ease: "back.out(2)" }, 5.36);
+    tl.to("#t-lucas-bd", { rotation: -165, svgOrigin: "89 62", duration: 0.14, ease: "back.out(2)" }, 5.36);
+    tl.to("#t-lucas-tete", { rotation: -8, svgOrigin: "50 50", duration: 0.14, ease: "back.out(2)" }, 5.36);
+    tl.to("#t-lucas-corps", { keyframes: [{ y: -40, duration: 0.13, ease: "power2.out" }, { y: 0, duration: 0.15, ease: "power2.in" }] }, 5.41);
+    tl.to("#t-lucas-corps", { keyframes: [{ y: -40, duration: 0.13, ease: "power2.out" }, { y: 0, duration: 0.15, ease: "power2.in" }] }, 5.73);
+    tl.set("#t-lucas-bouche", { attr: { d: "M39 30 Q50 46 61 30 Z", fill: "#0B1220" } }, 5.36);
+    tl.fromTo("#t-cf-0", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: 171, y: 160, rotation: -270, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 5.36);
+    tl.fromTo("#t-cf-1", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: -188, y: 298, rotation: -173, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 5.36);
+    tl.fromTo("#t-cf-2", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: 30, y: -110, rotation: -76, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 5.36);
+    tl.fromTo("#t-cf-3", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: 117, y: 282, rotation: 21, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 5.36);
+    tl.fromTo("#t-cf-4", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: -271, y: 122, rotation: 118, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 5.36);
+    tl.fromTo("#t-cf-5", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: 303, y: 6, rotation: 215, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 5.36);
+    tl.fromTo("#t-cf-6", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: -55, y: 324, rotation: -228, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 5.36);
+    tl.fromTo("#t-cf-7", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: -137, y: -50, rotation: -131, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 5.36);
+    tl.fromTo("#t-cf-8", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: 357, y: 264, rotation: -34, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 5.36);
+    tl.fromTo("#t-cf-9", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: -216, y: 231, rotation: 63, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 5.36);
+    tl.fromTo("#t-cf-10", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: 134, y: -70, rotation: 160, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 5.36);
+    tl.fromTo("#t-cf-11", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: 51, y: 291, rotation: 257, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 5.36);
+    tl.fromTo("#t-cf-12", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: -220, y: 58, rotation: -186, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 5.36);
+    tl.fromTo("#t-cf-13", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: 330, y: 102, rotation: -89, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 5.36);
+    tl.fromTo("#t-cf-14", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: -110, y: 286, rotation: 8, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 5.36);
+    tl.fromTo("#t-cf-15", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: -35, y: -59, rotation: 105, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 5.36);
+    tl.fromTo("#t-cf-16", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: 275, y: 345, rotation: 202, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 5.36);
+    tl.fromTo("#t-cf-17", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: -213, y: 167, rotation: -241, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 5.36);
+    tl.fromTo("#t-cf-18", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: 210, y: -7, rotation: -144, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 5.36);
+    tl.fromTo("#t-cf-19", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: -18, y: 464, rotation: -47, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 5.36);
+    tl.fromTo("#t-note", { opacity: 0, y: 20, scale: 0.7 }, { opacity: 1, y: 0, scale: 1, duration: 0.25, ease: "back.out(1.8)", immediateRender: false }, 6.84);
+    tl.to("#s07-si-tout-marche-cadre", { x: 65, y: 112, scale: 1.12, duration: 0.3, ease: "power3.inOut" }, 5.16);
+    tl.to("#s07-si-tout-marche-cadre", { keyframes: [{ filter: "blur(9px)", duration: 0.15 }, { filter: "blur(0px)", duration: 0.15 }] }, 5.16);
+    tl.to("#s07-si-tout-marche-cadre", { x: 108, y: 72, scale: 1.2, duration: 0.4, ease: "power3.inOut" }, 6.74);
+    tl.to("#s07-si-tout-marche-cadre", { keyframes: [{ filter: "blur(9px)", duration: 0.2 }, { filter: "blur(0px)", duration: 0.2 }] }, 6.74);
+    tl.to("#s07-si-tout-marche-cam", { scale: 1.25, filter: "blur(14px)", duration: 0.2, ease: "power3.in" }, 8.2);
+    window.__timelines["s07-si-tout-marche"] = tl;
+  </script>
+</template>
