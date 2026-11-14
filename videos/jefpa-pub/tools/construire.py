@@ -582,7 +582,8 @@ for k, cc in enumerate(COUPES[1:-1], start=1):
 son(COUPES[-2] - 1.6, "riser-synth", 0.3, "montée vers la fin", d=1.6, sur_pic=False)
 _vus = set()
 SONS[:] = [x for x in SONS if not ((x[0], x[1]) in _vus or _vus.add((x[0], x[1])))]
-MUSIQUE = ("digital-clouds", 0.4)  # fichier à −13,1 LUFS → ≈ −21 LUFS pour une voix à −15
+# Demande de l'utilisateur : garder la piste d'origine de sa vidéo (voix + ancienne musique), sans musique ajoutée.
+MUSIQUE = None  # avant : ("digital-clouds", 0.4)
 
 CSS = (ICI / "tools/styles.css").read_text(encoding="utf-8")
 
@@ -595,8 +596,9 @@ def ecrire_index():
                  f'data-duration="{round(d1 - d0, 2)}" data-track-index="1" data-width="1920" data-height="1080" style="z-index: 10"></div>')
     l.append(f'      <div id="sous-titres" data-composition-id="sous-titres" data-composition-src="compositions/sous-titres.html" data-start="0" '
              f'data-duration="{FIN}" data-track-index="3" data-width="1920" data-height="1080" style="z-index: 50"></div>')
-    l.append('      <audio id="voix" src="assets/audio/voix.mp3" data-start="0" data-track-index="10"></audio>')
-    l.append(f'      <audio id="musique-1" src="assets/music/{MUSIQUE[0]}.mp3" data-start="0" data-duration="{FIN}" data-volume="{MUSIQUE[1]}" data-fade-out="2.5" data-track-index="11"></audio>')
+    l.append(f'      <audio id="voix" src="assets/audio/piste-originale.mp3" data-start="0" data-duration="{FIN}" data-fade-out="1.5" data-track-index="10"></audio>')
+    if MUSIQUE:
+        l.append(f'      <audio id="musique-1" src="assets/music/{MUSIQUE[0]}.mp3" data-start="0" data-duration="{FIN}" data-volume="{MUSIQUE[1]}" data-fade-out="2.5" data-track-index="11"></audio>')
     pistes = {}
     for n, (d0, f, v, note, dd) in enumerate(sorted(SONS), start=1):
         p = 30
