@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="fr" data-resolution="landscape">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+    <style>
+      /* Pub JE-FPA, format horizontal 1920×1080, couleurs et police du site (Manrope, bleu #1f4bff, encre #05070d). */
+      @font-face { font-family: "Manrope"; src: url("assets/fonts/manrope-latin.woff2") format("woff2"); font-weight: 200 800; }
+      @font-face { font-family: "Manrope"; src: url("assets/fonts/manrope-latin-ext.woff2") format("woff2"); font-weight: 200 800;
+        unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1E00-1EFF, U+2020, U+20A0-20C0; }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1920px; height: 1080px; overflow: hidden; background: #05070d; }
+      #fond { position: absolute; inset: 0; background: #05070d; }
+
+      .sc { position: absolute; inset: 0; overflow: hidden; background: #05070d; font-family: "Manrope", sans-serif; }
+      .sc-cam { position: absolute; inset: 0; transform-origin: 50% 50%; }
+      .sc-cadre { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; transform-origin: 50% 50%; perspective: 2200px; }
+
+      /* captures du site */
+      .capt { position: absolute; inset: 0; background: #05070d; }
+      .capt video, .fen-ecran video { position: absolute; left: 0; top: 0; width: 100%; height: 100%; object-fit: cover; }
+      .fen { position: absolute; border-radius: 18px; overflow: hidden; background: #0d1220; box-shadow: 0 50px 140px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(255, 255, 255, 0.08);
+        transform-origin: 50% 50%; }
+      .fen-barre { height: 46px; display: flex; align-items: center; gap: 9px; padding: 0 18px; background: #e9ecf4; }
+      .fen-barre i { width: 13px; height: 13px; border-radius: 50%; background: #c3c8d6; }
+      .fen-barre i:nth-child(1) { background: #ff6159; } .fen-barre i:nth-child(2) { background: #ffbd2e; } .fen-barre i:nth-child(3) { background: #28c941; }
+      .fen-barre span { margin-left: 18px; flex: 1; max-width: 640px; height: 30px; border-radius: 15px; background: #fff; color: #4a5266; font-size: 16px; font-weight: 600;
+        line-height: 30px; padding: 0 18px; white-space: nowrap; overflow: hidden; }
+      .fen-ecran { position: relative; overflow: hidden; background: #05070d; }
+
+      /* typographie */
+      .titre { position: absolute; letter-spacing: -0.035em; white-space: nowrap; }
+      .titre .m { display: inline-block; overflow: hidden; vertical-align: bottom; padding: 0.04em 0.02em 0.12em; margin-bottom: -0.1em; }
+      .titre .mi { display: inline-block; }
+      .titre .m + .m { margin-left: 0; }
+      .titre > .m { display: block; width: max-content; }
+      .etiq-sc { position: absolute; font-size: 26px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+      .puce { position: absolute; font-weight: 700; padding: 12px 24px; border-radius: 999px; white-space: nowrap; letter-spacing: -0.01em;
+        box-shadow: 0 16px 40px rgba(5, 7, 13, 0.35); }
+      .trait { position: absolute; height: 6px; border-radius: 3px; background: #1f4bff; transform-origin: 0 50%; }
+      .focus { position: absolute; border: 4px solid #1f4bff; border-radius: 14px; box-shadow: 0 0 0 9999px rgba(5, 7, 13, 0.38), 0 0 40px rgba(31, 75, 255, 0.6); }
+
+      /* images et fonds */
+      .img-plein { position: absolute; inset: 0; overflow: hidden; }
+      .img-plein img { position: absolute; left: 0; top: 0; width: 100%; height: 100%; object-fit: cover; }
+      .img-plein i { position: absolute; inset: 0; background: #05070d; }
+      .degrade-g { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(5, 7, 13, 0.92) 0%, rgba(5, 7, 13, 0.55) 45%, rgba(5, 7, 13, 0) 75%); }
+      .fond-sombre { position: absolute; inset: 0; background: radial-gradient(ellipse 70% 60% at 60% 45%, #14205a 0%, #05070d 70%); }
+      .fond-sombre .halo { position: absolute; left: 50%; top: 40%; width: 900px; height: 900px; margin: -450px; border-radius: 50%;
+        background: radial-gradient(circle, rgba(31, 75, 255, 0.35), transparent 70%); }
+      .balayage { position: absolute; top: -10%; left: 0; width: 45%; height: 120%; transform: skewX(-18deg); pointer-events: none; mix-blend-mode: screen; }
+      .volet { position: absolute; inset: 0; background: #1f4bff; z-index: 20; }
+
+      /* scène « le pas » */
+      .moitie { position: absolute; top: 0; width: 960px; height: 1080px; }
+      .pas { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; display: flex; flex-direction: column; align-items: center; justify-content: center;
+        color: #fff; letter-spacing: -0.04em; }
+      .pas span { font-size: 54px; font-weight: 500; color: #8ea6ff; }
+      .pas b { font-size: 190px; font-weight: 800; line-height: 1; }
+
+      /* chiffres, étapes, bandes */
+      .annee { position: absolute; right: 110px; top: 300px; text-align: right; padding: 34px 44px; border-radius: 28px; background: #05070d; color: #fff;
+        box-shadow: 0 40px 100px rgba(5, 7, 13, 0.45); }
+      .annee b { display: block; font-size: 190px; font-weight: 800; line-height: 1; letter-spacing: -0.05em; color: #1f4bff; }
+      .annee span { display: block; font-size: 30px; font-weight: 700; margin-top: 8px; }
+      .m-ligne { position: absolute; left: 160px; top: 448px; width: 1620px; height: 4px; background: linear-gradient(90deg, #1f4bff, #8ea6ff); transform-origin: 0 50%; }
+      .etape { position: absolute; width: 400px; color: #fff; }
+      .etape i { position: absolute; left: 6px; top: -36px; width: 28px; height: 28px; border-radius: 50%; background: #1f4bff; box-shadow: 0 0 0 8px rgba(31, 75, 255, 0.25), 0 0 30px #1f4bff; }
+      .etape em { display: block; font-style: normal; font-size: 26px; font-weight: 700; color: #8ea6ff; margin-top: 30px; }
+      .etape b { display: block; font-size: 60px; font-weight: 800; letter-spacing: -0.04em; line-height: 1.05; }
+      .etape span { display: block; font-size: 32px; font-weight: 500; color: #c9d1ee; }
+      .gros-chiffre { position: absolute; left: 120px; top: 230px; display: flex; align-items: baseline; gap: 22px; color: #fff; padding: 20px 46px 30px; border-radius: 30px;
+        background: #1f4bff; box-shadow: 0 40px 100px rgba(31, 75, 255, 0.45); }
+      .gros-chiffre.droite { left: auto; right: 120px; top: 560px; }
+      .gros-chiffre b { font-size: 210px; font-weight: 800; line-height: 1; letter-spacing: -0.05em; }
+      .gros-chiffre span { font-size: 64px; font-weight: 800; letter-spacing: -0.03em; }
+      .bande { position: absolute; left: 0; top: 330px; width: 1920px; height: 420px; background: #1f4bff; display: flex; flex-direction: column; justify-content: center;
+        padding-left: 140px; color: #fff; letter-spacing: -0.045em; }
+      .bande span { font-size: 80px; font-weight: 600; color: #dfe5ff; }
+      .bande b { font-size: 170px; font-weight: 800; line-height: 1; }
+      .parlons { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; display: flex; align-items: center; justify-content: center;
+        font-size: 220px; font-weight: 800; letter-spacing: -0.05em; color: #fff; background: rgba(31, 75, 255, 0.92); }
+
+      /* fin */
+      .logo-fin { position: absolute; left: 160px; top: 390px; width: 660px; height: 300px; border-radius: 36px; background: #fff; padding: 26px 34px;
+        box-shadow: 0 50px 140px rgba(0, 0, 0, 0.6); }
+      .logo-fin img { width: 100%; height: 100%; object-fit: contain; }
+      .url-fin { position: absolute; left: 906px; top: 700px; font-size: 44px; font-weight: 800; color: #fff; padding: 14px 30px; border-radius: 999px;
+        background: #1f4bff; letter-spacing: -0.02em; }
+      .li-fin { position: absolute; left: 912px; top: 800px; font-size: 30px; font-weight: 600; color: #c9d1ee; }
+      .titre.en-ligne { white-space: normal; }
+      .titre.en-ligne > .m { display: inline-block; width: auto; margin-right: 0.22em; }
+      .puce, .focus, .annee, .gros-chiffre, .bande, .parlons, .titre, .etiq-sc { z-index: 30; }
+
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="86.5" data-width="1920" data-height="1080">
+      <div id="fond" class="clip" data-start="0" data-duration="86.5" data-track-index="0"></div>
+      <div id="s01-ouverture" data-composition-id="s01-ouverture" data-composition-src="compositions/s01-ouverture.html" data-start="0" data-duration="5.88" data-track-index="1" data-width="1920" data-height="1080" style="z-index: 10"></div>
+      <div id="s02-accueil" data-composition-id="s02-accueil" data-composition-src="compositions/s02-accueil.html" data-start="5.88" data-duration="9.76" data-track-index="1" data-width="1920" data-height="1080" style="z-index: 10"></div>
+      <div id="s03-article" data-composition-id="s03-article" data-composition-src="compositions/s03-article.html" data-start="15.64" data-duration="3.52" data-track-index="1" data-width="1920" data-height="1080" style="z-index: 10"></div>
+      <div id="s04-incertain" data-composition-id="s04-incertain" data-composition-src="compositions/s04-incertain.html" data-start="19.16" data-duration="3.84" data-track-index="1" data-width="1920" data-height="1080" style="z-index: 10"></div>
+      <div id="s05-pas" data-composition-id="s05-pas" data-composition-src="compositions/s05-pas.html" data-start="23.0" data-duration="5.68" data-track-index="1" data-width="1920" data-height="1080" style="z-index: 10"></div>
+      <div id="s06-conviction" data-composition-id="s06-conviction" data-composition-src="compositions/s06-conviction.html" data-start="28.68" data-duration="6.64" data-track-index="1" data-width="1920" data-height="1080" style="z-index: 10"></div>
+      <div id="s07-cabinet" data-composition-id="s07-cabinet" data-composition-src="compositions/s07-cabinet.html" data-start="35.32" data-duration="4.56" data-track-index="1" data-width="1920" data-height="1080" style="z-index: 10"></div>
+      <div id="s08-methode" data-composition-id="s08-methode" data-composition-src="compositions/s08-methode.html" data-start="39.88" data-duration="4.64" data-track-index="1" data-width="1920" data-height="1080" style="z-index: 10"></div>
+      <div id="s09-poles" data-composition-id="s09-poles" data-composition-src="compositions/s09-poles.html" data-start="44.52" data-duration="8.16" data-track-index="1" data-width="1920" data-height="1080" style="z-index: 10"></div>
+      <div id="s10-activites" data-composition-id="s10-activites" data-composition-src="compositions/s10-activites.html" data-start="52.68" data-duration="5.84" data-track-index="1" data-width="1920" data-height="1080" style="z-index: 10"></div>
+      <div id="s11-bureaux" data-composition-id="s11-bureaux" data-composition-src="compositions/s11-bureaux.html" data-start="58.52" data-duration="11.81" data-track-index="1" data-width="1920" data-height="1080" style="z-index: 10"></div>
+      <div id="s12-candidature" data-composition-id="s12-candidature" data-composition-src="compositions/s12-candidature.html" data-start="70.33" data-duration="5.36" data-track-index="1" data-width="1920" data-height="1080" style="z-index: 10"></div>
+      <div id="s13-contact" data-composition-id="s13-contact" data-composition-src="compositions/s13-contact.html" data-start="75.69" data-duration="4.64" data-track-index="1" data-width="1920" data-height="1080" style="z-index: 10"></div>
+      <div id="s14-fin" data-composition-id="s14-fin" data-composition-src="compositions/s14-fin.html" data-start="80.33" data-duration="6.17" data-track-index="1" data-width="1920" data-height="1080" style="z-index: 10"></div>
+      <div id="sous-titres" data-composition-id="sous-titres" data-composition-src="compositions/sous-titres.html" data-start="0" data-duration="86.5" data-track-index="3" data-width="1920" data-height="1080" style="z-index: 50"></div>
+      <audio id="voix" src="assets/audio/piste-originale.mp3" data-start="0" data-duration="86.5" data-fade-out="1.5" data-track-index="10"></audio>
+      <audio id="sfx-001" src="assets/sfx/glitch-mini.mp3" data-start="0.0" data-duration="1.72" data-volume="0.262" data-track-index="30"></audio><!-- rafale d'images -->
+      <audio id="sfx-002" src="assets/sfx/impact-basse.mp3" data-start="0.0" data-duration="1.1" data-volume="0.45" data-track-index="31"></audio><!-- ouverture -->
+      <audio id="sfx-003" src="assets/sfx/pop-click.mp3" data-start="0.42" data-duration="1.18" data-volume="0.262" data-track-index="32"></audio><!-- puce Abidjan · Côte d’Ivoire -->
+      <audio id="sfx-004" src="assets/sfx/swoosh-monte.mp3" data-start="2.78" data-duration="1.03" data-volume="0.262" data-track-index="30"></audio><!-- UFR -->
+      <audio id="sfx-005" src="assets/sfx/swoosh-court.mp3" data-start="5.73" data-duration="1.25" data-volume="0.315" data-track-index="30"></audio><!-- transition vers s02-accueil -->
+      <audio id="sfx-006" src="assets/sfx/swoosh-monte.mp3" data-start="5.88" data-duration="1.03" data-volume="0.338" data-track-index="31"></audio><!-- le site arrive -->
+      <audio id="sfx-007" src="assets/sfx/pop-sec.mp3" data-start="5.98" data-duration="0.3" data-volume="0.262" data-track-index="32"></audio><!-- puce jefpa-site.pages.dev -->
+      <audio id="sfx-008" src="assets/sfx/zoom-air.mp3" data-start="7.86" data-duration="1.28" data-volume="0.3" data-track-index="30"></audio><!-- mouvement de caméra -->
+      <audio id="sfx-009" src="assets/sfx/clic-positif.mp3" data-start="8.32" data-duration="1.77" data-volume="0.262" data-track-index="31"></audio><!-- puce Filière Professionnalisée Actuariat -->
+      <audio id="sfx-010" src="assets/sfx/souffle-rapide.mp3" data-start="9.9" data-duration="1.76" data-volume="0.3" data-track-index="30"></audio><!-- mouvement de caméra -->
+      <audio id="sfx-011" src="assets/sfx/zoom-swipe.mp3" data-start="12.25" data-duration="1.06" data-volume="0.3" data-track-index="30"></audio><!-- mouvement de caméra -->
+      <audio id="sfx-012" src="assets/sfx/bouton-tech.mp3" data-start="12.47" data-duration="0.88" data-volume="0.262" data-track-index="31"></audio><!-- puce Junior Entreprise -->
+      <audio id="sfx-013" src="assets/sfx/zoom-futur.mp3" data-start="13.4" data-duration="2.17" data-volume="0.3" data-track-index="30"></audio><!-- mouvement de caméra -->
+      <audio id="sfx-014" src="assets/sfx/scintille.mp3" data-start="13.91" data-duration="1.3" data-volume="0.3" data-track-index="31"></audio><!-- logo JE-FPA -->
+      <audio id="sfx-015" src="assets/sfx/balaie-rapide.mp3" data-start="15.24" data-duration="1.92" data-volume="0.315" data-track-index="31"></audio><!-- transition vers s03-article -->
+      <audio id="sfx-016" src="assets/sfx/zoom-in-out.mp3" data-start="16.07" data-duration="1.25" data-volume="0.3" data-track-index="30"></audio><!-- mouvement de caméra -->
+      <audio id="sfx-017" src="assets/sfx/pop-click.mp3" data-start="16.8" data-duration="1.18" data-volume="0.262" data-track-index="32"></audio><!-- puce Lecture animée · Le journal -->
+      <audio id="sfx-018" src="assets/sfx/zoom-air.mp3" data-start="16.99" data-duration="1.28" data-volume="0.3" data-track-index="33"></audio><!-- mouvement de caméra -->
+      <audio id="sfx-019" src="assets/sfx/souffle-rapide.mp3" data-start="18.46" data-duration="1.76" data-volume="0.315" data-track-index="30"></audio><!-- transition vers s04-incertain -->
+      <audio id="sfx-020" src="assets/sfx/impact-basse.mp3" data-start="19.18" data-duration="1.1" data-volume="0.285" data-track-index="31"></audio><!-- un sinistre -->
+      <audio id="sfx-021" src="assets/sfx/impact-futur.mp3" data-start="20.04" data-duration="2.75" data-volume="0.285" data-track-index="32"></audio><!-- une retraite -->
+      <audio id="sfx-022" src="assets/sfx/impact-whoosh.mp3" data-start="20.14" data-duration="3.53" data-volume="0.285" data-track-index="33"></audio><!-- un avenir -->
+      <audio id="sfx-023" src="assets/sfx/swoosh-vol.mp3" data-start="22.5" data-duration="1.63" data-volume="0.315" data-track-index="30"></audio><!-- transition vers s05-pas -->
+      <audio id="sfx-024" src="assets/sfx/papier-glisse.mp3" data-start="23.33" data-duration="1.09" data-volume="0.262" data-track-index="31"></audio><!-- exercice -->
+      <audio id="sfx-025" src="assets/sfx/swoosh-monte.mp3" data-start="25.02" data-duration="1.03" data-volume="0.3" data-track-index="30"></audio><!-- vraie question -->
+      <audio id="sfx-026" src="assets/sfx/swoosh-tourbillon.mp3" data-start="26.53" data-duration="3.77" data-volume="0.3" data-track-index="30"></audio><!-- les deux mondes s'écartent -->
+      <audio id="sfx-027" src="assets/sfx/souffle-cine.mp3" data-start="27.63" data-duration="1.33" data-volume="0.315" data-track-index="31"></audio><!-- transition vers s06-conviction -->
+      <audio id="sfx-028" src="assets/sfx/impact-basse.mp3" data-start="28.06" data-duration="1.1" data-volume="0.375" data-track-index="32"></audio><!-- un pas -->
+      <audio id="sfx-029" src="assets/sfx/compteur.mp3" data-start="29.61" data-duration="0.7" data-volume="0.225" data-track-index="31"></audio><!-- 2023 -->
+      <audio id="sfx-030" src="assets/sfx/impact-futur.mp3" data-start="30.76" data-duration="2.75" data-volume="0.315" data-track-index="30"></audio><!-- 2023 -->
+      <audio id="sfx-031" src="assets/sfx/zoom-swipe.mp3" data-start="31.83" data-duration="1.06" data-volume="0.3" data-track-index="31"></audio><!-- mouvement de caméra -->
+      <audio id="sfx-032" src="assets/sfx/swoosh-vol.mp3" data-start="33.18" data-duration="1.63" data-volume="0.3" data-track-index="31"></audio><!-- mouvement de caméra -->
+      <audio id="sfx-033" src="assets/sfx/swoosh-accent.mp3" data-start="35.27" data-duration="1.1" data-volume="0.315" data-track-index="30"></audio><!-- transition vers s07-cabinet -->
+      <audio id="sfx-034" src="assets/sfx/zoom-futur.mp3" data-start="35.33" data-duration="2.17" data-volume="0.3" data-track-index="31"></audio><!-- mouvement de caméra -->
+      <audio id="sfx-035" src="assets/sfx/zoom-in-out.mp3" data-start="37.09" data-duration="1.25" data-volume="0.3" data-track-index="30"></audio><!-- mouvement de caméra -->
+      <audio id="sfx-036" src="assets/sfx/pop-sec.mp3" data-start="37.18" data-duration="0.3" data-volume="0.262" data-track-index="32"></audio><!-- puce Un collectif d’étudiants -->
+      <audio id="sfx-037" src="assets/sfx/clic-positif.mp3" data-start="38.74" data-duration="1.77" data-volume="0.262" data-track-index="30"></audio><!-- puce comme un vrai cabinet -->
+      <audio id="sfx-038" src="assets/sfx/fouet.mp3" data-start="39.88" data-duration="1.05" data-volume="0.315" data-track-index="31"></audio><!-- transition vers s08-methode -->
+      <audio id="sfx-039" src="assets/sfx/clic-positif.mp3" data-start="40.0" data-duration="1.77" data-volume="0.3" data-track-index="32"></audio><!-- Comprendre -->
+      <audio id="sfx-040" src="assets/sfx/bouton-tech.mp3" data-start="41.03" data-duration="0.88" data-volume="0.3" data-track-index="30"></audio><!-- Cadrer -->
+      <audio id="sfx-041" src="assets/sfx/notif-indice.mp3" data-start="42.26" data-duration="1.72" data-volume="0.3" data-track-index="30"></audio><!-- Analyser -->
+      <audio id="sfx-042" src="assets/sfx/coche.mp3" data-start="43.5" data-duration="0.24" data-volume="0.3" data-track-index="31"></audio><!-- Expliquer -->
+      <audio id="sfx-043" src="assets/sfx/swoosh-court.mp3" data-start="44.37" data-duration="1.25" data-volume="0.315" data-track-index="30"></audio><!-- transition vers s09-poles -->
+      <audio id="sfx-044" src="assets/sfx/zoom-air.mp3" data-start="44.76" data-duration="1.28" data-volume="0.3" data-track-index="31"></audio><!-- mouvement de caméra -->
+      <audio id="sfx-045" src="assets/sfx/souffle-cine.mp3" data-start="45.84" data-duration="1.33" data-volume="0.338" data-track-index="30"></audio><!-- volet bleu -->
+      <audio id="sfx-046" src="assets/sfx/impact-futur.mp3" data-start="46.04" data-duration="2.75" data-volume="0.338" data-track-index="32"></audio><!-- deux pôles -->
+      <audio id="sfx-047" src="assets/sfx/bouton-tech.mp3" data-start="46.79" data-duration="0.88" data-volume="0.262" data-track-index="31"></audio><!-- puce Pôle Actuariat -->
+      <audio id="sfx-048" src="assets/sfx/fouet.mp3" data-start="46.89" data-duration="1.05" data-volume="0.3" data-track-index="33"></audio><!-- mouvement de caméra -->
+      <audio id="sfx-049" src="assets/sfx/zoom-swipe.mp3" data-start="48.1" data-duration="1.06" data-volume="0.3" data-track-index="30"></audio><!-- mouvement de caméra -->
+      <audio id="sfx-050" src="assets/sfx/swoosh-court.mp3" data-start="49.94" data-duration="1.25" data-volume="0.3" data-track-index="30"></audio><!-- mouvement de caméra -->
+      <audio id="sfx-051" src="assets/sfx/swoosh-accent.mp3" data-start="50.04" data-duration="1.1" data-volume="0.338" data-track-index="31"></audio><!-- volet bleu -->
+      <audio id="sfx-052" src="assets/sfx/pop-click.mp3" data-start="50.24" data-duration="1.18" data-volume="0.262" data-track-index="32"></audio><!-- puce Pôle Data Science -->
+      <audio id="sfx-053" src="assets/sfx/zoom-futur.mp3" data-start="51.48" data-duration="2.17" data-volume="0.3" data-track-index="30"></audio><!-- mouvement de caméra -->
+      <audio id="sfx-054" src="assets/sfx/balaie-rapide.mp3" data-start="52.28" data-duration="1.92" data-volume="0.315" data-track-index="31"></audio><!-- transition vers s10-activites -->
+      <audio id="sfx-055" src="assets/sfx/balaie-rapide.mp3" data-start="52.6" data-duration="1.92" data-volume="0.315" data-track-index="32"></audio><!-- fenêtre Projets -->
+      <audio id="sfx-056" src="assets/sfx/pop-sec.mp3" data-start="53.05" data-duration="0.3" data-volume="0.262" data-track-index="33"></audio><!-- puce Projets -->
+      <audio id="sfx-057" src="assets/sfx/souffle-rapide.mp3" data-start="53.5" data-duration="1.76" data-volume="0.315" data-track-index="33"></audio><!-- fenêtre Ateliers -->
+      <audio id="sfx-058" src="assets/sfx/clic-positif.mp3" data-start="54.35" data-duration="1.77" data-volume="0.262" data-track-index="30"></audio><!-- puce Ateliers -->
+      <audio id="sfx-059" src="assets/sfx/swoosh-vol.mp3" data-start="55.14" data-duration="1.63" data-volume="0.315" data-track-index="31"></audio><!-- fenêtre Journal -->
+      <audio id="sfx-060" src="assets/sfx/bouton-tech.mp3" data-start="55.54" data-duration="0.88" data-volume="0.262" data-track-index="32"></audio><!-- puce Journal -->
+      <audio id="sfx-061" src="assets/sfx/zoom-expand.mp3" data-start="56.78" data-duration="0.65" data-volume="0.3" data-track-index="30"></audio><!-- on entre dans le journal -->
+      <audio id="sfx-062" src="assets/sfx/souffle-rapide.mp3" data-start="57.82" data-duration="1.76" data-volume="0.315" data-track-index="30"></audio><!-- transition vers s11-bureaux -->
+      <audio id="sfx-063" src="assets/sfx/zoom-in-out.mp3" data-start="59.11" data-duration="1.25" data-volume="0.3" data-track-index="31"></audio><!-- mouvement de caméra -->
+      <audio id="sfx-064" src="assets/sfx/impact-futur.mp3" data-start="59.64" data-duration="2.75" data-volume="0.315" data-track-index="30"></audio><!-- trois bureaux -->
+      <audio id="sfx-065" src="assets/sfx/autofocus.mp3" data-start="61.25" data-duration="1.2" data-volume="0.225" data-track-index="31"></audio><!-- focus -->
+      <audio id="sfx-066" src="assets/sfx/zoom-air.mp3" data-start="61.52" data-duration="1.28" data-volume="0.3" data-track-index="32"></audio><!-- mouvement de caméra -->
+      <audio id="sfx-067" src="assets/sfx/notif-positive.mp3" data-start="61.7" data-duration="2.8" data-volume="0.285" data-track-index="33"></audio><!-- un président -->
+      <audio id="sfx-068" src="assets/sfx/autofocus.mp3" data-start="62.85" data-duration="1.2" data-volume="0.225" data-track-index="30"></audio><!-- focus -->
+      <audio id="sfx-069" src="assets/sfx/zoom-swipe.mp3" data-start="63.32" data-duration="1.06" data-volume="0.3" data-track-index="31"></audio><!-- mouvement de caméra -->
+      <audio id="sfx-070" src="assets/sfx/clic-positif.mp3" data-start="63.6" data-duration="1.77" data-volume="0.285" data-track-index="32"></audio><!-- un président -->
+      <audio id="sfx-071" src="assets/sfx/autofocus.mp3" data-start="65.22" data-duration="1.2" data-volume="0.225" data-track-index="30"></audio><!-- focus -->
+      <audio id="sfx-072" src="assets/sfx/zoom-futur.mp3" data-start="65.34" data-duration="2.17" data-volume="0.3" data-track-index="31"></audio><!-- mouvement de caméra -->
+      <audio id="sfx-073" src="assets/sfx/notif-magique.mp3" data-start="65.87" data-duration="3.01" data-volume="0.285" data-track-index="32"></audio><!-- un président -->
+      <audio id="sfx-074" src="assets/sfx/souffle-cine.mp3" data-start="65.98" data-duration="1.33" data-volume="0.3" data-track-index="33"></audio><!-- mouvement de caméra -->
+      <audio id="sfx-075" src="assets/sfx/pop-click.mp3" data-start="67.65" data-duration="1.18" data-volume="0.262" data-track-index="30"></audio><!-- puce Chaque génération construit sur la précédente -->
+      <audio id="sfx-076" src="assets/sfx/zoom-in-out.mp3" data-start="68.5" data-duration="1.25" data-volume="0.3" data-track-index="31"></audio><!-- mouvement de caméra -->
+      <audio id="sfx-077" src="assets/sfx/swoosh-vol.mp3" data-start="69.83" data-duration="1.63" data-volume="0.315" data-track-index="30"></audio><!-- transition vers s12-candidature -->
+      <audio id="sfx-078" src="assets/sfx/zoom-air.mp3" data-start="70.05" data-duration="1.28" data-volume="0.3" data-track-index="31"></audio><!-- mouvement de caméra -->
+      <audio id="sfx-079" src="assets/sfx/zoom-swipe.mp3" data-start="70.68" data-duration="1.06" data-volume="0.3" data-track-index="32"></audio><!-- mouvement de caméra -->
+      <audio id="sfx-080" src="assets/sfx/zoom-futur.mp3" data-start="71.29" data-duration="2.17" data-volume="0.3" data-track-index="33"></audio><!-- mouvement de caméra -->
+      <audio id="sfx-081" src="assets/sfx/zoom-in-out.mp3" data-start="72.62" data-duration="1.25" data-volume="0.3" data-track-index="30"></audio><!-- mouvement de caméra -->
+      <audio id="sfx-082" src="assets/sfx/impact-whoosh.mp3" data-start="73.31" data-duration="3.53" data-volume="0.338" data-track-index="31"></audio><!-- ta place -->
+      <audio id="sfx-083" src="assets/sfx/swoosh-accent.mp3" data-start="74.06" data-duration="1.1" data-volume="0.3" data-track-index="30"></audio><!-- mouvement de caméra -->
+      <audio id="sfx-084" src="assets/sfx/souffle-cine.mp3" data-start="74.64" data-duration="1.33" data-volume="0.315" data-track-index="32"></audio><!-- transition vers s13-contact -->
+      <audio id="sfx-085" src="assets/sfx/zoom-air.mp3" data-start="75.9" data-duration="1.28" data-volume="0.3" data-track-index="30"></audio><!-- mouvement de caméra -->
+      <audio id="sfx-086" src="assets/sfx/clic-souris.mp3" data-start="76.7" data-duration="1.38" data-volume="0.375" data-track-index="32"></audio><!-- clic Parlons de votre projet -->
+      <audio id="sfx-087" src="assets/sfx/fouet.mp3" data-start="77.28" data-duration="1.05" data-volume="0.338" data-track-index="30"></audio><!-- page contact -->
+      <audio id="sfx-088" src="assets/sfx/zoom-swipe.mp3" data-start="78.47" data-duration="1.06" data-volume="0.3" data-track-index="30"></audio><!-- mouvement de caméra -->
+      <audio id="sfx-089" src="assets/sfx/riser-synth.mp3" data-start="78.73" data-duration="1.6" data-volume="0.225" data-track-index="31"></audio><!-- montée vers la fin -->
+      <audio id="sfx-090" src="assets/sfx/clavier-ordi.mp3" data-start="78.8" data-duration="2.2" data-volume="0.285" data-track-index="32"></audio><!-- on tape -->
+      <audio id="sfx-091" src="assets/sfx/impact-basse.mp3" data-start="79.39" data-duration="1.1" data-volume="0.375" data-track-index="33"></audio><!-- parlons-en -->
+      <audio id="sfx-092" src="assets/sfx/swoosh-accent.mp3" data-start="80.28" data-duration="1.1" data-volume="0.315" data-track-index="30"></audio><!-- transition vers s14-fin -->
+      <audio id="sfx-093" src="assets/sfx/trophee-magique.mp3" data-start="80.35" data-duration="3.3" data-volume="0.338" data-track-index="31"></audio><!-- logo -->
+      <audio id="sfx-094" src="assets/sfx/cloche-succes.mp3" data-start="83.68" data-duration="2.4" data-volume="0.3" data-track-index="30"></audio><!-- fin -->
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

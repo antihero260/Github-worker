@@ -1,0 +1,46 @@
+<!-- Scène 1 · « Imagine que tu sois convaincu d'avoir raison sur quelque chose. » (0 → 3.08 s). Fichier écrit par un générateur, modifiable à la main. -->
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+    }
+
+  </style>
+  <div id="root" data-composition-id="s01-certitude" data-width="1920" data-height="1080">
+    <div class="pj-scene">
+      <div id="s01-certitude-cam" class="pj-cam">
+        <div id="s01-certitude-cadre" class="pj-cadre">
+        <div class="pj-horizon" style="top: 760px"></div>
+        <div class="pj-cone" style="left: 580px; height: 900px; opacity: 1.0"></div><div class="pj-sol" style="left: 550px; top: 740px; opacity: 1.0"></div>
+        <svg id="s01-toi" class="pj-perso pj-toi-perso" viewBox="-30 -20 160 290" style="left: 742px; top: 403px; width: 237px; height: 430px"><g id="s01-toi-vie"><g id="s01-toi-corps"><g id="s01-toi-jg"><g class="c"><rect x="24" y="136" width="24" height="112" rx="8" /></g><g class="p"><rect x="24" y="136" width="24" height="112" rx="8" /></g></g><g id="s01-toi-jd"><g class="c"><rect x="52" y="136" width="24" height="112" rx="8" /></g><g class="p"><rect x="52" y="136" width="24" height="112" rx="8" /></g></g><g id="s01-toi-tronc"><g class="c"><rect x="22" y="52" width="56" height="94" rx="12" /></g><g class="p"><rect x="22" y="52" width="56" height="94" rx="12" /></g></g><g id="s01-toi-bg"><g class="c"><rect x="2" y="54" width="18" height="86" rx="9" /></g><g class="p"><rect x="2" y="54" width="18" height="86" rx="9" /></g></g><g id="s01-toi-bd"><g class="c"><rect x="80" y="54" width="18" height="86" rx="9" /></g><g class="p"><rect x="80" y="54" width="18" height="86" rx="9" /></g></g><g id="s01-toi-tete"><g class="c"><circle cx="50" cy="24" r="22" /></g><g class="p"><circle cx="50" cy="24" r="22" /></g></g></g></g></svg>
+        <div id="s01-cert" style="position: absolute; left: 1240px; top: 330px; width: 520px"><div class="pj-label" style="position: static"><span class="pj-k">Certitude</span></div><div style="display: flex; gap: 8px; margin-top: 12px"><i class="s01-cert-seg" style="flex: 1; height: 34px; background: #2a2a2a"></i><i class="s01-cert-seg" style="flex: 1; height: 34px; background: #2a2a2a"></i><i class="s01-cert-seg" style="flex: 1; height: 34px; background: #2a2a2a"></i><i class="s01-cert-seg" style="flex: 1; height: 34px; background: #2a2a2a"></i><i class="s01-cert-seg" style="flex: 1; height: 34px; background: #2a2a2a"></i><i class="s01-cert-seg" style="flex: 1; height: 34px; background: #2a2a2a"></i><i class="s01-cert-seg" style="flex: 1; height: 34px; background: #2a2a2a"></i><i class="s01-cert-seg" style="flex: 1; height: 34px; background: #2a2a2a"></i><i class="s01-cert-seg" style="flex: 1; height: 34px; background: #2a2a2a"></i><i class="s01-cert-seg" style="flex: 1; height: 34px; background: #2a2a2a"></i></div><div id="s01-cert-pct" class="pj-stat" style="position: static; font-size: 64px; margin-top: 8px">0 %</div></div>
+        </div>
+      </div>
+      <div id="s01-hud" class="pj-label" style="left: 113px; top: 107px; "><span class="pj-k">Sujet · toi</span><span class="pj-d">Avis : tranché</span></div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#s01-certitude-cam", { scale: 1 }, { scale: 1.05, duration: 2.88, ease: "none" }, 0);
+    tl.fromTo("#s01-toi-vie", { y: 0 }, { y: -5, duration: 0.42, repeat: 5, yoyo: true, ease: "sine.inOut", immediateRender: false }, 0.0);
+    tl.to("#s01-certitude-cadre", { x: 130, y: 130, scale: 1.3, duration: 0.24, ease: "power3.inOut" }, 0.94);
+    tl.to("#s01-certitude-cadre", { keyframes: [{ filter: "blur(10px)", duration: 0.12 }, { filter: "blur(0px)", duration: 0.12 }] }, 0.94);
+    tl.to("#s01-toi-bg", { rotation: -46, svgOrigin: "11 62", duration: 0.18, ease: "back.out(2)" }, 1.04);
+    tl.to("#s01-toi-bd", { rotation: 46, svgOrigin: "89 62", duration: 0.18, ease: "back.out(2)" }, 1.04);
+    tl.to("#s01-toi-tete", { rotation: -6, svgOrigin: "50 50", duration: 0.18, ease: "back.out(2)" }, 1.04);
+    tl.to("#s01-toi", { scale: 1.08, transformOrigin: "50% 92%", duration: 0.3, ease: "back.out(2)" }, 1.04);
+    tl.to("#s01-certitude-cadre", { x: 0, y: 0, scale: 1, duration: 0.24, ease: "power3.inOut" }, 1.9);
+    tl.to("#s01-certitude-cadre", { keyframes: [{ filter: "blur(10px)", duration: 0.12 }, { filter: "blur(0px)", duration: 0.12 }] }, 1.9);
+    tl.to(".s01-cert-seg", { backgroundColor: "#DCFC1C", duration: 0.04, stagger: 0.176 }, 1.04);
+    const p1 = { v: 0 };
+    tl.fromTo(p1, { v: 0 }, { v: 100, duration: 1.76, ease: "power2.out", immediateRender: false, onUpdate: () => { document.querySelector("#s01-cert-pct").textContent = Math.round(p1.v) + " %"; } }, 1.04);
+    tl.to("#s01-toi-bg", { rotation: 0, svgOrigin: "11 62", duration: 0.12, ease: "power2.out" }, 2);
+    tl.to("#s01-toi-bd", { rotation: -152, svgOrigin: "89 62", duration: 0.16, ease: "back.out(2.5)" }, 2);
+    tl.to("#s01-toi-bd", { rotation: "+=12", svgOrigin: "89 62", duration: 0.08, repeat: 3, yoyo: true }, 2.18);
+    tl.to("#s01-toi-corps", { keyframes: [{ y: -30, duration: 0.13, ease: "power2.out" }, { y: 0, duration: 0.15, ease: "power2.in" }] }, 2);
+    tl.to("#s01-toi-tete", { svgOrigin: "50 50", keyframes: [{ rotation: 14, duration: 0.11 }, { rotation: -2, duration: 0.11 }, { rotation: 14, duration: 0.11 }, { rotation: -2, duration: 0.11 }, { rotation: 0, duration: 0.11 }] }, 2.48);
+    tl.to("#s01-certitude-cam", { scale: 1.3, filter: "blur(14px)", duration: 0.2, ease: "power3.in" }, 2.88);
+    window.__timelines["s01-certitude"] = tl;
+  </script>
+</template>

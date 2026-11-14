@@ -1,0 +1,739 @@
+% Ebook « Crée tes vidéos TikTok avec l'IA », XeLaTeX (xelatex ebook.tex, deux fois pour le sommaire)
+\documentclass[11pt,oneside,openany]{book}
+\usepackage[a5paper,top=17mm,bottom=19mm,left=15mm,right=15mm,headsep=6mm,footskip=10mm]{geometry}
+\usepackage{fontspec}
+\usepackage[french]{babel}
+\setmainfont{Inter}[UprightFont=*-Regular,BoldFont=*-Bold,ItalicFont=*-Italic,BoldItalicFont=*-BoldItalic,Extension=.otf,Path=/usr/share/fonts/opentype/inter/]
+\setmonofont{DejaVu Sans Mono}[Scale=0.84]
+\newfontfamily\anton{Anton-Regular.ttf}[Path=polices/]
+\usepackage{xcolor}
+\definecolor{encre}{HTML}{111111}
+\definecolor{violet}{HTML}{4F46E5}
+\definecolor{citron}{HTML}{DCFC1C}
+\definecolor{rouge}{HTML}{E8112D}
+\definecolor{vert}{HTML}{15803D}
+\definecolor{gris}{HTML}{6B7280}
+\definecolor{fondgris}{HTML}{F3F4F6}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{positioning,arrows.meta,calc,shapes.geometric,babel,shadows}
+\usepackage[most]{tcolorbox}
+\usepackage{enumitem}
+\usepackage{tabularx,booktabs,array}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{microtype}
+\usepackage{amssymb}
+\usepackage{caption}
+\usepackage{float}
+\setcounter{tocdepth}{0}
+\captionsetup{font={small,color=gris},labelfont={bf,color=violet},labelsep=period,justification=centering}
+\usepackage[hidelinks,bookmarksnumbered,pdftitle={Crée tes vidéos TikTok avec l'IA},pdfauthor={Lecodeur},pdfsubject={Formation pas à pas : créer des vidéos courtes avec Claude},pdfkeywords={TikTok, IA, Claude, vidéo, ebook}]{hyperref}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.55em}
+\linespread{1.2}
+\setlist{itemsep=0.25em,topsep=0.3em,leftmargin=1.3em}
+\setlist[enumerate]{label=\textbf{\color{violet}\arabic*.}}
+\setlist[itemize]{label=\textcolor{violet}{\textbullet}}
+
+% ---- titres
+\titleformat{\chapter}[display]{\color{encre}}{\anton\fontsize{15}{18}\selectfont\color{violet}\MakeUppercase{\chaptertitlename\ \thechapter}}{0.2em}{\anton\fontsize{27}{31}\selectfont\MakeUppercase}[\vspace{0.4em}{\color{citron}\rule{3.2cm}{4pt}}]
+\titleformat{name=\chapter,numberless}[display]{\color{encre}}{}{0pt}{\anton\fontsize{27}{31}\selectfont\MakeUppercase}[\vspace{0.4em}{\color{citron}\rule{3.2cm}{4pt}}]
+\titlespacing*{\chapter}{0pt}{0pt}{1.4em}
+\titleformat{\section}{\bfseries\Large\color{violet}}{}{0pt}{}
+\titlespacing*{\section}{0pt}{1.3em}{0.4em}
+\addto\captionsfrench{\def\chaptername{Étape}\def\contentsname{Sommaire}\def\figurename{Image}}
+
+% ---- en-têtes
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\color{gris}\nouppercase{\leftmark}}
+\fancyhead[R]{\small\color{gris}Crée tes vidéos avec l'IA}
+\fancyfoot[C]{\small\color{gris}\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\small\color{gris}\thepage}\renewcommand{\headrulewidth}{0pt}}
+
+% ---- encadrés
+\newtcolorbox{astuce}{enhanced,breakable,colback=violet!6,colframe=violet,boxrule=0pt,leftrule=3.5pt,arc=2pt,left=8pt,right=8pt,top=5pt,bottom=5pt,
+  fonttitle=\bfseries\small,coltitle=violet,colbacktitle=violet!6,title={Astuce},attach title to upper={\ \ }}
+\newtcolorbox{attention}{enhanced,breakable,colback=rouge!6,colframe=rouge,boxrule=0pt,leftrule=3.5pt,arc=2pt,left=8pt,right=8pt,top=5pt,bottom=5pt,
+  fonttitle=\bfseries\small,coltitle=rouge,colbacktitle=rouge!6,title={Attention},attach title to upper={\ \ }}
+\newtcolorbox{retenir}{enhanced,breakable,colback=violet!6,colframe=violet,boxrule=0pt,leftrule=3.5pt,arc=2pt,left=8pt,right=8pt,top=5pt,bottom=5pt,
+  fonttitle=\bfseries\small,coltitle=violet,colbacktitle=violet!6,title={À retenir},attach title to upper={\ \ }}
+\newtcolorbox{acopier}[1][]{enhanced,colback=fondgris,colframe=encre!25,boxrule=0.6pt,arc=3pt,left=8pt,right=8pt,top=6pt,bottom=6pt,
+  fontupper=\ttfamily\small,title={#1},fonttitle=\bfseries\small,coltitle=white,colbacktitle=encre,attach boxed title to top left={xshift=6pt,yshift=-6pt},boxed title style={arc=2pt,boxrule=0pt}}
+\newcommand{\capture}[3][0.98]{\begin{figure}[H]\centering\fcolorbox{encre!20}{white}{\includegraphics[width=#1\linewidth]{#2}}\caption{#3}\end{figure}}
+\DeclareRobustCommand{\pastille}[1]{\tikz[baseline=(c.base)]\node[circle,fill=rouge,text=white,font=\bfseries\footnotesize,inner sep=1.4pt,minimum size=1.2em](c){#1};}
+\newcommand{\coche}{$\square$\ }
+
+\newtcolorbox{victoire}{enhanced,breakable,colback=citron!25,colframe=encre,boxrule=0pt,leftrule=3.5pt,arc=2pt,left=8pt,right=8pt,top=5pt,bottom=5pt,
+  fonttitle=\bfseries\small,coltitle=encre,colbacktitle=citron!25,title={Victoire rapide},attach title to upper={\ \ }}
+\newcommand{\objectif}[1]{\begin{tcolorbox}[enhanced,colback=encre,colframe=encre,arc=2pt,boxrule=0pt,left=9pt,right=9pt,top=6pt,bottom=6pt,fontupper=\small\color{white}]{\color{citron}\bfseries Dans ce chapitre}\quad #1\end{tcolorbox}}
+\newenvironment{bilan}{\section*{Avant de passer à la suite}\begin{itemize}[label={}]}{\end{itemize}}
+% ---- téléphone (image verticale dans un cadre arrondi)
+\newcommand{\telephone}[4][0]{\node[rotate=#1,inner sep=1.6pt,fill=black,draw=white,line width=1.2pt,rounded corners=6pt,drop shadow={opacity=0.45,shadow xshift=2pt,shadow yshift=-2pt}] at (#2) {\includegraphics[width=#3]{#4}};}
+% ---- le personnage vert (mêmes formes que dans les vidéos : unités du SVG, y vers le bas)
+\def\persocoul{citron}
+\definecolor{rose}{HTML}{FF3D8B}
+\definecolor{bleu}{HTML}{3B82F6}
+\newcommand{\persovert}[3]{% #1 = échelle, #2 = angle du bras gauche, #3 = angle du bras droit (degrés, sens SVG)
+\begin{scope}[yscale=-1,x=#1pt,y=#1pt]
+\pgfmathsetmacro{\ep}{10*#1}
+\tikzset{membre/.style={fill=\persocoul,draw=black,line width=\ep pt,rounded corners=8*#1pt}}
+\draw[membre] (24,136) rectangle ++(24,112);
+\draw[membre] (52,136) rectangle ++(24,112);
+\draw[membre,rounded corners=12*#1pt] (22,52) rectangle ++(56,94);
+\draw[membre,rotate around={#2:(11,62)}] (2,54) rectangle ++(18,86);
+\draw[membre,rotate around={#3:(89,62)}] (80,54) rectangle ++(18,86);
+\draw[fill=\persocoul,draw=black,line width=\ep pt] (50,24) circle (22);
+\end{scope}}
+\begin{document}
+\frontmatter
+% ======================================================================== COUVERTURE
+\begin{titlepage}
+\newgeometry{margin=0pt}
+\begin{tikzpicture}[remember picture,overlay]
+  \fill[encre] (current page.south west) rectangle (current page.north east);
+  \node[anchor=north west] at ($(current page.north west)+(1.2cm,-1.3cm)$)
+    {\anton\fontsize{12}{14}\selectfont\color{citron}CLAUDE\hspace{0.2em}CODE\hspace{0.2em}+\hspace{0.2em}HYPERFRAMES};
+  \node[anchor=north west,text width=12.8cm,align=left] at ($(current page.north west)+(1.1cm,-2.0cm)$)
+    {\anton\fontsize{58}{58}\selectfont\color{white}CRÉE\hspace{0.22em}TES\\VIDÉOS\\[0.06em]{\setlength{\fboxsep}{2pt}\colorbox{citron}{\color{encre}AVEC\hspace{0.22em}L'IA}}};
+  % le téléphone avec une vraie image de vidéo
+  \node[rotate=6,inner sep=3pt,fill=black,draw=white,line width=1.8pt,rounded corners=10pt] at ($(current page.south east)+(-4.1cm,8.2cm)$)
+    {\includegraphics[width=4.1cm]{images/resultat-6.6.jpg}};
+  % le personnage vert, bras levés
+  \begin{scope}[shift={($(current page.south west)+(1.4cm,10.2cm)$)}]
+    \persovert{0.58}{150}{-150}
+  \end{scope}
+  \node[anchor=south west,text width=12.4cm,align=left] at ($(current page.south west)+(1.2cm,2.3cm)$)
+    {\fontsize{13.5}{17}\selectfont\color{white}La méthode pas à pas pour faire tes vidéos TikTok, Reels et Shorts avec Claude Opus 5.5.};
+  \node[anchor=south west,fill=citron,text=encre,inner sep=5pt,font=\bfseries\small] at ($(current page.south west)+(1.2cm,1.2cm)$) {53 PROMPTS PRÊTS À COPIER};
+  \node[anchor=south east] at ($(current page.south east)+(-1.2cm,1.25cm)$) {\anton\fontsize{14}{16}\selectfont\color{white}LECODEUR};
+\end{tikzpicture}
+\restoregeometry
+\end{titlepage}
+
+% ======================================================================== MENTIONS
+\thispagestyle{empty}
+\vspace*{2cm}
+{\footnotesize\color{gris}
+\textbf{\color{encre}Crée tes vidéos TikTok avec l'IA}\\
+Formation pas à pas pour créer des vidéos courtes avec Claude Opus 5.5.\\
+Version 2.0, novembre 2026.
+
+© 2026 Lecodeur. Tous droits réservés. Toute reproduction, même partielle, est interdite sans autorisation.
+
+Crédits des images. Captures d'écran de claude.com (Anthropic), elevenlabs.io, de l'App Store (Apple) et de Google Play réalisées par l'auteur en novembre 2026 et utilisées à titre d'illustration ; les marques citées appartiennent à leurs propriétaires. La capture de l'application Claude vient du téléphone de l'auteur. Les deux images de l'interface GitHub viennent de la documentation officielle GitHub Docs (© GitHub, Inc., licence CC BY 4.0). Annotations et images de vidéos : l'auteur.
+
+Les applications changent souvent de présentation. Si un bouton n'est plus au même endroit, cherche le même mot. Vérifie aussi les prix et les offres sur le site de chaque service.
+
+Ce guide n'est affilié à aucune des entreprises citées.}
+
+\clearpage
+\begingroup\setlength{\parskip}{0pt}\titlespacing*{\chapter}{0pt}{-0.6cm}{0.4em}\tableofcontents\endgroup
+
+% ======================================================================== PROMESSE
+\chapter*{Ce que tu sauras faire}
+\addcontentsline{toc}{chapter}{Ce que tu sauras faire}
+\markboth{Ce que tu sauras faire}{}
+
+À la fin de ce guide, tu sauras faire monter par Claude Code et HyperFrames une vidéo de 30 à 60 secondes dans notre style, prête à publier sur TikTok, Instagram Reels ou YouTube Shorts. Tu lui donnes l'idée, la voix et tes remarques par messages ; il fait le montage.
+
+\begin{figure}[H]\centering
+\begin{tikzpicture}
+  \fill[encre,rounded corners=6pt] (-5.9,-3.55) rectangle (5.9,3.55);
+  \shade[inner color=citron!70,outer color=encre,opacity=0.9] (0,-0.2) ellipse (4.4cm and 2.7cm);
+  \node[anchor=north west] at (-5.6,3.35) {\anton\fontsize{15}{17}\selectfont\color{citron}TES\hspace{0.18em}VIDÉOS,\hspace{0.18em}MONTÉES\hspace{0.18em}PAR\hspace{0.18em}CLAUDE};
+  \telephone[-16]{-4.1,-0.55}{1.55cm}{images/galerie/attention.jpg}
+  \telephone[16]{4.1,-0.55}{1.55cm}{images/galerie/english.jpg}
+  \telephone[-8]{-2.2,-0.35}{1.8cm}{images/galerie/mot-secret.jpg}
+  \telephone[8]{2.2,-0.35}{1.8cm}{images/galerie/skills.jpg}
+  \telephone[0]{0,-0.25}{2.1cm}{images/galerie/jeu-video.jpg}
+  \begin{scope}[shift={(-5.5,-1.75)}]\persovert{0.17}{150}{-150}\end{scope}
+  \node[anchor=south east,fill=citron,text=encre,font=\bfseries\scriptsize,inner sep=3pt] at (5.6,-3.35) {Toutes réalisées avec Claude Code + HyperFrames};
+\end{tikzpicture}
+\caption{Des vidéos réalisées avec cette méthode.}
+\end{figure}
+
+\section*{Ce qu'il y a dans chaque vidéo}
+\begin{figure}[H]\centering
+\begin{tikzpicture}[lab/.style={fill=encre,text=white,rounded corners=3pt,font=\bfseries\scriptsize,text width=2.55cm,align=center,inner sep=4pt},
+  fl/.style={draw=violet,line width=1pt,-{Circle[length=4pt]}}]
+  \node[inner sep=2pt,fill=black,draw=encre,line width=1.2pt,rounded corners=8pt] (tel) at (0,0) {\includegraphics[width=4.2cm]{images/resultat-6.6.jpg}};
+  \node[lab] (l1) at (-4.15,2.6) {Un titre-promesse en haut};
+  \node[lab] (l2) at (4.15,1.7) {De vraies vidéos qui changent à chaque mot};
+  \node[lab] (l3) at (-4.15,-0.3) {Le personnage vert qui joue chaque phrase};
+  \node[lab] (l4) at (4.15,-1.0) {Des sous-titres mot à mot};
+  \node[lab] (l5) at (-4.15,-2.6) {Des cases mystère dévoilées une à une};
+  \draw[fl] (l1.east) -- (-1.1,1.79);
+  \draw[fl] (l2.west) -- (1.24,0.62);
+  \draw[fl] (l3.east) -- (-1.75,-0.66);
+  \draw[fl] (l4.west) -- (0.6,-0.82);
+  \draw[fl] (l5.east) -- (-1.5,-1.91);
+\end{tikzpicture}
+\caption{Musique et bruitages complètent le tout : plus de 150 sons dans une vidéo de 45 secondes.}
+\end{figure}
+
+Le guide s'adresse aux créateurs, aux indépendants et aux commerçants qui veulent publier souvent sans passer leurs soirées sur un logiciel de montage. Aucune connaissance en code n'est nécessaire : tu copies des prompts, c'est-à-dire des messages tout prêts que tu envoies à Claude.
+
+\section*{Ce qu'il te faut}
+\begin{itemize}[label={}]
+  \item \coche un abonnement payant à Claude : il est obligatoire, car Claude Code et le modèle Opus 5.5 ne sont pas inclus dans l'offre gratuite ;
+  \item \coche un ordinateur (Windows, Mac ou Linux) ou un téléphone avec l'application Claude ;
+  \item \coche un compte ChatGPT pour écrire le texte de la voix (l'offre gratuite suffit pour commencer) ;
+  \item \coche un compte ElevenLabs pour la voix (une offre gratuite permet de commencer) ;
+  \item \coche sur téléphone seulement, un compte GitHub gratuit.
+\end{itemize}
+
+Compte une à deux heures pour la première vidéo, installation comprise, puis une vingtaine de minutes de ton temps par vidéo.
+
+\section*{Le parcours d'une vidéo}
+\begin{figure}[H]\centering
+\begin{tikzpicture}[font=\footnotesize,
+  b/.style={draw=encre!40,rounded corners=3pt,minimum width=2.6cm,minimum height=1.05cm,align=center,fill=white},
+  c/.style={b,draw=violet,fill=violet!10,line width=1pt},
+  fl/.style={-{Latex[length=2mm]},draw=encre!55,line width=0.7pt}]
+\node[b] (s) at (0,0) {\textbf{1. Texte}\\\textcolor{gris}{toi + ChatGPT}};
+\node[b] (v) at (3.0,0) {\textbf{2. Voix}\\\textcolor{gris}{toi, ElevenLabs}};
+\node[b] (d) at (6.0,0) {\textbf{3. Commande}\\\textcolor{gris}{toi, un prompt}};
+\node[c] (m) at (6.0,-1.8) {\textbf{4. Montage}\\\textcolor{encre}{Opus 5.5, Élevé}};
+\node[b] (k) at (3.0,-1.8) {\textbf{5. Corrections}\\\textcolor{gris}{toi, un prompt}};
+\node[b] (p) at (0,-1.8) {\textbf{6. Vidéo finale}\\\textcolor{gris}{Claude}};
+\draw[fl] (s) -- (v); \draw[fl] (v) -- (d); \draw[fl] (d) -- (m); \draw[fl] (m) -- (k); \draw[fl] (k) -- (p);
+\draw[fl,dashed] (k.south) -- ++(0,-0.45) -| node[pos=0.25,below,text=gris]{si besoin} (m.south);
+\end{tikzpicture}
+\caption{Tu interviens au début et à la fin ; Claude fait le montage.}
+\end{figure}
+
+\mainmatter
+% ======================================================================== 1
+\chapter{Claude Code et Opus 5.5}
+\objectif{installer Claude Code, choisir Opus 5.5 en effort « Élevé » et ajouter HyperFrames.}
+Claude Code est la partie de Claude qui fabrique des fichiers, et donc des vidéos. La discussion habituelle ne sait pas le faire. Ce chapitre l'installe sur ton ordinateur ou ton téléphone, choisit le bon modèle et ajoute l'outil de montage.
+
+\begin{attention}
+L'abonnement payant à Claude est obligatoire. Sans lui, tu n'as accès ni à Claude Code ni au modèle Opus 5.5.
+\end{attention}
+
+\section{Sur ordinateur}
+\begin{enumerate}
+  \item Sur la page de Claude Code, clique sur « Essayer Claude » pour créer ton compte et prendre l'abonnement.
+  \item Clique sur « Télécharger » et installe l'application.
+  \item Ouvre-la et connecte-toi. Choisis ensuite un dossier vide dans tes Documents, par exemple un dossier nommé \texttt{mes-videos}. Tes vidéos y seront enregistrées.
+\end{enumerate}
+\capture{images/claude-code.jpg}{\pastille{1} « Essayer Claude ». \pastille{2} « Télécharger », qui indique ton système. \pastille{3} La version Web.}
+
+\section{Sur téléphone}
+Télécharge l'application Claude sur l'App Store (iPhone) ou sur Google Play (Android), puis connecte-toi.
+
+\begin{figure}[H]\centering
+\begin{minipage}{0.47\linewidth}\centering\fcolorbox{encre!20}{white}{\includegraphics[width=0.95\linewidth]{images/appstore.jpg}}\\[0.4em]\fcolorbox{encre!20}{white}{\includegraphics[width=0.95\linewidth]{images/playstore.jpg}}\end{minipage}\hfill
+\begin{minipage}{0.4\linewidth}\centering\fcolorbox{encre!20}{white}{\includegraphics[width=0.95\linewidth]{images/app-claude-menu.jpg}}\end{minipage}
+\caption{À gauche, l'application sur l'App Store et sur Google Play (\pastille{1} « Installer »). À droite, le menu de l'application : \pastille{1} « Code », puis \pastille{2} « Nouvelle session ».}
+\end{figure}
+
+Dans l'application, ouvre le menu, touche « Code », puis « Nouvelle session ». La première fois, l'application te demande de relier un compte GitHub : c'est le dossier en ligne où Claude range tes projets.
+\begin{enumerate}
+  \item Crée un compte gratuit sur github.com.
+  \item Touche le « + », puis « New repository », appelle-le \texttt{mes-videos} et valide.
+  \item Reviens dans Claude, relie GitHub et choisis \texttt{mes-videos}.
+\end{enumerate}
+\capture[0.62]{images/github-nouveau-depot.jpg}{\pastille{1} Le « + » de GitHub. \pastille{2} « New repository ».}
+
+\begin{attention}
+Sur téléphone, Claude travaille sur un ordinateur en ligne qui est vidé après chaque séance. Termine toujours par « Enregistre tout sur GitHub ».
+\end{attention}
+
+\section{Choisir Opus 5.5 en effort « Élevé »}
+Toutes les vidéos de ce guide ont été faites avec Opus 5.5 réglé sur l'effort « Élevé ». Au début de chaque session, ouvre le sélecteur de modèle, choisis Opus 5.5, puis règle l'effort sur « Élevé ». Sur ordinateur, tu peux aussi taper :
+\begin{acopier}[Commande]
+/model
+\end{acopier}
+puis sélectionner Opus 5.5 et l'effort « Élevé ».
+
+\section{Installer l'outil de montage}
+Claude monte les vidéos avec HyperFrames, un outil gratuit. Envoie ce message une seule fois :
+\begin{acopier}[Prompt : installer HyperFrames]
+Installe ça : https://github.com/heygen-com/hyperframes.git
+\end{acopier}
+
+\begin{victoire}
+Vérifie que tout marche avec une vidéo test de 10 secondes : « Fais une vidéo verticale de 10 secondes avec le titre BONJOUR, une vraie vidéo de ville la nuit en fond et une musique libre de droits. » Si tu reçois la vidéo, l'installation est terminée.
+\end{victoire}
+
+\begin{bilan}
+  \item \coche J'ai pris l'abonnement et installé Claude Code (ou l'application sur mon téléphone).
+  \item \coche J'ai choisi Opus 5.5 en effort « Élevé ».
+  \item \coche J'ai installé HyperFrames et reçu ma vidéo test.
+\end{bilan}
+
+% ======================================================================== 2
+\chapter[Notre style et le personnage vert]{Notre style\\ et le personnage vert}
+\objectif{donner notre style à Claude en un prompt.}
+Ce chapitre donne à Claude les règles de notre style en un seul message. Il les garde dans un fichier de consignes et les relit avant chaque vidéo.
+
+\begin{figure}[H]\centering
+\begin{tikzpicture}[lbl/.style={font=\bfseries\scriptsize,text=citron,anchor=west},pt/.style={font=\scriptsize,text=white}]
+  \fill[encre,rounded corners=6pt] (-5.9,-10.35) rectangle (5.9,4.45);
+  \node[anchor=north west] at (-5.6,4.2) {\anton\fontsize{15}{17}\selectfont\color{white}NOTRE\hspace{0.18em}STYLE\hspace{0.18em}EN\hspace{0.18em}UN\hspace{0.18em}COUP\hspace{0.18em}D'ŒIL};
+  % --- le personnage
+  \node[lbl] at (-5.6,3.15) {LE PERSONNAGE VERT};
+  \begin{scope}[shift={(-5.45,2.75)}]\persovert{0.27}{0}{-150}\end{scope}
+  \begin{scope}[shift={(-3.7,2.75)}]\persovert{0.27}{150}{-150}\end{scope}
+  \begin{scope}[shift={(-1.95,2.75)}]\persovert{0.27}{0}{-95}\end{scope}
+  \node[pt] at (-4.95,0.2) {il salue};
+  \node[pt] at (-3.2,0.2) {il jubile};
+  \node[pt] at (-1.45,0.2) {il pointe};
+  % --- les couleurs
+  \node[lbl] at (0.3,3.15) {LES COULEURS};
+  \fill[black] (0.4,1.85) rectangle ++(1.05,1.05); \draw[white,line width=0.6pt] (0.4,1.85) rectangle ++(1.05,1.05);
+  \fill[citron] (1.75,1.85) rectangle ++(1.05,1.05);
+  \fill[white] (3.1,1.85) rectangle ++(1.05,1.05);
+  \fill[violet] (4.45,1.85) rectangle ++(1.05,1.05);
+  \node[pt,font=\tiny] at (0.92,1.6) {noir};
+  \node[pt,font=\tiny] at (2.27,1.6) {\#DCFC1C};
+  \node[pt,font=\tiny] at (3.62,1.6) {blanc};
+  \node[pt,font=\tiny] at (4.97,1.6) {encadrés};
+  % --- les mots qui claquent et les sous-titres
+  \node[anchor=west] at (0.3,0.95) {\anton\fontsize{17}{19}\selectfont\color{white}MOTS\hspace{0.15em}QUI\hspace{0.15em}\textcolor{citron}{CLAQUENT}};
+  \node[anchor=west,fill=white,text=encre,font=\anton\fontsize{10}{11}\selectfont,inner sep=3pt] (st1) at (0.4,0.2) {SOUS-TITRES};
+  \node[anchor=west,fill=citron,text=encre,font=\anton\fontsize{10}{11}\selectfont,inner sep=3pt] at ($(st1.east)+(0.12,0)$) {MOT\hspace{0.15em}À\hspace{0.15em}MOT};
+  % --- les cases mystère
+  \node[lbl] at (-5.6,-0.65) {LES CASES MYSTÈRE};
+  \foreach \x in {-5.5,-4.25,-3.0}{\draw[citron,line width=1.4pt,fill=black,rounded corners=2pt] (\x,-2.25) rectangle ++(1.05,1.25);
+    \node at (\x+0.525,-1.62) {\anton\fontsize{22}{22}\selectfont\color{citron}?};}
+  % --- le volet rayé
+  \node[lbl] at (0.3,-0.65) {LE VOLET DE TRANSITION};
+  \begin{scope}
+    \clip (0.4,-1.75) rectangle (5.5,-1.0);
+    \fill[encre] (0.4,-1.75) rectangle (5.5,-1.0);
+    \foreach \x in {0,0.5,...,6}{\fill[citron] (0.4+\x,-1.75) -- ++(0.25,0) -- ++(0.55,0.75) -- ++(-0.25,0) -- cycle;}
+  \end{scope}
+  % --- les vraies vidéos
+  \node[lbl] at (-5.6,-2.75) {DE VRAIES VIDÉOS QUI CHANGENT À CHAQUE MOT};
+  \node[anchor=north west,inner sep=0pt] at (-5.5,-3.05) {\includegraphics[width=2.55cm]{images/style/film-0.3.jpg}};
+  \node[anchor=north west,inner sep=0pt] at (-2.75,-3.05) {\includegraphics[width=2.55cm]{images/style/film-1.0.jpg}};
+  \node[anchor=north west,inner sep=0pt] at (0.0,-3.05) {\includegraphics[width=2.55cm]{images/style/film-3.0.jpg}};
+  \node[anchor=north west,inner sep=0pt] at (2.75,-3.05) {\includegraphics[width=2.55cm]{images/style/film-4.3.jpg}};
+  % --- le format vertical
+  \node[lbl] at (-5.6,-4.95) {LE FORMAT VERTICAL};
+  \node[inner sep=0pt,draw=white,line width=1.2pt,rounded corners=4pt] (tel) at (-4.35,-7.75) {\includegraphics[width=2.35cm]{images/resultat-6.6.jpg}};
+  \foreach \y/\t in {-6.8/titre-promesse,-7.6/film \NoAutoSpacing{16:9},-8.45/cases mystère}{
+    \draw[citron,-{Stealth[length=4pt]},line width=0.9pt] (-2.15,\y) -- (-3.05,\y);
+    \node[pt,anchor=west] at (-2.1,\y) {\t};}
+  % --- la caméra suit
+  \node[lbl] at (0.3,-4.95) {LA CAMÉRA SUIT LE PERSONNAGE};
+  \foreach \cx/\bx in {0.45/1.3,3.35/4.2}{
+    \foreach \a/\b/\c/\d in {0/0/1/-1,2.1/0/-1/-1,0/-1.75/1/1,2.1/-1.75/-1/1}{
+      \draw[citron,line width=1.3pt] (\cx+\a+0.3*\c,-5.4+\b) -- (\cx+\a,-5.4+\b) -- (\cx+\a,-5.4+\b+0.3*\d);}}
+  \begin{scope}[shift={(1.3,-5.6)}]\persovert{0.13}{0}{0}\end{scope}
+  \begin{scope}[shift={(4.2,-5.6)}]\persovert{0.13}{0}{-95}\end{scope}
+  \draw[white,dashed,-{Stealth[length=5pt]},line width=0.9pt] (2.7,-6.27) -- (3.2,-6.27);
+  % --- les bruitages
+  \node[lbl] at (0.3,-7.75) {DES BRUITAGES PARTOUT};
+  \foreach[count=\i] \h in {0.15,0.35,0.9,0.4,0.2,0.55,0.25,0.15,0.75,0.3,0.6,0.2,0.45,0.95,0.35,0.2,0.5,0.25,0.7,0.3,0.15,0.4,0.85,0.25,0.15}{
+    \fill[citron,rounded corners=0.5pt] (0.35+\i*0.2,-8.85-\h/2) rectangle ++(0.11,\h);}
+  \node[pt,font=\tiny] at (1.0,-9.65) {souffle};
+  \node[pt,font=\tiny] at (3.15,-9.65) {impact};
+  \node[pt,font=\tiny] at (5.0,-9.65) {pop};
+\end{tikzpicture}
+\caption{Notre style en une seule image.}
+\end{figure}
+
+\begin{acopier}[Prompt : notre style]
+Crée un fichier de consignes que tu reliras avant chaque vidéo :\\
+- Réponds-moi en français, simplement.\\
+- Format vertical 1080×1920 : titre blanc en haut, film 16:9 dans un bandeau au centre, sous-titres mot à mot dans des étiquettes noires.\\
+- Couleurs : fond noir, accent jaune citron (\#DCFC1C), police Anton pour les mots qui claquent.\\
+- Un personnage vert citron (petit bonhomme articulé : tête ronde, corps, bras et jambes) qui joue chaque phrase : il marche, pointe, saute, lève les bras, panique ou se gratte la tête.\\
+- La caméra recadre et suit le personnage et les éléments qui bougent.\\
+- Pendant les 3 premières secondes, de vraies vidéos qui changent à chaque mot. Ensuite, un fond de vraies vidéos qui change tous les 1 à 2 mots, avec les éléments par-dessus.\\
+- Quand je donne une liste, cache chaque point derrière une case « ? » sous le film et dévoile-le quand la voix l'annonce.\\
+- Transitions : volet rayé jaune et noir, glitch et secousses sur les mots forts.\\
+- Trois musiques libres de droits à la mode (hip-hop, trap, house), une par partie, environ 5 dB sous la voix.\\
+- Beaucoup de bruitages : un souffle à chaque changement d'image, des impacts, des clics et des « pop ».\\
+- Vérifie toujours la vidéo avant de fabriquer le fichier final.
+\end{acopier}
+
+\section{Varier les couleurs}
+\begin{figure}[H]\centering
+\begin{tikzpicture}
+  \fill[encre,rounded corners=6pt] (-4.2,-0.4) rectangle (4.2,3.3);
+  \begin{scope}[shift={(-2.85,3.0)}]\persovert{0.27}{150}{-150}\end{scope}
+  \begin{scope}[shift={(-0.45,3.0)}]\def\persocoul{rose}\persovert{0.27}{150}{-150}\end{scope}
+  \begin{scope}[shift={(1.95,3.0)}]\def\persocoul{bleu}\persovert{0.27}{150}{-150}\end{scope}
+  \node[font=\scriptsize,text=white] at (-2.35,-0.15) {jaune citron};
+  \node[font=\scriptsize,text=white] at (0.05,-0.15) {rose fluo};
+  \node[font=\scriptsize,text=white] at (2.45,-0.15) {bleu};
+\end{tikzpicture}
+\caption{Le même personnage dans trois couleurs.}
+\end{figure}
+\begin{acopier}[Prompt : autre couleur d'accent]
+Garde mon style mais remplace le jaune citron par du rose fluo (\#FF3D8B), y compris pour le personnage.
+\end{acopier}
+\begin{acopier}[Prompt : version claire]
+Garde mon style mais sur fond blanc, avec des textes noirs et le personnage en bleu (\#3B82F6).
+\end{acopier}
+
+\section{Faire évoluer tes règles}
+\begin{acopier}[Prompt : nouvelle règle]
+Ajoute à mes consignes : [ta remarque]. Applique-la à toutes mes prochaines vidéos.
+\end{acopier}
+
+\begin{bilan}
+  \item \coche J'ai envoyé le prompt « notre style ».
+  \item \coche Claude m'a confirmé qu'il a créé le fichier de consignes.
+\end{bilan}
+
+% ======================================================================== 3
+\chapter{Copier le style d'une vidéo que tu aimes}
+\objectif{faire reprendre par Claude le style d'une vidéo existante.}
+Tu peux montrer à Claude des vidéos dont tu aimes le style et lui demander de les imiter. Télécharge-les d'abord sur ton appareil, puis joins-les au message.
+
+\begin{figure}[H]\centering
+\begin{tikzpicture}[lb/.style={font=\bfseries\scriptsize,anchor=west},tx/.style={font=\scriptsize,text width=4.55cm,align=left}]
+  % rangée 1 : la vidéo d'un autre créateur
+  \node[lb,text=gris] at (-5.9,4.55) {1. LA VIDÉO D'UN AUTRE CRÉATEUR};
+  \telephone[-3]{-4.6,2.0}{2.3cm}{images/miniatures/s1-autre-a.jpg}
+  \telephone[3]{-1.95,2.0}{2.3cm}{images/miniatures/s2-autre-b.jpg}
+  \node[fill=fondgris,rounded corners=4pt,draw=encre!15,inner sep=7pt,tx,anchor=west] at (0.2,2.0) {%
+    \textbf{\color{violet}Ce que Claude relève}\\[3pt]
+    \textbullet\ fond crème, aucun fond noir\\
+    \textbullet\ titres fins en italique\\
+    \textbullet\ une photo aux coins arrondis par scène\\
+    \textbullet\ un mot surligné en orange par phrase\\
+    \textbullet\ rythme calme, une coupe par phrase};
+  % flèche
+  \draw[violet,line width=2pt,-{Stealth[length=8pt]}] (2.55,-0.35) -- (2.55,-1.05) node[midway,right=4pt,font=\bfseries\scriptsize,text=violet] {Claude copie le style};
+  % rangée 2 : ta vidéo
+  \node[lb,text=gris] at (-5.9,-1.45) {2. TA VIDÉO DANS CE STYLE};
+  \telephone[-3]{-4.6,-3.9}{2.3cm}{images/miniatures/s3-toi-a.jpg}
+  \telephone[3]{-1.95,-3.9}{2.3cm}{images/miniatures/s4-toi-b.jpg}
+  \node[fill=citron!25,rounded corners=4pt,inner sep=7pt,tx,anchor=west] at (0.2,-3.9) {%
+    \textbf{Ce qui reste à toi}\\[3pt]
+    \textbullet\ ton sujet et ton texte\\
+    \textbullet\ ta voix\\
+    \textbullet\ tes images\\
+    \textbullet\ le personnage vert};
+\end{tikzpicture}
+\caption{Le style passe d'une vidéo à l'autre, le contenu reste le tien. La vidéo de référence est un exemple inventé.}
+\end{figure}
+
+\begin{acopier}[Prompt : analyser un style]
+Voici 3 vidéos dont j'aime le style (jointes). Décris leur rythme de montage, leurs couleurs, leurs polices, leurs sous-titres, leurs transitions et leurs sons. Ajoute ce style à mes consignes et garde le personnage vert.
+\end{acopier}
+\begin{acopier}[Prompt : avec l'outil de copie de style]
+Utilise /style-sampling sur ces vidéos (jointes) pour copier leur style, puis applique-le à ma prochaine vidéo.
+\end{acopier}
+\begin{acopier}[Prompt : refaire une vidéo dans un style]
+Refais ma dernière vidéo dans le style de celle-ci (jointe) : même rythme de coupes, mêmes sous-titres, mêmes transitions. Garde mon texte, ma voix et le personnage vert.
+\end{acopier}
+
+\begin{attention}
+Copie un style (rythme, couleurs, ambiance), pas le contenu : n'utilise pas les images, la musique ou le texte d'un autre créateur.
+\end{attention}
+
+\begin{bilan}
+  \item \coche J'ai choisi une à trois vidéos de référence.
+  \item \coche Leur style est ajouté à mes consignes.
+\end{bilan}
+
+% ======================================================================== 4
+\chapter{Écrire le texte avec ChatGPT}
+\objectif{obtenir avec ChatGPT un texte de 45 secondes qui accroche dès la première phrase.}
+Pour le texte de la voix off, ChatGPT donne les meilleurs résultats. Ouvre chatgpt.com ou l'application ChatGPT et colle les prompts de ce chapitre. Une vidéo conseil de 45 secondes fait environ 130 mots. Celles qui retiennent le mieux suivent souvent cet ordre :
+\begin{enumerate}
+  \item une accroche de 3 secondes sur un problème que ton public connaît ;
+  \item une phrase qui explique pourquoi ce problème compte ;
+  \item l'annonce des points, avec un mystère sur le dernier (« et le dernier, presque tout le monde le fait ») ;
+  \item les points, chacun avec sa solution ;
+  \item une demande claire à la fin : s'abonner, ou écrire un mot en commentaire.
+\end{enumerate}
+
+\begin{acopier}[Prompt ChatGPT : texte d'une vidéo conseil]
+Écris le texte d'une vidéo conseil de 45 secondes (130 mots maximum) pour TikTok.\\
+Sujet : [ton sujet]. Pour qui : [ton public].\\
+Commence par une accroche sur un problème qu'ils connaissent, annonce 3 conseils avec un mystère sur le dernier, donne-les simplement et termine par : [ta demande].
+\end{acopier}
+
+\section{Exemples par thème, à coller dans ChatGPT}
+\begin{acopier}[Sport]
+Écris un texte de 45 secondes : « 3 erreurs qui t'empêchent de progresser à la salle ». Public : débutants de 18 à 30 ans. Fin : « Abonne-toi pour ton programme de la semaine ».
+\end{acopier}
+\begin{acopier}[Cuisine]
+Écris un texte de 40 secondes pour une recette de pâtes crémeuses prête en 10 minutes, étape par étape. Fin : « Écris RECETTE en commentaire et je t'envoie la liste des courses ».
+\end{acopier}
+\begin{acopier}[Beauté]
+Écris un texte de 45 secondes : « 3 gestes qui abîment ta peau sans que tu le saches ». Ton : grande sœur bienveillante.
+\end{acopier}
+\begin{acopier}[Argent]
+Écris un texte de 50 secondes : « Pourquoi ton salaire disparaît avant le 15 du mois », avec 3 conseils concrets pour un étudiant. Pas de promesse de gains.
+\end{acopier}
+\begin{acopier}[Commerce local]
+Écris un texte de 30 secondes pour présenter ma boulangerie [nom] à [ville] : ce qui la rend unique, l'horaire d'ouverture et une offre pour ceux qui viennent de TikTok.
+\end{acopier}
+\begin{acopier}[Sites web et IA]
+Écris un texte de 45 secondes : « Ton site crie fait par l'IA », avec les 3 signes qui le trahissent (couleurs, textes vides, structure copiée) et la solution pour chacun. Fin : « Commente PROMPT ».
+\end{acopier}
+\begin{acopier}[Histoire vraie]
+Transforme cette histoire en texte de 50 secondes, raconté à la première personne, avec du suspense jusqu'à la fin : [ton histoire en quelques lignes].
+\end{acopier}
+
+\section{Améliorer un texte}
+\begin{acopier}[Prompt ChatGPT : 10 accroches]
+Propose-moi 10 accroches de moins de 12 mots pour cette vidéo : [ton sujet]. Classe-les de la plus forte à la plus faible.
+\end{acopier}
+\begin{acopier}[Prompt ChatGPT : texte plus naturel]
+Réécris ce texte pour qu'il sonne comme si je parlais à un ami : phrases courtes, mots simples, mêmes conseils. [ton texte]
+\end{acopier}
+
+\enlargethispage{2\baselineskip}
+\begin{bilan}
+  \item \coche Mon texte fait moins de 130 mots, avec une accroche.
+  \item \coche Je l'ai relu à voix haute.
+\end{bilan}
+
+% ======================================================================== 5
+\chapter{Créer la voix}
+\objectif{transformer ton texte en fichier audio.}
+Tu peux t'enregistrer avec ton téléphone dans une pièce calme, à 20 cm du micro. Tu peux aussi faire lire ton texte par ElevenLabs, qui propose des voix très naturelles et peut copier la tienne.
+
+\begin{enumerate}
+  \item Crée un compte sur elevenlabs.io et ouvre l'outil « Convertir du texte en parole ».
+  \item Choisis une voix, colle ton texte et génère l'audio.
+  \item Télécharge le fichier MP3.
+\end{enumerate}
+\capture[0.86]{images/elevenlabs.jpg}{\pastille{1} « Convertir du texte en parole ». \pastille{2} La liste des voix.}
+
+Un point marque une pause et des points de suspension ajoutent du suspense. Chaque génération consomme des crédits : relis le texte avant.
+
+\begin{acopier}[Prompt ChatGPT : préparer le texte pour la voix]
+Prépare ce texte pour ElevenLabs : ajoute la ponctuation qui donne du rythme, écris les nombres en lettres et coupe les phrases trop longues. [ton texte]
+\end{acopier}
+
+\begin{attention}
+N'utilise jamais la voix d'une autre personne sans son accord.
+\end{attention}
+
+\begin{bilan}
+  \item \coche J'ai le fichier MP3 de la voix.
+\end{bilan}
+
+% ======================================================================== 6
+\chapter{Commander la vidéo}
+\objectif{envoyer la commande et faire trouver de vraies vidéos qui collent au texte.}
+Joins le fichier de la voix et colle le texte exact : Claude s'en sert pour écrire les sous-titres sans faute.
+
+\begin{acopier}[Prompt : commande de base]
+Voici ma voix (fichier joint) et le texte exact : [ton texte].\\
+Fais la vidéo dans mon style, avec le personnage vert.\\
+Titre en haut : « [ton titre] ».\\
+Idée d'images : [ton idée].\\
+Cases « ? » sous la vidéo : [point 1], [point 2], [point 3].\\
+Fin : [ta demande].
+\end{acopier}
+
+\section{Faire trouver de vraies vidéos qui collent au texte}
+Claude peut chercher sur Internet des vidéos libres de droits, les télécharger et les faire jouer dans ta vidéo, au bon moment.
+\begin{acopier}[Prompt : vidéos libres qui collent]
+Pour chaque phrase de mon texte, cherche sur Internet des vidéos libres de droits (Mixkit, Pexels) qui montrent exactement ce qui est dit. Télécharge-les et fais-les jouer en fond, une nouvelle toutes les 1 à 2 secondes. Donne-moi la liste des sources.
+\end{acopier}
+\begin{acopier}[Prompt : hook plein de vidéos]
+Pour les 3 premières secondes, trouve au moins 15 vraies vidéos ou photos libres de droits sur [thème], une par mot, avec un gros bruitage à chaque coupe.
+\end{acopier}
+\begin{acopier}[Prompt : logos et vrais sites]
+Récupère les logos officiels de [marques] et filme les vrais sites [adresses] pour les montrer dans la vidéo.
+\end{acopier}
+\begin{acopier}[Prompt : musique à la mode]
+Choisis 3 musiques libres de droits parmi les plus téléchargées de Mixkit en hip-hop, trap ou house, une par partie de la vidéo.
+\end{acopier}
+
+\section{Exemples par format}
+\begin{acopier}[Top 3 avec cases mystère]
+Voici ma voix et mon texte : [texte]. Titre : « 3 erreurs qui ruinent tes séances ». Cache les 3 erreurs derrière des cases « ? » et dévoile chacune quand je la nomme, avec un bruitage de révélation. Le personnage vert fait le mauvais geste, puis le bon.
+\end{acopier}
+\begin{acopier}[Avant / après]
+Voici ma voix et mon texte : [texte]. Titre : « Mon salon avant et après ». Montre la photo avant (jointe), puis fais apparaître la photo après (jointe) avec un balayage au moment où je dis « et maintenant ». Le personnage vert saute de joie.
+\end{acopier}
+\begin{acopier}[Recette pas à pas]
+Voici ma voix et mon texte : [texte]. Titre : « Pâtes crémeuses en 10 minutes ». Une étape par scène, de vraies vidéos de cuisine et la liste des ingrédients qui se coche au fur et à mesure.
+\end{acopier}
+\begin{acopier}[Histoire vraie]
+Voici ma voix et mon texte : [texte]. Titre : « Le jour où j'ai tout perdu ». Ambiance cinéma : images sombres, musique tendue, zooms lents et un gros impact sonore sur la révélation finale.
+\end{acopier}
+\begin{acopier}[Actualité en 3 points]
+Voici ma voix et mon texte : [texte]. Titre : « 3 choses à savoir sur [sujet] ». Gros chiffres, captures des sources que je te donne, une case « ? » par point.
+\end{acopier}
+\begin{acopier}[Promotion d'un commerce]
+Voici ma voix et mon texte : [texte]. Titre : « [nom du commerce] à [ville] ». Mets mes photos (jointes) en plein écran avec des zooms, l'adresse et l'horaire à la fin, et termine sur l'offre.
+\end{acopier}
+\begin{acopier}[Edit sans voix]
+Fais un edit de 20 secondes sans voix et sans texte dans la vidéo, calé sur cette musique (jointe). Utilise de vraies vidéos libres de droits de [thème], coupe sur chaque temps, ajoute des zooms et des flashs sur les temps forts et fais monter la tension jusqu'au drop.
+\end{acopier}
+
+\begin{astuce}
+Tes propres photos et vidéos rendent la vidéo plus personnelle. Joins-les au message et dis à quel moment les montrer.
+\end{astuce}
+
+\begin{bilan}
+  \item \coche J'ai joint la voix et collé le texte exact.
+  \item \coche J'ai donné le titre, l'idée d'images et la fin.
+\end{bilan}
+
+% ======================================================================== 7
+\chapter{Corriger la vidéo}
+\objectif{corriger la vidéo en un seul message.}
+Regarde la vidéo sur ton téléphone, le son allumé. Donne le moment, ce qui ne va pas et ce que tu veux à la place, et regroupe tes remarques dans un seul message.
+
+\renewcommand{\arraystretch}{1.3}
+\begin{center}\small
+\begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{2.7cm}>{\raggedright\arraybackslash\ttfamily}X}
+\toprule
+\textbf{Ce que tu vois} & \textrm{\textbf{Le prompt à envoyer}} \\ \midrule
+Le début n'accroche pas & Rends les 3 premières secondes plus fortes : une vraie vidéo par mot et un gros bruitage sur le titre. \\
+La musique couvre la voix & Baisse la musique : on doit entendre ma voix sans effort. \\
+On n'entend pas la musique & Monte un peu la musique, elle doit s'entendre. \\
+Sous-titres trop petits & Grossis les sous-titres et mets le mot prononcé en jaune. \\
+Images trop lentes & Change d'image toutes les secondes. \\
+Écran trop chargé & Mets moins d'éléments à l'écran en même temps. \\
+Un texte en cache un autre & À 12 s, le titre cache le personnage : remonte le titre. \\
+Image hors sujet & À 8 s, remplace l'image par une vraie vidéo de [sujet]. \\
+Faute dans un sous-titre & À 20 s, le sous-titre affiche [mot] au lieu de [mot]. \\
+Pas assez de sons & Ajoute un bruitage à chaque changement d'image et un impact sur les chiffres. \\
+Personnage trop figé & Fais bouger le personnage vert à chaque phrase : il pointe, saute, réagit. \\
+Fin molle & Termine sur un gros « Abonne-toi » avec un bruitage et un bouton qui se clique. \\ \bottomrule
+\end{tabularx}
+\end{center}
+
+\begin{acopier}[Prompt : relecture par Claude]
+Avant de fabriquer le fichier final, regarde une image de chaque scène et corrige les textes coupés, les chevauchements et les sons trop forts.
+\end{acopier}
+\begin{acopier}[Prompt : vérifier les faits]
+Vérifie sur Internet chaque chiffre et chaque date de mon texte, donne-moi la source de chacun et signale ce qui est faux ou incertain.
+\end{acopier}
+
+\begin{bilan}
+  \item \coche J'ai regardé la vidéo sur mon téléphone, le son allumé.
+  \item \coche Toutes mes remarques sont parties dans un seul message.
+\end{bilan}
+
+% ======================================================================== 8
+\chapter{Récupérer la vidéo}
+\objectif{obtenir le fichier final, la miniature et les versions utiles.}
+Quand la vidéo te convient, demande le fichier final. Sur ordinateur, il est aussi enregistré dans ton dossier \texttt{mes-videos}.
+
+\begin{acopier}[Prompt : fichier final et miniature]
+La vidéo me convient. Fabrique la version finale en 1080×1920 et une miniature verticale avec mon titre en gros, puis envoie-les-moi.
+\end{acopier}
+\begin{acopier}[Prompt : version YouTube]
+Fais aussi une version horizontale 1920×1080 de cette vidéo, avec les mêmes scènes et le même son.
+\end{acopier}
+
+\section{Des miniatures qui donnent envie}
+La miniature décide souvent si on ouvre ta vidéo depuis ton profil. Demande-en plusieurs et garde la meilleure.
+
+\begin{figure}[H]\centering
+\begin{tikzpicture}
+  \fill[encre,rounded corners=6pt] (-5.9,-3.15) rectangle (5.9,3.0);
+  \node[anchor=north west] at (-5.6,2.8) {\anton\fontsize{15}{17}\selectfont\color{white}4\hspace{0.18em}MINIATURES\hspace{0.18em}FAITES\hspace{0.18em}PAR\hspace{0.18em}\textcolor{citron}{CLAUDE}};
+  \telephone[-3]{-4.3,-0.55}{2.35cm}{images/miniatures/m1-site-ia.jpg}
+  \telephone[2]{-1.45,-0.55}{2.35cm}{images/miniatures/m2-jeu-video.jpg}
+  \telephone[-2]{1.45,-0.55}{2.35cm}{images/miniatures/m3-google.jpg}
+  \telephone[3]{4.3,-0.55}{2.35cm}{images/miniatures/m4-5000.jpg}
+\end{tikzpicture}
+\caption{Une phrase choc, une vraie image forte, le personnage vert et une touche de rouge.}
+\end{figure}
+
+Ce qui marche dans ces miniatures :
+\begin{itemize}
+  \item 3 à 5 mots, lisibles même en tout petit ;
+  \item une image forte : un visage qui réagit, l'écran du site, un prix barré ;
+  \item du jaune citron sur fond sombre, et du rouge pour l'alerte ;
+  \item le titre au milieu de l'image, car le profil TikTok rogne le haut et le bas des miniatures.
+\end{itemize}
+
+\begin{acopier}[Prompt : miniatures au choix]
+Fabrique 4 miniatures verticales différentes pour cette vidéo : 3 à 5 mots en très gros, une vraie image forte (visage qui réagit, écran du site), le personnage vert et un élément rouge (cercle, prix barré, tampon). Garde le titre au milieu de l'image. Montre-les-moi côte à côte.
+\end{acopier}
+
+\section{Aller plus loin avec HyperFrames}
+\begin{acopier}[Prompt : voir avant le rendu]
+Ouvre l'aperçu HyperFrames pour que je regarde la vidéo avant que tu fabriques le fichier final.
+\end{acopier}
+\begin{acopier}[Prompt : blocs prêts à l'emploi]
+Cherche dans le registre HyperFrames des transitions, des sous-titres animés et des effets de caméra qui iraient avec ma vidéo, et utilise les meilleurs.
+\end{acopier}
+\begin{acopier}[Prompt : vérification complète]
+Lance la vérification HyperFrames, corrige toutes les erreurs, puis montre-moi une image de chaque scène.
+\end{acopier}
+\begin{acopier}[Prompt : réutiliser une vidéo]
+Reprends le projet de ma vidéo « [titre] » et refais-la avec ce nouveau texte et cette nouvelle voix (jointe), en gardant les mêmes scènes.
+\end{acopier}
+
+\begin{bilan}
+  \item \coche J'ai reçu le fichier final et la miniature.
+\end{bilan}
+
+% ======================================================================== DÉPANNAGE
+\chapter*{En cas de problème}
+\addcontentsline{toc}{chapter}{En cas de problème}
+\markboth{En cas de problème}{}
+\renewcommand{\arraystretch}{1.15}
+\begin{center}\footnotesize
+\begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{3.2cm}>{\raggedright\arraybackslash}X}
+\toprule
+\textbf{Problème} & \textbf{Solution} \\ \midrule
+Claude répond mais ne fabrique pas de vidéo & Vérifie que tu es dans Claude Code (menu « Code » sur téléphone) et que HyperFrames est installé. \\
+Le résultat est moins bon que prévu & Vérifie que le modèle choisi est Opus 5.5 avec l'effort « Élevé ». \\
+Claude a oublié mon style & Demande-lui : « Relis mon fichier de consignes et applique-le. » \\
+Sur téléphone, mon projet a disparu & Il n'avait pas été enregistré : termine chaque séance par « Enregistre tout sur GitHub ». \\
+Claude demande une autorisation & Si elle sert à fabriquer ta vidéo, accepte. \\
+Le montage est long & C'est normal pour une première vidéo ; sur ordinateur, laisse-le allumé. \\
+Je veux voir la vidéo avant le rendu & Demande « Ouvre l'aperçu HyperFrames ». \\
+Une vidéo de fond est bloquée par les droits & Demande « remplace-la par une vidéo libre de droits ». \\ \bottomrule
+\end{tabularx}
+\end{center}
+
+% ======================================================================== RÈGLES
+\chapter*{Les règles à respecter}
+\addcontentsline{toc}{chapter}{Les règles à respecter}
+\markboth{Les règles à respecter}{}
+Une vidéo peut être bloquée ou retirée pour une question de droits. Ces règles valent pour tout le monde.
+
+\renewcommand{\arraystretch}{1.35}
+\begin{center}\small
+\begin{tabularx}{\linewidth}{>{\bfseries}p{1.7cm}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X}
+\toprule
+ & \textcolor{vert}{Tu peux} & \textcolor{rouge}{Évite} \\ \midrule
+Musique & Musiques libres de droits ; sons proposés dans TikTok & Une chanson connue téléchargée sur Internet : la vidéo peut être bloquée \\
+Images & Vidéos et photos libres de droits ; tes propres images & Extraits de films ou de séries, images prises au hasard sur Internet \\
+Style & S'inspirer du rythme et de l'ambiance d'une vidéo & Reprendre les images, la musique ou le texte d'un autre créateur \\
+Voix & Ta voix, ou une voix de la bibliothèque ElevenLabs & Copier la voix d'une vraie personne sans son accord \\
+Infos & Faire vérifier chaque chiffre par Claude & Présenter une rumeur comme un fait \\ \bottomrule
+\end{tabularx}
+\end{center}
+
+
+% ======================================================================== LEXIQUE
+\chapter*{Petit lexique}
+\addcontentsline{toc}{chapter}{Petit lexique}
+\markboth{Petit lexique}{}
+\begin{center}\small
+\begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash\leavevmode\bfseries\color{violet}}p{2.6cm}X}
+\toprule
+Accroche (hook) & Les premières secondes de la vidéo, faites pour donner envie de rester \\
+Claude Code & La partie de Claude qui fabrique des fichiers, dont des vidéos \\
+Edit & Une vidéo sans voix, montée sur le rythme d'une musique \\
+Fichier de consignes & Le texte où sont tes règles ; Claude le relit avant chaque vidéo \\
+GitHub & Un dossier en ligne, nécessaire seulement sur téléphone \\
+HyperFrames & L'outil de montage que Claude utilise \\
+Libre de droits & Que tu peux utiliser gratuitement sans demander d'autorisation \\
+ChatGPT & L'assistant d'OpenAI qui sert à écrire le texte de la voix \\
+Opus 5.5 & Le modèle de Claude utilisé dans ce guide, réglé sur l'effort « Élevé » \\
+Prompt & Le message que tu envoies à Claude \\ \bottomrule
+\end{tabularx}
+\end{center}
+
+\end{document}

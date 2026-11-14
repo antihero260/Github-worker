@@ -1,0 +1,41 @@
+VIDÉO 1 - POURQUOI TON ÉPARGNE FOND TOUTE SEULE (L'INFLATION)
+Chaîne : Lefinancier. Durée visée : environ 60 secondes (environ 165 mots).
+
+TITRE-PROMESSE (en haut de la vidéo)
+TON ÉPARGNE NE TE RENDRA PAS RICHE
+
+TEXTE DE LA VOIX (à coller dans ElevenLabs)
+
+Ton épargne ne te rendra pas riche. Oui, tu m'as bien entendu, et voici pourquoi.
+
+Tu as gardé 100 000 francs de côté en 2019 ? Aujourd'hui, ils n'en valent plus que 82 000. Et tu n'as rien dépensé.
+
+Ce voleur silencieux, c'est l'inflation : les prix qui montent un peu chaque année.
+
+En Côte d'Ivoire, entre 2019 et 2024, les prix ont augmenté d'environ 22 %. Ce qui coûtait 100 000 francs en 2019 coûtait près de 122 000 francs fin 2024.
+
+Tes billets, eux, n'ont pas changé. Le chiffre est le même, mais tu achètes moins de choses avec.
+
+Et ça s'accumule. Si les prix montent de 3 % par an, en dix ans, 100 000 francs n'achètent plus que l'équivalent de 74 000.
+
+Retiens une chose : l'argent qui dort perd de la valeur. Pour la garder, il doit rapporter au moins autant que l'inflation.
+
+Comment faire, sans prendre de risques fous ? C'est la prochaine vidéo. Abonne-toi pour ne pas la rater.
+
+Et toi, ton épargne, elle dort où ? Dis-le en commentaire.
+
+CHIFFRES À L'ÉCRAN
+- 100 000 F en 2019 -> 82 000 F de pouvoir d'achat fin 2024
+- Prix : +22 % entre 2019 et 2024
+- 100 000 F -> 122 000 F (même panier de courses)
+- Exemple : 3 % par an pendant 10 ans -> 74 000 F
+
+CALCULS ET SOURCES
+- Inflation annuelle en Côte d'Ivoire (Banque mondiale, série FRED FPCPITOTLZGCIV) :
+  2019 : 0,79 % ; 2020 : 2,41 % ; 2021 : 4,16 % ; 2022 : 5,23 % ; 2023 : 4,37 % ; 2024 : 3,45 %.
+- Hausse cumulée 2019-2024 : 1,0079 x 1,0241 x 1,0416 x 1,0523 x 1,0437 x 1,0345 = 1,2215, soit +22 %.
+- Pouvoir d'achat : 100 000 / 1,2215 = 81 864 F, arrondi à 82 000 F.
+- Même panier : 100 000 x 1,2215 = 122 154 F, arrondi à « près de 122 000 ».
+- Exemple à 3 % : 100 000 / 1,03^10 = 74 409 F, arrondi à 74 000 F (exemple, pas une prévision).
+- Recoupement : hausse cumulée de 23 % entre août 2018 et juin 2025 selon l'INS (citée par Anker Research).
+- 2025 n'est pas compté : inflation très basse (UEMOA 0,0 % selon la BCEAO), chiffre ivoirien officiel non trouvé.

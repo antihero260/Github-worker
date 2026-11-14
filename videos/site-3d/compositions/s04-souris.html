@@ -1,0 +1,59 @@
+<!-- Scène 4 · « Tu bouges ta souris, les objets réagissent. » (14.91 → 17.43 s). Fichier écrit par un générateur, modifiable à la main. -->
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+    }
+
+  </style>
+  <div id="root" data-composition-id="s04-souris" data-width="1920" data-height="1080">
+    <div class="pj-scene">
+      <div id="s04-souris-cam" class="pj-cam">
+        <div id="s04-souris-cadre" class="pj-cadre">
+        <div class="pj-horizon" style="top: 760px"></div>
+        <div id="s04-f-0" class="sx-plein" style="opacity: 0"><video id="s04-f-0-v" class="clip" src="assets/video/souris-main.mp4" data-start="0.0" data-duration="0.78" data-track-index="5" muted playsinline style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover"></video></div>
+        <div id="s04-f-1" class="sx-plein" style="opacity: 0"><video id="s04-f-1-v" class="clip" src="assets/video/particules-lumineuses.mp4" data-start="0.68" data-duration="0.76" data-track-index="6" muted playsinline style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover"></video></div>
+        <div id="s04-f-2" class="sx-plein" style="opacity: 0"><video id="s04-f-2-v" class="clip" src="assets/video/base-3d.mp4" data-start="1.34" data-duration="1.28" data-track-index="7" muted playsinline style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover"></video></div>
+        <div id="s04-f-voile" style="position: absolute; inset: 0; background: rgba(12, 12, 12, 0.55)"></div>
+        <div id="s04-o0" class="pj-panneau sx-photo td-objet" style="left: 260px; top: 280px; width: 460px; height: 259px; transform: rotate(-4deg); opacity: 0"><img src="assets/img/sphere-cuivre.jpg" alt="" /></div>
+        <div id="s04-o1" class="pj-panneau sx-photo td-objet" style="left: 760px; top: 420px; width: 520px; height: 292px; transform: rotate(3deg); opacity: 0"><img src="assets/img/cubes-flottants.jpg" alt="" /></div>
+        <div id="s04-o2" class="pj-panneau sx-photo td-objet" style="left: 1320px; top: 260px; width: 420px; height: 236px; transform: rotate(-2deg); opacity: 0"><img src="assets/img/spheres-pastel.jpg" alt="" /></div>
+        <svg id="s04-curseur" class="pj-souris" style="left: 300px; top: 900px" viewBox="0 0 40 52"><path d="M3 3 L3 43 L13 33 L21 50 L28 47 L20 30 L35 30 Z" fill="#ffffff" stroke="#000000" stroke-width="3" stroke-linejoin="round" /></svg>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#s04-souris-cam", { scale: 1 }, { scale: 1.05, duration: 2.32, ease: "none" }, 0);
+    tl.fromTo("#s04-souris-cam", { filter: "blur(14px)" }, { filter: "blur(0px)", duration: 0.16, ease: "power2.out" }, 0);
+    tl.set("#s04-f-0", { opacity: 1 }, 0.0);
+    tl.fromTo("#s04-f-0", { scale: 1.22, x: 0, rotation: 0 }, { scale: 1.02, x: 0, rotation: 0, duration: 0.68, ease: "power2.out", immediateRender: false }, 0.0);
+    tl.set("#s04-f-0", { opacity: 0 }, 0.7);
+    tl.set("#s04-f-1", { opacity: 1 }, 0.68);
+    tl.fromTo("#s04-f-1", { scale: 1.12, x: -60, rotation: 0 }, { scale: 1.02, x: 0, rotation: 0, duration: 0.66, ease: "power2.out", immediateRender: false }, 0.68);
+    tl.set("#s04-f-1", { opacity: 0 }, 1.36);
+    tl.set("#s04-f-2", { opacity: 1 }, 1.34);
+    tl.fromTo("#s04-f-2", { scale: 1.12, x: 0, rotation: 2 }, { scale: 1.02, x: 0, rotation: 0, duration: 1.18, ease: "power2.out", immediateRender: false }, 1.34);
+    tl.fromTo("#s04-o0", { opacity: 0, scale: 0.3, rotationY: 70, transformPerspective: 900 }, { opacity: 1, scale: 1, rotationY: 0, duration: 0.35, ease: "back.out(1.8)" }, 1.17);
+    tl.to("#s04-o0", { y: -18, duration: 0.9, ease: "sine.inOut", repeat: 1, yoyo: true }, 1.52);
+    tl.fromTo("#s04-o1", { opacity: 0, scale: 0.3, rotationY: 70, transformPerspective: 900 }, { opacity: 1, scale: 1, rotationY: 0, duration: 0.35, ease: "back.out(1.8)" }, 1.27);
+    tl.to("#s04-o1", { y: -18, duration: 0.9, ease: "sine.inOut", repeat: 1, yoyo: true }, 1.62);
+    tl.fromTo("#s04-o2", { opacity: 0, scale: 0.3, rotationY: 70, transformPerspective: 900 }, { opacity: 1, scale: 1, rotationY: 0, duration: 0.35, ease: "back.out(1.8)" }, 1.37);
+    tl.to("#s04-o2", { y: -18, duration: 0.9, ease: "sine.inOut", repeat: 1, yoyo: true }, 1.72);
+    tl.fromTo("#s04-curseur", { opacity: 0 }, { opacity: 1, duration: 0.1 }, 0.19);
+    tl.to("#s04-curseur", { x: 200, y: -480, duration: 0.35, ease: "power2.inOut" }, 0.29);
+    tl.to("#s04-curseur", { x: 720, y: -340, duration: 0.35, ease: "power2.inOut" }, 1.37);
+    tl.to("#s04-o0", { keyframes: [{ rotationY: -25, rotationX: 12, scale: 1.12, duration: 0.18 }, { rotationY: 0, rotationX: 0, scale: 1, duration: 0.35, ease: "elastic.out(1, 0.5)" }], transformPerspective: 900 }, 1.67);
+    tl.to("#s04-curseur", { x: 1230, y: -520, duration: 0.35, ease: "power2.inOut" }, 1.44);
+    tl.to("#s04-o1", { keyframes: [{ rotationY: 25, rotationX: 12, scale: 1.12, duration: 0.18 }, { rotationY: 0, rotationX: 0, scale: 1, duration: 0.35, ease: "elastic.out(1, 0.5)" }], transformPerspective: 900 }, 1.74);
+    tl.to("#s04-curseur", { x: 680, y: -380, duration: 0.35, ease: "power2.inOut" }, 1.94);
+    tl.to("#s04-o2", { keyframes: [{ rotationY: -18, rotationX: 12, scale: 1.12, duration: 0.18 }, { rotationY: 0, rotationX: 0, scale: 1, duration: 0.35, ease: "elastic.out(1, 0.5)" }], transformPerspective: 900 }, 2.24);
+    tl.to("#s04-souris-cadre", { x: 0, y: 46, scale: 1.15, duration: 0.26, ease: "power3.inOut" }, 1.34);
+    tl.to("#s04-souris-cadre", { keyframes: [{ filter: "blur(10px)", duration: 0.13 }, { filter: "blur(0px)", duration: 0.13 }] }, 1.34);
+    tl.to("#s04-souris-cam", { scale: 1.3, filter: "blur(14px)", duration: 0.2, ease: "power3.in" }, 2.32);
+    window.__timelines["s04-souris"] = tl;
+  </script>
+</template>

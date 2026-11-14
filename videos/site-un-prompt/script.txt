@@ -1,0 +1,7 @@
+Ce site, je l'ai fait avec un seul prompt. Zéro ligne de code.
+
+Regarde : je colle le prompt dans l'IA… et en quelques secondes, j'ai un site complet. Une page d'accueil qui claque, des animations, des sections, un formulaire de contact… et il s'adapte même au téléphone.
+
+Le secret, ce n'est pas l'outil. C'est le prompt. Il dit à l'IA exactement quoi faire : le style, les couleurs, les sections et les animations.
+
+Tu veux le même ? Commente « PROMPT », et je te l'envoie.

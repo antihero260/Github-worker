@@ -1,0 +1,1370 @@
+[
+{
+"i": 0,
+"text": "UNIVERSITÉ",
+"start": 0.4,
+"end": 1.04
+},
+{
+"i": 1,
+"text": "FÉLIX",
+"start": 1.04,
+"end": 1.6
+},
+{
+"i": 2,
+"text": "HOUPHOUËT-BOIGNY.",
+"start": 1.6,
+"end": 2.88
+},
+{
+"i": 3,
+"text": "UFR",
+"start": 2.88,
+"end": 3.76
+},
+{
+"i": 4,
+"text": "MATHÉMATIQUES",
+"start": 3.76,
+"end": 4.28
+},
+{
+"i": 5,
+"text": "ET",
+"start": 4.28,
+"end": 4.8
+},
+{
+"i": 6,
+"text": "INFORMATIQUE.",
+"start": 4.8,
+"end": 6
+},
+{
+"i": 7,
+"text": "ICI,",
+"start": 6,
+"end": 6.48
+},
+{
+"i": 8,
+"text": "IL",
+"start": 6.48,
+"end": 6.587
+},
+{
+"i": 9,
+"text": "Y",
+"start": 6.587,
+"end": 6.693
+},
+{
+"i": 10,
+"text": "A",
+"start": 6.693,
+"end": 6.8
+},
+{
+"i": 11,
+"text": "UNE",
+"start": 6.88,
+"end": 7.04
+},
+{
+"i": 12,
+"text": "FILIÈRE",
+"start": 7.04,
+"end": 7.52
+},
+{
+"i": 13,
+"text": "À",
+"start": 7.52,
+"end": 7.68
+},
+{
+"i": 14,
+"text": "PART :",
+"start": 7.68,
+"end": 8.16
+},
+{
+"i": 15,
+"text": "LA",
+"start": 8.16,
+"end": 8.32
+},
+{
+"i": 16,
+"text": "FILIÈRE",
+"start": 8.32,
+"end": 8.88
+},
+{
+"i": 17,
+"text": "PROFESSIONNALISÉE",
+"start": 8.88,
+"end": 9.76
+},
+{
+"i": 18,
+"text": "ACTUARIAT.",
+"start": 9.76,
+"end": 10.32
+},
+{
+"i": 19,
+"text": "ET",
+"start": 10.32,
+"end": 10.88
+},
+{
+"i": 20,
+"text": "AU",
+"start": 10.88,
+"end": 11.04
+},
+{
+"i": 21,
+"text": "CŒUR",
+"start": 11.04,
+"end": 11.28
+},
+{
+"i": 22,
+"text": "DE",
+"start": 11.28,
+"end": 11.36
+},
+{
+"i": 23,
+"text": "CETTE",
+"start": 11.36,
+"end": 11.6
+},
+{
+"i": 24,
+"text": "FILIÈRE,",
+"start": 11.6,
+"end": 12.16
+},
+{
+"i": 25,
+"text": "IL",
+"start": 12.16,
+"end": 12.28
+},
+{
+"i": 26,
+"text": "Y",
+"start": 12.28,
+"end": 12.4
+},
+{
+"i": 27,
+"text": "A",
+"start": 12.48,
+"end": 12.56
+},
+{
+"i": 28,
+"text": "UNE",
+"start": 12.56,
+"end": 12.72
+},
+{
+"i": 29,
+"text": "JUNIOR",
+"start": 12.72,
+"end": 13.12
+},
+{
+"i": 30,
+"text": "ENTREPRISE :",
+"start": 13.2,
+"end": 13.92
+},
+{
+"i": 31,
+"text": "LA",
+"start": 13.92,
+"end": 14.16
+},
+{
+"i": 32,
+"text": "JE-FPA.",
+"start": 14.16,
+"end": 15.76
+},
+{
+"i": 33,
+"text": "EN",
+"start": 15.76,
+"end": 16
+},
+{
+"i": 34,
+"text": "ACTUARIAT,",
+"start": 16.0,
+"end": 16.8
+},
+{
+"i": 35,
+"text": "ON",
+"start": 16.8,
+"end": 16.96
+},
+{
+"i": 36,
+"text": "APPREND",
+"start": 16.96,
+"end": 17.28
+},
+{
+"i": 37,
+"text": "À",
+"start": 17.28,
+"end": 17.36
+},
+{
+"i": 38,
+"text": "METTRE",
+"start": 17.36,
+"end": 17.6
+},
+{
+"i": 39,
+"text": "DES",
+"start": 17.6,
+"end": 17.76
+},
+{
+"i": 40,
+"text": "CHIFFRES",
+"start": 17.76,
+"end": 18.08
+},
+{
+"i": 41,
+"text": "SUR",
+"start": 18.08,
+"end": 18.24
+},
+{
+"i": 42,
+"text": "L’INCERTAIN.",
+"start": 18.24,
+"end": 19.28
+},
+{
+"i": 43,
+"text": "UN",
+"start": 19.28,
+"end": 19.44
+},
+{
+"i": 44,
+"text": "SINISTRE,",
+"start": 19.44,
+"end": 20.24
+},
+{
+"i": 45,
+"text": "UNE",
+"start": 20.24,
+"end": 20.4
+},
+{
+"i": 46,
+"text": "RETRAITE,",
+"start": 20.4,
+"end": 21.04
+},
+{
+"i": 47,
+"text": "UN",
+"start": 21.04,
+"end": 21.28
+},
+{
+"i": 48,
+"text": "AVENIR",
+"start": 21.28,
+"end": 21.52
+},
+{
+"i": 49,
+"text": "QU’ON",
+"start": 21.52,
+"end": 21.76
+},
+{
+"i": 50,
+"text": "NE",
+"start": 21.76,
+"end": 22.0
+},
+{
+"i": 51,
+"text": "CONNAÎT",
+"start": 22.0,
+"end": 22.24
+},
+{
+"i": 52,
+"text": "PAS",
+"start": 22.24,
+"end": 22.48
+},
+{
+"i": 53,
+"text": "ENCORE.",
+"start": 22.48,
+"end": 22.8
+},
+{
+"i": 54,
+"text": "MAIS",
+"start": 23.12,
+"end": 23.36
+},
+{
+"i": 55,
+"text": "ENTRE",
+"start": 23.36,
+"end": 23.6
+},
+{
+"i": 56,
+"text": "UN",
+"start": 23.68,
+"end": 23.84
+},
+{
+"i": 57,
+"text": "EXERCICE",
+"start": 23.84,
+"end": 24.24
+},
+{
+"i": 58,
+"text": "CORRIGÉ",
+"start": 24.24,
+"end": 24.72
+},
+{
+"i": 59,
+"text": "EN",
+"start": 24.8,
+"end": 24.88
+},
+{
+"i": 60,
+"text": "CLASSE",
+"start": 24.88,
+"end": 25.0
+},
+{
+"i": 61,
+"text": "ET",
+"start": 25.0,
+"end": 25.12
+},
+{
+"i": 62,
+"text": "UNE",
+"start": 25.12,
+"end": 25.24
+},
+{
+"i": 63,
+"text": "VRAIE",
+"start": 25.24,
+"end": 25.36
+},
+{
+"i": 64,
+"text": "QUESTION",
+"start": 25.84,
+"end": 26.16
+},
+{
+"i": 65,
+"text": "POSÉE",
+"start": 26.16,
+"end": 26.453
+},
+{
+"i": 66,
+"text": "PAR",
+"start": 26.453,
+"end": 26.747
+},
+{
+"i": 67,
+"text": "UNE",
+"start": 26.747,
+"end": 27.04
+},
+{
+"i": 68,
+"text": "ENTREPRISE,",
+"start": 27.04,
+"end": 27.333
+},
+{
+"i": 69,
+"text": "IL",
+"start": 27.333,
+"end": 27.627
+},
+{
+"i": 70,
+"text": "Y",
+"start": 27.627,
+"end": 27.92
+},
+{
+"i": 71,
+"text": "A",
+"start": 28,
+"end": 28.16
+},
+{
+"i": 72,
+"text": "UN",
+"start": 28.16,
+"end": 28.16
+},
+{
+"i": 73,
+"text": "PAS.",
+"start": 28.16,
+"end": 28.8
+},
+{
+"i": 74,
+"text": "LA",
+"start": 28.8,
+"end": 28.96
+},
+{
+"i": 75,
+"text": "JE-FPA",
+"start": 28.96,
+"end": 30.08
+},
+{
+"i": 76,
+"text": "EST",
+"start": 30.08,
+"end": 30.24
+},
+{
+"i": 77,
+"text": "NÉE",
+"start": 30.24,
+"end": 30.48
+},
+{
+"i": 78,
+"text": "EN",
+"start": 30.48,
+"end": 30.56
+},
+{
+"i": 79,
+"text": "2023",
+"start": 30.56,
+"end": 31.28
+},
+{
+"i": 80,
+"text": "POUR",
+"start": 31.36,
+"end": 31.623
+},
+{
+"i": 81,
+"text": "AIDER",
+"start": 31.623,
+"end": 31.886
+},
+{
+"i": 82,
+"text": "LES",
+"start": 31.886,
+"end": 32.149
+},
+{
+"i": 83,
+"text": "ÉTUDIANTS",
+"start": 32.149,
+"end": 32.411
+},
+{
+"i": 84,
+"text": "À",
+"start": 32.411,
+"end": 32.674
+},
+{
+"i": 85,
+"text": "FRANCHIR",
+"start": 32.674,
+"end": 32.937
+},
+{
+"i": 86,
+"text": "CE",
+"start": 32.937,
+"end": 33.2
+},
+{
+"i": 87,
+"text": "PAS",
+"start": 33.2,
+"end": 33.36
+},
+{
+"i": 88,
+"text": "AVANT",
+"start": 33.6,
+"end": 33.84
+},
+{
+"i": 89,
+"text": "MÊME",
+"start": 33.84,
+"end": 34
+},
+{
+"i": 90,
+"text": "D’AVOIR",
+"start": 34.48,
+"end": 34.52
+},
+{
+"i": 91,
+"text": "LEUR",
+"start": 34.52,
+"end": 34.56
+},
+{
+"i": 92,
+"text": "DIPLÔME.",
+"start": 34.64,
+"end": 35.12
+},
+{
+"i": 93,
+"text": "UNE",
+"start": 35.44,
+"end": 35.6
+},
+{
+"i": 94,
+"text": "JUNIOR",
+"start": 35.6,
+"end": 36.08
+},
+{
+"i": 95,
+"text": "ENTREPRISE,",
+"start": 36.08,
+"end": 36.72
+},
+{
+"i": 96,
+"text": "C’EST",
+"start": 36.8,
+"end": 37.04
+},
+{
+"i": 97,
+"text": "UN",
+"start": 37.04,
+"end": 37.28
+},
+{
+"i": 98,
+"text": "COLLECTIF",
+"start": 37.28,
+"end": 37.52
+},
+{
+"i": 99,
+"text": "D’ÉTUDIANTS",
+"start": 37.52,
+"end": 38.16
+},
+{
+"i": 100,
+"text": "QUI",
+"start": 38.16,
+"end": 38.352
+},
+{
+"i": 101,
+"text": "TRAVAILLENT",
+"start": 38.352,
+"end": 38.544
+},
+{
+"i": 102,
+"text": "COMME",
+"start": 38.544,
+"end": 38.736
+},
+{
+"i": 103,
+"text": "UN",
+"start": 38.736,
+"end": 38.928
+},
+{
+"i": 104,
+"text": "VRAI",
+"start": 38.928,
+"end": 39.12
+},
+{
+"i": 105,
+"text": "CABINET.",
+"start": 39.28,
+"end": 39.76
+},
+{
+"i": 106,
+"text": "COMPRENDRE",
+"start": 40,
+"end": 40.4
+},
+{
+"i": 107,
+"text": "LA",
+"start": 40.56,
+"end": 40.72
+},
+{
+"i": 108,
+"text": "QUESTION,",
+"start": 40.72,
+"end": 41.28
+},
+{
+"i": 109,
+"text": "CADRER",
+"start": 41.28,
+"end": 41.6
+},
+{
+"i": 110,
+"text": "LE",
+"start": 41.6,
+"end": 41.92
+},
+{
+"i": 111,
+"text": "TRAVAIL,",
+"start": 41.92,
+"end": 42.56
+},
+{
+"i": 112,
+"text": "ANALYSER,",
+"start": 42.56,
+"end": 43.28
+},
+{
+"i": 113,
+"text": "PUIS",
+"start": 43.28,
+"end": 43.6
+},
+{
+"i": 114,
+"text": "EXPLIQUER",
+"start": 43.6,
+"end": 44.16
+},
+{
+"i": 115,
+"text": "LES",
+"start": 44.16,
+"end": 44.32
+},
+{
+"i": 116,
+"text": "RÉSULTATS.",
+"start": 44.32,
+"end": 44.64
+},
+{
+"i": 117,
+"text": "ELLE",
+"start": 44.64,
+"end": 44.96
+},
+{
+"i": 118,
+"text": "S’ORGANISE",
+"start": 44.96,
+"end": 45.28
+},
+{
+"i": 119,
+"text": "AUTOUR",
+"start": 45.28,
+"end": 45.6
+},
+{
+"i": 120,
+"text": "DE",
+"start": 45.6,
+"end": 45.92
+},
+{
+"i": 121,
+"text": "DEUX",
+"start": 46.24,
+"end": 46.4
+},
+{
+"i": 122,
+"text": "PÔLES.",
+"start": 46.4,
+"end": 46.88
+},
+{
+"i": 123,
+"text": "L’ACTUARIAT,",
+"start": 47.04,
+"end": 47.387
+},
+{
+"i": 124,
+"text": "POUR",
+"start": 47.387,
+"end": 47.733
+},
+{
+"i": 125,
+"text": "MESURER",
+"start": 47.733,
+"end": 48.08
+},
+{
+"i": 126,
+"text": "LE",
+"start": 48.08,
+"end": 48.427
+},
+{
+"i": 127,
+"text": "RISQUE",
+"start": 48.427,
+"end": 48.773
+},
+{
+"i": 128,
+"text": "ET",
+"start": 48.773,
+"end": 49.12
+},
+{
+"i": 129,
+"text": "PRÉPARER",
+"start": 49.12,
+"end": 49.6
+},
+{
+"i": 130,
+"text": "DEMAIN.",
+"start": 49.6,
+"end": 50.08
+},
+{
+"i": 131,
+"text": "LA",
+"start": 50.24,
+"end": 50.4
+},
+{
+"i": 132,
+"text": "DATA",
+"start": 50.4,
+"end": 50.72
+},
+{
+"i": 133,
+"text": "SCIENCE,",
+"start": 50.72,
+"end": 51.28
+},
+{
+"i": 134,
+"text": "POUR",
+"start": 51.36,
+"end": 51.44
+},
+{
+"i": 135,
+"text": "FAIRE",
+"start": 51.44,
+"end": 51.52
+},
+{
+"i": 136,
+"text": "PARLER",
+"start": 51.76,
+"end": 52.16
+},
+{
+"i": 137,
+"text": "LES",
+"start": 52.16,
+"end": 52.48
+},
+{
+"i": 138,
+"text": "DONNÉES.",
+"start": 52.48,
+"end": 52.8
+},
+{
+"i": 139,
+"text": "ON",
+"start": 52.8,
+"end": 52.88
+},
+{
+"i": 140,
+"text": "Y",
+"start": 53.04,
+"end": 53.2
+},
+{
+"i": 141,
+"text": "MÈNE",
+"start": 53.2,
+"end": 53.36
+},
+{
+"i": 142,
+"text": "DES",
+"start": 53.52,
+"end": 53.6
+},
+{
+"i": 143,
+"text": "PROJETS,",
+"start": 53.6,
+"end": 53.92
+},
+{
+"i": 144,
+"text": "ON",
+"start": 54,
+"end": 54.16
+},
+{
+"i": 145,
+"text": "Y",
+"start": 54.16,
+"end": 54.4
+},
+{
+"i": 146,
+"text": "ANIME",
+"start": 54.4,
+"end": 54.64
+},
+{
+"i": 147,
+"text": "DES",
+"start": 54.8,
+"end": 54.88
+},
+{
+"i": 148,
+"text": "ATELIERS,",
+"start": 54.88,
+"end": 55.52
+},
+{
+"i": 149,
+"text": "ET",
+"start": 55.52,
+"end": 55.6
+},
+{
+"i": 150,
+"text": "ON",
+"start": 55.6,
+"end": 55.68
+},
+{
+"i": 151,
+"text": "ÉCRIT",
+"start": 55.84,
+"end": 56.08
+},
+{
+"i": 152,
+"text": "DANS",
+"start": 56.16,
+"end": 56.32
+},
+{
+"i": 153,
+"text": "UN",
+"start": 56.32,
+"end": 56.4
+},
+{
+"i": 154,
+"text": "JOURNAL",
+"start": 56.4,
+"end": 56.88
+},
+{
+"i": 155,
+"text": "POUR",
+"start": 56.88,
+"end": 57.168
+},
+{
+"i": 156,
+"text": "PARTAGER",
+"start": 57.168,
+"end": 57.456
+},
+{
+"i": 157,
+"text": "CE",
+"start": 57.456,
+"end": 57.744
+},
+{
+"i": 158,
+"text": "QU’ON",
+"start": 57.744,
+"end": 58.032
+},
+{
+"i": 159,
+"text": "APPREND.",
+"start": 58.032,
+"end": 58.32
+},
+{
+"i": 160,
+"text": "DEPUIS",
+"start": 58.64,
+"end": 58.96
+},
+{
+"i": 161,
+"text": "2023,",
+"start": 58.96,
+"end": 59.84
+},
+{
+"i": 162,
+"text": "TROIS",
+"start": 59.84,
+"end": 60.0
+},
+{
+"i": 163,
+"text": "BUREAUX",
+"start": 60.08,
+"end": 60.32
+},
+{
+"i": 164,
+"text": "SE",
+"start": 60.64,
+"end": 60.8
+},
+{
+"i": 165,
+"text": "SONT",
+"start": 60.8,
+"end": 60.96
+},
+{
+"i": 166,
+"text": "PASSÉ",
+"start": 60.96,
+"end": 61.12
+},
+{
+"i": 167,
+"text": "LE",
+"start": 61.12,
+"end": 61.2
+},
+{
+"i": 168,
+"text": "RELAIS.",
+"start": 61.2,
+"end": 61.6
+},
+{
+"i": 169,
+"text": "CELUI",
+"start": 61.68,
+"end": 62
+},
+{
+"i": 170,
+"text": "D’ANICET",
+"start": 62.0,
+"end": 62.64
+},
+{
+"i": 171,
+"text": "APELI,",
+"start": 62.64,
+"end": 63.28
+},
+{
+"i": 172,
+"text": "CELUI",
+"start": 63.28,
+"end": 63.44
+},
+{
+"i": 173,
+"text": "DE",
+"start": 63.44,
+"end": 63.6
+},
+{
+"i": 174,
+"text": "MIEZAN",
+"start": 63.6,
+"end": 64.2
+},
+{
+"i": 175,
+"text": "OCÉANE,",
+"start": 64.2,
+"end": 64.8
+},
+{
+"i": 176,
+"text": "ET",
+"start": 64.85,
+"end": 65.09
+},
+{
+"i": 177,
+"text": "AUJOURD’HUI,",
+"start": 65.09,
+"end": 65.57
+},
+{
+"i": 178,
+"text": "CELUI",
+"start": 65.57,
+"end": 65.81
+},
+{
+"i": 179,
+"text": "DE",
+"start": 65.81,
+"end": 65.97
+},
+{
+"i": 180,
+"text": "KOUASSI",
+"start": 65.97,
+"end": 66.45
+},
+{
+"i": 181,
+"text": "ENOCH.",
+"start": 66.61,
+"end": 67.33
+},
+{
+"i": 182,
+"text": "CHAQUE",
+"start": 67.33,
+"end": 67.65
+},
+{
+"i": 183,
+"text": "GÉNÉRATION",
+"start": 67.65,
+"end": 68.29
+},
+{
+"i": 184,
+"text": "CONSTRUIT",
+"start": 68.29,
+"end": 68.85
+},
+{
+"i": 185,
+"text": "SUR",
+"start": 68.85,
+"end": 69.01
+},
+{
+"i": 186,
+"text": "LE",
+"start": 69.01,
+"end": 69.09
+},
+{
+"i": 187,
+"text": "TRAVAIL",
+"start": 69.09,
+"end": 69.41
+},
+{
+"i": 188,
+"text": "DE",
+"start": 69.41,
+"end": 69.49
+},
+{
+"i": 189,
+"text": "LA",
+"start": 69.49,
+"end": 69.65
+},
+{
+"i": 190,
+"text": "PRÉCÉDENTE.",
+"start": 69.65,
+"end": 70.45
+},
+{
+"i": 191,
+"text": "TU",
+"start": 70.45,
+"end": 70.69
+},
+{
+"i": 192,
+"text": "ES",
+"start": 70.69,
+"end": 70.85
+},
+{
+"i": 193,
+"text": "EN",
+"start": 70.85,
+"end": 70.93
+},
+{
+"i": 194,
+"text": "LICENCE",
+"start": 70.93,
+"end": 71.33
+},
+{
+"i": 195,
+"text": "3,",
+"start": 71.33,
+"end": 71.73
+},
+{
+"i": 196,
+"text": "EN",
+"start": 71.73,
+"end": 71.89
+},
+{
+"i": 197,
+"text": "MASTER",
+"start": 71.89,
+"end": 72.21
+},
+{
+"i": 198,
+"text": "1",
+"start": 72.21,
+"end": 72.53
+},
+{
+"i": 199,
+"text": "OU",
+"start": 72.53,
+"end": 72.69
+},
+{
+"i": 200,
+"text": "EN",
+"start": 72.69,
+"end": 72.77
+},
+{
+"i": 201,
+"text": "MASTER",
+"start": 72.77,
+"end": 73.09
+},
+{
+"i": 202,
+"text": "2",
+"start": 73.09,
+"end": 73.33
+},
+{
+"i": 203,
+"text": "ACTUARIAT ?",
+"start": 73.33,
+"end": 73.97
+},
+{
+"i": 204,
+"text": "TA",
+"start": 74.21,
+"end": 74.45
+},
+{
+"i": 205,
+"text": "PLACE",
+"start": 74.45,
+"end": 74.69
+},
+{
+"i": 206,
+"text": "EST",
+"start": 74.69,
+"end": 74.93
+},
+{
+"i": 207,
+"text": "À",
+"start": 74.93,
+"end": 75.09
+},
+{
+"i": 208,
+"text": "CONSTRUIRE.",
+"start": 75.09,
+"end": 75.65
+},
+{
+"i": 209,
+"text": "VOUS",
+"start": 75.81,
+"end": 76.05
+},
+{
+"i": 210,
+"text": "ÊTES",
+"start": 76.05,
+"end": 76.29
+},
+{
+"i": 211,
+"text": "UNE",
+"start": 76.29,
+"end": 76.53
+},
+{
+"i": 212,
+"text": "ORGANISATION,",
+"start": 76.53,
+"end": 77.01
+},
+{
+"i": 213,
+"text": "AVEC",
+"start": 77.17,
+"end": 77.49
+},
+{
+"i": 214,
+"text": "UNE",
+"start": 77.49,
+"end": 77.65
+},
+{
+"i": 215,
+"text": "QUESTION",
+"start": 77.65,
+"end": 77.97
+},
+{
+"i": 216,
+"text": "SUR",
+"start": 77.97,
+"end": 78.13
+},
+{
+"i": 217,
+"text": "VOS",
+"start": 78.13,
+"end": 78.29
+},
+{
+"i": 218,
+"text": "CHIFFRES",
+"start": 78.29,
+"end": 78.69
+},
+{
+"i": 219,
+"text": "OU",
+"start": 78.69,
+"end": 78.85
+},
+{
+"i": 220,
+"text": "VOS",
+"start": 78.85,
+"end": 79.01
+},
+{
+"i": 221,
+"text": "DONNÉES ?",
+"start": 79.01,
+"end": 79.25
+},
+{
+"i": 222,
+"text": "PARLONS-EN.",
+"start": 79.49,
+"end": 80.29
+},
+{
+"i": 223,
+"text": "JE-FPA.",
+"start": 80.45,
+"end": 81.73
+},
+{
+"i": 224,
+"text": "L’AMBITION",
+"start": 81.89,
+"end": 82.45
+},
+{
+"i": 225,
+"text": "SE",
+"start": 82.61,
+"end": 82.85
+},
+{
+"i": 226,
+"text": "CONSTRUIT",
+"start": 82.85,
+"end": 83.33
+},
+{
+"i": 227,
+"text": "ENSEMBLE.",
+"start": 83.33,
+"end": 84.45
+}
+]

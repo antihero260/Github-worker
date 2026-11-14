@@ -1,0 +1,56 @@
+<!-- Scène 13 · « …de comparer les sources et de me présenter un résumé clair avec les liens des articles. » (53.64 → 58.43 s). Fichier écrit par un générateur, modifiable à la main. -->
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+    }
+
+  </style>
+  <div id="root" data-composition-id="s13-sources" data-width="1920" data-height="1080">
+    <div class="pj-scene">
+      <div id="s13-sources-cam" class="pj-cam">
+        <div id="s13-sources-cadre" class="pj-cadre">
+        <div class="pj-horizon" style="top: 760px"></div>
+        <div id="s13-vid" class="pj-panneau" style="left: 113px; top: 210px; width: 600px; height: 338px; opacity: 0"><video id="s13-vid-v" class="clip" src="assets/video/journal.mp4" data-start="0" data-duration="4.79" data-track-index="5" muted playsinline></video><div class="pj-equerres" style="left: -18px; top: -18px; right: -18px; bottom: -18px"><i></i><i></i><i></i><i></i></div><div id="s13-vid-tag" class="pj-panneau-tag">Les sources</div></div>
+        <div id="s13-src0" class="pj-carte" style="left: 780px; top: 250px; width: 200px; padding: 20px 16px; font-size: 40px; opacity: 0">Source A</div>
+        <div id="s13-src1" class="pj-carte" style="left: 930px; top: 310px; width: 200px; padding: 20px 16px; font-size: 40px; opacity: 0">Source B</div>
+        <div id="s13-src2" class="pj-carte" style="left: 1080px; top: 250px; width: 200px; padding: 20px 16px; font-size: 40px; opacity: 0">Source C</div>
+        <div id="s13-vs" class="pj-impact" style="position: absolute; left: 905px; top: 440px; font-size: 90px; opacity: 0">VS</div>
+        <div id="s13-res" class="pj-papier" style="left: 1260px; top: 180px; width: 560px; padding: 30px 34px; opacity: 0"><h3 style="font-size: 70px">Résumé</h3><div class="pj-res-ligne"><div style="width: 70%"></div><span id="s13-lien0" style="opacity: 0">lien →</span></div><div class="pj-res-ligne"><div style="width: 58%"></div><span id="s13-lien1" style="opacity: 0">lien →</span></div><div class="pj-res-ligne"><div style="width: 64%"></div><span id="s13-lien2" style="opacity: 0">lien →</span></div></div>
+        <svg id="s13-toi" class="pj-perso pj-toi-perso" viewBox="-30 -20 160 290" style="left: 919px; top: 560px; width: 143px; height: 260px"><g id="s13-toi-vie"><g id="s13-toi-corps"><g id="s13-toi-jg"><g class="c"><rect x="24" y="136" width="24" height="112" rx="8" /></g><g class="p"><rect x="24" y="136" width="24" height="112" rx="8" /></g></g><g id="s13-toi-jd"><g class="c"><rect x="52" y="136" width="24" height="112" rx="8" /></g><g class="p"><rect x="52" y="136" width="24" height="112" rx="8" /></g></g><g id="s13-toi-tronc"><g class="c"><rect x="22" y="52" width="56" height="94" rx="12" /></g><g class="p"><rect x="22" y="52" width="56" height="94" rx="12" /></g></g><g id="s13-toi-bg"><g class="c"><rect x="2" y="54" width="18" height="86" rx="9" /></g><g class="p"><rect x="2" y="54" width="18" height="86" rx="9" /></g></g><g id="s13-toi-bd"><g class="c"><rect x="80" y="54" width="18" height="86" rx="9" /></g><g class="p"><rect x="80" y="54" width="18" height="86" rx="9" /></g></g><g id="s13-toi-tete"><g class="c"><circle cx="50" cy="24" r="22" /></g><g class="p"><circle cx="50" cy="24" r="22" /></g></g></g></g></svg>
+        </div>
+      </div>
+      <div id="s13-hud" class="pj-label" style="left: 113px; top: 107px; "><span class="pj-k">Sa mission</span><span class="pj-d">Comparer, résumer</span></div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#s13-sources-cam", { scale: 1 }, { scale: 1.05, duration: 4.59, ease: "none" }, 0);
+    tl.fromTo("#s13-sources-cam", { filter: "blur(14px)" }, { filter: "blur(0px)", duration: 0.16, ease: "power2.out" }, 0);
+    tl.fromTo("#s13-vid", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.18, ease: "power3.out" }, 0.05);
+    tl.fromTo("#s13-toi-vie", { y: 0 }, { y: -5, duration: 0.42, repeat: 9, yoyo: true, ease: "sine.inOut", immediateRender: false }, 0.0);
+    tl.fromTo("#s13-src0", { opacity: 0, scale: 1.5 }, { opacity: 1, scale: 1, duration: 0.18, ease: "back.out(2.2)" }, 0.28);
+    tl.fromTo("#s13-src1", { opacity: 0, scale: 1.5 }, { opacity: 1, scale: 1, duration: 0.18, ease: "back.out(2.2)" }, 0.44);
+    tl.fromTo("#s13-src2", { opacity: 0, scale: 1.5 }, { opacity: 1, scale: 1, duration: 0.18, ease: "back.out(2.2)" }, 0.6);
+    tl.fromTo("#s13-vs", { opacity: 0, scale: 1.6 }, { opacity: 1, scale: 1, duration: 0.18, ease: "back.out(2.2)" }, 0.92);
+    tl.to(["#s13-src0", "#s13-src2"], { keyframes: [{ x: -14, duration: 0.12 }, { x: 14, duration: 0.12 }, { x: 0, duration: 0.12 }] }, 1.12);
+    tl.to("#s13-toi-bd", { rotation: -158, svgOrigin: "89 62", duration: 0.16, ease: "power2.out" }, 0.28);
+    tl.to("#s13-toi-tete", { rotation: -8, svgOrigin: "50 50", duration: 0.16, ease: "power2.out" }, 0.28);
+    tl.to("#s13-toi-bd", { rotation: -146, svgOrigin: "89 62", duration: 0.09, repeat: 5, yoyo: true }, 0.46);
+    tl.to("#s13-sources-cadre", { x: 0, y: 161, scale: 1.15, duration: 0.26, ease: "power3.inOut" }, 0.16);
+    tl.to("#s13-sources-cadre", { keyframes: [{ filter: "blur(10px)", duration: 0.13 }, { filter: "blur(0px)", duration: 0.13 }] }, 0.16);
+    tl.fromTo("#s13-res", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.18, ease: "power3.out" }, 1.72);
+    tl.to("#s13-sources-cadre", { x: -696, y: 168, scale: 1.2, duration: 0.26, ease: "power3.inOut" }, 1.6);
+    tl.to("#s13-sources-cadre", { keyframes: [{ filter: "blur(10px)", duration: 0.13 }, { filter: "blur(0px)", duration: 0.13 }] }, 1.6);
+    tl.to("#s13-toi-bd", { rotation: -120, svgOrigin: "89 62", duration: 0.16, ease: "back.out(2)" }, 2.12);
+    tl.to("#s13-toi-tete", { rotation: -6, svgOrigin: "50 50", duration: 0.16, ease: "back.out(2)" }, 2.12);
+    tl.fromTo("#s13-lien0", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.18, ease: "power3.out" }, 3.48);
+    tl.fromTo("#s13-lien1", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.18, ease: "power3.out" }, 3.63);
+    tl.fromTo("#s13-lien2", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.18, ease: "power3.out" }, 3.78);
+    tl.to("#s13-toi-bd", { rotation: -152, svgOrigin: "89 62", duration: 0.16, ease: "back.out(2.5)" }, 3.8);
+    tl.to("#s13-toi-bd", { rotation: "+=12", svgOrigin: "89 62", duration: 0.08, repeat: 3, yoyo: true }, 3.98);
+    tl.to("#s13-sources-cam", { scale: 1.3, filter: "blur(14px)", duration: 0.2, ease: "power3.in" }, 4.59);
+    window.__timelines["s13-sources"] = tl;
+  </script>
+</template>

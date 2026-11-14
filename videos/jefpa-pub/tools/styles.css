@@ -1,0 +1,87 @@
+      /* Pub JE-FPA, format horizontal 1920×1080, couleurs et police du site (Manrope, bleu #1f4bff, encre #05070d). */
+      @font-face { font-family: "Manrope"; src: url("assets/fonts/manrope-latin.woff2") format("woff2"); font-weight: 200 800; }
+      @font-face { font-family: "Manrope"; src: url("assets/fonts/manrope-latin-ext.woff2") format("woff2"); font-weight: 200 800;
+        unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1E00-1EFF, U+2020, U+20A0-20C0; }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1920px; height: 1080px; overflow: hidden; background: #05070d; }
+      #fond { position: absolute; inset: 0; background: #05070d; }
+
+      .sc { position: absolute; inset: 0; overflow: hidden; background: #05070d; font-family: "Manrope", sans-serif; }
+      .sc-cam { position: absolute; inset: 0; transform-origin: 50% 50%; }
+      .sc-cadre { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; transform-origin: 50% 50%; perspective: 2200px; }
+
+      /* captures du site */
+      .capt { position: absolute; inset: 0; background: #05070d; }
+      .capt video, .fen-ecran video { position: absolute; left: 0; top: 0; width: 100%; height: 100%; object-fit: cover; }
+      .fen { position: absolute; border-radius: 18px; overflow: hidden; background: #0d1220; box-shadow: 0 50px 140px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(255, 255, 255, 0.08);
+        transform-origin: 50% 50%; }
+      .fen-barre { height: 46px; display: flex; align-items: center; gap: 9px; padding: 0 18px; background: #e9ecf4; }
+      .fen-barre i { width: 13px; height: 13px; border-radius: 50%; background: #c3c8d6; }
+      .fen-barre i:nth-child(1) { background: #ff6159; } .fen-barre i:nth-child(2) { background: #ffbd2e; } .fen-barre i:nth-child(3) { background: #28c941; }
+      .fen-barre span { margin-left: 18px; flex: 1; max-width: 640px; height: 30px; border-radius: 15px; background: #fff; color: #4a5266; font-size: 16px; font-weight: 600;
+        line-height: 30px; padding: 0 18px; white-space: nowrap; overflow: hidden; }
+      .fen-ecran { position: relative; overflow: hidden; background: #05070d; }
+
+      /* typographie */
+      .titre { position: absolute; letter-spacing: -0.035em; white-space: nowrap; }
+      .titre .m { display: inline-block; overflow: hidden; vertical-align: bottom; padding: 0.04em 0.02em 0.12em; margin-bottom: -0.1em; }
+      .titre .mi { display: inline-block; }
+      .titre .m + .m { margin-left: 0; }
+      .titre > .m { display: block; width: max-content; }
+      .etiq-sc { position: absolute; font-size: 26px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+      .puce { position: absolute; font-weight: 700; padding: 12px 24px; border-radius: 999px; white-space: nowrap; letter-spacing: -0.01em;
+        box-shadow: 0 16px 40px rgba(5, 7, 13, 0.35); }
+      .trait { position: absolute; height: 6px; border-radius: 3px; background: #1f4bff; transform-origin: 0 50%; }
+      .focus { position: absolute; border: 4px solid #1f4bff; border-radius: 14px; box-shadow: 0 0 0 9999px rgba(5, 7, 13, 0.38), 0 0 40px rgba(31, 75, 255, 0.6); }
+
+      /* images et fonds */
+      .img-plein { position: absolute; inset: 0; overflow: hidden; }
+      .img-plein img { position: absolute; left: 0; top: 0; width: 100%; height: 100%; object-fit: cover; }
+      .img-plein i { position: absolute; inset: 0; background: #05070d; }
+      .degrade-g { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(5, 7, 13, 0.92) 0%, rgba(5, 7, 13, 0.55) 45%, rgba(5, 7, 13, 0) 75%); }
+      .fond-sombre { position: absolute; inset: 0; background: radial-gradient(ellipse 70% 60% at 60% 45%, #14205a 0%, #05070d 70%); }
+      .fond-sombre .halo { position: absolute; left: 50%; top: 40%; width: 900px; height: 900px; margin: -450px; border-radius: 50%;
+        background: radial-gradient(circle, rgba(31, 75, 255, 0.35), transparent 70%); }
+      .balayage { position: absolute; top: -10%; left: 0; width: 45%; height: 120%; transform: skewX(-18deg); pointer-events: none; mix-blend-mode: screen; }
+      .volet { position: absolute; inset: 0; background: #1f4bff; z-index: 20; }
+
+      /* scène « le pas » */
+      .moitie { position: absolute; top: 0; width: 960px; height: 1080px; }
+      .pas { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; display: flex; flex-direction: column; align-items: center; justify-content: center;
+        color: #fff; letter-spacing: -0.04em; }
+      .pas span { font-size: 54px; font-weight: 500; color: #8ea6ff; }
+      .pas b { font-size: 190px; font-weight: 800; line-height: 1; }
+
+      /* chiffres, étapes, bandes */
+      .annee { position: absolute; right: 110px; top: 300px; text-align: right; padding: 34px 44px; border-radius: 28px; background: #05070d; color: #fff;
+        box-shadow: 0 40px 100px rgba(5, 7, 13, 0.45); }
+      .annee b { display: block; font-size: 190px; font-weight: 800; line-height: 1; letter-spacing: -0.05em; color: #1f4bff; }
+      .annee span { display: block; font-size: 30px; font-weight: 700; margin-top: 8px; }
+      .m-ligne { position: absolute; left: 160px; top: 448px; width: 1620px; height: 4px; background: linear-gradient(90deg, #1f4bff, #8ea6ff); transform-origin: 0 50%; }
+      .etape { position: absolute; width: 400px; color: #fff; }
+      .etape i { position: absolute; left: 6px; top: -36px; width: 28px; height: 28px; border-radius: 50%; background: #1f4bff; box-shadow: 0 0 0 8px rgba(31, 75, 255, 0.25), 0 0 30px #1f4bff; }
+      .etape em { display: block; font-style: normal; font-size: 26px; font-weight: 700; color: #8ea6ff; margin-top: 30px; }
+      .etape b { display: block; font-size: 60px; font-weight: 800; letter-spacing: -0.04em; line-height: 1.05; }
+      .etape span { display: block; font-size: 32px; font-weight: 500; color: #c9d1ee; }
+      .gros-chiffre { position: absolute; left: 120px; top: 230px; display: flex; align-items: baseline; gap: 22px; color: #fff; padding: 20px 46px 30px; border-radius: 30px;
+        background: #1f4bff; box-shadow: 0 40px 100px rgba(31, 75, 255, 0.45); }
+      .gros-chiffre.droite { left: auto; right: 120px; top: 560px; }
+      .gros-chiffre b { font-size: 210px; font-weight: 800; line-height: 1; letter-spacing: -0.05em; }
+      .gros-chiffre span { font-size: 64px; font-weight: 800; letter-spacing: -0.03em; }
+      .bande { position: absolute; left: 0; top: 330px; width: 1920px; height: 420px; background: #1f4bff; display: flex; flex-direction: column; justify-content: center;
+        padding-left: 140px; color: #fff; letter-spacing: -0.045em; }
+      .bande span { font-size: 80px; font-weight: 600; color: #dfe5ff; }
+      .bande b { font-size: 170px; font-weight: 800; line-height: 1; }
+      .parlons { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; display: flex; align-items: center; justify-content: center;
+        font-size: 220px; font-weight: 800; letter-spacing: -0.05em; color: #fff; background: rgba(31, 75, 255, 0.92); }
+
+      /* fin */
+      .logo-fin { position: absolute; left: 160px; top: 390px; width: 660px; height: 300px; border-radius: 36px; background: #fff; padding: 26px 34px;
+        box-shadow: 0 50px 140px rgba(0, 0, 0, 0.6); }
+      .logo-fin img { width: 100%; height: 100%; object-fit: contain; }
+      .url-fin { position: absolute; left: 906px; top: 700px; font-size: 44px; font-weight: 800; color: #fff; padding: 14px 30px; border-radius: 999px;
+        background: #1f4bff; letter-spacing: -0.02em; }
+      .li-fin { position: absolute; left: 912px; top: 800px; font-size: 30px; font-weight: 600; color: #c9d1ee; }
+      .titre.en-ligne { white-space: normal; }
+      .titre.en-ligne > .m { display: inline-block; width: auto; margin-right: 0.22em; }
+      .puce, .focus, .annee, .gros-chiffre, .bande, .parlons, .titre, .etiq-sc { z-index: 30; }

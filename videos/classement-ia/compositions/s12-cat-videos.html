@@ -1,0 +1,36 @@
+<!-- Scène 12 · « Pour la génération de vidéos, » (73.26 → 75.4 s). Fichier écrit par un générateur, modifiable à la main. -->
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+    }
+
+  </style>
+  <div id="root" data-composition-id="s12-cat-videos" data-width="1920" data-height="1080">
+    <div class="pj-scene">
+      <div id="s12-cat-videos-cam" class="pj-cam">
+        <div id="s12-cat-videos-cadre" class="pj-cadre">
+        <div class="pj-horizon" style="top: 760px"></div>
+        <div id="s12-plein" style="position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; overflow: hidden"><video id="s12-plein-v" class="clip" src="assets/video/tournage.mp4" data-start="0" data-duration="2.14" data-track-index="5" muted playsinline style="position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; object-fit: cover"></video><div style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.8))"></div></div>
+        <div id="s12-titre" class="pj-impact" style="position: absolute; left: 0; width: 1920px; top: 330px; text-align: center; font-size: 170px; opacity: 0">Vidéos</div>
+        <div id="s12-badge" class="pj-etape" style="left: 1440px; top: 128px; opacity: 0"><span>Catégorie</span><b>3</b><i>/4</i></div>
+        </div>
+      </div>
+      <div id="s12-cat-videos-eclair" class="pj-flash"></div>
+      <div id="s12-hud" class="pj-label" style="left: 113px; top: 107px; "><span class="pj-k">Catégorie 3</span><span class="pj-d">Générer des vidéos</span></div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#s12-cat-videos-cam", { scale: 1 }, { scale: 1.05, duration: 1.94, ease: "none" }, 0);
+    tl.fromTo("#s12-cat-videos-cam", { filter: "blur(14px)" }, { filter: "blur(0px)", duration: 0.16, ease: "power2.out" }, 0);
+    tl.fromTo("#s12-plein", { scale: 1.0 }, { scale: 1.1, duration: 2.14, ease: "none" }, 0);
+    tl.fromTo("#s12-badge", { opacity: 0, scale: 1.9 }, { opacity: 1, scale: 1, duration: 0.18, ease: "back.out(2.2)" }, 0.57);
+    tl.fromTo("#s12-titre", { opacity: 0, scale: 1.45 }, { opacity: 1, scale: 1, duration: 0.13, ease: "power4.out" }, 0.67);
+    tl.set("#s12-cat-videos-eclair", { opacity: 1 }, 0.67);
+    tl.set("#s12-cat-videos-eclair", { opacity: 0 }, 0.737);
+    tl.to("#s12-cat-videos-cam", { scale: 1.3, filter: "blur(14px)", duration: 0.2, ease: "power3.in" }, 1.94);
+    window.__timelines["s12-cat-videos"] = tl;
+  </script>
+</template>

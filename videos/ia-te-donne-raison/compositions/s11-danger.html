@@ -1,0 +1,66 @@
+<!-- Scène 11 · « plus une réponse est bien formulée… une réponse convaincante n'est pas forcément vraie » (64.53 → 74.29 s). Fichier écrit par un générateur, modifiable à la main. -->
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+    }
+
+  </style>
+  <div id="root" data-composition-id="s11-danger" data-width="1920" data-height="1080">
+    <div class="pj-scene">
+      <div id="s11-danger-cam" class="pj-cam">
+        <div id="s11-danger-cadre" class="pj-cadre">
+        <div class="pj-horizon" style="top: 760px"></div>
+        <div class="pj-cone" style="left: 100px; height: 900px; opacity: 1.0"></div><div class="pj-sol" style="left: 70px; top: 740px; opacity: 1.0"></div>
+        <svg id="s11-toi" class="pj-perso pj-toi-perso" viewBox="-30 -20 160 290" style="left: 275px; top: 449px; width: 210px; height: 380px"><g id="s11-toi-vie"><g id="s11-toi-corps"><g id="s11-toi-jg"><g class="c"><rect x="24" y="136" width="24" height="112" rx="8" /></g><g class="p"><rect x="24" y="136" width="24" height="112" rx="8" /></g></g><g id="s11-toi-jd"><g class="c"><rect x="52" y="136" width="24" height="112" rx="8" /></g><g class="p"><rect x="52" y="136" width="24" height="112" rx="8" /></g></g><g id="s11-toi-tronc"><g class="c"><rect x="22" y="52" width="56" height="94" rx="12" /></g><g class="p"><rect x="22" y="52" width="56" height="94" rx="12" /></g></g><g id="s11-toi-bg"><g class="c"><rect x="2" y="54" width="18" height="86" rx="9" /></g><g class="p"><rect x="2" y="54" width="18" height="86" rx="9" /></g></g><g id="s11-toi-bd"><g class="c"><rect x="80" y="54" width="18" height="86" rx="9" /></g><g class="p"><rect x="80" y="54" width="18" height="86" rx="9" /></g></g><g id="s11-toi-tete"><g class="c"><circle cx="50" cy="24" r="22" /></g><g class="p"><circle cx="50" cy="24" r="22" /></g></g></g></g></svg>
+        <div id="s11-rep" class="pj-papier" style="left: 760px; top: 170px; width: 700px; border: 8px solid #DCFC1C; opacity: 0"><h3 style="font-size: 78px">Réponse parfaite</h3><div style="height: 18px; width: 92%; background: #bdbdb8; margin-top: 18px"></div><div style="height: 18px; width: 84%; background: #bdbdb8; margin-top: 18px"></div><div style="height: 18px; width: 96%; background: #bdbdb8; margin-top: 18px"></div><div style="height: 18px; width: 70%; background: #bdbdb8; margin-top: 18px"></div><div style="height: 18px; width: 88%; background: #bdbdb8; margin-top: 18px"></div></div>
+        <div class="s11-eclat pj-stat" style="left: 720px; top: 140px; font-size: 70px; opacity: 0">✦</div>
+        <div class="s11-eclat pj-stat" style="left: 1460px; top: 200px; font-size: 70px; opacity: 0">✦</div>
+        <div class="s11-eclat pj-stat" style="left: 1430px; top: 560px; font-size: 70px; opacity: 0">✦</div>
+        <div class="s11-eclat pj-stat" style="left: 740px; top: 620px; font-size: 70px; opacity: 0">✦</div>
+        <div class="s11-eclat pj-stat" style="left: 1100px; top: 110px; font-size: 70px; opacity: 0">✦</div>
+        <div id="s11-conv" class="pj-impact" style="position: absolute; left: 640px; width: 640px; top: 300px; text-align: center; font-size: 130px; color: #ECECE8; text-shadow: none; opacity: 0">Convaincant</div>
+        <div id="s11-diff" style="position: absolute; left: 1290px; top: 320px; width: 130px; height: 120px; opacity: 0"><i style="position: absolute; left: 0; top: 26px; width: 130px; height: 20px; background: #DCFC1C"></i><i style="position: absolute; left: 0; top: 70px; width: 130px; height: 20px; background: #DCFC1C"></i><i style="position: absolute; left: 55px; top: -10px; width: 20px; height: 140px; background: #DCFC1C; transform: rotate(28deg)"></i></div>
+        <div id="s11-vrai" class="pj-impact" style="position: absolute; left: 1430px; width: 400px; top: 300px; text-align: center; font-size: 150px; opacity: 0">Vrai</div>
+        <div id="s11-preuve" class="pj-sticker" style="left: 1150px; top: 470px; font-size: 96px; background: #DCFC1C; transform: rotate(8deg); opacity: 0">Preuve ?</div>
+        </div>
+      </div>
+      <div id="s11-mot-noir" style="position: absolute; inset: 0; background: #000; opacity: 0"></div><div id="s11-mot" class="pj-impact" style="position: absolute; left: 0; width: 1920px; top: 405px; text-align: center; font-size: 230px; opacity: 0">Le vrai danger.</div>
+      <div id="s11-danger-eclair" class="pj-flash"></div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#s11-danger-cam", { scale: 1 }, { scale: 1.05, duration: 9.56, ease: "none" }, 0);
+    tl.fromTo("#s11-danger-cam", { filter: "blur(14px)" }, { filter: "blur(0px)", duration: 0.16, ease: "power2.out" }, 0);
+    tl.set("#s11-mot-noir", { opacity: 1 }, 0.12);
+    tl.fromTo("#s11-mot", { opacity: 0, scale: 1.45 }, { opacity: 1, scale: 1, duration: 0.13, ease: "power4.out" }, 0.12);
+    tl.set("#s11-danger-eclair", { opacity: 1 }, 0.12);
+    tl.set("#s11-danger-eclair", { opacity: 0 }, 0.187);
+    tl.set(["#s11-mot-noir", "#s11-mot"], { opacity: 0 }, 1.48);
+    tl.fromTo("#s11-toi-vie", { y: 0 }, { y: -5, duration: 0.42, repeat: 21, yoyo: true, ease: "sine.inOut", immediateRender: false }, 0.0);
+    tl.fromTo("#s11-rep", { opacity: 0, y: 80, rotation: 4 }, { opacity: 1, y: 0, rotation: -2, duration: 0.25, ease: "back.out(1.8)", immediateRender: false }, 1.96);
+    tl.fromTo(".s11-eclat", { opacity: 0, scale: 0 }, { opacity: 1, scale: 1, duration: 0.14, stagger: 0.08, ease: "back.out(3)", immediateRender: false }, 2.92);
+    tl.to(".s11-eclat", { rotation: 90, duration: 0.6, repeat: 2, yoyo: true }, 3.42);
+    tl.to("#s11-toi-bd", { rotation: -70, svgOrigin: "89 62", duration: 0.16, ease: "back.out(2)" }, 2.92);
+    tl.to("#s11-toi-tete", { svgOrigin: "50 50", keyframes: [{ rotation: 14, duration: 0.11 }, { rotation: -2, duration: 0.11 }, { rotation: 14, duration: 0.11 }, { rotation: -2, duration: 0.11 }, { rotation: 14, duration: 0.11 }, { rotation: -2, duration: 0.11 }, { rotation: 0, duration: 0.11 }] }, 3.16);
+    tl.to("#s11-danger-cadre", { x: -180, y: 144, scale: 1.2, duration: 0.24, ease: "power3.inOut" }, 3.88);
+    tl.to("#s11-danger-cadre", { keyframes: [{ filter: "blur(10px)", duration: 0.12 }, { filter: "blur(0px)", duration: 0.12 }] }, 3.88);
+    tl.fromTo("#s11-preuve", { opacity: 0, scale: 2.2 }, { opacity: 1, scale: 1, duration: 0.14, ease: "power4.in" }, 5.8);
+    tl.fromTo("#s11-preuve", { x: 0 }, { keyframes: [{ x: -10, duration: 0.03 }, { x: 8, duration: 0.03 }, { x: 0, duration: 0.03 }] }, 5.94);
+    tl.to("#s11-danger-cadre", { x: 0, y: 0, scale: 1, duration: 0.24, ease: "power3.inOut" }, 6.44);
+    tl.to("#s11-danger-cadre", { keyframes: [{ filter: "blur(10px)", duration: 0.12 }, { filter: "blur(0px)", duration: 0.12 }] }, 6.44);
+    tl.to("#s11-toi-tete", { svgOrigin: "50 50", keyframes: [{ rotation: -14, duration: 0.08 }, { rotation: 14, duration: 0.1 }, { rotation: -10, duration: 0.1 }, { rotation: 0, duration: 0.08 }] }, 6.44);
+    tl.to("#s11-toi-bd", { rotation: 0, svgOrigin: "89 62", duration: 0.15, ease: "power2.out" }, 6.44);
+    tl.to(["#s11-rep", ".s11-eclat", "#s11-preuve"], { opacity: 0, y: -60, duration: 0.2 }, 7.08);
+    tl.fromTo("#s11-conv", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.18, ease: "power3.out" }, 7.72);
+    tl.fromTo("#s11-diff", { opacity: 0, scale: 1.6 }, { opacity: 1, scale: 1, duration: 0.18, ease: "back.out(2.2)" }, 8.44);
+    tl.fromTo("#s11-vrai", { opacity: 0, scale: 1.45 }, { opacity: 1, scale: 1, duration: 0.13, ease: "power4.out" }, 8.84);
+    tl.to("#s11-toi-bg", { rotation: -46, svgOrigin: "11 62", duration: 0.18, ease: "back.out(2)" }, 8.84);
+    tl.to("#s11-toi-bd", { rotation: 46, svgOrigin: "89 62", duration: 0.18, ease: "back.out(2)" }, 8.84);
+    tl.to("#s11-toi-tete", { rotation: -6, svgOrigin: "50 50", duration: 0.18, ease: "back.out(2)" }, 8.84);
+    tl.to("#s11-danger-cam", { scale: 1.3, filter: "blur(14px)", duration: 0.2, ease: "power3.in" }, 9.56);
+    window.__timelines["s11-danger"] = tl;
+  </script>
+</template>

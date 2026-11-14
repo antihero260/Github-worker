@@ -1,0 +1,58 @@
+<!-- Scène 3 · « …sélectionne les résultats pertinents et te renvoie un compte rendu directement sur Telegram. » (11.24 → 16.12 s). Fichier écrit par un générateur, modifiable à la main. -->
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+    }
+
+  </style>
+  <div id="root" data-composition-id="s03-compte-rendu" data-width="1920" data-height="1080">
+    <div class="pj-scene">
+      <div id="s03-compte-rendu-cam" class="pj-cam">
+        <div id="s03-compte-rendu-cadre" class="pj-cadre">
+        <div class="pj-horizon" style="top: 760px"></div>
+        <div id="s03-r-0" class="pj-resultat" style="left: 113px; top: 230px; width: 560px; opacity: 0"><i></i><div><b style="width: 60%"></b><b style="width: 80%"></b></div><span id="s03-r-0-m" class="pj-resultat-marque"></span></div><div id="s03-r-1" class="pj-resultat" style="left: 113px; top: 334px; width: 560px; opacity: 0"><i></i><div><b style="width: 83%"></b><b style="width: 63%"></b></div><span id="s03-r-1-m" class="pj-resultat-marque"></span></div><div id="s03-r-2" class="pj-resultat" style="left: 113px; top: 438px; width: 560px; opacity: 0"><i></i><div><b style="width: 76%"></b><b style="width: 71%"></b></div><span id="s03-r-2-m" class="pj-resultat-marque"></span></div><div id="s03-r-3" class="pj-resultat" style="left: 113px; top: 542px; width: 560px; opacity: 0"><i></i><div><b style="width: 69%"></b><b style="width: 79%"></b></div><span id="s03-r-3-m" class="pj-resultat-marque"></span></div><div id="s03-r-4" class="pj-resultat" style="left: 113px; top: 646px; width: 560px; opacity: 0"><i></i><div><b style="width: 62%"></b><b style="width: 62%"></b></div><span id="s03-r-4-m" class="pj-resultat-marque"></span></div>
+        <div id="s03-vid" class="pj-panneau" style="left: 730px; top: 230px; width: 560px; height: 315px; opacity: 0"><video id="s03-vid-v" class="clip" src="assets/video/actus-tablette.mp4" data-start="0" data-duration="4.88" data-track-index="5" muted playsinline></video><div class="pj-equerres" style="left: -18px; top: -18px; right: -18px; bottom: -18px"><i></i><i></i><i></i><i></i></div><div id="s03-vid-tag" class="pj-panneau-tag">Le tri</div></div>
+        <svg id="s03-ia" class="pj-perso pj-ia-perso" viewBox="-30 -20 160 290" style="left: 944px; top: 578px; width: 132px; height: 240px"><g id="s03-ia-vie"><g id="s03-ia-corps"><g id="s03-ia-jg"><g class="c"><rect x="24" y="136" width="24" height="112" rx="8" /></g><g class="p"><rect x="24" y="136" width="24" height="112" rx="8" /></g></g><g id="s03-ia-jd"><g class="c"><rect x="52" y="136" width="24" height="112" rx="8" /></g><g class="p"><rect x="52" y="136" width="24" height="112" rx="8" /></g></g><g id="s03-ia-tronc"><g class="c"><rect x="22" y="52" width="56" height="94" rx="12" /></g><g class="p"><rect x="22" y="52" width="56" height="94" rx="12" /></g></g><g id="s03-ia-bg"><g class="c"><rect x="2" y="54" width="18" height="86" rx="9" /></g><g class="p"><rect x="2" y="54" width="18" height="86" rx="9" /></g></g><g id="s03-ia-bd"><g class="c"><rect x="80" y="54" width="18" height="86" rx="9" /></g><g class="p"><rect x="80" y="54" width="18" height="86" rx="9" /></g></g><g id="s03-ia-tete"><g class="c"><rect x="25" y="0" width="50" height="46" rx="13" /></g><g class="p"><rect x="25" y="0" width="50" height="46" rx="13" /></g><g class="yeux"><circle cx="40" cy="22" r="5" /><circle cx="60" cy="22" r="5" /></g></g></g></g></svg>
+        <div id="s03-tg" class="pj-tg" style="left: 1360px; top: 100px; width: 420px; height: 740px"><div class="pj-tg-tete"><img src="assets/img/logo-telegram.svg" alt="" /><b>Mon assistant IA</b></div><div class="pj-tg-conv"><div id="s03-tg-m1" class="pj-tg-bulle pj-tg-moi" style="opacity: 0">Fais-moi un résumé des dernières actualités sur l'IA.</div><div id="s03-tg-m2" class="pj-tg-bulle pj-tg-bot" style="opacity: 0"><b>Compte rendu prêt</b><br>3 actus IA du jour, avec les sources.</div></div><div class="pj-tg-champ"><span>Message</span><i></i></div></div>
+        <div id="s03-logo" class="pj-logo" style="left: 1080px; top: 560px; width: 200px; opacity: 0"><img src="assets/img/logo-telegram.svg" alt="Telegram" style="width: 104px; height: 104px" /><div class="pj-logo-nom">Telegram</div></div>
+        </div>
+      </div>
+      <div id="s03-hud" class="pj-label" style="left: 113px; top: 107px; "><span class="pj-k">Le tri</span><span class="pj-d">Puis le compte rendu</span></div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#s03-compte-rendu-cam", { scale: 1 }, { scale: 1.05, duration: 4.68, ease: "none" }, 0);
+    tl.fromTo("#s03-compte-rendu-cam", { filter: "blur(14px)" }, { filter: "blur(0px)", duration: 0.16, ease: "power2.out" }, 0);
+    tl.set(["#s03-r-0", "#s03-r-1", "#s03-r-2", "#s03-r-3", "#s03-r-4"], { opacity: 1 }, 0.0);
+    tl.set("#s03-tg-m1", { opacity: 1 }, 0);
+    tl.fromTo("#s03-vid", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.18, ease: "power3.out" }, 0.05);
+    tl.fromTo("#s03-ia-vie", { y: 0 }, { y: -5, duration: 0.42, repeat: 10, yoyo: true, ease: "sine.inOut", immediateRender: false }, 0.0);
+    tl.set("#s03-r-0-m", { opacity: 1, backgroundColor: "#DCFC1C" }, 0.24);
+    tl.to("#s03-r-0", { borderColor: "#DCFC1C", duration: 0.1 }, 0.24);
+    tl.to("#s03-r-1", { opacity: 0.25, duration: 0.15 }, 0.46);
+    tl.set("#s03-r-2-m", { opacity: 1, backgroundColor: "#DCFC1C" }, 0.68);
+    tl.to("#s03-r-2", { borderColor: "#DCFC1C", duration: 0.1 }, 0.68);
+    tl.set("#s03-r-3-m", { opacity: 1, backgroundColor: "#DCFC1C" }, 0.9);
+    tl.to("#s03-r-3", { borderColor: "#DCFC1C", duration: 0.1 }, 0.9);
+    tl.to("#s03-r-4", { opacity: 0.25, duration: 0.15 }, 1.12);
+    tl.to("#s03-compte-rendu-cadre", { x: 602, y: 83, scale: 1.18, duration: 0.26, ease: "power3.inOut" }, 0.02);
+    tl.to("#s03-compte-rendu-cadre", { keyframes: [{ filter: "blur(10px)", duration: 0.13 }, { filter: "blur(0px)", duration: 0.13 }] }, 0.02);
+    tl.to("#s03-ia-bg", { rotation: 110, svgOrigin: "11 62", duration: 0.16, ease: "back.out(2)" }, 0.76);
+    tl.to("#s03-ia-tete", { rotation: 8, svgOrigin: "50 50", duration: 0.16, ease: "back.out(2)" }, 0.76);
+    tl.to("#s03-ia-tete", { svgOrigin: "50 50", keyframes: [{ rotation: 14, duration: 0.11 }, { rotation: -2, duration: 0.11 }, { rotation: 14, duration: 0.11 }, { rotation: -2, duration: 0.11 }, { rotation: 0, duration: 0.11 }] }, 1.32);
+    tl.to("#s03-compte-rendu-cadre", { x: -762, y: 175, scale: 1.25, duration: 0.26, ease: "power3.inOut" }, 1.94);
+    tl.to("#s03-compte-rendu-cadre", { keyframes: [{ filter: "blur(10px)", duration: 0.13 }, { filter: "blur(0px)", duration: 0.13 }] }, 1.94);
+    tl.fromTo("#s03-tg-m2", { opacity: 0, y: 30, scale: 0.9 }, { opacity: 1, y: 0, scale: 1, duration: 0.22, ease: "back.out(2)" }, 2.2);
+    tl.to("#s03-ia-bg", { rotation: 0, svgOrigin: "11 62", duration: 0.12, ease: "power2.out" }, 2.2);
+    tl.to("#s03-ia-tete", { rotation: 0, svgOrigin: "50 50", duration: 0.12, ease: "power2.out" }, 2.2);
+    tl.fromTo("#s03-logo", { opacity: 0, scale: 1.8 }, { opacity: 1, scale: 1, duration: 0.18, ease: "back.out(2.2)" }, 4.12);
+    tl.to("#s03-compte-rendu-cadre", { x: -252, y: 21, scale: 1.05, duration: 0.26, ease: "power3.inOut" }, 3.88);
+    tl.to("#s03-compte-rendu-cadre", { keyframes: [{ filter: "blur(10px)", duration: 0.13 }, { filter: "blur(0px)", duration: 0.13 }] }, 3.88);
+    tl.to("#s03-ia-corps", { keyframes: [{ y: -30, duration: 0.13, ease: "power2.out" }, { y: 0, duration: 0.15, ease: "power2.in" }] }, 4.12);
+    tl.to("#s03-compte-rendu-cam", { scale: 1.3, filter: "blur(14px)", duration: 0.2, ease: "power3.in" }, 4.68);
+    window.__timelines["s03-compte-rendu"] = tl;
+  </script>
+</template>

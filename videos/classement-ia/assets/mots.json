@@ -1,0 +1,1928 @@
+[
+{
+"i": 0,
+"text": "SI",
+"start": 0.06,
+"end": 0.1
+},
+{
+"i": 1,
+"text": "TU",
+"start": 0.1,
+"end": 0.2
+},
+{
+"i": 2,
+"text": "DEVAIS",
+"start": 0.2,
+"end": 0.5
+},
+{
+"i": 3,
+"text": "SUPPRIMER",
+"start": 0.5,
+"end": 0.96
+},
+{
+"i": 4,
+"text": "TOUTES",
+"start": 0.96,
+"end": 1.27
+},
+{
+"i": 5,
+"text": "LES",
+"start": 1.27,
+"end": 1.34
+},
+{
+"i": 6,
+"text": "APPLICATIONS",
+"start": 1.42,
+"end": 2.12
+},
+{
+"i": 7,
+"text": "D'INTELLIGENCE",
+"start": 2.12,
+"end": 2.78
+},
+{
+"i": 8,
+"text": "ARTIFICIELLE",
+"start": 2.78,
+"end": 3.38
+},
+{
+"i": 9,
+"text": "DE",
+"start": 3.38,
+"end": 3.51
+},
+{
+"i": 10,
+"text": "TON",
+"start": 3.51,
+"end": 3.66
+},
+{
+"i": 11,
+"text": "TÉLÉPHONE",
+"start": 3.71,
+"end": 4.27
+},
+{
+"i": 12,
+"text": "ET",
+"start": 4.38,
+"end": 4.43
+},
+{
+"i": 13,
+"text": "N'EN",
+"start": 4.43,
+"end": 4.64
+},
+{
+"i": 14,
+"text": "GARDER",
+"start": 4.64,
+"end": 4.97
+},
+{
+"i": 15,
+"text": "QU'UNE",
+"start": 4.97,
+"end": 5.29
+},
+{
+"i": 16,
+"text": "SEULE,",
+"start": 5.29,
+"end": 5.67
+},
+{
+"i": 17,
+"text": "LAQUELLE",
+"start": 5.74,
+"end": 6.12
+},
+{
+"i": 18,
+"text": "MÉRITERAIT",
+"start": 6.13,
+"end": 6.63
+},
+{
+"i": 19,
+"text": "DE",
+"start": 6.67,
+"end": 6.78
+},
+{
+"i": 20,
+"text": "SURVIVRE ?",
+"start": 6.78,
+"end": 7.48
+},
+{
+"i": 21,
+"text": "AUJOURD'HUI,",
+"start": 7.54,
+"end": 8.55
+},
+{
+"i": 22,
+"text": "JE",
+"start": 8.71,
+"end": 8.83
+},
+{
+"i": 23,
+"text": "CLASSE",
+"start": 8.9,
+"end": 9.39
+},
+{
+"i": 24,
+"text": "LES",
+"start": 9.39,
+"end": 9.66
+},
+{
+"i": 25,
+"text": "IA",
+"start": 9.66,
+"end": 9.83
+},
+{
+"i": 26,
+"text": "LES",
+"start": 9.85,
+"end": 10.11
+},
+{
+"i": 27,
+"text": "PLUS",
+"start": 10.11,
+"end": 10.46
+},
+{
+"i": 28,
+"text": "POPULAIRES",
+"start": 10.47,
+"end": 11.37
+},
+{
+"i": 29,
+"text": "DE",
+"start": 11.37,
+"end": 11.55
+},
+{
+"i": 30,
+"text": "S",
+"start": 11.55,
+"end": 11.64
+},
+{
+"i": 31,
+"text": "À",
+"start": 11.64,
+"end": 11.73
+},
+{
+"i": 32,
+"text": "C.",
+"start": 11.73,
+"end": 12.16
+},
+{
+"i": 33,
+"text": "ET",
+"start": 12.22,
+"end": 12.28
+},
+{
+"i": 34,
+"text": "JE",
+"start": 12.28,
+"end": 12.39
+},
+{
+"i": 35,
+"text": "TE",
+"start": 12.45,
+"end": 12.52
+},
+{
+"i": 36,
+"text": "PRÉVIENS :",
+"start": 12.52,
+"end": 13.14
+},
+{
+"i": 37,
+"text": "CERTAINES",
+"start": 13.14,
+"end": 13.72
+},
+{
+"i": 38,
+"text": "PLACES",
+"start": 13.72,
+"end": 14.1
+},
+{
+"i": 39,
+"text": "RISQUENT",
+"start": 14.1,
+"end": 14.61
+},
+{
+"i": 40,
+"text": "DE",
+"start": 14.61,
+"end": 14.73
+},
+{
+"i": 41,
+"text": "NE",
+"start": 14.73,
+"end": 14.85
+},
+{
+"i": 42,
+"text": "PAS",
+"start": 14.85,
+"end": 14.98
+},
+{
+"i": 43,
+"text": "TE",
+"start": 15.06,
+"end": 15.15
+},
+{
+"i": 44,
+"text": "PLAIRE.",
+"start": 15.17,
+"end": 15.82
+},
+{
+"i": 45,
+"text": "ON",
+"start": 15.89,
+"end": 15.99
+},
+{
+"i": 46,
+"text": "COMMENCE",
+"start": 16,
+"end": 16.6
+},
+{
+"i": 47,
+"text": "AVEC",
+"start": 16.65,
+"end": 16.91
+},
+{
+"i": 48,
+"text": "LES",
+"start": 17.07,
+"end": 17.16
+},
+{
+"i": 49,
+"text": "IA",
+"start": 17.16,
+"end": 17.3
+},
+{
+"i": 50,
+"text": "CONVERSATIONNELLES.",
+"start": 17.3,
+"end": 18.82
+},
+{
+"i": 51,
+"text": "DANS",
+"start": 18.9,
+"end": 19.26
+},
+{
+"i": 52,
+"text": "LE",
+"start": 19.26,
+"end": 19.46
+},
+{
+"i": 53,
+"text": "RANG",
+"start": 19.46,
+"end": 19.89
+},
+{
+"i": 54,
+"text": "S,",
+"start": 19.89,
+"end": 20.18
+},
+{
+"i": 55,
+"text": "JE",
+"start": 20.26,
+"end": 20.41
+},
+{
+"i": 56,
+"text": "PLACE",
+"start": 20.41,
+"end": 20.94
+},
+{
+"i": 57,
+"text": "CHATGPT,",
+"start": 20.94,
+"end": 21.87
+},
+{
+"i": 58,
+"text": "CLAUDE",
+"start": 21.87,
+"end": 22.49
+},
+{
+"i": 59,
+"text": "ET",
+"start": 22.49,
+"end": 22.7
+},
+{
+"i": 60,
+"text": "GEMINI.",
+"start": 22.7,
+"end": 23.4
+},
+{
+"i": 61,
+"text": "POUR",
+"start": 23.4,
+"end": 23.64
+},
+{
+"i": 62,
+"text": "LEUR",
+"start": 23.64,
+"end": 23.76
+},
+{
+"i": 63,
+"text": "POLYVALENCE,",
+"start": 23.88,
+"end": 24.68
+},
+{
+"i": 64,
+"text": "LEUR",
+"start": 24.68,
+"end": 24.92
+},
+{
+"i": 65,
+"text": "CAPACITÉ",
+"start": 24.92,
+"end": 25.32
+},
+{
+"i": 66,
+"text": "À",
+"start": 25.37,
+"end": 25.38
+},
+{
+"i": 67,
+"text": "RAISONNER,",
+"start": 25.38,
+"end": 26.07
+},
+{
+"i": 68,
+"text": "RÉDIGER,",
+"start": 26.07,
+"end": 26.62
+},
+{
+"i": 69,
+"text": "ANALYSER",
+"start": 26.62,
+"end": 27.11
+},
+{
+"i": 70,
+"text": "ET",
+"start": 27.11,
+"end": 27.24
+},
+{
+"i": 71,
+"text": "ACCOMPLIR",
+"start": 27.24,
+"end": 27.81
+},
+{
+"i": 72,
+"text": "DES",
+"start": 27.81,
+"end": 28
+},
+{
+"i": 73,
+"text": "TÂCHES",
+"start": 28,
+"end": 28.37
+},
+{
+"i": 74,
+"text": "TRÈS",
+"start": 28.37,
+"end": 28.62
+},
+{
+"i": 75,
+"text": "DIFFÉRENTES.",
+"start": 28.62,
+"end": 29.59
+},
+{
+"i": 76,
+"text": "DANS",
+"start": 29.7,
+"end": 30
+},
+{
+"i": 77,
+"text": "LE",
+"start": 30,
+"end": 30.18
+},
+{
+"i": 78,
+"text": "RANG",
+"start": 30.18,
+"end": 30.54
+},
+{
+"i": 79,
+"text": "A,",
+"start": 30.54,
+"end": 30.71
+},
+{
+"i": 80,
+"text": "JE",
+"start": 30.87,
+"end": 30.99
+},
+{
+"i": 81,
+"text": "METS",
+"start": 31.06,
+"end": 31.32
+},
+{
+"i": 82,
+"text": "DEEPSEEK",
+"start": 31.38,
+"end": 31.95
+},
+{
+"i": 83,
+"text": "ET",
+"start": 31.99,
+"end": 32.16
+},
+{
+"i": 84,
+"text": "PERPLEXITY :",
+"start": 32.16,
+"end": 33.3
+},
+{
+"i": 85,
+"text": "LE",
+"start": 33.35,
+"end": 33.42
+},
+{
+"i": 86,
+"text": "PREMIER",
+"start": 33.42,
+"end": 33.8
+},
+{
+"i": 87,
+"text": "EST",
+"start": 33.8,
+"end": 33.91
+},
+{
+"i": 88,
+"text": "PARTICULIÈREMENT",
+"start": 34.02,
+"end": 34.82
+},
+{
+"i": 89,
+"text": "INTÉRESSANT",
+"start": 34.82,
+"end": 35.22
+},
+{
+"i": 90,
+"text": "POUR",
+"start": 35.5,
+"end": 35.66
+},
+{
+"i": 91,
+"text": "LE",
+"start": 35.66,
+"end": 35.77
+},
+{
+"i": 92,
+"text": "RAISONNEMENT,",
+"start": 35.77,
+"end": 36.51
+},
+{
+"i": 93,
+"text": "LE",
+"start": 36.51,
+"end": 36.67
+},
+{
+"i": 94,
+"text": "SECOND",
+"start": 36.67,
+"end": 36.97
+},
+{
+"i": 95,
+"text": "POUR",
+"start": 36.97,
+"end": 37.19
+},
+{
+"i": 96,
+"text": "LA",
+"start": 37.19,
+"end": 37.29
+},
+{
+"i": 97,
+"text": "RECHERCHE",
+"start": 37.31,
+"end": 37.75
+},
+{
+"i": 98,
+"text": "D'INFORMATIONS",
+"start": 37.81,
+"end": 38.55
+},
+{
+"i": 99,
+"text": "AVEC",
+"start": 38.55,
+"end": 38.77
+},
+{
+"i": 100,
+"text": "DES",
+"start": 38.77,
+"end": 38.93
+},
+{
+"i": 101,
+"text": "SOURCES.",
+"start": 38.93,
+"end": 39.52
+},
+{
+"i": 102,
+"text": "ET",
+"start": 39.58,
+"end": 39.74
+},
+{
+"i": 103,
+"text": "GROK ?",
+"start": 39.74,
+"end": 40.52
+},
+{
+"i": 104,
+"text": "JE",
+"start": 40.52,
+"end": 40.59
+},
+{
+"i": 105,
+"text": "LE",
+"start": 40.75,
+"end": 40.82
+},
+{
+"i": 106,
+"text": "PLACE",
+"start": 40.82,
+"end": 41.19
+},
+{
+"i": 107,
+"text": "EN",
+"start": 41.19,
+"end": 41.33
+},
+{
+"i": 108,
+"text": "B.",
+"start": 41.34,
+"end": 41.55
+},
+{
+"i": 109,
+"text": "IL",
+"start": 41.56,
+"end": 41.71
+},
+{
+"i": 110,
+"text": "A",
+"start": 41.71,
+"end": 41.78
+},
+{
+"i": 111,
+"text": "DES",
+"start": 41.78,
+"end": 42
+},
+{
+"i": 112,
+"text": "FONCTIONNALITÉS",
+"start": 42,
+"end": 43.18
+},
+{
+"i": 113,
+"text": "INTÉRESSANTES,",
+"start": 43.18,
+"end": 44.12
+},
+{
+"i": 114,
+"text": "NOTAMMENT",
+"start": 44.12,
+"end": 44.61
+},
+{
+"i": 115,
+"text": "AUTOUR",
+"start": 44.61,
+"end": 44.94
+},
+{
+"i": 116,
+"text": "DE",
+"start": 44.94,
+"end": 45.05
+},
+{
+"i": 117,
+"text": "L'ACTUALITÉ",
+"start": 45.05,
+"end": 45.66
+},
+{
+"i": 118,
+"text": "ET",
+"start": 45.72,
+"end": 45.78
+},
+{
+"i": 119,
+"text": "DE",
+"start": 45.78,
+"end": 45.89
+},
+{
+"i": 120,
+"text": "X,",
+"start": 45.92,
+"end": 46.08
+},
+{
+"i": 121,
+"text": "MAIS",
+"start": 46.08,
+"end": 46.32
+},
+{
+"i": 122,
+"text": "JE",
+"start": 46.32,
+"end": 46.42
+},
+{
+"i": 123,
+"text": "NE",
+"start": 46.47,
+"end": 46.56
+},
+{
+"i": 124,
+"text": "LE",
+"start": 46.56,
+"end": 46.68
+},
+{
+"i": 125,
+"text": "CHOISIRAIS",
+"start": 46.68,
+"end": 47.22
+},
+{
+"i": 126,
+"text": "PAS",
+"start": 47.22,
+"end": 47.34
+},
+{
+"i": 127,
+"text": "FORCÉMENT",
+"start": 47.4,
+"end": 47.94
+},
+{
+"i": 128,
+"text": "COMME",
+"start": 47.94,
+"end": 48.24
+},
+{
+"i": 129,
+"text": "ASSISTANT",
+"start": 48.24,
+"end": 48.78
+},
+{
+"i": 130,
+"text": "PRINCIPAL.",
+"start": 48.78,
+"end": 49.56
+},
+{
+"i": 131,
+"text": "MAINTENANT,",
+"start": 49.62,
+"end": 50.32
+},
+{
+"i": 132,
+"text": "PASSONS",
+"start": 50.37,
+"end": 50.8
+},
+{
+"i": 133,
+"text": "À",
+"start": 50.8,
+"end": 50.87
+},
+{
+"i": 134,
+"text": "LA",
+"start": 50.87,
+"end": 51
+},
+{
+"i": 135,
+"text": "GÉNÉRATION",
+"start": 51,
+"end": 51.66
+},
+{
+"i": 136,
+"text": "D'IMAGES.",
+"start": 51.66,
+"end": 52.38
+},
+{
+"i": 137,
+"text": "EN",
+"start": 52.5,
+"end": 52.63
+},
+{
+"i": 138,
+"text": "S,",
+"start": 52.63,
+"end": 52.91
+},
+{
+"i": 139,
+"text": "JE",
+"start": 52.91,
+"end": 53.1
+},
+{
+"i": 140,
+"text": "METS",
+"start": 53.1,
+"end": 53.48
+},
+{
+"i": 141,
+"text": "MIDJOURNEY,",
+"start": 53.48,
+"end": 54.203
+},
+{
+"i": 142,
+"text": "NANO",
+"start": 54.203,
+"end": 54.927
+},
+{
+"i": 143,
+"text": "BANANA",
+"start": 54.927,
+"end": 55.65
+},
+{
+"i": 144,
+"text": "ET",
+"start": 55.68,
+"end": 55.85
+},
+{
+"i": 145,
+"text": "CHATGPT",
+"start": 55.85,
+"end": 56.603
+},
+{
+"i": 146,
+"text": "IMAGES.",
+"start": 56.603,
+"end": 57.357
+},
+{
+"i": 147,
+"text": "MIDJOURNEY",
+"start": 57.357,
+"end": 58.11
+},
+{
+"i": 148,
+"text": "POUR",
+"start": 58.11,
+"end": 58.38
+},
+{
+"i": 149,
+"text": "SON",
+"start": 58.38,
+"end": 58.47
+},
+{
+"i": 150,
+"text": "RENDU",
+"start": 58.63,
+"end": 58.91
+},
+{
+"i": 151,
+"text": "ARTISTIQUE,",
+"start": 58.91,
+"end": 59.71
+},
+{
+"i": 152,
+"text": "NANO",
+"start": 59.75,
+"end": 60.065
+},
+{
+"i": 153,
+"text": "BANANA",
+"start": 60.065,
+"end": 60.38
+},
+{
+"i": 154,
+"text": "POUR",
+"start": 60.38,
+"end": 60.65
+},
+{
+"i": 155,
+"text": "LA",
+"start": 60.65,
+"end": 60.78
+},
+{
+"i": 156,
+"text": "GÉNÉRATION",
+"start": 60.78,
+"end": 61.45
+},
+{
+"i": 157,
+"text": "ET",
+"start": 61.45,
+"end": 61.58
+},
+{
+"i": 158,
+"text": "LA",
+"start": 61.58,
+"end": 61.67
+},
+{
+"i": 159,
+"text": "RETOUCHE,",
+"start": 61.78,
+"end": 62.32
+},
+{
+"i": 160,
+"text": "ET",
+"start": 62.44,
+"end": 62.58
+},
+{
+"i": 161,
+"text": "CHATGPT",
+"start": 62.58,
+"end": 63.11
+},
+{
+"i": 162,
+"text": "IMAGES",
+"start": 63.11,
+"end": 63.64
+},
+{
+"i": 163,
+"text": "POUR",
+"start": 63.64,
+"end": 63.92
+},
+{
+"i": 164,
+"text": "SA",
+"start": 63.92,
+"end": 64.04
+},
+{
+"i": 165,
+"text": "CAPACITÉ",
+"start": 64.09,
+"end": 64.62
+},
+{
+"i": 166,
+"text": "À",
+"start": 64.7,
+"end": 64.72
+},
+{
+"i": 167,
+"text": "SUIVRE",
+"start": 64.72,
+"end": 65.16
+},
+{
+"i": 168,
+"text": "DES",
+"start": 65.16,
+"end": 65.38
+},
+{
+"i": 169,
+"text": "INSTRUCTIONS",
+"start": 65.38,
+"end": 66.26
+},
+{
+"i": 170,
+"text": "ET",
+"start": 66.26,
+"end": 66.4
+},
+{
+"i": 171,
+"text": "MODIFIER",
+"start": 66.4,
+"end": 66.94
+},
+{
+"i": 172,
+"text": "UNE",
+"start": 66.99,
+"end": 67.18
+},
+{
+"i": 173,
+"text": "IMAGE.",
+"start": 67.29,
+"end": 67.84
+},
+{
+"i": 174,
+"text": "ADOBE",
+"start": 67.9,
+"end": 68.18
+},
+{
+"i": 175,
+"text": "FIREFLY",
+"start": 68.18,
+"end": 68.6
+},
+{
+"i": 176,
+"text": "ET",
+"start": 68.65,
+"end": 68.78
+},
+{
+"i": 177,
+"text": "RECRAFT",
+"start": 68.78,
+"end": 69.18
+},
+{
+"i": 178,
+"text": "ARRIVENT",
+"start": 69.26,
+"end": 69.79
+},
+{
+"i": 179,
+"text": "EN",
+"start": 69.79,
+"end": 69.92
+},
+{
+"i": 180,
+"text": "A,",
+"start": 69.92,
+"end": 70.11
+},
+{
+"i": 181,
+"text": "NOTAMMENT",
+"start": 70.11,
+"end": 70.65
+},
+{
+"i": 182,
+"text": "POUR",
+"start": 70.74,
+"end": 71
+},
+{
+"i": 183,
+"text": "LES",
+"start": 71,
+"end": 71.2
+},
+{
+"i": 184,
+"text": "USAGES",
+"start": 71.2,
+"end": 71.6
+},
+{
+"i": 185,
+"text": "CRÉATIFS",
+"start": 71.6,
+"end": 72.11
+},
+{
+"i": 186,
+"text": "ET",
+"start": 72.22,
+"end": 72.26
+},
+{
+"i": 187,
+"text": "GRAPHIQUES.",
+"start": 72.26,
+"end": 73.32
+},
+{
+"i": 188,
+"text": "POUR",
+"start": 73.38,
+"end": 73.66
+},
+{
+"i": 189,
+"text": "LA",
+"start": 73.66,
+"end": 73.83
+},
+{
+"i": 190,
+"text": "GÉNÉRATION",
+"start": 73.83,
+"end": 74.66
+},
+{
+"i": 191,
+"text": "DE",
+"start": 74.74,
+"end": 74.84
+},
+{
+"i": 192,
+"text": "VIDÉOS,",
+"start": 74.84,
+"end": 75.52
+},
+{
+"i": 193,
+"text": "LE",
+"start": 75.52,
+"end": 75.69
+},
+{
+"i": 194,
+"text": "RANG",
+"start": 75.69,
+"end": 76.03
+},
+{
+"i": 195,
+"text": "S",
+"start": 76.03,
+"end": 76.365
+},
+{
+"i": 196,
+"text": "REVIENT",
+"start": 76.365,
+"end": 76.7
+},
+{
+"i": 197,
+"text": "À",
+"start": 76.7,
+"end": 76.78
+},
+{
+"i": 198,
+"text": "KLING",
+"start": 76.78,
+"end": 77.2
+},
+{
+"i": 199,
+"text": "ET",
+"start": 77.2,
+"end": 77.37
+},
+{
+"i": 200,
+"text": "SEEDANCE.",
+"start": 77.37,
+"end": 78.22
+},
+{
+"i": 201,
+"text": "DEUX",
+"start": 78.22,
+"end": 78.56
+},
+{
+"i": 202,
+"text": "OUTILS",
+"start": 78.56,
+"end": 78.91
+},
+{
+"i": 203,
+"text": "IMPRESSIONNANTS",
+"start": 79.22,
+"end": 80.08
+},
+{
+"i": 204,
+"text": "POUR",
+"start": 80.08,
+"end": 80.23
+},
+{
+"i": 205,
+"text": "CRÉER",
+"start": 80.39,
+"end": 80.63
+},
+{
+"i": 206,
+"text": "DES",
+"start": 80.63,
+"end": 80.81
+},
+{
+"i": 207,
+"text": "SÉQUENCES",
+"start": 80.81,
+"end": 81.35
+},
+{
+"i": 208,
+"text": "À",
+"start": 81.35,
+"end": 81.41
+},
+{
+"i": 209,
+"text": "PARTIR",
+"start": 81.41,
+"end": 81.78
+},
+{
+"i": 210,
+"text": "DE",
+"start": 81.78,
+"end": 81.9
+},
+{
+"i": 211,
+"text": "TEXTES,",
+"start": 81.9,
+"end": 82.37
+},
+{
+"i": 212,
+"text": "D'IMAGES",
+"start": 82.4,
+"end": 82.82
+},
+{
+"i": 213,
+"text": "ET",
+"start": 82.87,
+"end": 82.98
+},
+{
+"i": 214,
+"text": "MÊME",
+"start": 82.98,
+"end": 83.32
+},
+{
+"i": 215,
+"text": "DE",
+"start": 83.32,
+"end": 83.4
+},
+{
+"i": 216,
+"text": "RÉFÉRENCES",
+"start": 83.45,
+"end": 83.94
+},
+{
+"i": 217,
+"text": "VIDÉO.",
+"start": 83.94,
+"end": 84.4
+},
+{
+"i": 218,
+"text": "RUNWAY",
+"start": 84.46,
+"end": 84.78
+},
+{
+"i": 219,
+"text": "SE",
+"start": 84.78,
+"end": 84.9
+},
+{
+"i": 220,
+"text": "PLACE",
+"start": 84.9,
+"end": 85.16
+},
+{
+"i": 221,
+"text": "EN",
+"start": 85.21,
+"end": 85.33
+},
+{
+"i": 222,
+"text": "A,",
+"start": 85.33,
+"end": 85.47
+},
+{
+"i": 223,
+"text": "PARTICULIÈREMENT",
+"start": 85.63,
+"end": 86.51
+},
+{
+"i": 224,
+"text": "INTÉRESSANT",
+"start": 86.51,
+"end": 87.19
+},
+{
+"i": 225,
+"text": "POUR",
+"start": 87.2,
+"end": 87.45
+},
+{
+"i": 226,
+"text": "LES",
+"start": 87.45,
+"end": 87.61
+},
+{
+"i": 227,
+"text": "CRÉATEURS",
+"start": 87.64,
+"end": 88.21
+},
+{
+"i": 228,
+"text": "QUI",
+"start": 88.21,
+"end": 88.29
+},
+{
+"i": 229,
+"text": "VEULENT",
+"start": 88.41,
+"end": 88.92
+},
+{
+"i": 230,
+"text": "DAVANTAGE",
+"start": 88.92,
+"end": 89.48
+},
+{
+"i": 231,
+"text": "DE",
+"start": 89.53,
+"end": 89.56
+},
+{
+"i": 232,
+"text": "CONTRÔLE",
+"start": 89.56,
+"end": 89.91
+},
+{
+"i": 233,
+"text": "SUR",
+"start": 89.91,
+"end": 90.04
+},
+{
+"i": 234,
+"text": "LEURS",
+"start": 90.04,
+"end": 90.24
+},
+{
+"i": 235,
+"text": "PLANS.",
+"start": 90.29,
+"end": 90.55
+},
+{
+"i": 236,
+"text": "ENFIN,",
+"start": 90.7,
+"end": 91.17
+},
+{
+"i": 237,
+"text": "L'AUDIO !",
+"start": 91.17,
+"end": 91.71
+},
+{
+"i": 238,
+"text": "ICI,",
+"start": 91.87,
+"end": 91.98
+},
+{
+"i": 239,
+"text": "DEUX",
+"start": 92.06,
+"end": 92.32
+},
+{
+"i": 240,
+"text": "NOMS",
+"start": 92.38,
+"end": 92.65
+},
+{
+"i": 241,
+"text": "SE",
+"start": 92.65,
+"end": 92.8
+},
+{
+"i": 242,
+"text": "DÉMARQUENT :",
+"start": 92.8,
+"end": 93.7
+},
+{
+"i": 243,
+"text": "ELEVENLABS",
+"start": 93.7,
+"end": 94.45
+},
+{
+"i": 244,
+"text": "POUR",
+"start": 94.45,
+"end": 94.75
+},
+{
+"i": 245,
+"text": "GÉNÉRER",
+"start": 94.75,
+"end": 95.28
+},
+{
+"i": 246,
+"text": "DES",
+"start": 95.28,
+"end": 95.51
+},
+{
+"i": 247,
+"text": "VOIX",
+"start": 95.51,
+"end": 95.81
+},
+{
+"i": 248,
+"text": "ARTIFICIELLES",
+"start": 95.81,
+"end": 96.84
+},
+{
+"i": 249,
+"text": "TRÈS",
+"start": 96.98,
+"end": 97.17
+},
+{
+"i": 250,
+"text": "EXPRESSIVES,",
+"start": 97.21,
+"end": 97.9
+},
+{
+"i": 251,
+"text": "ET",
+"start": 97.9,
+"end": 97.99
+},
+{
+"i": 252,
+"text": "SUNO",
+"start": 98.15,
+"end": 98.26
+},
+{
+"i": 253,
+"text": "POUR",
+"start": 98.34,
+"end": 98.54
+},
+{
+"i": 254,
+"text": "CRÉER",
+"start": 98.54,
+"end": 98.87
+},
+{
+"i": 255,
+"text": "DE",
+"start": 98.87,
+"end": 99
+},
+{
+"i": 256,
+"text": "VÉRITABLES",
+"start": 99,
+"end": 99.66
+},
+{
+"i": 257,
+"text": "MORCEAUX",
+"start": 99.66,
+"end": 100.17
+},
+{
+"i": 258,
+"text": "DE",
+"start": 100.17,
+"end": 100.3
+},
+{
+"i": 259,
+"text": "MUSIQUE",
+"start": 100.3,
+"end": 100.76
+},
+{
+"i": 260,
+"text": "À",
+"start": 100.76,
+"end": 100.81
+},
+{
+"i": 261,
+"text": "PARTIR",
+"start": 100.93,
+"end": 101.19
+},
+{
+"i": 262,
+"text": "D'UNE",
+"start": 101.27,
+"end": 101.64
+},
+{
+"i": 263,
+"text": "DESCRIPTION.",
+"start": 101.64,
+"end": 102.26
+},
+{
+"i": 264,
+"text": "POUR",
+"start": 102.34,
+"end": 102.51
+},
+{
+"i": 265,
+"text": "MOI,",
+"start": 102.57,
+"end": 102.82
+},
+{
+"i": 266,
+"text": "LES",
+"start": 102.82,
+"end": 103
+},
+{
+"i": 267,
+"text": "DEUX",
+"start": 103,
+"end": 103.24
+},
+{
+"i": 268,
+"text": "MÉRITENT",
+"start": 103.24,
+"end": 103.72
+},
+{
+"i": 269,
+"text": "LE",
+"start": 103.72,
+"end": 103.84
+},
+{
+"i": 270,
+"text": "RANG",
+"start": 103.84,
+"end": 104.07
+},
+{
+"i": 271,
+"text": "S,",
+"start": 104.07,
+"end": 104.26
+},
+{
+"i": 272,
+"text": "MAIS",
+"start": 104.26,
+"end": 104.5
+},
+{
+"i": 273,
+"text": "PAS",
+"start": 104.5,
+"end": 104.68
+},
+{
+"i": 274,
+"text": "POUR",
+"start": 104.68,
+"end": 104.92
+},
+{
+"i": 275,
+"text": "LES",
+"start": 104.92,
+"end": 105.1
+},
+{
+"i": 276,
+"text": "MÊMES",
+"start": 105.1,
+"end": 105.4
+},
+{
+"i": 277,
+"text": "RAISONS.",
+"start": 105.4,
+"end": 106.04
+},
+{
+"i": 278,
+"text": "ET",
+"start": 106.09,
+"end": 106.18
+},
+{
+"i": 279,
+"text": "LE",
+"start": 106.18,
+"end": 106.43
+},
+{
+"i": 280,
+"text": "RANG",
+"start": 106.43,
+"end": 106.68
+},
+{
+"i": 281,
+"text": "C ?",
+"start": 106.68,
+"end": 106.96
+},
+{
+"i": 282,
+"text": "JE",
+"start": 106.96,
+"end": 107.1
+},
+{
+"i": 283,
+"text": "VAIS",
+"start": 107.1,
+"end": 107.38
+},
+{
+"i": 284,
+"text": "LE",
+"start": 107.46,
+"end": 107.53
+},
+{
+"i": 285,
+"text": "LAISSER",
+"start": 107.53,
+"end": 108.03
+},
+{
+"i": 286,
+"text": "VIDE.",
+"start": 108.03,
+"end": 108.45
+},
+{
+"i": 287,
+"text": "PARCE",
+"start": 108.46,
+"end": 108.82
+},
+{
+"i": 288,
+"text": "QU'UN",
+"start": 108.82,
+"end": 109.17
+},
+{
+"i": 289,
+"text": "OUTIL",
+"start": 109.17,
+"end": 109.55
+},
+{
+"i": 290,
+"text": "QUI",
+"start": 109.6,
+"end": 109.8
+},
+{
+"i": 291,
+"text": "NE",
+"start": 109.8,
+"end": 109.88
+},
+{
+"i": 292,
+"text": "FIGURE",
+"start": 109.88,
+"end": 110.14
+},
+{
+"i": 293,
+"text": "PAS",
+"start": 110.14,
+"end": 110.27
+},
+{
+"i": 294,
+"text": "DANS",
+"start": 110.27,
+"end": 110.44
+},
+{
+"i": 295,
+"text": "MON",
+"start": 110.44,
+"end": 110.6
+},
+{
+"i": 296,
+"text": "TOP",
+"start": 110.6,
+"end": 110.96
+},
+{
+"i": 297,
+"text": "N'EST",
+"start": 111.08,
+"end": 111.25
+},
+{
+"i": 298,
+"text": "PAS",
+"start": 111.25,
+"end": 111.38
+},
+{
+"i": 299,
+"text": "FORCÉMENT",
+"start": 111.38,
+"end": 111.79
+},
+{
+"i": 300,
+"text": "MAUVAIS.",
+"start": 111.79,
+"end": 112.28
+},
+{
+"i": 301,
+"text": "VOILÀ",
+"start": 112.34,
+"end": 112.62
+},
+{
+"i": 302,
+"text": "MON",
+"start": 112.62,
+"end": 112.82
+},
+{
+"i": 303,
+"text": "CLASSEMENT !",
+"start": 112.82,
+"end": 113.62
+},
+{
+"i": 304,
+"text": "MAINTENANT,",
+"start": 113.62,
+"end": 114.29
+},
+{
+"i": 305,
+"text": "JE",
+"start": 114.29,
+"end": 114.42
+},
+{
+"i": 306,
+"text": "VEUX",
+"start": 114.42,
+"end": 114.69
+},
+{
+"i": 307,
+"text": "VOIR",
+"start": 114.69,
+"end": 114.96
+},
+{
+"i": 308,
+"text": "LE",
+"start": 114.96,
+"end": 115.08
+},
+{
+"i": 309,
+"text": "VÔTRE :",
+"start": 115.08,
+"end": 115.68
+},
+{
+"i": 310,
+"text": "QUELLE",
+"start": 115.74,
+"end": 115.95
+},
+{
+"i": 311,
+"text": "IA",
+"start": 115.97,
+"end": 116.07
+},
+{
+"i": 312,
+"text": "MÉRITE",
+"start": 116.07,
+"end": 116.4
+},
+{
+"i": 313,
+"text": "LE",
+"start": 116.4,
+"end": 116.53
+},
+{
+"i": 314,
+"text": "RANG",
+"start": 116.53,
+"end": 116.75
+},
+{
+"i": 315,
+"text": "S",
+"start": 116.86,
+"end": 116.925
+},
+{
+"i": 316,
+"text": "ET",
+"start": 116.925,
+"end": 116.99
+},
+{
+"i": 317,
+"text": "LAQUELLE",
+"start": 116.99,
+"end": 117.5
+},
+{
+"i": 318,
+"text": "AI-JE",
+"start": 117.53,
+"end": 117.85
+},
+{
+"i": 319,
+"text": "COMPLÈTEMENT",
+"start": 117.85,
+"end": 118.66
+},
+{
+"i": 320,
+"text": "SURESTIMÉE ?",
+"start": 118.66,
+"end": 119.56
+}
+]

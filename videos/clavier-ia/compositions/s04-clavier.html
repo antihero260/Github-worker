@@ -1,0 +1,38 @@
+<!-- Scène 4 · « Le clavier de ton téléphone. » (20.28 → 22.36 s). Fichier écrit par un générateur, modifiable à la main. -->
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+    }
+
+  </style>
+  <div id="root" data-composition-id="s04-clavier" data-width="1920" data-height="1080">
+    <div class="pj-scene">
+      <div id="s04-clavier-cam" class="pj-cam">
+        <div id="s04-clavier-cadre" class="pj-cadre">
+        <div class="pj-horizon" style="top: 760px"></div>
+        <div id="s04-plein" style="position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; overflow: hidden"><video id="s04-v" class="clip" src="assets/video/clavier-gros-plan.mp4" data-start="0" data-duration="2.08" data-track-index="5" muted playsinline style="position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; object-fit: cover"></video><div style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,0.25), rgba(0,0,0,0.72))"></div></div>
+        <div id="s04-t1" class="pj-impact" style="position: absolute; left: 0; width: 1920px; top: 250px; text-align: center; font-size: 230px; opacity: 0">Le clavier</div>
+        <div id="s04-t2" class="pj-impact" style="position: absolute; left: 0; width: 1920px; top: 500px; text-align: center; font-size: 130px; color: #ECECE8; text-shadow: none; opacity: 0">de ton téléphone.</div>
+        </div>
+      </div>
+      <div id="s04-hud" class="pj-label" style="left: 113px; top: 107px; "><span class="pj-k">La réponse</span><span class="pj-d">Dans ta poche</span></div>
+      <div id="s04-clavier-eclair" class="pj-flash"></div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#s04-clavier-cam", { scale: 1 }, { scale: 1.05, duration: 1.88, ease: "none" }, 0);
+    tl.fromTo("#s04-clavier-cam", { filter: "blur(14px)" }, { filter: "blur(0px)", duration: 0.16, ease: "power2.out" }, 0);
+    tl.fromTo("#s04-t1", { opacity: 0, scale: 1.45 }, { opacity: 1, scale: 1, duration: 0.13, ease: "power4.out" }, 0.28);
+    tl.set("#s04-clavier-eclair", { opacity: 1 }, 0.12);
+    tl.set("#s04-clavier-eclair", { opacity: 0 }, 0.187);
+    tl.fromTo("#s04-t2", { opacity: 0, x: 260 }, { opacity: 1, x: 0, duration: 0.24, ease: "power4.out" }, 0.92);
+    tl.fromTo("#s04-plein", { scale: 1.0 }, { scale: 1.12, duration: 2.08, ease: "none" }, 0);
+    tl.to("#s04-clavier-cadre", { x: 0, y: 22, scale: 1.12, duration: 0.26, ease: "power3.inOut" }, 0.98);
+    tl.to("#s04-clavier-cadre", { keyframes: [{ filter: "blur(10px)", duration: 0.13 }, { filter: "blur(0px)", duration: 0.13 }] }, 0.98);
+    tl.to("#s04-clavier-cam", { scale: 1.3, filter: "blur(14px)", duration: 0.2, ease: "power3.in" }, 1.88);
+    window.__timelines["s04-clavier"] = tl;
+  </script>
+</template>

@@ -1,0 +1,79 @@
+<!-- Scène 5 · « Tu veux le même ? Commente PROMPT, et je te l'envoie. » (23.24 → 26.2 s). Fichier écrit par un générateur, modifiable à la main. -->
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+    }
+
+  </style>
+  <div id="root" data-composition-id="s05-commente" data-width="1920" data-height="1080">
+    <div class="pj-scene">
+      <div id="s05-commente-cam" class="pj-cam">
+        <div id="s05-commente-cadre" class="pj-cadre">
+        <div class="pj-horizon" style="top: 760px"></div>
+        <div id="s05-f-0" class="sx-plein" style="opacity: 0"><video id="s05-f-0-v" class="clip" src="assets/video/cafe-cappuccino.mp4" data-start="0.0" data-duration="0.55" data-track-index="5" muted playsinline style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover"></video></div>
+        <div id="s05-f-1" class="sx-plein" style="opacity: 0"><video id="s05-f-1-v" class="clip" src="assets/video/tel-scroll.mp4" data-start="0.45" data-duration="0.63" data-track-index="6" muted playsinline style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover"></video></div>
+        <div id="s05-f-2" class="sx-plein" style="opacity: 0"><video id="s05-f-2-v" class="clip" src="assets/video/cafe-latte-art.mp4" data-start="0.98" data-duration="0.56" data-track-index="7" muted playsinline style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover"></video></div>
+        <div id="s05-f-3" class="sx-plein" style="opacity: 0"><video id="s05-f-3-v" class="clip" src="assets/video/homme-laptop.mp4" data-start="1.44" data-duration="0.58" data-track-index="5" muted playsinline style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover"></video></div>
+        <div id="s05-f-4" class="sx-plein" style="opacity: 0"><video id="s05-f-4-v" class="clip" src="assets/video/cafe-clients.mp4" data-start="1.92" data-duration="1.14" data-track-index="6" muted playsinline style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover"></video></div>
+        <div id="s05-f-voile" style="position: absolute; inset: 0; background: rgba(12, 12, 12, 0.55)"></div>
+        <div id="s05-meme" class="al-choc" style="left: 0px; width: 1920px; top: 70px; font-size: 150px; color: #DCFC1C; opacity: 0">Tu veux le même ?</div>
+        <div id="s05-com" class="pm-com" style="opacity: 0"><div class="pm-com-tete">Commentaires</div><div id="s05-liste" class="pm-com-liste"><p id="s05-c0" style="opacity: 0"><i style="background: #D9893D"></i><b>aminata.dev</b><span>PROMPT</span></p><p id="s05-c1" style="opacity: 0"><i style="background: #4DD8FF"></i><b>kevin_web</b><span>PROMPT stp</span></p><p id="s05-c2" style="opacity: 0"><i style="background: #FF5FA2"></i><b>sarah.k</b><span>PROMPT !!</span></p><p id="s05-c3" style="opacity: 0"><i style="background: #3DFFA2"></i><b>yao_code</b><span>PROMPT svp</span></p></div><div class="pm-com-champ"><span id="s05-saisie"><b id="s05-k0" style="opacity: 0">P</b><b id="s05-k1" style="opacity: 0">R</b><b id="s05-k2" style="opacity: 0">O</b><b id="s05-k3" style="opacity: 0">M</b><b id="s05-k4" style="opacity: 0">P</b><b id="s05-k5" style="opacity: 0">T</b></span><i class="ml-caret"></i><em>Envoyer</em></div></div>
+        <div id="s05-gros" class="pm-gros" style="opacity: 0">PROMPT</div>
+        <svg id="s05-toi" class="pj-perso pj-toi-perso" viewBox="-30 -20 160 290" style="left: 197px; top: 707px; width: 127px; height: 230px"><g id="s05-toi-vie"><g id="s05-toi-corps"><g id="s05-toi-jg"><g class="c"><rect x="24" y="136" width="24" height="112" rx="8" /></g><g class="p"><rect x="24" y="136" width="24" height="112" rx="8" /></g></g><g id="s05-toi-jd"><g class="c"><rect x="52" y="136" width="24" height="112" rx="8" /></g><g class="p"><rect x="52" y="136" width="24" height="112" rx="8" /></g></g><g id="s05-toi-tronc"><g class="c"><rect x="22" y="52" width="56" height="94" rx="12" /></g><g class="p"><rect x="22" y="52" width="56" height="94" rx="12" /></g></g><g id="s05-toi-bg"><g class="c"><rect x="2" y="54" width="18" height="86" rx="9" /></g><g class="p"><rect x="2" y="54" width="18" height="86" rx="9" /></g></g><g id="s05-toi-bd"><g class="c"><rect x="80" y="54" width="18" height="86" rx="9" /></g><g class="p"><rect x="80" y="54" width="18" height="86" rx="9" /></g></g><g id="s05-toi-tete"><g class="c"><circle cx="50" cy="24" r="22" /></g><g class="p"><circle cx="50" cy="24" r="22" /></g></g></g></g></svg>
+        </div>
+      </div>
+      <div id="s05-commente-eclair" class="pj-flash"></div>
+      <div id="s05-commente-noir" style="position: absolute; inset: 0; background: #000; opacity: 0"></div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#s05-commente-cam", { scale: 1 }, { scale: 1.05, duration: 2.76, ease: "none" }, 0);
+    tl.fromTo("#s05-commente-cam", { filter: "blur(14px)" }, { filter: "blur(0px)", duration: 0.16, ease: "power2.out" }, 0);
+    tl.set("#s05-f-0", { opacity: 1 }, 0.0);
+    tl.fromTo("#s05-f-0", { scale: 1.22, x: 0, rotation: 0 }, { scale: 1.02, x: 0, rotation: 0, duration: 0.45, ease: "power2.out", immediateRender: false }, 0.0);
+    tl.set("#s05-f-0", { opacity: 0 }, 0.47);
+    tl.set("#s05-f-1", { opacity: 1 }, 0.45);
+    tl.fromTo("#s05-f-1", { scale: 1.12, x: -60, rotation: 0 }, { scale: 1.02, x: 0, rotation: 0, duration: 0.53, ease: "power2.out", immediateRender: false }, 0.45);
+    tl.set("#s05-f-1", { opacity: 0 }, 1.0);
+    tl.set("#s05-f-2", { opacity: 1 }, 0.98);
+    tl.fromTo("#s05-f-2", { scale: 1.12, x: 0, rotation: 2 }, { scale: 1.02, x: 0, rotation: 0, duration: 0.46, ease: "power2.out", immediateRender: false }, 0.98);
+    tl.set("#s05-f-2", { opacity: 0 }, 1.46);
+    tl.set("#s05-f-3", { opacity: 1 }, 1.44);
+    tl.fromTo("#s05-f-3", { scale: 1.22, x: 0, rotation: 0 }, { scale: 1.02, x: 0, rotation: 0, duration: 0.48, ease: "power2.out", immediateRender: false }, 1.44);
+    tl.set("#s05-f-3", { opacity: 0 }, 1.94);
+    tl.set("#s05-f-4", { opacity: 1 }, 1.92);
+    tl.fromTo("#s05-f-4", { scale: 1.12, x: 60, rotation: 0 }, { scale: 1.02, x: 0, rotation: 0, duration: 1.04, ease: "power2.out", immediateRender: false }, 1.92);
+    tl.fromTo("#s05-meme", { opacity: 1, x: -900, skewX: -25, textShadow: "-60px 0 rgba(220, 252, 28, 0.45), -120px 0 rgba(220, 252, 28, 0.23), -180px 0 rgba(220, 252, 28, 0.15), -240px 0 rgba(220, 252, 28, 0.11), -300px 0 rgba(220, 252, 28, 0.09)" }, { opacity: 1, x: 0, skewX: 0, textShadow: "0px 0 rgba(220, 252, 28, 0), 0px 0 rgba(220, 252, 28, 0), 0px 0 rgba(220, 252, 28, 0), 0px 0 rgba(220, 252, 28, 0), 0px 0 rgba(220, 252, 28, 0)", duration: 0.32, ease: "expo.out", immediateRender: false }, 0.12);
+    tl.to("#s05-meme", { opacity: 0, x: 500, duration: 0.18, ease: "power3.in" }, 0.93);
+    tl.fromTo("#s05-com", { opacity: 0, y: 160 }, { opacity: 1, y: 0, duration: 0.3, ease: "back.out(1.5)" }, 0.78);
+    tl.set("#s05-k0", { opacity: 1 }, 1.14);
+    tl.set("#s05-k1", { opacity: 1 }, 1.2);
+    tl.set("#s05-k2", { opacity: 1 }, 1.26);
+    tl.set("#s05-k3", { opacity: 1 }, 1.32);
+    tl.set("#s05-k4", { opacity: 1 }, 1.38);
+    tl.set("#s05-k5", { opacity: 1 }, 1.44);
+    tl.fromTo("#s05-gros", { opacity: 0, scale: 2.4, rotation: -8 }, { opacity: 1, scale: 1, rotation: -4, duration: 0.18, ease: "power4.in" }, 1.44);
+    tl.set("#s05-commente-eclair", { opacity: 1 }, 1.44);
+    tl.set("#s05-commente-eclair", { opacity: 0 }, 1.507);
+    tl.fromTo("#s05-commente-cam", { x: 0, y: 0 }, { keyframes: [{ x: -24, y: 12, duration: 0.04 }, { x: 24, y: -12, duration: 0.04 }, { x: -12, y: 8, duration: 0.04 }, { x: 0, y: 0, duration: 0.05 }], immediateRender: false }, 1.44);
+    tl.fromTo("#s05-c0", { opacity: 0, x: 80 }, { opacity: 1, x: 0, duration: 0.2, ease: "back.out(2)", immediateRender: false }, 1.8);
+    tl.fromTo("#s05-c1", { opacity: 0, x: 80 }, { opacity: 1, x: 0, duration: 0.2, ease: "back.out(2)", immediateRender: false }, 1.96);
+    tl.fromTo("#s05-c2", { opacity: 0, x: 80 }, { opacity: 1, x: 0, duration: 0.2, ease: "back.out(2)", immediateRender: false }, 2.12);
+    tl.fromTo("#s05-c3", { opacity: 0, x: 80 }, { opacity: 1, x: 0, duration: 0.2, ease: "back.out(2)", immediateRender: false }, 2.28);
+    tl.fromTo("#s05-toi-vie", { y: 0 }, { y: -5, duration: 0.42, repeat: 5, yoyo: true, ease: "sine.inOut", immediateRender: false }, 0.0);
+    tl.to("#s05-toi-bd", { rotation: -120, svgOrigin: "89 62", duration: 0.14, ease: "back.out(2)" }, 0.98);
+    tl.to("#s05-toi-tete", { rotation: -8, svgOrigin: "50 50", duration: 0.14, ease: "back.out(2)" }, 0.98);
+    tl.to("#s05-toi-bg", { rotation: 165, svgOrigin: "11 62", duration: 0.14, ease: "back.out(2)" }, 1.8);
+    tl.to("#s05-toi-bd", { rotation: -165, svgOrigin: "89 62", duration: 0.14, ease: "back.out(2)" }, 1.8);
+    tl.to("#s05-toi-tete", { rotation: -8, svgOrigin: "50 50", duration: 0.14, ease: "back.out(2)" }, 1.8);
+    tl.to("#s05-toi-corps", { keyframes: [{ y: -40, duration: 0.13, ease: "power2.out" }, { y: 0, duration: 0.15, ease: "power2.in" }] }, 1.85);
+    tl.to("#s05-toi-corps", { keyframes: [{ y: -40, duration: 0.13, ease: "power2.out" }, { y: 0, duration: 0.15, ease: "power2.in" }] }, 2.17);
+    tl.to("#s05-commente-cadre", { x: 0, y: 42, scale: 1.06, duration: 0.26, ease: "power3.inOut" }, 1.69);
+    tl.to("#s05-commente-cadre", { keyframes: [{ filter: "blur(10px)", duration: 0.13 }, { filter: "blur(0px)", duration: 0.13 }] }, 1.69);
+    tl.fromTo("#s05-commente-noir", { opacity: 0 }, { opacity: 1, duration: 0.8, ease: "power2.in" }, 2.16);
+    window.__timelines["s05-commente"] = tl;
+  </script>
+</template>

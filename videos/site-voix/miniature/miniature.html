@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <title>Miniature — Je parle, le site se construit</title>
+  <style>
+    @font-face { font-family: "Anton"; src: url("Anton-Regular.woff2") format("woff2"); }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { width: 1080px; height: 1920px; overflow: hidden; background: #0b0b0c; }
+    .fond { position: absolute; inset: -40px; background: url("site-ordi.png") center / cover; filter: blur(26px) brightness(0.45); }
+    .voile { position: absolute; inset: 0; background: radial-gradient(ellipse 70% 55% at 50% 52%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 100%); }
+    .haut { position: absolute; left: 0; right: 0; top: 210px; text-align: center; font-family: "Anton", sans-serif; text-transform: uppercase; line-height: 0.95; }
+    .haut .a { font-size: 132px; color: #ffffff; text-shadow: 0 10px 40px rgba(0, 0, 0, 0.8); }
+    .haut .b { display: inline-block; margin-top: 18px; padding: 6px 30px 12px; font-size: 112px; color: #0c0c0c; background: #dcfc1c; transform: rotate(-3deg); box-shadow: 14px 14px 0 #000; }
+    .ordi { position: absolute; left: 60px; top: 720px; width: 820px; border-radius: 20px; overflow: hidden; border: 3px solid #2c2c33; box-shadow: 0 40px 100px rgba(0, 0, 0, 0.8); transform: rotate(-4deg); }
+    .ordi .barre { height: 44px; display: flex; align-items: center; gap: 10px; padding: 0 18px; background: #0c0c0c; }
+    .ordi .barre i { width: 13px; height: 13px; border-radius: 50%; background: #444; }
+    .ordi .barre i:first-child { background: #dcfc1c; }
+    .ordi .barre span { margin-left: 12px; font: 600 20px/1 monospace; color: #9a9a9a; }
+    .ordi img { display: block; width: 100%; }
+    .tel { position: absolute; right: 70px; top: 800px; width: 300px; height: 520px; border: 12px solid #0c0c0c; border-radius: 50px; overflow: hidden; box-shadow: 0 40px 100px rgba(0, 0, 0, 0.85), 0 0 0 3px #3a3a3a; transform: rotate(6deg); }
+    .tel img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+    .micro { position: absolute; left: 50%; top: 1380px; transform: translateX(-50%); display: flex; align-items: center; gap: 24px; padding: 20px 46px 20px 30px; border-radius: 80px; background: #dcfc1c; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7); }
+    .micro span { font-family: "Anton", sans-serif; font-size: 78px; line-height: 1; color: #0c0c0c; text-transform: uppercase; white-space: nowrap; }
+    .onde { display: flex; align-items: center; gap: 8px; height: 70px; }
+    .onde i { width: 12px; border-radius: 6px; background: #0c0c0c; }
+    .bas { position: absolute; left: 50%; top: 1560px; transform: translateX(-50%); display: flex; align-items: center; gap: 22px; padding: 20px 44px; border-radius: 60px; background: #ffffff; font-family: "Anton", sans-serif; font-size: 62px; text-transform: uppercase; color: #0c0c0c; white-space: nowrap; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7); }
+    .bas em { font-style: normal; color: #fe2c55; }
+    .bas svg { width: 52px; height: 52px; }
+  </style>
+</head>
+<body>
+  <div class="fond"></div>
+  <div class="voile"></div>
+  <div class="haut"><div class="a">Je parle…</div><div class="b">le site se construit</div></div>
+  <div class="ordi"><div class="barre"><i></i><i></i><i></i><span>lecodeur.fr</span></div><img src="site-ordi.png" alt="" /></div>
+  <div class="tel"><img src="site-tel.png" alt="" /></div>
+  <div class="micro"><svg viewBox="0 0 40 40" width="70" height="70"><rect x="13" y="3" width="14" height="22" rx="7" fill="#0C0C0C" /><path d="M8 19 a12 12 0 0 0 24 0" fill="none" stroke="#0C0C0C" stroke-width="3.5" stroke-linecap="round" /><rect x="18.3" y="31" width="3.4" height="6" fill="#0C0C0C" /></svg>
+    <span>0 ligne de code</span><div class="onde"><i style="height: 30%"></i><i style="height: 70%"></i><i style="height: 100%"></i><i style="height: 55%"></i><i style="height: 85%"></i><i style="height: 40%"></i></div></div>
+  <div class="bas"><svg viewBox="0 0 40 40"><path d="M6 8 h28 a4 4 0 0 1 4 4 v14 a4 4 0 0 1 -4 4 h-16 l-8 7 v-7 h-4 a4 4 0 0 1 -4 -4 v-14 a4 4 0 0 1 4 -4 z" fill="#fe2c55" /></svg>Commente <em>VOIX</em></div>
+</body>
+</html>

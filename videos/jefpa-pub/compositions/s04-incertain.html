@@ -1,0 +1,38 @@
+<!-- Un sinistre, une retraite, un avenir qu'on ne connaît pas encore (19.16 → 23.0 s). Écrit par tools/construire.py. -->
+<template>
+  <style>
+    #root { position: absolute; inset: 0; }
+  </style>
+  <div id="root" data-composition-id="s04-incertain" data-width="1920" data-height="1080">
+    <div class="sc">
+      <div id="s04-incertain-cam" class="sc-cam">
+        <div id="s04-incertain-cadre" class="sc-cadre">
+        <div id="i-img" class="img-plein"><img src="assets/img/risque-partage-1536.webp" alt="" /><i style="opacity: 0.55"></i></div>
+        <div class="degrade-g"></div>
+        <div id="i-1" class="titre" style="left: 140px; top: 250px; font-size: 120px; color: #fff; font-weight: 800; line-height: 1.04; "><span class="m"><span id="i-1-0" class="mi">Un sinistre.</span></span></div>
+        <div id="i-2" class="titre" style="left: 140px; top: 400px; font-size: 120px; color: #fff; font-weight: 800; line-height: 1.04; "><span class="m"><span id="i-2-0" class="mi">Une retraite.</span></span></div>
+        <div id="i-3" class="titre" style="left: 140px; top: 550px; font-size: 120px; color: #fff; font-weight: 800; line-height: 1.04; "><span class="m"><span id="i-3-0" class="mi">Un <span style='color: #8ea6ff'>avenir</span></span></span></div>
+        <div id="i-4" class="titre en-ligne" style="left: 146px; top: 720px; font-size: 56px; color: #d6dcff; font-weight: 600; "><span class="m"><span id="i-4-0" class="mi" style="color: #d6dcff">qu’on</span></span> <span class="m"><span id="i-4-1" class="mi" style="color: #d6dcff">ne</span></span> <span class="m"><span id="i-4-2" class="mi" style="color: #d6dcff">connaît</span></span> <span class="m"><span id="i-4-3" class="mi" style="color: #d6dcff">pas</span></span> <span class="m"><span id="i-4-4" class="mi" style="color: #d6dcff">encore.</span></span></div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#s04-incertain-cam", { filter: "blur(16px)", scale: 1.1 }, { filter: "blur(0px)", scale: 1, duration: 0.3, ease: "power3.out" }, 0);
+    tl.to("#s04-incertain-cam", { scale: 1.03, duration: 3.24, ease: "none" }, 0.3);
+    tl.fromTo("#i-img img", { scale: 1.05, xPercent: 0 }, { scale: 1.22, xPercent: 0, duration: 3.84, ease: "none", immediateRender: true }, 0.0);
+    tl.fromTo("#i-1-0", { yPercent: 115 }, { yPercent: 0, duration: 0.55, ease: "expo.out", immediateRender: true }, 0.12);
+    tl.fromTo("#i-2-0", { yPercent: 115 }, { yPercent: 0, duration: 0.55, ease: "expo.out", immediateRender: true }, 1.08);
+    tl.fromTo("#i-3-0", { yPercent: 115 }, { yPercent: 0, duration: 0.55, ease: "expo.out", immediateRender: true }, 1.88);
+    tl.fromTo("#i-4-0", { yPercent: 115 }, { yPercent: 0, duration: 0.45, ease: "expo.out", immediateRender: true }, 2.36);
+    tl.fromTo("#i-4-1", { yPercent: 115 }, { yPercent: 0, duration: 0.45, ease: "expo.out", immediateRender: true }, 2.6);
+    tl.fromTo("#i-4-2", { yPercent: 115 }, { yPercent: 0, duration: 0.45, ease: "expo.out", immediateRender: true }, 2.84);
+    tl.fromTo("#i-4-3", { yPercent: 115 }, { yPercent: 0, duration: 0.45, ease: "expo.out", immediateRender: true }, 3.08);
+    tl.fromTo("#i-4-4", { yPercent: 115 }, { yPercent: 0, duration: 0.45, ease: "expo.out", immediateRender: true }, 3.32);
+    tl.to(["#i-1", "#i-2"], { opacity: 0.35, duration: 0.3 }, 1.88);
+    tl.to("#s04-incertain-cam", { scale: 1.18, filter: "blur(16px)", duration: 0.24, ease: "power3.in" }, 3.6);
+    window.__timelines["s04-incertain"] = tl;
+  </script>
+</template>

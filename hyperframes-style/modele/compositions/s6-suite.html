@@ -1,0 +1,39 @@
+<!-- Scène 6 · Appel à l'action : « Abonne-toi pour la suite. » (13,3 → 16 s) -->
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+    }
+  </style>
+  <div id="root" data-composition-id="s6-suite" data-width="1920" data-height="1080">
+    <div class="pj-scene">
+      <div id="s6-cam" class="pj-cam">
+        <div class="pj-horizon" style="top: 760px"></div>
+        <div class="pj-cone" style="left: 680px; height: 900px"></div>
+        <div class="pj-sol" style="left: 650px; top: 740px"></div>
+        <svg class="pj-picto pj-toi" viewBox="-8 -8 116 276" style="left: 897px; top: 500px; width: 126px; height: 300px">
+          <g class="pj-contour"><circle cx="50" cy="26" r="24" /><rect x="16" y="58" width="68" height="96" rx="10" /><rect x="21" y="140" width="25" height="118" rx="5" /><rect x="54" y="140" width="25" height="118" rx="5" /></g>
+          <g class="pj-plein"><circle cx="50" cy="26" r="24" /><rect x="16" y="58" width="68" height="96" rx="10" /><rect x="21" y="140" width="25" height="118" rx="5" /><rect x="54" y="140" width="25" height="118" rx="5" /></g>
+        </svg>
+        <div id="s6-titre" style="position: absolute; left: 0; width: 1920px; top: 130px; text-align: center">
+          <div class="pj-label" style="position: static"><span class="pj-k">La suite</span></div>
+          <div id="s6-mot" class="pj-impact" style="font-size: 190px; margin-top: 12px">Abonne-toi.</div>
+        </div>
+      </div>
+      <div id="s6-hud-d" class="pj-label" style="right: 113px; top: 107px; text-align: right"><span class="pj-k">Partie 2 ▶</span><span class="pj-d">Bientôt</span></div>
+      <div id="s6-noir" style="position: absolute; inset: 0; background: #000; opacity: 0"></div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#s6-cam", { scale: 1 }, { scale: 1.06, duration: 2.7, ease: "none" }, 0);
+    tl.fromTo("#s6-cam", { filter: "blur(14px)" }, { filter: "blur(0px)", duration: 0.16, ease: "power2.out" }, 0);
+    tl.fromTo("#s6-mot", { opacity: 0, scale: 1.45 }, { opacity: 1, scale: 1, duration: 0.14, ease: "power4.out" }, 0.06);
+    tl.fromTo("#s6-titre .pj-label", { opacity: 0 }, { opacity: 1, duration: 0.1 }, 0.12);
+    tl.fromTo("#s6-hud-d", { opacity: 0, x: 24 }, { opacity: 1, x: 0, duration: 0.15, ease: "power3.out" }, 0.3);
+    // fin : fondu au noir
+    tl.fromTo("#s6-noir", { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power2.in" }, 2.15);
+    window.__timelines["s6-suite"] = tl;
+  </script>
+</template>

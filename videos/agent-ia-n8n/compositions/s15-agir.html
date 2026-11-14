@@ -1,0 +1,52 @@
+<!-- Scène 15 · « Un agent ne doit pas seulement savoir répondre : il doit pouvoir agir. » (62.51 → 66.51 s). Fichier écrit par un générateur, modifiable à la main. -->
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+    }
+
+  </style>
+  <div id="root" data-composition-id="s15-agir" data-width="1920" data-height="1080">
+    <div class="pj-scene">
+      <div id="s15-agir-cam" class="pj-cam">
+        <div id="s15-agir-cadre" class="pj-cadre">
+        <div class="pj-horizon" style="top: 760px"></div>
+        <div class="pj-cone" style="left: 160px; height: 900px; opacity: 1.0"></div><div class="pj-sol" style="left: 130px; top: 740px; opacity: 1.0"></div>
+        <svg id="s15-ia" class="pj-perso pj-ia-perso" viewBox="-30 -20 160 290" style="left: 335px; top: 449px; width: 210px; height: 380px"><g id="s15-ia-vie"><g id="s15-ia-corps"><g id="s15-ia-jg"><g class="c"><rect x="24" y="136" width="24" height="112" rx="8" /></g><g class="p"><rect x="24" y="136" width="24" height="112" rx="8" /></g></g><g id="s15-ia-jd"><g class="c"><rect x="52" y="136" width="24" height="112" rx="8" /></g><g class="p"><rect x="52" y="136" width="24" height="112" rx="8" /></g></g><g id="s15-ia-tronc"><g class="c"><rect x="22" y="52" width="56" height="94" rx="12" /></g><g class="p"><rect x="22" y="52" width="56" height="94" rx="12" /></g></g><g id="s15-ia-bg"><g class="c"><rect x="2" y="54" width="18" height="86" rx="9" /></g><g class="p"><rect x="2" y="54" width="18" height="86" rx="9" /></g></g><g id="s15-ia-bd"><g class="c"><rect x="80" y="54" width="18" height="86" rx="9" /></g><g class="p"><rect x="80" y="54" width="18" height="86" rx="9" /></g></g><g id="s15-ia-tete"><g class="c"><rect x="25" y="0" width="50" height="46" rx="13" /></g><g class="p"><rect x="25" y="0" width="50" height="46" rx="13" /></g><g class="yeux"><circle cx="40" cy="22" r="5" /><circle cx="60" cy="22" r="5" /></g></g></g></g></svg>
+        <div id="s15-rep" class="pj-impact" style="position: absolute; left: 140px; top: 236px; font-size: 110px; color: #ECECE8; text-shadow: none; opacity: 0">Répondre</div>
+        <div id="s15-vid" class="pj-panneau" style="left: 1000px; top: 230px; width: 820px; height: 461px; opacity: 0"><video id="s15-vid-v" class="clip" src="assets/video/robot-usine.mp4" data-start="0" data-duration="4.0" data-track-index="5" muted playsinline></video><div class="pj-equerres" style="left: -18px; top: -18px; right: -18px; bottom: -18px"><i></i><i></i><i></i><i></i></div><div id="s15-vid-tag" class="pj-panneau-tag">Agir</div></div>
+        <div id="s15-agir-t" class="pj-impact" style="position: absolute; left: 1000px; width: 820px; top: 360px; text-align: center; font-size: 210px; opacity: 0">Agir</div>
+        <div id="s15-b" class="pj-serif" style="left: 580px; top: 380px; font-size: 50px; color: #0a0a06; background: #ECECE8; padding: 10px 26px; opacity: 0; transform-origin: 0% 100%">Je réponds…</div>
+        </div>
+      </div>
+      <div id="s15-hud" class="pj-label" style="left: 113px; top: 107px; "><span class="pj-k">Un vrai agent</span><span class="pj-d">Il agit</span></div>
+      <div id="s15-agir-eclair" class="pj-flash"></div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#s15-agir-cam", { scale: 1 }, { scale: 1.05, duration: 3.8, ease: "none" }, 0);
+    tl.fromTo("#s15-agir-cam", { filter: "blur(14px)" }, { filter: "blur(0px)", duration: 0.16, ease: "power2.out" }, 0);
+    tl.fromTo("#s15-ia-vie", { y: 0 }, { y: -5, duration: 0.42, repeat: 8, yoyo: true, ease: "sine.inOut", immediateRender: false }, 0.0);
+    tl.fromTo("#s15-b", { opacity: 0, scale: 0.4 }, { opacity: 1, scale: 1, duration: 0.2, ease: "back.out(2.4)" }, 1.16);
+    tl.to("#s15-b", { opacity: 0, scale: 0.8, duration: 0.15 }, 2.92);
+    tl.to("#s15-ia-bd", { svgOrigin: "89 62", keyframes: [{ rotation: -62, duration: 0.24, ease: "sine.inOut" }, { rotation: -118, duration: 0.24, ease: "sine.inOut" }, { rotation: -62, duration: 0.24, ease: "sine.inOut" }, { rotation: -118, duration: 0.24, ease: "sine.inOut" }, { rotation: -62, duration: 0.24, ease: "sine.inOut" }, { rotation: -118, duration: 0.24, ease: "sine.inOut" }, { rotation: -62, duration: 0.24, ease: "sine.inOut" }, { rotation: 0, duration: 0.2 }] }, 0.12);
+    tl.to("#s15-ia-tete", { svgOrigin: "50 50", keyframes: [{ rotation: -6, duration: 0.36 }, { rotation: 6, duration: 0.36 }, { rotation: -6, duration: 0.36 }, { rotation: 6, duration: 0.36 }, { rotation: 0, duration: 0.2 }] }, 0.12);
+    tl.fromTo("#s15-rep", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.18, ease: "power3.out" }, 1.88);
+    tl.fromTo("#s15-vid", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.18, ease: "power3.out" }, 2.68);
+    tl.to("#s15-agir-cadre", { x: -531, y: 94, scale: 1.18, duration: 0.26, ease: "power3.inOut" }, 2.56);
+    tl.to("#s15-agir-cadre", { keyframes: [{ filter: "blur(10px)", duration: 0.13 }, { filter: "blur(0px)", duration: 0.13 }] }, 2.56);
+    tl.fromTo("#s15-agir-t", { opacity: 0, scale: 1.45 }, { opacity: 1, scale: 1, duration: 0.13, ease: "power4.out" }, 3.4);
+    tl.set("#s15-agir-eclair", { opacity: 1 }, 3.4);
+    tl.set("#s15-agir-eclair", { opacity: 0 }, 3.467);
+    tl.to("#s15-ia", { x: "+=160", duration: 0.4, ease: "power1.inOut" }, 3.3);
+    tl.to("#s15-ia-jg", { svgOrigin: "36 142", keyframes: [{ rotation: 38, duration: 0.1 }, { rotation: -38, duration: 0.1 }, { rotation: 38, duration: 0.1 }, { rotation: 0, duration: 0.1 }] }, 3.3);
+    tl.to("#s15-ia-jd", { svgOrigin: "64 142", keyframes: [{ rotation: -38, duration: 0.1 }, { rotation: 38, duration: 0.1 }, { rotation: -38, duration: 0.1 }, { rotation: 0, duration: 0.1 }] }, 3.3);
+    tl.to("#s15-ia-bg", { svgOrigin: "11 62", keyframes: [{ rotation: -40, duration: 0.1 }, { rotation: 40, duration: 0.1 }, { rotation: -40, duration: 0.1 }, { rotation: 0, duration: 0.1 }] }, 3.3);
+    tl.to("#s15-ia-bd", { svgOrigin: "89 62", keyframes: [{ rotation: 40, duration: 0.1 }, { rotation: -40, duration: 0.1 }, { rotation: 40, duration: 0.1 }, { rotation: 0, duration: 0.1 }] }, 3.3);
+    tl.to("#s15-ia-corps", { keyframes: [{ y: -12, duration: 0.1 }, { y: 0, duration: 0.1 }, { y: -12, duration: 0.1 }, { y: 0, duration: 0.1 }] }, 3.3);
+    tl.to("#s15-agir-cam", { scale: 1.3, filter: "blur(14px)", duration: 0.2, ease: "power3.in" }, 3.8);
+    window.__timelines["s15-agir"] = tl;
+  </script>
+</template>

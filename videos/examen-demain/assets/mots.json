@@ -1,0 +1,2252 @@
+[
+{
+"i": 0,
+"text": "IL",
+"start": 0.0,
+"end": 0.272
+},
+{
+"i": 1,
+"text": "EST",
+"start": 0.272,
+"end": 0.544
+},
+{
+"i": 2,
+"text": "23",
+"start": 0.544,
+"end": 0.816
+},
+{
+"i": 3,
+"text": "H",
+"start": 0.816,
+"end": 1.088
+},
+{
+"i": 4,
+"text": "17.",
+"start": 1.088,
+"end": 1.36
+},
+{
+"i": 5,
+"text": "TON",
+"start": 1.6,
+"end": 1.84
+},
+{
+"i": 6,
+"text": "EXAMEN",
+"start": 1.84,
+"end": 2.16
+},
+{
+"i": 7,
+"text": "EST",
+"start": 2.32,
+"end": 2.48
+},
+{
+"i": 8,
+"text": "DEMAIN",
+"start": 2.48,
+"end": 2.8
+},
+{
+"i": 9,
+"text": "MATIN.",
+"start": 2.88,
+"end": 3.28
+},
+{
+"i": 10,
+"text": "TU",
+"start": 3.44,
+"end": 3.6
+},
+{
+"i": 11,
+"text": "AS",
+"start": 3.6,
+"end": 3.76
+},
+{
+"i": 12,
+"text": "40",
+"start": 3.76,
+"end": 4.16
+},
+{
+"i": 13,
+"text": "PAGES",
+"start": 4.16,
+"end": 4.4
+},
+{
+"i": 14,
+"text": "À",
+"start": 4.4,
+"end": 4.56
+},
+{
+"i": 15,
+"text": "RÉVISER…",
+"start": 4.56,
+"end": 5.28
+},
+{
+"i": 16,
+"text": "ET",
+"start": 5.28,
+"end": 5.48
+},
+{
+"i": 17,
+"text": "TU",
+"start": 5.48,
+"end": 5.68
+},
+{
+"i": 18,
+"text": "N'AS",
+"start": 5.68,
+"end": 5.92
+},
+{
+"i": 19,
+"text": "PRESQUE",
+"start": 5.92,
+"end": 6.24
+},
+{
+"i": 20,
+"text": "RIEN",
+"start": 6.32,
+"end": 6.48
+},
+{
+"i": 21,
+"text": "RETENU.",
+"start": 6.64,
+"end": 7.12
+},
+{
+"i": 22,
+"text": "TU",
+"start": 7.36,
+"end": 7.6
+},
+{
+"i": 23,
+"text": "COMMENCES",
+"start": 7.6,
+"end": 7.92
+},
+{
+"i": 24,
+"text": "À",
+"start": 7.92,
+"end": 8.08
+},
+{
+"i": 25,
+"text": "PANIQUER.",
+"start": 8.08,
+"end": 8.64
+},
+{
+"i": 26,
+"text": "TU",
+"start": 8.8,
+"end": 8.96
+},
+{
+"i": 27,
+"text": "RELIS",
+"start": 8.96,
+"end": 9.36
+},
+{
+"i": 28,
+"text": "LA",
+"start": 9.36,
+"end": 9.44
+},
+{
+"i": 29,
+"text": "PREMIÈRE",
+"start": 9.44,
+"end": 9.76
+},
+{
+"i": 30,
+"text": "PAGE,",
+"start": 9.76,
+"end": 10.24
+},
+{
+"i": 31,
+"text": "PUIS",
+"start": 10.24,
+"end": 10.56
+},
+{
+"i": 32,
+"text": "LA",
+"start": 10.56,
+"end": 10.72
+},
+{
+"i": 33,
+"text": "DEUXIÈME.",
+"start": 10.72,
+"end": 11.28
+},
+{
+"i": 34,
+"text": "DIX",
+"start": 11.44,
+"end": 11.76
+},
+{
+"i": 35,
+"text": "MINUTES",
+"start": 11.76,
+"end": 12.08
+},
+{
+"i": 36,
+"text": "PLUS",
+"start": 12.08,
+"end": 12.16
+},
+{
+"i": 37,
+"text": "TARD,",
+"start": 12.24,
+"end": 12.64
+},
+{
+"i": 38,
+"text": "TU",
+"start": 12.64,
+"end": 12.8
+},
+{
+"i": 39,
+"text": "AS",
+"start": 12.8,
+"end": 12.96
+},
+{
+"i": 40,
+"text": "DÉJÀ",
+"start": 12.96,
+"end": 13.28
+},
+{
+"i": 41,
+"text": "OUBLIÉ",
+"start": 13.28,
+"end": 13.68
+},
+{
+"i": 42,
+"text": "LA",
+"start": 13.68,
+"end": 13.84
+},
+{
+"i": 43,
+"text": "MOITIÉ",
+"start": 13.84,
+"end": 14.24
+},
+{
+"i": 44,
+"text": "DE",
+"start": 14.24,
+"end": 14.32
+},
+{
+"i": 45,
+"text": "CE",
+"start": 14.32,
+"end": 14.4
+},
+{
+"i": 46,
+"text": "QUE",
+"start": 14.4,
+"end": 14.48
+},
+{
+"i": 47,
+"text": "TU",
+"start": 14.48,
+"end": 14.64
+},
+{
+"i": 48,
+"text": "VIENS",
+"start": 14.64,
+"end": 14.88
+},
+{
+"i": 49,
+"text": "DE",
+"start": 14.88,
+"end": 15.04
+},
+{
+"i": 50,
+"text": "LIRE.",
+"start": 15.04,
+"end": 15.52
+},
+{
+"i": 51,
+"text": "ALORS,",
+"start": 15.52,
+"end": 15.92
+},
+{
+"i": 52,
+"text": "TU",
+"start": 15.92,
+"end": 16.16
+},
+{
+"i": 53,
+"text": "OUVRES",
+"start": 16.16,
+"end": 16.48
+},
+{
+"i": 54,
+"text": "CHATGPT.",
+"start": 16.48,
+"end": 17.08
+},
+{
+"i": 55,
+"text": "MAIS",
+"start": 17.08,
+"end": 17.68
+},
+{
+"i": 56,
+"text": "AU",
+"start": 17.84,
+"end": 18
+},
+{
+"i": 57,
+"text": "LIEU",
+"start": 18,
+"end": 18.24
+},
+{
+"i": 58,
+"text": "DE",
+"start": 18.24,
+"end": 18.32
+},
+{
+"i": 59,
+"text": "LUI",
+"start": 18.32,
+"end": 18.48
+},
+{
+"i": 60,
+"text": "DEMANDER",
+"start": 18.48,
+"end": 18.8
+},
+{
+"i": 61,
+"text": "DE",
+"start": 18.88,
+"end": 19.04
+},
+{
+"i": 62,
+"text": "RÉSUMER",
+"start": 19.04,
+"end": 19.44
+},
+{
+"i": 63,
+"text": "TES",
+"start": 19.44,
+"end": 19.68
+},
+{
+"i": 64,
+"text": "40",
+"start": 19.68,
+"end": 20
+},
+{
+"i": 65,
+"text": "PAGES,",
+"start": 20,
+"end": 20.48
+},
+{
+"i": 66,
+"text": "TU",
+"start": 20.48,
+"end": 20.64
+},
+{
+"i": 67,
+"text": "VAS",
+"start": 20.64,
+"end": 20.8
+},
+{
+"i": 68,
+"text": "LUI",
+"start": 20.8,
+"end": 20.96
+},
+{
+"i": 69,
+"text": "CONFIER",
+"start": 20.96,
+"end": 21.36
+},
+{
+"i": 70,
+"text": "UNE",
+"start": 21.36,
+"end": 21.6
+},
+{
+"i": 71,
+"text": "MISSION",
+"start": 21.6,
+"end": 22
+},
+{
+"i": 72,
+"text": "BEAUCOUP",
+"start": 22,
+"end": 22.32
+},
+{
+"i": 73,
+"text": "PLUS",
+"start": 22.32,
+"end": 22.4
+},
+{
+"i": 74,
+"text": "UTILE.",
+"start": 22.48,
+"end": 23.2
+},
+{
+"i": 75,
+"text": "TU",
+"start": 23.2,
+"end": 23.44
+},
+{
+"i": 76,
+"text": "LUI",
+"start": 23.44,
+"end": 23.6
+},
+{
+"i": 77,
+"text": "ENVOIES",
+"start": 23.6,
+"end": 24
+},
+{
+"i": 78,
+"text": "TON",
+"start": 24,
+"end": 24.16
+},
+{
+"i": 79,
+"text": "COURS",
+"start": 24.16,
+"end": 24.4
+},
+{
+"i": 80,
+"text": "ET",
+"start": 24.48,
+"end": 24.64
+},
+{
+"i": 81,
+"text": "TU",
+"start": 24.64,
+"end": 24.88
+},
+{
+"i": 82,
+"text": "ÉCRIS :",
+"start": 24.88,
+"end": 25.52
+},
+{
+"i": 83,
+"text": "« JE",
+"start": 25.52,
+"end": 25.72
+},
+{
+"i": 84,
+"text": "SUIS",
+"start": 25.72,
+"end": 25.96
+},
+{
+"i": 85,
+"text": "ÉTUDIANT",
+"start": 25.96,
+"end": 26.52
+},
+{
+"i": 86,
+"text": "ET",
+"start": 26.52,
+"end": 26.68
+},
+{
+"i": 87,
+"text": "J'AI",
+"start": 26.68,
+"end": 26.92
+},
+{
+"i": 88,
+"text": "UN",
+"start": 26.92,
+"end": 27.08
+},
+{
+"i": 89,
+"text": "EXAMEN",
+"start": 27.08,
+"end": 27.4
+},
+{
+"i": 90,
+"text": "DEMAIN.",
+"start": 27.48,
+"end": 27.96
+},
+{
+"i": 91,
+"text": "À",
+"start": 28.08,
+"end": 28.16
+},
+{
+"i": 92,
+"text": "PARTIR",
+"start": 28.24,
+"end": 28.48
+},
+{
+"i": 93,
+"text": "DE",
+"start": 28.48,
+"end": 28.64
+},
+{
+"i": 94,
+"text": "CE",
+"start": 28.64,
+"end": 28.8
+},
+{
+"i": 95,
+"text": "DOCUMENT",
+"start": 28.8,
+"end": 29.36
+},
+{
+"i": 96,
+"text": "UNIQUEMENT,",
+"start": 29.36,
+"end": 30.08
+},
+{
+"i": 97,
+"text": "IDENTIFIE",
+"start": 30.08,
+"end": 30.72
+},
+{
+"i": 98,
+"text": "LES",
+"start": 30.72,
+"end": 30.88
+},
+{
+"i": 99,
+"text": "NOTIONS",
+"start": 30.88,
+"end": 31.28
+},
+{
+"i": 100,
+"text": "ESSENTIELLES,",
+"start": 31.28,
+"end": 32
+},
+{
+"i": 101,
+"text": "LES",
+"start": 32,
+"end": 32.16
+},
+{
+"i": 102,
+"text": "DÉFINITIONS",
+"start": 32.16,
+"end": 32.72
+},
+{
+"i": 103,
+"text": "À",
+"start": 32.72,
+"end": 32.88
+},
+{
+"i": 104,
+"text": "CONNAÎTRE",
+"start": 32.88,
+"end": 33.36
+},
+{
+"i": 105,
+"text": "ET",
+"start": 33.36,
+"end": 33.52
+},
+{
+"i": 106,
+"text": "LES",
+"start": 33.52,
+"end": 33.68
+},
+{
+"i": 107,
+"text": "CONCEPTS",
+"start": 33.68,
+"end": 34.08
+},
+{
+"i": 108,
+"text": "QUE",
+"start": 34.08,
+"end": 34.24
+},
+{
+"i": 109,
+"text": "JE",
+"start": 34.24,
+"end": 34.4
+},
+{
+"i": 110,
+"text": "RISQUE",
+"start": 34.4,
+"end": 34.72
+},
+{
+"i": 111,
+"text": "DE",
+"start": 34.72,
+"end": 34.88
+},
+{
+"i": 112,
+"text": "CONFONDRE.",
+"start": 34.88,
+"end": 35.6
+},
+{
+"i": 113,
+"text": "N'INVENTE",
+"start": 35.6,
+"end": 36.32
+},
+{
+"i": 114,
+"text": "AUCUNE",
+"start": 36.32,
+"end": 36.72
+},
+{
+"i": 115,
+"text": "INFORMATION.",
+"start": 36.72,
+"end": 37.44
+},
+{
+"i": 116,
+"text": "SI",
+"start": 37.44,
+"end": 37.68
+},
+{
+"i": 117,
+"text": "UN",
+"start": 37.68,
+"end": 37.84
+},
+{
+"i": 118,
+"text": "PASSAGE",
+"start": 37.84,
+"end": 38.16
+},
+{
+"i": 119,
+"text": "EST",
+"start": 38.16,
+"end": 38.32
+},
+{
+"i": 120,
+"text": "AMBIGU,",
+"start": 38.32,
+"end": 39.04
+},
+{
+"i": 121,
+"text": "SIGNALE-LE. »",
+"start": 39.04,
+"end": 39.54
+},
+{
+"i": 122,
+"text": "EN",
+"start": 39.54,
+"end": 40.04
+},
+{
+"i": 123,
+"text": "QUELQUES",
+"start": 40.04,
+"end": 40.54
+},
+{
+"i": 124,
+"text": "INSTANTS,",
+"start": 40.54,
+"end": 41.04
+},
+{
+"i": 125,
+"text": "TU",
+"start": 41.04,
+"end": 41.2
+},
+{
+"i": 126,
+"text": "OBTIENS",
+"start": 41.2,
+"end": 41.68
+},
+{
+"i": 127,
+"text": "UNE",
+"start": 41.68,
+"end": 41.76
+},
+{
+"i": 128,
+"text": "PREMIÈRE",
+"start": 41.76,
+"end": 42.08
+},
+{
+"i": 129,
+"text": "CARTE",
+"start": 42.08,
+"end": 42.4
+},
+{
+"i": 130,
+"text": "DE",
+"start": 42.4,
+"end": 42.56
+},
+{
+"i": 131,
+"text": "RÉVISION.",
+"start": 42.56,
+"end": 43.2
+},
+{
+"i": 132,
+"text": "MAIS",
+"start": 43.2,
+"end": 43.44
+},
+{
+"i": 133,
+"text": "ATTENTION :",
+"start": 43.44,
+"end": 44.16
+},
+{
+"i": 134,
+"text": "LIRE",
+"start": 44.16,
+"end": 44.48
+},
+{
+"i": 135,
+"text": "UN",
+"start": 44.48,
+"end": 44.64
+},
+{
+"i": 136,
+"text": "RÉSUMÉ",
+"start": 44.64,
+"end": 45.12
+},
+{
+"i": 137,
+"text": "ET",
+"start": 45.12,
+"end": 45.28
+},
+{
+"i": 138,
+"text": "CONNAÎTRE",
+"start": 45.28,
+"end": 45.68
+},
+{
+"i": 139,
+"text": "SON",
+"start": 45.76,
+"end": 46
+},
+{
+"i": 140,
+"text": "COURS,",
+"start": 46,
+"end": 46.4
+},
+{
+"i": 141,
+"text": "CE",
+"start": 46.4,
+"end": 46.56
+},
+{
+"i": 142,
+"text": "N'EST",
+"start": 46.56,
+"end": 46.72
+},
+{
+"i": 143,
+"text": "PAS",
+"start": 46.72,
+"end": 46.88
+},
+{
+"i": 144,
+"text": "LA",
+"start": 46.88,
+"end": 47.04
+},
+{
+"i": 145,
+"text": "MÊME",
+"start": 47.04,
+"end": 47.28
+},
+{
+"i": 146,
+"text": "CHOSE.",
+"start": 47.28,
+"end": 47.76
+},
+{
+"i": 147,
+"text": "C'EST",
+"start": 47.76,
+"end": 48.0
+},
+{
+"i": 148,
+"text": "LÀ",
+"start": 48,
+"end": 48.24
+},
+{
+"i": 149,
+"text": "QUE",
+"start": 48.24,
+"end": 48.4
+},
+{
+"i": 150,
+"text": "TU",
+"start": 48.4,
+"end": 48.56
+},
+{
+"i": 151,
+"text": "PASSES",
+"start": 48.56,
+"end": 48.8
+},
+{
+"i": 152,
+"text": "À",
+"start": 48.8,
+"end": 48.88
+},
+{
+"i": 153,
+"text": "L'ÉTAPE",
+"start": 48.88,
+"end": 49.28
+},
+{
+"i": 154,
+"text": "SUIVANTE.",
+"start": 49.28,
+"end": 49.92
+},
+{
+"i": 155,
+"text": "TU",
+"start": 49.92,
+"end": 50.08
+},
+{
+"i": 156,
+"text": "DEMANDES",
+"start": 50.08,
+"end": 50.32
+},
+{
+"i": 157,
+"text": "À",
+"start": 50.32,
+"end": 50.48
+},
+{
+"i": 158,
+"text": "CHATGPT :",
+"start": 50.48,
+"end": 51.44
+},
+{
+"i": 159,
+"text": "« MAINTENANT,",
+"start": 51.6,
+"end": 52.16
+},
+{
+"i": 160,
+"text": "INTERROGE-MOI",
+"start": 52.16,
+"end": 53.04
+},
+{
+"i": 161,
+"text": "UNE",
+"start": 53.04,
+"end": 53.28
+},
+{
+"i": 162,
+"text": "QUESTION",
+"start": 53.28,
+"end": 53.6
+},
+{
+"i": 163,
+"text": "À",
+"start": 53.6,
+"end": 53.76
+},
+{
+"i": 164,
+"text": "LA",
+"start": 53.76,
+"end": 53.84
+},
+{
+"i": 165,
+"text": "FOIS,",
+"start": 53.84,
+"end": 54.24
+},
+{
+"i": 166,
+"text": "COMME",
+"start": 54.24,
+"end": 54.4
+},
+{
+"i": 167,
+"text": "UN",
+"start": 54.4,
+"end": 54.76
+},
+{
+"i": 168,
+"text": "PROFESSEUR.",
+"start": 54.76,
+"end": 55.12
+},
+{
+"i": 169,
+"text": "NE",
+"start": 55.36,
+"end": 55.52
+},
+{
+"i": 170,
+"text": "ME",
+"start": 55.52,
+"end": 55.68
+},
+{
+"i": 171,
+"text": "DONNE",
+"start": 55.68,
+"end": 55.92
+},
+{
+"i": 172,
+"text": "PAS",
+"start": 55.92,
+"end": 56.08
+},
+{
+"i": 173,
+"text": "LA",
+"start": 56.08,
+"end": 56.24
+},
+{
+"i": 174,
+"text": "RÉPONSE",
+"start": 56.24,
+"end": 56.56
+},
+{
+"i": 175,
+"text": "AVANT",
+"start": 56.64,
+"end": 56.88
+},
+{
+"i": 176,
+"text": "QUE",
+"start": 56.88,
+"end": 57.04
+},
+{
+"i": 177,
+"text": "J'AIE",
+"start": 57.04,
+"end": 57.28
+},
+{
+"i": 178,
+"text": "ESSAYÉ.",
+"start": 57.28,
+"end": 58
+},
+{
+"i": 179,
+"text": "APRÈS",
+"start": 58,
+"end": 58.24
+},
+{
+"i": 180,
+"text": "CHACUNE",
+"start": 58.24,
+"end": 58.64
+},
+{
+"i": 181,
+"text": "DE",
+"start": 58.64,
+"end": 58.72
+},
+{
+"i": 182,
+"text": "MES",
+"start": 58.72,
+"end": 58.88
+},
+{
+"i": 183,
+"text": "RÉPONSES,",
+"start": 58.88,
+"end": 59.28
+},
+{
+"i": 184,
+"text": "CORRIGE",
+"start": 59.63,
+"end": 60.03
+},
+{
+"i": 185,
+"text": "MES",
+"start": 60.03,
+"end": 60.27
+},
+{
+"i": 186,
+"text": "ERREURS",
+"start": 60.27,
+"end": 60.51
+},
+{
+"i": 187,
+"text": "EN",
+"start": 60.51,
+"end": 60.67
+},
+{
+"i": 188,
+"text": "T'APPUYANT",
+"start": 60.67,
+"end": 61.23
+},
+{
+"i": 189,
+"text": "SUR",
+"start": 61.23,
+"end": 61.23
+},
+{
+"i": 190,
+"text": "LE",
+"start": 61.31,
+"end": 61.39
+},
+{
+"i": 191,
+"text": "COURS",
+"start": 61.47,
+"end": 61.71
+},
+{
+"i": 192,
+"text": "ET",
+"start": 61.79,
+"end": 62.03
+},
+{
+"i": 193,
+"text": "EXPLIQUE-MOI",
+"start": 62.03,
+"end": 62.67
+},
+{
+"i": 194,
+"text": "CE",
+"start": 62.67,
+"end": 62.83
+},
+{
+"i": 195,
+"text": "QUE",
+"start": 62.83,
+"end": 62.91
+},
+{
+"i": 196,
+"text": "JE",
+"start": 62.91,
+"end": 62.99
+},
+{
+"i": 197,
+"text": "N'AI",
+"start": 62.99,
+"end": 63.23
+},
+{
+"i": 198,
+"text": "PAS",
+"start": 63.23,
+"end": 63.39
+},
+{
+"i": 199,
+"text": "COMPRIS. »",
+"start": 63.39,
+"end": 63.87
+},
+{
+"i": 200,
+"text": "ET",
+"start": 63.87,
+"end": 64.03
+},
+{
+"i": 201,
+"text": "LÀ,",
+"start": 64.03,
+"end": 64.35
+},
+{
+"i": 202,
+"text": "TU",
+"start": 64.35,
+"end": 64.51
+},
+{
+"i": 203,
+"text": "NE",
+"start": 64.51,
+"end": 64.59
+},
+{
+"i": 204,
+"text": "FAIS",
+"start": 64.59,
+"end": 64.83
+},
+{
+"i": 205,
+"text": "PLUS",
+"start": 64.83,
+"end": 64.99
+},
+{
+"i": 206,
+"text": "QUE",
+"start": 64.99,
+"end": 65.15
+},
+{
+"i": 207,
+"text": "RELIRE",
+"start": 65.15,
+"end": 65.47
+},
+{
+"i": 208,
+"text": "PASSIVEMENT :",
+"start": 65.63,
+"end": 66.19
+},
+{
+"i": 209,
+"text": "TU",
+"start": 66.35,
+"end": 66.51
+},
+{
+"i": 210,
+"text": "ESSAIES",
+"start": 66.51,
+"end": 66.91
+},
+{
+"i": 211,
+"text": "DE",
+"start": 66.91,
+"end": 67.07
+},
+{
+"i": 212,
+"text": "RETROUVER",
+"start": 67.07,
+"end": 67.55
+},
+{
+"i": 213,
+"text": "LES",
+"start": 67.55,
+"end": 67.71
+},
+{
+"i": 214,
+"text": "INFORMATIONS",
+"start": 67.71,
+"end": 68.11
+},
+{
+"i": 215,
+"text": "DANS",
+"start": 68.11,
+"end": 68.35
+},
+{
+"i": 216,
+"text": "TA",
+"start": 68.35,
+"end": 68.51
+},
+{
+"i": 217,
+"text": "MÉMOIRE.",
+"start": 68.51,
+"end": 68.99
+},
+{
+"i": 218,
+"text": "C'EST",
+"start": 69.15,
+"end": 69.39
+},
+{
+"i": 219,
+"text": "UNE",
+"start": 69.39,
+"end": 69.55
+},
+{
+"i": 220,
+"text": "MÉTHODE",
+"start": 69.55,
+"end": 69.87
+},
+{
+"i": 221,
+"text": "APPELÉE",
+"start": 69.87,
+"end": 70.27
+},
+{
+"i": 222,
+"text": "RAPPEL",
+"start": 70.35,
+"end": 70.83
+},
+{
+"i": 223,
+"text": "ACTIF,",
+"start": 70.83,
+"end": 71.31
+},
+{
+"i": 224,
+"text": "ÉTUDIÉE",
+"start": 71.47,
+"end": 71.95
+},
+{
+"i": 225,
+"text": "EN",
+"start": 71.95,
+"end": 72.11
+},
+{
+"i": 226,
+"text": "SCIENCES",
+"start": 72.11,
+"end": 72.35
+},
+{
+"i": 227,
+"text": "DE",
+"start": 72.43,
+"end": 72.51
+},
+{
+"i": 228,
+"text": "L'APPRENTISSAGE.",
+"start": 72.51,
+"end": 73.47
+},
+{
+"i": 229,
+"text": "TU",
+"start": 73.47,
+"end": 73.63
+},
+{
+"i": 230,
+"text": "PEUX",
+"start": 73.63,
+"end": 73.79
+},
+{
+"i": 231,
+"text": "MÊME",
+"start": 73.79,
+"end": 74.03
+},
+{
+"i": 232,
+"text": "LUI",
+"start": 74.03,
+"end": 74.19
+},
+{
+"i": 233,
+"text": "DEMANDER",
+"start": 74.19,
+"end": 74.59
+},
+{
+"i": 234,
+"text": "DE",
+"start": 74.59,
+"end": 74.75
+},
+{
+"i": 235,
+"text": "CRÉER",
+"start": 74.75,
+"end": 75.31
+},
+{
+"i": 236,
+"text": "CINQ",
+"start": 75.31,
+"end": 75.39
+},
+{
+"i": 237,
+"text": "QUESTIONS",
+"start": 75.39,
+"end": 75.71
+},
+{
+"i": 238,
+"text": "DIFFICILES",
+"start": 75.71,
+"end": 76.27
+},
+{
+"i": 239,
+"text": "SUR",
+"start": 76.27,
+"end": 76.35
+},
+{
+"i": 240,
+"text": "LES",
+"start": 76.35,
+"end": 76.51
+},
+{
+"i": 241,
+"text": "NOTIONS",
+"start": 76.51,
+"end": 76.83
+},
+{
+"i": 242,
+"text": "QUE",
+"start": 76.83,
+"end": 76.99
+},
+{
+"i": 243,
+"text": "TU",
+"start": 76.99,
+"end": 77.15
+},
+{
+"i": 244,
+"text": "MAÎTRISES",
+"start": 77.15,
+"end": 77.63
+},
+{
+"i": 245,
+"text": "LE",
+"start": 77.63,
+"end": 77.71
+},
+{
+"i": 246,
+"text": "MOINS,",
+"start": 77.71,
+"end": 78.03
+},
+{
+"i": 247,
+"text": "PUIS",
+"start": 78.03,
+"end": 78.35
+},
+{
+"i": 248,
+"text": "DE",
+"start": 78.35,
+"end": 78.43
+},
+{
+"i": 249,
+"text": "TE",
+"start": 78.43,
+"end": 78.59
+},
+{
+"i": 250,
+"text": "PROPOSER",
+"start": 78.59,
+"end": 79.07
+},
+{
+"i": 251,
+"text": "UN",
+"start": 79.07,
+"end": 79.23
+},
+{
+"i": 252,
+"text": "MINI-EXAMEN",
+"start": 79.23,
+"end": 79.95
+},
+{
+"i": 253,
+"text": "SANS",
+"start": 80.11,
+"end": 80.35
+},
+{
+"i": 254,
+"text": "REGARDER",
+"start": 80.35,
+"end": 80.83
+},
+{
+"i": 255,
+"text": "TES",
+"start": 80.83,
+"end": 81.07
+},
+{
+"i": 256,
+"text": "NOTES.",
+"start": 81.07,
+"end": 81.39
+},
+{
+"i": 257,
+"text": "MAIS",
+"start": 81.55,
+"end": 81.71
+},
+{
+"i": 258,
+"text": "VOICI",
+"start": 81.71,
+"end": 82.03
+},
+{
+"i": 259,
+"text": "LE",
+"start": 82.03,
+"end": 82.19
+},
+{
+"i": 260,
+"text": "PIÈGE",
+"start": 82.19,
+"end": 82.59
+},
+{
+"i": 261,
+"text": "À",
+"start": 82.59,
+"end": 82.75
+},
+{
+"i": 262,
+"text": "ÉVITER :",
+"start": 82.75,
+"end": 83.39
+},
+{
+"i": 263,
+"text": "NE",
+"start": 83.39,
+"end": 83.63
+},
+{
+"i": 264,
+"text": "PRENDS",
+"start": 83.63,
+"end": 83.95
+},
+{
+"i": 265,
+"text": "JAMAIS",
+"start": 83.95,
+"end": 84.27
+},
+{
+"i": 266,
+"text": "LES",
+"start": 84.27,
+"end": 84.43
+},
+{
+"i": 267,
+"text": "RÉPONSES",
+"start": 84.43,
+"end": 84.67
+},
+{
+"i": 268,
+"text": "DE",
+"start": 84.67,
+"end": 84.75
+},
+{
+"i": 269,
+"text": "L'IA",
+"start": 84.75,
+"end": 85.39
+},
+{
+"i": 270,
+"text": "POUR",
+"start": 85.39,
+"end": 85.47
+},
+{
+"i": 271,
+"text": "UNE",
+"start": 85.47,
+"end": 85.63
+},
+{
+"i": 272,
+"text": "VÉRITÉ",
+"start": 85.63,
+"end": 86.11
+},
+{
+"i": 273,
+"text": "ABSOLUE.",
+"start": 86.11,
+"end": 86.83
+},
+{
+"i": 274,
+"text": "VÉRIFIE",
+"start": 86.83,
+"end": 87.39
+},
+{
+"i": 275,
+"text": "LES",
+"start": 87.39,
+"end": 87.55
+},
+{
+"i": 276,
+"text": "DÉFINITIONS,",
+"start": 87.55,
+"end": 88.27
+},
+{
+"i": 277,
+"text": "LES",
+"start": 88.27,
+"end": 88.43
+},
+{
+"i": 278,
+"text": "FORMULES",
+"start": 88.43,
+"end": 88.91
+},
+{
+"i": 279,
+"text": "ET",
+"start": 88.91,
+"end": 89.07
+},
+{
+"i": 280,
+"text": "LES",
+"start": 89.07,
+"end": 89.15
+},
+{
+"i": 281,
+"text": "CORRECTIONS",
+"start": 89.15,
+"end": 89.79
+},
+{
+"i": 282,
+"text": "IMPORTANTES",
+"start": 89.79,
+"end": 90.35
+},
+{
+"i": 283,
+"text": "DANS",
+"start": 90.35,
+"end": 90.51
+},
+{
+"i": 284,
+"text": "TON",
+"start": 90.51,
+"end": 90.67
+},
+{
+"i": 285,
+"text": "DOCUMENT",
+"start": 90.67,
+"end": 91.15
+},
+{
+"i": 286,
+"text": "ORIGINAL.",
+"start": 91.15,
+"end": 91.95
+},
+{
+"i": 287,
+"text": "ET",
+"start": 91.95,
+"end": 92.094
+},
+{
+"i": 288,
+"text": "SI",
+"start": 92.094,
+"end": 92.238
+},
+{
+"i": 289,
+"text": "TU",
+"start": 92.238,
+"end": 92.382
+},
+{
+"i": 290,
+"text": "N'AS",
+"start": 92.382,
+"end": 92.526
+},
+{
+"i": 291,
+"text": "QUE",
+"start": 92.526,
+"end": 92.67
+},
+{
+"i": 292,
+"text": "QUELQUES",
+"start": 92.83,
+"end": 93.15
+},
+{
+"i": 293,
+"text": "HEURES,",
+"start": 93.15,
+"end": 93.63
+},
+{
+"i": 294,
+"text": "CONCENTRE-TOI",
+"start": 93.63,
+"end": 94.35
+},
+{
+"i": 295,
+"text": "SUR",
+"start": 94.35,
+"end": 94.51
+},
+{
+"i": 296,
+"text": "LES",
+"start": 94.51,
+"end": 94.67
+},
+{
+"i": 297,
+"text": "NOTIONS",
+"start": 94.67,
+"end": 95.07
+},
+{
+"i": 298,
+"text": "ESSENTIELLES",
+"start": 95.07,
+"end": 95.63
+},
+{
+"i": 299,
+"text": "ET",
+"start": 95.63,
+"end": 95.79
+},
+{
+"i": 300,
+"text": "LES",
+"start": 95.79,
+"end": 95.87
+},
+{
+"i": 301,
+"text": "QUESTIONS",
+"start": 95.87,
+"end": 96.19
+},
+{
+"i": 302,
+"text": "QUI",
+"start": 96.19,
+"end": 96.35
+},
+{
+"i": 303,
+"text": "RÉVÈLENT",
+"start": 96.35,
+"end": 96.83
+},
+{
+"i": 304,
+"text": "TES",
+"start": 96.83,
+"end": 96.99
+},
+{
+"i": 305,
+"text": "LACUNES.",
+"start": 96.99,
+"end": 97.63
+},
+{
+"i": 306,
+"text": "NE",
+"start": 97.63,
+"end": 97.79
+},
+{
+"i": 307,
+"text": "PASSE",
+"start": 97.79,
+"end": 98.11
+},
+{
+"i": 308,
+"text": "PAS",
+"start": 98.11,
+"end": 98.27
+},
+{
+"i": 309,
+"text": "TOUTE",
+"start": 98.27,
+"end": 98.43
+},
+{
+"i": 310,
+"text": "LA",
+"start": 98.43,
+"end": 98.59
+},
+{
+"i": 311,
+"text": "NUIT",
+"start": 98.59,
+"end": 98.75
+},
+{
+"i": 312,
+"text": "À",
+"start": 98.75,
+"end": 98.83
+},
+{
+"i": 313,
+"text": "FABRIQUER",
+"start": 98.83,
+"end": 99.23
+},
+{
+"i": 314,
+"text": "DE",
+"start": 99.23,
+"end": 99.39
+},
+{
+"i": 315,
+"text": "BELLES",
+"start": 99.39,
+"end": 99.63
+},
+{
+"i": 316,
+"text": "FICHES :",
+"start": 99.63,
+"end": 100.19
+},
+{
+"i": 317,
+"text": "TU",
+"start": 100.19,
+"end": 100.35
+},
+{
+"i": 318,
+"text": "DOIS",
+"start": 100.35,
+"end": 100.43
+},
+{
+"i": 319,
+"text": "ENCORE",
+"start": 100.59,
+"end": 100.91
+},
+{
+"i": 320,
+"text": "APPRENDRE",
+"start": 100.91,
+"end": 101.39
+},
+{
+"i": 321,
+"text": "ET",
+"start": 101.39,
+"end": 101.63
+},
+{
+"i": 322,
+"text": "DORMIR.",
+"start": 101.63,
+"end": 102.11
+},
+{
+"i": 323,
+"text": "CHATGPT",
+"start": 102.27,
+"end": 103.15
+},
+{
+"i": 324,
+"text": "NE",
+"start": 103.31,
+"end": 103.39
+},
+{
+"i": 325,
+"text": "PEUT",
+"start": 103.39,
+"end": 103.47
+},
+{
+"i": 326,
+"text": "PAS",
+"start": 103.55,
+"end": 103.71
+},
+{
+"i": 327,
+"text": "RÉVISER",
+"start": 103.71,
+"end": 104.19
+},
+{
+"i": 328,
+"text": "À",
+"start": 104.19,
+"end": 104.27
+},
+{
+"i": 329,
+"text": "TA",
+"start": 104.27,
+"end": 104.43
+},
+{
+"i": 330,
+"text": "PLACE.",
+"start": 104.43,
+"end": 104.91
+},
+{
+"i": 331,
+"text": "MAIS",
+"start": 104.91,
+"end": 105.07
+},
+{
+"i": 332,
+"text": "BIEN",
+"start": 105.23,
+"end": 105.55
+},
+{
+"i": 333,
+"text": "UTILISÉ,",
+"start": 105.55,
+"end": 106.11
+},
+{
+"i": 334,
+"text": "IL",
+"start": 106.19,
+"end": 106.35
+},
+{
+"i": 335,
+"text": "PEUT",
+"start": 106.35,
+"end": 106.51
+},
+{
+"i": 336,
+"text": "DEVENIR",
+"start": 106.51,
+"end": 106.91
+},
+{
+"i": 337,
+"text": "LE",
+"start": 106.91,
+"end": 107.07
+},
+{
+"i": 338,
+"text": "PROFESSEUR",
+"start": 107.07,
+"end": 107.55
+},
+{
+"i": 339,
+"text": "QUI",
+"start": 107.63,
+"end": 107.79
+},
+{
+"i": 340,
+"text": "TE",
+"start": 107.79,
+"end": 107.95
+},
+{
+"i": 341,
+"text": "POSE",
+"start": 107.95,
+"end": 108.27
+},
+{
+"i": 342,
+"text": "LES",
+"start": 108.27,
+"end": 108.43
+},
+{
+"i": 343,
+"text": "QUESTIONS",
+"start": 108.43,
+"end": 108.67
+},
+{
+"i": 344,
+"text": "QUE",
+"start": 108.67,
+"end": 108.83
+},
+{
+"i": 345,
+"text": "TU",
+"start": 108.83,
+"end": 108.99
+},
+{
+"i": 346,
+"text": "AURAIS",
+"start": 108.99,
+"end": 109.39
+},
+{
+"i": 347,
+"text": "OUBLIÉ",
+"start": 109.39,
+"end": 109.79
+},
+{
+"i": 348,
+"text": "DE",
+"start": 109.79,
+"end": 109.95
+},
+{
+"i": 349,
+"text": "TE",
+"start": 109.95,
+"end": 110.11
+},
+{
+"i": 350,
+"text": "POSER.",
+"start": 110.11,
+"end": 110.75
+},
+{
+"i": 351,
+"text": "MAINTENANT,",
+"start": 110.75,
+"end": 111.15
+},
+{
+"i": 352,
+"text": "DIS-MOI :",
+"start": 111.15,
+"end": 111.71
+},
+{
+"i": 353,
+"text": "SI",
+"start": 111.87,
+"end": 112.03
+},
+{
+"i": 354,
+"text": "TU",
+"start": 112.03,
+"end": 112.19
+},
+{
+"i": 355,
+"text": "AVAIS",
+"start": 112.19,
+"end": 112.43
+},
+{
+"i": 356,
+"text": "UN",
+"start": 112.43,
+"end": 112.59
+},
+{
+"i": 357,
+"text": "EXAMEN",
+"start": 112.59,
+"end": 112.99
+},
+{
+"i": 358,
+"text": "DEMAIN,",
+"start": 112.99,
+"end": 113.47
+},
+{
+"i": 359,
+"text": "TU",
+"start": 113.47,
+"end": 113.63
+},
+{
+"i": 360,
+"text": "UTILISERAIS",
+"start": 113.71,
+"end": 114.19
+},
+{
+"i": 361,
+"text": "L'IA",
+"start": 114.19,
+"end": 114.75
+},
+{
+"i": 362,
+"text": "POUR",
+"start": 114.75,
+"end": 114.91
+},
+{
+"i": 363,
+"text": "RÉSUMER",
+"start": 114.91,
+"end": 115.31
+},
+{
+"i": 364,
+"text": "TON",
+"start": 115.31,
+"end": 115.47
+},
+{
+"i": 365,
+"text": "COURS",
+"start": 115.47,
+"end": 115.71
+},
+{
+"i": 366,
+"text": "OU",
+"start": 115.79,
+"end": 115.95
+},
+{
+"i": 367,
+"text": "POUR",
+"start": 115.95,
+"end": 116.11
+},
+{
+"i": 368,
+"text": "T'INTERROGER",
+"start": 116.11,
+"end": 116.83
+},
+{
+"i": 369,
+"text": "JUSQU'À",
+"start": 116.83,
+"end": 117.15
+},
+{
+"i": 370,
+"text": "CE",
+"start": 117.15,
+"end": 117.23
+},
+{
+"i": 371,
+"text": "QUE",
+"start": 117.31,
+"end": 117.39
+},
+{
+"i": 372,
+"text": "TU",
+"start": 117.39,
+"end": 117.55
+},
+{
+"i": 373,
+"text": "SACHES",
+"start": 117.55,
+"end": 117.87
+},
+{
+"i": 374,
+"text": "RÉPONDRE ?",
+"start": 117.95,
+"end": 118.35
+}
+]

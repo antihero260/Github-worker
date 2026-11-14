@@ -1,0 +1,1 @@
+Ton site est lent ? Alors tu perds des clients sans même le savoir. Voici trois erreurs que je vois partout. Un : des images beaucoup trop lourdes. Deux : trop d'extensions inutiles. Et trois, la pire : aucun cache. Corrige ça, et ton site devient deux fois plus rapide.

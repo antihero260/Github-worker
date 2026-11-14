@@ -1,0 +1,3 @@
+const {chromium}=require('playwright');(async()=>{const b=await chromium.launch();const p=await b.newPage({viewport:{width:1080,height:1920}});
+for (const n of ['m1-site-ia', 'm2-jeu-video', 'm3-google', 'm4-5000', 's1-autre-a', 's2-autre-b', 's3-toi-a', 's4-toi-b']){await p.goto('file:///home/user/Github-worker/ebook/miniatures/'+n+'.html');await p.waitForTimeout(400);await p.screenshot({path:'/home/user/Github-worker/ebook/miniatures/'+n+'.jpg',type:'jpeg',quality:92});}
+await b.close();})();

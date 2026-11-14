@@ -1,0 +1,145 @@
+<!-- Le salaire tarde, le groupe réclame, Tom vend son téléphone et évite les appels (20.64 → 30.16 s). Écrit par tools/construire-scenes.py. -->
+<template>
+  <style>
+    #root { position: absolute; inset: 0; }
+  </style>
+  <div id="root" data-composition-id="s04-galere" data-width="1080" data-height="1920">
+    <div class="sc">
+      <div id="s04-galere-cam" class="sc-cam">
+        <div id="s04-galere-cadre" class="sc-cadre">
+        <div class="decor" style="left: -1080px; top: 0px; width: 3240px"><div class="mur"></div><div class="fenetre" style="left: 1150px; top: 380px"><i class="lune" style="left: 150px; top: 40px; width: 70px; height: 70px"></i></div><div class="plinthe" style="top: 1270px"></div><div class="parquet" style="top: 1290px"></div></div>
+        <div id="g-horloge" class="horloge" style="left: 500px; top: 420px"><i id="g-ah" class="aig h"></i><i id="g-am" class="aig m"></i></div>
+        <div id="g-tv" class="ecran ecran-tele" style="left: 720px; top: 350px; width: 290px; height: 470px; opacity: 0"><div class="ecran-in"><div id="g-tv-v-0" class="vplein" style="opacity: 0"><video id="g-tv-v-0-v" class="clip" src="assets/video/portefeuille-vide.mp4" data-start="0.0" data-duration="0.78" data-track-index="5" muted playsinline></video></div><div id="g-tv-v-1" class="vplein" style="opacity: 0"><video id="g-tv-v-1-v" class="clip" src="assets/video/calcul-depenses.mp4" data-start="0.68" data-duration="1.14" data-track-index="6" muted playsinline></video></div><div id="g-tv-v-2" class="vplein" style="opacity: 0"><video id="g-tv-v-2-v" class="clip" src="assets/video/frustree-compte.mp4" data-start="1.72" data-duration="1.0" data-track-index="7" muted playsinline></video></div><div id="g-tv-v-3" class="vplein" style="opacity: 0"><video id="g-tv-v-3-v" class="clip" src="assets/video/inquiet-homme.mp4" data-start="2.62" data-duration="7.0" data-track-index="8" muted playsinline></video></div></div><i class="tele-pied"></i></div>
+        <svg id="g-tom" class="perso" viewBox="-30 -20 160 290" style="left: 154px; top: 699px; width: 353px; height: 640px"><g id="g-tom-vie"><g id="g-tom-corps"><g id="g-tom-jg"><g class="c"><rect x="24" y="136" width="24" height="112" rx="8" /></g><g class="p" style="--pc: #38BDF8"><rect x="24" y="136" width="24" height="112" rx="8" /></g></g><g id="g-tom-jd"><g class="c"><rect x="52" y="136" width="24" height="112" rx="8" /></g><g class="p" style="--pc: #38BDF8"><rect x="52" y="136" width="24" height="112" rx="8" /></g></g><g id="g-tom-tronc"><g class="c"><rect x="22" y="52" width="56" height="94" rx="12" /></g><g class="p" style="--pc: #38BDF8"><rect x="22" y="52" width="56" height="94" rx="12" /></g><rect x="30" y="60" width="40" height="7" rx="3.5" fill="rgba(11,18,32,0.25)" /></g><g id="g-tom-bg"><g class="c"><rect x="2" y="54" width="18" height="86" rx="9" /></g><g class="p" style="--pc: #38BDF8"><rect x="2" y="54" width="18" height="86" rx="9" /></g></g><g id="g-tom-bd"><g class="c"><rect x="80" y="54" width="18" height="86" rx="9" /></g><g class="p" style="--pc: #38BDF8"><rect x="80" y="54" width="18" height="86" rx="9" /></g></g><g id="g-tom-tete"><g class="c"><circle cx="50" cy="24" r="22" /></g><g class="p" style="--pc: #38BDF8"><circle cx="50" cy="24" r="22" /></g><g><g id="g-tom-yeux"><circle cx="41" cy="20" r="6.5" fill="#fff" /><circle cx="59" cy="20" r="6.5" fill="#fff" /><g id="g-tom-pup"><circle cx="42" cy="21" r="3" fill="#0B1220" /><circle cx="60" cy="21" r="3" fill="#0B1220" /></g></g><path id="g-tom-bouche" d="M41 32 Q50 40 59 32" fill="none" stroke="#0B1220" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" /><path d="M28 12 Q34 -6 50 -4 Q66 -6 72 12 Q62 4 50 6 Q38 4 28 12 Z" fill="#0B1220" /></g></g></g></g></svg>
+        <div id="g-notif" class="notif" style="left: 90px; top: 330px; opacity: 0"><b>BANQUE</b><span>Salaire de novembre</span><em><i class="spin" id="g-spin"></i>EN ATTENTE…</em></div>
+        <div id="g-tel" class="tel" style="left: 260px; top: 470px; width: 560px; height: 960px; opacity: 0"><i class="tel-cam"></i><div class="tel-ecran"><div class="chat"><div class="chat-tete"><i></i><div><b>Tontine du quartier</b><span>10 membres</span></div></div><div id="g-m1" class="msg" style="opacity: 0"><b>Hugo</b>Tom, ta cotisation ?</div><div id="g-m2" class="msg" style="opacity: 0"><b>Léa</b>On attend tes 25 000 F !</div><div id="g-m3" class="msg" style="opacity: 0"><b>Max</b>Tom ???</div><div id="g-m4" class="msg" style="opacity: 0"><b>Hugo</b>C’est le tour de Léa ce mois-ci</div></div></div></div>
+        <i id="g-sueur-0" class="goutte" style="left: 380px; top: 760px; opacity: 0"></i>
+        <i id="g-sueur-1" class="goutte" style="left: 406px; top: 778px; opacity: 0"></i>
+        <i id="g-sueur-2" class="goutte" style="left: 432px; top: 760px; opacity: 0"></i>
+        <svg id="g-ach" class="perso" viewBox="-30 -20 160 290" style="left: 1135px; top: 736px; width: 331px; height: 600px"><g id="g-ach-vie"><g id="g-ach-corps"><g id="g-ach-jg"><g class="c"><rect x="24" y="136" width="24" height="112" rx="8" /></g><g class="p" style="--pc: #1e3a8a"><rect x="24" y="136" width="24" height="112" rx="8" /></g></g><g id="g-ach-jd"><g class="c"><rect x="52" y="136" width="24" height="112" rx="8" /></g><g class="p" style="--pc: #1e3a8a"><rect x="52" y="136" width="24" height="112" rx="8" /></g></g><g id="g-ach-tronc"><g class="c"><rect x="22" y="52" width="56" height="94" rx="12" /></g><g class="p" style="--pc: #1e3a8a"><rect x="22" y="52" width="56" height="94" rx="12" /></g><rect x="30" y="60" width="40" height="7" rx="3.5" fill="rgba(11,18,32,0.25)" /></g><g id="g-ach-bg"><g class="c"><rect x="2" y="54" width="18" height="86" rx="9" /></g><g class="p" style="--pc: #1e3a8a"><rect x="2" y="54" width="18" height="86" rx="9" /></g></g><g id="g-ach-bd"><g class="c"><rect x="80" y="54" width="18" height="86" rx="9" /></g><g class="p" style="--pc: #1e3a8a"><rect x="80" y="54" width="18" height="86" rx="9" /></g></g><g id="g-ach-tete"><g class="c"><circle cx="50" cy="24" r="22" /></g><g class="p" style="--pc: #1e3a8a"><circle cx="50" cy="24" r="22" /></g><g><g id="g-ach-yeux"><circle cx="41" cy="20" r="6.5" fill="#fff" /><circle cx="59" cy="20" r="6.5" fill="#fff" /><g id="g-ach-pup"><circle cx="42" cy="21" r="3" fill="#0B1220" /><circle cx="60" cy="21" r="3" fill="#0B1220" /></g></g><path id="g-ach-bouche" d="M41 32 Q50 40 59 32" fill="none" stroke="#0B1220" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" /><path d="M26 12 Q28 -6 50 -6 Q72 -6 74 12 Z" fill="#0B1220" /><rect x="60" y="6" width="34" height="8" rx="4" fill="#0B1220" /></g></g></g></g></svg>
+        <div id="g-mt" class="mini-tel" style="left: 549px; top: 847px; opacity: 0"></div>
+        <div id="g-vendu" class="tampon" style="left: 540px; top: 700px; font-size: 86px; color: #FF6B6B; border-color: #FF6B6B; transform: rotate(-10deg); opacity: 0">VENDU</div>
+        <div id="g-pay-0" class="piece" style="left: 795px; top: 965px; width: 70px; height: 70px; font-size: 14px; opacity: 0"><span>F</span></div>
+        <div id="g-pay-1" class="piece" style="left: 795px; top: 965px; width: 70px; height: 70px; font-size: 14px; opacity: 0"><span>F</span></div>
+        <div id="g-pay-2" class="piece" style="left: 795px; top: 965px; width: 70px; height: 70px; font-size: 14px; opacity: 0"><span>F</span></div>
+        <div id="g-coti" class="etiq" style="left: 150px; top: 520px; font-size: 56px; background: #F2B705; color: #0B1220; transform: rotate(-3deg); opacity: 0">−25 000 F → TONTINE</div>
+        <div id="g-a1" class="appel" style="left: 520px; top: 400px; opacity: 0"><i class="appel-ic"></i><div><b>Appel entrant</b><span>Hugo · Tontine</span></div></div>
+        <div id="g-a2" class="appel" style="left: 520px; top: 590px; opacity: 0"><i class="appel-ic"></i><div><b>Appel entrant</b><span>Léa · Tontine</span></div></div>
+        <div id="g-a3" class="appel" style="left: 520px; top: 780px; opacity: 0"><i class="appel-ic"></i><div><b>Appel entrant</b><span>Max · Tontine</span></div></div>
+        <div id="g-bul" class="bulle q-d" style="left: 90px; top: 530px; font-size: 46px;  opacity: 0">Je réponds pas…</div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#s04-galere-cam", { filter: "blur(14px)", scale: 1.12 }, { filter: "blur(0px)", scale: 1, duration: 0.18, ease: "power2.out" }, 0);
+    tl.to("#s04-galere-cam", { scale: 1.04, duration: 9.12, ease: "none" }, 0.18);
+    tl.set("#g-tv-v-0", { opacity: 1 }, 0.0);
+    tl.fromTo("#g-tv-v-0", { scale: 1.18 }, { scale: 1.02, duration: 0.68, ease: "power2.out", immediateRender: false }, 0.0);
+    tl.set("#g-tv-v-0", { opacity: 0 }, 0.7);
+    tl.set("#g-tv-v-1", { opacity: 1 }, 0.68);
+    tl.fromTo("#g-tv-v-1", { scale: 1.18 }, { scale: 1.02, duration: 1.04, ease: "power2.out", immediateRender: false }, 0.68);
+    tl.set("#g-tv-v-1", { opacity: 0 }, 1.74);
+    tl.set("#g-tv-v-2", { opacity: 1 }, 1.72);
+    tl.fromTo("#g-tv-v-2", { scale: 1.18 }, { scale: 1.02, duration: 0.9, ease: "power2.out", immediateRender: false }, 1.72);
+    tl.set("#g-tv-v-2", { opacity: 0 }, 2.64);
+    tl.set("#g-tv-v-3", { opacity: 1 }, 2.62);
+    tl.fromTo("#g-tv-v-3", { scale: 1.18 }, { scale: 1.02, duration: 6.9, ease: "power2.out", immediateRender: false }, 2.62);
+    tl.fromTo("#g-tv", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.22, ease: "back.out(1.8)", immediateRender: false }, 0.05);
+    tl.fromTo("#g-tom-vie", { y: 0 }, { y: -5, duration: 0.42, repeat: 21, yoyo: true, ease: "sine.inOut", immediateRender: false }, 0.0);
+    tl.to("#g-tom-yeux", { scaleY: 0.1, duration: 0.06, yoyo: true, repeat: 1, svgOrigin: "50 20" }, 0.7);
+    tl.to("#g-tom-yeux", { scaleY: 0.1, duration: 0.06, yoyo: true, repeat: 1, svgOrigin: "50 20" }, 3.233);
+    tl.to("#g-tom-yeux", { scaleY: 0.1, duration: 0.06, yoyo: true, repeat: 1, svgOrigin: "50 20" }, 5.767);
+    tl.to("#g-tom-yeux", { scaleY: 0.1, duration: 0.06, yoyo: true, repeat: 1, svgOrigin: "50 20" }, 8.3);
+    tl.set("#g-tom-bouche", { attr: { d: "M43 34 L57 34", fill: "none" } }, 0.0);
+    tl.to("#g-tom-pup", { x: 4, y: -2, duration: 0.15 }, 0.0);
+    tl.fromTo("#g-notif", { opacity: 0, y: -80, scale: 1 }, { opacity: 1, y: 0, scale: 1, duration: 0.25, ease: "back.out(1.8)", immediateRender: false }, 0.44);
+    tl.to("#g-spin", { rotation: 1440, duration: 3, ease: "none" }, 0.44);
+    tl.to("#g-am", { rotation: 1440, duration: 1.4, ease: "power1.inOut" }, 1.16);
+    tl.to("#g-ah", { rotation: 120, duration: 1.4, ease: "power1.inOut" }, 1.16);
+    tl.to("#g-tom-bd", { rotation: -158, svgOrigin: "89 62", duration: 0.16, ease: "power2.out" }, 1.16);
+    tl.to("#g-tom-tete", { rotation: -8, svgOrigin: "50 50", duration: 0.16, ease: "power2.out" }, 1.16);
+    tl.to("#g-tom-bd", { rotation: -146, svgOrigin: "89 62", duration: 0.09, repeat: 5, yoyo: true }, 1.34);
+    tl.set("#g-tom-bouche", { attr: { d: "M41 38 Q50 30 59 38", fill: "none" } }, 1.16);
+    tl.to("#g-notif", { opacity: 0, duration: 0.15 }, 1.84);
+    tl.to("#s04-galere-cadre", { x: -1138, y: 1313, scale: 3.501, duration: 0.28, ease: "power3.inOut" }, 1.62);
+    tl.to("#s04-galere-cadre", { keyframes: [{ filter: "blur(9px)", duration: 0.14 }, { filter: "blur(0px)", duration: 0.14 }] }, 1.62);
+    tl.to("#s04-galere-cadre", { x: 0, y: 0, scale: 1.0, duration: 0.28, ease: "power3.inOut" }, 2.87);
+    tl.to("#s04-galere-cadre", { keyframes: [{ filter: "blur(9px)", duration: 0.14 }, { filter: "blur(0px)", duration: 0.14 }] }, 2.87);
+    tl.fromTo("#g-m1", { opacity: 0, y: 40, scale: 0.8 }, { opacity: 1, y: 0, scale: 1, duration: 0.2, ease: "back.out(2)", immediateRender: false }, 2.88);
+    tl.fromTo("#g-m2", { opacity: 0, y: 40, scale: 0.8 }, { opacity: 1, y: 0, scale: 1, duration: 0.2, ease: "back.out(2)", immediateRender: false }, 3.44);
+    tl.fromTo("#g-m3", { opacity: 0, y: 40, scale: 0.8 }, { opacity: 1, y: 0, scale: 1, duration: 0.2, ease: "back.out(2)", immediateRender: false }, 3.89);
+    tl.fromTo("#g-m4", { opacity: 0, y: 40, scale: 0.8 }, { opacity: 1, y: 0, scale: 1, duration: 0.2, ease: "back.out(2)", immediateRender: false }, 4.09);
+    tl.fromTo("#g-tel", { opacity: 0, y: 200, scale: 0.8 }, { opacity: 1, y: 0, scale: 1, duration: 0.25, ease: "back.out(1.8)", immediateRender: false }, 2.42);
+    tl.to("#s04-galere-cadre", { x: 0, y: 68, scale: 1.14, duration: 0.3, ease: "power3.inOut" }, 2.6);
+    tl.to("#s04-galere-cadre", { keyframes: [{ filter: "blur(9px)", duration: 0.15 }, { filter: "blur(0px)", duration: 0.15 }] }, 2.6);
+    tl.to("#g-tom-corps", { x: 5, duration: 0.05, repeat: 16, yoyo: true, ease: "none" }, 2.88);
+    tl.to("#g-tom-corps", { x: 0, duration: 0.05 }, 3.74);
+    tl.fromTo("#g-sueur-0", { opacity: 0, y: -10 }, { opacity: 1, y: 30, duration: 0.5, repeat: 2, ease: "power1.in", immediateRender: false }, 2.88);
+    tl.to("#g-sueur-0", { opacity: 0, duration: 0.1 }, 4.38);
+    tl.fromTo("#g-sueur-1", { opacity: 0, y: -10 }, { opacity: 1, y: 30, duration: 0.5, repeat: 2, ease: "power1.in", immediateRender: false }, 3.03);
+    tl.to("#g-sueur-1", { opacity: 0, duration: 0.1 }, 4.53);
+    tl.fromTo("#g-sueur-2", { opacity: 0, y: -10 }, { opacity: 1, y: 30, duration: 0.5, repeat: 2, ease: "power1.in", immediateRender: false }, 3.18);
+    tl.to("#g-sueur-2", { opacity: 0, duration: 0.1 }, 4.68);
+    tl.to("#g-tel", { y: 1300, opacity: 0, duration: 0.25, ease: "power2.in" }, 4.34);
+    tl.to("#s04-galere-cadre", { x: 0, y: 0, scale: 1.0, duration: 0.25, ease: "power3.inOut" }, 4.34);
+    tl.to("#s04-galere-cadre", { keyframes: [{ filter: "blur(9px)", duration: 0.125 }, { filter: "blur(0px)", duration: 0.125 }] }, 4.34);
+    tl.to("#g-ach", { x: "+=-470", duration: 0.83, ease: "none" }, 4.24);
+    tl.to("#g-ach-jg", { svgOrigin: "36 142", keyframes: [{ rotation: 24, duration: 0.138 }, { rotation: -24, duration: 0.138 }, { rotation: 24, duration: 0.138 }, { rotation: -24, duration: 0.138 }, { rotation: 24, duration: 0.138 }, { rotation: 0, duration: 0.138 }] }, 4.24);
+    tl.to("#g-ach-jd", { svgOrigin: "64 142", keyframes: [{ rotation: -24, duration: 0.138 }, { rotation: 24, duration: 0.138 }, { rotation: -24, duration: 0.138 }, { rotation: 24, duration: 0.138 }, { rotation: -24, duration: 0.138 }, { rotation: 0, duration: 0.138 }] }, 4.24);
+    tl.to("#g-ach-bg", { svgOrigin: "11 62", keyframes: [{ rotation: -20, duration: 0.138 }, { rotation: 20, duration: 0.138 }, { rotation: -20, duration: 0.138 }, { rotation: 20, duration: 0.138 }, { rotation: -20, duration: 0.138 }, { rotation: 0, duration: 0.138 }] }, 4.24);
+    tl.to("#g-ach-bd", { svgOrigin: "89 62", keyframes: [{ rotation: 20, duration: 0.138 }, { rotation: -20, duration: 0.138 }, { rotation: 20, duration: 0.138 }, { rotation: -20, duration: 0.138 }, { rotation: 20, duration: 0.138 }, { rotation: 0, duration: 0.138 }] }, 4.24);
+    tl.to("#g-ach-corps", { keyframes: [{ y: -6, duration: 0.138 }, { y: 0, duration: 0.138 }, { y: -6, duration: 0.138 }, { y: 0, duration: 0.138 }, { y: -6, duration: 0.138 }, { y: 0, duration: 0.138 }] }, 4.24);
+    tl.fromTo("#g-ach-vie", { y: 0 }, { y: -5, duration: 0.42, repeat: 8, yoyo: true, ease: "sine.inOut", immediateRender: false }, 5.12);
+    tl.to("#g-ach-yeux", { scaleY: 0.1, duration: 0.06, yoyo: true, repeat: 1, svgOrigin: "50 20" }, 5.82);
+    tl.to("#g-ach-yeux", { scaleY: 0.1, duration: 0.06, yoyo: true, repeat: 1, svgOrigin: "50 20" }, 8.353);
+    tl.to("#g-ach-pup", { x: -4, y: 0, duration: 0.15 }, 4.64);
+    tl.to("#g-tom-bd", { rotation: -78, svgOrigin: "89 62", duration: 0.2, ease: "power2.out" }, 5.12);
+    tl.set("#g-mt", { opacity: 1 }, 5.27);
+    tl.to("#g-tom-pup", { x: 4, y: 0, duration: 0.15 }, 5.12);
+    tl.to("#g-mt", { x: 280, y: 20, duration: 0.35, ease: "power2.inOut" }, 5.68);
+    tl.to("#g-ach-bg", { rotation: 60, svgOrigin: "11 62", duration: 0.2, ease: "power2.out" }, 5.88);
+    tl.fromTo("#g-vendu", { opacity: 0, scale: 2.4 }, { opacity: 1, scale: 1, duration: 0.14, ease: "power4.in", immediateRender: false }, 6.08);
+    tl.to("#s04-galere-cam", { keyframes: [{ x: -12, duration: 0.03 }, { x: 12, duration: 0.04 }, { x: -6, duration: 0.04 }, { x: 0, duration: 0.03 }] }, 6.22);
+    tl.to("#g-vendu", { opacity: 0, duration: 0.15 }, 7.353);
+    tl.set("#g-pay-0", { opacity: 1 }, 6.258);
+    tl.fromTo("#g-pay-0", { x: 0 }, { x: -410, duration: 0.5, ease: "power1.inOut", immediateRender: false }, 6.258);
+    tl.fromTo("#g-pay-0", { y: 0 }, { keyframes: [{ y: -160, duration: 0.25, ease: "power2.out" }, { y: 20, duration: 0.25, ease: "power2.in" }] }, 6.258);
+    tl.set("#g-pay-0", { opacity: 0 }, 6.758);
+    tl.set("#g-pay-1", { opacity: 1 }, 6.338);
+    tl.fromTo("#g-pay-1", { x: 0 }, { x: -410, duration: 0.5, ease: "power1.inOut", immediateRender: false }, 6.338);
+    tl.fromTo("#g-pay-1", { y: 0 }, { keyframes: [{ y: -160, duration: 0.25, ease: "power2.out" }, { y: 20, duration: 0.25, ease: "power2.in" }] }, 6.338);
+    tl.set("#g-pay-1", { opacity: 0 }, 6.838);
+    tl.set("#g-pay-2", { opacity: 1 }, 6.418);
+    tl.fromTo("#g-pay-2", { x: 0 }, { x: -410, duration: 0.5, ease: "power1.inOut", immediateRender: false }, 6.418);
+    tl.fromTo("#g-pay-2", { y: 0 }, { keyframes: [{ y: -160, duration: 0.25, ease: "power2.out" }, { y: 20, duration: 0.25, ease: "power2.in" }] }, 6.418);
+    tl.set("#g-pay-2", { opacity: 0 }, 6.918);
+    tl.fromTo("#g-coti", { opacity: 0, x: -80 }, { opacity: 1, x: 0, duration: 0.2, ease: "power4.out", immediateRender: false }, 7.055);
+    tl.to("#g-coti", { opacity: 0, duration: 0.15 }, 7.651);
+    tl.to("#g-tom-bd", { rotation: 0, svgOrigin: "89 62", duration: 0.2, ease: "power2.out" }, 6.458);
+    tl.to("#g-ach", { x: "+=700", duration: 0.5, ease: "power2.in" }, 7.353);
+    tl.set("#g-mt", { opacity: 0 }, 7.353);
+    tl.fromTo("#g-a1", { opacity: 0, scale: 0.4 }, { opacity: 1, scale: 1, duration: 0.2, ease: "back.out(2.2)", immediateRender: false }, 7.651);
+    tl.to("#g-a1", { rotation: 4, duration: 0.06, repeat: 24, yoyo: true, ease: "none" }, 7.851);
+    tl.to("#g-a1", { opacity: 0, duration: 0.15 }, 9.34);
+    tl.fromTo("#g-a2", { opacity: 0, scale: 0.4 }, { opacity: 1, scale: 1, duration: 0.2, ease: "back.out(2.2)", immediateRender: false }, 8.545);
+    tl.to("#g-a2", { rotation: 4, duration: 0.06, repeat: 9, yoyo: true, ease: "none" }, 8.745);
+    tl.to("#g-a2", { opacity: 0, duration: 0.15 }, 9.34);
+    tl.fromTo("#g-a3", { opacity: 0, scale: 0.4 }, { opacity: 1, scale: 1, duration: 0.2, ease: "back.out(2.2)", immediateRender: false }, 9.142);
+    tl.to("#g-a3", { rotation: 4, duration: 0.06, repeat: 1, yoyo: true, ease: "none" }, 9.342);
+    tl.to("#g-a3", { opacity: 0, duration: 0.15 }, 9.34);
+    tl.to("#g-tom-corps", { scaleX: -1, transformOrigin: "50% 50%", duration: 0.16 }, 7.801);
+    tl.to("#g-tom-yeux", { opacity: 0, duration: 0.05 }, 7.881);
+    tl.to("#g-tom-bouche", { opacity: 0, duration: 0.05 }, 7.881);
+    tl.to("#g-tom-bg", { rotation: 160, svgOrigin: "11 62", duration: 0.2, ease: "power2.out" }, 7.949);
+    tl.to("#g-tom-bd", { rotation: -160, svgOrigin: "89 62", duration: 0.2, ease: "power2.out" }, 7.949);
+    tl.to("#g-tom-tete", { svgOrigin: "50 50", keyframes: [{ rotation: -14, duration: 0.08 }, { rotation: 14, duration: 0.1 }, { rotation: -10, duration: 0.1 }, { rotation: 0, duration: 0.08 }] }, 8.745);
+    tl.to("#s04-galere-cadre", { x: 0, y: 65, scale: 1.08, duration: 0.3, ease: "power3.inOut" }, 8.247);
+    tl.to("#s04-galere-cadre", { keyframes: [{ filter: "blur(9px)", duration: 0.15 }, { filter: "blur(0px)", duration: 0.15 }] }, 8.247);
+    tl.fromTo("#g-bul", { opacity: 0, scale: 0.2, transformOrigin: "90% 100%" }, { opacity: 1, scale: 1, duration: 0.22, ease: "back.out(2.4)", immediateRender: false }, 8.844);
+    tl.to("#s04-galere-cam", { scale: 1.25, filter: "blur(14px)", duration: 0.2, ease: "power3.in" }, 9.32);
+    window.__timelines["s04-galere"] = tl;
+  </script>
+</template>

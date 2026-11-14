@@ -1,0 +1,58 @@
+<!-- Scène 12 · « Par exemple, je vais créer un assistant de recherche dont la mission est de trouver des informations récentes, » (48.44 → 53.64 s). Fichier écrit par un générateur, modifiable à la main. -->
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+    }
+
+  </style>
+  <div id="root" data-composition-id="s12-assistant" data-width="1920" data-height="1080">
+    <div class="pj-scene">
+      <div id="s12-assistant-cam" class="pj-cam">
+        <div id="s12-assistant-cadre" class="pj-cadre">
+        <div class="pj-horizon" style="top: 760px"></div>
+        <div id="s12-vid" class="pj-panneau" style="left: 113px; top: 210px; width: 600px; height: 338px; opacity: 0"><video id="s12-vid-v" class="clip" src="assets/video/recherche-ordi.mp4" data-start="0" data-duration="5.2" data-track-index="5" muted playsinline></video><div class="pj-equerres" style="left: -18px; top: -18px; right: -18px; bottom: -18px"><i></i><i></i><i></i><i></i></div><div id="s12-vid-tag" class="pj-panneau-tag">Assistant de recherche</div></div>
+        <div id="s12-fen" class="pj-fenetre" style="left: 790px; top: 170px; width: 1020px; height: 470px; opacity: 0"><div class="pj-fen-barre"><i></i><i></i><i></i><img src="assets/img/logo-n8n.svg" alt="" /><span>n8n · Instructions de l'agent</span></div><div class="pj-fen-corps"><div class="pj-fen-texte"><span id="s12-w0" style="opacity: 0">Tu</span> <span id="s12-w1" style="opacity: 0">es</span> <span id="s12-w2" style="opacity: 0">un</span> <span id="s12-w3" style="opacity: 0; color: #DCFC1C">assistant</span> <span id="s12-w4" style="opacity: 0">de</span> <span id="s12-w5" style="opacity: 0; color: #DCFC1C">recherche.</span> <span id="s12-w6" style="opacity: 0">Ta</span> <span id="s12-w7" style="opacity: 0">mission</span> <span id="s12-w8" style="opacity: 0">:</span> <span id="s12-w9" style="opacity: 0">trouver</span> <span id="s12-w10" style="opacity: 0">des</span> <span id="s12-w11" style="opacity: 0">informations</span> <span id="s12-w12" style="opacity: 0; color: #DCFC1C">récentes,</span><b id="s12-curseur" class="pj-tel-curseur"></b></div></div></div>
+        <svg id="s12-ia" class="pj-perso pj-ia-perso" viewBox="-30 -20 160 290" style="left: 344px; top: 578px; width: 132px; height: 240px"><g id="s12-ia-vie"><g id="s12-ia-corps"><g id="s12-ia-jg"><g class="c"><rect x="24" y="136" width="24" height="112" rx="8" /></g><g class="p"><rect x="24" y="136" width="24" height="112" rx="8" /></g></g><g id="s12-ia-jd"><g class="c"><rect x="52" y="136" width="24" height="112" rx="8" /></g><g class="p"><rect x="52" y="136" width="24" height="112" rx="8" /></g></g><g id="s12-ia-tronc"><g class="c"><rect x="22" y="52" width="56" height="94" rx="12" /></g><g class="p"><rect x="22" y="52" width="56" height="94" rx="12" /></g></g><g id="s12-ia-bg"><g class="c"><rect x="2" y="54" width="18" height="86" rx="9" /></g><g class="p"><rect x="2" y="54" width="18" height="86" rx="9" /></g></g><g id="s12-ia-bd"><g class="c"><rect x="80" y="54" width="18" height="86" rx="9" /></g><g class="p"><rect x="80" y="54" width="18" height="86" rx="9" /></g></g><g id="s12-ia-tete"><g class="c"><rect x="25" y="0" width="50" height="46" rx="13" /></g><g class="p"><rect x="25" y="0" width="50" height="46" rx="13" /></g><g class="yeux"><circle cx="40" cy="22" r="5" /><circle cx="60" cy="22" r="5" /></g></g></g></g></svg>
+        </div>
+      </div>
+      <div id="s12-hud" class="pj-label" style="left: 113px; top: 107px; "><span class="pj-k">Exemple</span><span class="pj-d">Un assistant de recherche</span></div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#s12-assistant-cam", { scale: 1 }, { scale: 1.05, duration: 5.0, ease: "none" }, 0);
+    tl.fromTo("#s12-assistant-cam", { filter: "blur(14px)" }, { filter: "blur(0px)", duration: 0.16, ease: "power2.out" }, 0);
+    tl.fromTo("#s12-fen", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.18, ease: "power3.out" }, 0.05);
+    tl.fromTo("#s12-vid", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.18, ease: "power3.out" }, 0.1);
+    tl.fromTo("#s12-ia-vie", { y: 0 }, { y: -5, duration: 0.42, repeat: 10, yoyo: true, ease: "sine.inOut", immediateRender: false }, 0.0);
+    tl.set("#s12-w0", { opacity: 1 }, 1.56);
+    tl.set("#s12-w1", { opacity: 1 }, 1.64);
+    tl.set("#s12-w2", { opacity: 1 }, 1.72);
+    tl.set("#s12-w3", { opacity: 1 }, 1.56);
+    tl.set("#s12-w4", { opacity: 1 }, 2.04);
+    tl.set("#s12-w5", { opacity: 1 }, 2.2);
+    tl.set("#s12-w6", { opacity: 1 }, 2.84);
+    tl.set("#s12-w7", { opacity: 1 }, 3.0);
+    tl.set("#s12-w8", { opacity: 1 }, 3.24);
+    tl.set("#s12-w9", { opacity: 1 }, 3.56);
+    tl.set("#s12-w10", { opacity: 1 }, 3.88);
+    tl.set("#s12-w11", { opacity: 1 }, 4.04);
+    tl.set("#s12-w12", { opacity: 1 }, 4.52);
+    tl.to("#s12-ia-bg", { rotation: -28, svgOrigin: "11 62", duration: 0.15, ease: "power2.out" }, 1.16);
+    tl.to("#s12-ia-bd", { rotation: 28, svgOrigin: "89 62", duration: 0.15, ease: "power2.out" }, 1.16);
+    tl.to("#s12-ia-tete", { rotation: 10, svgOrigin: "50 50", duration: 0.15, ease: "power2.out" }, 1.16);
+    tl.to("#s12-ia-bg", { rotation: -18, svgOrigin: "11 62", duration: 0.11, repeat: 29, yoyo: true, ease: "sine.inOut" }, 1.31);
+    tl.to("#s12-ia-bd", { rotation: 38, svgOrigin: "89 62", duration: 0.11, repeat: 29, yoyo: true, ease: "sine.inOut" }, 1.365);
+    tl.to("#s12-ia-bg", { rotation: 0, svgOrigin: "11 62", duration: 0.2, ease: "power2.out" }, 4.72);
+    tl.to("#s12-ia-bd", { rotation: 0, svgOrigin: "89 62", duration: 0.2, ease: "power2.out" }, 4.72);
+    tl.to("#s12-ia-jg", { rotation: 0, svgOrigin: "36 142", duration: 0.2, ease: "power2.out" }, 4.72);
+    tl.to("#s12-ia-jd", { rotation: 0, svgOrigin: "64 142", duration: 0.2, ease: "power2.out" }, 4.72);
+    tl.to("#s12-ia-tete", { rotation: 0, svgOrigin: "50 50", duration: 0.2, ease: "power2.out" }, 4.72);
+    tl.to("#s12-assistant-cadre", { x: -415, y: 195, scale: 1.22, duration: 0.26, ease: "power3.inOut" }, 1.38);
+    tl.to("#s12-assistant-cadre", { keyframes: [{ filter: "blur(10px)", duration: 0.13 }, { filter: "blur(0px)", duration: 0.13 }] }, 1.38);
+    tl.to("#s12-assistant-cam", { scale: 1.3, filter: "blur(14px)", duration: 0.2, ease: "power3.in" }, 5.0);
+    window.__timelines["s12-assistant"] = tl;
+  </script>
+</template>

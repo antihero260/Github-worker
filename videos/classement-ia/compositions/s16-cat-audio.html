@@ -1,0 +1,38 @@
+<!-- Scène 16 · « Enfin, l'audio ! Ici, deux noms se démarquent : » (90.58 → 93.58 s). Fichier écrit par un générateur, modifiable à la main. -->
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+    }
+
+  </style>
+  <div id="root" data-composition-id="s16-cat-audio" data-width="1920" data-height="1080">
+    <div class="pj-scene">
+      <div id="s16-cat-audio-cam" class="pj-cam">
+        <div id="s16-cat-audio-cadre" class="pj-cadre">
+        <div class="pj-horizon" style="top: 760px"></div>
+        <div id="s16-plein" style="position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; overflow: hidden"><video id="s16-plein-v" class="clip" src="assets/video/micro.mp4" data-start="0" data-duration="3.0" data-track-index="5" muted playsinline style="position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; object-fit: cover"></video><div style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.8))"></div></div>
+        <div id="s16-titre" class="pj-impact" style="position: absolute; left: 0; width: 1920px; top: 330px; text-align: center; font-size: 170px; opacity: 0">Audio</div>
+        <div id="s16-badge" class="pj-etape" style="left: 1440px; top: 128px; opacity: 0"><span>Catégorie</span><b>4</b><i>/4</i></div>
+        </div>
+      </div>
+      <div id="s16-cat-audio-eclair" class="pj-flash"></div>
+      <div id="s16-hud" class="pj-label" style="left: 113px; top: 107px; "><span class="pj-k">Catégorie 4</span><span class="pj-d">Voix et musique</span></div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#s16-cat-audio-cam", { scale: 1 }, { scale: 1.05, duration: 2.8, ease: "none" }, 0);
+    tl.fromTo("#s16-cat-audio-cam", { filter: "blur(14px)" }, { filter: "blur(0px)", duration: 0.16, ease: "power2.out" }, 0);
+    tl.fromTo("#s16-plein", { scale: 1.0 }, { scale: 1.1, duration: 3.0, ease: "none" }, 0);
+    tl.fromTo("#s16-badge", { opacity: 0, scale: 1.9 }, { opacity: 1, scale: 1, duration: 0.18, ease: "back.out(2.2)" }, 0.59);
+    tl.fromTo("#s16-titre", { opacity: 0, scale: 1.45 }, { opacity: 1, scale: 1, duration: 0.13, ease: "power4.out" }, 0.69);
+    tl.set("#s16-cat-audio-eclair", { opacity: 1 }, 0.69);
+    tl.set("#s16-cat-audio-eclair", { opacity: 0 }, 0.757);
+    tl.to("#s16-cat-audio-cadre", { x: 0, y: 66, scale: 1.1, duration: 0.26, ease: "power3.inOut" }, 1.8);
+    tl.to("#s16-cat-audio-cadre", { keyframes: [{ filter: "blur(10px)", duration: 0.13 }, { filter: "blur(0px)", duration: 0.13 }] }, 1.8);
+    tl.to("#s16-cat-audio-cam", { scale: 1.3, filter: "blur(14px)", duration: 0.2, ease: "power3.in" }, 2.8);
+    window.__timelines["s16-cat-audio"] = tl;
+  </script>
+</template>
