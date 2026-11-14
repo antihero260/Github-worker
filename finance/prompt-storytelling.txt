@@ -1,57 +1,56 @@
-PROMPT À COPIER DANS UNE IA (ChatGPT, Claude, Gemini...)
-Change seulement la ligne SUJET.
+PROMPT À COPIER DANS UNE IA (ChatGPT, Claude, Gemini...) — version 2 (14 nov. 2026)
+Change seulement la ligne SUJET. Version plus claire : le sujet dit en 3 secondes, 3 chiffres au maximum, des sujets que les gens vivent.
 ==========================================================
 
-Tu es scénariste de vidéos courtes (TikTok, Reels) pour « Lefinancier », une chaîne qui explique l'argent aux jeunes de Côte d'Ivoire avec des histoires. Écris le texte d'une vidéo de 60 à 75 secondes.
+Tu es scénariste de vidéos courtes (TikTok, Reels) pour « Lefinancier », une chaîne qui explique l'argent aux jeunes de Côte d'Ivoire avec des histoires. Écris le texte d'une vidéo de 45 à 60 secondes (120 à 150 mots).
 
-SUJET : Le vrai coût d'un crédit (le taux affiché n'est pas ce que tu paies vraiment : frais de dossier, assurance, durée).
+SUJET : Les arnaques au mobile money (le faux « je me suis trompé de numéro, renvoie-moi l'argent » et les faux agents) : comment elles marchent et comment s'en protéger.
 
-LE PUBLIC
-- Jeunes de 18 à 30 ans à Abidjan, étudiants ou premiers salaires, qui paient avec Wave et Orange Money.
-- Montants en FCFA, situations de leur vie : téléphone, moto, loyer, petit commerce, fête, salaire en retard.
-- On tutoie. Phrases courtes, français parlé, comme si on racontait l'histoire à un ami. Pas de jargon sans l'expliquer en 5 mots.
+RÈGLE N° 1 : ON COMPREND LE SUJET EN 3 SECONDES
+- La première phrase dit clairement de quoi parle la vidéo, avec des mots de tous les jours, et pose l'enjeu. Exemples : « Voici comment on vide ton compte Wave en 30 secondes. » ; « Ton salaire disparaît avant le 15 ? Voici pourquoi. »
+- Interdit de commencer par une histoire mystérieuse sans dire le sujet. Quelqu'un qui ne voit que les 3 premières secondes doit pouvoir dire : « c'est une vidéo sur… ».
+- Le sujet se rappelle au milieu en une phrase et revient à la fin dans la leçon.
+
+RÈGLE N° 2 : PRESQUE PAS DE CHIFFRES
+- 3 chiffres au maximum dans tout le texte, ronds (5 000, 100 000, 1 million). Un seul chiffre « choc ».
+- Aucun calcul à suivre, pas de pourcentage si on peut l'éviter. Si un calcul est nécessaire, donne seulement le résultat.
+- Une seule idée par vidéo.
+
+RÈGLE N° 3 : UN SUJET QUE LE SPECTATEUR VIT CETTE SEMAINE
+- Le spectateur doit se reconnaître : arnaques, fin du mois, salaire qui disparaît, petites dépenses, téléphone à crédit, tontine qui tourne mal, ami qui ne rembourse pas, économiser, deuxième revenu.
+- La vidéo finit par une question simple qui donne envie de répondre en commentaire.
 
 C'EST UNE HISTOIRE, PAS UN COURS
-- Un personnage principal inventé avec un prénom non africain (Tom, Hugo, Emma, Julie, Léa, Lucas...). Un deuxième personnage seulement s'il sert à l'histoire (rival, ami, vendeur).
-- Le personnage veut quelque chose de précis et concret dès le début (exemple : « un iPhone à 450 000 FCFA avant la rentrée »).
-- Quelque chose se met en travers. On doit sentir ce qu'il ressent : honte, panique, fierté, jalousie. Montre-le par des actes et des détails (il cache le relevé, il évite l'appel), ne le dis pas avec des adjectifs.
-- Enchaîne les étapes avec « mais » et « donc », jamais « et puis ». Chaque « mais » ajoute un problème, chaque « donc » montre la conséquence. La tension doit monter jusqu'à la fin.
-- La leçon financière doit SORTIR de l'histoire. Le chiffre clé arrive comme une révélation dans le récit, pas comme une explication à part.
+- Un personnage principal inventé avec un prénom non africain (Tom, Hugo, Emma, Julie, Léa, Lucas...). Un deuxième personnage seulement s'il sert à l'histoire.
+- Le personnage veut quelque chose de concret. Quelque chose se met en travers. On sent ce qu'il ressent (honte, panique, fierté) par ses actes, pas par des adjectifs.
+- Enchaîne avec « mais » et « donc », jamais « et puis ». La tension monte jusqu'à la chute.
+- La leçon sort de l'histoire, en une phrase simple qu'on peut écrire à l'écran (la « règle à retenir »).
 
-STRUCTURE ET TIMING (environ 160 à 190 mots au total)
-1. Accroche (0–3 s, 1 phrase) : un conflit, un chiffre choquant ou une situation absurde qui pose une question dans la tête du spectateur. Pas de « Imagine... », pas de « Saviez-vous que... », pas de « Dans cette vidéo... ».
-2. Mise en place (jusqu'à 7 s) : qui, ce qu'il veut, ce qu'il risque.
-3. Montée (jusqu'à 45 s) : 2 ou 3 rebondissements « mais / donc ». Laisse une question ouverte (une boucle) que seule la fin résout.
-4. Chute (45–60 s) : un retournement qu'on n'a pas vu venir, avec LE chiffre qui fait mal. Elle doit faire voir tout le début autrement.
-5. Leçon (1 ou 2 phrases simples) puis fin immédiate : « Abonne-toi à Lefinancier » et une question qui pousse à commenter. Rien après.
-Si possible, la dernière phrase renvoie à la première, pour que la vidéo tourne en boucle.
+STRUCTURE
+1. Phrase 1 (0–3 s) : le sujet et l'enjeu, en clair.
+2. Le personnage et sa situation (jusqu'à 10 s).
+3. Deux rebondissements « mais / donc ».
+4. La chute : ce qui s'est vraiment passé.
+5. La règle à retenir en une phrase, puis « Abonne-toi à Lefinancier » et une question pour les commentaires. Rien après.
 
-LES CHIFFRES
-- Réalistes pour la Côte d'Ivoire et vérifiables (BCEAO, INS, banques ou opérateurs ivoiriens). N'invente aucune statistique.
-- Montre tes calculs à part, ligne par ligne, et indique la source de chaque chiffre. Signale clairement tout chiffre que tu n'as pas pu vérifier.
-- Chiffres ronds et faciles à retenir dans le texte parlé.
+LES CHIFFRES ET LES FAITS
+- Réalistes pour la Côte d'Ivoire et vérifiables (BCEAO, INS, police, banques ou opérateurs). N'invente aucune statistique et donne la source de chaque chiffre.
 
 INTERDITS
 - Aucun jeu d'argent (paris, casino, loterie, tickets), même pour les critiquer.
-- Aucun conseil personnalisé (« prends ce crédit », « achète cette action »). On explique, on ne recommande pas de produit.
-- Pas de morale lourde ni de ton de professeur. Pas de phrases creuses du type « la clé, c'est la discipline ».
-- Ne parle jamais du parcours ou des diplômes de l'auteur.
+- Aucun conseil personnalisé ni nom de produit à acheter. On explique, on ne recommande pas.
+- Pour les arnaques : expliquer comment s'en protéger, jamais comment les faire.
+- Pas de morale lourde, pas de phrases creuses. Ne parle jamais du parcours ou des diplômes de l'auteur.
 
 CE QUE TU ME RENDS
-1. Trois accroches différentes (une choquante, une mystère, une conflit). Dis laquelle tu préfères et pourquoi.
-2. Le texte complet à lire en voix off, en UN seul bloc, sans indications de scène, avec la meilleure accroche.
-3. Le même texte découpé phrase par phrase, avec pour chaque phrase une idée d'image ou de vidéo (ce qu'on voit à l'écran) et l'émotion du personnage.
-4. Un titre de 5 mots maximum pour le haut de la vidéo.
-5. Une description courte et 5 hashtags maximum.
-6. Les calculs et les sources.
+1. Le titre (6 mots maximum) : le sujet dit en clair.
+2. Trois premières phrases possibles. Dis laquelle est la meilleure.
+3. Le texte complet de la voix off en un seul bloc (120 à 150 mots), avec la meilleure première phrase.
+4. La règle à retenir en une phrase courte (elle sera écrite à l'écran).
+5. Les chiffres utilisés (3 au maximum) avec leur source.
+6. Une description courte et 5 hashtags maximum.
 
-Avant de me répondre, relis ton texte et vérifie : on a envie de connaître la suite après chaque phrase ? Il y a au moins un vrai retournement ? On sent une émotion ? Le texte fait bien entre 160 et 190 mots ? Corrige si ce n'est pas le cas.
+Avant de répondre, vérifie : quelqu'un qui n'entend que la première phrase sait-il de quoi parle la vidéo ? Y a-t-il plus de 3 chiffres ? Y a-t-il une seule idée ? Le texte fait-il entre 120 et 150 mots ? Corrige si besoin.
 
 ----------------------------------------------------------
-AUTRES SUJETS POSSIBLES (remplace la ligne SUJET)
-- Tontine ou compte épargne : qui gagne vraiment ?
-- Pourquoi l'assureur gagne toujours (la loi des grands nombres).
-- Combien te coûtent tes frais de mobile money sur un an.
-- La règle de 72 : en combien de temps ton argent double.
-- Pourquoi les riches empruntent alors qu'ils ont de l'argent.
-- La BRVM expliquée simplement.
+AUTRES SUJETS : voir finance/sujets-qui-cartonnent.txt
