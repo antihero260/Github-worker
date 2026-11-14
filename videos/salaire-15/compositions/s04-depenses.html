@@ -1,0 +1,178 @@
+<!-- Un petit déjeuner payé par Wave, une course en taxi, un crédit téléphonique, une livraison parce qu'il est fatigué (11.24 → 17.96 s). Écrit par tools/construire-scenes.py. -->
+<template>
+  <style>
+    #root { position: absolute; inset: 0; }
+  </style>
+  <div id="root" data-composition-id="s04-depenses" data-width="1080" data-height="1920">
+    <div class="sc">
+      <div id="s04-depenses-cam" class="sc-cam">
+        <div id="s04-depenses-cadre" class="sc-cadre">
+        <div class="decor"><div class="ciel" style="background: radial-gradient(ellipse 90% 60% at 50% 35%, #15305e 0%, #0b1220 75%)"></div></div>
+        <div id="d-ec" class="ecran ecran-panneau" style="left: 50px; top: 290px; width: 980px; height: 500px; opacity: 0"><div class="ecran-in"><div id="d-ec-v-0" class="vplein" style="opacity: 0"><video id="d-ec-v-0-v" class="clip" src="assets/video/petit-dej.mp4" data-start="0.0" data-duration="0.62" data-track-index="5" muted playsinline></video></div><div id="d-ec-v-1" class="vplein" style="opacity: 0"><video id="d-ec-v-1-v" class="clip" src="assets/video/oeufs-poele.mp4" data-start="0.52" data-duration="0.74" data-track-index="6" muted playsinline></video></div><div id="d-ec-v-2" class="vplein" style="opacity: 0"><video id="d-ec-v-2-v" class="clip" src="assets/video/cafe-paie-tel.mp4" data-start="1.16" data-duration="0.5" data-track-index="7" muted playsinline></video></div><div id="d-ec-v-3" class="vplein" style="opacity: 0"><video id="d-ec-v-3-v" class="clip" src="assets/video/paiement-tel.mp4" data-start="1.56" data-duration="0.66" data-track-index="8" muted playsinline></video></div><div id="d-ec-v-4" class="vplein" style="opacity: 0"><video id="d-ec-v-4-v" class="clip" src="assets/video/taxi-cab.mp4" data-start="2.12" data-duration="0.58" data-track-index="9" muted playsinline></video></div><div id="d-ec-v-5" class="vplein" style="opacity: 0"><video id="d-ec-v-5-v" class="clip" src="assets/video/taxi-nuit.mp4" data-start="2.6" data-duration="0.26" data-track-index="10" muted playsinline></video></div><div id="d-ec-v-6" class="vplein" style="opacity: 0"><video id="d-ec-v-6-v" class="clip" src="assets/video/taxi-voie.mp4" data-start="2.76" data-duration="0.66" data-track-index="11" muted playsinline></video></div><div id="d-ec-v-7" class="vplein" style="opacity: 0"><video id="d-ec-v-7-v" class="clip" src="assets/video/texto-parc.mp4" data-start="3.32" data-duration="0.26" data-track-index="12" muted playsinline></video></div><div id="d-ec-v-8" class="vplein" style="opacity: 0"><video id="d-ec-v-8-v" class="clip" src="assets/video/tel-tape.mp4" data-start="3.48" data-duration="0.58" data-track-index="13" muted playsinline></video></div><div id="d-ec-v-9" class="vplein" style="opacity: 0"><video id="d-ec-v-9-v" class="clip" src="assets/video/homme-sms.mp4" data-start="3.96" data-duration="0.82" data-track-index="14" muted playsinline></video></div><div id="d-ec-v-10" class="vplein" style="opacity: 0"><video id="d-ec-v-10-v" class="clip" src="assets/video/lit-scroll-food.mp4" data-start="4.68" data-duration="0.26" data-track-index="15" muted playsinline></video></div><div id="d-ec-v-11" class="vplein" style="opacity: 0"><video id="d-ec-v-11-v" class="clip" src="assets/video/livreur-casque.mp4" data-start="4.84" data-duration="0.82" data-track-index="16" muted playsinline></video></div><div id="d-ec-v-12" class="vplein" style="opacity: 0"><video id="d-ec-v-12-v" class="clip" src="assets/video/livreur-pizza.mp4" data-start="5.56" data-duration="0.5" data-track-index="17" muted playsinline></video></div><div id="d-ec-v-13" class="vplein" style="opacity: 0"><video id="d-ec-v-13-v" class="clip" src="assets/video/mange-tele.mp4" data-start="5.96" data-duration="0.86" data-track-index="18" muted playsinline></video></div></div></div>
+        <div id="d-jauge" class="jauge" style="left: 50px; top: 815px; width: 980px"><i id="d-j"></i><b>SOLDE</b></div>
+        <svg id="d-lucas" class="perso" viewBox="-30 -20 160 290" style="left: 732px; top: 973px; width: 237px; height: 430px"><g id="d-lucas-vie"><g id="d-lucas-corps"><g id="d-lucas-jg"><g class="c"><rect x="24" y="136" width="24" height="112" rx="8" /></g><g class="p" style="--pc: #38BDF8"><rect x="24" y="136" width="24" height="112" rx="8" /></g></g><g id="d-lucas-jd"><g class="c"><rect x="52" y="136" width="24" height="112" rx="8" /></g><g class="p" style="--pc: #38BDF8"><rect x="52" y="136" width="24" height="112" rx="8" /></g></g><g id="d-lucas-tronc"><g class="c"><rect x="22" y="52" width="56" height="94" rx="12" /></g><g class="p" style="--pc: #38BDF8"><rect x="22" y="52" width="56" height="94" rx="12" /></g><path d="M44 56 L56 56 L53 64 L57 104 L50 112 L43 104 L47 64 Z" fill="#0B1220" /></g><g id="d-lucas-bg"><g class="c"><rect x="2" y="54" width="18" height="86" rx="9" /></g><g class="p" style="--pc: #38BDF8"><rect x="2" y="54" width="18" height="86" rx="9" /></g></g><g id="d-lucas-bd"><g class="c"><rect x="80" y="54" width="18" height="86" rx="9" /></g><g class="p" style="--pc: #38BDF8"><rect x="80" y="54" width="18" height="86" rx="9" /></g></g><g id="d-lucas-tete"><g class="c"><circle cx="50" cy="24" r="22" /></g><g class="p" style="--pc: #38BDF8"><circle cx="50" cy="24" r="22" /></g><g><g id="d-lucas-yeux"><circle cx="41" cy="20" r="6.5" fill="#fff" /><circle cx="59" cy="20" r="6.5" fill="#fff" /><g id="d-lucas-pup"><circle cx="42" cy="21" r="3" fill="#0B1220" /><circle cx="60" cy="21" r="3" fill="#0B1220" /></g></g><path id="d-lucas-bouche" d="M41 32 Q50 40 59 32" fill="none" stroke="#0B1220" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" /><path d="M28 14 Q30 -4 50 -3 Q70 -4 72 14 Q66 6 58 8 Q50 2 42 8 Q34 6 28 14 Z" fill="#0B1220" /></g></g></g></g></svg>
+        <div id="d-p0" class="puce" style="left: 40px; top: 905px; font-size: 52px; opacity: 0"><svg class="ico" viewBox="0 0 100 100" width="78" height="78"><path d="M18 38 H70 V62 Q70 84 44 84 Q18 84 18 62 Z" fill="#F1F5F9" stroke="#0B1220" stroke-width="6" /><path d="M70 46 Q88 46 88 58 Q88 70 70 70" fill="none" stroke="#0B1220" stroke-width="6" /><path d="M32 12 Q38 20 32 28 M46 10 Q52 18 46 26 M60 12 Q66 20 60 28" fill="none" stroke="#38BDF8" stroke-width="5" stroke-linecap="round" /></svg><div><em>payé par Wave</em>Petit déj</div></div>
+        <div id="d-v0-0" class="piece" style="left: 784px; top: 815px; width: 60px; height: 60px; font-size: 12px; opacity: 0"><span>F</span></div>
+        <div id="d-v0-1" class="piece" style="left: 784px; top: 815px; width: 60px; height: 60px; font-size: 12px; opacity: 0"><span>F</span></div>
+        <div id="d-v0-2" class="piece" style="left: 784px; top: 815px; width: 60px; height: 60px; font-size: 12px; opacity: 0"><span>F</span></div>
+        <div id="d-p1" class="puce" style="left: 40px; top: 1023px; font-size: 52px; opacity: 0"><svg class="ico" viewBox="0 0 100 100" width="78" height="78"><rect x="34" y="18" width="32" height="12" rx="3" fill="#F2B705" stroke="#0B1220" stroke-width="5" /><path d="M14 60 L24 36 H76 L86 60 Z" fill="#F2B705" stroke="#0B1220" stroke-width="6" stroke-linejoin="round" /><path d="M30 56 L36 42 H64 L70 56 Z" fill="#7DD3FC" stroke="#0B1220" stroke-width="4" /><rect x="8" y="58" width="84" height="20" rx="6" fill="#F2B705" stroke="#0B1220" stroke-width="6" /><circle cx="28" cy="80" r="9" fill="#0B1220" /><circle cx="72" cy="80" r="9" fill="#0B1220" /></svg><div><em>une course</em>Taxi</div></div>
+        <div id="d-v1-0" class="piece" style="left: 588px; top: 815px; width: 60px; height: 60px; font-size: 12px; opacity: 0"><span>F</span></div>
+        <div id="d-v1-1" class="piece" style="left: 588px; top: 815px; width: 60px; height: 60px; font-size: 12px; opacity: 0"><span>F</span></div>
+        <div id="d-v1-2" class="piece" style="left: 588px; top: 815px; width: 60px; height: 60px; font-size: 12px; opacity: 0"><span>F</span></div>
+        <div id="d-p2" class="puce" style="left: 40px; top: 1141px; font-size: 52px; opacity: 0"><svg class="ico" viewBox="0 0 100 100" width="78" height="78"><rect x="28" y="8" width="44" height="84" rx="10" fill="#0B1220" stroke="#F1F5F9" stroke-width="4" /><rect x="34" y="20" width="32" height="56" rx="3" fill="#38BDF8" /><path d="M40 64 V58 M48 64 V50 M56 64 V42 M62 64 V34" stroke="#0B1220" stroke-width="5" stroke-linecap="round" /></svg><div><em>téléphone</em>Crédit</div></div>
+        <div id="d-v2-0" class="piece" style="left: 412px; top: 815px; width: 60px; height: 60px; font-size: 12px; opacity: 0"><span>F</span></div>
+        <div id="d-v2-1" class="piece" style="left: 412px; top: 815px; width: 60px; height: 60px; font-size: 12px; opacity: 0"><span>F</span></div>
+        <div id="d-v2-2" class="piece" style="left: 412px; top: 815px; width: 60px; height: 60px; font-size: 12px; opacity: 0"><span>F</span></div>
+        <div id="d-p3" class="puce" style="left: 40px; top: 1259px; font-size: 52px; opacity: 0"><svg class="ico" viewBox="0 0 100 100" width="78" height="78"><path d="M14 34 L50 18 L86 34 L86 74 L50 90 L14 74 Z" fill="#c08a4a" stroke="#0B1220" stroke-width="6" stroke-linejoin="round" /><path d="M14 34 L50 50 L86 34 M50 50 V90" fill="none" stroke="#0B1220" stroke-width="6" /><path d="M32 26 L68 42" stroke="#F1F5F9" stroke-width="6" /></svg><div><em>parce qu’il est fatigué</em>Livraison</div></div>
+        <div id="d-v3-0" class="piece" style="left: 236px; top: 815px; width: 60px; height: 60px; font-size: 12px; opacity: 0"><span>F</span></div>
+        <div id="d-v3-1" class="piece" style="left: 236px; top: 815px; width: 60px; height: 60px; font-size: 12px; opacity: 0"><span>F</span></div>
+        <div id="d-v3-2" class="piece" style="left: 236px; top: 815px; width: 60px; height: 60px; font-size: 12px; opacity: 0"><span>F</span></div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#s04-depenses-cam", { filter: "blur(14px)", scale: 1.12 }, { filter: "blur(0px)", scale: 1, duration: 0.18, ease: "power2.out" }, 0);
+    tl.to("#s04-depenses-cam", { scale: 1.04, duration: 6.32, ease: "none" }, 0.18);
+    tl.set("#d-ec-v-0", { opacity: 1 }, 0.0);
+    tl.fromTo("#d-ec-v-0", { scale: 1.18 }, { scale: 1.02, duration: 0.52, ease: "power2.out", immediateRender: false }, 0.0);
+    tl.set("#d-ec-v-0", { opacity: 0 }, 0.54);
+    tl.set("#d-ec-v-1", { opacity: 1 }, 0.52);
+    tl.fromTo("#d-ec-v-1", { scale: 1.18 }, { scale: 1.02, duration: 0.64, ease: "power2.out", immediateRender: false }, 0.52);
+    tl.set("#d-ec-v-1", { opacity: 0 }, 1.18);
+    tl.set("#d-ec-v-2", { opacity: 1 }, 1.16);
+    tl.fromTo("#d-ec-v-2", { scale: 1.18 }, { scale: 1.02, duration: 0.4, ease: "power2.out", immediateRender: false }, 1.16);
+    tl.set("#d-ec-v-2", { opacity: 0 }, 1.58);
+    tl.set("#d-ec-v-3", { opacity: 1 }, 1.56);
+    tl.fromTo("#d-ec-v-3", { scale: 1.18 }, { scale: 1.02, duration: 0.56, ease: "power2.out", immediateRender: false }, 1.56);
+    tl.set("#d-ec-v-3", { opacity: 0 }, 2.14);
+    tl.set("#d-ec-v-4", { opacity: 1 }, 2.12);
+    tl.fromTo("#d-ec-v-4", { scale: 1.18 }, { scale: 1.02, duration: 0.48, ease: "power2.out", immediateRender: false }, 2.12);
+    tl.set("#d-ec-v-4", { opacity: 0 }, 2.62);
+    tl.set("#d-ec-v-5", { opacity: 1 }, 2.6);
+    tl.fromTo("#d-ec-v-5", { scale: 1.18 }, { scale: 1.02, duration: 0.2, ease: "power2.out", immediateRender: false }, 2.6);
+    tl.set("#d-ec-v-5", { opacity: 0 }, 2.78);
+    tl.set("#d-ec-v-6", { opacity: 1 }, 2.76);
+    tl.fromTo("#d-ec-v-6", { scale: 1.18 }, { scale: 1.02, duration: 0.56, ease: "power2.out", immediateRender: false }, 2.76);
+    tl.set("#d-ec-v-6", { opacity: 0 }, 3.34);
+    tl.set("#d-ec-v-7", { opacity: 1 }, 3.32);
+    tl.fromTo("#d-ec-v-7", { scale: 1.18 }, { scale: 1.02, duration: 0.2, ease: "power2.out", immediateRender: false }, 3.32);
+    tl.set("#d-ec-v-7", { opacity: 0 }, 3.5);
+    tl.set("#d-ec-v-8", { opacity: 1 }, 3.48);
+    tl.fromTo("#d-ec-v-8", { scale: 1.18 }, { scale: 1.02, duration: 0.48, ease: "power2.out", immediateRender: false }, 3.48);
+    tl.set("#d-ec-v-8", { opacity: 0 }, 3.98);
+    tl.set("#d-ec-v-9", { opacity: 1 }, 3.96);
+    tl.fromTo("#d-ec-v-9", { scale: 1.18 }, { scale: 1.02, duration: 0.72, ease: "power2.out", immediateRender: false }, 3.96);
+    tl.set("#d-ec-v-9", { opacity: 0 }, 4.7);
+    tl.set("#d-ec-v-10", { opacity: 1 }, 4.68);
+    tl.fromTo("#d-ec-v-10", { scale: 1.18 }, { scale: 1.02, duration: 0.2, ease: "power2.out", immediateRender: false }, 4.68);
+    tl.set("#d-ec-v-10", { opacity: 0 }, 4.86);
+    tl.set("#d-ec-v-11", { opacity: 1 }, 4.84);
+    tl.fromTo("#d-ec-v-11", { scale: 1.18 }, { scale: 1.02, duration: 0.72, ease: "power2.out", immediateRender: false }, 4.84);
+    tl.set("#d-ec-v-11", { opacity: 0 }, 5.58);
+    tl.set("#d-ec-v-12", { opacity: 1 }, 5.56);
+    tl.fromTo("#d-ec-v-12", { scale: 1.18 }, { scale: 1.02, duration: 0.4, ease: "power2.out", immediateRender: false }, 5.56);
+    tl.set("#d-ec-v-12", { opacity: 0 }, 5.98);
+    tl.set("#d-ec-v-13", { opacity: 1 }, 5.96);
+    tl.fromTo("#d-ec-v-13", { scale: 1.18 }, { scale: 1.02, duration: 0.76, ease: "power2.out", immediateRender: false }, 5.96);
+    tl.fromTo("#d-ec", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.22, ease: "back.out(1.8)", immediateRender: false }, 0.0);
+    tl.fromTo("#d-lucas-vie", { y: 0 }, { y: -5, duration: 0.42, repeat: 14, yoyo: true, ease: "sine.inOut", immediateRender: false }, 0.0);
+    tl.to("#d-lucas-yeux", { scaleY: 0.1, duration: 0.06, yoyo: true, repeat: 1, svgOrigin: "50 20" }, 0.7);
+    tl.to("#d-lucas-yeux", { scaleY: 0.1, duration: 0.06, yoyo: true, repeat: 1, svgOrigin: "50 20" }, 3.233);
+    tl.to("#d-lucas-yeux", { scaleY: 0.1, duration: 0.06, yoyo: true, repeat: 1, svgOrigin: "50 20" }, 5.767);
+    tl.to("#d-lucas-pup", { x: -4, y: -4, duration: 0.15 }, 0.0);
+    tl.fromTo("#d-p0", { opacity: 0, x: -120, scale: 0.7 }, { opacity: 1, x: 0, scale: 1, duration: 0.22, ease: "back.out(2)", immediateRender: false }, 0.52);
+    tl.to("#d-j", { scaleX: 0.78, duration: 0.35, ease: "power2.out" }, 0.62);
+    tl.fromTo("#d-jauge", { x: 0 }, { keyframes: [{ x: -10, duration: 0.04 }, { x: 10, duration: 0.04 }, { x: 0, duration: 0.04 }] }, 0.62);
+    tl.set("#d-v0-0", { opacity: 1 }, 0.67);
+    tl.fromTo("#d-v0-0", { x: 0 }, { x: 120, duration: 0.45, ease: "power1.inOut", immediateRender: false }, 0.67);
+    tl.fromTo("#d-v0-0", { y: 0 }, { keyframes: [{ y: -120, duration: 0.225, ease: "power2.out" }, { y: -165, duration: 0.225, ease: "power2.in" }] }, 0.67);
+    tl.set("#d-v0-0", { opacity: 0 }, 1.12);
+    tl.set("#d-v0-1", { opacity: 1 }, 0.74);
+    tl.fromTo("#d-v0-1", { x: 0 }, { x: 120, duration: 0.45, ease: "power1.inOut", immediateRender: false }, 0.74);
+    tl.fromTo("#d-v0-1", { y: 0 }, { keyframes: [{ y: -120, duration: 0.225, ease: "power2.out" }, { y: -165, duration: 0.225, ease: "power2.in" }] }, 0.74);
+    tl.set("#d-v0-1", { opacity: 0 }, 1.19);
+    tl.set("#d-v0-2", { opacity: 1 }, 0.81);
+    tl.fromTo("#d-v0-2", { x: 0 }, { x: 120, duration: 0.45, ease: "power1.inOut", immediateRender: false }, 0.81);
+    tl.fromTo("#d-v0-2", { y: 0 }, { keyframes: [{ y: -120, duration: 0.225, ease: "power2.out" }, { y: -165, duration: 0.225, ease: "power2.in" }] }, 0.81);
+    tl.set("#d-v0-2", { opacity: 0 }, 1.26);
+    tl.to("#d-lucas-bd", { rotation: -60, svgOrigin: "89 62", duration: 0.15, ease: "power2.out" }, 0.52);
+    tl.to("#d-lucas-bd", { rotation: 0, svgOrigin: "89 62", duration: 0.2, ease: "power2.out" }, 0.97);
+    tl.fromTo("#d-p1", { opacity: 0, x: -120, scale: 0.7 }, { opacity: 1, x: 0, scale: 1, duration: 0.22, ease: "back.out(2)", immediateRender: false }, 2.76);
+    tl.to("#d-j", { scaleX: 0.58, duration: 0.35, ease: "power2.out" }, 2.86);
+    tl.fromTo("#d-jauge", { x: 0 }, { keyframes: [{ x: -10, duration: 0.04 }, { x: 10, duration: 0.04 }, { x: 0, duration: 0.04 }] }, 2.86);
+    tl.set("#d-v1-0", { opacity: 1 }, 2.91);
+    tl.fromTo("#d-v1-0", { x: 0 }, { x: 120, duration: 0.45, ease: "power1.inOut", immediateRender: false }, 2.91);
+    tl.fromTo("#d-v1-0", { y: 0 }, { keyframes: [{ y: -120, duration: 0.225, ease: "power2.out" }, { y: -165, duration: 0.225, ease: "power2.in" }] }, 2.91);
+    tl.set("#d-v1-0", { opacity: 0 }, 3.36);
+    tl.set("#d-v1-1", { opacity: 1 }, 2.98);
+    tl.fromTo("#d-v1-1", { x: 0 }, { x: 120, duration: 0.45, ease: "power1.inOut", immediateRender: false }, 2.98);
+    tl.fromTo("#d-v1-1", { y: 0 }, { keyframes: [{ y: -120, duration: 0.225, ease: "power2.out" }, { y: -165, duration: 0.225, ease: "power2.in" }] }, 2.98);
+    tl.set("#d-v1-1", { opacity: 0 }, 3.43);
+    tl.set("#d-v1-2", { opacity: 1 }, 3.05);
+    tl.fromTo("#d-v1-2", { x: 0 }, { x: 120, duration: 0.45, ease: "power1.inOut", immediateRender: false }, 3.05);
+    tl.fromTo("#d-v1-2", { y: 0 }, { keyframes: [{ y: -120, duration: 0.225, ease: "power2.out" }, { y: -165, duration: 0.225, ease: "power2.in" }] }, 3.05);
+    tl.set("#d-v1-2", { opacity: 0 }, 3.5);
+    tl.to("#d-lucas-bd", { rotation: -60, svgOrigin: "89 62", duration: 0.15, ease: "power2.out" }, 2.76);
+    tl.to("#d-lucas-bd", { rotation: 0, svgOrigin: "89 62", duration: 0.2, ease: "power2.out" }, 3.21);
+    tl.fromTo("#d-p2", { opacity: 0, x: -120, scale: 0.7 }, { opacity: 1, x: 0, scale: 1, duration: 0.22, ease: "back.out(2)", immediateRender: false }, 3.58);
+    tl.to("#d-j", { scaleX: 0.4, duration: 0.35, ease: "power2.out" }, 3.68);
+    tl.fromTo("#d-jauge", { x: 0 }, { keyframes: [{ x: -10, duration: 0.04 }, { x: 10, duration: 0.04 }, { x: 0, duration: 0.04 }] }, 3.68);
+    tl.set("#d-v2-0", { opacity: 1 }, 3.73);
+    tl.fromTo("#d-v2-0", { x: 0 }, { x: 120, duration: 0.45, ease: "power1.inOut", immediateRender: false }, 3.73);
+    tl.fromTo("#d-v2-0", { y: 0 }, { keyframes: [{ y: -120, duration: 0.225, ease: "power2.out" }, { y: -165, duration: 0.225, ease: "power2.in" }] }, 3.73);
+    tl.set("#d-v2-0", { opacity: 0 }, 4.18);
+    tl.set("#d-v2-1", { opacity: 1 }, 3.8);
+    tl.fromTo("#d-v2-1", { x: 0 }, { x: 120, duration: 0.45, ease: "power1.inOut", immediateRender: false }, 3.8);
+    tl.fromTo("#d-v2-1", { y: 0 }, { keyframes: [{ y: -120, duration: 0.225, ease: "power2.out" }, { y: -165, duration: 0.225, ease: "power2.in" }] }, 3.8);
+    tl.set("#d-v2-1", { opacity: 0 }, 4.25);
+    tl.set("#d-v2-2", { opacity: 1 }, 3.87);
+    tl.fromTo("#d-v2-2", { x: 0 }, { x: 120, duration: 0.45, ease: "power1.inOut", immediateRender: false }, 3.87);
+    tl.fromTo("#d-v2-2", { y: 0 }, { keyframes: [{ y: -120, duration: 0.225, ease: "power2.out" }, { y: -165, duration: 0.225, ease: "power2.in" }] }, 3.87);
+    tl.set("#d-v2-2", { opacity: 0 }, 4.32);
+    tl.to("#d-lucas-bd", { rotation: -60, svgOrigin: "89 62", duration: 0.15, ease: "power2.out" }, 3.58);
+    tl.to("#d-lucas-bd", { rotation: 0, svgOrigin: "89 62", duration: 0.2, ease: "power2.out" }, 4.03);
+    tl.fromTo("#d-p3", { opacity: 0, x: -120, scale: 0.7 }, { opacity: 1, x: 0, scale: 1, duration: 0.22, ease: "back.out(2)", immediateRender: false }, 4.84);
+    tl.to("#d-j", { scaleX: 0.22, duration: 0.35, ease: "power2.out" }, 4.94);
+    tl.fromTo("#d-jauge", { x: 0 }, { keyframes: [{ x: -10, duration: 0.04 }, { x: 10, duration: 0.04 }, { x: 0, duration: 0.04 }] }, 4.94);
+    tl.set("#d-v3-0", { opacity: 1 }, 4.99);
+    tl.fromTo("#d-v3-0", { x: 0 }, { x: 120, duration: 0.45, ease: "power1.inOut", immediateRender: false }, 4.99);
+    tl.fromTo("#d-v3-0", { y: 0 }, { keyframes: [{ y: -120, duration: 0.225, ease: "power2.out" }, { y: -165, duration: 0.225, ease: "power2.in" }] }, 4.99);
+    tl.set("#d-v3-0", { opacity: 0 }, 5.44);
+    tl.set("#d-v3-1", { opacity: 1 }, 5.06);
+    tl.fromTo("#d-v3-1", { x: 0 }, { x: 120, duration: 0.45, ease: "power1.inOut", immediateRender: false }, 5.06);
+    tl.fromTo("#d-v3-1", { y: 0 }, { keyframes: [{ y: -120, duration: 0.225, ease: "power2.out" }, { y: -165, duration: 0.225, ease: "power2.in" }] }, 5.06);
+    tl.set("#d-v3-1", { opacity: 0 }, 5.51);
+    tl.set("#d-v3-2", { opacity: 1 }, 5.13);
+    tl.fromTo("#d-v3-2", { x: 0 }, { x: 120, duration: 0.45, ease: "power1.inOut", immediateRender: false }, 5.13);
+    tl.fromTo("#d-v3-2", { y: 0 }, { keyframes: [{ y: -120, duration: 0.225, ease: "power2.out" }, { y: -165, duration: 0.225, ease: "power2.in" }] }, 5.13);
+    tl.set("#d-v3-2", { opacity: 0 }, 5.58);
+    tl.to("#d-lucas-bd", { rotation: -60, svgOrigin: "89 62", duration: 0.15, ease: "power2.out" }, 4.84);
+    tl.to("#d-lucas-bd", { rotation: 0, svgOrigin: "89 62", duration: 0.2, ease: "power2.out" }, 5.29);
+    tl.to("#s04-depenses-cadre", { x: 0, y: 462, scale: 1.1, duration: 0.22, ease: "power3.inOut" }, 0.05);
+    tl.to("#s04-depenses-cadre", { keyframes: [{ filter: "blur(9px)", duration: 0.11 }, { filter: "blur(0px)", duration: 0.11 }] }, 0.05);
+    tl.to("#s04-depenses-cadre", { x: 0, y: 0, scale: 1.0, duration: 0.22, ease: "power3.inOut" }, 0.37);
+    tl.to("#s04-depenses-cadre", { keyframes: [{ filter: "blur(9px)", duration: 0.11 }, { filter: "blur(0px)", duration: 0.11 }] }, 0.37);
+    tl.to("#s04-depenses-cadre", { x: 0, y: 462, scale: 1.1, duration: 0.22, ease: "power3.inOut" }, 2.07);
+    tl.to("#s04-depenses-cadre", { keyframes: [{ filter: "blur(9px)", duration: 0.11 }, { filter: "blur(0px)", duration: 0.11 }] }, 2.07);
+    tl.to("#s04-depenses-cadre", { x: 0, y: 0, scale: 1.0, duration: 0.22, ease: "power3.inOut" }, 2.61);
+    tl.to("#s04-depenses-cadre", { keyframes: [{ filter: "blur(9px)", duration: 0.11 }, { filter: "blur(0px)", duration: 0.11 }] }, 2.61);
+    tl.to("#s04-depenses-cadre", { x: 0, y: 462, scale: 1.1, duration: 0.22, ease: "power3.inOut" }, 3.27);
+    tl.to("#s04-depenses-cadre", { keyframes: [{ filter: "blur(9px)", duration: 0.11 }, { filter: "blur(0px)", duration: 0.11 }] }, 3.27);
+    tl.to("#s04-depenses-cadre", { x: 0, y: 0, scale: 1.0, duration: 0.22, ease: "power3.inOut" }, 3.58);
+    tl.to("#s04-depenses-cadre", { keyframes: [{ filter: "blur(9px)", duration: 0.11 }, { filter: "blur(0px)", duration: 0.11 }] }, 3.58);
+    tl.to("#s04-depenses-cadre", { x: 0, y: 462, scale: 1.1, duration: 0.22, ease: "power3.inOut" }, 4.56);
+    tl.to("#s04-depenses-cadre", { keyframes: [{ filter: "blur(9px)", duration: 0.11 }, { filter: "blur(0px)", duration: 0.11 }] }, 4.56);
+    tl.to("#s04-depenses-cadre", { x: 0, y: 0, scale: 1.0, duration: 0.22, ease: "power3.inOut" }, 4.99);
+    tl.to("#s04-depenses-cadre", { keyframes: [{ filter: "blur(9px)", duration: 0.11 }, { filter: "blur(0px)", duration: 0.11 }] }, 4.99);
+    tl.to("#d-lucas-bg", { rotation: 150, svgOrigin: "11 62", duration: 0.25, ease: "power2.out" }, 5.96);
+    tl.to("#d-lucas-bd", { rotation: -150, svgOrigin: "89 62", duration: 0.25, ease: "power2.out" }, 5.96);
+    tl.set("#d-lucas-bouche", { attr: { d: "M45 34 Q50 42 55 34 Q50 27 45 34", fill: "none" } }, 5.96);
+    tl.to("#d-lucas-bg", { rotation: 0, svgOrigin: "11 62", duration: 0.25, ease: "power2.out" }, 6.34);
+    tl.to("#d-lucas-bd", { rotation: 0, svgOrigin: "89 62", duration: 0.25, ease: "power2.out" }, 6.34);
+    tl.to("#s04-depenses-cam", { scale: 1.25, filter: "blur(14px)", duration: 0.2, ease: "power3.in" }, 6.52);
+    window.__timelines["s04-depenses"] = tl;
+  </script>
+</template>

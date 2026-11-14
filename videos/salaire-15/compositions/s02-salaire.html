@@ -1,0 +1,105 @@
+<!-- Lucas vient de toucher 150 000 FCFA ; il veut économiser pour une moto (3.48 → 8.6 s). Écrit par tools/construire-scenes.py. -->
+<template>
+  <style>
+    #root { position: absolute; inset: 0; }
+  </style>
+  <div id="root" data-composition-id="s02-salaire" data-width="1080" data-height="1920">
+    <div class="sc">
+      <div id="s02-salaire-cam" class="sc-cam">
+        <div id="s02-salaire-cadre" class="sc-cadre">
+        <div class="decor" style="left: -1080px; top: 0px; width: 3240px"><div class="mur"></div><div class="fenetre" style="left: 1150px; top: 380px"><i class="lune" style="left: 150px; top: 40px; width: 70px; height: 70px"></i></div><div class="plinthe" style="top: 1270px"></div><div class="parquet" style="top: 1290px"></div></div>
+        <svg id="r-lucas" class="perso" viewBox="-30 -20 160 290" style="left: 114px; top: 699px; width: 353px; height: 640px"><g id="r-lucas-vie"><g id="r-lucas-corps"><g id="r-lucas-jg"><g class="c"><rect x="24" y="136" width="24" height="112" rx="8" /></g><g class="p" style="--pc: #38BDF8"><rect x="24" y="136" width="24" height="112" rx="8" /></g></g><g id="r-lucas-jd"><g class="c"><rect x="52" y="136" width="24" height="112" rx="8" /></g><g class="p" style="--pc: #38BDF8"><rect x="52" y="136" width="24" height="112" rx="8" /></g></g><g id="r-lucas-tronc"><g class="c"><rect x="22" y="52" width="56" height="94" rx="12" /></g><g class="p" style="--pc: #38BDF8"><rect x="22" y="52" width="56" height="94" rx="12" /></g><path d="M44 56 L56 56 L53 64 L57 104 L50 112 L43 104 L47 64 Z" fill="#0B1220" /></g><g id="r-lucas-bg"><g class="c"><rect x="2" y="54" width="18" height="86" rx="9" /></g><g class="p" style="--pc: #38BDF8"><rect x="2" y="54" width="18" height="86" rx="9" /></g></g><g id="r-lucas-bd"><g class="c"><rect x="80" y="54" width="18" height="86" rx="9" /></g><g class="p" style="--pc: #38BDF8"><rect x="80" y="54" width="18" height="86" rx="9" /></g></g><g id="r-lucas-tete"><g class="c"><circle cx="50" cy="24" r="22" /></g><g class="p" style="--pc: #38BDF8"><circle cx="50" cy="24" r="22" /></g><g><g id="r-lucas-yeux"><circle cx="41" cy="20" r="6.5" fill="#fff" /><circle cx="59" cy="20" r="6.5" fill="#fff" /><g id="r-lucas-pup"><circle cx="42" cy="21" r="3" fill="#0B1220" /><circle cx="60" cy="21" r="3" fill="#0B1220" /></g></g><path id="r-lucas-bouche" d="M41 32 Q50 40 59 32" fill="none" stroke="#0B1220" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" /><path d="M28 14 Q30 -4 50 -3 Q70 -4 72 14 Q66 6 58 8 Q50 2 42 8 Q34 6 28 14 Z" fill="#0B1220" /></g></g></g></g></svg>
+        <div id="r-nom" class="nom" style="left: 200px; top: 640px; opacity: 0"><b style="background: #38BDF8">LUCAS</b></div>
+        <div id="r-tel" class="tel" style="left: 600px; top: 470px; width: 380px; height: 760px; opacity: 0"><i class="tel-cam"></i><div class="tel-ecran"><div class="app"><div class="app-tete">Mon compte</div><div class="app-solde"><i id="r-solde">0</i> F</div><div id="r-notif" class="app-notif" style="opacity: 0"><b>SALAIRE REÇU</b><span>Virement de l’employeur</span></div></div></div></div>
+        <i id="r-cf-0" style="position: absolute; left: 790px; top: 700px; width: 14px; height: 14px; background: #38BDF8; opacity: 0"></i>
+        <i id="r-cf-1" style="position: absolute; left: 790px; top: 700px; width: 22px; height: 12px; background: #F2B705; opacity: 0"></i>
+        <i id="r-cf-2" style="position: absolute; left: 790px; top: 700px; width: 14px; height: 14px; background: #F1F5F9; opacity: 0"></i>
+        <i id="r-cf-3" style="position: absolute; left: 790px; top: 700px; width: 22px; height: 12px; background: #7DD3FC; opacity: 0"></i>
+        <i id="r-cf-4" style="position: absolute; left: 790px; top: 700px; width: 14px; height: 14px; background: #38BDF8; opacity: 0"></i>
+        <i id="r-cf-5" style="position: absolute; left: 790px; top: 700px; width: 22px; height: 12px; background: #F2B705; opacity: 0"></i>
+        <i id="r-cf-6" style="position: absolute; left: 790px; top: 700px; width: 14px; height: 14px; background: #F1F5F9; opacity: 0"></i>
+        <i id="r-cf-7" style="position: absolute; left: 790px; top: 700px; width: 22px; height: 12px; background: #7DD3FC; opacity: 0"></i>
+        <i id="r-cf-8" style="position: absolute; left: 790px; top: 700px; width: 14px; height: 14px; background: #38BDF8; opacity: 0"></i>
+        <i id="r-cf-9" style="position: absolute; left: 790px; top: 700px; width: 22px; height: 12px; background: #F2B705; opacity: 0"></i>
+        <i id="r-cf-10" style="position: absolute; left: 790px; top: 700px; width: 14px; height: 14px; background: #F1F5F9; opacity: 0"></i>
+        <i id="r-cf-11" style="position: absolute; left: 790px; top: 700px; width: 22px; height: 12px; background: #7DD3FC; opacity: 0"></i>
+        <i id="r-cf-12" style="position: absolute; left: 790px; top: 700px; width: 14px; height: 14px; background: #38BDF8; opacity: 0"></i>
+        <i id="r-cf-13" style="position: absolute; left: 790px; top: 700px; width: 22px; height: 12px; background: #F2B705; opacity: 0"></i>
+        <i id="r-cf-14" style="position: absolute; left: 790px; top: 700px; width: 14px; height: 14px; background: #F1F5F9; opacity: 0"></i>
+        <i id="r-cf-15" style="position: absolute; left: 790px; top: 700px; width: 22px; height: 12px; background: #7DD3FC; opacity: 0"></i>
+        <i class="rond" id="r-pen-r0" style="left: 402px; top: 725px; width: 84px; height: 84px; opacity: 0"></i><i class="rond" id="r-pen-r1" style="left: 488px; top: 784px; width: 56px; height: 56px; opacity: 0"></i><i class="rond" id="r-pen-r2" style="left: 589px; top: 852px; width: 28px; height: 28px; opacity: 0"></i><div id="r-pen" class="pensee-video" style="left: 410px; top: 360px; width: 560px; height: 560px; opacity: 0"><div id="r-pen-v-0" class="vplein" style="opacity: 0"><video id="r-pen-v-0-v" class="clip" src="assets/video/moto-face.mp4" data-start="3.32" data-duration="0.9" data-track-index="5" muted playsinline></video></div><div id="r-pen-v-1" class="vplein" style="opacity: 0"><video id="r-pen-v-1-v" class="clip" src="assets/video/moto-compteur.mp4" data-start="4.12" data-duration="0.58" data-track-index="6" muted playsinline></video></div><div id="r-pen-v-2" class="vplein" style="opacity: 0"><video id="r-pen-v-2-v" class="clip" src="assets/video/moto-accelere.mp4" data-start="4.6" data-duration="0.47" data-track-index="7" muted playsinline></video></div></div>
+        <div id="r-obj" class="etiq" style="left: 470px; top: 980px; font-size: 64px; background: #F2B705; color: #0B1220; transform: rotate(-3deg); opacity: 0">OBJECTIF : MOTO</div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#s02-salaire-cam", { filter: "blur(14px)", scale: 1.12 }, { filter: "blur(0px)", scale: 1, duration: 0.18, ease: "power2.out" }, 0);
+    tl.to("#s02-salaire-cam", { scale: 1.04, duration: 4.72, ease: "none" }, 0.18);
+    tl.fromTo("#r-lucas-vie", { y: 0 }, { y: -5, duration: 0.42, repeat: 10, yoyo: true, ease: "sine.inOut", immediateRender: false }, 0.0);
+    tl.to("#r-lucas-yeux", { scaleY: 0.1, duration: 0.06, yoyo: true, repeat: 1, svgOrigin: "50 20" }, 0.7);
+    tl.to("#r-lucas-yeux", { scaleY: 0.1, duration: 0.06, yoyo: true, repeat: 1, svgOrigin: "50 20" }, 3.233);
+    tl.fromTo("#r-nom", { opacity: 0, scale: 0.3 }, { opacity: 1, scale: 1, duration: 0.2, ease: "back.out(2.4)", immediateRender: false }, 0.1);
+    tl.to("#r-lucas-pup", { x: 4, y: -2, duration: 0.15 }, 0.0);
+    tl.fromTo("#r-tel", { opacity: 0, y: 200, scale: 0.8 }, { opacity: 1, y: 0, scale: 1, duration: 0.25, ease: "back.out(1.8)", immediateRender: false }, 0.58);
+    tl.fromTo("#r-notif", { opacity: 0, y: -60 }, { opacity: 1, y: 0, duration: 0.2, ease: "back.out(2)", immediateRender: false }, 1.0);
+    tl.to("#s02-salaire-cadre", { x: -324, y: 224, scale: 1.6, duration: 0.26, ease: "power3.inOut" }, 0.9);
+    tl.to("#s02-salaire-cadre", { keyframes: [{ filter: "blur(9px)", duration: 0.13 }, { filter: "blur(0px)", duration: 0.13 }] }, 0.9);
+    const p1 = { v: 0 };
+    tl.fromTo(p1, { v: 0 }, { v: 150000, duration: 0.75, ease: "power2.out", immediateRender: false, onUpdate: () => { document.querySelector("#r-solde").textContent = String(Math.round(p1.v)).replace(/\B(?=(\d{3})+(?!\d))/g, "\u202f") + ""; } }, 1.32);
+    tl.fromTo("#r-tel", { scale: 1 }, { scale: 1.06, duration: 0.1, yoyo: true, repeat: 1, immediateRender: false }, 2.1);
+    tl.to("#s02-salaire-cadre", { x: 0, y: 0, scale: 1.0, duration: 0.3, ease: "power3.inOut" }, 2.44);
+    tl.to("#s02-salaire-cadre", { keyframes: [{ filter: "blur(9px)", duration: 0.15 }, { filter: "blur(0px)", duration: 0.15 }] }, 2.44);
+    tl.to("#r-lucas-bg", { rotation: 165, svgOrigin: "11 62", duration: 0.14, ease: "back.out(2)" }, 2.49);
+    tl.to("#r-lucas-bd", { rotation: -165, svgOrigin: "89 62", duration: 0.14, ease: "back.out(2)" }, 2.49);
+    tl.to("#r-lucas-tete", { rotation: -8, svgOrigin: "50 50", duration: 0.14, ease: "back.out(2)" }, 2.49);
+    tl.to("#r-lucas-corps", { keyframes: [{ y: -40, duration: 0.13, ease: "power2.out" }, { y: 0, duration: 0.15, ease: "power2.in" }] }, 2.54);
+    tl.set("#r-lucas-bouche", { attr: { d: "M39 30 Q50 46 61 30 Z", fill: "#0B1220" } }, 2.49);
+    tl.fromTo("#r-cf-0", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: 135, y: 160, rotation: -270, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 2.54);
+    tl.fromTo("#r-cf-1", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: -148, y: 269, rotation: -173, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 2.54);
+    tl.fromTo("#r-cf-2", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: 23, y: -53, rotation: -76, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 2.54);
+    tl.fromTo("#r-cf-3", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: 92, y: 256, rotation: 21, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 2.54);
+    tl.fromTo("#r-cf-4", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: -214, y: 130, rotation: 118, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 2.54);
+    tl.fromTo("#r-cf-5", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: 239, y: 38, rotation: 215, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 2.54);
+    tl.fromTo("#r-cf-6", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: -44, y: 290, rotation: -228, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 2.54);
+    tl.fromTo("#r-cf-7", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: -108, y: -6, rotation: -131, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 2.54);
+    tl.fromTo("#r-cf-8", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: 282, y: 242, rotation: -34, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 2.54);
+    tl.fromTo("#r-cf-9", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: -171, y: 216, rotation: 63, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 2.54);
+    tl.fromTo("#r-cf-10", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: 106, y: -22, rotation: 160, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 2.54);
+    tl.fromTo("#r-cf-11", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: 40, y: 263, rotation: 257, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 2.54);
+    tl.fromTo("#r-cf-12", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: -174, y: 79, rotation: -186, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 2.54);
+    tl.fromTo("#r-cf-13", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: 261, y: 114, rotation: -89, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 2.54);
+    tl.fromTo("#r-cf-14", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: -87, y: 259, rotation: 8, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 2.54);
+    tl.fromTo("#r-cf-15", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: -28, y: -13, rotation: 105, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 2.54);
+    tl.to("#r-tel", { opacity: 0, duration: 0.2 }, 3.26);
+    tl.set("#r-lucas-bouche", { attr: { d: "M41 32 Q50 40 59 32", fill: "none" } }, 3.32);
+    tl.to("#r-lucas-pup", { x: 3, y: -5, duration: 0.15 }, 3.32);
+    tl.set("#r-pen-v-0", { opacity: 1 }, 3.32);
+    tl.fromTo("#r-pen-v-0", { scale: 1.18 }, { scale: 1.02, duration: 0.8, ease: "power2.out", immediateRender: false }, 3.32);
+    tl.set("#r-pen-v-0", { opacity: 0 }, 4.14);
+    tl.set("#r-pen-v-1", { opacity: 1 }, 4.12);
+    tl.fromTo("#r-pen-v-1", { scale: 1.18 }, { scale: 1.02, duration: 0.48, ease: "power2.out", immediateRender: false }, 4.12);
+    tl.set("#r-pen-v-1", { opacity: 0 }, 4.62);
+    tl.set("#r-pen-v-2", { opacity: 1 }, 4.6);
+    tl.fromTo("#r-pen-v-2", { scale: 1.18 }, { scale: 1.02, duration: 0.37, ease: "power2.out", immediateRender: false }, 4.6);
+    tl.set("#r-pen-v-2", { opacity: 0 }, 4.97);
+    tl.fromTo("#r-pen-r0", { opacity: 0, scale: 0 }, { opacity: 1, scale: 1, duration: 0.12, ease: "back.out(3)", immediateRender: false }, 3.22);
+    tl.to("#r-pen-r0", { opacity: 0, duration: 0.12 }, 4.97);
+    tl.fromTo("#r-pen-r1", { opacity: 0, scale: 0 }, { opacity: 1, scale: 1, duration: 0.12, ease: "back.out(3)", immediateRender: false }, 3.28);
+    tl.to("#r-pen-r1", { opacity: 0, duration: 0.12 }, 4.97);
+    tl.fromTo("#r-pen-r2", { opacity: 0, scale: 0 }, { opacity: 1, scale: 1, duration: 0.12, ease: "back.out(3)", immediateRender: false }, 3.34);
+    tl.to("#r-pen-r2", { opacity: 0, duration: 0.12 }, 4.97);
+    tl.fromTo("#r-pen", { opacity: 0, scale: 0.2 }, { opacity: 1, scale: 1, duration: 0.26, ease: "back.out(1.9)", immediateRender: false }, 3.37);
+    tl.to("#r-pen", { opacity: 0, scale: 0.5, duration: 0.16 }, 4.97);
+    tl.to("#s02-salaire-cadre", { x: -272, y: 580, scale: 1.813, duration: 0.3, ease: "power3.inOut" }, 3.56);
+    tl.to("#s02-salaire-cadre", { keyframes: [{ filter: "blur(9px)", duration: 0.15 }, { filter: "blur(0px)", duration: 0.15 }] }, 3.56);
+    tl.to("#s02-salaire-cadre", { x: 0, y: 0, scale: 1.0, duration: 0.3, ease: "power3.inOut" }, 4.66);
+    tl.to("#s02-salaire-cadre", { keyframes: [{ filter: "blur(9px)", duration: 0.15 }, { filter: "blur(0px)", duration: 0.15 }] }, 4.66);
+    tl.to("#r-lucas-bd", { rotation: -150, svgOrigin: "89 62", duration: 0.2, ease: "power2.out" }, 4.28);
+    tl.fromTo("#r-obj", { opacity: 0, x: -80 }, { opacity: 1, x: 0, duration: 0.2, ease: "power4.out", immediateRender: false }, 4.76);
+    tl.to("#s02-salaire-cam", { scale: 1.25, filter: "blur(14px)", duration: 0.2, ease: "power3.in" }, 4.92);
+    window.__timelines["s02-salaire"] = tl;
+  </script>
+</template>
