@@ -10,7 +10,7 @@ Demande de l'utilisateur :
 
 ## Fabrication
 
-1. **Voix.** On extrait la voix de la vidéo fournie, on la nettoie légèrement (passe-haut, réduction de bruit), puis on la règle à −15 LUFS. Le texte exact est dans `script.txt` ; la transcription automatique mélangeait de l'anglais, donc le texte a été reconstitué à partir du site et des sous-titres de la vidéo de référence. L'alignement mot à mot est dans `assets/mots.json`.
+1. **Voix.** On extrait la voix de la vidéo fournie. Elle contenait encore l'ancienne musique : on la sépare avec `tools/separer-voix.py` (modèle UVR MDX-Net Kim_Vocal_2 en ONNX, exécuté avec onnxruntime ; le fond passe de −43 à −75 dB), puis on la règle à −15 LUFS. Le texte exact est dans `script.txt` ; la transcription automatique mélangeait de l'anglais, donc le texte a été reconstitué à partir du site et des sous-titres de la vidéo de référence. L'alignement mot à mot est dans `assets/mots.json`.
 2. **Captures du site** : `node tools/capture.cjs tools/plan-capture.json [clip…]`.
    - La page est filmée image par image à 30 i/s, avec l'horloge de la page contrôlée (Playwright clock). Les animations GSAP et ScrollTrigger et le défilement sont donc exacts et fluides.
    - Le pointeur de souris est dessiné dans la page.
