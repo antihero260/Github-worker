@@ -693,7 +693,7 @@ decor_chambre(s, "r")
 cam(s, perso("r-lucas", 290, SOL, 640, CIEL, "lucas"))
 vivant(s, "r-lucas")
 regarde(s, "r-lucas", s.debut, 4, -2)
-app = ('<div class="app"><div class="app-tete">Mon compte</div><div class="app-solde" style="font-size: 70px">Bonne nouvelle</div>'
+app = ('<div class="app"><div class="app-tete">Mon compte</div><div class="app-solde" style="font-size: 64px; white-space: normal; line-height: 1">Bonne<br>nouvelle</div>'
        '<div id="r-notif" class="app-notif" style="opacity: 0"><b>SALAIRE REÇU</b><span>Virement de l’employeur</span></div></div>')
 telephone(s, "r-tel", 600, 470, 380, 760, app, op=1)
 s.place(790, 820, 1.6)
