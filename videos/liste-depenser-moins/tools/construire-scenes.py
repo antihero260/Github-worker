@@ -753,7 +753,7 @@ def technique(k, num, iN, iP, nom, items, ic, geste, or_=False, fin_scene=True):
 
 # ================================================================ SCÈNE 1 : HOOK (0 → 4,8 s) : une vraie vidéo par mot, puis la mosaïque des 10 techniques
 s = scene(0, "Hook : 10 techniques pour dépenser moins sans te priver. Lucas les teste cette semaine.")
-items = [(0, "billets-tombent"), (T(1), "compteuse-machine"), (T(2), "sacs-shopping"), (T(3), "plus-argent-poches"), (T(4), "portefeuille-vide-2"),
+items = [(0, "compteuse-machine"), (T(1), "pieces-calculatrice"), (T(2), "sacs-shopping"), (T(3), "plus-argent-poches"), (T(4), "portefeuille-vide-2"),
          (T(5), "stk-cash-rotation"), (T(6), "poings-joie"), (T(7), "homme-tel-joie")]
 cam(s, f'<div id="h-plein" class="plein">{videos(s, "h-v", items, fin=T(8), son_v=0.42)}</div><div class="voile-bas"></div>')
 son(0.0, "trailer-impact", 0.62, "début")
