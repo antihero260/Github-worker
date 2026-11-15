@@ -32,11 +32,16 @@ h1 span { color: var(--ciel); }
 
 <div class="page">
   <header>
-    <h1>Prompt storytelling <span>Lefinancier</span> · v3</h1>
-    <p class="aide">Choisis le sujet, appuie sur le bouton, puis colle dans ChatGPT, Claude ou Gemini. Nouveau : la fin dit clairement quoi retenir et quoi faire.</p>
+    <h1>Prompts <span>Lefinancier</span></h1>
+    <p class="aide">Choisis le format et le sujet, appuie sur le bouton, puis colle dans ChatGPT, Claude ou Gemini. Les deux formats finissent par « À retenir » et « À faire ».</p>
   </header>
 
   <div class="barre"><button id="copier" type="button">Copier le prompt</button></div>
+
+  <section>
+    <div class="label">Format</div>
+    <div class="sujets" id="formats"></div>
+  </section>
 
   <section>
     <div class="label">Sujet de la vidéo</div>
@@ -123,37 +128,125 @@ Avant de répondre, vérifie et corrige si besoin :
 - Le geste commence-t-il par un verbe et peut-il se faire aujourd'hui, gratuitement ?
 - Y a-t-il plus de 3 chiffres ? Une seule idée ? Entre 130 et 160 mots ?</script>
 
+<script type="text/plain" id="modele-liste">Tu es scénariste de vidéos courtes (TikTok, Reels) pour « Lefinancier », une chaîne qui explique l'argent aux jeunes de Côte d'Ivoire. Écris le texte d'une vidéo au FORMAT LISTE de 60 à 75 secondes (170 à 200 mots).
+
+SUJET : {{SUJET}}
+
+LE BUT : CHAQUE TECHNIQUE SE RETIENT, ET À LA FIN LE SPECTATEUR SAIT QUOI FAIRE
+Quelqu'un qui regarde seulement les 10 dernières secondes doit pouvoir répondre sans hésiter :
+1. « Qu'est-ce que je retiens ? » → une règle en une phrase.
+2. « Qu'est-ce que je fais maintenant ? » → une technique précise à commencer aujourd'hui.
+
+RÈGLE N° 1 : ON COMPREND LE SUJET EN 3 SECONDES
+- La première phrase annonce la liste et la promesse, avec des mots de tous les jours. Exemple : « 10 techniques pour dépenser moins sans te priver. La numéro 1, presque personne ne la fait. »
+- Pas d'introduction : on entre dans la liste dès la 2e ou la 3e phrase.
+
+RÈGLE N° 2 : UN COMPTE À REBOURS DE 10 À 1
+- On part de la numéro 10 et on finit par la numéro 1, la plus efficace et la plus surprenante. Les techniques montent en force.
+- Chaque technique suit TOUJOURS le même moule, très court :
+  « Numéro X : [nom de la technique, 5 mots maximum]. » + UNE phrase concrète de 15 mots maximum (un exemple de la vie de tous les jours en Côte d'Ivoire : mobile money, taxi, marché, maquis, crédit téléphone, livraison, tontine…).
+- Le nom de la technique commence par un verbe et s'écrit sur un écran de téléphone (exemples : « Attends 24 heures avant d'acheter », « Retire seulement ton budget de la semaine »).
+- Une seule idée par technique. Pas de technique vague (« fais attention », « sois raisonnable ») : chacune doit être un geste précis qu'on peut faire dès demain.
+- Un personnage fil rouge en une seule phrase au début (prénom non africain, par exemple Lucas) qui teste les techniques ; on peut le citer dans deux ou trois exemples, pas plus.
+
+RÈGLE N° 3 : GARDER LE SPECTATEUR JUSQU'AU BOUT
+- Après la numéro 6, une phrase courte de relance qui donne envie d'attendre la numéro 1 (exemple : « Et la numéro 1 change tout. »).
+- Pas de répétition, pas de remplissage entre les techniques.
+
+RÈGLE N° 4 : LA FIN EST LA PARTIE LA PLUS CLAIRE
+Juste après la numéro 1, dans cet ordre, sans rien ajouter entre :
+a) « Retiens ça : » puis LA RÈGLE, qui résume toute la liste. 12 mots au maximum, affirmative et nette. Interdit : « pas toujours », « parfois », « peut-être », « ce n'est pas X mais Y ».
+b) « À faire : » puis LE GESTE : une des techniques de la liste à commencer aujourd'hui. 12 mots au maximum, commence par un verbe, gratuit.
+c) « Abonne-toi à Lefinancier » puis une question courte pour les commentaires (exemple : « Laquelle tu fais déjà ? »). Rien après.
+
+RÈGLE N° 5 : PRESQUE PAS DE CHIFFRES
+- Les numéros de 10 à 1 ne comptent pas. En dehors d'eux : 2 chiffres au maximum dans tout le texte, ronds (5 000, 100 000).
+- Aucun calcul, aucun pourcentage.
+
+LES FAITS
+- Réalistes pour la Côte d'Ivoire et vérifiables. N'invente aucune statistique ; donne la source de chaque chiffre.
+
+INTERDITS
+- Aucun jeu d'argent (paris, casino, loterie, tickets), même pour les critiquer.
+- Aucun conseil d'investissement, aucun nom de produit, de banque, d'application ou de marque à acheter. Les techniques sont des gestes gratuits.
+- Rien d'illégal ou de dangereux pour la santé (ne pas sauter de repas, ne pas arrêter un traitement…).
+- Pas de morale lourde, pas de phrases creuses. Ne parle jamais du parcours ou des diplômes de l'auteur.
+
+CE QUE TU ME RENDS
+1. Le titre (6 mots maximum) : le sujet dit en clair.
+2. Trois premières phrases possibles. Dis laquelle est la meilleure.
+3. Le texte complet de la voix off en un seul bloc (170 à 200 mots), avec la meilleure première phrase.
+4. LA LISTE À ÉCRIRE À L'ÉCRAN : pour chaque numéro de 10 à 1, sur une ligne :
+   numéro | nom de la technique (5 mots maximum, mot pour mot comme dans la voix) | une idée de vraie vidéo pour l'illustrer, en 3 mots-clés anglais (pour chercher sur une banque de vidéos libres).
+5. À ÉCRIRE À L'ÉCRAN À LA FIN :
+   - À RETENIR : la règle (12 mots maximum) ;
+   - À FAIRE : le geste (12 mots maximum).
+   Les deux phrases doivent être mot pour mot dans la voix off.
+6. Les chiffres utilisés (2 au maximum hors numéros) avec leur source.
+7. Une description courte qui redit la règle, et 5 hashtags maximum.
+
+Avant de répondre, vérifie et corrige si besoin :
+- La première phrase annonce-t-elle clairement la liste et le sujet ?
+- Y a-t-il bien 10 techniques, de 10 à 1, chacune avec un nom de 5 mots maximum qui commence par un verbe ?
+- Chaque technique est-elle un geste précis, gratuit, faisable dès demain ?
+- La numéro 1 est-elle la plus forte ?
+- Quelqu'un qui n'entend que les 10 dernières secondes sait-il quoi retenir ET quoi faire ?
+- Le texte fait-il entre 170 et 200 mots ?</script>
+
 <script>
 (function () {
-  var SUJETS = [
-    ["Arnaques au mobile money", "Les arnaques au mobile money (le faux « je me suis trompé de numéro, renvoie-moi l'argent » et les faux agents) : comment elles marchent et comment s'en protéger."],
-    ["Le salaire qui disparaît", "Pourquoi ton salaire disparaît avant le 15 du mois (les petites dépenses invisibles qu'on ne compte pas)."],
-    ["La méthode des enveloppes", "La méthode des enveloppes : partager son argent dès qu'on le reçoit pour ne plus être à sec en fin de mois."],
-    ["« Investis 10 000, gagne 100 000 »", "Les fausses promesses « investis 10 000, gagne 100 000 en une semaine » (systèmes pyramidaux) : pourquoi ça finit toujours mal."],
-    ["L'iPhone à crédit", "Acheter un téléphone à crédit : pourquoi on paie bien plus que le prix affiché."],
-    ["La tontine qui disparaît", "Quand la personne qui garde la caisse de la tontine disparaît : comment se protéger avant de cotiser."],
-    ["Prêter à un ami", "Prêter de l'argent à un ami : comment perdre l'argent et l'ami, et comment l'éviter."],
-    ["Le défi des 52 semaines", "Le défi des 52 semaines : mettre un peu de côté chaque semaine et voir le total à la fin de l'année."]
+  var FORMATS = [
+    { nom: "Histoire (storytelling) · v3", modele: document.getElementById("modele").textContent, sujets: [
+      ["Arnaques au mobile money", "Les arnaques au mobile money (le faux « je me suis trompé de numéro, renvoie-moi l'argent » et les faux agents) : comment elles marchent et comment s'en protéger."],
+      ["Le salaire qui disparaît", "Pourquoi ton salaire disparaît avant le 15 du mois (les petites dépenses invisibles qu'on ne compte pas)."],
+      ["La méthode des enveloppes", "La méthode des enveloppes : partager son argent dès qu'on le reçoit pour ne plus être à sec en fin de mois."],
+      ["« Investis 10 000, gagne 100 000 »", "Les fausses promesses « investis 10 000, gagne 100 000 en une semaine » (systèmes pyramidaux) : pourquoi ça finit toujours mal."],
+      ["L'iPhone à crédit", "Acheter un téléphone à crédit : pourquoi on paie bien plus que le prix affiché."],
+      ["La tontine qui disparaît", "Quand la personne qui garde la caisse de la tontine disparaît : comment se protéger avant de cotiser."],
+      ["Prêter à un ami", "Prêter de l'argent à un ami : comment perdre l'argent et l'ami, et comment l'éviter."],
+      ["Le défi des 52 semaines", "Le défi des 52 semaines : mettre un peu de côté chaque semaine et voir le total à la fin de l'année."]
+    ]},
+    { nom: "Liste « 10 techniques » · v1", modele: document.getElementById("modele-liste").textContent, sujets: [
+      ["Dépenser moins sans souffrir", "Dépenser moins sans souffrir : 10 techniques simples et gratuites pour dépenser moins chaque mois sans te priver de ce qui compte."],
+      ["Économiser avec un petit salaire", "10 techniques pour économiser chaque mois, même avec un petit salaire."],
+      ["Tenir jusqu'à la fin du mois", "10 techniques pour ne plus être à sec avant la fin du mois."],
+      ["Éviter les arnaques", "10 techniques pour ne jamais te faire arnaquer sur mobile money et sur les réseaux sociaux."],
+      ["Dire non sans gêne", "10 techniques pour refuser de prêter ou de dépenser sans te fâcher avec tes proches."],
+      ["Préparer un gros achat", "10 techniques pour préparer un gros achat (moto, téléphone, loyer d'avance) sans t'endetter."]
+    ]}
   ];
-  var modele = document.getElementById("modele").textContent;
   var zone = document.getElementById("prompt");
+  var listeF = document.getElementById("formats");
   var liste = document.getElementById("sujets");
   var bouton = document.getElementById("copier");
-  var choix = 0;
+  var f = 1, choix = 0;
 
-  function texte() { return modele.replace("{{SUJET}}", SUJETS[choix][1]); }
+  function texte() { return FORMATS[f].modele.replace("{{SUJET}}", FORMATS[f].sujets[choix][1]); }
   function echapper(s) { return s.replace(/&/g, "&amp;").replace(/</g, "&lt;"); }
-  function afficher() {
-    var parties = modele.split("{{SUJET}}");
-    zone.innerHTML = echapper(parties[0]) + "<mark>" + echapper(SUJETS[choix][1]) + "</mark>" + echapper(parties[1]);
-    Array.prototype.forEach.call(liste.children, function (b, i) { b.setAttribute("aria-pressed", i === choix ? "true" : "false"); });
+  function marquer(conteneur, actif) {
+    Array.prototype.forEach.call(conteneur.children, function (b, i) { b.setAttribute("aria-pressed", i === actif ? "true" : "false"); });
   }
-  SUJETS.forEach(function (s, i) {
+  function afficherSujets() {
+    liste.innerHTML = "";
+    FORMATS[f].sujets.forEach(function (s, i) {
+      var b = document.createElement("button");
+      b.type = "button"; b.textContent = s[0];
+      b.addEventListener("click", function () { choix = i; afficher(); });
+      liste.appendChild(b);
+    });
+  }
+  function afficher() {
+    var parties = FORMATS[f].modele.split("{{SUJET}}");
+    zone.innerHTML = echapper(parties[0]) + "<mark>" + echapper(FORMATS[f].sujets[choix][1]) + "</mark>" + echapper(parties[1]);
+    marquer(listeF, f); marquer(liste, choix);
+  }
+  FORMATS.forEach(function (fo, i) {
     var b = document.createElement("button");
-    b.type = "button"; b.id = "sujet-" + i; b.textContent = s[0];
-    b.addEventListener("click", function () { choix = i; afficher(); });
-    liste.appendChild(b);
+    b.type = "button"; b.textContent = fo.nom;
+    b.addEventListener("click", function () { f = i; choix = 0; afficherSujets(); afficher(); });
+    listeF.appendChild(b);
   });
+  afficherSujets();
   afficher();
 
   function reussi() {

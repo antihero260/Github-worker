@@ -1,0 +1,71 @@
+PROMPT À COPIER DANS UNE IA (ChatGPT, Claude, Gemini...) — FORMAT LISTE, version 1 (15 nov. 2026)
+Change seulement la ligne SUJET. Vidéo « 10 techniques pour… » en compte à rebours de 10 à 1, avec la même fin claire que le prompt storytelling v3 (À RETENIR / À FAIRE).
+==========================================================
+
+Tu es scénariste de vidéos courtes (TikTok, Reels) pour « Lefinancier », une chaîne qui explique l'argent aux jeunes de Côte d'Ivoire. Écris le texte d'une vidéo au FORMAT LISTE de 60 à 75 secondes (170 à 200 mots).
+
+SUJET : Dépenser moins sans souffrir : 10 techniques simples et gratuites pour dépenser moins chaque mois sans te priver de ce qui compte.
+
+LE BUT : CHAQUE TECHNIQUE SE RETIENT, ET À LA FIN LE SPECTATEUR SAIT QUOI FAIRE
+Quelqu'un qui regarde seulement les 10 dernières secondes doit pouvoir répondre sans hésiter :
+1. « Qu'est-ce que je retiens ? » → une règle en une phrase.
+2. « Qu'est-ce que je fais maintenant ? » → une technique précise à commencer aujourd'hui.
+
+RÈGLE N° 1 : ON COMPREND LE SUJET EN 3 SECONDES
+- La première phrase annonce la liste et la promesse, avec des mots de tous les jours. Exemple : « 10 techniques pour dépenser moins sans te priver. La numéro 1, presque personne ne la fait. »
+- Pas d'introduction : on entre dans la liste dès la 2e ou la 3e phrase.
+
+RÈGLE N° 2 : UN COMPTE À REBOURS DE 10 À 1
+- On part de la numéro 10 et on finit par la numéro 1, la plus efficace et la plus surprenante. Les techniques montent en force.
+- Chaque technique suit TOUJOURS le même moule, très court :
+  « Numéro X : [nom de la technique, 5 mots maximum]. » + UNE phrase concrète de 15 mots maximum (un exemple de la vie de tous les jours en Côte d'Ivoire : mobile money, taxi, marché, maquis, crédit téléphone, livraison, tontine…).
+- Le nom de la technique commence par un verbe et s'écrit sur un écran de téléphone (exemples : « Attends 24 heures avant d'acheter », « Retire seulement ton budget de la semaine »).
+- Une seule idée par technique. Pas de technique vague (« fais attention », « sois raisonnable ») : chacune doit être un geste précis qu'on peut faire dès demain.
+- Un personnage fil rouge en une seule phrase au début (prénom non africain, par exemple Lucas) qui teste les techniques ; on peut le citer dans deux ou trois exemples, pas plus.
+
+RÈGLE N° 3 : GARDER LE SPECTATEUR JUSQU'AU BOUT
+- Après la numéro 6, une phrase courte de relance qui donne envie d'attendre la numéro 1 (exemple : « Et la numéro 1 change tout. »).
+- Pas de répétition, pas de remplissage entre les techniques.
+
+RÈGLE N° 4 : LA FIN EST LA PARTIE LA PLUS CLAIRE
+Juste après la numéro 1, dans cet ordre, sans rien ajouter entre :
+a) « Retiens ça : » puis LA RÈGLE, qui résume toute la liste. 12 mots au maximum, affirmative et nette. Interdit : « pas toujours », « parfois », « peut-être », « ce n'est pas X mais Y ».
+b) « À faire : » puis LE GESTE : une des techniques de la liste à commencer aujourd'hui. 12 mots au maximum, commence par un verbe, gratuit.
+c) « Abonne-toi à Lefinancier » puis une question courte pour les commentaires (exemple : « Laquelle tu fais déjà ? »). Rien après.
+
+RÈGLE N° 5 : PRESQUE PAS DE CHIFFRES
+- Les numéros de 10 à 1 ne comptent pas. En dehors d'eux : 2 chiffres au maximum dans tout le texte, ronds (5 000, 100 000).
+- Aucun calcul, aucun pourcentage.
+
+LES FAITS
+- Réalistes pour la Côte d'Ivoire et vérifiables. N'invente aucune statistique ; donne la source de chaque chiffre.
+
+INTERDITS
+- Aucun jeu d'argent (paris, casino, loterie, tickets), même pour les critiquer.
+- Aucun conseil d'investissement, aucun nom de produit, de banque, d'application ou de marque à acheter. Les techniques sont des gestes gratuits.
+- Rien d'illégal ou de dangereux pour la santé (ne pas sauter de repas, ne pas arrêter un traitement…).
+- Pas de morale lourde, pas de phrases creuses. Ne parle jamais du parcours ou des diplômes de l'auteur.
+
+CE QUE TU ME RENDS
+1. Le titre (6 mots maximum) : le sujet dit en clair.
+2. Trois premières phrases possibles. Dis laquelle est la meilleure.
+3. Le texte complet de la voix off en un seul bloc (170 à 200 mots), avec la meilleure première phrase.
+4. LA LISTE À ÉCRIRE À L'ÉCRAN : pour chaque numéro de 10 à 1, sur une ligne :
+   numéro | nom de la technique (5 mots maximum, mot pour mot comme dans la voix) | une idée de vraie vidéo pour l'illustrer, en 3 mots-clés anglais (pour chercher sur une banque de vidéos libres).
+5. À ÉCRIRE À L'ÉCRAN À LA FIN :
+   - À RETENIR : la règle (12 mots maximum) ;
+   - À FAIRE : le geste (12 mots maximum).
+   Les deux phrases doivent être mot pour mot dans la voix off.
+6. Les chiffres utilisés (2 au maximum hors numéros) avec leur source.
+7. Une description courte qui redit la règle, et 5 hashtags maximum.
+
+Avant de répondre, vérifie et corrige si besoin :
+- La première phrase annonce-t-elle clairement la liste et le sujet ?
+- Y a-t-il bien 10 techniques, de 10 à 1, chacune avec un nom de 5 mots maximum qui commence par un verbe ?
+- Chaque technique est-elle un geste précis, gratuit, faisable dès demain ?
+- La numéro 1 est-elle la plus forte ?
+- Quelqu'un qui n'entend que les 10 dernières secondes sait-il quoi retenir ET quoi faire ?
+- Le texte fait-il entre 170 et 200 mots ?
+
+----------------------------------------------------------
+Prompt histoire (storytelling) : voir finance/prompt-storytelling.txt
