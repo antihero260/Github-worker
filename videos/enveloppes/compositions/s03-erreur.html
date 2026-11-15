@@ -1,0 +1,80 @@
+<!-- Mais il fait toujours la même erreur : il dépense d'abord et garde ce qui reste (8.12 → 12.68 s). Écrit par tools/construire-scenes.py. -->
+<template>
+  <style>
+    #root { position: absolute; inset: 0; }
+  </style>
+  <div id="root" data-composition-id="s03-erreur" data-width="1080" data-height="1920">
+    <div class="sc">
+      <div id="s03-erreur-cam" class="sc-cam">
+        <div id="s03-erreur-cadre" class="sc-cadre">
+        <div class="decor"><div class="ciel" style="background: radial-gradient(ellipse 90% 60% at 50% 35%, #15305e 0%, #0b1220 75%)"></div><div class="sol" style="top: 1290px"></div></div>
+        <div id="e-barre" class="barre-sal" style="left: 80px; top: 420px; width: 920px"><i id="e-plein"></i><b>SALAIRE</b></div>
+        <svg id="e-lucas" class="perso" viewBox="-30 -20 160 290" style="left: 66px; top: 772px; width: 309px; height: 560px"><g id="e-lucas-vie"><g id="e-lucas-corps"><g id="e-lucas-jg"><g class="c"><rect x="24" y="136" width="24" height="112" rx="8" /></g><g class="p" style="--pc: #38BDF8"><rect x="24" y="136" width="24" height="112" rx="8" /></g></g><g id="e-lucas-jd"><g class="c"><rect x="52" y="136" width="24" height="112" rx="8" /></g><g class="p" style="--pc: #38BDF8"><rect x="52" y="136" width="24" height="112" rx="8" /></g></g><g id="e-lucas-tronc"><g class="c"><rect x="22" y="52" width="56" height="94" rx="12" /></g><g class="p" style="--pc: #38BDF8"><rect x="22" y="52" width="56" height="94" rx="12" /></g><path d="M44 56 L56 56 L53 64 L57 104 L50 112 L43 104 L47 64 Z" fill="#0B1220" /></g><g id="e-lucas-bg"><g class="c"><rect x="2" y="54" width="18" height="86" rx="9" /></g><g class="p" style="--pc: #38BDF8"><rect x="2" y="54" width="18" height="86" rx="9" /></g></g><g id="e-lucas-bd"><g class="c"><rect x="80" y="54" width="18" height="86" rx="9" /></g><g class="p" style="--pc: #38BDF8"><rect x="80" y="54" width="18" height="86" rx="9" /></g></g><g id="e-lucas-tete"><g class="c"><circle cx="50" cy="24" r="22" /></g><g class="p" style="--pc: #38BDF8"><circle cx="50" cy="24" r="22" /></g><g><g id="e-lucas-yeux"><circle cx="41" cy="20" r="6.5" fill="#fff" /><circle cx="59" cy="20" r="6.5" fill="#fff" /><g id="e-lucas-pup"><circle cx="42" cy="21" r="3" fill="#0B1220" /><circle cx="60" cy="21" r="3" fill="#0B1220" /></g></g><path id="e-lucas-bouche" d="M41 32 Q50 40 59 32" fill="none" stroke="#0B1220" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" /><path d="M28 14 Q30 -4 50 -3 Q70 -4 72 14 Q66 6 58 8 Q50 2 42 8 Q34 6 28 14 Z" fill="#0B1220" /></g></g></g></g></svg>
+        <div id="e-err" class="tampon" data-layout-allow-overlap style="left: 380px; top: 600px; font-size: 76px; color: #FF6B6B; border-color: #FF6B6B; transform: rotate(-7deg); opacity: 0">LA MÊME ERREUR</div>
+        <div id="e-d" class="etiq" style="left: 380px; top: 600px; font-size: 56px; background: #FF6B6B; color: #F1F5F9; transform: rotate(-3deg); opacity: 0">D’ABORD : IL DÉPENSE</div>
+        <div id="e-i0" class="ico-bulle" style="left: 838px; top: 300px; opacity: 0"><svg class="ico" viewBox="0 0 100 100" width="86" height="86"><path d="M18 38 H70 V62 Q70 84 44 84 Q18 84 18 62 Z" fill="#F1F5F9" stroke="#0B1220" stroke-width="6" /><path d="M70 46 Q88 46 88 58 Q88 70 70 70" fill="none" stroke="#0B1220" stroke-width="6" /><path d="M32 12 Q38 20 32 28 M46 10 Q52 18 46 26 M60 12 Q66 20 60 28" fill="none" stroke="#38BDF8" stroke-width="5" stroke-linecap="round" /></svg></div>
+        <div id="e-i1" class="ico-bulle" style="left: 645px; top: 300px; opacity: 0"><svg class="ico" viewBox="0 0 100 100" width="86" height="86"><rect x="34" y="18" width="32" height="12" rx="3" fill="#F2B705" stroke="#0B1220" stroke-width="5" /><path d="M14 60 L24 36 H76 L86 60 Z" fill="#F2B705" stroke="#0B1220" stroke-width="6" stroke-linejoin="round" /><path d="M30 56 L36 42 H64 L70 56 Z" fill="#7DD3FC" stroke="#0B1220" stroke-width="4" /><rect x="8" y="58" width="84" height="20" rx="6" fill="#F2B705" stroke="#0B1220" stroke-width="6" /><circle cx="28" cy="80" r="9" fill="#0B1220" /><circle cx="72" cy="80" r="9" fill="#0B1220" /></svg></div>
+        <div id="e-i2" class="ico-bulle" style="left: 452px; top: 300px; opacity: 0"><svg class="ico" viewBox="0 0 100 100" width="86" height="86"><path d="M14 34 L50 18 L86 34 L86 74 L50 90 L14 74 Z" fill="#c08a4a" stroke="#0B1220" stroke-width="6" stroke-linejoin="round" /><path d="M14 34 L50 50 L86 34 M50 50 V90" fill="none" stroke="#0B1220" stroke-width="6" /><path d="M32 26 L68 42" stroke="#F1F5F9" stroke-width="6" /></svg></div>
+        <div id="e-i3" class="ico-bulle" style="left: 259px; top: 300px; opacity: 0"><svg class="ico" viewBox="0 0 100 100" width="86" height="86"><rect x="28" y="8" width="44" height="84" rx="10" fill="#0B1220" stroke="#F1F5F9" stroke-width="4" /><rect x="34" y="20" width="32" height="56" rx="3" fill="#38BDF8" /><path d="M40 64 V58 M48 64 V50 M56 64 V42 M62 64 V34" stroke="#0B1220" stroke-width="5" stroke-linecap="round" /></svg></div>
+        <div id="e-ec" class="ecran ecran-panneau" style="left: 480px; top: 820px; width: 540px; height: 400px; opacity: 0"><div class="ecran-in"><div id="e-ec-v-0" class="vplein" style="opacity: 0"><video id="e-ec-v-0-v" class="clip" src="assets/video/sacs-shopping.mp4" data-start="2.36" data-duration="0.58" data-track-index="5" muted playsinline></video></div><div id="e-ec-v-1" class="vplein" style="opacity: 0"><video id="e-ec-v-1-v" class="clip" src="assets/video/caisse-carte.mp4" data-start="2.84" data-duration="0.5" data-track-index="6" muted playsinline></video></div><div id="e-ec-v-2" class="vplein" style="opacity: 0"><video id="e-ec-v-2-v" class="clip" src="assets/video/ecom-tel-carte.mp4" data-start="3.24" data-duration="0.66" data-track-index="7" muted playsinline></video></div><div id="e-ec-v-3" class="vplein" style="opacity: 0"><video id="e-ec-v-3-v" class="clip" src="assets/video/bocal-pieces.mp4" data-start="3.8" data-duration="0.86" data-track-index="8" muted playsinline></video></div></div></div>
+        <div id="e-r" class="etiq" style="left: 300px; top: 710px; font-size: 50px; background: #F1F5F9; color: #0B1220; transform: rotate(2deg); opacity: 0">ENSUITE : IL GARDE LE RESTE</div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#s03-erreur-cam", { filter: "blur(14px)", scale: 1.12 }, { filter: "blur(0px)", scale: 1, duration: 0.18, ease: "power2.out" }, 0);
+    tl.to("#s03-erreur-cam", { scale: 1.04, duration: 4.16, ease: "none" }, 0.18);
+    tl.fromTo("#e-barre", { opacity: 0, y: 60, scale: 0.7 }, { opacity: 1, y: 0, scale: 1, duration: 0.25, ease: "back.out(1.8)", immediateRender: false }, 0.05);
+    tl.fromTo("#e-lucas-vie", { y: 0 }, { y: -5, duration: 0.42, repeat: 9, yoyo: true, ease: "sine.inOut", immediateRender: false }, 0.0);
+    tl.to("#e-lucas-yeux", { scaleY: 0.1, duration: 0.06, yoyo: true, repeat: 1, svgOrigin: "50 20" }, 0.7);
+    tl.to("#e-lucas-yeux", { scaleY: 0.1, duration: 0.06, yoyo: true, repeat: 1, svgOrigin: "50 20" }, 3.233);
+    tl.to("#e-lucas-pup", { x: 3, y: -5, duration: 0.15 }, 0.0);
+    tl.set("#s03-erreur-cadre", { x: 0, y: 230, scale: 1.15 }, 0);
+    tl.fromTo("#e-err", { opacity: 0, scale: 2.4 }, { opacity: 1, scale: 1, duration: 0.14, ease: "power4.in", immediateRender: false }, 1.457);
+    tl.to("#s03-erreur-cam", { keyframes: [{ x: -12, duration: 0.03 }, { x: 12, duration: 0.04 }, { x: -6, duration: 0.04 }, { x: 0, duration: 0.03 }] }, 1.597);
+    tl.to("#s03-erreur-cadre", { x: 0, y: 0, scale: 1.0, duration: 0.3, ease: "power3.inOut" }, 1.953);
+    tl.to("#s03-erreur-cadre", { keyframes: [{ filter: "blur(9px)", duration: 0.15 }, { filter: "blur(0px)", duration: 0.15 }] }, 1.953);
+    tl.to("#e-err", { opacity: 0, duration: 0.15 }, 2.26);
+    tl.fromTo("#e-d", { opacity: 0, x: -80 }, { opacity: 1, x: 0, duration: 0.2, ease: "power4.out", immediateRender: false }, 2.36);
+    tl.to("#e-plein", { scaleX: 0.79, duration: 0.18, ease: "power2.out" }, 2.36);
+    tl.fromTo("#e-i0", { opacity: 0, y: 60, scale: 0.4 }, { opacity: 1, y: -30, scale: 1, duration: 0.2, ease: "back.out(2)", immediateRender: false }, 2.36);
+    tl.to("#e-i0", { opacity: 0, y: -140, duration: 0.3 }, 2.86);
+    tl.to("#e-plein", { scaleX: 0.58, duration: 0.18, ease: "power2.out" }, 2.66);
+    tl.fromTo("#e-i1", { opacity: 0, y: 60, scale: 0.4 }, { opacity: 1, y: -30, scale: 1, duration: 0.2, ease: "back.out(2)", immediateRender: false }, 2.66);
+    tl.to("#e-i1", { opacity: 0, y: -140, duration: 0.3 }, 3.16);
+    tl.to("#e-plein", { scaleX: 0.37, duration: 0.18, ease: "power2.out" }, 2.96);
+    tl.fromTo("#e-i2", { opacity: 0, y: 60, scale: 0.4 }, { opacity: 1, y: -30, scale: 1, duration: 0.2, ease: "back.out(2)", immediateRender: false }, 2.96);
+    tl.to("#e-i2", { opacity: 0, y: -140, duration: 0.3 }, 3.46);
+    tl.to("#e-plein", { scaleX: 0.16, duration: 0.18, ease: "power2.out" }, 3.26);
+    tl.fromTo("#e-i3", { opacity: 0, y: 60, scale: 0.4 }, { opacity: 1, y: -30, scale: 1, duration: 0.2, ease: "back.out(2)", immediateRender: false }, 3.26);
+    tl.to("#e-i3", { opacity: 0, y: -140, duration: 0.3 }, 3.76);
+    tl.set("#e-ec-v-0", { opacity: 1 }, 2.36);
+    tl.fromTo("#e-ec-v-0", { scale: 1.18 }, { scale: 1.02, duration: 0.48, ease: "power2.out", immediateRender: false }, 2.36);
+    tl.set("#e-ec-v-0", { opacity: 0 }, 2.86);
+    tl.set("#e-ec-v-1", { opacity: 1 }, 2.84);
+    tl.fromTo("#e-ec-v-1", { scale: 1.18 }, { scale: 1.02, duration: 0.4, ease: "power2.out", immediateRender: false }, 2.84);
+    tl.set("#e-ec-v-1", { opacity: 0 }, 3.26);
+    tl.set("#e-ec-v-2", { opacity: 1 }, 3.24);
+    tl.fromTo("#e-ec-v-2", { scale: 1.18 }, { scale: 1.02, duration: 0.56, ease: "power2.out", immediateRender: false }, 3.24);
+    tl.set("#e-ec-v-2", { opacity: 0 }, 3.82);
+    tl.set("#e-ec-v-3", { opacity: 1 }, 3.8);
+    tl.fromTo("#e-ec-v-3", { scale: 1.18 }, { scale: 1.02, duration: 0.76, ease: "power2.out", immediateRender: false }, 3.8);
+    tl.fromTo("#e-ec", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.22, ease: "back.out(1.8)", immediateRender: false }, 2.26);
+    tl.fromTo("#e-r", { opacity: 0, x: -80 }, { opacity: 1, x: 0, duration: 0.2, ease: "power4.out", immediateRender: false }, 3.52);
+    tl.fromTo("#e-plein", { filter: "brightness(1)" }, { filter: "brightness(1.8)", duration: 0.15, yoyo: true, repeat: 3, immediateRender: false }, 3.96);
+    tl.to("#e-lucas-bg", { rotation: 48, svgOrigin: "11 62", duration: 0.16, ease: "back.out(2)" }, 3.8);
+    tl.to("#e-lucas-bd", { rotation: -48, svgOrigin: "89 62", duration: 0.16, ease: "back.out(2)" }, 3.8);
+    tl.to("#e-lucas-tete", { rotation: 8, svgOrigin: "50 50", duration: 0.16, ease: "back.out(2)" }, 3.8);
+    tl.to("#e-lucas-corps", { keyframes: [{ y: -14, duration: 0.13, ease: "power2.out" }, { y: 0, duration: 0.15, ease: "power2.in" }] }, 3.8);
+    tl.set("#e-lucas-bouche", { attr: { d: "M45 34 Q50 42 55 34 Q50 27 45 34", fill: "none" } }, 3.8);
+    tl.to("#s03-erreur-cadre", { x: -395, y: -113, scale: 1.88, duration: 0.24, ease: "power3.inOut" }, 3.75);
+    tl.to("#s03-erreur-cadre", { keyframes: [{ filter: "blur(9px)", duration: 0.12 }, { filter: "blur(0px)", duration: 0.12 }] }, 3.75);
+    tl.to("#s03-erreur-cadre", { x: 0, y: 0, scale: 1.0, duration: 0.24, ease: "power3.inOut" }, 4.31);
+    tl.to("#s03-erreur-cadre", { keyframes: [{ filter: "blur(9px)", duration: 0.12 }, { filter: "blur(0px)", duration: 0.12 }] }, 4.31);
+    tl.to("#s03-erreur-cam", { scale: 1.25, filter: "blur(14px)", duration: 0.2, ease: "power3.in" }, 4.36);
+    window.__timelines["s03-erreur"] = tl;
+  </script>
+</template>

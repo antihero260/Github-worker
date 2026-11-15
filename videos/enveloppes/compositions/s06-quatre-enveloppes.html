@@ -1,0 +1,68 @@
+<!-- Loyer et factures, nourriture et transport, épargne, loisirs (23.8 → 28.12 s). Écrit par tools/construire-scenes.py. -->
+<template>
+  <style>
+    #root { position: absolute; inset: 0; }
+  </style>
+  <div id="root" data-composition-id="s06-quatre-enveloppes" data-width="1080" data-height="1920">
+    <div class="sc">
+      <div id="s06-quatre-enveloppes-cam" class="sc-cam">
+        <div id="s06-quatre-enveloppes-cadre" class="sc-cadre">
+        <div class="decor"><div class="ciel" style="background: radial-gradient(ellipse 90% 60% at 50% 45%, #16346a 0%, #0b1220 80%)"></div></div>
+        <div id="q-e0" class="envw" style="left: 70px; top: 360px"><div id="q-e0-c" class="env-carte"><div id="q-e0-v-0" class="vplein" style="opacity: 0"><video id="q-e0-v-0-v" class="clip" src="assets/video/cle-maison.mp4" data-start="0.12" data-duration="0.74" data-track-index="5" muted playsinline></video></div><div id="q-e0-v-1" class="vplein" style="opacity: 0"><video id="q-e0-v-1-v" class="clip" src="assets/video/budget-factures.mp4" data-start="0.76" data-duration="3.66" data-track-index="6" muted playsinline></video></div></div><div class="env" style="--c: #38BDF8"><i id="q-e0-q" class="q">?</i><b id="q-e0-l" style="opacity: 0; color: #0B1220">LOYER<br>+ FACTURES</b></div></div>
+        <div id="q-e1" class="envw" style="left: 570px; top: 360px"><div id="q-e1-c" class="env-carte"><div id="q-e1-v-0" class="vplein" style="opacity: 0"><video id="q-e1-v-0-v" class="clip" src="assets/video/caddie-courses.mp4" data-start="1.48" data-duration="0.66" data-track-index="7" muted playsinline></video></div><div id="q-e1-v-1" class="vplein" style="opacity: 0"><video id="q-e1-v-1-v" class="clip" src="assets/video/marche-tomates.mp4" data-start="2.04" data-duration="0.34" data-track-index="8" muted playsinline></video></div><div id="q-e1-v-2" class="vplein" style="opacity: 0"><video id="q-e1-v-2-v" class="clip" src="assets/video/bus-texto.mp4" data-start="2.28" data-duration="2.14" data-track-index="9" muted playsinline></video></div></div><div class="env" style="--c: #7DD3FC"><i id="q-e1-q" class="q">?</i><b id="q-e1-l" style="opacity: 0; color: #0B1220">NOURRITURE<br>+ TRANSPORT</b></div></div>
+        <div id="q-e2" class="envw" style="left: 70px; top: 850px"><div id="q-e2-c" class="env-carte"><div id="q-e2-v-0" class="vplein" style="opacity: 0"><video id="q-e2-v-0-v" class="clip" src="assets/video/tirelire-verre.mp4" data-start="3.0" data-duration="1.42" data-track-index="10" muted playsinline></video></div></div><div class="env" style="--c: #F2B705"><i id="q-e2-q" class="q">?</i><b id="q-e2-l" style="opacity: 0; color: #0B1220">ÉPARGNE</b></div></div>
+        <div id="q-e3" class="envw" style="left: 570px; top: 850px"><div id="q-e3-c" class="env-carte"><div id="q-e3-v-0" class="vplein" style="opacity: 0"><video id="q-e3-v-0-v" class="clip" src="assets/video/cinema-couple.mp4" data-start="3.96" data-duration="0.46" data-track-index="11" muted playsinline></video></div></div><div class="env" style="--c: #0284C7"><i id="q-e3-q" class="q">?</i><b id="q-e3-l" style="opacity: 0; color: #F1F5F9">LOISIRS</b></div></div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#s06-quatre-enveloppes-cam", { filter: "blur(14px)", scale: 1.12 }, { filter: "blur(0px)", scale: 1, duration: 0.18, ease: "power2.out" }, 0);
+    tl.to("#s06-quatre-enveloppes-cam", { scale: 1.04, duration: 3.92, ease: "none" }, 0.18);
+    tl.set("#q-e0-v-0", { opacity: 1 }, 0.12);
+    tl.fromTo("#q-e0-v-0", { scale: 1.18 }, { scale: 1.02, duration: 0.64, ease: "power2.out", immediateRender: false }, 0.12);
+    tl.set("#q-e0-v-0", { opacity: 0 }, 0.78);
+    tl.set("#q-e0-v-1", { opacity: 1 }, 0.76);
+    tl.fromTo("#q-e0-v-1", { scale: 1.18 }, { scale: 1.02, duration: 3.56, ease: "power2.out", immediateRender: false }, 0.76);
+    tl.to("#q-e0-c", { y: -215, duration: 0.3, ease: "back.out(1.6)" }, 0.12);
+    tl.to("#q-e0-q", { opacity: 0, scale: 0.3, duration: 0.12 }, 0.12);
+    tl.fromTo("#q-e0-l", { opacity: 0, scale: 1.8 }, { opacity: 1, scale: 1, duration: 0.16, ease: "power4.in", immediateRender: false }, 0.17);
+    tl.fromTo("#q-e0", { opacity: 0, y: 80, scale: 0.7 }, { opacity: 1, y: 0, scale: 1, duration: 0.22, ease: "back.out(1.8)", immediateRender: false }, 0.04);
+    tl.set("#q-e1-v-0", { opacity: 1 }, 1.48);
+    tl.fromTo("#q-e1-v-0", { scale: 1.18 }, { scale: 1.02, duration: 0.56, ease: "power2.out", immediateRender: false }, 1.48);
+    tl.set("#q-e1-v-0", { opacity: 0 }, 2.06);
+    tl.set("#q-e1-v-1", { opacity: 1 }, 2.04);
+    tl.fromTo("#q-e1-v-1", { scale: 1.18 }, { scale: 1.02, duration: 0.24, ease: "power2.out", immediateRender: false }, 2.04);
+    tl.set("#q-e1-v-1", { opacity: 0 }, 2.3);
+    tl.set("#q-e1-v-2", { opacity: 1 }, 2.28);
+    tl.fromTo("#q-e1-v-2", { scale: 1.18 }, { scale: 1.02, duration: 2.04, ease: "power2.out", immediateRender: false }, 2.28);
+    tl.to("#q-e1-c", { y: -215, duration: 0.3, ease: "back.out(1.6)" }, 1.48);
+    tl.to("#q-e1-q", { opacity: 0, scale: 0.3, duration: 0.12 }, 1.48);
+    tl.fromTo("#q-e1-l", { opacity: 0, scale: 1.8 }, { opacity: 1, scale: 1, duration: 0.16, ease: "power4.in", immediateRender: false }, 1.53);
+    tl.fromTo("#q-e1", { opacity: 0, y: 80, scale: 0.7 }, { opacity: 1, y: 0, scale: 1, duration: 0.22, ease: "back.out(1.8)", immediateRender: false }, 0.1);
+    tl.set("#q-e2-v-0", { opacity: 1 }, 3.0);
+    tl.fromTo("#q-e2-v-0", { scale: 1.18 }, { scale: 1.02, duration: 1.32, ease: "power2.out", immediateRender: false }, 3.0);
+    tl.to("#q-e2-c", { y: -215, duration: 0.3, ease: "back.out(1.6)" }, 3.0);
+    tl.to("#q-e2-q", { opacity: 0, scale: 0.3, duration: 0.12 }, 3.0);
+    tl.fromTo("#q-e2-l", { opacity: 0, scale: 1.8 }, { opacity: 1, scale: 1, duration: 0.16, ease: "power4.in", immediateRender: false }, 3.05);
+    tl.fromTo("#q-e2", { opacity: 0, y: 80, scale: 0.7 }, { opacity: 1, y: 0, scale: 1, duration: 0.22, ease: "back.out(1.8)", immediateRender: false }, 0.16);
+    tl.set("#q-e3-v-0", { opacity: 1 }, 3.96);
+    tl.fromTo("#q-e3-v-0", { scale: 1.18 }, { scale: 1.02, duration: 0.36, ease: "power2.out", immediateRender: false }, 3.96);
+    tl.to("#q-e3-c", { y: -215, duration: 0.3, ease: "back.out(1.6)" }, 3.76);
+    tl.to("#q-e3-q", { opacity: 0, scale: 0.3, duration: 0.12 }, 3.76);
+    tl.fromTo("#q-e3-l", { opacity: 0, scale: 1.8 }, { opacity: 1, scale: 1, duration: 0.16, ease: "power4.in", immediateRender: false }, 3.81);
+    tl.fromTo("#q-e3", { opacity: 0, y: 80, scale: 0.7 }, { opacity: 1, y: 0, scale: 1, duration: 0.22, ease: "back.out(1.8)", immediateRender: false }, 0.22);
+    tl.to("#s06-quatre-enveloppes-cadre", { x: 297, y: 527, scale: 1.55, duration: 0.24, ease: "power3.inOut" }, 0.0);
+    tl.to("#s06-quatre-enveloppes-cadre", { keyframes: [{ filter: "blur(9px)", duration: 0.12 }, { filter: "blur(0px)", duration: 0.12 }] }, 0.0);
+    tl.to("#s06-quatre-enveloppes-cadre", { x: -297, y: 527, scale: 1.55, duration: 0.3, ease: "power3.inOut" }, 1.36);
+    tl.to("#s06-quatre-enveloppes-cadre", { keyframes: [{ filter: "blur(9px)", duration: 0.15 }, { filter: "blur(0px)", duration: 0.15 }] }, 1.36);
+    tl.to("#s06-quatre-enveloppes-cadre", { x: 297, y: -232, scale: 1.55, duration: 0.3, ease: "power3.inOut" }, 2.88);
+    tl.to("#s06-quatre-enveloppes-cadre", { keyframes: [{ filter: "blur(9px)", duration: 0.15 }, { filter: "blur(0px)", duration: 0.15 }] }, 2.88);
+    tl.to("#s06-quatre-enveloppes-cadre", { x: -297, y: -232, scale: 1.55, duration: 0.3, ease: "power3.inOut" }, 3.64);
+    tl.to("#s06-quatre-enveloppes-cadre", { keyframes: [{ filter: "blur(9px)", duration: 0.15 }, { filter: "blur(0px)", duration: 0.15 }] }, 3.64);
+    tl.to("#s06-quatre-enveloppes-cam", { scale: 1.25, filter: "blur(14px)", duration: 0.2, ease: "power3.in" }, 4.12);
+    window.__timelines["s06-quatre-enveloppes"] = tl;
+  </script>
+</template>

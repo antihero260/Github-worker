@@ -1,0 +1,49 @@
+<!-- Retiens ça : chaque franc doit avoir une destination. À faire : répartis ton prochain salaire en 4 catégories sur papier (40.44 → 48.2 s). Écrit par tools/construire-scenes.py. -->
+<template>
+  <style>
+    #root { position: absolute; inset: 0; }
+  </style>
+  <div id="root" data-composition-id="s10-retenir" data-width="1080" data-height="1920">
+    <div class="sc">
+      <div id="s10-retenir-cam" class="sc-cam">
+        <div id="s10-retenir-cadre" class="sc-cadre">
+        <div class="decor"><div class="ciel" style="background: radial-gradient(ellipse 90% 60% at 50% 40%, #16346a 0%, #0b1220 78%)"></div></div>
+        <div id="f-ec" class="ecran ecran-panneau" style="left: 60px; top: 330px; width: 960px; height: 380px; opacity: 0"><div class="ecran-in"><div id="f-ec-v-0" class="vplein" style="opacity: 0"><video id="f-ec-v-0-v" class="clip" src="assets/video/budget-separe.mp4" data-start="0.0" data-duration="2.3" data-track-index="5" muted playsinline></video></div><div id="f-ec-v-1" class="vplein" style="opacity: 0"><video id="f-ec-v-1-v" class="clip" src="assets/video/repartir-depenses.mp4" data-start="2.2" data-duration="2.42" data-track-index="6" muted playsinline></video></div><div id="f-ec-v-2" class="vplein" style="opacity: 0"><video id="f-ec-v-2-v" class="clip" src="assets/video/todo-liste.mp4" data-start="4.52" data-duration="1.82" data-track-index="7" muted playsinline></video></div><div id="f-ec-v-3" class="vplein" style="opacity: 0"><video id="f-ec-v-3-v" class="clip" src="assets/video/notes-stylo.mp4" data-start="6.24" data-duration="1.62" data-track-index="8" muted playsinline></video></div></div></div>
+        <div id="f-carte" class="regle fin-carte" style="left: 60px; top: 760px; opacity: 0"><h3>À RETENIR</h3><p id="f-r" style="opacity: 0"><span id="f-sur" class="surl"></span><span class="txt">CHAQUE FRANC DOIT AVOIR UNE DESTINATION.</span></p><h3 id="f-h2" class="h-faire" style="opacity: 0">À FAIRE</h3><p id="f-f" class="faire" style="opacity: 0">RÉPARTIS TON PROCHAIN SALAIRE EN 4 CATÉGORIES SUR PAPIER.<b id="f-ok" class="coche-ok" style="opacity: 0">✓</b></p></div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#s10-retenir-cam", { filter: "blur(14px)", scale: 1.12 }, { filter: "blur(0px)", scale: 1, duration: 0.18, ease: "power2.out" }, 0);
+    tl.to("#s10-retenir-cam", { scale: 1.04, duration: 7.36, ease: "none" }, 0.18);
+    tl.set("#f-ec-v-0", { opacity: 1 }, 0.0);
+    tl.fromTo("#f-ec-v-0", { scale: 1.18 }, { scale: 1.02, duration: 2.2, ease: "power2.out", immediateRender: false }, 0.0);
+    tl.set("#f-ec-v-0", { opacity: 0 }, 2.22);
+    tl.set("#f-ec-v-1", { opacity: 1 }, 2.2);
+    tl.fromTo("#f-ec-v-1", { scale: 1.18 }, { scale: 1.02, duration: 2.32, ease: "power2.out", immediateRender: false }, 2.2);
+    tl.set("#f-ec-v-1", { opacity: 0 }, 4.54);
+    tl.set("#f-ec-v-2", { opacity: 1 }, 4.52);
+    tl.fromTo("#f-ec-v-2", { scale: 1.18 }, { scale: 1.02, duration: 1.72, ease: "power2.out", immediateRender: false }, 4.52);
+    tl.set("#f-ec-v-2", { opacity: 0 }, 6.26);
+    tl.set("#f-ec-v-3", { opacity: 1 }, 6.24);
+    tl.fromTo("#f-ec-v-3", { scale: 1.18 }, { scale: 1.02, duration: 1.52, ease: "power2.out", immediateRender: false }, 6.24);
+    tl.fromTo("#f-ec", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.22, ease: "back.out(1.8)", immediateRender: false }, 0.0);
+    tl.fromTo("#f-carte", { opacity: 0, y: 120, scale: 0.8 }, { opacity: 1, y: 0, scale: 1, duration: 0.28, ease: "back.out(1.8)", immediateRender: false }, 0.12);
+    tl.to("#s10-retenir-cadre", { x: 0, y: 94, scale: 1.18, duration: 0.3, ease: "power3.inOut" }, 0.68);
+    tl.to("#s10-retenir-cadre", { keyframes: [{ filter: "blur(9px)", duration: 0.15 }, { filter: "blur(0px)", duration: 0.15 }] }, 0.68);
+    tl.fromTo("#f-r", { opacity: 0, y: 30, scale: 0.7 }, { opacity: 1, y: 0, scale: 1, duration: 0.22, ease: "back.out(1.8)", immediateRender: false }, 1.08);
+    tl.fromTo("#f-sur", { scaleX: 0 }, { scaleX: 1, duration: 0.5, ease: "power2.out", immediateRender: false }, 2.5);
+    tl.to("#s10-retenir-cadre", { x: 0, y: -134, scale: 1.12, duration: 0.35, ease: "power3.inOut" }, 3.74);
+    tl.to("#s10-retenir-cadre", { keyframes: [{ filter: "blur(9px)", duration: 0.175 }, { filter: "blur(0px)", duration: 0.175 }] }, 3.74);
+    tl.fromTo("#f-h2", { opacity: 0, y: 30, scale: 0.7 }, { opacity: 1, y: 0, scale: 1, duration: 0.2, ease: "back.out(1.8)", immediateRender: false }, 3.74);
+    tl.fromTo("#f-f", { opacity: 0, y: 30, scale: 0.7 }, { opacity: 1, y: 0, scale: 1, duration: 0.22, ease: "back.out(1.8)", immediateRender: false }, 4.52);
+    tl.fromTo("#f-ok", { opacity: 0, scale: 2.4 }, { opacity: 1, scale: 1, duration: 0.18, ease: "back.out(2)", immediateRender: false }, 7.32);
+    tl.to("#s10-retenir-cadre", { x: 0, y: 0, scale: 1.0, duration: 0.35, ease: "power3.inOut" }, 6.52);
+    tl.to("#s10-retenir-cadre", { keyframes: [{ filter: "blur(9px)", duration: 0.175 }, { filter: "blur(0px)", duration: 0.175 }] }, 6.52);
+    tl.to("#s10-retenir-cam", { scale: 1.25, filter: "blur(14px)", duration: 0.2, ease: "power3.in" }, 7.56);
+    window.__timelines["s10-retenir"] = tl;
+  </script>
+</template>

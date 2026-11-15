@@ -1,0 +1,962 @@
+[
+{
+"i": 0,
+"text": "TU",
+"start": 0,
+"end": 0.16
+},
+{
+"i": 1,
+"text": "FINIS",
+"start": 0.24,
+"end": 0.48
+},
+{
+"i": 2,
+"text": "LE",
+"start": 0.48,
+"end": 0.64
+},
+{
+"i": 3,
+"text": "MOIS",
+"start": 0.64,
+"end": 0.88
+},
+{
+"i": 4,
+"text": "SANS",
+"start": 0.88,
+"end": 1.12
+},
+{
+"i": 5,
+"text": "ARGENT ?",
+"start": 1.12,
+"end": 1.68
+},
+{
+"i": 6,
+"text": "LA",
+"start": 1.68,
+"end": 1.84
+},
+{
+"i": 7,
+"text": "MÉTHODE",
+"start": 1.84,
+"end": 2.16
+},
+{
+"i": 8,
+"text": "DES",
+"start": 2.16,
+"end": 2.4
+},
+{
+"i": 9,
+"text": "ENVELOPPES",
+"start": 2.4,
+"end": 3.04
+},
+{
+"i": 10,
+"text": "PEUT",
+"start": 3.04,
+"end": 3.12
+},
+{
+"i": 11,
+"text": "CHANGER",
+"start": 3.12,
+"end": 3.52
+},
+{
+"i": 12,
+"text": "ÇA.",
+"start": 3.52,
+"end": 4
+},
+{
+"i": 13,
+"text": "LUCAS",
+"start": 4,
+"end": 4.4
+},
+{
+"i": 14,
+"text": "VIENT",
+"start": 4.56,
+"end": 4.8
+},
+{
+"i": 15,
+"text": "DE",
+"start": 4.8,
+"end": 4.96
+},
+{
+"i": 16,
+"text": "RECEVOIR",
+"start": 4.96,
+"end": 5.36
+},
+{
+"i": 17,
+"text": "SON",
+"start": 5.36,
+"end": 5.52
+},
+{
+"i": 18,
+"text": "SALAIRE.",
+"start": 5.52,
+"end": 6.08
+},
+{
+"i": 19,
+"text": "IL",
+"start": 6.08,
+"end": 6.2
+},
+{
+"i": 20,
+"text": "VEUT",
+"start": 6.2,
+"end": 6.32
+},
+{
+"i": 21,
+"text": "ÉCONOMISER",
+"start": 6.56,
+"end": 6.96
+},
+{
+"i": 22,
+"text": "POUR",
+"start": 7.04,
+"end": 7.2
+},
+{
+"i": 23,
+"text": "ACHETER",
+"start": 7.2,
+"end": 7.52
+},
+{
+"i": 24,
+"text": "UNE",
+"start": 7.52,
+"end": 7.68
+},
+{
+"i": 25,
+"text": "MOTO,",
+"start": 7.68,
+"end": 8.24
+},
+{
+"i": 26,
+"text": "MAIS",
+"start": 8.24,
+"end": 8.4
+},
+{
+"i": 27,
+"text": "IL",
+"start": 8.4,
+"end": 8.56
+},
+{
+"i": 28,
+"text": "FAIT",
+"start": 8.64,
+"end": 8.96
+},
+{
+"i": 29,
+"text": "TOUJOURS",
+"start": 8.96,
+"end": 9.2
+},
+{
+"i": 30,
+"text": "LA",
+"start": 9.28,
+"end": 9.627
+},
+{
+"i": 31,
+"text": "MÊME",
+"start": 9.627,
+"end": 9.973
+},
+{
+"i": 32,
+"text": "ERREUR :",
+"start": 9.973,
+"end": 10.32
+},
+{
+"i": 33,
+"text": "IL",
+"start": 10.32,
+"end": 10.48
+},
+{
+"i": 34,
+"text": "DÉPENSE",
+"start": 10.48,
+"end": 10.96
+},
+{
+"i": 35,
+"text": "D’ABORD",
+"start": 10.96,
+"end": 11.2
+},
+{
+"i": 36,
+"text": "ET",
+"start": 11.36,
+"end": 11.64
+},
+{
+"i": 37,
+"text": "GARDE",
+"start": 11.64,
+"end": 11.92
+},
+{
+"i": 38,
+"text": "CE",
+"start": 11.92,
+"end": 12.08
+},
+{
+"i": 39,
+"text": "QUI",
+"start": 12.08,
+"end": 12.24
+},
+{
+"i": 40,
+"text": "RESTE.",
+"start": 12.24,
+"end": 12.8
+},
+{
+"i": 41,
+"text": "QUELQUES",
+"start": 12.8,
+"end": 13.2
+},
+{
+"i": 42,
+"text": "JOURS",
+"start": 13.2,
+"end": 13.44
+},
+{
+"i": 43,
+"text": "APRÈS,",
+"start": 13.44,
+"end": 13.84
+},
+{
+"i": 44,
+"text": "LE",
+"start": 13.84,
+"end": 13.92
+},
+{
+"i": 45,
+"text": "LOYER",
+"start": 13.92,
+"end": 14.4
+},
+{
+"i": 46,
+"text": "EST",
+"start": 14.4,
+"end": 14.56
+},
+{
+"i": 47,
+"text": "PAYÉ,",
+"start": 14.56,
+"end": 15.04
+},
+{
+"i": 48,
+"text": "LES",
+"start": 15.04,
+"end": 15.28
+},
+{
+"i": 49,
+"text": "SORTIES",
+"start": 15.28,
+"end": 15.52
+},
+{
+"i": 50,
+"text": "AUSSI,",
+"start": 15.68,
+"end": 16.16
+},
+{
+"i": 51,
+"text": "MAIS",
+"start": 16.16,
+"end": 16.32
+},
+{
+"i": 52,
+"text": "SON",
+"start": 16.32,
+"end": 16.56
+},
+{
+"i": 53,
+"text": "COMPTE",
+"start": 16.56,
+"end": 16.96
+},
+{
+"i": 54,
+"text": "COMMENCE",
+"start": 16.96,
+"end": 17.36
+},
+{
+"i": 55,
+"text": "DÉJÀ",
+"start": 17.36,
+"end": 17.6
+},
+{
+"i": 56,
+"text": "À",
+"start": 17.6,
+"end": 17.76
+},
+{
+"i": 57,
+"text": "SE",
+"start": 17.76,
+"end": 18
+},
+{
+"i": 58,
+"text": "VIDER.",
+"start": 18,
+"end": 18.56
+},
+{
+"i": 59,
+"text": "DONC",
+"start": 18.56,
+"end": 18.72
+},
+{
+"i": 60,
+"text": "CETTE",
+"start": 18.8,
+"end": 19.08
+},
+{
+"i": 61,
+"text": "FOIS,",
+"start": 19.08,
+"end": 19.36
+},
+{
+"i": 62,
+"text": "IL",
+"start": 19.36,
+"end": 19.6
+},
+{
+"i": 63,
+"text": "CHANGE",
+"start": 19.6,
+"end": 19.92
+},
+{
+"i": 64,
+"text": "DE",
+"start": 19.92,
+"end": 20.08
+},
+{
+"i": 65,
+"text": "MÉTHODE.",
+"start": 20.08,
+"end": 20.56
+},
+{
+"i": 66,
+"text": "DÈS",
+"start": 20.56,
+"end": 20.8
+},
+{
+"i": 67,
+"text": "QU’IL",
+"start": 20.8,
+"end": 21.04
+},
+{
+"i": 68,
+"text": "REÇOIT",
+"start": 21.04,
+"end": 21.44
+},
+{
+"i": 69,
+"text": "SON",
+"start": 21.44,
+"end": 21.6
+},
+{
+"i": 70,
+"text": "ARGENT,",
+"start": 21.6,
+"end": 22.08
+},
+{
+"i": 71,
+"text": "IL",
+"start": 22.08,
+"end": 22.24
+},
+{
+"i": 72,
+"text": "LE",
+"start": 22.24,
+"end": 22.4
+},
+{
+"i": 73,
+"text": "PARTAGE",
+"start": 22.4,
+"end": 22.8
+},
+{
+"i": 74,
+"text": "DANS",
+"start": 22.8,
+"end": 22.96
+},
+{
+"i": 75,
+"text": "QUATRE",
+"start": 22.96,
+"end": 23.2
+},
+{
+"i": 76,
+"text": "ENVELOPPES :",
+"start": 23.2,
+"end": 23.76
+},
+{
+"i": 77,
+"text": "LOYER",
+"start": 23.92,
+"end": 24.32
+},
+{
+"i": 78,
+"text": "ET",
+"start": 24.4,
+"end": 24.56
+},
+{
+"i": 79,
+"text": "FACTURES,",
+"start": 24.56,
+"end": 25.12
+},
+{
+"i": 80,
+"text": "NOURRITURE",
+"start": 25.28,
+"end": 25.84
+},
+{
+"i": 81,
+"text": "ET",
+"start": 25.84,
+"end": 26.08
+},
+{
+"i": 82,
+"text": "TRANSPORT,",
+"start": 26.08,
+"end": 26.64
+},
+{
+"i": 83,
+"text": "ÉPARGNE,",
+"start": 26.8,
+"end": 27.76
+},
+{
+"i": 84,
+"text": "LOISIRS.",
+"start": 27.76,
+"end": 28.24
+},
+{
+"i": 85,
+"text": "IL",
+"start": 28.24,
+"end": 28.72
+},
+{
+"i": 86,
+"text": "NOTE",
+"start": 28.72,
+"end": 28.96
+},
+{
+"i": 87,
+"text": "CHAQUE",
+"start": 29.12,
+"end": 29.36
+},
+{
+"i": 88,
+"text": "MONTANT",
+"start": 29.36,
+"end": 29.76
+},
+{
+"i": 89,
+"text": "ET",
+"start": 29.76,
+"end": 29.92
+},
+{
+"i": 90,
+"text": "S’INTERDIT",
+"start": 29.92,
+"end": 30.4
+},
+{
+"i": 91,
+"text": "DE",
+"start": 30.48,
+"end": 30.56
+},
+{
+"i": 92,
+"text": "PIOCHER",
+"start": 30.56,
+"end": 31.12
+},
+{
+"i": 93,
+"text": "DANS",
+"start": 31.12,
+"end": 31.2
+},
+{
+"i": 94,
+"text": "UNE",
+"start": 31.2,
+"end": 31.36
+},
+{
+"i": 95,
+"text": "ENVELOPPE",
+"start": 31.36,
+"end": 31.76
+},
+{
+"i": 96,
+"text": "POUR",
+"start": 31.76,
+"end": 31.92
+},
+{
+"i": 97,
+"text": "FINANCER",
+"start": 31.92,
+"end": 32.4
+},
+{
+"i": 98,
+"text": "UNE",
+"start": 32.4,
+"end": 32.56
+},
+{
+"i": 99,
+"text": "AUTRE.",
+"start": 32.56,
+"end": 32.8
+},
+{
+"i": 100,
+"text": "À",
+"start": 32.96,
+"end": 33.08
+},
+{
+"i": 101,
+"text": "LA",
+"start": 33.08,
+"end": 33.2
+},
+{
+"i": 102,
+"text": "FIN",
+"start": 33.2,
+"end": 33.36
+},
+{
+"i": 103,
+"text": "DU",
+"start": 33.36,
+"end": 33.6
+},
+{
+"i": 104,
+"text": "MOIS,",
+"start": 33.6,
+"end": 33.84
+},
+{
+"i": 105,
+"text": "IL",
+"start": 33.84,
+"end": 34.08
+},
+{
+"i": 106,
+"text": "LUI",
+"start": 34.08,
+"end": 34.24
+},
+{
+"i": 107,
+"text": "RESTE",
+"start": 34.24,
+"end": 34.48
+},
+{
+"i": 108,
+"text": "ENCORE",
+"start": 34.48,
+"end": 34.64
+},
+{
+"i": 109,
+"text": "DE",
+"start": 34.64,
+"end": 34.8
+},
+{
+"i": 110,
+"text": "QUOI",
+"start": 34.8,
+"end": 35.04
+},
+{
+"i": 111,
+"text": "TENIR.",
+"start": 35.04,
+"end": 35.44
+},
+{
+"i": 112,
+"text": "TU",
+"start": 35.6,
+"end": 35.76
+},
+{
+"i": 113,
+"text": "VEUX",
+"start": 35.76,
+"end": 36
+},
+{
+"i": 114,
+"text": "SAVOIR",
+"start": 36,
+"end": 36.24
+},
+{
+"i": 115,
+"text": "POURQUOI ?",
+"start": 36.24,
+"end": 36.8
+},
+{
+"i": 116,
+"text": "LA",
+"start": 36.8,
+"end": 36.96
+},
+{
+"i": 117,
+"text": "MÉTHODE",
+"start": 36.96,
+"end": 37.36
+},
+{
+"i": 118,
+"text": "DES",
+"start": 37.36,
+"end": 37.6
+},
+{
+"i": 119,
+"text": "ENVELOPPES",
+"start": 37.6,
+"end": 38.16
+},
+{
+"i": 120,
+"text": "DONNE",
+"start": 38.16,
+"end": 38.4
+},
+{
+"i": 121,
+"text": "UNE",
+"start": 38.4,
+"end": 38.56
+},
+{
+"i": 122,
+"text": "MISSION",
+"start": 38.56,
+"end": 38.96
+},
+{
+"i": 123,
+"text": "À",
+"start": 38.96,
+"end": 39.12
+},
+{
+"i": 124,
+"text": "CHAQUE",
+"start": 39.12,
+"end": 39.36
+},
+{
+"i": 125,
+"text": "PARTIE",
+"start": 39.36,
+"end": 39.6
+},
+{
+"i": 126,
+"text": "DE",
+"start": 39.6,
+"end": 39.68
+},
+{
+"i": 127,
+"text": "TON",
+"start": 39.68,
+"end": 39.92
+},
+{
+"i": 128,
+"text": "SALAIRE.",
+"start": 39.92,
+"end": 40.56
+},
+{
+"i": 129,
+"text": "RETIENS",
+"start": 40.56,
+"end": 40.96
+},
+{
+"i": 130,
+"text": "ÇA :",
+"start": 41.12,
+"end": 41.52
+},
+{
+"i": 131,
+"text": "CHAQUE",
+"start": 41.52,
+"end": 41.84
+},
+{
+"i": 132,
+"text": "FRANC",
+"start": 41.84,
+"end": 42.32
+},
+{
+"i": 133,
+"text": "DOIT",
+"start": 42.32,
+"end": 42.64
+},
+{
+"i": 134,
+"text": "AVOIR",
+"start": 42.64,
+"end": 42.88
+},
+{
+"i": 135,
+"text": "UNE",
+"start": 42.88,
+"end": 43.04
+},
+{
+"i": 136,
+"text": "DESTINATION.",
+"start": 43.04,
+"end": 43.76
+},
+{
+"i": 137,
+"text": "À",
+"start": 44.08,
+"end": 44.52
+},
+{
+"i": 138,
+"text": "FAIRE :",
+"start": 44.52,
+"end": 44.96
+},
+{
+"i": 139,
+"text": "RÉPARTIS",
+"start": 44.96,
+"end": 45.6
+},
+{
+"i": 140,
+"text": "TON",
+"start": 45.6,
+"end": 45.76
+},
+{
+"i": 141,
+"text": "PROCHAIN",
+"start": 45.76,
+"end": 46.08
+},
+{
+"i": 142,
+"text": "SALAIRE",
+"start": 46.08,
+"end": 46.48
+},
+{
+"i": 143,
+"text": "EN",
+"start": 46.48,
+"end": 46.68
+},
+{
+"i": 144,
+"text": "QUATRE",
+"start": 46.68,
+"end": 46.88
+},
+{
+"i": 145,
+"text": "CATÉGORIES",
+"start": 46.96,
+"end": 47.6
+},
+{
+"i": 146,
+"text": "SUR",
+"start": 47.6,
+"end": 47.76
+},
+{
+"i": 147,
+"text": "PAPIER.",
+"start": 47.76,
+"end": 48.32
+},
+{
+"i": 148,
+"text": "ABONNE-TOI",
+"start": 48.32,
+"end": 48.88
+},
+{
+"i": 149,
+"text": "À",
+"start": 48.96,
+"end": 49.04
+},
+{
+"i": 150,
+"text": "LEFINANCIER.",
+"start": 49.04,
+"end": 50.0
+},
+{
+"i": 151,
+"text": "TU",
+"start": 50,
+"end": 50.16
+},
+{
+"i": 152,
+"text": "DÉPENSES",
+"start": 50.16,
+"end": 50.64
+},
+{
+"i": 153,
+"text": "DANS",
+"start": 50.64,
+"end": 50.8
+},
+{
+"i": 154,
+"text": "QUELLE",
+"start": 50.8,
+"end": 51.16
+},
+{
+"i": 155,
+"text": "CATÉGORIE",
+"start": 51.16,
+"end": 51.52
+},
+{
+"i": 156,
+"text": "SANS",
+"start": 51.52,
+"end": 51.68
+},
+{
+"i": 157,
+"text": "T’EN",
+"start": 51.76,
+"end": 51.92
+},
+{
+"i": 158,
+"text": "RENDRE",
+"start": 51.92,
+"end": 52.08
+},
+{
+"i": 159,
+"text": "COMPTE ?",
+"start": 52.24,
+"end": 52.56
+}
+]
