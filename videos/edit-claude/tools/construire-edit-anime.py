@@ -87,7 +87,23 @@ WHOOSH = ["whoosh-cine", "whoosh-fusee", "swoosh-vitesse", "whoosh-metal", "foue
 
 
 # ================================================================ PLANS
+DUREES = {}
+
+
+def duree(src):
+    if src not in DUREES:
+        DUREES[src] = float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0",
+                                            str(ICI / f"assets/{src}.mp4")], capture_output=True, text=True).stdout)
+    return DUREES[src]
+
+
 def plan(src, t0, t1, eff="coup", depart=0.0, k=0):
+    # jamais d'image noire : si le plan préparé est trop court, on part plus tôt, sinon on prend la vidéo complète
+    if depart + (t1 - t0) > duree(src) - 0.05:
+        depart = 0.0
+        if t1 - t0 > duree(src) - 0.05 and src.startswith("vel/"):
+            src = "video/" + src.split("/", 1)[1].split("-", 1)[1]
+            depart = 0.4
     vid = f"p{len(VIDS):03d}"
     VIDS.append(f'<video id="{vid}" class="clip ed-plan" src="assets/{src}.mp4" data-start="{r(t0)}" data-duration="{r(t1 - t0 + 0.03)}" '
                 f'data-media-start="{depart}" data-track-index="{1 + len(VIDS) % 2}" muted playsinline style="opacity: 0"></video>')
@@ -188,7 +204,7 @@ def nom(txt, t, t1, taille=200, sous="CLAUDE", style="claque", y=820):
 j('tl.set("#grade", { filter: "saturate(0.3) contrast(1.25) brightness(0.65)" }, 0);')
 j('tl.set(".ed-bande", { height: 230 }, 0);')
 plan("video/robot-yeux", 0.0, 2.36, "pousse", 0.5)
-plan("captures/docs-modeles-tableau", 2.36, 4.984, "pousse", 0.6)
+plan("video/serveurs-lumieres", 2.36, 4.984, "pousse", 0.5)
 OVER.append('<div id="logo" class="ed-logo" style="opacity: 0"><img src="assets/img/logo-claude.svg" alt="" /></div>')
 for t, op in ((0.0, 1), (0.46, 0.25), (0.47, 1), (0.93, 0.2), (0.94, 1)):
     j(f'tl.set("#logo", {{ opacity: {op} }}, {r(t)});')
@@ -209,10 +225,10 @@ son(4.0, "riser-tech", 0.3, "montée vers le premier accent", d=0.98)
 # ================================================================ 2. MONTÉE (4,98 → 18,75) : un accent par mesure, petites frappes, noms des familles
 bandes(4.984, 0, 0.15)
 grade(4.984, 0.3, "saturate(1.15) contrast(1.15) brightness(0.95)")
-FAMILLES = [("HAIKU", "vel/vel-tunnel-virtuel-bleu"), ("SONNET", "vel/vel-main-hologramme"), ("OPUS", "vel/vel-eclair-ville"),
+FAMILLES = [("HAIKU", "vel/vel-tunnel-virtuel-bleu"), ("SONNET", "vel/vel-globe-reseau"), ("OPUS", "vel/vel-eclair-ville"),
             ("MYTHOS", "vel/vel-supernova"), ("FABLE", "vel/vel-trou-de-ver")]
 REMPL = ["rap-doigts-tapent", "rap-serveurs-lumieres", "rap-ecrans-matrix", "rap-traces-lumiere", "rap-data-center", "rap-neon-3d-route",
-         "rap-globe-reseau", "rap-lasers", "rap-clavier-gros-plan", "rap-main-hologramme", "rap-particules-lumineuses", "rap-claude-code-site"]
+         "rap-globe-reseau", "rap-lasers", "rap-clavier-gros-plan", "rap-robot-yeux", "rap-particules-lumineuses", "rap-claude-code-site"]
 coupes = sorted(ACCENTS + SOUS)
 for k, t0 in enumerate(coupes):
     t1 = coupes[k + 1] if k + 1 < len(coupes) else 18.75
@@ -236,9 +252,14 @@ for k, t0 in enumerate(coupes):
         if k % 2:
             flash(t0, TERRA, 0.35)
 # le long passage calme entre 5,9 et 9,98 : la vraie page de claude.com au ralenti
-plan("captures/claude-accueil", 6.4, 9.977, "pousse", 0.5)
-flash(6.4, "#ffffff", 0.4)
-son(6.4, "whoosh-cine", 0.3, "page claude.com")
+plan("video/robot-yeux", 6.4, 7.528, "pousse", 4.0)
+plan("vel/vel-robot-danse", 7.528, 8.75, "spin", 0.0, 1)
+plan("video/tunnel-virtuel-bleu", 8.75, 9.977, "zoom", 1.0)
+for t in (6.4, 7.528, 8.75):
+    flash(t, "#ffffff", 0.4)
+    secousse(t, 12, 4)
+    son(t, tour(WHOOSH), 0.3, "passage calme")
+fuite(6.4, 2.6, 0.5, "fuite-violette")
 
 # ================================================================ 3. SILENCE (18,75 → DROP) : image figée qui se décolore et s'approche
 OVER.append(f'<div id="fige" class="ed-fige" style="opacity: 0"><img src="assets/img/logo-claude.svg" alt="" /></div>')
