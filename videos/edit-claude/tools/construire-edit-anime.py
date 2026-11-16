@@ -228,7 +228,7 @@ grade(4.984, 0.3, "saturate(1.15) contrast(1.15) brightness(0.95)")
 FAMILLES = [("HAIKU", "vel/vel-tunnel-virtuel-bleu"), ("SONNET", "vel/vel-globe-reseau"), ("OPUS", "vel/vel-eclair-ville"),
             ("MYTHOS", "vel/vel-supernova"), ("FABLE", "vel/vel-trou-de-ver")]
 REMPL = ["rap-doigts-tapent", "rap-serveurs-lumieres", "rap-ecrans-matrix", "rap-traces-lumiere", "rap-data-center", "rap-neon-3d-route",
-         "rap-globe-reseau", "rap-lasers", "rap-clavier-gros-plan", "rap-robot-yeux", "rap-particules-lumineuses", "rap-claude-code-site"]
+         "rap-globe-reseau", "rap-feux-artifice", "rap-clavier-gros-plan", "rap-robot-yeux", "rap-particules-lumineuses", "rap-claude-code-site"]
 coupes = sorted(ACCENTS + SOUS)
 for k, t0 in enumerate(coupes):
     t1 = coupes[k + 1] if k + 1 < len(coupes) else 18.75
@@ -254,7 +254,7 @@ for k, t0 in enumerate(coupes):
 # le long passage calme entre 5,9 et 9,98 : la vraie page de claude.com au ralenti
 plan("video/robot-yeux", 6.4, 7.528, "pousse", 4.0)
 plan("vel/vel-robot-danse", 7.528, 8.75, "spin", 0.0, 1)
-plan("video/tunnel-virtuel-bleu", 8.75, 9.977, "zoom", 1.0)
+plan("video/traces-lumiere", 8.75, 9.977, "zoom", 1.0)
 for t in (6.4, 7.528, 8.75):
     flash(t, "#ffffff", 0.4)
     secousse(t, 12, 4)
