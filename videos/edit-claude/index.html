@@ -1,0 +1,790 @@
+<!doctype html>
+<html lang="fr" data-resolution="portrait">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "Anton"; src: url("assets/fonts/Anton-Regular.woff2") format("woff2"); }
+      @font-face { font-family: "Inter Lf"; src: url("assets/fonts/Inter-ExtraBold.otf") format("opentype"); font-weight: 800; }
+      @font-face { font-family: "Serif It"; src: url("assets/fonts/InstrumentSerif-Italic.woff2") format("woff2"); }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1080px; height: 1920px; overflow: hidden; background: #141413; }
+      #cadre { position: absolute; inset: 0; overflow: hidden; transform-origin: 50% 50%; }
+      .vp { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; object-fit: cover; }
+      #voile { position: absolute; inset: 0; z-index: 20; pointer-events: none;
+        background: radial-gradient(ellipse 75% 55% at 50% 50%, rgba(20,20,19,0.25) 0%, rgba(20,20,19,0.78) 100%), linear-gradient(180deg, rgba(217,119,87,0.18), rgba(20,20,19,0) 40%, rgba(217,119,87,0.12)); }
+      #calques { position: absolute; inset: 0; z-index: 30; pointer-events: none; }
+      .flash { position: absolute; inset: 0; opacity: 0; z-index: 60; }
+      #titre { position: absolute; left: 0; top: 0; width: 1080px; height: 300px; z-index: 50; display: flex; justify-content: center; padding-top: 140px;
+        background: linear-gradient(180deg, rgba(20,20,19,0.9), rgba(20,20,19,0)); }
+      #titre b { font-family: "Anton", sans-serif; font-weight: 400; font-size: 60px; color: #fff; letter-spacing: 1px; }
+      #titre b i { font-style: normal; color: #D97757; }
+      .logo { position: absolute; left: 340px; top: 700px; width: 400px; height: 400px; z-index: 31; filter: drop-shadow(0 0 60px rgba(217,119,87,0.8)); }
+      .logo img { width: 100%; height: 100%; }
+      .gros-titre { position: absolute; left: 0; top: 1130px; width: 1080px; text-align: center; font-family: "Anton", sans-serif; font-size: 230px; line-height: 1; color: #F0EEE6;
+        -webkit-text-stroke: 14px #141413; paint-order: stroke fill; text-shadow: 0 0 50px rgba(217,119,87,0.6); }
+      .bande-titre { position: absolute; left: 90px; top: 1400px; width: 900px; text-align: center; font-family: "Anton", sans-serif; font-size: 96px; line-height: 1; color: #141413;
+        background: #D97757; border: 8px solid #141413; padding: 18px 0 10px; transform: rotate(-3deg); }
+      .dates-hook { position: absolute; left: 0; top: 1570px; width: 1080px; text-align: center; font-family: "Anton", sans-serif; font-size: 110px; color: #fff;
+        -webkit-text-stroke: 10px #141413; paint-order: stroke fill; }
+      .dates-hook i { font-style: normal; color: #D97757; }
+      .annee { position: absolute; left: 0; top: 560px; width: 1080px; text-align: center; }
+      .annee b { display: block; font-family: "Anton", sans-serif; font-weight: 400; font-size: 400px; line-height: 1; color: #F0EEE6; -webkit-text-stroke: 18px #141413; paint-order: stroke fill;
+        text-shadow: 0 0 90px rgba(217,119,87,0.9); }
+      .annee span { display: inline-block; margin-top: 30px; font-family: "Anton", sans-serif; font-size: 80px; color: #141413; background: #D97757; padding: 8px 30px 2px; border: 6px solid #141413; }
+      .annee span:empty { display: none; }
+      .modele { position: absolute; left: 0; top: 660px; width: 1080px; text-align: center; }
+      .modele span { display: inline-block; font-family: "Anton", sans-serif; font-size: 84px; letter-spacing: 12px; color: #141413; background: #D97757; padding: 6px 28px 0; border: 6px solid #141413; }
+      .modele b { display: block; font-family: "Anton", sans-serif; font-weight: 400; line-height: 1.02; color: #F0EEE6; -webkit-text-stroke: 14px #141413; paint-order: stroke fill; margin-top: 20px; white-space: nowrap; }
+      .modele i { display: inline-block; margin-top: 26px; font-family: "Inter Lf", sans-serif; font-weight: 800; font-style: normal; font-size: 48px; color: #fff; background: rgba(20,20,19,0.85);
+        border: 4px solid #F0EEE6; border-radius: 40px; padding: 10px 34px; }
+      .modele em { display: block; width: max-content; margin: 22px auto 0; font-family: "Anton", sans-serif; font-style: normal; font-size: 56px; color: #141413; background: #F0EEE6; padding: 6px 24px 0; transform: rotate(-3deg); }
+      .recap { position: absolute; left: 0; top: 820px; width: 1080px; text-align: center; font-family: "Anton", sans-serif; font-size: 150px; line-height: 1; color: #F0EEE6;
+        -webkit-text-stroke: 12px #141413; paint-order: stroke fill; white-space: nowrap; }
+      .fenetre { position: absolute; left: 60px; top: 520px; width: 960px; height: 600px; border-radius: 26px; overflow: hidden; background: #fff; border: 6px solid #F0EEE6;
+        box-shadow: 0 40px 120px rgba(0,0,0,0.7); z-index: 32; }
+      .barre-nav { height: 60px; background: #e8e6df; display: flex; align-items: center; gap: 12px; padding: 0 20px; }
+      .barre-nav i { width: 18px; height: 18px; border-radius: 50%; background: #c9c5ba; }
+      .barre-nav span { margin-left: 16px; flex: 1; font-family: "Inter Lf", sans-serif; font-weight: 800; font-size: 26px; color: #555; background: #fff; border-radius: 20px; padding: 6px 18px; }
+      .fen-in { position: absolute; left: 0; top: 60px; right: 0; bottom: 0; overflow: hidden; }
+      .fen-in video { width: 100%; height: 100%; object-fit: cover; object-position: 50% 0; }
+      .carte-fam { position: absolute; left: 90px; top: 620px; width: 900px; padding: 50px 50px 56px; text-align: center; background: rgba(240,238,230,0.96); border: 10px solid #141413;
+        border-radius: 44px; box-shadow: 0 40px 120px rgba(0,0,0,0.7); }
+      .carte-fam img { width: 150px; height: 150px; }
+      .carte-fam b { display: block; font-family: "Anton", sans-serif; font-weight: 400; font-size: 170px; line-height: 1.05; color: #141413; margin-top: 10px; }
+      .carte-fam span { display: block; font-family: "Inter Lf", sans-serif; font-weight: 800; font-size: 46px; line-height: 1.2; color: #D97757; margin-top: 16px; }
+      .grille-fam { position: absolute; left: 70px; top: 760px; width: 940px; display: grid; grid-template-columns: 1fr 1fr; gap: 26px; }
+      .mini-fam { background: #F0EEE6; border: 8px solid #141413; border-radius: 28px; padding: 30px 10px 22px; text-align: center; }
+      .mini-fam b { font-family: "Anton", sans-serif; font-weight: 400; font-size: 88px; line-height: 1; color: #141413; }
+      .etiq-com { position: absolute; left: 240px; top: 1330px; font-family: "Anton", sans-serif; font-size: 56px; color: #141413; background: #fff; border: 6px solid #141413;
+        padding: 8px 26px 2px; transform: rotate(-2deg); }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="46.64" data-width="1080" data-height="1920">
+      <div id="cadre">
+      <video id="v0" class="clip vp" src="assets/video/claude-code-site.mp4" data-start="0.0" data-duration="0.353" data-track-index="7" muted playsinline style="opacity: 0"></video>
+      <video id="v1" class="clip vp" src="assets/video/ecrans-code.mp4" data-start="0.313" data-duration="0.353" data-track-index="2" muted playsinline style="opacity: 0"></video>
+      <video id="v2" class="clip vp" src="assets/video/hologramme-main.mp4" data-start="0.626" data-duration="0.353" data-track-index="3" muted playsinline style="opacity: 0"></video>
+      <video id="v3" class="clip vp" src="assets/video/data-center.mp4" data-start="0.939" data-duration="0.353" data-track-index="4" muted playsinline style="opacity: 0"></video>
+      <video id="v4" class="clip vp" src="assets/video/robot-yeux.mp4" data-start="1.252" data-duration="0.353" data-track-index="5" muted playsinline style="opacity: 0"></video>
+      <video id="v5" class="clip vp" src="assets/video/doigts-tapent.mp4" data-start="1.565" data-duration="0.353" data-track-index="6" muted playsinline style="opacity: 0"></video>
+      <video id="v6" class="clip vp" src="assets/video/globe-reseau.mp4" data-start="1.878" data-duration="0.353" data-track-index="7" muted playsinline style="opacity: 0"></video>
+      <video id="v7" class="clip vp" src="assets/video/code-html-bleu.mp4" data-start="2.191" data-duration="0.353" data-track-index="2" muted playsinline style="opacity: 0"></video>
+      <video id="v8" class="clip vp" src="assets/video/main-hologramme.mp4" data-start="2.504" data-duration="0.353" data-track-index="3" muted playsinline style="opacity: 0"></video>
+      <video id="v9" class="clip vp" src="assets/video/serveurs-lumieres.mp4" data-start="2.817" data-duration="0.353" data-track-index="4" muted playsinline style="opacity: 0"></video>
+      <video id="v10" class="clip vp" src="assets/video/tunnel-virtuel-bleu.mp4" data-start="3.13" data-duration="0.353" data-track-index="5" muted playsinline style="opacity: 0"></video>
+      <video id="v11" class="clip vp" src="assets/video/macbook-pro.mp4" data-start="3.443" data-duration="0.353" data-track-index="6" muted playsinline style="opacity: 0"></video>
+      <video id="v12" class="clip vp" src="assets/video/trou-de-ver.mp4" data-start="3.762" data-duration="1.294" data-track-index="7" muted playsinline style="opacity: 0"></video>
+      <video id="v13" class="clip vp" src="assets/video/code-ecran.mp4" data-start="5.016" data-duration="0.667" data-track-index="2" muted playsinline style="opacity: 0"></video>
+      <video id="v14" class="clip vp" src="assets/video/laptop-homme.mp4" data-start="5.643" data-duration="0.667" data-track-index="3" muted playsinline style="opacity: 0"></video>
+      <video id="v15" class="clip vp" src="assets/video/clavier-gros-plan.mp4" data-start="6.27" data-duration="0.667" data-track-index="4" muted playsinline style="opacity: 0"></video>
+      <video id="v16" class="clip vp" src="assets/video/ecrans-matrix.mp4" data-start="6.897" data-duration="0.667" data-track-index="5" muted playsinline style="opacity: 0"></video>
+      <video id="v17" class="clip vp" src="assets/video/supernova.mp4" data-start="7.524" data-duration="1.293" data-track-index="6" muted playsinline style="opacity: 0"></video>
+      <video id="v18" class="clip vp" src="assets/video/hologramme-web.mp4" data-start="8.777" data-duration="0.667" data-track-index="7" muted playsinline style="opacity: 0"></video>
+      <video id="v19" class="clip vp" src="assets/video/sphere-donnees.mp4" data-start="9.404" data-duration="0.667" data-track-index="2" muted playsinline style="opacity: 0"></video>
+      <video id="v20" class="clip vp" src="assets/video/robot-salut.mp4" data-start="10.031" data-duration="0.667" data-track-index="3" muted playsinline style="opacity: 0"></video>
+      <video id="v21" class="clip vp" src="assets/video/cursor-site.mp4" data-start="10.658" data-duration="0.667" data-track-index="4" muted playsinline style="opacity: 0"></video>
+      <video id="v22" class="clip vp" src="assets/video/code-techno.mp4" data-start="11.285" data-duration="0.667" data-track-index="5" muted playsinline style="opacity: 0"></video>
+      <video id="v23" class="clip vp" src="assets/video/eclair-ville.mp4" data-start="11.912" data-duration="1.294" data-track-index="6" muted playsinline style="opacity: 0"></video>
+      <video id="v24" class="clip vp" src="assets/video/traces-lumiere.mp4" data-start="13.166" data-duration="0.667" data-track-index="7" muted playsinline style="opacity: 0"></video>
+      <video id="v25" class="clip vp" src="assets/video/particules-lumineuses.mp4" data-start="13.793" data-duration="0.667" data-track-index="2" muted playsinline style="opacity: 0"></video>
+      <video id="v26" class="clip vp" src="assets/video/vr-mains-interface.mp4" data-start="14.42" data-duration="0.667" data-track-index="3" muted playsinline style="opacity: 0"></video>
+      <video id="v27" class="clip vp" src="assets/video/homme-ordi-joie.mp4" data-start="15.047" data-duration="0.667" data-track-index="4" muted playsinline style="opacity: 0"></video>
+      <video id="v28" class="clip vp" src="assets/video/neon-3d-route.mp4" data-start="15.674" data-duration="0.667" data-track-index="5" muted playsinline style="opacity: 0"></video>
+      <video id="v29" class="clip vp" src="assets/video/terre-3d.mp4" data-start="16.301" data-duration="0.667" data-track-index="6" muted playsinline style="opacity: 0"></video>
+      <video id="v30" class="clip vp" src="assets/video/hologramme-paiement.mp4" data-start="16.928" data-duration="0.667" data-track-index="7" muted playsinline style="opacity: 0"></video>
+      <video id="v31" class="clip vp" src="assets/video/feux-artifice.mp4" data-start="17.555" data-duration="2.548" data-track-index="2" muted playsinline style="opacity: 0"></video>
+      <video id="v32" class="clip vp" src="assets/video/tunnel-virtuel-bleu.mp4" data-start="20.063" data-duration="3.801" data-track-index="3" muted playsinline style="opacity: 0; filter: brightness(0.45) saturate(0.6)"></video>
+      <video id="v33" class="clip vp" src="assets/video/explosion-particules.mp4" data-start="25.078" data-duration="0.667" data-track-index="4" muted playsinline style="opacity: 0"></video>
+      <video id="v34" class="clip vp" src="assets/video/nasa-artemis-decolle.mp4" data-start="25.705" data-duration="0.667" data-track-index="5" muted playsinline style="opacity: 0"></video>
+      <video id="v35" class="clip vp" src="assets/video/foule-saute.mp4" data-start="26.332" data-duration="0.667" data-track-index="6" muted playsinline style="opacity: 0"></video>
+      <video id="v36" class="clip vp" src="assets/video/lasers.mp4" data-start="26.959" data-duration="0.667" data-track-index="7" muted playsinline style="opacity: 0"></video>
+      <video id="v37" class="clip vp" src="assets/video/dj-scene.mp4" data-start="27.586" data-duration="0.667" data-track-index="2" muted playsinline style="opacity: 0"></video>
+      <video id="v38" class="clip vp" src="assets/video/nasa-booster-feu.mp4" data-start="28.213" data-duration="0.667" data-track-index="3" muted playsinline style="opacity: 0"></video>
+      <video id="v39" class="clip vp" src="assets/video/public-mains.mp4" data-start="28.84" data-duration="0.667" data-track-index="4" muted playsinline style="opacity: 0"></video>
+      <video id="v40" class="clip vp" src="assets/video/fusee.mp4" data-start="29.467" data-duration="0.667" data-track-index="5" muted playsinline style="opacity: 0"></video>
+      <video id="v41" class="clip vp" src="assets/video/festival-saute.mp4" data-start="30.094" data-duration="0.667" data-track-index="6" muted playsinline style="opacity: 0"></video>
+      <video id="v42" class="clip vp" src="assets/video/lumieres-scene.mp4" data-start="30.721" data-duration="0.667" data-track-index="7" muted playsinline style="opacity: 0"></video>
+      <video id="v43" class="clip vp" src="assets/video/foule-bras.mp4" data-start="31.348" data-duration="0.667" data-track-index="2" muted playsinline style="opacity: 0"></video>
+      <video id="v44" class="clip vp" src="assets/video/eclair-ville.mp4" data-start="31.975" data-duration="0.667" data-track-index="3" muted playsinline style="opacity: 0"></video>
+      <video id="v45" class="clip vp" src="assets/video/poings-joie.mp4" data-start="32.602" data-duration="0.667" data-track-index="4" muted playsinline style="opacity: 0"></video>
+      <video id="v46" class="clip vp" src="assets/video/traces-lumiere.mp4" data-start="33.229" data-duration="0.667" data-track-index="5" muted playsinline style="opacity: 0"></video>
+      <video id="v47" class="clip vp" src="assets/video/homme-tel-joie.mp4" data-start="33.856" data-duration="0.667" data-track-index="6" muted playsinline style="opacity: 0"></video>
+      <video id="v48" class="clip vp" src="assets/video/supernova.mp4" data-start="34.483" data-duration="0.667" data-track-index="7" muted playsinline style="opacity: 0"></video>
+      <video id="v49" class="clip vp" src="assets/video/trou-de-ver.mp4" data-start="35.11" data-duration="1.294" data-track-index="2" muted playsinline style="opacity: 0; filter: brightness(0.7)"></video>
+      <video id="v50" class="clip vp" src="assets/video/ecrans-code.mp4" data-start="36.364" data-duration="1.294" data-track-index="3" muted playsinline style="opacity: 0; filter: brightness(0.7)"></video>
+      <video id="v51" class="clip vp" src="assets/video/neon-3d-route.mp4" data-start="37.618" data-duration="1.293" data-track-index="4" muted playsinline style="opacity: 0; filter: brightness(0.7)"></video>
+      <video id="v52" class="clip vp" src="assets/video/traces-lumiere.mp4" data-start="38.871" data-duration="1.294" data-track-index="5" muted playsinline style="opacity: 0; filter: brightness(0.7)"></video>
+      <video id="v53" class="clip vp" src="assets/video/particules-lumineuses.mp4" data-start="40.125" data-duration="6.555" data-track-index="6" muted playsinline style="opacity: 0; filter: brightness(0.55)"></video>
+        <div id="voile"></div>
+        <div id="calques">
+        <div id="logo" class="logo" style="opacity: 0"><img src="assets/img/logo-claude.svg" alt="" /></div>
+        <div id="h-claude" class="gros-titre" style="opacity: 0">CLAUDE</div>
+        <div id="h-tous" class="bande-titre" style="opacity: 0">TOUS SES MODÈLES</div>
+        <div id="h-dates" class="dates-hook" style="opacity: 0">2023 <i>→</i> 2026</div>
+        <div id="fl1" class="flash" style="background: #FFFFFF"></div>
+        <div id="a2" class="annee" style="opacity: 0"><b>2023</b><span></span></div>
+        <div id="fl3" class="flash" style="background: #D97757"></div>
+        <div id="m4" class="modele" style="opacity: 0"><span>CLAUDE</span><b style="font-size: 210px">1</b><i>MARS 2023</i></div>
+        <div id="fl5" class="flash" style="background: #FFFFFF"></div>
+        <div id="m6" class="modele" style="opacity: 0"><span>CLAUDE</span><b style="font-size: 210px">2</b><i>JUILLET 2023</i></div>
+        <div id="m7" class="modele" style="opacity: 0"><span>CLAUDE</span><b style="font-size: 140px">INSTANT 1.2</b><i>AOÛT 2023</i></div>
+        <div id="fl8" class="flash" style="background: #FFFFFF"></div>
+        <div id="m9" class="modele" style="opacity: 0"><span>CLAUDE</span><b style="font-size: 210px">2.1</b><i>NOVEMBRE 2023</i></div>
+        <div id="a10" class="annee" style="opacity: 0"><b>2024</b><span></span></div>
+        <div id="fl11" class="flash" style="background: #D97757"></div>
+        <div id="m12" class="modele" style="opacity: 0"><span>CLAUDE</span><b style="font-size: 170px">3 HAIKU</b><i>MARS 2024</i></div>
+        <div id="fl13" class="flash" style="background: #FFFFFF"></div>
+        <div id="m14" class="modele" style="opacity: 0"><span>CLAUDE</span><b style="font-size: 170px">3 SONNET</b><i>MARS 2024</i></div>
+        <div id="m15" class="modele" style="opacity: 0"><span>CLAUDE</span><b style="font-size: 210px">3 OPUS</b><i>MARS 2024</i></div>
+        <div id="fl16" class="flash" style="background: #FFFFFF"></div>
+        <div id="m17" class="modele" style="opacity: 0"><span>CLAUDE</span><b style="font-size: 140px">3.5 SONNET</b><i>JUIN 2024</i></div>
+        <div id="m18" class="modele" style="opacity: 0"><span>CLAUDE</span><b style="font-size: 170px">3.5 HAIKU</b><i>OCTOBRE 2024</i></div>
+        <div id="fl19" class="flash" style="background: #FFFFFF"></div>
+        <div id="a20" class="annee" style="opacity: 0"><b>2025</b><span></span></div>
+        <div id="fl21" class="flash" style="background: #D97757"></div>
+        <div id="m22" class="modele" style="opacity: 0"><span>CLAUDE</span><b style="font-size: 140px">3.7 SONNET</b><i>FÉVRIER 2025</i></div>
+        <div id="m23" class="modele" style="opacity: 0"><span>CLAUDE</span><b style="font-size: 210px">OPUS 4</b><i>MAI 2025</i></div>
+        <div id="fl24" class="flash" style="background: #FFFFFF"></div>
+        <div id="m25" class="modele" style="opacity: 0"><span>CLAUDE</span><b style="font-size: 170px">SONNET 4</b><i>MAI 2025</i></div>
+        <div id="m26" class="modele" style="opacity: 0"><span>CLAUDE</span><b style="font-size: 170px">OPUS 4.1</b><i>AOÛT 2025</i></div>
+        <div id="fl27" class="flash" style="background: #FFFFFF"></div>
+        <div id="m28" class="modele" style="opacity: 0"><span>CLAUDE</span><b style="font-size: 140px">SONNET 4.5</b><i>SEPTEMBRE 2025</i></div>
+        <div id="m29" class="modele" style="opacity: 0"><span>CLAUDE</span><b style="font-size: 170px">HAIKU 4.5</b><i>OCTOBRE 2025</i></div>
+        <div id="fl30" class="flash" style="background: #FFFFFF"></div>
+        <div id="m31" class="modele" style="opacity: 0"><span>CLAUDE</span><b style="font-size: 170px">OPUS 4.5</b><i>NOVEMBRE 2025</i></div>
+        <div id="r-titre" class="bande-titre" style="top: 1180px; opacity: 0">16 MODÈLES EN 3 ANS</div>
+        <div id="rc32" class="recap" style="opacity: 0">CLAUDE 1</div>
+        <div id="rc33" class="recap" style="opacity: 0">CLAUDE 2</div>
+        <div id="rc34" class="recap" style="opacity: 0">CLAUDE INSTANT 1.2</div>
+        <div id="rc35" class="recap" style="opacity: 0">CLAUDE 2.1</div>
+        <div id="rc36" class="recap" style="opacity: 0">CLAUDE 3 HAIKU</div>
+        <div id="rc37" class="recap" style="opacity: 0">CLAUDE 3 SONNET</div>
+        <div id="rc38" class="recap" style="opacity: 0">CLAUDE 3 OPUS</div>
+        <div id="rc39" class="recap" style="opacity: 0">CLAUDE 3.5 SONNET</div>
+        <div id="rc40" class="recap" style="opacity: 0">CLAUDE 3.5 HAIKU</div>
+        <div id="rc41" class="recap" style="opacity: 0">CLAUDE 3.7 SONNET</div>
+        <div id="rc42" class="recap" style="opacity: 0">CLAUDE OPUS 4</div>
+        <div id="rc43" class="recap" style="opacity: 0">CLAUDE SONNET 4</div>
+        <div id="rc44" class="recap" style="opacity: 0">CLAUDE OPUS 4.1</div>
+        <div id="rc45" class="recap" style="opacity: 0">CLAUDE SONNET 4.5</div>
+        <div id="rc46" class="recap" style="opacity: 0">CLAUDE HAIKU 4.5</div>
+        <div id="rc47" class="recap" style="opacity: 0">CLAUDE OPUS 4.5</div>
+        <div id="m-nav" class="fenetre" style="opacity: 0"><div class="barre-nav"><i></i><i></i><i></i><span>anthropic.com/news</span></div><div class="fen-in"><video id="m-cap" class="clip" src="assets/captures/anthropic-news.mp4" data-start="20.063" data-duration="3.761" data-track-index="9" muted playsinline></video></div></div>
+        <div id="m-et" class="gros-titre" style="top: 1220px; font-size: 130px; opacity: 0">ET EN 2026…</div>
+        <div id="noir" class="flash" style="background: #000"></div>
+        <div id="m-2026" class="annee" style="opacity: 0"><b>2026</b><span>ACCROCHE-TOI</span></div>
+        <div id="fl48" class="flash" style="background: #FFFFFF"></div>
+        <div id="m49" class="modele" style="opacity: 0"><span>CLAUDE</span><b style="font-size: 190px">OPUS 4.6</b><i>FÉVRIER 2026</i></div>
+        <div id="fl50" class="flash" style="background: #FFFFFF"></div>
+        <div id="m51" class="modele" style="opacity: 0"><span>CLAUDE</span><b style="font-size: 150px">SONNET 4.6</b><i>FÉVRIER 2026</i></div>
+        <div id="fl52" class="flash" style="background: #D97757"></div>
+        <div id="m53" class="modele" style="opacity: 0"><span>CLAUDE</span><b style="font-size: 190px">OPUS 4.7</b><i>AVRIL 2026</i></div>
+        <div id="fl54" class="flash" style="background: #FFFFFF"></div>
+        <div id="m55" class="modele" style="opacity: 0"><span>CLAUDE</span><b style="font-size: 112px">MYTHOS PREVIEW</b><i>AVRIL 2026</i><em>ACCÈS LIMITÉ</em></div>
+        <div id="fl56" class="flash" style="background: #D97757"></div>
+        <div id="m57" class="modele" style="opacity: 0"><span>CLAUDE</span><b style="font-size: 190px">OPUS 4.8</b><i>MAI 2026</i></div>
+        <div id="fl58" class="flash" style="background: #FFFFFF"></div>
+        <div id="m59" class="modele" style="opacity: 0"><span>CLAUDE</span><b style="font-size: 190px">MYTHOS 5</b><i>JUIN 2026</i><em>ACCÈS LIMITÉ</em></div>
+        <div id="fl60" class="flash" style="background: #D97757"></div>
+        <div id="m61" class="modele" style="opacity: 0"><span>CLAUDE</span><b style="font-size: 190px">FABLE 5</b><i>JUIN 2026</i></div>
+        <div id="fl62" class="flash" style="background: #FFFFFF"></div>
+        <div id="m63" class="modele" style="opacity: 0"><span>CLAUDE</span><b style="font-size: 190px">SONNET 5</b><i>JUIN 2026</i></div>
+        <div id="fl64" class="flash" style="background: #D97757"></div>
+        <div id="m65" class="modele" style="opacity: 0"><span>CLAUDE</span><b style="font-size: 190px">OPUS 5</b><i>JUILLET 2026</i></div>
+        <div id="fl66" class="flash" style="background: #FFFFFF"></div>
+        <div id="m67" class="modele" style="opacity: 0"><span>CLAUDE</span><b style="font-size: 150px">FABLE 5.1</b><i>SEPTEMBRE 2026</i></div>
+        <div id="fl68" class="flash" style="background: #D97757"></div>
+        <div id="m69" class="modele" style="opacity: 0"><span>CLAUDE</span><b style="font-size: 150px">MYTHOS 5.1</b><i>SEPTEMBRE 2026</i><em>ACCÈS LIMITÉ</em></div>
+        <div id="fl70" class="flash" style="background: #FFFFFF"></div>
+        <div id="m71" class="modele" style="opacity: 0"><span>CLAUDE</span><b style="font-size: 190px">OPUS 5.5</b><i>SEPTEMBRE 2026</i></div>
+        <div id="fl72" class="flash" style="background: #D97757"></div>
+        <div id="m73" class="modele" style="opacity: 0"><span>CLAUDE</span><b style="font-size: 150px">SONNET 5.5</b><i>SEPTEMBRE 2026</i></div>
+        <div id="fl74" class="flash" style="background: #FFFFFF"></div>
+        <div id="m75" class="modele" style="opacity: 0"><span>CLAUDE</span><b style="font-size: 150px">HAIKU 5.5</b><i>OCTOBRE 2026</i></div>
+        <div id="fl76" class="flash" style="background: #D97757"></div>
+        <div id="m77" class="modele" style="opacity: 0"><span>CLAUDE</span><b style="font-size: 150px">FABLE 5.2</b><i>NOVEMBRE 2026</i><em>LE PLUS RÉCENT</em></div>
+        <div id="fl78" class="flash" style="background: #FFFFFF"></div>
+        <div id="strobe" class="flash" style="background: #fff"></div>
+        <div id="f-lab" class="bande-titre" style="top: 360px; opacity: 0">LA FAMILLE ACTUELLE</div>
+        <div id="fa79" class="carte-fam" style="opacity: 0"><img src="assets/img/logo-claude.svg" alt="" /><b>FABLE 5.2</b><span>Raisonnement exigeant et longues tâches d’agent</span></div>
+        <div id="fa80" class="carte-fam" style="opacity: 0"><img src="assets/img/logo-claude.svg" alt="" /><b>OPUS 5.5</b><span>Agents et code sur la durée</span></div>
+        <div id="fa81" class="carte-fam" style="opacity: 0"><img src="assets/img/logo-claude.svg" alt="" /><b>SONNET 5.5</b><span>Le meilleur équilibre vitesse / intelligence</span></div>
+        <div id="fa82" class="carte-fam" style="opacity: 0"><img src="assets/img/logo-claude.svg" alt="" /><b>HAIKU 5.5</b><span>Le plus rapide, pour les tâches en volume</span></div>
+        <div id="grille" class="grille-fam"><div id="g0" class="mini-fam" style="opacity: 0"><b>FABLE 5.2</b></div><div id="g1" class="mini-fam" style="opacity: 0"><b>OPUS 5.5</b></div><div id="g2" class="mini-fam" style="opacity: 0"><b>SONNET 5.5</b></div><div id="g3" class="mini-fam" style="opacity: 0"><b>HAIKU 5.5</b></div></div>
+        <div id="fin-logo" class="logo" style="top: 360px; opacity: 0"><img src="assets/img/logo-claude.svg" alt="" /></div>
+        <div id="fin-q" class="gros-titre" style="top: 1170px; font-size: 110px; opacity: 0">TU UTILISES LEQUEL ?</div>
+        <div id="fin-com" class="etiq-com" style="opacity: 0">DIS-LE EN COMMENTAIRE</div>
+        <div id="fondu" class="flash" style="background: #000"></div>
+        </div>
+      </div>
+      <div id="titre" class="clip" data-layout-allow-overlap data-start="0" data-duration="46.64" data-track-index="0"><b>TOUS LES MODÈLES <i>CLAUDE</i></b></div>
+      <audio id="musique" src="assets/music/mix-claude.mp3" data-start="0" data-duration="46.64" data-volume="1" data-track-index="20"></audio>
+      <audio id="sfx-001" src="assets/sfx/riser-tech.mp3" data-start="0.0" data-duration="0.4" data-volume="0.35" data-track-index="30"></audio><!-- montée vers 2023 -->
+      <audio id="sfx-002" src="assets/sfx/trailer-impact.mp3" data-start="0.0" data-duration="4.866" data-volume="0.6" data-track-index="31"></audio><!-- début -->
+      <audio id="sfx-003" src="assets/sfx/whoosh-cine.mp3" data-start="0.0" data-duration="1.334" data-volume="0.34" data-track-index="32"></audio><!-- coupe ecrans-code -->
+      <audio id="sfx-004" src="assets/sfx/whoosh-fusee.mp3" data-start="0.0" data-duration="4.747" data-volume="0.34" data-track-index="33"></audio><!-- coupe data-center -->
+      <audio id="sfx-005" src="assets/sfx/impact-futur.mp3" data-start="0.427" data-duration="2.75" data-volume="0.5" data-track-index="30"></audio><!-- CLAUDE -->
+      <audio id="sfx-006" src="assets/sfx/swoosh-court.mp3" data-start="0.476" data-duration="1.25" data-volume="0.34" data-track-index="34"></audio><!-- coupe hologramme-main -->
+      <audio id="sfx-007" src="assets/sfx/impact-tambour.mp3" data-start="0.504" data-duration="3.0" data-volume="0.5" data-track-index="35"></audio><!-- tous ses modèles -->
+      <audio id="sfx-008" src="assets/sfx/whoosh-stutter.mp3" data-start="0.504" data-duration="2.517" data-volume="0.34" data-track-index="36"></audio><!-- coupe main-hologramme -->
+      <audio id="sfx-009" src="assets/sfx/balaie-rapide.mp3" data-start="0.852" data-duration="1.917" data-volume="0.34" data-track-index="37"></audio><!-- coupe robot-yeux -->
+      <audio id="sfx-010" src="assets/sfx/whoosh-metal.mp3" data-start="1.465" data-duration="0.479" data-volume="0.34" data-track-index="32"></audio><!-- coupe doigts-tapent -->
+      <audio id="sfx-011" src="assets/sfx/swoosh-vitesse.mp3" data-start="1.641" data-duration="2.6" data-volume="0.34" data-track-index="38"></audio><!-- coupe code-html-bleu -->
+      <audio id="sfx-012" src="assets/sfx/glitch-cine.mp3" data-start="1.681" data-duration="0.561" data-volume="0.45" data-track-index="39"></audio><!-- 2023 → 2026 -->
+      <audio id="sfx-013" src="assets/sfx/whoosh-cine.mp3" data-start="1.767" data-duration="1.334" data-volume="0.34" data-track-index="34"></audio><!-- coupe serveurs-lumieres -->
+      <audio id="sfx-014" src="assets/sfx/fouet.mp3" data-start="1.878" data-duration="1.051" data-volume="0.34" data-track-index="40"></audio><!-- coupe globe-reseau -->
+      <audio id="sfx-015" src="assets/sfx/whoosh-fusee.mp3" data-start="2.393" data-duration="4.747" data-volume="0.34" data-track-index="32"></audio><!-- coupe macbook-pro -->
+      <audio id="sfx-016" src="assets/sfx/swoosh-court.mp3" data-start="2.98" data-duration="1.25" data-volume="0.34" data-track-index="37"></audio><!-- coupe tunnel-virtuel-bleu -->
+      <audio id="sfx-017" src="assets/sfx/impact-basse.mp3" data-start="3.662" data-duration="1.1" data-volume="0.55" data-track-index="30"></audio><!-- année 2023 -->
+      <audio id="sfx-018" src="assets/sfx/balaie-rapide.mp3" data-start="4.616" data-duration="1.917" data-volume="0.42" data-track-index="34"></audio><!-- modèle 1 -->
+      <audio id="sfx-019" src="assets/sfx/pop-sec.mp3" data-start="4.936" data-duration="0.305" data-volume="0.3" data-track-index="30"></audio><!-- claque du nom -->
+      <audio id="sfx-020" src="assets/sfx/whoosh-metal.mp3" data-start="5.543" data-duration="0.479" data-volume="0.42" data-track-index="30"></audio><!-- modèle 2 -->
+      <audio id="sfx-021" src="assets/sfx/pop-click.mp3" data-start="5.663" data-duration="1.175" data-volume="0.3" data-track-index="31"></audio><!-- claque du nom -->
+      <audio id="sfx-022" src="assets/sfx/impact-cartoon.mp3" data-start="6.24" data-duration="1.414" data-volume="0.3" data-track-index="30"></audio><!-- claque du nom -->
+      <audio id="sfx-023" src="assets/sfx/fouet.mp3" data-start="6.27" data-duration="1.051" data-volume="0.42" data-track-index="33"></audio><!-- modèle INSTANT 1.2 -->
+      <audio id="sfx-024" src="assets/sfx/swoosh-vitesse.mp3" data-start="6.347" data-duration="2.6" data-volume="0.42" data-track-index="35"></audio><!-- modèle 2.1 -->
+      <audio id="sfx-025" src="assets/sfx/trailer-impact.mp3" data-start="6.574" data-duration="4.866" data-volume="0.55" data-track-index="34"></audio><!-- année 2024 -->
+      <audio id="sfx-026" src="assets/sfx/whoosh-stutter.mp3" data-start="6.777" data-duration="2.517" data-volume="0.42" data-track-index="36"></audio><!-- modèle 3 HAIKU -->
+      <audio id="sfx-027" src="assets/sfx/pop-long.mp3" data-start="6.917" data-duration="0.479" data-volume="0.3" data-track-index="31"></audio><!-- claque du nom -->
+      <audio id="sfx-028" src="assets/sfx/whoosh-cine.mp3" data-start="8.354" data-duration="1.334" data-volume="0.42" data-track-index="30"></audio><!-- modèle 3 SONNET -->
+      <audio id="sfx-029" src="assets/sfx/pop-sec.mp3" data-start="8.697" data-duration="0.305" data-volume="0.3" data-track-index="31"></audio><!-- claque du nom -->
+      <audio id="sfx-030" src="assets/sfx/pop-click.mp3" data-start="9.424" data-duration="1.175" data-volume="0.3" data-track-index="31"></audio><!-- claque du nom -->
+      <audio id="sfx-031" src="assets/sfx/whoosh-fusee.mp3" data-start="9.608" data-duration="4.747" data-volume="0.42" data-track-index="32"></audio><!-- modèle 3.5 SONNET -->
+      <audio id="sfx-032" src="assets/sfx/swoosh-court.mp3" data-start="9.881" data-duration="1.25" data-volume="0.42" data-track-index="30"></audio><!-- modèle 3 OPUS -->
+      <audio id="sfx-033" src="assets/sfx/impact-cartoon.mp3" data-start="10.001" data-duration="1.414" data-volume="0.3" data-track-index="33"></audio><!-- claque du nom -->
+      <audio id="sfx-034" src="assets/sfx/pop-long.mp3" data-start="10.678" data-duration="0.479" data-volume="0.3" data-track-index="31"></audio><!-- claque du nom -->
+      <audio id="sfx-035" src="assets/sfx/balaie-rapide.mp3" data-start="10.885" data-duration="1.917" data-volume="0.42" data-track-index="35"></audio><!-- modèle 3.5 HAIKU -->
+      <audio id="sfx-036" src="assets/sfx/impact-tambour.mp3" data-start="11.162" data-duration="3.0" data-volume="0.55" data-track-index="30"></audio><!-- année 2025 -->
+      <audio id="sfx-037" src="assets/sfx/pop-sec.mp3" data-start="11.205" data-duration="0.305" data-volume="0.3" data-track-index="31"></audio><!-- claque du nom -->
+      <audio id="sfx-038" src="assets/sfx/whoosh-stutter.mp3" data-start="13.047" data-duration="2.517" data-volume="0.42" data-track-index="31"></audio><!-- modèle OPUS 4.1 -->
+      <audio id="sfx-039" src="assets/sfx/whoosh-metal.mp3" data-start="13.066" data-duration="0.479" data-volume="0.42" data-track-index="33"></audio><!-- modèle 3.7 SONNET -->
+      <audio id="sfx-040" src="assets/sfx/pop-click.mp3" data-start="13.186" data-duration="1.175" data-volume="0.3" data-track-index="34"></audio><!-- claque du nom -->
+      <audio id="sfx-041" src="assets/sfx/impact-cartoon.mp3" data-start="13.763" data-duration="1.414" data-volume="0.3" data-track-index="33"></audio><!-- claque du nom -->
+      <audio id="sfx-042" src="assets/sfx/fouet.mp3" data-start="13.793" data-duration="1.051" data-volume="0.42" data-track-index="35"></audio><!-- modèle OPUS 4 -->
+      <audio id="sfx-043" src="assets/sfx/swoosh-vitesse.mp3" data-start="13.87" data-duration="2.6" data-volume="0.42" data-track-index="36"></audio><!-- modèle SONNET 4 -->
+      <audio id="sfx-044" src="assets/sfx/pop-long.mp3" data-start="14.44" data-duration="0.479" data-volume="0.3" data-track-index="30"></audio><!-- claque du nom -->
+      <audio id="sfx-045" src="assets/sfx/whoosh-cine.mp3" data-start="14.624" data-duration="1.334" data-volume="0.42" data-track-index="32"></audio><!-- modèle SONNET 4.5 -->
+      <audio id="sfx-046" src="assets/sfx/pop-sec.mp3" data-start="14.967" data-duration="0.305" data-volume="0.3" data-track-index="30"></audio><!-- claque du nom -->
+      <audio id="sfx-047" src="assets/sfx/pop-click.mp3" data-start="15.694" data-duration="1.175" data-volume="0.3" data-track-index="30"></audio><!-- claque du nom -->
+      <audio id="sfx-048" src="assets/sfx/whoosh-fusee.mp3" data-start="15.878" data-duration="4.747" data-volume="0.42" data-track-index="31"></audio><!-- modèle OPUS 4.5 -->
+      <audio id="sfx-049" src="assets/sfx/swoosh-court.mp3" data-start="16.151" data-duration="1.25" data-volume="0.42" data-track-index="32"></audio><!-- modèle HAIKU 4.5 -->
+      <audio id="sfx-050" src="assets/sfx/impact-cartoon.mp3" data-start="16.271" data-duration="1.414" data-volume="0.3" data-track-index="33"></audio><!-- claque du nom -->
+      <audio id="sfx-051" src="assets/sfx/pop-long.mp3" data-start="16.948" data-duration="0.479" data-volume="0.3" data-track-index="30"></audio><!-- claque du nom -->
+      <audio id="sfx-052" src="assets/sfx/clic.mp3" data-start="17.405" data-duration="0.447" data-volume="0.25" data-track-index="34"></audio><!-- défilement des noms -->
+      <audio id="sfx-053" src="assets/sfx/impact-basse.mp3" data-start="17.455" data-duration="1.1" data-volume="0.5" data-track-index="30"></audio><!-- 16 modèles en 3 ans -->
+      <audio id="sfx-054" src="assets/sfx/clic.mp3" data-start="17.718" data-duration="0.447" data-volume="0.25" data-track-index="32"></audio><!-- défilement des noms -->
+      <audio id="sfx-055" src="assets/sfx/clic.mp3" data-start="18.032" data-duration="0.447" data-volume="0.25" data-track-index="33"></audio><!-- défilement des noms -->
+      <audio id="sfx-056" src="assets/sfx/clic.mp3" data-start="18.345" data-duration="0.447" data-volume="0.25" data-track-index="32"></audio><!-- défilement des noms -->
+      <audio id="sfx-057" src="assets/sfx/clic.mp3" data-start="18.659" data-duration="0.447" data-volume="0.25" data-track-index="30"></audio><!-- défilement des noms -->
+      <audio id="sfx-058" src="assets/sfx/riser-trailer.mp3" data-start="18.867" data-duration="2.507" data-volume="0.5" data-track-index="32"></audio><!-- montée -->
+      <audio id="sfx-059" src="assets/sfx/clic.mp3" data-start="18.972" data-duration="0.447" data-volume="0.25" data-track-index="33"></audio><!-- défilement des noms -->
+      <audio id="sfx-060" src="assets/sfx/clic.mp3" data-start="19.286" data-duration="0.447" data-volume="0.25" data-track-index="30"></audio><!-- défilement des noms -->
+      <audio id="sfx-061" src="assets/sfx/whoosh-tunnel.mp3" data-start="19.463" data-duration="6.747" data-volume="0.45" data-track-index="33"></audio><!-- on entre dans 2026 -->
+      <audio id="sfx-062" src="assets/sfx/clic.mp3" data-start="19.599" data-duration="0.447" data-volume="0.25" data-track-index="34"></audio><!-- défilement des noms -->
+      <audio id="sfx-063" src="assets/sfx/battements.mp3" data-start="22.171" data-duration="1.253" data-volume="0.4" data-track-index="30"></audio><!-- cœur qui bat -->
+      <audio id="sfx-064" src="assets/sfx/roulement-suspense.mp3" data-start="23.251" data-duration="0.627" data-volume="0.45" data-track-index="31"></audio><!-- roulement avant le drop -->
+      <audio id="sfx-065" src="assets/sfx/trailer-impact.mp3" data-start="24.128" data-duration="4.866" data-volume="0.7" data-track-index="30"></audio><!-- DROP -->
+      <audio id="sfx-066" src="assets/sfx/impact-basse.mp3" data-start="24.978" data-duration="1.1" data-volume="0.5" data-track-index="31"></audio><!-- DROP -->
+      <audio id="sfx-067" src="assets/sfx/balaie-rapide.mp3" data-start="25.305" data-duration="1.917" data-volume="0.38" data-track-index="32"></audio><!-- souffle -->
+      <audio id="sfx-068" src="assets/sfx/impact-futur.mp3" data-start="25.505" data-duration="2.75" data-volume="0.42" data-track-index="34"></audio><!-- modèle OPUS 4.6 -->
+      <audio id="sfx-069" src="assets/sfx/trailer-impact.mp3" data-start="26.009" data-duration="4.866" data-volume="0.42" data-track-index="35"></audio><!-- modèle OPUS 4.7 -->
+      <audio id="sfx-070" src="assets/sfx/whoosh-stutter.mp3" data-start="26.213" data-duration="2.517" data-volume="0.38" data-track-index="31"></audio><!-- souffle -->
+      <audio id="sfx-071" src="assets/sfx/impact-basse.mp3" data-start="26.232" data-duration="1.1" data-volume="0.42" data-track-index="33"></audio><!-- modèle SONNET 4.6 -->
+      <audio id="sfx-072" src="assets/sfx/whoosh-metal.mp3" data-start="26.232" data-duration="0.479" data-volume="0.38" data-track-index="36"></audio><!-- souffle -->
+      <audio id="sfx-073" src="assets/sfx/impact-tambour.mp3" data-start="26.836" data-duration="3.0" data-volume="0.42" data-track-index="36"></audio><!-- modèle MYTHOS PREVIEW -->
+      <audio id="sfx-074" src="assets/sfx/fouet.mp3" data-start="26.959" data-duration="1.051" data-volume="0.38" data-track-index="37"></audio><!-- souffle -->
+      <audio id="sfx-075" src="assets/sfx/swoosh-vitesse.mp3" data-start="27.036" data-duration="2.6" data-volume="0.38" data-track-index="38"></audio><!-- souffle -->
+      <audio id="sfx-076" src="assets/sfx/whoosh-cine.mp3" data-start="27.79" data-duration="1.334" data-volume="0.38" data-track-index="32"></audio><!-- souffle -->
+      <audio id="sfx-077" src="assets/sfx/impact-futur.mp3" data-start="28.013" data-duration="2.75" data-volume="0.42" data-track-index="33"></audio><!-- modèle OPUS 4.8 -->
+      <audio id="sfx-078" src="assets/sfx/trailer-impact.mp3" data-start="28.517" data-duration="4.866" data-volume="0.42" data-track-index="34"></audio><!-- modèle FABLE 5 -->
+      <audio id="sfx-079" src="assets/sfx/impact-basse.mp3" data-start="28.74" data-duration="1.1" data-volume="0.42" data-track-index="37"></audio><!-- modèle MYTHOS 5 -->
+      <audio id="sfx-080" src="assets/sfx/whoosh-fusee.mp3" data-start="29.044" data-duration="4.747" data-volume="0.38" data-track-index="30"></audio><!-- souffle -->
+      <audio id="sfx-081" src="assets/sfx/swoosh-court.mp3" data-start="29.317" data-duration="1.25" data-volume="0.38" data-track-index="31"></audio><!-- souffle -->
+      <audio id="sfx-082" src="assets/sfx/impact-tambour.mp3" data-start="29.344" data-duration="3.0" data-volume="0.42" data-track-index="32"></audio><!-- modèle SONNET 5 -->
+      <audio id="sfx-083" src="assets/sfx/balaie-rapide.mp3" data-start="30.321" data-duration="1.917" data-volume="0.38" data-track-index="36"></audio><!-- souffle -->
+      <audio id="sfx-084" src="assets/sfx/impact-futur.mp3" data-start="30.521" data-duration="2.75" data-volume="0.42" data-track-index="37"></audio><!-- modèle OPUS 5 -->
+      <audio id="sfx-085" src="assets/sfx/trailer-impact.mp3" data-start="31.025" data-duration="4.866" data-volume="0.42" data-track-index="31"></audio><!-- modèle MYTHOS 5.1 -->
+      <audio id="sfx-086" src="assets/sfx/whoosh-stutter.mp3" data-start="31.229" data-duration="2.517" data-volume="0.38" data-track-index="33"></audio><!-- souffle -->
+      <audio id="sfx-087" src="assets/sfx/impact-basse.mp3" data-start="31.248" data-duration="1.1" data-volume="0.42" data-track-index="35"></audio><!-- modèle FABLE 5.1 -->
+      <audio id="sfx-088" src="assets/sfx/whoosh-metal.mp3" data-start="31.248" data-duration="0.479" data-volume="0.38" data-track-index="38"></audio><!-- souffle -->
+      <audio id="sfx-089" src="assets/sfx/impact-tambour.mp3" data-start="31.852" data-duration="3.0" data-volume="0.42" data-track-index="38"></audio><!-- modèle OPUS 5.5 -->
+      <audio id="sfx-090" src="assets/sfx/fouet.mp3" data-start="31.975" data-duration="1.051" data-volume="0.38" data-track-index="39"></audio><!-- souffle -->
+      <audio id="sfx-091" src="assets/sfx/swoosh-vitesse.mp3" data-start="32.052" data-duration="2.6" data-volume="0.38" data-track-index="40"></audio><!-- souffle -->
+      <audio id="sfx-092" src="assets/sfx/whoosh-cine.mp3" data-start="32.806" data-duration="1.334" data-volume="0.38" data-track-index="32"></audio><!-- souffle -->
+      <audio id="sfx-093" src="assets/sfx/impact-futur.mp3" data-start="33.029" data-duration="2.75" data-volume="0.42" data-track-index="35"></audio><!-- modèle SONNET 5.5 -->
+      <audio id="sfx-094" src="assets/sfx/trailer-impact.mp3" data-start="33.533" data-duration="4.866" data-volume="0.42" data-track-index="34"></audio><!-- modèle FABLE 5.2 -->
+      <audio id="sfx-095" src="assets/sfx/impact-basse.mp3" data-start="33.756" data-duration="1.1" data-volume="0.42" data-track-index="33"></audio><!-- modèle HAIKU 5.5 -->
+      <audio id="sfx-096" src="assets/sfx/swoosh-court.mp3" data-start="34.333" data-duration="1.25" data-volume="0.38" data-track-index="30"></audio><!-- souffle -->
+      <audio id="sfx-097" src="assets/sfx/revelation.mp3" data-start="34.51" data-duration="3.0" data-volume="0.4" data-track-index="32"></audio><!-- révélation -->
+      <audio id="sfx-098" src="assets/sfx/whoosh-tunnel.mp3" data-start="34.51" data-duration="6.747" data-volume="0.45" data-track-index="36"></audio><!-- carte FABLE 5.2 -->
+      <audio id="sfx-099" src="assets/sfx/impact-basse.mp3" data-start="35.01" data-duration="1.1" data-volume="0.55" data-track-index="33"></audio><!-- la famille actuelle -->
+      <audio id="sfx-100" src="assets/sfx/whoosh-cine.mp3" data-start="35.314" data-duration="1.334" data-volume="0.45" data-track-index="37"></audio><!-- carte OPUS 5.5 -->
+      <audio id="sfx-101" src="assets/sfx/revelation.mp3" data-start="35.764" data-duration="3.0" data-volume="0.4" data-track-index="30"></audio><!-- révélation -->
+      <audio id="sfx-102" src="assets/sfx/revelation.mp3" data-start="37.018" data-duration="3.0" data-volume="0.4" data-track-index="31"></audio><!-- révélation -->
+      <audio id="sfx-103" src="assets/sfx/zoom-impact.mp3" data-start="37.118" data-duration="1.222" data-volume="0.45" data-track-index="33"></audio><!-- carte SONNET 5.5 -->
+      <audio id="sfx-104" src="assets/sfx/whoosh-fusee.mp3" data-start="37.821" data-duration="4.747" data-volume="0.45" data-track-index="32"></audio><!-- carte HAIKU 5.5 -->
+      <audio id="sfx-105" src="assets/sfx/revelation.mp3" data-start="38.271" data-duration="3.0" data-volume="0.4" data-track-index="35"></audio><!-- révélation -->
+      <audio id="sfx-106" src="assets/sfx/pop-sec.mp3" data-start="40.025" data-duration="0.305" data-volume="0.4" data-track-index="30"></audio><!-- mini carte -->
+      <audio id="sfx-107" src="assets/sfx/pop-cartoon.mp3" data-start="40.439" data-duration="0.521" data-volume="0.4" data-track-index="30"></audio><!-- mini carte -->
+      <audio id="sfx-108" src="assets/sfx/impact-tambour.mp3" data-start="40.629" data-duration="3.0" data-volume="0.5" data-track-index="31"></audio><!-- tu utilises lequel -->
+      <audio id="sfx-109" src="assets/sfx/pop-click.mp3" data-start="40.752" data-duration="1.175" data-volume="0.4" data-track-index="33"></audio><!-- mini carte -->
+      <audio id="sfx-110" src="assets/sfx/pop-long.mp3" data-start="41.066" data-duration="0.479" data-volume="0.4" data-track-index="30"></audio><!-- mini carte -->
+      <audio id="sfx-111" src="assets/sfx/notif-positive.mp3" data-start="42.333" data-duration="2.8" data-volume="0.4" data-track-index="30"></audio><!-- commentaire -->
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      tl.set("#v0", { opacity: 1 }, 0.0);
+      tl.fromTo("#v0", { scale: 1.22 }, { scale: 1.02, duration: 0.313, ease: "power2.out", immediateRender: false }, 0.0);
+      tl.set("#v0", { opacity: 0 }, 0.333);
+      tl.set("#v1", { opacity: 1 }, 0.313);
+      tl.fromTo("#v1", { scale: 1.22 }, { scale: 1.02, duration: 0.313, ease: "power2.out", immediateRender: false }, 0.313);
+      tl.set("#v1", { opacity: 0 }, 0.646);
+      tl.set("#v2", { opacity: 1 }, 0.626);
+      tl.fromTo("#v2", { scale: 1.22 }, { scale: 1.02, duration: 0.313, ease: "power2.out", immediateRender: false }, 0.626);
+      tl.set("#v2", { opacity: 0 }, 0.959);
+      tl.set("#v3", { opacity: 1 }, 0.939);
+      tl.fromTo("#v3", { scale: 1.22 }, { scale: 1.02, duration: 0.313, ease: "power2.out", immediateRender: false }, 0.939);
+      tl.set("#v3", { opacity: 0 }, 1.272);
+      tl.set("#v4", { opacity: 1 }, 1.252);
+      tl.fromTo("#v4", { scale: 1.22 }, { scale: 1.02, duration: 0.313, ease: "power2.out", immediateRender: false }, 1.252);
+      tl.set("#v4", { opacity: 0 }, 1.585);
+      tl.set("#v5", { opacity: 1 }, 1.565);
+      tl.fromTo("#v5", { scale: 1.22 }, { scale: 1.02, duration: 0.313, ease: "power2.out", immediateRender: false }, 1.565);
+      tl.set("#v5", { opacity: 0 }, 1.898);
+      tl.set("#v6", { opacity: 1 }, 1.878);
+      tl.fromTo("#v6", { scale: 1.22 }, { scale: 1.02, duration: 0.313, ease: "power2.out", immediateRender: false }, 1.878);
+      tl.set("#v6", { opacity: 0 }, 2.211);
+      tl.set("#v7", { opacity: 1 }, 2.191);
+      tl.fromTo("#v7", { scale: 1.22 }, { scale: 1.02, duration: 0.313, ease: "power2.out", immediateRender: false }, 2.191);
+      tl.set("#v7", { opacity: 0 }, 2.524);
+      tl.set("#v8", { opacity: 1 }, 2.504);
+      tl.fromTo("#v8", { scale: 1.22 }, { scale: 1.02, duration: 0.313, ease: "power2.out", immediateRender: false }, 2.504);
+      tl.set("#v8", { opacity: 0 }, 2.837);
+      tl.set("#v9", { opacity: 1 }, 2.817);
+      tl.fromTo("#v9", { scale: 1.22 }, { scale: 1.02, duration: 0.313, ease: "power2.out", immediateRender: false }, 2.817);
+      tl.set("#v9", { opacity: 0 }, 3.15);
+      tl.set("#v10", { opacity: 1 }, 3.13);
+      tl.fromTo("#v10", { scale: 1.22 }, { scale: 1.02, duration: 0.313, ease: "power2.out", immediateRender: false }, 3.13);
+      tl.set("#v10", { opacity: 0 }, 3.463);
+      tl.set("#v11", { opacity: 1 }, 3.443);
+      tl.fromTo("#v11", { scale: 1.22 }, { scale: 1.02, duration: 0.313, ease: "power2.out", immediateRender: false }, 3.443);
+      tl.set("#v11", { opacity: 0 }, 3.776);
+      tl.fromTo("#logo", { opacity: 0, scale: 3.0 }, { opacity: 1, scale: 1, duration: 0.18, ease: "power4.in", immediateRender: false }, 0.02);
+      tl.fromTo("#logo img", { rotation: 0 }, { rotation: 360, duration: 3.762, ease: "none", immediateRender: false }, 0.02);
+      tl.to("#logo", { scale: 0.42, y: -560, duration: 0.3, ease: "power3.inOut" }, 1.154);
+      tl.fromTo("#h-claude", { opacity: 0, scale: 2.6 }, { opacity: 1, scale: 1, duration: 0.14, ease: "power4.in", immediateRender: false }, 0.627);
+      tl.fromTo("#h-tous", { opacity: 0, scale: 1.8 }, { opacity: 1, scale: 1, duration: 0.14, ease: "power4.in", immediateRender: false }, 1.254);
+      tl.fromTo("#h-dates", { opacity: 0, scale: 1.8 }, { opacity: 1, scale: 1, duration: 0.14, ease: "power4.in", immediateRender: false }, 1.881);
+      tl.fromTo("#cadre", { scale: 1.06 }, { scale: 1, duration: 0.25, ease: "power3.out", immediateRender: false }, 2.508);
+      tl.fromTo("#cadre", { scale: 1.06 }, { scale: 1, duration: 0.25, ease: "power3.out", immediateRender: false }, 3.135);
+      tl.fromTo("#fl1", { opacity: 0.5 }, { opacity: 0, duration: 0.22, immediateRender: false }, 2.508);
+      tl.to("#h-claude", { opacity: 0, duration: 0.05 }, 3.732);
+      tl.to("#h-tous", { opacity: 0, duration: 0.05 }, 3.732);
+      tl.to("#h-dates", { opacity: 0, duration: 0.05 }, 3.732);
+      tl.to("#logo", { opacity: 0, duration: 0.1 }, 3.712);
+      tl.set("#v12", { opacity: 1 }, 3.762);
+      tl.fromTo("#v12", { scale: 1.22 }, { scale: 1.02, duration: 1.254, ease: "power2.out", immediateRender: false }, 3.762);
+      tl.set("#v12", { opacity: 0 }, 5.036);
+      tl.fromTo("#a2", { opacity: 0, scale: 3.0 }, { opacity: 1, scale: 1, duration: 0.16, ease: "power4.in", immediateRender: false }, 3.762);
+      tl.to("#a2 b", { scale: 1.12, duration: 1.254, ease: "none" }, 3.762);
+      tl.to("#a2", { opacity: 0, duration: 0.05 }, 4.996);
+      tl.fromTo("#fl3", { opacity: 0.9 }, { opacity: 0, duration: 0.22, immediateRender: false }, 3.762);
+      tl.to("#cadre", { keyframes: [{ x: -26, y: 13, duration: 0.03 }, { x: 26, y: -13, duration: 0.04 }, { x: -13, duration: 0.04 }, { x: 0, y: 0, duration: 0.03 }] }, 3.812);
+      tl.set("#v13", { opacity: 1 }, 5.016);
+      tl.fromTo("#v13", { scale: 1.22 }, { scale: 1.02, duration: 0.627, ease: "power2.out", immediateRender: false }, 5.016);
+      tl.set("#v13", { opacity: 0 }, 5.663);
+      tl.fromTo("#m4", { opacity: 0, scale: 2.2 }, { opacity: 1, scale: 1, duration: 0.14, ease: "power4.in", immediateRender: false }, 5.016);
+      tl.fromTo("#m4 b", { textShadow: "-14px 0 0 #00e5ff, 14px 0 0 #ff2a6d" }, { textShadow: "0px 0 0 #00e5ff, 0px 0 0 #ff2a6d", duration: 0.2, immediateRender: false }, 5.016);
+      tl.to("#m4", { opacity: 0, duration: 0.04 }, 5.623);
+      tl.fromTo("#cadre", { scale: 1.07 }, { scale: 1, duration: 0.28, ease: "power3.out", immediateRender: false }, 5.016);
+      tl.fromTo("#fl5", { opacity: 0.35 }, { opacity: 0, duration: 0.22, immediateRender: false }, 5.016);
+      tl.set("#v14", { opacity: 1 }, 5.643);
+      tl.fromTo("#v14", { scale: 1.22 }, { scale: 1.02, duration: 0.627, ease: "power2.out", immediateRender: false }, 5.643);
+      tl.set("#v14", { opacity: 0 }, 6.29);
+      tl.fromTo("#m6", { opacity: 0, x: 420, skewX: -18 }, { opacity: 1, x: 0, skewX: 0, duration: 0.14, ease: "power3.out", immediateRender: false }, 5.643);
+      tl.fromTo("#m6 b", { textShadow: "-14px 0 0 #00e5ff, 14px 0 0 #ff2a6d" }, { textShadow: "0px 0 0 #00e5ff, 0px 0 0 #ff2a6d", duration: 0.2, immediateRender: false }, 5.643);
+      tl.to("#m6", { opacity: 0, duration: 0.04 }, 6.25);
+      tl.fromTo("#cadre", { scale: 1.07 }, { scale: 1, duration: 0.28, ease: "power3.out", immediateRender: false }, 5.643);
+      tl.set("#v15", { opacity: 1 }, 6.27);
+      tl.fromTo("#v15", { scale: 1.22 }, { scale: 1.02, duration: 0.627, ease: "power2.out", immediateRender: false }, 6.27);
+      tl.set("#v15", { opacity: 0 }, 6.917);
+      tl.fromTo("#m7", { opacity: 0, y: 260, rotation: -6 }, { opacity: 1, y: 0, rotation: 0, duration: 0.14, ease: "back.out(2)", immediateRender: false }, 6.27);
+      tl.fromTo("#m7 b", { textShadow: "-14px 0 0 #00e5ff, 14px 0 0 #ff2a6d" }, { textShadow: "0px 0 0 #00e5ff, 0px 0 0 #ff2a6d", duration: 0.2, immediateRender: false }, 6.27);
+      tl.to("#m7", { opacity: 0, duration: 0.04 }, 6.877);
+      tl.fromTo("#cadre", { scale: 1.07 }, { scale: 1, duration: 0.28, ease: "power3.out", immediateRender: false }, 6.27);
+      tl.fromTo("#fl8", { opacity: 0.35 }, { opacity: 0, duration: 0.22, immediateRender: false }, 6.27);
+      tl.set("#v16", { opacity: 1 }, 6.897);
+      tl.fromTo("#v16", { scale: 1.22 }, { scale: 1.02, duration: 0.627, ease: "power2.out", immediateRender: false }, 6.897);
+      tl.set("#v16", { opacity: 0 }, 7.544);
+      tl.fromTo("#m9", { opacity: 0, scale: 2.2 }, { opacity: 1, scale: 1, duration: 0.14, ease: "power4.in", immediateRender: false }, 6.897);
+      tl.fromTo("#m9 b", { textShadow: "-14px 0 0 #00e5ff, 14px 0 0 #ff2a6d" }, { textShadow: "0px 0 0 #00e5ff, 0px 0 0 #ff2a6d", duration: 0.2, immediateRender: false }, 6.897);
+      tl.to("#m9", { opacity: 0, duration: 0.04 }, 7.504);
+      tl.fromTo("#cadre", { scale: 1.07 }, { scale: 1, duration: 0.28, ease: "power3.out", immediateRender: false }, 6.897);
+      tl.set("#v17", { opacity: 1 }, 7.524);
+      tl.fromTo("#v17", { scale: 1.22 }, { scale: 1.02, duration: 1.253, ease: "power2.out", immediateRender: false }, 7.524);
+      tl.set("#v17", { opacity: 0 }, 8.797);
+      tl.fromTo("#a10", { opacity: 0, scale: 3.0 }, { opacity: 1, scale: 1, duration: 0.16, ease: "power4.in", immediateRender: false }, 7.524);
+      tl.to("#a10 b", { scale: 1.12, duration: 1.253, ease: "none" }, 7.524);
+      tl.to("#a10", { opacity: 0, duration: 0.05 }, 8.757);
+      tl.fromTo("#fl11", { opacity: 0.9 }, { opacity: 0, duration: 0.22, immediateRender: false }, 7.524);
+      tl.to("#cadre", { keyframes: [{ x: -26, y: 13, duration: 0.03 }, { x: 26, y: -13, duration: 0.04 }, { x: -13, duration: 0.04 }, { x: 0, y: 0, duration: 0.03 }] }, 7.574);
+      tl.set("#v18", { opacity: 1 }, 8.777);
+      tl.fromTo("#v18", { scale: 1.22 }, { scale: 1.02, duration: 0.627, ease: "power2.out", immediateRender: false }, 8.777);
+      tl.set("#v18", { opacity: 0 }, 9.424);
+      tl.fromTo("#m12", { opacity: 0, x: 420, skewX: -18 }, { opacity: 1, x: 0, skewX: 0, duration: 0.14, ease: "power3.out", immediateRender: false }, 8.777);
+      tl.fromTo("#m12 b", { textShadow: "-14px 0 0 #00e5ff, 14px 0 0 #ff2a6d" }, { textShadow: "0px 0 0 #00e5ff, 0px 0 0 #ff2a6d", duration: 0.2, immediateRender: false }, 8.777);
+      tl.to("#m12", { opacity: 0, duration: 0.04 }, 9.384);
+      tl.fromTo("#cadre", { scale: 1.07 }, { scale: 1, duration: 0.28, ease: "power3.out", immediateRender: false }, 8.777);
+      tl.fromTo("#fl13", { opacity: 0.35 }, { opacity: 0, duration: 0.22, immediateRender: false }, 8.777);
+      tl.set("#v19", { opacity: 1 }, 9.404);
+      tl.fromTo("#v19", { scale: 1.22 }, { scale: 1.02, duration: 0.627, ease: "power2.out", immediateRender: false }, 9.404);
+      tl.set("#v19", { opacity: 0 }, 10.051);
+      tl.fromTo("#m14", { opacity: 0, y: 260, rotation: -6 }, { opacity: 1, y: 0, rotation: 0, duration: 0.14, ease: "back.out(2)", immediateRender: false }, 9.404);
+      tl.fromTo("#m14 b", { textShadow: "-14px 0 0 #00e5ff, 14px 0 0 #ff2a6d" }, { textShadow: "0px 0 0 #00e5ff, 0px 0 0 #ff2a6d", duration: 0.2, immediateRender: false }, 9.404);
+      tl.to("#m14", { opacity: 0, duration: 0.04 }, 10.011);
+      tl.fromTo("#cadre", { scale: 1.07 }, { scale: 1, duration: 0.28, ease: "power3.out", immediateRender: false }, 9.404);
+      tl.set("#v20", { opacity: 1 }, 10.031);
+      tl.fromTo("#v20", { scale: 1.22 }, { scale: 1.02, duration: 0.627, ease: "power2.out", immediateRender: false }, 10.031);
+      tl.set("#v20", { opacity: 0 }, 10.678);
+      tl.fromTo("#m15", { opacity: 0, scale: 2.2 }, { opacity: 1, scale: 1, duration: 0.14, ease: "power4.in", immediateRender: false }, 10.031);
+      tl.fromTo("#m15 b", { textShadow: "-14px 0 0 #00e5ff, 14px 0 0 #ff2a6d" }, { textShadow: "0px 0 0 #00e5ff, 0px 0 0 #ff2a6d", duration: 0.2, immediateRender: false }, 10.031);
+      tl.to("#m15", { opacity: 0, duration: 0.04 }, 10.638);
+      tl.fromTo("#cadre", { scale: 1.07 }, { scale: 1, duration: 0.28, ease: "power3.out", immediateRender: false }, 10.031);
+      tl.fromTo("#fl16", { opacity: 0.35 }, { opacity: 0, duration: 0.22, immediateRender: false }, 10.031);
+      tl.set("#v21", { opacity: 1 }, 10.658);
+      tl.fromTo("#v21", { scale: 1.22 }, { scale: 1.02, duration: 0.627, ease: "power2.out", immediateRender: false }, 10.658);
+      tl.set("#v21", { opacity: 0 }, 11.305);
+      tl.fromTo("#m17", { opacity: 0, x: 420, skewX: -18 }, { opacity: 1, x: 0, skewX: 0, duration: 0.14, ease: "power3.out", immediateRender: false }, 10.658);
+      tl.fromTo("#m17 b", { textShadow: "-14px 0 0 #00e5ff, 14px 0 0 #ff2a6d" }, { textShadow: "0px 0 0 #00e5ff, 0px 0 0 #ff2a6d", duration: 0.2, immediateRender: false }, 10.658);
+      tl.to("#m17", { opacity: 0, duration: 0.04 }, 11.265);
+      tl.fromTo("#cadre", { scale: 1.07 }, { scale: 1, duration: 0.28, ease: "power3.out", immediateRender: false }, 10.658);
+      tl.set("#v22", { opacity: 1 }, 11.285);
+      tl.fromTo("#v22", { scale: 1.22 }, { scale: 1.02, duration: 0.627, ease: "power2.out", immediateRender: false }, 11.285);
+      tl.set("#v22", { opacity: 0 }, 11.932);
+      tl.fromTo("#m18", { opacity: 0, y: 260, rotation: -6 }, { opacity: 1, y: 0, rotation: 0, duration: 0.14, ease: "back.out(2)", immediateRender: false }, 11.285);
+      tl.fromTo("#m18 b", { textShadow: "-14px 0 0 #00e5ff, 14px 0 0 #ff2a6d" }, { textShadow: "0px 0 0 #00e5ff, 0px 0 0 #ff2a6d", duration: 0.2, immediateRender: false }, 11.285);
+      tl.to("#m18", { opacity: 0, duration: 0.04 }, 11.892);
+      tl.fromTo("#cadre", { scale: 1.07 }, { scale: 1, duration: 0.28, ease: "power3.out", immediateRender: false }, 11.285);
+      tl.fromTo("#fl19", { opacity: 0.35 }, { opacity: 0, duration: 0.22, immediateRender: false }, 11.285);
+      tl.set("#v23", { opacity: 1 }, 11.912);
+      tl.fromTo("#v23", { scale: 1.22 }, { scale: 1.02, duration: 1.254, ease: "power2.out", immediateRender: false }, 11.912);
+      tl.set("#v23", { opacity: 0 }, 13.186);
+      tl.fromTo("#a20", { opacity: 0, scale: 3.0 }, { opacity: 1, scale: 1, duration: 0.16, ease: "power4.in", immediateRender: false }, 11.912);
+      tl.to("#a20 b", { scale: 1.12, duration: 1.254, ease: "none" }, 11.912);
+      tl.to("#a20", { opacity: 0, duration: 0.05 }, 13.146);
+      tl.fromTo("#fl21", { opacity: 0.9 }, { opacity: 0, duration: 0.22, immediateRender: false }, 11.912);
+      tl.to("#cadre", { keyframes: [{ x: -26, y: 13, duration: 0.03 }, { x: 26, y: -13, duration: 0.04 }, { x: -13, duration: 0.04 }, { x: 0, y: 0, duration: 0.03 }] }, 11.962000000000002);
+      tl.set("#v24", { opacity: 1 }, 13.166);
+      tl.fromTo("#v24", { scale: 1.22 }, { scale: 1.02, duration: 0.627, ease: "power2.out", immediateRender: false }, 13.166);
+      tl.set("#v24", { opacity: 0 }, 13.813);
+      tl.fromTo("#m22", { opacity: 0, scale: 2.2 }, { opacity: 1, scale: 1, duration: 0.14, ease: "power4.in", immediateRender: false }, 13.166);
+      tl.fromTo("#m22 b", { textShadow: "-14px 0 0 #00e5ff, 14px 0 0 #ff2a6d" }, { textShadow: "0px 0 0 #00e5ff, 0px 0 0 #ff2a6d", duration: 0.2, immediateRender: false }, 13.166);
+      tl.to("#m22", { opacity: 0, duration: 0.04 }, 13.773);
+      tl.fromTo("#cadre", { scale: 1.07 }, { scale: 1, duration: 0.28, ease: "power3.out", immediateRender: false }, 13.166);
+      tl.set("#v25", { opacity: 1 }, 13.793);
+      tl.fromTo("#v25", { scale: 1.22 }, { scale: 1.02, duration: 0.627, ease: "power2.out", immediateRender: false }, 13.793);
+      tl.set("#v25", { opacity: 0 }, 14.44);
+      tl.fromTo("#m23", { opacity: 0, x: 420, skewX: -18 }, { opacity: 1, x: 0, skewX: 0, duration: 0.14, ease: "power3.out", immediateRender: false }, 13.793);
+      tl.fromTo("#m23 b", { textShadow: "-14px 0 0 #00e5ff, 14px 0 0 #ff2a6d" }, { textShadow: "0px 0 0 #00e5ff, 0px 0 0 #ff2a6d", duration: 0.2, immediateRender: false }, 13.793);
+      tl.to("#m23", { opacity: 0, duration: 0.04 }, 14.4);
+      tl.fromTo("#cadre", { scale: 1.07 }, { scale: 1, duration: 0.28, ease: "power3.out", immediateRender: false }, 13.793);
+      tl.fromTo("#fl24", { opacity: 0.35 }, { opacity: 0, duration: 0.22, immediateRender: false }, 13.793);
+      tl.set("#v26", { opacity: 1 }, 14.42);
+      tl.fromTo("#v26", { scale: 1.22 }, { scale: 1.02, duration: 0.627, ease: "power2.out", immediateRender: false }, 14.42);
+      tl.set("#v26", { opacity: 0 }, 15.067);
+      tl.fromTo("#m25", { opacity: 0, y: 260, rotation: -6 }, { opacity: 1, y: 0, rotation: 0, duration: 0.14, ease: "back.out(2)", immediateRender: false }, 14.42);
+      tl.fromTo("#m25 b", { textShadow: "-14px 0 0 #00e5ff, 14px 0 0 #ff2a6d" }, { textShadow: "0px 0 0 #00e5ff, 0px 0 0 #ff2a6d", duration: 0.2, immediateRender: false }, 14.42);
+      tl.to("#m25", { opacity: 0, duration: 0.04 }, 15.027);
+      tl.fromTo("#cadre", { scale: 1.07 }, { scale: 1, duration: 0.28, ease: "power3.out", immediateRender: false }, 14.42);
+      tl.set("#v27", { opacity: 1 }, 15.047);
+      tl.fromTo("#v27", { scale: 1.22 }, { scale: 1.02, duration: 0.627, ease: "power2.out", immediateRender: false }, 15.047);
+      tl.set("#v27", { opacity: 0 }, 15.694);
+      tl.fromTo("#m26", { opacity: 0, scale: 2.2 }, { opacity: 1, scale: 1, duration: 0.14, ease: "power4.in", immediateRender: false }, 15.047);
+      tl.fromTo("#m26 b", { textShadow: "-14px 0 0 #00e5ff, 14px 0 0 #ff2a6d" }, { textShadow: "0px 0 0 #00e5ff, 0px 0 0 #ff2a6d", duration: 0.2, immediateRender: false }, 15.047);
+      tl.to("#m26", { opacity: 0, duration: 0.04 }, 15.654);
+      tl.fromTo("#cadre", { scale: 1.07 }, { scale: 1, duration: 0.28, ease: "power3.out", immediateRender: false }, 15.047);
+      tl.fromTo("#fl27", { opacity: 0.35 }, { opacity: 0, duration: 0.22, immediateRender: false }, 15.047);
+      tl.set("#v28", { opacity: 1 }, 15.674);
+      tl.fromTo("#v28", { scale: 1.22 }, { scale: 1.02, duration: 0.627, ease: "power2.out", immediateRender: false }, 15.674);
+      tl.set("#v28", { opacity: 0 }, 16.321);
+      tl.fromTo("#m28", { opacity: 0, x: 420, skewX: -18 }, { opacity: 1, x: 0, skewX: 0, duration: 0.14, ease: "power3.out", immediateRender: false }, 15.674);
+      tl.fromTo("#m28 b", { textShadow: "-14px 0 0 #00e5ff, 14px 0 0 #ff2a6d" }, { textShadow: "0px 0 0 #00e5ff, 0px 0 0 #ff2a6d", duration: 0.2, immediateRender: false }, 15.674);
+      tl.to("#m28", { opacity: 0, duration: 0.04 }, 16.281);
+      tl.fromTo("#cadre", { scale: 1.07 }, { scale: 1, duration: 0.28, ease: "power3.out", immediateRender: false }, 15.674);
+      tl.set("#v29", { opacity: 1 }, 16.301);
+      tl.fromTo("#v29", { scale: 1.22 }, { scale: 1.02, duration: 0.627, ease: "power2.out", immediateRender: false }, 16.301);
+      tl.set("#v29", { opacity: 0 }, 16.948);
+      tl.fromTo("#m29", { opacity: 0, y: 260, rotation: -6 }, { opacity: 1, y: 0, rotation: 0, duration: 0.14, ease: "back.out(2)", immediateRender: false }, 16.301);
+      tl.fromTo("#m29 b", { textShadow: "-14px 0 0 #00e5ff, 14px 0 0 #ff2a6d" }, { textShadow: "0px 0 0 #00e5ff, 0px 0 0 #ff2a6d", duration: 0.2, immediateRender: false }, 16.301);
+      tl.to("#m29", { opacity: 0, duration: 0.04 }, 16.908);
+      tl.fromTo("#cadre", { scale: 1.07 }, { scale: 1, duration: 0.28, ease: "power3.out", immediateRender: false }, 16.301);
+      tl.fromTo("#fl30", { opacity: 0.35 }, { opacity: 0, duration: 0.22, immediateRender: false }, 16.301);
+      tl.set("#v30", { opacity: 1 }, 16.928);
+      tl.fromTo("#v30", { scale: 1.22 }, { scale: 1.02, duration: 0.627, ease: "power2.out", immediateRender: false }, 16.928);
+      tl.set("#v30", { opacity: 0 }, 17.575);
+      tl.fromTo("#m31", { opacity: 0, scale: 2.2 }, { opacity: 1, scale: 1, duration: 0.14, ease: "power4.in", immediateRender: false }, 16.928);
+      tl.fromTo("#m31 b", { textShadow: "-14px 0 0 #00e5ff, 14px 0 0 #ff2a6d" }, { textShadow: "0px 0 0 #00e5ff, 0px 0 0 #ff2a6d", duration: 0.2, immediateRender: false }, 16.928);
+      tl.to("#m31", { opacity: 0, duration: 0.04 }, 17.535);
+      tl.fromTo("#cadre", { scale: 1.07 }, { scale: 1, duration: 0.28, ease: "power3.out", immediateRender: false }, 16.928);
+      tl.set("#v31", { opacity: 1 }, 17.555);
+      tl.fromTo("#v31", { scale: 1.22 }, { scale: 1.02, duration: 2.508, ease: "power2.out", immediateRender: false }, 17.555);
+      tl.set("#v31", { opacity: 0 }, 20.083);
+      tl.fromTo("#r-titre", { opacity: 0, scale: 1.8 }, { opacity: 1, scale: 1, duration: 0.14, ease: "power4.in", immediateRender: false }, 17.555);
+      tl.set("#rc32", { opacity: 1 }, 17.555);
+      tl.set("#rc32", { opacity: 0 }, 17.712);
+      tl.set("#rc33", { opacity: 1 }, 17.712);
+      tl.set("#rc33", { opacity: 0 }, 17.868);
+      tl.set("#rc34", { opacity: 1 }, 17.868);
+      tl.set("#rc34", { opacity: 0 }, 18.025);
+      tl.set("#rc35", { opacity: 1 }, 18.025);
+      tl.set("#rc35", { opacity: 0 }, 18.182);
+      tl.set("#rc36", { opacity: 1 }, 18.182);
+      tl.set("#rc36", { opacity: 0 }, 18.339);
+      tl.set("#rc37", { opacity: 1 }, 18.339);
+      tl.set("#rc37", { opacity: 0 }, 18.495);
+      tl.set("#rc38", { opacity: 1 }, 18.495);
+      tl.set("#rc38", { opacity: 0 }, 18.652);
+      tl.set("#rc39", { opacity: 1 }, 18.652);
+      tl.set("#rc39", { opacity: 0 }, 18.809);
+      tl.set("#rc40", { opacity: 1 }, 18.809);
+      tl.set("#rc40", { opacity: 0 }, 18.966);
+      tl.set("#rc41", { opacity: 1 }, 18.966);
+      tl.set("#rc41", { opacity: 0 }, 19.122);
+      tl.set("#rc42", { opacity: 1 }, 19.122);
+      tl.set("#rc42", { opacity: 0 }, 19.279);
+      tl.set("#rc43", { opacity: 1 }, 19.279);
+      tl.set("#rc43", { opacity: 0 }, 19.436);
+      tl.set("#rc44", { opacity: 1 }, 19.436);
+      tl.set("#rc44", { opacity: 0 }, 19.592);
+      tl.set("#rc45", { opacity: 1 }, 19.592);
+      tl.set("#rc45", { opacity: 0 }, 19.749);
+      tl.set("#rc46", { opacity: 1 }, 19.749);
+      tl.set("#rc46", { opacity: 0 }, 19.906);
+      tl.set("#rc47", { opacity: 1 }, 19.906);
+      tl.set("#rc47", { opacity: 0 }, 20.063);
+      tl.to("#r-titre", { opacity: 0, duration: 0.08 }, 20.032999999999998);
+      tl.set("#v32", { opacity: 1 }, 20.063);
+      tl.fromTo("#v32", { scale: 1.22 }, { scale: 1.02, duration: 3.761, ease: "power2.out", immediateRender: false }, 20.063);
+      tl.set("#v32", { opacity: 0 }, 23.844);
+      tl.fromTo("#m-nav", { opacity: 0, y: 200, scale: 0.8 }, { opacity: 1, y: 0, scale: 1, duration: 0.4, ease: "power3.out", immediateRender: false }, 20.063);
+      tl.to("#m-nav", { scale: 1.5, y: 120, duration: 3.134, ease: "power1.in" }, 20.69);
+      tl.to("#m-nav", { opacity: 0, duration: 0.05 }, 23.804000000000002);
+      tl.fromTo("#m-et", { opacity: 0, letterSpacing: "40px" }, { opacity: 1, letterSpacing: "4px", duration: 0.8, ease: "power2.out", immediateRender: false }, 21.317);
+      tl.to("#m-et", { opacity: 0, duration: 0.05 }, 23.804000000000002);
+      tl.to("#cadre", { keyframes: [{ x: -6, y: 3, duration: 0.03 }, { x: 6, y: -3, duration: 0.04 }, { x: -3, duration: 0.04 }, { x: 0, y: 0, duration: 0.03 }] }, 21.317);
+      tl.to("#cadre", { keyframes: [{ x: -10, y: 5, duration: 0.03 }, { x: 10, y: -5, duration: 0.04 }, { x: -5, duration: 0.04 }, { x: 0, y: 0, duration: 0.03 }] }, 21.944);
+      tl.to("#cadre", { keyframes: [{ x: -14, y: 7, duration: 0.03 }, { x: 14, y: -7, duration: 0.04 }, { x: -7, duration: 0.04 }, { x: 0, y: 0, duration: 0.03 }] }, 22.571);
+      tl.to("#cadre", { keyframes: [{ x: -18, y: 9, duration: 0.03 }, { x: 18, y: -9, duration: 0.04 }, { x: -9, duration: 0.04 }, { x: 0, y: 0, duration: 0.03 }] }, 23.197);
+      tl.set("#noir", { opacity: 1 }, 23.824);
+      tl.set("#noir", { opacity: 0 }, 24.451);
+      tl.fromTo("#m-2026", { opacity: 0, scale: 0.4 }, { opacity: 1, scale: 1, duration: 0.627, ease: "power2.in", immediateRender: false }, 24.451);
+      tl.set("#v33", { opacity: 1 }, 25.078);
+      tl.fromTo("#v33", { scale: 1.22 }, { scale: 1.02, duration: 0.627, ease: "power2.out", immediateRender: false }, 25.078);
+      tl.set("#v33", { opacity: 0 }, 25.725);
+      tl.to("#m-2026", { scale: 1.6, opacity: 0, duration: 0.627, ease: "power2.out" }, 25.078);
+      tl.fromTo("#fl48", { opacity: 1.0 }, { opacity: 0, duration: 0.22, immediateRender: false }, 25.078);
+      tl.to("#cadre", { keyframes: [{ x: -40, y: 20, duration: 0.03 }, { x: 40, y: -20, duration: 0.04 }, { x: -20, duration: 0.04 }, { x: 0, y: 0, duration: 0.03 }] }, 25.118);
+      tl.set("#v34", { opacity: 1 }, 25.705);
+      tl.fromTo("#v34", { scale: 1.22 }, { scale: 1.02, duration: 0.627, ease: "power2.out", immediateRender: false }, 25.705);
+      tl.set("#v34", { opacity: 0 }, 26.352);
+      tl.fromTo("#m49", { opacity: 0, scale: 2.2 }, { opacity: 1, scale: 1, duration: 0.14, ease: "power4.in", immediateRender: false }, 25.705);
+      tl.fromTo("#m49 b", { textShadow: "-14px 0 0 #00e5ff, 14px 0 0 #ff2a6d" }, { textShadow: "0px 0 0 #00e5ff, 0px 0 0 #ff2a6d", duration: 0.2, immediateRender: false }, 25.705);
+      tl.to("#m49", { opacity: 0, duration: 0.04 }, 26.312);
+      tl.to("#cadre", { keyframes: [{ x: -18, y: 9, duration: 0.03 }, { x: 18, y: -9, duration: 0.04 }, { x: -9, duration: 0.04 }, { x: 0, y: 0, duration: 0.03 }] }, 25.735);
+      tl.fromTo("#cadre", { scale: 1.1 }, { scale: 1, duration: 0.3, ease: "power3.out", immediateRender: false }, 25.705);
+      tl.fromTo("#fl50", { opacity: 0.45 }, { opacity: 0, duration: 0.22, immediateRender: false }, 25.705);
+      tl.fromTo("#strobe", { opacity: 0.5 }, { opacity: 0, duration: 0.08, immediateRender: false }, 26.019);
+      tl.set("#v35", { opacity: 1 }, 26.332);
+      tl.fromTo("#v35", { scale: 1.22 }, { scale: 1.02, duration: 0.627, ease: "power2.out", immediateRender: false }, 26.332);
+      tl.set("#v35", { opacity: 0 }, 26.979);
+      tl.fromTo("#m51", { opacity: 0, x: 420, skewX: -18 }, { opacity: 1, x: 0, skewX: 0, duration: 0.14, ease: "power3.out", immediateRender: false }, 26.332);
+      tl.fromTo("#m51 b", { textShadow: "-14px 0 0 #00e5ff, 14px 0 0 #ff2a6d" }, { textShadow: "0px 0 0 #00e5ff, 0px 0 0 #ff2a6d", duration: 0.2, immediateRender: false }, 26.332);
+      tl.to("#m51", { opacity: 0, duration: 0.04 }, 26.939);
+      tl.to("#cadre", { keyframes: [{ x: -18, y: 9, duration: 0.03 }, { x: 18, y: -9, duration: 0.04 }, { x: -9, duration: 0.04 }, { x: 0, y: 0, duration: 0.03 }] }, 26.362000000000002);
+      tl.fromTo("#cadre", { scale: 1.1 }, { scale: 1, duration: 0.3, ease: "power3.out", immediateRender: false }, 26.332);
+      tl.fromTo("#fl52", { opacity: 0.45 }, { opacity: 0, duration: 0.22, immediateRender: false }, 26.332);
+      tl.fromTo("#strobe", { opacity: 0.5 }, { opacity: 0, duration: 0.08, immediateRender: false }, 26.646);
+      tl.set("#v36", { opacity: 1 }, 26.959);
+      tl.fromTo("#v36", { scale: 1.22 }, { scale: 1.02, duration: 0.627, ease: "power2.out", immediateRender: false }, 26.959);
+      tl.set("#v36", { opacity: 0 }, 27.606);
+      tl.fromTo("#m53", { opacity: 0, y: 260, rotation: -6 }, { opacity: 1, y: 0, rotation: 0, duration: 0.14, ease: "back.out(2)", immediateRender: false }, 26.959);
+      tl.fromTo("#m53 b", { textShadow: "-14px 0 0 #00e5ff, 14px 0 0 #ff2a6d" }, { textShadow: "0px 0 0 #00e5ff, 0px 0 0 #ff2a6d", duration: 0.2, immediateRender: false }, 26.959);
+      tl.to("#m53", { opacity: 0, duration: 0.04 }, 27.566);
+      tl.to("#cadre", { keyframes: [{ x: -18, y: 9, duration: 0.03 }, { x: 18, y: -9, duration: 0.04 }, { x: -9, duration: 0.04 }, { x: 0, y: 0, duration: 0.03 }] }, 26.989);
+      tl.fromTo("#cadre", { scale: 1.1 }, { scale: 1, duration: 0.3, ease: "power3.out", immediateRender: false }, 26.959);
+      tl.fromTo("#fl54", { opacity: 0.45 }, { opacity: 0, duration: 0.22, immediateRender: false }, 26.959);
+      tl.fromTo("#strobe", { opacity: 0.5 }, { opacity: 0, duration: 0.08, immediateRender: false }, 27.273);
+      tl.set("#v37", { opacity: 1 }, 27.586);
+      tl.fromTo("#v37", { scale: 1.22 }, { scale: 1.02, duration: 0.627, ease: "power2.out", immediateRender: false }, 27.586);
+      tl.set("#v37", { opacity: 0 }, 28.233);
+      tl.fromTo("#m55", { opacity: 0, scale: 2.2 }, { opacity: 1, scale: 1, duration: 0.14, ease: "power4.in", immediateRender: false }, 27.586);
+      tl.fromTo("#m55 b", { textShadow: "-14px 0 0 #00e5ff, 14px 0 0 #ff2a6d" }, { textShadow: "0px 0 0 #00e5ff, 0px 0 0 #ff2a6d", duration: 0.2, immediateRender: false }, 27.586);
+      tl.to("#m55", { opacity: 0, duration: 0.04 }, 28.193);
+      tl.to("#cadre", { keyframes: [{ x: -18, y: 9, duration: 0.03 }, { x: 18, y: -9, duration: 0.04 }, { x: -9, duration: 0.04 }, { x: 0, y: 0, duration: 0.03 }] }, 27.616);
+      tl.fromTo("#cadre", { scale: 1.1 }, { scale: 1, duration: 0.3, ease: "power3.out", immediateRender: false }, 27.586);
+      tl.fromTo("#fl56", { opacity: 0.45 }, { opacity: 0, duration: 0.22, immediateRender: false }, 27.586);
+      tl.fromTo("#strobe", { opacity: 0.5 }, { opacity: 0, duration: 0.08, immediateRender: false }, 27.9);
+      tl.set("#v38", { opacity: 1 }, 28.213);
+      tl.fromTo("#v38", { scale: 1.22 }, { scale: 1.02, duration: 0.627, ease: "power2.out", immediateRender: false }, 28.213);
+      tl.set("#v38", { opacity: 0 }, 28.86);
+      tl.fromTo("#m57", { opacity: 0, x: 420, skewX: -18 }, { opacity: 1, x: 0, skewX: 0, duration: 0.14, ease: "power3.out", immediateRender: false }, 28.213);
+      tl.fromTo("#m57 b", { textShadow: "-14px 0 0 #00e5ff, 14px 0 0 #ff2a6d" }, { textShadow: "0px 0 0 #00e5ff, 0px 0 0 #ff2a6d", duration: 0.2, immediateRender: false }, 28.213);
+      tl.to("#m57", { opacity: 0, duration: 0.04 }, 28.82);
+      tl.to("#cadre", { keyframes: [{ x: -18, y: 9, duration: 0.03 }, { x: 18, y: -9, duration: 0.04 }, { x: -9, duration: 0.04 }, { x: 0, y: 0, duration: 0.03 }] }, 28.243000000000002);
+      tl.fromTo("#cadre", { scale: 1.1 }, { scale: 1, duration: 0.3, ease: "power3.out", immediateRender: false }, 28.213);
+      tl.fromTo("#fl58", { opacity: 0.45 }, { opacity: 0, duration: 0.22, immediateRender: false }, 28.213);
+      tl.fromTo("#strobe", { opacity: 0.5 }, { opacity: 0, duration: 0.08, immediateRender: false }, 28.527);
+      tl.set("#v39", { opacity: 1 }, 28.84);
+      tl.fromTo("#v39", { scale: 1.22 }, { scale: 1.02, duration: 0.627, ease: "power2.out", immediateRender: false }, 28.84);
+      tl.set("#v39", { opacity: 0 }, 29.487);
+      tl.fromTo("#m59", { opacity: 0, y: 260, rotation: -6 }, { opacity: 1, y: 0, rotation: 0, duration: 0.14, ease: "back.out(2)", immediateRender: false }, 28.84);
+      tl.fromTo("#m59 b", { textShadow: "-14px 0 0 #00e5ff, 14px 0 0 #ff2a6d" }, { textShadow: "0px 0 0 #00e5ff, 0px 0 0 #ff2a6d", duration: 0.2, immediateRender: false }, 28.84);
+      tl.to("#m59", { opacity: 0, duration: 0.04 }, 29.447);
+      tl.to("#cadre", { keyframes: [{ x: -18, y: 9, duration: 0.03 }, { x: 18, y: -9, duration: 0.04 }, { x: -9, duration: 0.04 }, { x: 0, y: 0, duration: 0.03 }] }, 28.87);
+      tl.fromTo("#cadre", { scale: 1.1 }, { scale: 1, duration: 0.3, ease: "power3.out", immediateRender: false }, 28.84);
+      tl.fromTo("#fl60", { opacity: 0.45 }, { opacity: 0, duration: 0.22, immediateRender: false }, 28.84);
+      tl.fromTo("#strobe", { opacity: 0.5 }, { opacity: 0, duration: 0.08, immediateRender: false }, 29.154);
+      tl.set("#v40", { opacity: 1 }, 29.467);
+      tl.fromTo("#v40", { scale: 1.22 }, { scale: 1.02, duration: 0.627, ease: "power2.out", immediateRender: false }, 29.467);
+      tl.set("#v40", { opacity: 0 }, 30.114);
+      tl.fromTo("#m61", { opacity: 0, scale: 2.2 }, { opacity: 1, scale: 1, duration: 0.14, ease: "power4.in", immediateRender: false }, 29.467);
+      tl.fromTo("#m61 b", { textShadow: "-14px 0 0 #00e5ff, 14px 0 0 #ff2a6d" }, { textShadow: "0px 0 0 #00e5ff, 0px 0 0 #ff2a6d", duration: 0.2, immediateRender: false }, 29.467);
+      tl.to("#m61", { opacity: 0, duration: 0.04 }, 30.074);
+      tl.to("#cadre", { keyframes: [{ x: -18, y: 9, duration: 0.03 }, { x: 18, y: -9, duration: 0.04 }, { x: -9, duration: 0.04 }, { x: 0, y: 0, duration: 0.03 }] }, 29.497);
+      tl.fromTo("#cadre", { scale: 1.1 }, { scale: 1, duration: 0.3, ease: "power3.out", immediateRender: false }, 29.467);
+      tl.fromTo("#fl62", { opacity: 0.45 }, { opacity: 0, duration: 0.22, immediateRender: false }, 29.467);
+      tl.fromTo("#strobe", { opacity: 0.5 }, { opacity: 0, duration: 0.08, immediateRender: false }, 29.781);
+      tl.set("#v41", { opacity: 1 }, 30.094);
+      tl.fromTo("#v41", { scale: 1.22 }, { scale: 1.02, duration: 0.627, ease: "power2.out", immediateRender: false }, 30.094);
+      tl.set("#v41", { opacity: 0 }, 30.741);
+      tl.fromTo("#m63", { opacity: 0, x: 420, skewX: -18 }, { opacity: 1, x: 0, skewX: 0, duration: 0.14, ease: "power3.out", immediateRender: false }, 30.094);
+      tl.fromTo("#m63 b", { textShadow: "-14px 0 0 #00e5ff, 14px 0 0 #ff2a6d" }, { textShadow: "0px 0 0 #00e5ff, 0px 0 0 #ff2a6d", duration: 0.2, immediateRender: false }, 30.094);
+      tl.to("#m63", { opacity: 0, duration: 0.04 }, 30.701);
+      tl.to("#cadre", { keyframes: [{ x: -18, y: 9, duration: 0.03 }, { x: 18, y: -9, duration: 0.04 }, { x: -9, duration: 0.04 }, { x: 0, y: 0, duration: 0.03 }] }, 30.124000000000002);
+      tl.fromTo("#cadre", { scale: 1.1 }, { scale: 1, duration: 0.3, ease: "power3.out", immediateRender: false }, 30.094);
+      tl.fromTo("#fl64", { opacity: 0.45 }, { opacity: 0, duration: 0.22, immediateRender: false }, 30.094);
+      tl.fromTo("#strobe", { opacity: 0.5 }, { opacity: 0, duration: 0.08, immediateRender: false }, 30.408);
+      tl.set("#v42", { opacity: 1 }, 30.721);
+      tl.fromTo("#v42", { scale: 1.22 }, { scale: 1.02, duration: 0.627, ease: "power2.out", immediateRender: false }, 30.721);
+      tl.set("#v42", { opacity: 0 }, 31.368);
+      tl.fromTo("#m65", { opacity: 0, y: 260, rotation: -6 }, { opacity: 1, y: 0, rotation: 0, duration: 0.14, ease: "back.out(2)", immediateRender: false }, 30.721);
+      tl.fromTo("#m65 b", { textShadow: "-14px 0 0 #00e5ff, 14px 0 0 #ff2a6d" }, { textShadow: "0px 0 0 #00e5ff, 0px 0 0 #ff2a6d", duration: 0.2, immediateRender: false }, 30.721);
+      tl.to("#m65", { opacity: 0, duration: 0.04 }, 31.328);
+      tl.to("#cadre", { keyframes: [{ x: -18, y: 9, duration: 0.03 }, { x: 18, y: -9, duration: 0.04 }, { x: -9, duration: 0.04 }, { x: 0, y: 0, duration: 0.03 }] }, 30.751);
+      tl.fromTo("#cadre", { scale: 1.1 }, { scale: 1, duration: 0.3, ease: "power3.out", immediateRender: false }, 30.721);
+      tl.fromTo("#fl66", { opacity: 0.45 }, { opacity: 0, duration: 0.22, immediateRender: false }, 30.721);
+      tl.fromTo("#strobe", { opacity: 0.5 }, { opacity: 0, duration: 0.08, immediateRender: false }, 31.034);
+      tl.set("#v43", { opacity: 1 }, 31.348);
+      tl.fromTo("#v43", { scale: 1.22 }, { scale: 1.02, duration: 0.627, ease: "power2.out", immediateRender: false }, 31.348);
+      tl.set("#v43", { opacity: 0 }, 31.995);
+      tl.fromTo("#m67", { opacity: 0, scale: 2.2 }, { opacity: 1, scale: 1, duration: 0.14, ease: "power4.in", immediateRender: false }, 31.348);
+      tl.fromTo("#m67 b", { textShadow: "-14px 0 0 #00e5ff, 14px 0 0 #ff2a6d" }, { textShadow: "0px 0 0 #00e5ff, 0px 0 0 #ff2a6d", duration: 0.2, immediateRender: false }, 31.348);
+      tl.to("#m67", { opacity: 0, duration: 0.04 }, 31.955);
+      tl.to("#cadre", { keyframes: [{ x: -18, y: 9, duration: 0.03 }, { x: 18, y: -9, duration: 0.04 }, { x: -9, duration: 0.04 }, { x: 0, y: 0, duration: 0.03 }] }, 31.378);
+      tl.fromTo("#cadre", { scale: 1.1 }, { scale: 1, duration: 0.3, ease: "power3.out", immediateRender: false }, 31.348);
+      tl.fromTo("#fl68", { opacity: 0.45 }, { opacity: 0, duration: 0.22, immediateRender: false }, 31.348);
+      tl.fromTo("#strobe", { opacity: 0.5 }, { opacity: 0, duration: 0.08, immediateRender: false }, 31.661);
+      tl.set("#v44", { opacity: 1 }, 31.975);
+      tl.fromTo("#v44", { scale: 1.22 }, { scale: 1.02, duration: 0.627, ease: "power2.out", immediateRender: false }, 31.975);
+      tl.set("#v44", { opacity: 0 }, 32.622);
+      tl.fromTo("#m69", { opacity: 0, x: 420, skewX: -18 }, { opacity: 1, x: 0, skewX: 0, duration: 0.14, ease: "power3.out", immediateRender: false }, 31.975);
+      tl.fromTo("#m69 b", { textShadow: "-14px 0 0 #00e5ff, 14px 0 0 #ff2a6d" }, { textShadow: "0px 0 0 #00e5ff, 0px 0 0 #ff2a6d", duration: 0.2, immediateRender: false }, 31.975);
+      tl.to("#m69", { opacity: 0, duration: 0.04 }, 32.582);
+      tl.to("#cadre", { keyframes: [{ x: -18, y: 9, duration: 0.03 }, { x: 18, y: -9, duration: 0.04 }, { x: -9, duration: 0.04 }, { x: 0, y: 0, duration: 0.03 }] }, 32.005);
+      tl.fromTo("#cadre", { scale: 1.1 }, { scale: 1, duration: 0.3, ease: "power3.out", immediateRender: false }, 31.975);
+      tl.fromTo("#fl70", { opacity: 0.45 }, { opacity: 0, duration: 0.22, immediateRender: false }, 31.975);
+      tl.fromTo("#strobe", { opacity: 0.5 }, { opacity: 0, duration: 0.08, immediateRender: false }, 32.288);
+      tl.set("#v45", { opacity: 1 }, 32.602);
+      tl.fromTo("#v45", { scale: 1.22 }, { scale: 1.02, duration: 0.627, ease: "power2.out", immediateRender: false }, 32.602);
+      tl.set("#v45", { opacity: 0 }, 33.249);
+      tl.fromTo("#m71", { opacity: 0, y: 260, rotation: -6 }, { opacity: 1, y: 0, rotation: 0, duration: 0.14, ease: "back.out(2)", immediateRender: false }, 32.602);
+      tl.fromTo("#m71 b", { textShadow: "-14px 0 0 #00e5ff, 14px 0 0 #ff2a6d" }, { textShadow: "0px 0 0 #00e5ff, 0px 0 0 #ff2a6d", duration: 0.2, immediateRender: false }, 32.602);
+      tl.to("#m71", { opacity: 0, duration: 0.04 }, 33.209);
+      tl.to("#cadre", { keyframes: [{ x: -18, y: 9, duration: 0.03 }, { x: 18, y: -9, duration: 0.04 }, { x: -9, duration: 0.04 }, { x: 0, y: 0, duration: 0.03 }] }, 32.632);
+      tl.fromTo("#cadre", { scale: 1.1 }, { scale: 1, duration: 0.3, ease: "power3.out", immediateRender: false }, 32.602);
+      tl.fromTo("#fl72", { opacity: 0.45 }, { opacity: 0, duration: 0.22, immediateRender: false }, 32.602);
+      tl.fromTo("#strobe", { opacity: 0.5 }, { opacity: 0, duration: 0.08, immediateRender: false }, 32.915);
+      tl.set("#v46", { opacity: 1 }, 33.229);
+      tl.fromTo("#v46", { scale: 1.22 }, { scale: 1.02, duration: 0.627, ease: "power2.out", immediateRender: false }, 33.229);
+      tl.set("#v46", { opacity: 0 }, 33.876);
+      tl.fromTo("#m73", { opacity: 0, scale: 2.2 }, { opacity: 1, scale: 1, duration: 0.14, ease: "power4.in", immediateRender: false }, 33.229);
+      tl.fromTo("#m73 b", { textShadow: "-14px 0 0 #00e5ff, 14px 0 0 #ff2a6d" }, { textShadow: "0px 0 0 #00e5ff, 0px 0 0 #ff2a6d", duration: 0.2, immediateRender: false }, 33.229);
+      tl.to("#m73", { opacity: 0, duration: 0.04 }, 33.836);
+      tl.to("#cadre", { keyframes: [{ x: -18, y: 9, duration: 0.03 }, { x: 18, y: -9, duration: 0.04 }, { x: -9, duration: 0.04 }, { x: 0, y: 0, duration: 0.03 }] }, 33.259);
+      tl.fromTo("#cadre", { scale: 1.1 }, { scale: 1, duration: 0.3, ease: "power3.out", immediateRender: false }, 33.229);
+      tl.fromTo("#fl74", { opacity: 0.45 }, { opacity: 0, duration: 0.22, immediateRender: false }, 33.229);
+      tl.fromTo("#strobe", { opacity: 0.5 }, { opacity: 0, duration: 0.08, immediateRender: false }, 33.542);
+      tl.set("#v47", { opacity: 1 }, 33.856);
+      tl.fromTo("#v47", { scale: 1.22 }, { scale: 1.02, duration: 0.627, ease: "power2.out", immediateRender: false }, 33.856);
+      tl.set("#v47", { opacity: 0 }, 34.503);
+      tl.fromTo("#m75", { opacity: 0, x: 420, skewX: -18 }, { opacity: 1, x: 0, skewX: 0, duration: 0.14, ease: "power3.out", immediateRender: false }, 33.856);
+      tl.fromTo("#m75 b", { textShadow: "-14px 0 0 #00e5ff, 14px 0 0 #ff2a6d" }, { textShadow: "0px 0 0 #00e5ff, 0px 0 0 #ff2a6d", duration: 0.2, immediateRender: false }, 33.856);
+      tl.to("#m75", { opacity: 0, duration: 0.04 }, 34.463);
+      tl.to("#cadre", { keyframes: [{ x: -18, y: 9, duration: 0.03 }, { x: 18, y: -9, duration: 0.04 }, { x: -9, duration: 0.04 }, { x: 0, y: 0, duration: 0.03 }] }, 33.886);
+      tl.fromTo("#cadre", { scale: 1.1 }, { scale: 1, duration: 0.3, ease: "power3.out", immediateRender: false }, 33.856);
+      tl.fromTo("#fl76", { opacity: 0.45 }, { opacity: 0, duration: 0.22, immediateRender: false }, 33.856);
+      tl.fromTo("#strobe", { opacity: 0.5 }, { opacity: 0, duration: 0.08, immediateRender: false }, 34.169);
+      tl.set("#v48", { opacity: 1 }, 34.483);
+      tl.fromTo("#v48", { scale: 1.22 }, { scale: 1.02, duration: 0.627, ease: "power2.out", immediateRender: false }, 34.483);
+      tl.set("#v48", { opacity: 0 }, 35.13);
+      tl.fromTo("#m77", { opacity: 0, y: 260, rotation: -6 }, { opacity: 1, y: 0, rotation: 0, duration: 0.14, ease: "back.out(2)", immediateRender: false }, 34.483);
+      tl.fromTo("#m77 b", { textShadow: "-14px 0 0 #00e5ff, 14px 0 0 #ff2a6d" }, { textShadow: "0px 0 0 #00e5ff, 0px 0 0 #ff2a6d", duration: 0.2, immediateRender: false }, 34.483);
+      tl.to("#m77", { opacity: 0, duration: 0.04 }, 35.09);
+      tl.to("#cadre", { keyframes: [{ x: -18, y: 9, duration: 0.03 }, { x: 18, y: -9, duration: 0.04 }, { x: -9, duration: 0.04 }, { x: 0, y: 0, duration: 0.03 }] }, 34.513);
+      tl.fromTo("#cadre", { scale: 1.1 }, { scale: 1, duration: 0.3, ease: "power3.out", immediateRender: false }, 34.483);
+      tl.fromTo("#fl78", { opacity: 0.45 }, { opacity: 0, duration: 0.22, immediateRender: false }, 34.483);
+      tl.fromTo("#strobe", { opacity: 0.5 }, { opacity: 0, duration: 0.08, immediateRender: false }, 34.796);
+      tl.fromTo("#f-lab", { opacity: 0, scale: 1.8 }, { opacity: 1, scale: 1, duration: 0.14, ease: "power4.in", immediateRender: false }, 35.11);
+      tl.set("#v49", { opacity: 1 }, 35.11);
+      tl.fromTo("#v49", { scale: 1.22 }, { scale: 1.02, duration: 1.254, ease: "power2.out", immediateRender: false }, 35.11);
+      tl.set("#v49", { opacity: 0 }, 36.384);
+      tl.fromTo("#fa79", { opacity: 0, rotationY: 90 }, { opacity: 1, rotationY: 0, duration: 0.25, ease: "back.out(1.6)", immediateRender: false }, 35.11);
+      tl.to("#fa79", { opacity: 0, duration: 0.05 }, 36.343999999999994);
+      tl.fromTo("#cadre", { scale: 1.08 }, { scale: 1, duration: 0.35, ease: "power3.out", immediateRender: false }, 35.11);
+      tl.to("#cadre", { keyframes: [{ x: -14, y: 7, duration: 0.03 }, { x: 14, y: -7, duration: 0.04 }, { x: -7, duration: 0.04 }, { x: 0, y: 0, duration: 0.03 }] }, 35.737);
+      tl.set("#v50", { opacity: 1 }, 36.364);
+      tl.fromTo("#v50", { scale: 1.22 }, { scale: 1.02, duration: 1.254, ease: "power2.out", immediateRender: false }, 36.364);
+      tl.set("#v50", { opacity: 0 }, 37.638);
+      tl.fromTo("#fa80", { opacity: 0, rotationY: 90 }, { opacity: 1, rotationY: 0, duration: 0.25, ease: "back.out(1.6)", immediateRender: false }, 36.364);
+      tl.to("#fa80", { opacity: 0, duration: 0.05 }, 37.598);
+      tl.fromTo("#cadre", { scale: 1.08 }, { scale: 1, duration: 0.35, ease: "power3.out", immediateRender: false }, 36.364);
+      tl.to("#cadre", { keyframes: [{ x: -14, y: 7, duration: 0.03 }, { x: 14, y: -7, duration: 0.04 }, { x: -7, duration: 0.04 }, { x: 0, y: 0, duration: 0.03 }] }, 36.991);
+      tl.set("#v51", { opacity: 1 }, 37.618);
+      tl.fromTo("#v51", { scale: 1.22 }, { scale: 1.02, duration: 1.253, ease: "power2.out", immediateRender: false }, 37.618);
+      tl.set("#v51", { opacity: 0 }, 38.891);
+      tl.fromTo("#fa81", { opacity: 0, rotationY: 90 }, { opacity: 1, rotationY: 0, duration: 0.25, ease: "back.out(1.6)", immediateRender: false }, 37.618);
+      tl.to("#fa81", { opacity: 0, duration: 0.05 }, 38.851);
+      tl.fromTo("#cadre", { scale: 1.08 }, { scale: 1, duration: 0.35, ease: "power3.out", immediateRender: false }, 37.618);
+      tl.to("#cadre", { keyframes: [{ x: -14, y: 7, duration: 0.03 }, { x: 14, y: -7, duration: 0.04 }, { x: -7, duration: 0.04 }, { x: 0, y: 0, duration: 0.03 }] }, 38.245);
+      tl.set("#v52", { opacity: 1 }, 38.871);
+      tl.fromTo("#v52", { scale: 1.22 }, { scale: 1.02, duration: 1.254, ease: "power2.out", immediateRender: false }, 38.871);
+      tl.set("#v52", { opacity: 0 }, 40.145);
+      tl.fromTo("#fa82", { opacity: 0, rotationY: 90 }, { opacity: 1, rotationY: 0, duration: 0.25, ease: "back.out(1.6)", immediateRender: false }, 38.871);
+      tl.to("#fa82", { opacity: 0, duration: 0.05 }, 40.105);
+      tl.fromTo("#cadre", { scale: 1.08 }, { scale: 1, duration: 0.35, ease: "power3.out", immediateRender: false }, 38.871);
+      tl.to("#cadre", { keyframes: [{ x: -14, y: 7, duration: 0.03 }, { x: 14, y: -7, duration: 0.04 }, { x: -7, duration: 0.04 }, { x: 0, y: 0, duration: 0.03 }] }, 39.498);
+      tl.to("#f-lab", { opacity: 0, duration: 0.08 }, 40.095);
+      tl.set("#v53", { opacity: 1 }, 40.125);
+      tl.fromTo("#v53", { scale: 1.22 }, { scale: 1.02, duration: 6.515, ease: "power2.out", immediateRender: false }, 40.125);
+      tl.set("#v53", { opacity: 0 }, 46.66);
+      tl.fromTo("#g0", { opacity: 0, scale: 1.8 }, { opacity: 1, scale: 1, duration: 0.14, ease: "power4.in", immediateRender: false }, 40.125);
+      tl.fromTo("#g1", { opacity: 0, scale: 1.8 }, { opacity: 1, scale: 1, duration: 0.14, ease: "power4.in", immediateRender: false }, 40.439);
+      tl.fromTo("#g2", { opacity: 0, scale: 1.8 }, { opacity: 1, scale: 1, duration: 0.14, ease: "power4.in", immediateRender: false }, 40.752);
+      tl.fromTo("#g3", { opacity: 0, scale: 1.8 }, { opacity: 1, scale: 1, duration: 0.14, ease: "power4.in", immediateRender: false }, 41.066);
+      tl.fromTo("#fin-logo", { opacity: 0, scale: 2.4 }, { opacity: 1, scale: 1, duration: 0.14, ease: "power4.in", immediateRender: false }, 40.125);
+      tl.fromTo("#fin-logo img", { rotation: 0 }, { rotation: 180, duration: 6.515, ease: "none", immediateRender: false }, 40.125);
+      tl.fromTo("#fin-q", { opacity: 0, scale: 1.8 }, { opacity: 1, scale: 1, duration: 0.14, ease: "power4.in", immediateRender: false }, 41.379);
+      tl.fromTo("#fin-com", { opacity: 0, scale: 1.6 }, { opacity: 1, scale: 1, duration: 0.14, ease: "power4.in", immediateRender: false }, 42.633);
+      tl.to("#cadre", { keyframes: [{ x: -10, y: 5, duration: 0.03 }, { x: 10, y: -5, duration: 0.04 }, { x: -5, duration: 0.04 }, { x: 0, y: 0, duration: 0.03 }] }, 40.125);
+      tl.to("#cadre", { keyframes: [{ x: -10, y: 5, duration: 0.03 }, { x: 10, y: -5, duration: 0.04 }, { x: -5, duration: 0.04 }, { x: 0, y: 0, duration: 0.03 }] }, 41.379);
+      tl.to("#cadre", { keyframes: [{ x: -10, y: 5, duration: 0.03 }, { x: 10, y: -5, duration: 0.04 }, { x: -5, duration: 0.04 }, { x: 0, y: 0, duration: 0.03 }] }, 42.633);
+      tl.to("#cadre", { keyframes: [{ x: -10, y: 5, duration: 0.03 }, { x: 10, y: -5, duration: 0.04 }, { x: -5, duration: 0.04 }, { x: 0, y: 0, duration: 0.03 }] }, 43.887);
+      tl.fromTo("#fondu", { opacity: 0 }, { opacity: 1, duration: 0.8, immediateRender: false }, 45.84);
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>
