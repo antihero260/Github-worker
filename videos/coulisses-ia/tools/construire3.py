@@ -155,19 +155,32 @@ def video_plein(vid, src, t0, t1, depart=0.3):
     j(f'tl.set("#{vid}", {{ opacity: 0 }}, {r(t1)});')
 
 
-# ================================================================ 2. ACCROCHE : une de ses vidéos par mot, puis retour face caméra
-EX = ["enveloppes", "liste-depenser-moins", "edit-claude", "salaire-15", "site-3d-vertical", "effet-levier", "site-anime-vertical"]
-for k, f in enumerate(EX):
+# ================================================================ 2. ACCROCHE : rafale de vraies vidéos (une par mot, zoom + éclair), puis tout rentre dans la main
+RAF = ["supernova", "neon-violet-3d", "passage-cercles", "planete-rocheuse", "explosion-particules", "lasers", "nebuleuse"]
+for k, f in enumerate(RAF):
     t0 = 0.0 if k == 0 else T(k)
-    t1 = T(k + 1) if k + 1 < 7 else T(7) - 0.02
-    video_plein(f"h{k}", f"assets/exemples/{f}.mp4", t0, t1, 0.2 + (k % 3) * 0.6)
-    son(t0, tour(WH), 0.2 if k == 0 else 0.15, f"accroche {f}")
+    t1 = T(k + 1) if k + 1 < 7 else T(7) + 0.3
+    HTML.append(f'<div id="h{k}" class="plein" style="opacity: 0"><video id="h{k}-v" class="clip" src="assets/accroche/{f}.mp4" data-start="{r(t0)}" '
+                f'data-duration="{r(t1 - t0 + 0.04)}" data-media-start="{0.5 + (k % 3) * 0.7}" data-track-index="{5 + k % 3}" muted playsinline></video></div>')
+    j(f'tl.set("#h{k}", {{ opacity: 1 }}, {r(t0)});')
+    j(f'tl.fromTo("#h{k}", {{ scale: 1.35, rotation: {(-3, 2, -2, 3, -1, 2, 0)[k]} }}, {{ scale: 1.05, rotation: 0, duration: {r(max(0.2, t1 - t0))}, ease: "power3.out", immediateRender: false }}, {r(t0)});')
+    if k < 6:
+        j(f'tl.set("#h{k}", {{ opacity: 0 }}, {r(t1)});')
+    if k:
+        flash(t0, 0.55)
+    son(t0, tour(["whoosh-cine", "swoosh-court", "glitch-court", "whoosh-pop", "souffle-rapide"]), 0.16, f"accroche {f}")
 son(0.0, "trailer-impact", 0.22, "début")
-HTML.append('<div id="h-tag" class="tag" style="left: 220px; top: 360px; opacity: 0">MES VIDÉOS</div>')
-claque("#h-tag", 0.05, 2.2)
-cache("#h-tag", T(7) - 0.05)
-flash(T(7), 0.8)
-son(T(7), "impact-basse", 0.28, "retour face caméra")
+HTML.append('<div id="h-tag" class="slam" style="top: 760px; opacity: 0">FAIT AVEC<br>L’IA</div>')
+claque("#h-tag", 0.05, 2.4)
+cache("#h-tag", T(4))
+# la dernière vidéo rétrécit et rentre dans la main (en bas), on découvre la personne
+j(f'tl.to("#h6", {{ scale: 0.04, y: 760, rotation: 25, duration: 0.32, ease: "power3.in" }}, {r(T(7) - 0.02)});')
+j(f'tl.set("#h6", {{ opacity: 0 }}, {r(T(7) + 0.31)});')
+HTML.append('<div id="h-eclat" class="mg-eclat" style="opacity: 0"></div>')
+j(f'tl.set("#h-eclat", {{ x: 380, y: 1560 }}, {r(T(7) + 0.28)});')
+j(f'tl.fromTo("#h-eclat", {{ opacity: 1, scale: 0.3 }}, {{ opacity: 0, scale: 1.8, duration: 0.45, ease: "power2.out", immediateRender: false }}, {r(T(7) + 0.28)});')
+son(T(7) - 0.02, "rembobine-magie", 0.3, "la rafale rentre dans la main")
+son(T(7) + 0.3, "impact-basse", 0.28, "retour face caméra")
 
 # ================================================================ 3. « certains d'entre vous m'ont contacté » : messages reçus
 MSG = [("Tu fais comment tes vidéos ?", T(8)), ("C’est quelle appli ?? 🔥", T(11)), ("Tu peux m’apprendre ?", T(13))]
@@ -303,19 +316,6 @@ claque("#cle", T(152), 2.0)
 son(T(152), "impact-basse", 0.45, "le modèle")
 cache("#cle", T(161) - 0.05)
 
-# ================================================================ 10. Opus 5.5 / Fable 5.2
-HTML.append('<div id="m1" class="modele-c" style="left: 60px; opacity: 0"><img src="assets/img/logo-claude.svg" alt="" /><b>OPUS 5.5</b><span>très intéressant</span></div>')
-HTML.append('<div id="m2" class="modele-c or" style="left: 560px; opacity: 0"><img src="assets/img/logo-claude.svg" alt="" /><b>FABLE 5.2</b><span>vient de sortir</span></div>')
-apparait("#m1", T(161), 100, 0.5, 0.25)
-son(T(161), tour(WH), 0.4, "Opus 5.5")
-apparait("#m2", T(171), 100, 0.5, 0.25)
-son(T(171), "revelation", 0.42, "Fable 5.2")
-HTML.append('<div id="mieux" class="tag" style="left: 600px; top: 760px; opacity: 0">★ PEUT FAIRE MIEUX</div>')
-claque("#mieux", T(178), 1.8)
-son(T(178), "cloche-succes", 0.4, "peut faire mieux")
-for s_ in ("#m1", "#m2", "#mieux"):
-    cache(s_, T(183) - 0.05)
-
 # ================================================================ 12. Abonne-toi + prochaine vidéo
 HTML.append('<div id="proch" class="prochaine" style="opacity: 0"><span>PROCHAINE VIDÉO</span><b>Copier le style visuel<br>d’un autre créateur</b></div>')
 apparait("#proch", T(204), 100, 0.5, 0.3)
@@ -342,6 +342,8 @@ MANUEL = {
     "E3": [(60.85, 330, 1380), (62.45, 330, 1380)],
     "E4": [(62.45, 560, 1660), (63.8, 560, 1660)],
     "D": [(68.8, 560, 1700), (70.7, 560, 1700)],
+    "O": [(50.0, 600, 1720), (54.0, 600, 1720)],
+    "F": [(52.5, 480, 1720), (58.5, 480, 1720)],
 }
 
 
@@ -449,6 +451,53 @@ magie("mgiso", iso_html, "E", T(191), T(193), T(196) - 0.05, "3D ISOMÉTRIQUE")
 for i in range(n_iso):
     j(f'tl.fromTo("#iso-b{i}", {{ scaleY: 0, transformOrigin: "50% 100%" }}, {{ scaleY: 1, duration: 0.3, ease: "back.out(2)", immediateRender: false }}, {r(T(193) + 0.2 + 0.035 * i)});')
 son(T(193) + 0.3, "pop-long", 0.3, "la ville isométrique sort du sol")
+# --- « Opus 5.5 est très intéressant » / « Fable 5.2 peut faire mieux » : on écrit dans le chat, en vrai
+def chat_html(cid, modele, question, reponse_html, autre_modele=""):
+    mots_q = "".join(f'<span id="{cid}-q{i}" style="opacity: 0">{m} </span>' for i, m in enumerate(question.split()))
+    puce = (f'<b id="{cid}-puce" class="ch-puce">{modele} ▾</b>' if not autre_modele else
+            f'<b id="{cid}-puce" class="ch-puce"><i id="{cid}-p1">{autre_modele} ▾</i><i id="{cid}-p2" class="nouv" style="opacity: 0">{modele} ✦</i></b>')
+    return (f'<div class="chat"><div class="ch-tete"><img src="assets/img/logo-claude.svg" alt="" /><b>Claude</b>{puce}</div>'
+            f'<div class="ch-fil"><div id="{cid}-bulle" class="ch-moi" style="opacity: 0">{mots_q}</div>'
+            f'<div id="{cid}-rep" class="ch-ia" style="opacity: 0"><img src="assets/img/logo-claude.svg" alt="" /><div>{reponse_html}</div></div></div>'
+            f'<div class="ch-saisie"><span>Écris à Claude…</span><i>↑</i></div></div>')
+
+
+def taper(cid, question, t0, d):
+    n = len(question.split())
+    j(f'tl.set("#{cid}-bulle", {{ opacity: 1 }}, {r(t0)});')
+    for i in range(n):
+        j(f'tl.set("#{cid}-q{i}", {{ opacity: 1 }}, {r(t0 + d * i / n)});')
+    son(t0, "clavier-ordi", 0.3, f"{cid} on tape la demande", d=d)
+    son(t0 + d + 0.02, "pop-click", 0.32, f"{cid} envoyer")
+
+
+QO = "Fais-moi une vidéo animée de 30 s : la méthode des enveloppes"
+RO = ('<p class="ch-titre">Opus 5.5</p><p>Je crée la composition HyperFrames…</p>'
+      '<pre id="co-code"><span id="co-l0" style="opacity: 0">&lt;div class="scene"&gt;</span><span id="co-l1" style="opacity: 0">  gsap.timeline({ paused: true })</span>'
+      '<span id="co-l2" style="opacity: 0">  .from("#enveloppe", { y: 400 })</span><span id="co-l3" style="opacity: 0">✓ vidéo prête : 1080×1920</span></pre>')
+tO0 = T(161)
+magie("mgO", chat_html("co", "Opus 5.5", QO, RO), "O", tO0, tO0 + 0.25, T(166) + 0.02, "")
+taper("co", QO, tO0 + 0.42, 0.55)
+j(f'tl.set("#co-rep", {{ opacity: 1 }}, {r(tO0 + 1.02)});')
+for i in range(4):
+    j(f'tl.set("#co-l{i}", {{ opacity: 1 }}, {r(tO0 + 1.1 + 0.15 * i)});')
+    son(tO0 + 1.1 + 0.15 * i, "clavier-bit", 0.18, "code qui s'écrit")
+
+QF = "La même, mais en 3D cinématique"
+RF = ('<p class="ch-titre or">Fable 5.2</p><div class="ch-video"><video id="cf-v" class="clip" src="assets/magie/retro-soleil.mp4" '
+      f'data-start="{r(T(176))}" data-duration="{r(T(182) - T(176) + 0.3)}" data-media-start="1.5" data-track-index="24" muted playsinline></video>'
+      '<b id="cf-mieux" class="ch-mieux" style="opacity: 0">★ ENCORE MIEUX</b></div>')
+tF0 = T(166)
+magie("mgF", chat_html("cf", "Fable 5.2", QF, RF, autre_modele="Opus 5.5"), "F", tF0, tF0 + 0.3, T(182) + 0.12, "")
+j(f'tl.to("#cf-p1", {{ opacity: 0, duration: 0.12 }}, {r(T(171))});')
+j(f'tl.fromTo("#cf-p2", {{ opacity: 0, scale: 1.8 }}, {{ opacity: 1, scale: 1, duration: 0.2, ease: "back.out(2)", immediateRender: false }}, {r(T(171))});')
+son(T(171), "revelation", 0.42, "on passe sur Fable 5.2")
+taper("cf", QF, T(171) + 0.3, 0.7)
+j(f'tl.set("#cf-rep", {{ opacity: 1 }}, {r(T(176))});')
+son(T(176), "magie", 0.36, "la vidéo 3D de Fable apparaît")
+j(f'tl.fromTo("#cf-mieux", {{ opacity: 0, scale: 2 }}, {{ opacity: 1, scale: 1, duration: 0.16, ease: "power4.in", immediateRender: false }}, {r(T(178))});')
+son(T(178), "cloche-succes", 0.38, "peut faire mieux")
+
 # « et j'en passe » : six de ses vidéos jaillissent de la main
 EXB = ["salaire-15", "site-3d-vertical", "edit-claude", "tontine-epargne", "site-anime-vertical", "classement-ia-vertical"]
 GR = [(200, 560), (540, 560), (880, 560), (200, 1010), (540, 1010), (880, 1010)]
@@ -482,17 +531,28 @@ t, hx, hy = geste(22.93 + D)
 dans_la_main("mo4", '<b class="m-code">&lt;/&gt;</b>', t, hx, hy, T(78) - 0.1, zoom=False)
 t, hx, hy = geste(28.27 + D)
 dans_la_main("mo5", '<img src="assets/img/logo-heygen.png" alt="" class="m-logo rond" />', t, hx, hy, T(94) - 0.1)
-t, hx, hy = geste(52.0 + D)
-dans_la_main("mo9", '<b class="m-chip">OPUS 5.5</b>', t, hx, hy, T(171) - 0.1, zoom=False, monte=190)
-t, hx, hy = geste(54.53 + D)
-dans_la_main("mo8", '<b class="m-chip or">FABLE 5.2</b>', t, hx, hy, T(183) - 0.1)
 t, hx, hy = geste(63.4 + D)
 dans_la_main("mo10", '<b class="m-abo">S’ABONNER 🔔</b>', t, hx, hy, T(204) - 0.1, monte=210)
 
 
+# ================================================================ ZOOMS DE CINÉMA (coup de zoom sur les mots forts, souffle + boom)
+def zoom_cine(t, s=1.28, tenue=0.55, boom="impact-basse"):
+    j(f'tl.to("#cine", {{ scale: {s}, duration: 0.16, ease: "power4.out" }}, {r(t - 0.04)});')
+    j(f'tl.to("#cine", {{ scale: 1, duration: 0.55, ease: "power2.inOut" }}, {r(t + tenue)});')
+    son(t - 0.04, tour(["zoom-impact", "zoom-in", "zoom-futur", "whoosh-cine"]), 0.34, "zoom de cinéma")
+    son(t, boom, 0.26, "boom du zoom")
+
+
+for i_, s_ in ((42, 1.25), (48, 1.3), (50, 1.22), (83, 1.3), (110, 1.22), (124, 1.25), (138, 1.32), (149, 1.22), (152, 1.35), (199, 1.3), (211, 1.22)):
+    zoom_cine(T(i_), s_, boom=("trailer-impact" if i_ in (48, 152) else "impact-basse"))
+
 # ================================================================ TENSION (montées sonores et battements)
 son(T(40) - 0.9, "riser-tech", 0.32, "montée vers le game changer", d=0.9)
 son(T(78) - 0.9, "riser-trailer", 0.3, "montée vers HyperFrames intervient", d=0.9)
+son(T(99) - 1.0, "riser-trailer", 0.32, "montée vers la musique 3 (tambours)", d=1.0)
+for t_ in (T(40), T(99), T(161)):
+    son(t_, "trailer-impact-2", 0.36, "boom : changement de musique")
+son(T(137) - 1.2, "roulement-suspense", 0.3, "roulement avant attention", d=1.2)
 son(T(137) - 0.2, "battements", 0.32, "tension : l'outil ne fait pas tout", d=3.0)
 son(T(161) - 1.0, "riser-synth", 0.3, "montée vers Opus / Fable", d=1.0)
 son(T(199) - 0.8, "riser-tech", 0.3, "montée vers abonne-toi", d=0.8)
@@ -544,6 +604,11 @@ def sous_titres():
     (ICI / "compositions/sous-titres.html").write_text(page, encoding="utf-8")
 
 
+MUSIQUES = []
+for k_, m_ in enumerate(json.loads((ICI / "assets/music/tension.json").read_text())):
+    vol = (0.42, 0.62, 0.66, 0.7)[k_]  # morceaux à −17 LUFS : la musique reste environ 5–6 dB sous la voix (l'accroche plus bas)
+    MUSIQUES.append(f'      <audio id="musique-{k_ + 1}" src="assets/music/{m_["fichier"]}" data-start="{m_["debut"]}" data-duration="{min(m_["duree"], round(FIN - m_["debut"], 3))}" '
+                    f'data-volume="{vol}" data-track-index="{20 + k_ % 2}"></audio>')
 sous_titres()
 _vus = set()
 SONS[:] = [x for x in SONS if not ((x[0], x[1]) in _vus or _vus.add((x[0], x[1])))]
@@ -559,8 +624,9 @@ CSS = f"""
       @font-face {{ font-family: "Inter Lf"; src: url("assets/fonts/Inter-ExtraBold.otf") format("opentype"); font-weight: 800; }}
       * {{ margin: 0; padding: 0; box-sizing: border-box; }}
       html, body {{ width: 1080px; height: 1920px; overflow: hidden; background: #000; }}
-      #suivi, #pousse, #coup, #zoomh, #mains {{ position: absolute; inset: 0; transform-origin: 50% 50%; }}
+      #suivi, #pousse, #coup, #cine, #zoomh, #mains {{ position: absolute; inset: 0; transform-origin: 50% 50%; }}
       #pousse {{ transform-origin: 50% 45%; }}
+      #cine {{ transform-origin: 50% 47%; }}
       #studio {{ position: absolute; left: -60px; top: -106px; width: 1200px; height: 2133px; object-fit: cover; }}
       #tension {{ position: absolute; inset: 0; z-index: 9; pointer-events: none; background: radial-gradient(ellipse 70% 60% at 50% 48%, rgba(80,0,0,0) 40%, rgba(90,0,10,0.7) 100%); }}
       #vignette {{ position: absolute; inset: 0; z-index: 9; pointer-events: none; background: radial-gradient(ellipse 80% 70% at 50% 48%, rgba(0,0,0,0) 60%, rgba(0,0,0,0.45) 100%); }}
@@ -600,6 +666,27 @@ CSS = f"""
       .mg-iso {{ position: absolute; inset: 0; background: radial-gradient(ellipse 80% 60% at 50% 50%, #16346a 0%, #05070d 80%); }}
       .mg-mini {{ position: absolute; left: 0; top: 0; width: 260px; height: 462px; z-index: 33; border-radius: 30px; overflow: hidden; border: 7px solid #fff; box-shadow: 0 20px 60px rgba(0,0,0,0.6); }}
       .mg-mini video {{ width: 100%; height: 100%; object-fit: cover; }}
+      .chat {{ position: absolute; inset: 0; background: #1f1e1b; font-family: "Inter Lf", sans-serif; font-weight: 800; color: #f0eee6; }}
+      .ch-tete {{ position: absolute; left: 0; right: 0; top: 300px; display: flex; align-items: center; gap: 20px; padding: 0 70px; }}
+      .ch-tete img {{ width: 80px; height: 80px; }}
+      .ch-tete > b {{ font-family: "Anton", sans-serif; font-weight: 400; font-size: 70px; }}
+      .ch-puce {{ position: relative; margin-left: auto; font-size: 46px; background: #2f2d29; border: 4px solid #5a564d; border-radius: 40px; padding: 14px 34px; min-width: 330px; text-align: center; }}
+      .ch-puce i {{ font-style: normal; }}
+      .ch-puce i.nouv {{ position: absolute; left: 0; right: 0; top: 14px; color: #F2B705; }}
+      .ch-fil {{ position: absolute; left: 60px; right: 60px; top: 460px; }}
+      .ch-moi {{ margin-left: 140px; background: #393731; border-radius: 40px; padding: 26px 36px; font-size: 48px; line-height: 1.25; }}
+      .ch-ia {{ display: flex; gap: 26px; margin-top: 46px; }}
+      .ch-ia > img {{ width: 70px; height: 70px; flex: none; }}
+      .ch-ia p {{ font-size: 40px; line-height: 1.3; margin: 0 0 18px; color: #d8d4c8; }}
+      .ch-ia p.ch-titre {{ font-family: "Anton", sans-serif; font-weight: 400; font-size: 60px; color: {TERRA}; }}
+      .ch-ia p.ch-titre.or {{ color: #F2B705; }}
+      .ch-ia pre {{ margin: 0; background: #0b0b0a; border-radius: 26px; padding: 22px 28px; font-size: 31px; line-height: 1.5; color: #7DD3FC; white-space: pre; }}
+      .ch-ia pre span {{ display: block; }}
+      .ch-video {{ position: relative; width: 760px; height: 428px; border-radius: 28px; overflow: hidden; border: 6px solid #F2B705; }}
+      .ch-video video {{ width: 100%; height: 100%; object-fit: cover; }}
+      .ch-mieux {{ position: absolute; right: 16px; top: 16px; z-index: 2; font-family: "Anton", sans-serif; font-weight: 400; font-size: 70px; color: {NUIT}; background: #F2B705; padding: 6px 28px 0; border: 6px solid {NUIT}; transform: rotate(-3deg); }}
+      .ch-saisie {{ position: absolute; left: 60px; right: 60px; top: 1560px; height: 130px; border-radius: 65px; background: #2f2d29; border: 4px solid #5a564d; display: flex; align-items: center; padding: 0 50px; font-size: 44px; color: #8a857a; }}
+      .ch-saisie i {{ margin-left: auto; font-style: normal; width: 80px; height: 80px; border-radius: 40px; background: {TERRA}; color: #fff; text-align: center; line-height: 80px; }}
       #calques {{ position: absolute; inset: 0; z-index: 10; pointer-events: none; }}
       .plein {{ position: absolute; inset: 0; overflow: hidden; background: #000; }}
       .plein video {{ width: 100%; height: 100%; object-fit: cover; }}
@@ -676,12 +763,12 @@ page = f"""<!doctype html>
   </head>
   <body>
     <div id="root" data-composition-id="main" data-start="0" data-duration="{FIN}" data-width="1080" data-height="1920">
-      <div id="suivi"><div id="pousse"><div id="coup"><div id="zoomh">
+      <div id="suivi"><div id="pousse"><div id="coup"><div id="cine"><div id="zoomh">
         <video id="studio" class="clip" src="assets/montage/studio.mp4" data-start="0" data-duration="{FIN - 0.6}" data-track-index="4" muted playsinline></video>
         <div id="mains">
 {NL.join("          " + m for m in MAINS)}
         </div>
-      </div></div></div></div>
+      </div></div></div></div></div>
       <div id="vignette"></div>
       <div id="tension" style="opacity: 0"></div>
       <div id="calques">
@@ -691,8 +778,7 @@ page = f"""<!doctype html>
       <div id="sous-titres" data-composition-id="sous-titres" data-composition-src="compositions/sous-titres.html" data-start="0" data-duration="{FIN}" data-track-index="3"
         data-width="1080" data-height="1920" style="z-index: 50"></div>
       <audio id="voix" src="assets/audio-voix.wav" data-start="0" data-duration="{FIN - 0.6}" data-volume="1" data-track-index="19"></audio>
-      <audio id="musique-0" src="assets/music/greed.mp3" data-start="0" data-duration="{r(T(15))}" data-volume="0.12" data-track-index="20"></audio>
-      <audio id="musique-1" src="assets/music/greed.mp3" data-start="{r(T(15))}" data-duration="{r(FIN - T(15))}" data-media-start="{r(T(15))}" data-volume="0.22" data-track-index="21"></audio>
+{NL.join(MUSIQUES)}
 {NL.join("      " + s for s in sons_html)}
     </div>
     <script>
