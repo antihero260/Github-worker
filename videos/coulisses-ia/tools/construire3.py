@@ -159,27 +159,40 @@ def video_plein(vid, src, t0, t1, depart=0.3):
     j(f'tl.set("#{vid}", {{ opacity: 0 }}, {r(t1)});')
 
 
-# ================================================================ 2. ACCROCHE : rafale de vraies vidéos (une par mot, zoom + éclair), puis tout rentre dans la main
-RAF = ["supernova", "neon-violet-3d", "passage-cercles", "planete-rocheuse", "explosion-particules", "lasers", "nebuleuse"]
-for k, f in enumerate(RAF):
-    t0 = 0.0 if k == 0 else T(k)
-    t1 = T(k + 1) if k + 1 < 7 else T(7) + 0.3
-    HTML.append(f'<div id="h{k}" class="plein" style="opacity: 0"><video id="h{k}-v" class="clip" src="assets/accroche/{f}.mp4" data-start="{r(t0)}" '
-                f'data-duration="{r(t1 - t0 + 0.04)}" data-media-start="{0.5 + (k % 3) * 0.7}" data-track-index="{5 + k % 3}" muted playsinline></video></div>')
+# ================================================================ 2. ACCROCHE : on tape « Fais-moi une vidéo » → ses vraies vidéos explosent plein écran, une par mot
+#   → « 1 PROMPT = 1 VIDÉO » → tout rentre dans la main
+QH = "Fais-moi une vidéo 🔥"
+lettres = "".join(f'<span id="hq{i}" style="opacity: 0">{c}</span>' for i, c in enumerate(QH))
+HTML.append(f'<div id="h-chat" class="plein h-chat" style="opacity: 1"><div class="hc-boite"><img src="assets/img/logo-claude.svg" alt="" />'
+            f'<div class="hc-texte">{lettres}<i id="hc-curseur">|</i></div><b id="hc-envoi">↑</b></div></div>')
+for i in range(len(QH)):
+    j(f'tl.set("#hq{i}", {{ opacity: 1 }}, {r(0.04 + 0.024 * i)});')
+son(0.02, "clavier-ordi", 0.32, "on tape le prompt", d=0.5)
+j(f'tl.fromTo("#hc-envoi", {{ scale: 1 }}, {{ scale: 1.5, duration: 0.08, yoyo: true, repeat: 1, immediateRender: false }}, {r(T(1) - 0.12)});')
+son(T(1) - 0.12, "pop-click", 0.36, "envoyer")
+j(f'tl.set("#h-chat", {{ opacity: 0 }}, {r(T(1))});')
+# plans sans texte incrusté (sinon leurs sous-titres se mélangent aux nôtres) : son edit Claude, grille rétro, route néon, tunnel
+RES = [("assets/exemples/edit-claude.mp4", False, 0.1), ("assets/magie/retro-soleil.mp4", False, 1.0), ("assets/exemples/edit-claude.mp4", False, 1.3),
+       ("assets/fonds/neon-3d-route.mp4", False, 0.5), ("assets/accroche/passage-cercles.mp4", False, 1.2), ("assets/exemples/edit-claude.mp4", False, 2.6)]
+for k, (src, centre, dep) in enumerate(RES):
+    t0 = T(1 + k)
+    t1 = T(2 + k) if k < 5 else T(7) + 0.3
+    HTML.append(f'<div id="h{k}" class="plein" style="opacity: 0"><video id="h{k}-v" class="clip{" mg-zoom" if centre else ""}" src="{src}" data-start="{r(t0)}" '
+                f'data-duration="{r(t1 - t0 + 0.04)}" data-media-start="{dep}" data-track-index="{5 + k % 3}" muted playsinline></video></div>')
     j(f'tl.set("#h{k}", {{ opacity: 1 }}, {r(t0)});')
-    j(f'tl.fromTo("#h{k}", {{ scale: 1.35, rotation: {(-3, 2, -2, 3, -1, 2, 0)[k]} }}, {{ scale: 1.05, rotation: 0, duration: {r(max(0.2, t1 - t0))}, ease: "power3.out", immediateRender: false }}, {r(t0)});')
-    if k < 6:
+    j(f'tl.fromTo("#h{k}", {{ scale: 1.45, rotation: {(-4, 3, -3, 4, -2, 2)[k]} }}, {{ scale: 1.04, rotation: 0, duration: {r(max(0.18, t1 - t0))}, ease: "power3.out", immediateRender: false }}, {r(t0)});')
+    j(f'tl.fromTo("#h{k}", {{ x: -24 }}, {{ x: 24, duration: 0.04, repeat: 3, yoyo: true, ease: "none", immediateRender: false }}, {r(t0)});')
+    if k < 5:
         j(f'tl.set("#h{k}", {{ opacity: 0 }}, {r(t1)});')
-    if k:
-        flash(t0, 0.55)
-    son(t0, tour(["whoosh-cine", "swoosh-court", "glitch-court", "whoosh-pop", "souffle-rapide"]), 0.16, f"accroche {f}")
-son(0.0, "trailer-impact", 0.22, "début")
-HTML.append('<div id="h-tag" class="slam" style="top: 760px; opacity: 0">FAIT AVEC<br>L’IA</div>')
-claque("#h-tag", 0.05, 2.4)
-cache("#h-tag", T(4))
+    flash(t0, 0.6)
+    son(t0, tour(["glitch-court", "whoosh-cine", "impact-whoosh", "glitch-mini", "swoosh-court", "zoom-impact"]), 0.2, f"accroche résultat {k}")
+HTML.append('<div id="h-tag" class="slam" data-layout-allow-overlap style="top: 760px; z-index: 13; opacity: 0">1 PROMPT<br>= 1 VIDÉO</div>')
+claque("#h-tag", T(1) + 0.02, 2.4)
+cache("#h-tag", T(6))
+son(T(1), "trailer-impact", 0.22, "les résultats explosent")
 # la dernière vidéo rétrécit et rentre dans la main (en bas), on découvre la personne
-j(f'tl.to("#h6", {{ scale: 0.04, y: 760, rotation: 25, duration: 0.32, ease: "power3.in" }}, {r(T(7) - 0.02)});')
-j(f'tl.set("#h6", {{ opacity: 0 }}, {r(T(7) + 0.31)});')
+j(f'tl.to("#h5", {{ scale: 0.04, y: 760, rotation: 25, duration: 0.32, ease: "power3.in" }}, {r(T(7) - 0.02)});')
+j(f'tl.set("#h5", {{ opacity: 0 }}, {r(T(7) + 0.31)});')
 HTML.append('<div id="h-eclat" class="mg-eclat" style="opacity: 0"></div>')
 j(f'tl.set("#h-eclat", {{ x: 380, y: 1560 }}, {r(T(7) + 0.28)});')
 j(f'tl.fromTo("#h-eclat", {{ opacity: 1, scale: 0.3 }}, {{ opacity: 0, scale: 1.8, duration: 0.45, ease: "power2.out", immediateRender: false }}, {r(T(7) + 0.28)});')
@@ -668,7 +681,7 @@ def sous_titres():
 
 MUSIQUES = []
 for k_, m_ in enumerate(json.loads((ICI / "assets/music/tension.json").read_text())):
-    vol = (0.42, 0.62, 0.66, 0.7)[k_]  # morceaux à −17 LUFS : la musique reste environ 5–6 dB sous la voix (l'accroche plus bas)
+    vol = (0.42, 0.56, 0.56, 0.56)[k_]  # morceaux à −17 LUFS : la musique reste environ 5–6 dB sous la voix (l'accroche plus bas)
     MUSIQUES.append(f'      <audio id="musique-{k_ + 1}" src="assets/music/{m_["fichier"]}" data-start="{m_["debut"]}" data-duration="{min(m_["duree"], round(FIN - m_["debut"], 3))}" '
                     f'data-volume="{vol}" data-track-index="{20 + k_ % 2}"></audio>')
 sous_titres()
@@ -765,6 +778,13 @@ CSS = f"""
       .rl-carte.grille {{ position: absolute; width: 300px; height: 210px; margin: 0; }}
       .rl-cadre {{ position: absolute; left: 380px; top: 20px; width: 320px; height: 260px; border: 10px solid #F2B705; border-radius: 38px; box-shadow: 0 0 40px rgba(242,183,5,0.7); }}
       .gm-sel {{ position: absolute; left: 0; top: 0; width: 320px; height: 230px; border: 10px solid #F2B705; border-radius: 36px; box-shadow: 0 0 40px rgba(242,183,5,0.7); z-index: 12; }}
+      .h-chat {{ background: radial-gradient(ellipse 80% 60% at 50% 45%, #2a2824 0%, #141311 80%); }}
+      .hc-boite {{ position: absolute; left: 50px; right: 50px; top: 820px; height: 190px; border-radius: 95px; background: #2f2d29; border: 5px solid #6b665c;
+        display: flex; align-items: center; gap: 26px; padding: 0 30px 0 40px; box-shadow: 0 30px 90px rgba(0,0,0,0.6); }}
+      .hc-boite img {{ width: 84px; height: 84px; }}
+      .hc-texte {{ font-family: "Inter Lf", sans-serif; font-weight: 800; font-size: 56px; color: #f0eee6; white-space: nowrap; }}
+      .hc-texte i {{ font-style: normal; color: {TERRA}; }}
+      .hc-boite b {{ flex: none; margin-left: auto; width: 120px; height: 120px; border-radius: 60px; background: {TERRA}; color: #fff; font-size: 70px; display: flex; align-items: center; justify-content: center; }}
       #calques {{ position: absolute; inset: 0; z-index: 10; pointer-events: none; }}
       .plein {{ position: absolute; inset: 0; overflow: hidden; background: #000; }}
       .plein video {{ width: 100%; height: 100%; object-fit: cover; }}

@@ -1,25 +1,25 @@
 [
  {
   "fichier": "tension-1.mp3",
-  "source": "t1",
+  "source": "c09",
   "debut": 0.0,
   "duree": 14.59
  },
  {
   "fichier": "tension-2.mp3",
-  "source": "t2",
+  "source": "c06",
   "debut": 14.24,
   "duree": 19.79
  },
  {
   "fichier": "tension-3.mp3",
-  "source": "t3",
+  "source": "c05",
   "debut": 33.68,
   "duree": 17.87
  },
  {
   "fichier": "tension-4.mp3",
-  "source": "t4",
+  "source": "c03",
   "debut": 51.2,
   "duree": 20.527
  }
