@@ -1,26 +1,26 @@
 #!/usr/bin/env python3
-"""Prépare les 4 musiques de la montée en tension, calées sur le montage. v7 : les 4 sons TikTok populaires au MEILLEUR RYTHME
-(mesuré sur 20 candidats : netteté du beat, kick, régularité — voir SUIVI.md), NON LIBRES, extraits officiels Deezer de 30 s,
-non versionnés ; TikTok reconnaît le son à la publication — usage TikTok uniquement :
-  1. accroche → game changer : « Sahara » (Hensonn), drop calé sur la fin de l'accroche (tout rentre dans la main)
-  2. HyperFrames → possibilités : « METAMORPHOSIS » (Interworld), drop calé sur « HyperFrames »
-  3. prix → attention → le modèle : « Murder In My Mind » (Kordhell), drop calé sur « Mais attention »
-  4. Opus / Fable → fin : « MONTAGEM URANIUM » (Zaylo), à fond dès Opus"""
+"""Prépare les 4 musiques, calées sur le montage. v8 : style BEAT / RAP demandé par l'utilisateur — instrumentaux de rap très
+connus sur TikTok (sans paroles, pour ne pas couvrir la voix), choisis parmi 24 candidats en mesurant le rythme ; NON LIBRES,
+extraits officiels Deezer de 30 s, non versionnés ; usage TikTok uniquement :
+  1. accroche → game changer : « The Next Episode (Instrumental) » (Dr. Dre)
+  2. HyperFrames → possibilités : « Not Like Us (Instrumental) »
+  3. prix → attention → le modèle : « Lose Yourself » (instrumental), riff qui monte jusqu'à « Mais attention »
+  4. Opus / Fable → fin : « SICKO MODE x Push Up » (instrumental), le beat le plus lourd"""
 import json, subprocess
 from pathlib import Path
 
 ICI = Path(__file__).resolve().parent.parent
-SRC = Path("/tmp/claude-0/-home-user-Github-worker/dc3cf4ad-cec2-5288-bb16-b638c74edad6/scratchpad/tiktok2")
+SRC = Path("/tmp/claude-0/-home-user-Github-worker/dc3cf4ad-cec2-5288-bb16-b638c74edad6/scratchpad/rap")
 M = json.loads((ICI / "assets/mots.json").read_text())
 T = lambda i: M[i]["start"]
 FIN = float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", str(ICI / "assets/montage/parole.mp4")],
                            capture_output=True, text=True).stdout) + 0.6
 B = [0.0, T(40), T(99), T(161), FIN]
 # (fichier, début dans l'extrait, volume début, volume fin, fondu d'entrée) ; début choisi pour caler drop / sommet sur le bon mot
-PLAN = [("c09", round(11.5 - (T(7) + 0.3), 2), 1.0, 1.0, 0.05),
-        ("c06", round(11.0 - (T(48) - T(40)), 2), 1.0, 1.0, 0.03),
-        ("c05", round(17.0 - (T(137) - T(99)), 2), 1.0, 1.0, 0.05),
-        ("c03", 0.0, 1.0, 1.0, 0.03)]
+PLAN = [("r23", 0.0, 1.0, 1.0, 0.05),
+        ("r04", 0.0, 1.0, 1.0, 0.03),
+        ("r08", 0.0, 0.85, 1.1, 0.05),
+        ("r07", 0.0, 1.0, 1.0, 0.03)]
 
 out = []
 for k, (mid, debut, v0, v1, fin_entree) in enumerate(PLAN):
