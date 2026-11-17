@@ -1,0 +1,490 @@
+<!doctype html>
+<html lang="fr" data-resolution="portrait">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "Anton"; src: url("assets/fonts/Anton-Regular.woff2") format("woff2"); }
+      @font-face { font-family: "Inter Lf"; src: url("assets/fonts/Inter-ExtraBold.otf") format("opentype"); font-weight: 800; }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1080px; height: 1920px; overflow: hidden; background: #000; }
+      #cine, #pousse, #cam, #coupe { position: absolute; inset: 0; transform-origin: 50% 54%; }
+      #video { position: absolute; inset: 0; width: 1080px; height: 1920px; object-fit: cover; }
+      #vignette { position: absolute; inset: 0; z-index: 9; pointer-events: none; background: radial-gradient(ellipse 80% 70% at 50% 52%, rgba(0,0,0,0) 58%, rgba(0,0,0,0.5) 100%); }
+      #haut { position: absolute; left: 0; top: 0; width: 1080px; height: 900px; z-index: 9; pointer-events: none; background: linear-gradient(180deg, rgba(5,8,15,0.55), rgba(5,8,15,0) 100%); }
+      .flash { position: absolute; inset: 0; opacity: 0; pointer-events: none; z-index: 40; }
+      #fondu { position: absolute; inset: 0; opacity: 0; z-index: 60; background: #000; }
+      #titre { position: absolute; left: 0; top: 0; width: 1080px; height: 270px; z-index: 30; display: flex; justify-content: center; padding-top: 120px;
+        background: linear-gradient(180deg, rgba(0,0,0,0.9), rgba(0,0,0,0.5) 70%, rgba(0,0,0,0)); }
+      #titre b { font-family: "Anton", sans-serif; font-weight: 400; font-size: 64px; color: #fff; letter-spacing: 1px; -webkit-text-stroke: 8px #000; paint-order: stroke fill; }
+      #titre b i { font-style: normal; color: #38BDF8; }
+      .chip { position: absolute; display: flex; align-items: center; gap: 10px; font-family: "Anton", sans-serif; font-size: 44px; color: #0B1220; background: #fff;
+        border: 5px solid #0B1220; border-radius: 18px; padding: 6px 16px 2px; white-space: nowrap; z-index: 12; box-shadow: 0 12px 30px rgba(0,0,0,0.45); }
+      .chip img { width: 46px; height: 46px; } .chip i { width: 22px; height: 22px; border-radius: 50%; display: inline-block; }
+      .slam { position: absolute; left: 0; top: 420px; width: 1080px; text-align: center; font-family: "Anton", sans-serif; font-size: 170px; line-height: 1; color: #fff;
+        -webkit-text-stroke: 14px #0B1220; paint-order: stroke fill; text-shadow: 0 0 50px rgba(56,189,248,0.7); z-index: 14; }
+      .slam.rouge { color: #FF6B6B; text-shadow: 0 0 50px rgba(255,107,107,0.8); }
+      .slam.or { color: #F2B705; font-size: 150px; text-shadow: 0 0 60px rgba(242,183,5,0.9); }
+      .vs { position: absolute; left: 0; top: 300px; width: 1080px; height: 460px; z-index: 13; display: flex; align-items: center; justify-content: center; gap: 30px; }
+      .vs-carte { width: 380px; height: 380px; background: #fff; border: 8px solid #0B1220; border-radius: 40px; display: flex; flex-direction: column; align-items: center;
+        justify-content: center; gap: 20px; box-shadow: 0 24px 60px rgba(0,0,0,0.55); }
+      .vs-carte img { width: 150px; height: 150px; }
+      .vs-carte b { font-family: "Anton", sans-serif; font-weight: 400; font-size: 52px; color: #0B1220; }
+      .vs-v { font-family: "Anton", sans-serif; font-size: 120px; color: #F2B705; -webkit-text-stroke: 10px #0B1220; paint-order: stroke fill; }
+      .niveau { position: absolute; left: 0; top: 330px; width: 1080px; text-align: center; z-index: 16; }
+      .niveau span { display: inline-block; font-family: "Anton", sans-serif; font-size: 70px; color: #0B1220; border: 7px solid #0B1220; border-radius: 22px;
+        padding: 8px 30px 2px; transform: rotate(-3deg); box-shadow: 0 16px 40px rgba(0,0,0,0.5); }
+      .niveau b { display: block; margin-top: 18px; font-family: "Anton", sans-serif; font-weight: 400; font-size: 130px; line-height: 1; color: #fff;
+        -webkit-text-stroke: 12px #0B1220; paint-order: stroke fill; }
+      .niveau em { display: flex; justify-content: center; gap: 16px; margin-top: 22px; }
+      .niveau em i { width: 120px; height: 26px; border-radius: 13px; background: rgba(255,255,255,0.25); border: 5px solid #0B1220; }
+      .carte { position: absolute; left: 60px; top: 300px; width: 960px; height: 560px; background: #fff; border: 8px solid #0B1220; border-radius: 40px; z-index: 12;
+        box-shadow: 0 30px 80px rgba(0,0,0,0.55); overflow: hidden; }
+      .c-tete { display: flex; align-items: center; gap: 18px; padding: 22px 30px; border-bottom: 5px solid #E5E7EB; }
+      .c-tete img { width: 60px; height: 60px; } .c-tete b { font-family: "Inter Lf", sans-serif; font-weight: 800; font-size: 44px; color: #0B1220; }
+      .bulle { position: absolute; max-width: 700px; font-family: "Inter Lf", sans-serif; font-weight: 800; font-size: 40px; line-height: 1.2; padding: 20px 28px; border-radius: 30px; }
+      .bulle.moi { right: 30px; background: #38BDF8; color: #0B1220; border-bottom-right-radius: 8px; }
+      .bulle.ia { left: 30px; background: #F3F4F6; color: #0B1220; border-bottom-left-radius: 8px; }
+      #b1 { top: 140px; } #b2 { top: 270px; } #b3 { top: 300px; } #b4 { top: 420px; }
+      .tampon { position: absolute; left: 0; top: 760px; width: 1080px; text-align: center; z-index: 15; font-family: "Anton", sans-serif; font-size: 96px;
+        color: #fff; -webkit-text-stroke: 10px #0B1220; paint-order: stroke fill; }
+      .tampon { color: #FF3B3B; transform: rotate(-4deg); }
+      .tampon.jaune { color: #F2B705; } .tampon.vert { color: #34D399; }
+      .flux { position: absolute; left: 40px; top: 300px; width: 1000px; height: 520px; background: #fff; border: 8px solid #0B1220; border-radius: 40px; z-index: 12;
+        box-shadow: 0 30px 80px rgba(0,0,0,0.55); }
+      .f-tete { text-align: center; padding: 26px 0 0; font-family: "Anton", sans-serif; font-size: 50px; color: #0B1220; letter-spacing: 1px; }
+      .f-ligne { position: absolute; left: 30px; right: 30px; top: 130px; display: flex; align-items: center; justify-content: space-between; }
+      .noeud { position: relative; width: 250px; height: 300px; }
+      .n-vide { position: absolute; inset: 0; border: 6px dashed #9CA3AF; border-radius: 28px; display: flex; align-items: center; justify-content: center;
+        font-family: "Anton", sans-serif; font-size: 110px; color: #D1D5DB; }
+      .n-plein { position: absolute; inset: 0; background: #FEF3C7; border: 6px solid #0B1220; border-radius: 28px; display: flex; flex-direction: column;
+        align-items: center; justify-content: center; gap: 14px; padding: 10px; text-align: center; }
+      .n-plein b { font-family: "Inter Lf", sans-serif; font-weight: 800; font-size: 32px; line-height: 1.15; color: #0B1220; }
+      .fleche { width: 70px; height: 14px; background: #E5E7EB; border-radius: 7px; overflow: hidden; }
+      .fleche i { display: block; width: 100%; height: 100%; background: #0B1220; transform-origin: 0 50%; }
+      .jeton { position: absolute; left: 140px; top: 455px; width: 44px; height: 44px; border-radius: 50%; background: #F2B705; border: 6px solid #0B1220;
+        box-shadow: 0 0 30px #F2B705; }
+      .agent { padding: 26px 34px; height: 600px; top: 290px; }
+      .a-obj { display: flex; align-items: center; gap: 24px; padding-bottom: 18px; border-bottom: 5px solid #E5E7EB; }
+      .a-obj span { display: block; font-family: "Anton", sans-serif; font-size: 40px; color: #FF6B6B; letter-spacing: 2px; }
+      .a-obj b { position: relative; display: block; height: 56px; font-family: "Inter Lf", sans-serif; font-weight: 800; font-size: 44px; color: #0B1220; }
+      .a-obj b em { position: absolute; left: 0; top: 0; font-style: normal; white-space: nowrap; }
+      .a-dec { margin: 16px 0 8px; font-family: "Anton", sans-serif; font-size: 36px; color: #6B7280; letter-spacing: 1px; }
+      .etape { position: relative; display: flex; align-items: center; gap: 22px; height: 82px; border-radius: 18px; padding: 0 12px; }
+      .case { width: 54px; height: 54px; border: 6px solid #9CA3AF; border-radius: 14px; flex: none; background: #fff; }
+      .etape b { font-family: "Inter Lf", sans-serif; font-weight: 800; font-size: 42px; color: #0B1220; }
+      .et-v { position: absolute; left: 88px; }
+      .niv-mini { position: absolute; left: 0; top: 200px; width: 1080px; text-align: center; z-index: 31; font-family: "Anton", sans-serif; font-size: 40px;
+        color: #fff; -webkit-text-stroke: 6px #000; paint-order: stroke fill; }
+      .niv-mini span { display: inline-block; color: #0B1220; -webkit-text-stroke: 0; border: 4px solid #0B1220; border-radius: 12px; padding: 2px 14px 0; margin-right: 8px; }
+      .f-tete2 { position: absolute; left: 40px; top: 318px; width: 1000px; text-align: center; z-index: 13; font-family: "Anton", sans-serif; font-size: 54px;
+        color: #0B1220; } .f-tete2 { background: #F2B705; border-radius: 0; }
+      .a-fait { position: absolute; left: 94px; top: 425px; z-index: 13; font-family: "Anton", sans-serif; font-size: 40px; color: #fff; background: #34D399;
+        border: 5px solid #0B1220; border-radius: 14px; padding: 4px 18px 0; }
+      .avap { position: absolute; left: 0; top: 400px; width: 1080px; z-index: 13; text-align: center; }
+      .av-c { display: inline-block; font-family: "Anton", sans-serif; font-size: 70px; color: #0B1220; background: #fff; border: 7px solid #0B1220; border-radius: 26px;
+        padding: 10px 30px 4px; box-shadow: 0 18px 44px rgba(0,0,0,0.5); }
+      .av-c.gris { background: #E5E7EB; color: #4B5563; } .av-c.gris b { color: #4B5563; text-decoration: line-through; text-decoration-thickness: 8px; }
+      .av-c.or { background: #F2B705; } .av-c b { font-weight: 400; }
+      .av-f { font-family: "Anton", sans-serif; font-size: 90px; color: #fff; -webkit-text-stroke: 8px #0B1220; paint-order: stroke fill; line-height: 1.1; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="61.55" data-width="1080" data-height="1920">
+      <div id="cine"><div id="pousse"><div id="cam"><div id="coupe">
+        <video id="video" class="clip" src="assets/montage.mp4" data-start="0" data-duration="61.05" data-media-start="0" data-has-audio="true" data-track-index="1" playsinline></video>
+      </div></div></div></div>
+      <div id="haut"></div>
+      <div id="vignette"></div>
+      <div id="sat-voile" class="flash" style="background: rgba(5,8,15,0.55); z-index: 11"></div>
+      <div id="sat0" class="chip" data-layout-allow-overlap style="left: 0px; top: 120px; opacity: 0"><img src="assets/img/logo-chatgpt-noir.svg" alt="" />ChatGPT</div>
+      <div id="sat1" class="chip" data-layout-allow-overlap style="left: 264px; top: 147px; opacity: 0"><img src="assets/img/logo-claude.svg" alt="" />Claude</div>
+      <div id="sat2" class="chip" data-layout-allow-overlap style="left: 468px; top: 134px; opacity: 0"><img src="assets/img/logo-gemini.svg" alt="" />Gemini</div>
+      <div id="sat3" class="chip" data-layout-allow-overlap style="left: 672px; top: 121px; opacity: 0"><img src="assets/img/logo-grok-noir.svg" alt="" />Grok</div>
+      <div id="sat4" class="chip" data-layout-allow-overlap style="left: 876px; top: 148px; opacity: 0"><i style="background: #34D399"></i>Copilot</div>
+      <div id="sat5" class="chip" data-layout-allow-overlap style="left: 36px; top: 285px; opacity: 0"><i style="background: #FB923C"></i>Manus</div>
+      <div id="sat6" class="chip" data-layout-allow-overlap style="left: 240px; top: 272px; opacity: 0"><i style="background: #F472B6"></i>Operator</div>
+      <div id="sat7" class="chip" data-layout-allow-overlap style="left: 444px; top: 299px; opacity: 0"><i style="background: #7DD3FC"></i>AutoGPT</div>
+      <div id="sat8" class="chip" data-layout-allow-overlap style="left: 648px; top: 286px; opacity: 0"><i style="background: #38BDF8"></i>n8n</div>
+      <div id="sat9" class="chip" data-layout-allow-overlap style="left: 852px; top: 273px; opacity: 0"><i style="background: #F2B705"></i>Make</div>
+      <div id="sat10" class="chip" data-layout-allow-overlap style="left: 12px; top: 450px; opacity: 0"><i style="background: #FF6B6B"></i>Zapier</div>
+      <div id="sat11" class="chip" data-layout-allow-overlap style="left: 216px; top: 437px; opacity: 0"><i style="background: #A78BFA"></i>CrewAI</div>
+      <div id="sat12" class="chip" data-layout-allow-overlap style="left: 420px; top: 424px; opacity: 0"><i style="background: #34D399"></i>LangChain</div>
+      <div id="sat13" class="chip" data-layout-allow-overlap style="left: 624px; top: 451px; opacity: 0"><i style="background: #FB923C"></i>Mistral</div>
+      <div id="sat14" class="chip" data-layout-allow-overlap style="left: 828px; top: 438px; opacity: 0"><i style="background: #F472B6"></i>Perplexity</div>
+      <div id="sat15" class="chip" data-layout-allow-overlap style="left: 48px; top: 575px; opacity: 0"><i style="background: #7DD3FC"></i>Devin</div>
+      <div id="sat16" class="chip" data-layout-allow-overlap style="left: 252px; top: 602px; opacity: 0"><i style="background: #38BDF8"></i>Cursor</div>
+      <div id="sat17" class="chip" data-layout-allow-overlap style="left: 456px; top: 589px; opacity: 0"><i style="background: #F2B705"></i>Lindy</div>
+      <div id="sat18" class="chip" data-layout-allow-overlap style="left: 660px; top: 576px; opacity: 0"><i style="background: #FF6B6B"></i>Agents IA</div>
+      <div id="sat19" class="chip" data-layout-allow-overlap style="left: 864px; top: 603px; opacity: 0"><i style="background: #A78BFA"></i>Assistants</div>
+      <div id="sat20" class="chip" data-layout-allow-overlap style="left: 24px; top: 740px; opacity: 0"><i style="background: #34D399"></i>Workflows</div>
+      <div id="sat21" class="chip" data-layout-allow-overlap style="left: 228px; top: 727px; opacity: 0"><i style="background: #FB923C"></i>Bots</div>
+      <div id="sat22" class="chip" data-layout-allow-overlap style="left: 432px; top: 754px; opacity: 0"><img src="assets/img/logo-chatgpt-noir.svg" alt="" />ChatGPT</div>
+      <div id="sat23" class="chip" data-layout-allow-overlap style="left: 636px; top: 741px; opacity: 0"><img src="assets/img/logo-claude.svg" alt="" />Claude</div>
+      <div id="sat24" class="chip" data-layout-allow-overlap style="left: 840px; top: 728px; opacity: 0"><img src="assets/img/logo-gemini.svg" alt="" />Gemini</div>
+      <div id="sat25" class="chip" data-layout-allow-overlap style="left: 0px; top: 905px; opacity: 0"><i style="background: #F2B705"></i>Agents IA</div>
+      <div id="sat26" class="chip" data-layout-allow-overlap style="left: 264px; top: 892px; opacity: 0"><i style="background: #FF6B6B"></i>n8n</div>
+      <div id="sat27" class="chip" data-layout-allow-overlap style="left: 468px; top: 879px; opacity: 0"><i style="background: #A78BFA"></i>Make</div>
+      <div id="sat28" class="chip" data-layout-allow-overlap style="left: 672px; top: 906px; opacity: 0"><i style="background: #34D399"></i>Zapier</div>
+      <div id="sat29" class="chip" data-layout-allow-overlap style="left: 876px; top: 893px; opacity: 0"><i style="background: #FB923C"></i>Copilot</div>
+      <div id="sat30" class="chip" data-layout-allow-overlap style="left: 36px; top: 1030px; opacity: 0"><i style="background: #F472B6"></i>Manus</div>
+      <div id="sat31" class="chip" data-layout-allow-overlap style="left: 240px; top: 1057px; opacity: 0"><i style="background: #7DD3FC"></i>Operator</div>
+      <div id="sat32" class="chip" data-layout-allow-overlap style="left: 444px; top: 1044px; opacity: 0"><i style="background: #38BDF8"></i>Agents IA</div>
+      <div id="sat33" class="chip" data-layout-allow-overlap style="left: 648px; top: 1031px; opacity: 0"><img src="assets/img/logo-grok-noir.svg" alt="" />Grok</div>
+      <div id="sat34" class="chip" data-layout-allow-overlap style="left: 852px; top: 1058px; opacity: 0"><i style="background: #FF6B6B"></i>Mistral</div>
+      <div id="sat35" class="chip" data-layout-allow-overlap style="left: 12px; top: 1195px; opacity: 0"><i style="background: #A78BFA"></i>Devin</div>
+      <div id="sat36" class="chip" data-layout-allow-overlap style="left: 216px; top: 1182px; opacity: 0"><i style="background: #34D399"></i>Agents IA</div>
+      <div id="sat37" class="chip" data-layout-allow-overlap style="left: 420px; top: 1209px; opacity: 0"><i style="background: #FB923C"></i>Cursor</div>
+      <div id="sat38" class="chip" data-layout-allow-overlap style="left: 624px; top: 1196px; opacity: 0"><i style="background: #F472B6"></i>LangChain</div>
+      <div id="sat39" class="chip" data-layout-allow-overlap style="left: 828px; top: 1183px; opacity: 0"><i style="background: #7DD3FC"></i>CrewAI</div>
+      <div id="h-agents" class="slam" data-layout-allow-overlap style="top: 600px; z-index: 13; opacity: 0">AGENTS IA</div>
+      <div id="h-q" class="slam" style="top: 230px; font-size: 380px; color: #38BDF8; opacity: 0">?</div>
+      <div id="vs" class="vs" style="opacity: 0"><div id="vs-a" class="vs-carte" style="opacity: 0"><img src="assets/img/logo-chatgpt-noir.svg" alt="" /><b>ChatGPT</b></div><div id="vs-v" class="vs-v" style="opacity: 0">VS</div><div id="vs-b" class="vs-carte" style="opacity: 0"><svg viewBox="0 0 100 100" width="150" height="150"><g fill="none" stroke="#0B1220" stroke-width="9"><circle cx="50" cy="50" r="16"/><path d="M50 8v14M50 78v14M8 50h14M78 50h14M20 20l10 10M70 70l10 10M80 20l-10 10M30 70l-10 10"/></g></svg><b>Automatisations</b></div></div>
+      <div id="titre" style="opacity: 0"><b>LES 3 NIVEAUX DE <i>L’IA</i></b></div>
+      <div id="niv1" class="niveau" style="opacity: 0"><span style="background: #38BDF8">NIVEAU 1</span><b>PROMPTING</b><em><i class="on" style="background: #38BDF8"></i><i class="" style=""></i><i class="" style=""></i></em></div>
+      <div id="fl46" class="flash" style="background: #38BDF8"></div>
+      <div id="mini1" class="niv-mini" style="opacity: 0"><span style="background: #38BDF8">NIVEAU 1</span> PROMPTING</div>
+      <div id="niv2" class="niveau" style="opacity: 0"><span style="background: #F2B705">NIVEAU 2</span><b>AUTOMATISATION IA</b><em><i class="on" style="background: #F2B705"></i><i class="on" style="background: #F2B705"></i><i class="" style=""></i></em></div>
+      <div id="fl49" class="flash" style="background: #F2B705"></div>
+      <div id="mini2" class="niv-mini" style="opacity: 0"><span style="background: #F2B705">NIVEAU 2</span> AUTOMATISATION IA</div>
+      <div id="niv3" class="niveau" style="opacity: 0"><span style="background: #FF6B6B">NIVEAU 3</span><b>AGENTS IA</b><em><i class="on" style="background: #FF6B6B"></i><i class="on" style="background: #FF6B6B"></i><i class="on" style="background: #FF6B6B"></i></em></div>
+      <div id="fl52" class="flash" style="background: #FF6B6B"></div>
+      <div id="mini3" class="niv-mini" style="opacity: 0"><span style="background: #FF6B6B">NIVEAU 3</span> AGENTS IA</div>
+      <div id="chat" class="carte" style="opacity: 0"><div class="c-tete"><img src="assets/img/logo-chatgpt-noir.svg" alt="" /><b>ChatGPT</b></div><div id="b1" class="bulle moi" style="opacity: 0">Écris un mail à mon client</div><div id="b2" class="bulle ia" style="opacity: 0">Voici votre mail : « Bonjour Monsieur… »</div><div id="b3" class="bulle moi" style="opacity: 0">Maintenant, résume ce PDF</div><div id="b4" class="bulle moi" style="opacity: 0">Et planifie la réunion</div></div>
+      <div id="toi" class="tampon" style="top: 430px; opacity: 0">TOUJOURS TOI</div>
+      <div id="flux" class="flux" style="opacity: 0"><div class="f-tete">SCÉNARIO DÉFINI À L’AVANCE</div><div class="f-ligne"><div id="nd0" class="noeud"><div class="n-vide">1</div><div id="nd0-p" class="n-plein" style="opacity: 0"><svg viewBox="0 0 100 80" width="120" height="96"><rect x="6" y="8" width="88" height="64" rx="10" fill="#fff" stroke="#0B1220" stroke-width="7"/><path d="M8 14l42 32 42-32" fill="none" stroke="#0B1220" stroke-width="7" stroke-linejoin="round"/></svg><b>Recevoir un mail</b></div></div><div id="fl0" class="fleche"><i id="fl0-i"></i></div><div id="nd1" class="noeud"><div class="n-vide">2</div><div id="nd1-p" class="n-plein" style="opacity: 0"><svg viewBox="0 0 80 100" width="96" height="120"><rect x="6" y="6" width="68" height="88" rx="8" fill="#fff" stroke="#0B1220" stroke-width="7"/><path d="M20 30h40M20 48h40M20 66h24" stroke="#0B1220" stroke-width="7" stroke-linecap="round"/></svg><b>Le résumer</b></div></div><div id="fl1" class="fleche"><i id="fl1-i"></i></div><div id="nd2" class="noeud"><div class="n-vide">3</div><div id="nd2-p" class="n-plein" style="opacity: 0"><svg viewBox="0 0 90 100" width="108" height="120"><ellipse cx="45" cy="18" rx="36" ry="12" fill="#fff" stroke="#0B1220" stroke-width="7"/><path d="M9 18v64c0 7 16 12 36 12s36-5 36-12V18" fill="#fff" stroke="#0B1220" stroke-width="7"/><path d="M9 50c0 7 16 12 36 12s36-5 36-12" fill="none" stroke="#0B1220" stroke-width="7"/></svg><b>L’enregistrer dans le CRM</b></div></div></div><div id="jeton" class="jeton" style="opacity: 0"></div></div>
+      <div id="fixe" class="f-tete2" style="opacity: 0">L’IA EXÉCUTE, POINT.</div>
+      <div id="diff" class="slam rouge" data-layout-allow-overlap style="top: 560px; z-index: 13; opacity: 0">DIFFÉRENT</div>
+      <div id="agent" class="carte agent" style="opacity: 0"><div class="a-obj"><svg viewBox="0 0 100 100" width="96" height="96"><circle cx="50" cy="50" r="42" fill="#FF6B6B"/><circle cx="50" cy="50" r="28" fill="#fff"/><circle cx="50" cy="50" r="14" fill="#FF6B6B"/></svg><div><span>OBJECTIF</span><b id="obj-txt"><em id="obj-q">?</em><em id="obj-v" style="opacity: 0">Préparer le rendez-vous client</em></b></div></div><div id="a-dec" class="a-dec" style="opacity: 0">L’AGENT DÉCIDE LUI-MÊME DES ÉTAPES</div><div id="et0" class="etape" style="opacity: 0"><i id="et0-c" class="case"></i><b id="et0-t" style="opacity: 0.25">Étape 1…</b><b id="et0-v" class="et-v" style="opacity: 0">Consulter vos mails</b></div><div id="et1" class="etape" style="opacity: 0"><i id="et1-c" class="case"></i><b id="et1-t" style="opacity: 0.25">Étape 2…</b><b id="et1-v" class="et-v" style="opacity: 0">Analyser les anciens échanges</b></div><div id="et2" class="etape" style="opacity: 0"><i id="et2-c" class="case"></i><b id="et2-t" style="opacity: 0.25">Étape 3…</b><b id="et2-v" class="et-v" style="opacity: 0">Vérifier votre calendrier</b></div><div id="et3" class="etape" style="opacity: 0"><i id="et3-c" class="case"></i><b id="et3-t" style="opacity: 0.25">Étape 4…</b><b id="et3-v" class="et-v" style="opacity: 0">Préparer un compte rendu</b></div></div>
+      <div id="fait" class="a-fait" style="opacity: 0">✓ TOUT FAIT PAR L’AGENT</div>
+      <div id="revo" class="slam or" data-layout-allow-overlap style="top: 330px; z-index: 13; opacity: 0">LA RÉVOLUTION</div>
+      <div id="fl62" class="flash" style="background: #F2B705"></div>
+      <div id="av" class="avap" style="opacity: 0"><div id="av-a" class="av-c gris" style="opacity: 0">UNE IA QUI <b>RÉPOND</b></div><div id="av-f" class="av-f" style="opacity: 0">↓</div><div id="av-b" class="av-c or" style="opacity: 0">UNE IA À QUI ON <b>DÉLÈGUE</b></div></div>
+      <div id="sous-titres" data-composition-id="sous-titres" data-composition-src="compositions/sous-titres.html" data-start="0" data-duration="61.55" data-track-index="3"
+        data-width="1080" data-height="1920" style="position: absolute; inset: 0; z-index: 35"></div>
+      <div id="fondu"></div>
+      <audio id="musique-1" src="assets/music/piste-1.mp3" data-start="0" data-duration="33.47" data-volume="0.30" data-track-index="20"></audio>
+      <audio id="musique-2" src="assets/music/piste-2.mp3" data-start="33.17" data-duration="28.38" data-volume="0.32" data-track-index="21"></audio>
+      <audio id="sfx-001" src="assets/sfx/souffle-rapide.mp3" data-start="0.0" data-duration="1.757" data-volume="0.15" data-track-index="30"></audio><!-- outil Operator -->
+      <audio id="sfx-002" src="assets/sfx/swell-court.mp3" data-start="0.0" data-duration="2.91" data-volume="0.225" data-track-index="31"></audio><!-- saturation d'outils IA -->
+      <audio id="sfx-003" src="assets/sfx/whoosh-pop.mp3" data-start="0.0" data-duration="0.18" data-volume="0.15" data-track-index="32"></audio><!-- outil ChatGPT -->
+      <audio id="sfx-004" src="assets/sfx/swoosh-court.mp3" data-start="0.089" data-duration="1.25" data-volume="0.15" data-track-index="33"></audio><!-- outil Grok -->
+      <audio id="sfx-005" src="assets/sfx/pop-cartoon.mp3" data-start="0.608" data-duration="0.521" data-volume="0.15" data-track-index="32"></audio><!-- outil Make -->
+      <audio id="sfx-006" src="assets/sfx/pop-bulle.mp3" data-start="0.676" data-duration="0.381" data-volume="0.15" data-track-index="34"></audio><!-- outil LangChain -->
+      <audio id="sfx-007" src="assets/sfx/souffle-rapide.mp3" data-start="0.847" data-duration="1.757" data-volume="0.15" data-track-index="35"></audio><!-- outil Make -->
+      <audio id="sfx-008" src="assets/sfx/pop-click.mp3" data-start="0.938" data-duration="1.175" data-volume="0.15" data-track-index="36"></audio><!-- outil Devin -->
+      <audio id="sfx-009" src="assets/sfx/pop-sec.mp3" data-start="0.996" data-duration="0.305" data-volume="0.15" data-track-index="37"></audio><!-- outil Agents IA -->
+      <audio id="sfx-010" src="assets/sfx/aspiration.mp3" data-start="1.12" data-duration="2.257" data-volume="0.24" data-track-index="34"></audio><!-- les outils sont aspirés -->
+      <audio id="sfx-011" src="assets/sfx/impact-futur.mp3" data-start="1.16" data-duration="2.75" data-volume="0.27" data-track-index="32"></audio><!-- agents IA -->
+      <audio id="sfx-012" src="assets/sfx/swoosh-court.mp3" data-start="1.249" data-duration="1.25" data-volume="0.15" data-track-index="38"></audio><!-- outil Gemini -->
+      <audio id="sfx-013" src="assets/sfx/whoosh-pop.mp3" data-start="1.249" data-duration="0.18" data-volume="0.15" data-track-index="39"></audio><!-- outil Bots -->
+      <audio id="sfx-014" src="assets/sfx/pop-cartoon.mp3" data-start="1.691" data-duration="0.521" data-volume="0.15" data-track-index="33"></audio><!-- outil Manus -->
+      <audio id="sfx-015" src="assets/sfx/pop-bulle.mp3" data-start="1.734" data-duration="0.381" data-volume="0.15" data-track-index="37"></audio><!-- outil Grok -->
+      <audio id="sfx-016" src="assets/sfx/pop-click.mp3" data-start="1.975" data-duration="1.175" data-volume="0.15" data-track-index="30"></audio><!-- outil Agents IA -->
+      <audio id="sfx-017" src="assets/sfx/pop-sec.mp3" data-start="2.014" data-duration="0.305" data-volume="0.15" data-track-index="39"></audio><!-- outil CrewAI -->
+      <audio id="sfx-018" src="assets/sfx/coup-mystere.mp3" data-start="3.0" data-duration="3.5" data-volume="0.3" data-track-index="31"></audio><!-- qu'est-ce que c'est -->
+      <audio id="sfx-019" src="assets/sfx/riser-tech.mp3" data-start="4.07" data-duration="0.9" data-volume="0.21" data-track-index="30"></audio><!-- montée vers le niveau 1 -->
+      <audio id="sfx-020" src="assets/sfx/pop-cartoon.mp3" data-start="5.76" data-duration="0.521" data-volume="0.3" data-track-index="30"></audio><!-- ChatGPT -->
+      <audio id="sfx-021" src="assets/sfx/impact-tambour.mp3" data-start="6.05" data-duration="3.0" data-volume="0.27" data-track-index="32"></audio><!-- VS -->
+      <audio id="sfx-022" src="assets/sfx/pop-bulle.mp3" data-start="7.18" data-duration="0.381" data-volume="0.3" data-track-index="30"></audio><!-- automatisations -->
+      <audio id="sfx-023" src="assets/sfx/whoosh-cine.mp3" data-start="8.57" data-duration="1.334" data-volume="0.12" data-track-index="30"></audio><!-- raccord 2 -->
+      <audio id="sfx-024" src="assets/sfx/zoom-impact.mp3" data-start="9.13" data-duration="1.222" data-volume="0.225" data-track-index="31"></audio><!-- zoom de cinéma -->
+      <audio id="sfx-025" src="assets/sfx/impact-basse.mp3" data-start="9.57" data-duration="1.1" data-volume="0.3" data-track-index="32"></audio><!-- niveau 1 -->
+      <audio id="sfx-026" src="assets/sfx/clavier-ordi.mp3" data-start="10.22" data-duration="0.9" data-volume="0.225" data-track-index="30"></audio><!-- il tape sa demande -->
+      <audio id="sfx-027" src="assets/sfx/swoosh-court.mp3" data-start="10.72" data-duration="1.25" data-volume="0.12" data-track-index="31"></audio><!-- raccord 3 -->
+      <audio id="sfx-028" src="assets/sfx/pop-click.mp3" data-start="11.22" data-duration="1.175" data-volume="0.195" data-track-index="30"></audio><!-- pastille niveau 1 -->
+      <audio id="sfx-029" src="assets/sfx/whoosh-pop.mp3" data-start="13.13" data-duration="0.18" data-volume="0.12" data-track-index="30"></audio><!-- raccord 4 -->
+      <audio id="sfx-030" src="assets/sfx/whoosh-pop.mp3" data-start="13.27" data-duration="0.18" data-volume="0.225" data-track-index="31"></audio><!-- la conversation arrive -->
+      <audio id="sfx-031" src="assets/sfx/riser-tech.mp3" data-start="14.04" data-duration="0.9" data-volume="0.21" data-track-index="30"></audio><!-- montée vers le niveau 2 -->
+      <audio id="sfx-032" src="assets/sfx/notif-positive.mp3" data-start="15.4" data-duration="2.8" data-volume="0.285" data-track-index="30"></audio><!-- ChatGPT répond -->
+      <audio id="sfx-033" src="assets/sfx/balaie-rapide.mp3" data-start="15.79" data-duration="1.917" data-volume="0.12" data-track-index="31"></audio><!-- raccord 5 -->
+      <audio id="sfx-034" src="assets/sfx/clavier-ordi-2.mp3" data-start="16.89" data-duration="0.6" data-volume="0.225" data-track-index="32"></audio><!-- nouvelle tâche -->
+      <audio id="sfx-035" src="assets/sfx/clavier-tel.mp3" data-start="17.12" data-duration="0.5" data-volume="0.225" data-track-index="33"></audio><!-- encore une tâche -->
+      <audio id="sfx-036" src="assets/sfx/souffle-rapide.mp3" data-start="18.89" data-duration="1.757" data-volume="0.12" data-track-index="30"></audio><!-- raccord 6 -->
+      <audio id="sfx-037" src="assets/sfx/buzz-faux.mp3" data-start="18.94" data-duration="1.739" data-volume="0.27" data-track-index="31"></audio><!-- votre intervention -->
+      <audio id="sfx-038" src="assets/sfx/zoom-in.mp3" data-start="19.2" data-duration="0.657" data-volume="0.225" data-track-index="32"></audio><!-- zoom de cinéma -->
+      <audio id="sfx-039" src="assets/sfx/impact-basse.mp3" data-start="19.54" data-duration="1.1" data-volume="0.3" data-track-index="33"></audio><!-- niveau 2 -->
+      <audio id="sfx-040" src="assets/sfx/pop-sec.mp3" data-start="21.09" data-duration="0.305" data-volume="0.195" data-track-index="30"></audio><!-- pastille niveau 2 -->
+      <audio id="sfx-041" src="assets/sfx/whoosh-cine.mp3" data-start="21.5" data-duration="1.334" data-volume="0.12" data-track-index="30"></audio><!-- raccord 7 -->
+      <audio id="sfx-042" src="assets/sfx/balaie-rapide.mp3" data-start="22.71" data-duration="1.917" data-volume="0.225" data-track-index="31"></audio><!-- le scénario apparaît -->
+      <audio id="sfx-043" src="assets/sfx/pop-bulle.mp3" data-start="23.97" data-duration="0.381" data-volume="0.225" data-track-index="30"></audio><!-- case 1 -->
+      <audio id="sfx-044" src="assets/sfx/pop-click.mp3" data-start="24.22" data-duration="1.175" data-volume="0.225" data-track-index="32"></audio><!-- case 2 -->
+      <audio id="sfx-045" src="assets/sfx/pop-sec.mp3" data-start="24.27" data-duration="0.305" data-volume="0.225" data-track-index="33"></audio><!-- case 3 -->
+      <audio id="sfx-046" src="assets/sfx/notif-indice.mp3" data-start="25.69" data-duration="1.716" data-volume="0.285" data-track-index="30"></audio><!-- Recevoir un mail -->
+      <audio id="sfx-047" src="assets/sfx/coche.mp3" data-start="27.57" data-duration="0.237" data-volume="0.285" data-track-index="30"></audio><!-- Le résumer -->
+      <audio id="sfx-048" src="assets/sfx/riser-tech.mp3" data-start="27.62" data-duration="0.9" data-volume="0.21" data-track-index="31"></audio><!-- montée vers le niveau 3 -->
+      <audio id="sfx-049" src="assets/sfx/swoosh-court.mp3" data-start="28.02" data-duration="1.25" data-volume="0.12" data-track-index="30"></audio><!-- raccord 8 -->
+      <audio id="sfx-050" src="assets/sfx/coche.mp3" data-start="28.11" data-duration="0.237" data-volume="0.285" data-track-index="32"></audio><!-- L’enregistrer dans le CRM -->
+      <audio id="sfx-051" src="assets/sfx/scanner.mp3" data-start="28.88" data-duration="1.5" data-volume="0.225" data-track-index="31"></audio><!-- l'IA exécute le scénario -->
+      <audio id="sfx-052" src="assets/sfx/whoosh-pop.mp3" data-start="30.43" data-duration="0.18" data-volume="0.12" data-track-index="30"></audio><!-- raccord 9 -->
+      <audio id="sfx-053" src="assets/sfx/trailer-impact.mp3" data-start="32.27" data-duration="4.866" data-volume="0.3" data-track-index="30"></audio><!-- niveau 3 -->
+      <audio id="sfx-054" src="assets/sfx/trailer-impact-2.mp3" data-start="32.32" data-duration="6.0" data-volume="0.27" data-track-index="31"></audio><!-- changement de musique -->
+      <audio id="sfx-055" src="assets/sfx/verrou.mp3" data-start="32.42" data-duration="1.6" data-volume="0.3" data-track-index="32"></audio><!-- simplement votre scénario -->
+      <audio id="sfx-056" src="assets/sfx/zoom-futur.mp3" data-start="32.58" data-duration="2.171" data-volume="0.225" data-track-index="33"></audio><!-- zoom de cinéma -->
+      <audio id="sfx-057" src="assets/sfx/balaie-rapide.mp3" data-start="32.77" data-duration="1.917" data-volume="0.12" data-track-index="34"></audio><!-- raccord 10 -->
+      <audio id="sfx-058" src="assets/sfx/pop-cartoon.mp3" data-start="34.77" data-duration="0.521" data-volume="0.195" data-track-index="32"></audio><!-- pastille niveau 3 -->
+      <audio id="sfx-059" src="assets/sfx/souffle-rapide.mp3" data-start="36.16" data-duration="1.757" data-volume="0.12" data-track-index="32"></audio><!-- raccord 11 -->
+      <audio id="sfx-060" src="assets/sfx/whoosh-cine.mp3" data-start="37.26" data-duration="1.334" data-volume="0.12" data-track-index="30"></audio><!-- raccord 12 -->
+      <audio id="sfx-061" src="assets/sfx/glitch-rugit.mp3" data-start="37.98" data-duration="1.081" data-volume="0.27" data-track-index="32"></audio><!-- ici c'est différent -->
+      <audio id="sfx-062" src="assets/sfx/souffle-rapide.mp3" data-start="38.01" data-duration="1.757" data-volume="0.225" data-track-index="33"></audio><!-- l'objectif arrive -->
+      <audio id="sfx-063" src="assets/sfx/whoosh-cine.mp3" data-start="38.1" data-duration="1.334" data-volume="0.225" data-track-index="34"></audio><!-- zoom de cinéma -->
+      <audio id="sfx-064" src="assets/sfx/impact-tambour.mp3" data-start="38.44" data-duration="3.0" data-volume="0.27" data-track-index="31"></audio><!-- un objectif -->
+      <audio id="sfx-065" src="assets/sfx/impact-basse.mp3" data-start="39.09" data-duration="1.1" data-volume="0.18" data-track-index="30"></audio><!-- boom du zoom -->
+      <audio id="sfx-066" src="assets/sfx/swoosh-court.mp3" data-start="39.3" data-duration="1.25" data-volume="0.12" data-track-index="32"></audio><!-- raccord 13 -->
+      <audio id="sfx-067" src="assets/sfx/robot-scifi.mp3" data-start="39.86" data-duration="1.496" data-volume="0.225" data-track-index="33"></audio><!-- l'agent décide -->
+      <audio id="sfx-068" src="assets/sfx/pop-cartoon.mp3" data-start="40.81" data-duration="0.521" data-volume="0.21" data-track-index="30"></audio><!-- étape 1 (vide) -->
+      <audio id="sfx-069" src="assets/sfx/pop-bulle.mp3" data-start="40.89" data-duration="0.381" data-volume="0.21" data-track-index="32"></audio><!-- étape 2 (vide) -->
+      <audio id="sfx-070" src="assets/sfx/clavier-ordi.mp3" data-start="41.1" data-duration="0.8" data-volume="0.225" data-track-index="34"></audio><!-- l'objectif s'écrit -->
+      <audio id="sfx-071" src="assets/sfx/pop-click.mp3" data-start="41.17" data-duration="1.175" data-volume="0.21" data-track-index="35"></audio><!-- étape 3 (vide) -->
+      <audio id="sfx-072" src="assets/sfx/pop-sec.mp3" data-start="41.25" data-duration="0.305" data-volume="0.21" data-track-index="36"></audio><!-- étape 4 (vide) -->
+      <audio id="sfx-073" src="assets/sfx/whoosh-pop.mp3" data-start="43.69" data-duration="0.18" data-volume="0.12" data-track-index="30"></audio><!-- raccord 14 -->
+      <audio id="sfx-074" src="assets/sfx/balaie-rapide.mp3" data-start="45.87" data-duration="1.917" data-volume="0.12" data-track-index="30"></audio><!-- raccord 15 -->
+      <audio id="sfx-075" src="assets/sfx/coche.mp3" data-start="47.4" data-duration="0.237" data-volume="0.3" data-track-index="31"></audio><!-- étape cochée : Consulter vos mails -->
+      <audio id="sfx-076" src="assets/sfx/coche.mp3" data-start="48.84" data-duration="0.237" data-volume="0.3" data-track-index="30"></audio><!-- étape cochée : Analyser les anciens échanges -->
+      <audio id="sfx-077" src="assets/sfx/souffle-rapide.mp3" data-start="50.13" data-duration="1.757" data-volume="0.12" data-track-index="30"></audio><!-- raccord 16 -->
+      <audio id="sfx-078" src="assets/sfx/coche.mp3" data-start="51.32" data-duration="0.237" data-volume="0.3" data-track-index="31"></audio><!-- étape cochée : Vérifier votre calendrier -->
+      <audio id="sfx-079" src="assets/sfx/coche.mp3" data-start="53.16" data-duration="0.237" data-volume="0.3" data-track-index="30"></audio><!-- étape cochée : Préparer un compte rendu -->
+      <audio id="sfx-080" src="assets/sfx/whoosh-cine.mp3" data-start="53.94" data-duration="1.334" data-volume="0.12" data-track-index="30"></audio><!-- raccord 17 -->
+      <audio id="sfx-081" src="assets/sfx/mission-ok.mp3" data-start="53.95" data-duration="1.553" data-volume="0.3" data-track-index="31"></audio><!-- tout est fait -->
+      <audio id="sfx-082" src="assets/sfx/trailer-impact.mp3" data-start="55.57" data-duration="4.866" data-volume="0.315" data-track-index="30"></audio><!-- la révolution -->
+      <audio id="sfx-083" src="assets/sfx/trailer-impact-2.mp3" data-start="55.67" data-duration="5.88" data-volume="0.18" data-track-index="31"></audio><!-- boom du zoom -->
+      <audio id="sfx-084" src="assets/sfx/zoom-impact.mp3" data-start="55.98" data-duration="1.222" data-volume="0.225" data-track-index="32"></audio><!-- zoom de cinéma -->
+      <audio id="sfx-085" src="assets/sfx/swoosh-court.mp3" data-start="56.58" data-duration="1.25" data-volume="0.12" data-track-index="33"></audio><!-- raccord 18 -->
+      <audio id="sfx-086" src="assets/sfx/pop-cartoon.mp3" data-start="58.33" data-duration="0.521" data-volume="0.27" data-track-index="32"></audio><!-- une IA qui répond -->
+      <audio id="sfx-087" src="assets/sfx/swoosh-monte.mp3" data-start="58.79" data-duration="1.03" data-volume="0.225" data-track-index="33"></audio><!-- flèche -->
+      <audio id="sfx-088" src="assets/sfx/power-up.mp3" data-start="59.94" data-duration="1.61" data-volume="0.3" data-track-index="32"></audio><!-- on peut déléguer -->
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      tl.set("#coupe", { scale: 1.0 }, 0.0);
+      tl.set("#coupe", { scale: 1.14 }, 9.62);
+      tl.fromTo("#cam", { scale: 1.05 }, { scale: 1, duration: 0.22, ease: "power3.out", immediateRender: false }, 9.62);
+      tl.set("#coupe", { scale: 1.0 }, 10.87);
+      tl.fromTo("#cam", { scale: 1.05 }, { scale: 1, duration: 0.22, ease: "power3.out", immediateRender: false }, 10.87);
+      tl.set("#coupe", { scale: 1.12 }, 13.13);
+      tl.fromTo("#cam", { scale: 1.05 }, { scale: 1, duration: 0.22, ease: "power3.out", immediateRender: false }, 13.13);
+      tl.set("#coupe", { scale: 1.0 }, 16.19);
+      tl.fromTo("#cam", { scale: 1.05 }, { scale: 1, duration: 0.22, ease: "power3.out", immediateRender: false }, 16.19);
+      tl.set("#coupe", { scale: 1.15 }, 19.59);
+      tl.fromTo("#cam", { scale: 1.05 }, { scale: 1, duration: 0.22, ease: "power3.out", immediateRender: false }, 19.59);
+      tl.set("#coupe", { scale: 1.0 }, 22.55);
+      tl.fromTo("#cam", { scale: 1.05 }, { scale: 1, duration: 0.22, ease: "power3.out", immediateRender: false }, 22.55);
+      tl.set("#coupe", { scale: 1.13 }, 28.17);
+      tl.fromTo("#cam", { scale: 1.05 }, { scale: 1, duration: 0.22, ease: "power3.out", immediateRender: false }, 28.17);
+      tl.set("#coupe", { scale: 1.0 }, 30.43);
+      tl.fromTo("#cam", { scale: 1.05 }, { scale: 1, duration: 0.22, ease: "power3.out", immediateRender: false }, 30.43);
+      tl.set("#coupe", { scale: 1.16 }, 33.17);
+      tl.fromTo("#cam", { scale: 1.05 }, { scale: 1, duration: 0.22, ease: "power3.out", immediateRender: false }, 33.17);
+      tl.set("#coupe", { scale: 1.0 }, 36.86);
+      tl.fromTo("#cam", { scale: 1.05 }, { scale: 1, duration: 0.22, ease: "power3.out", immediateRender: false }, 36.86);
+      tl.set("#coupe", { scale: 1.12 }, 38.31);
+      tl.fromTo("#cam", { scale: 1.05 }, { scale: 1, duration: 0.22, ease: "power3.out", immediateRender: false }, 38.31);
+      tl.set("#coupe", { scale: 1.0 }, 39.45);
+      tl.fromTo("#cam", { scale: 1.05 }, { scale: 1, duration: 0.22, ease: "power3.out", immediateRender: false }, 39.45);
+      tl.set("#coupe", { scale: 1.14 }, 43.69);
+      tl.fromTo("#cam", { scale: 1.05 }, { scale: 1, duration: 0.22, ease: "power3.out", immediateRender: false }, 43.69);
+      tl.set("#coupe", { scale: 1.0 }, 46.27);
+      tl.fromTo("#cam", { scale: 1.05 }, { scale: 1, duration: 0.22, ease: "power3.out", immediateRender: false }, 46.27);
+      tl.set("#coupe", { scale: 1.13 }, 50.83);
+      tl.fromTo("#cam", { scale: 1.05 }, { scale: 1, duration: 0.22, ease: "power3.out", immediateRender: false }, 50.83);
+      tl.set("#coupe", { scale: 1.0 }, 54.99);
+      tl.fromTo("#cam", { scale: 1.05 }, { scale: 1, duration: 0.22, ease: "power3.out", immediateRender: false }, 54.99);
+      tl.set("#coupe", { scale: 1.15 }, 56.73);
+      tl.fromTo("#cam", { scale: 1.05 }, { scale: 1, duration: 0.22, ease: "power3.out", immediateRender: false }, 56.73);
+      tl.fromTo("#pousse", { scale: 1 }, { scale: 1.06, duration: 61.55, ease: "none", immediateRender: false }, 0);
+      tl.set("#sat-voile", { opacity: 1 }, 0); tl.to("#sat-voile", { opacity: 0, duration: 0.25 }, 2.77);
+      tl.fromTo("#sat0", { opacity: 0, x: -900, y: 0, rotation: -68, scale: 1.8 }, { opacity: 1, x: 0, y: 0, rotation: -17, scale: 1, duration: 0.22, ease: "power3.out", immediateRender: false }, 0.0);
+      tl.to("#sat0", { opacity: 0, scale: 0.1, x: 486, y: 702, rotation: 123, duration: 0.24, ease: "power3.in" }, 2.67);
+      tl.fromTo("#sat1", { opacity: 0, x: 900, y: 0, rotation: -32, scale: 1.8 }, { opacity: 1, x: 0, y: 0, rotation: -8, scale: 1, duration: 0.22, ease: "power3.out", immediateRender: false }, 0.094);
+      tl.to("#sat1", { opacity: 0, scale: 0.1, x: 248, y: 678, rotation: 132, duration: 0.24, ease: "power3.in" }, 2.674);
+      tl.fromTo("#sat2", { opacity: 0, x: 0, y: -1500, rotation: 4, scale: 1.8 }, { opacity: 1, x: 0, y: 0, rotation: 1, scale: 1, duration: 0.22, ease: "power3.out", immediateRender: false }, 0.169);
+      tl.to("#sat2", { opacity: 0, scale: 0.1, x: 65, y: 689, rotation: 141, duration: 0.24, ease: "power3.in" }, 2.678);
+      tl.fromTo("#sat3", { opacity: 0, x: 0, y: 1500, rotation: 40, scale: 1.8 }, { opacity: 1, x: 0, y: 0, rotation: 10, scale: 1, duration: 0.22, ease: "power3.out", immediateRender: false }, 0.239);
+      tl.to("#sat3", { opacity: 0, scale: 0.1, x: -119, y: 701, rotation: 150, duration: 0.24, ease: "power3.in" }, 2.682);
+      tl.fromTo("#sat4", { opacity: 0, x: -900, y: -1500, rotation: -60, scale: 1.8 }, { opacity: 1, x: 0, y: 0, rotation: -15, scale: 1, duration: 0.22, ease: "power3.out", immediateRender: false }, 0.305);
+      tl.to("#sat4", { opacity: 0, scale: 0.1, x: -302, y: 677, rotation: 125, duration: 0.24, ease: "power3.in" }, 2.686);
+      tl.fromTo("#sat5", { opacity: 0, x: 900, y: -1500, rotation: -24, scale: 1.8 }, { opacity: 1, x: 0, y: 0, rotation: -6, scale: 1, duration: 0.22, ease: "power3.out", immediateRender: false }, 0.369);
+      tl.to("#sat5", { opacity: 0, scale: 0.1, x: 454, y: 554, rotation: 134, duration: 0.24, ease: "power3.in" }, 2.69);
+      tl.fromTo("#sat6", { opacity: 0, x: -900, y: 1500, rotation: 12, scale: 1.8 }, { opacity: 1, x: 0, y: 0, rotation: 3, scale: 1, duration: 0.22, ease: "power3.out", immediateRender: false }, 0.431);
+      tl.to("#sat6", { opacity: 0, scale: 0.1, x: 270, y: 565, rotation: 143, duration: 0.24, ease: "power3.in" }, 2.694);
+      tl.fromTo("#sat7", { opacity: 0, x: 900, y: 1500, rotation: 48, scale: 1.8 }, { opacity: 1, x: 0, y: 0, rotation: 12, scale: 1, duration: 0.22, ease: "power3.out", immediateRender: false }, 0.491);
+      tl.to("#sat7", { opacity: 0, scale: 0.1, x: 86, y: 541, rotation: 152, duration: 0.24, ease: "power3.in" }, 2.698);
+      tl.fromTo("#sat8", { opacity: 0, x: -900, y: 0, rotation: -52, scale: 1.8 }, { opacity: 1, x: 0, y: 0, rotation: -13, scale: 1, duration: 0.22, ease: "power3.out", immediateRender: false }, 0.55);
+      tl.to("#sat8", { opacity: 0, scale: 0.1, x: -97, y: 553, rotation: 127, duration: 0.24, ease: "power3.in" }, 2.702);
+      tl.fromTo("#sat9", { opacity: 0, x: 900, y: 0, rotation: -16, scale: 1.8 }, { opacity: 1, x: 0, y: 0, rotation: -4, scale: 1, duration: 0.22, ease: "power3.out", immediateRender: false }, 0.608);
+      tl.to("#sat9", { opacity: 0, scale: 0.1, x: -281, y: 564, rotation: 136, duration: 0.24, ease: "power3.in" }, 2.706);
+      tl.fromTo("#sat10", { opacity: 0, x: 0, y: -1500, rotation: 20, scale: 1.8 }, { opacity: 1, x: 0, y: 0, rotation: 5, scale: 1, duration: 0.22, ease: "power3.out", immediateRender: false }, 0.665);
+      tl.to("#sat10", { opacity: 0, scale: 0.1, x: 475, y: 405, rotation: 145, duration: 0.24, ease: "power3.in" }, 2.71);
+      tl.fromTo("#sat11", { opacity: 0, x: 0, y: 1500, rotation: 56, scale: 1.8 }, { opacity: 1, x: 0, y: 0, rotation: 14, scale: 1, duration: 0.22, ease: "power3.out", immediateRender: false }, 0.721);
+      tl.to("#sat11", { opacity: 0, scale: 0.1, x: 292, y: 417, rotation: 154, duration: 0.24, ease: "power3.in" }, 2.714);
+      tl.fromTo("#sat12", { opacity: 0, x: -900, y: -1500, rotation: -44, scale: 1.8 }, { opacity: 1, x: 0, y: 0, rotation: -11, scale: 1, duration: 0.22, ease: "power3.out", immediateRender: false }, 0.776);
+      tl.to("#sat12", { opacity: 0, scale: 0.1, x: 108, y: 428, rotation: 129, duration: 0.24, ease: "power3.in" }, 2.718);
+      tl.fromTo("#sat13", { opacity: 0, x: 900, y: -1500, rotation: -8, scale: 1.8 }, { opacity: 1, x: 0, y: 0, rotation: -2, scale: 1, duration: 0.22, ease: "power3.out", immediateRender: false }, 0.831);
+      tl.to("#sat13", { opacity: 0, scale: 0.1, x: -76, y: 404, rotation: 138, duration: 0.24, ease: "power3.in" }, 2.722);
+      tl.fromTo("#sat14", { opacity: 0, x: -900, y: 1500, rotation: 28, scale: 1.8 }, { opacity: 1, x: 0, y: 0, rotation: 7, scale: 1, duration: 0.22, ease: "power3.out", immediateRender: false }, 0.885);
+      tl.to("#sat14", { opacity: 0, scale: 0.1, x: -259, y: 416, rotation: 147, duration: 0.24, ease: "power3.in" }, 2.726);
+      tl.fromTo("#sat15", { opacity: 0, x: 900, y: 1500, rotation: 64, scale: 1.8 }, { opacity: 1, x: 0, y: 0, rotation: 16, scale: 1, duration: 0.22, ease: "power3.out", immediateRender: false }, 0.938);
+      tl.to("#sat15", { opacity: 0, scale: 0.1, x: 443, y: 292, rotation: 156, duration: 0.24, ease: "power3.in" }, 2.73);
+      tl.fromTo("#sat16", { opacity: 0, x: -900, y: 0, rotation: -36, scale: 1.8 }, { opacity: 1, x: 0, y: 0, rotation: -9, scale: 1, duration: 0.22, ease: "power3.out", immediateRender: false }, 0.991);
+      tl.to("#sat16", { opacity: 0, scale: 0.1, x: 259, y: 268, rotation: 131, duration: 0.24, ease: "power3.in" }, 2.734);
+      tl.fromTo("#sat17", { opacity: 0, x: 900, y: 0, rotation: 0, scale: 1.8 }, { opacity: 1, x: 0, y: 0, rotation: 0, scale: 1, duration: 0.22, ease: "power3.out", immediateRender: false }, 1.044);
+      tl.to("#sat17", { opacity: 0, scale: 0.1, x: 76, y: 280, rotation: 140, duration: 0.24, ease: "power3.in" }, 2.738);
+      tl.fromTo("#sat18", { opacity: 0, x: 0, y: -1500, rotation: 36, scale: 1.8 }, { opacity: 1, x: 0, y: 0, rotation: 9, scale: 1, duration: 0.22, ease: "power3.out", immediateRender: false }, 1.096);
+      tl.to("#sat18", { opacity: 0, scale: 0.1, x: -108, y: 292, rotation: 149, duration: 0.24, ease: "power3.in" }, 2.742);
+      tl.fromTo("#sat19", { opacity: 0, x: 0, y: 1500, rotation: -64, scale: 1.8 }, { opacity: 1, x: 0, y: 0, rotation: -16, scale: 1, duration: 0.22, ease: "power3.out", immediateRender: false }, 1.147);
+      tl.to("#sat19", { opacity: 0, scale: 0.1, x: -292, y: 267, rotation: 124, duration: 0.24, ease: "power3.in" }, 2.746);
+      tl.fromTo("#sat20", { opacity: 0, x: -900, y: -1500, rotation: -28, scale: 1.8 }, { opacity: 1, x: 0, y: 0, rotation: -7, scale: 1, duration: 0.22, ease: "power3.out", immediateRender: false }, 1.198);
+      tl.to("#sat20", { opacity: 0, scale: 0.1, x: 464, y: 144, rotation: 133, duration: 0.24, ease: "power3.in" }, 2.75);
+      tl.fromTo("#sat21", { opacity: 0, x: 900, y: -1500, rotation: 8, scale: 1.8 }, { opacity: 1, x: 0, y: 0, rotation: 2, scale: 1, duration: 0.22, ease: "power3.out", immediateRender: false }, 1.249);
+      tl.to("#sat21", { opacity: 0, scale: 0.1, x: 281, y: 156, rotation: 142, duration: 0.24, ease: "power3.in" }, 2.754);
+      tl.fromTo("#sat22", { opacity: 0, x: -900, y: 1500, rotation: 44, scale: 1.8 }, { opacity: 1, x: 0, y: 0, rotation: 11, scale: 1, duration: 0.22, ease: "power3.out", immediateRender: false }, 1.299);
+      tl.to("#sat22", { opacity: 0, scale: 0.1, x: 97, y: 131, rotation: 151, duration: 0.24, ease: "power3.in" }, 2.758);
+      tl.fromTo("#sat23", { opacity: 0, x: 900, y: 1500, rotation: -56, scale: 1.8 }, { opacity: 1, x: 0, y: 0, rotation: -14, scale: 1, duration: 0.22, ease: "power3.out", immediateRender: false }, 1.349);
+      tl.to("#sat23", { opacity: 0, scale: 0.1, x: -86, y: 143, rotation: 126, duration: 0.24, ease: "power3.in" }, 2.762);
+      tl.fromTo("#sat24", { opacity: 0, x: -900, y: 0, rotation: -20, scale: 1.8 }, { opacity: 1, x: 0, y: 0, rotation: -5, scale: 1, duration: 0.22, ease: "power3.out", immediateRender: false }, 1.399);
+      tl.to("#sat24", { opacity: 0, scale: 0.1, x: -270, y: 155, rotation: 135, duration: 0.24, ease: "power3.in" }, 2.766);
+      tl.fromTo("#sat25", { opacity: 0, x: 900, y: 0, rotation: 16, scale: 1.8 }, { opacity: 1, x: 0, y: 0, rotation: 4, scale: 1, duration: 0.22, ease: "power3.out", immediateRender: false }, 1.449);
+      tl.to("#sat25", { opacity: 0, scale: 0.1, x: 486, y: -4, rotation: 144, duration: 0.24, ease: "power3.in" }, 2.77);
+      tl.fromTo("#sat26", { opacity: 0, x: 0, y: -1500, rotation: 52, scale: 1.8 }, { opacity: 1, x: 0, y: 0, rotation: 13, scale: 1, duration: 0.22, ease: "power3.out", immediateRender: false }, 1.498);
+      tl.to("#sat26", { opacity: 0, scale: 0.1, x: 248, y: 7, rotation: 153, duration: 0.24, ease: "power3.in" }, 2.774);
+      tl.fromTo("#sat27", { opacity: 0, x: 0, y: 1500, rotation: -48, scale: 1.8 }, { opacity: 1, x: 0, y: 0, rotation: -12, scale: 1, duration: 0.22, ease: "power3.out", immediateRender: false }, 1.547);
+      tl.to("#sat27", { opacity: 0, scale: 0.1, x: 65, y: 19, rotation: 128, duration: 0.24, ease: "power3.in" }, 2.778);
+      tl.fromTo("#sat28", { opacity: 0, x: -900, y: -1500, rotation: -12, scale: 1.8 }, { opacity: 1, x: 0, y: 0, rotation: -3, scale: 1, duration: 0.22, ease: "power3.out", immediateRender: false }, 1.595);
+      tl.to("#sat28", { opacity: 0, scale: 0.1, x: -119, y: -5, rotation: 137, duration: 0.24, ease: "power3.in" }, 2.782);
+      tl.fromTo("#sat29", { opacity: 0, x: 900, y: -1500, rotation: 24, scale: 1.8 }, { opacity: 1, x: 0, y: 0, rotation: 6, scale: 1, duration: 0.22, ease: "power3.out", immediateRender: false }, 1.643);
+      tl.to("#sat29", { opacity: 0, scale: 0.1, x: -302, y: 6, rotation: 146, duration: 0.24, ease: "power3.in" }, 2.786);
+      tl.fromTo("#sat30", { opacity: 0, x: -900, y: 1500, rotation: 60, scale: 1.8 }, { opacity: 1, x: 0, y: 0, rotation: 15, scale: 1, duration: 0.22, ease: "power3.out", immediateRender: false }, 1.691);
+      tl.to("#sat30", { opacity: 0, scale: 0.1, x: 454, y: -117, rotation: 155, duration: 0.24, ease: "power3.in" }, 2.79);
+      tl.fromTo("#sat31", { opacity: 0, x: 900, y: 1500, rotation: -40, scale: 1.8 }, { opacity: 1, x: 0, y: 0, rotation: -10, scale: 1, duration: 0.22, ease: "power3.out", immediateRender: false }, 1.739);
+      tl.to("#sat31", { opacity: 0, scale: 0.1, x: 270, y: -141, rotation: 130, duration: 0.24, ease: "power3.in" }, 2.794);
+      tl.fromTo("#sat32", { opacity: 0, x: -900, y: 0, rotation: -4, scale: 1.8 }, { opacity: 1, x: 0, y: 0, rotation: -1, scale: 1, duration: 0.22, ease: "power3.out", immediateRender: false }, 1.787);
+      tl.to("#sat32", { opacity: 0, scale: 0.1, x: 86, y: -130, rotation: 139, duration: 0.24, ease: "power3.in" }, 2.798);
+      tl.fromTo("#sat33", { opacity: 0, x: 900, y: 0, rotation: 32, scale: 1.8 }, { opacity: 1, x: 0, y: 0, rotation: 8, scale: 1, duration: 0.22, ease: "power3.out", immediateRender: false }, 1.834);
+      tl.to("#sat33", { opacity: 0, scale: 0.1, x: -97, y: -118, rotation: 148, duration: 0.24, ease: "power3.in" }, 2.802);
+      tl.fromTo("#sat34", { opacity: 0, x: 0, y: -1500, rotation: -68, scale: 1.8 }, { opacity: 1, x: 0, y: 0, rotation: -17, scale: 1, duration: 0.22, ease: "power3.out", immediateRender: false }, 1.881);
+      tl.to("#sat34", { opacity: 0, scale: 0.1, x: -281, y: -142, rotation: 123, duration: 0.24, ease: "power3.in" }, 2.806);
+      tl.fromTo("#sat35", { opacity: 0, x: 0, y: 1500, rotation: -32, scale: 1.8 }, { opacity: 1, x: 0, y: 0, rotation: -8, scale: 1, duration: 0.22, ease: "power3.out", immediateRender: false }, 1.928);
+      tl.to("#sat35", { opacity: 0, scale: 0.1, x: 475, y: -266, rotation: 132, duration: 0.24, ease: "power3.in" }, 2.81);
+      tl.fromTo("#sat36", { opacity: 0, x: -900, y: -1500, rotation: 4, scale: 1.8 }, { opacity: 1, x: 0, y: 0, rotation: 1, scale: 1, duration: 0.22, ease: "power3.out", immediateRender: false }, 1.975);
+      tl.to("#sat36", { opacity: 0, scale: 0.1, x: 292, y: -254, rotation: 141, duration: 0.24, ease: "power3.in" }, 2.814);
+      tl.fromTo("#sat37", { opacity: 0, x: 900, y: -1500, rotation: 40, scale: 1.8 }, { opacity: 1, x: 0, y: 0, rotation: 10, scale: 1, duration: 0.22, ease: "power3.out", immediateRender: false }, 2.022);
+      tl.to("#sat37", { opacity: 0, scale: 0.1, x: 108, y: -278, rotation: 150, duration: 0.24, ease: "power3.in" }, 2.818);
+      tl.fromTo("#sat38", { opacity: 0, x: -900, y: 1500, rotation: -60, scale: 1.8 }, { opacity: 1, x: 0, y: 0, rotation: -15, scale: 1, duration: 0.22, ease: "power3.out", immediateRender: false }, 2.068);
+      tl.to("#sat38", { opacity: 0, scale: 0.1, x: -76, y: -266, rotation: 125, duration: 0.24, ease: "power3.in" }, 2.822);
+      tl.fromTo("#sat39", { opacity: 0, x: 900, y: 1500, rotation: -24, scale: 1.8 }, { opacity: 1, x: 0, y: 0, rotation: -6, scale: 1, duration: 0.22, ease: "power3.out", immediateRender: false }, 2.114);
+      tl.to("#sat39", { opacity: 0, scale: 0.1, x: -259, y: -255, rotation: 134, duration: 0.24, ease: "power3.in" }, 2.826);
+      tl.fromTo("#h-agents", { opacity: 0, scale: 2.4 }, { opacity: 1, scale: 1, duration: 0.14, ease: "power4.in", immediateRender: false }, 1.36);
+      tl.to("#h-agents", { opacity: 0, scale: 0.85, duration: 0.18, ease: "power2.in" }, 2.67);
+      tl.fromTo("#h-q", { opacity: 0, scale: 3.0 }, { opacity: 1, scale: 1, duration: 0.14, ease: "power4.in", immediateRender: false }, 3.6);
+      tl.fromTo("#h-q", { rotation: -8 }, { rotation: 8, duration: 0.5, yoyo: true, repeat: 3, ease: "sine.inOut", immediateRender: false }, 3.75);
+      tl.to("#h-q", { opacity: 0, scale: 0.85, duration: 0.18, ease: "power2.in" }, 5.02);
+      tl.set("#vs", { opacity: 1 }, 5.12);
+      tl.fromTo("#vs-a", { opacity: 0, y: 120, scale: 0.4 }, { opacity: 1, y: 0, scale: 1, duration: 0.25, ease: "back.out(1.7)", immediateRender: false }, 5.76);
+      tl.fromTo("#vs-v", { opacity: 0, y: 0, scale: 2.5 }, { opacity: 1, y: 0, scale: 1, duration: 0.18, ease: "back.out(1.7)", immediateRender: false }, 6.8);
+      tl.fromTo("#vs-b", { opacity: 0, y: 120, scale: 0.4 }, { opacity: 1, y: 0, scale: 1, duration: 0.25, ease: "back.out(1.7)", immediateRender: false }, 7.28);
+      tl.to("#vs", { opacity: 0, y: -80, duration: 0.25 }, 9.42);
+      tl.fromTo("#titre", { opacity: 0, y: -60 }, { opacity: 1, y: 0, duration: 0.35, ease: "power3.out", immediateRender: false }, 9.62);
+      tl.fromTo("#niv1", { opacity: 0, scale: 2.0 }, { opacity: 1, scale: 1, duration: 0.16, ease: "power4.in", immediateRender: false }, 9.67);
+      tl.fromTo("#fl46", { opacity: 0.5 }, { opacity: 0, duration: 0.25, immediateRender: false }, 9.67);
+      tl.to("#niv1", { opacity: 0, scale: 0.85, duration: 0.18, ease: "power2.in" }, 11.17);
+      tl.fromTo("#mini1", { opacity: 0, y: -30, scale: 0.6 }, { opacity: 1, y: 0, scale: 1, duration: 0.25, ease: "back.out(1.7)", immediateRender: false }, 11.22);
+      tl.to("#mini1", { opacity: 0, scale: 0.85, duration: 0.18, ease: "power2.in" }, 19.44);
+      tl.fromTo("#niv2", { opacity: 0, scale: 2.0 }, { opacity: 1, scale: 1, duration: 0.16, ease: "power4.in", immediateRender: false }, 19.64);
+      tl.fromTo("#fl49", { opacity: 0.5 }, { opacity: 0, duration: 0.25, immediateRender: false }, 19.64);
+      tl.to("#niv2", { opacity: 0, scale: 0.85, duration: 0.18, ease: "power2.in" }, 21.14);
+      tl.fromTo("#mini2", { opacity: 0, y: -30, scale: 0.6 }, { opacity: 1, y: 0, scale: 1, duration: 0.25, ease: "back.out(1.7)", immediateRender: false }, 21.19);
+      tl.to("#mini2", { opacity: 0, scale: 0.85, duration: 0.18, ease: "power2.in" }, 33.02);
+      tl.fromTo("#niv3", { opacity: 0, scale: 2.0 }, { opacity: 1, scale: 1, duration: 0.16, ease: "power4.in", immediateRender: false }, 33.22);
+      tl.fromTo("#fl52", { opacity: 0.5 }, { opacity: 0, duration: 0.25, immediateRender: false }, 33.22);
+      tl.to("#niv3", { opacity: 0, scale: 0.85, duration: 0.18, ease: "power2.in" }, 34.72);
+      tl.fromTo("#mini3", { opacity: 0, y: -30, scale: 0.6 }, { opacity: 1, y: 0, scale: 1, duration: 0.25, ease: "back.out(1.7)", immediateRender: false }, 34.77);
+      tl.to("#mini3", { opacity: 0, scale: 0.85, duration: 0.18, ease: "power2.in" }, 54.89);
+      tl.to("#cine", { scale: 1.2, duration: 0.15, ease: "power4.out" }, 9.63);
+      tl.to("#cine", { scale: 1, duration: 0.5, ease: "power2.inOut" }, 10.17);
+      tl.to("#cine", { scale: 1.2, duration: 0.15, ease: "power4.out" }, 19.6);
+      tl.to("#cine", { scale: 1, duration: 0.5, ease: "power2.inOut" }, 20.14);
+      tl.to("#cine", { scale: 1.28, duration: 0.15, ease: "power4.out" }, 33.18);
+      tl.to("#cine", { scale: 1, duration: 0.5, ease: "power2.inOut" }, 33.72);
+      tl.fromTo("#chat", { opacity: 0, y: 120, scale: 0.7 }, { opacity: 1, y: 0, scale: 1, duration: 0.3, ease: "back.out(1.7)", immediateRender: false }, 13.27);
+      tl.fromTo("#b1", { opacity: 0, y: 40, scale: 0.6 }, { opacity: 1, y: 0, scale: 1, duration: 0.25, ease: "back.out(1.7)", immediateRender: false }, 13.77);
+      tl.fromTo("#b2", { opacity: 0, y: 40, scale: 0.6 }, { opacity: 1, y: 0, scale: 1, duration: 0.25, ease: "back.out(1.7)", immediateRender: false }, 15.7);
+      tl.to(["#b1", "#b2"], { y: -120, opacity: 0, duration: 0.3 }, 16.99);
+      tl.fromTo("#b3", { opacity: 0, y: 40, scale: 0.6 }, { opacity: 1, y: 0, scale: 1, duration: 0.25, ease: "back.out(1.7)", immediateRender: false }, 16.99);
+      tl.fromTo("#b4", { opacity: 0, y: 40, scale: 0.6 }, { opacity: 1, y: 0, scale: 1, duration: 0.25, ease: "back.out(1.7)", immediateRender: false }, 17.87);
+      tl.fromTo("#toi", { opacity: 0, scale: 2.6 }, { opacity: 1, scale: 1, duration: 0.14, ease: "power4.in", immediateRender: false }, 19.09);
+      tl.fromTo("#toi", { x: -10 }, { x: 10, duration: 0.04, repeat: 7, yoyo: true, ease: "none", immediateRender: false }, 19.24);
+      tl.to("#chat", { opacity: 0, scale: 0.85, duration: 0.18, ease: "power2.in" }, 19.47);
+      tl.to("#toi", { opacity: 0, scale: 0.85, duration: 0.18, ease: "power2.in" }, 19.47);
+      tl.fromTo("#flux", { opacity: 0, y: 120, scale: 0.7 }, { opacity: 1, y: 0, scale: 1, duration: 0.3, ease: "back.out(1.7)", immediateRender: false }, 23.11);
+      tl.fromTo("#nd0", { opacity: 0, y: 50, scale: 0.5 }, { opacity: 1, y: 0, scale: 1, duration: 0.2, ease: "back.out(1.7)", immediateRender: false }, 24.07);
+      tl.fromTo("#nd1", { opacity: 0, y: 50, scale: 0.5 }, { opacity: 1, y: 0, scale: 1, duration: 0.2, ease: "back.out(1.7)", immediateRender: false }, 24.22);
+      tl.fromTo("#nd2", { opacity: 0, y: 50, scale: 0.5 }, { opacity: 1, y: 0, scale: 1, duration: 0.2, ease: "back.out(1.7)", immediateRender: false }, 24.37);
+      tl.fromTo("#nd0-p", { opacity: 0, scale: 0.4, rotation: -10 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.28, ease: "back.out(2)", immediateRender: false }, 25.99);
+      tl.to("#nd0 .n-vide", { opacity: 0, duration: 0.1 }, 25.99);
+      tl.fromTo("#fl0-i", { scaleX: 0 }, { scaleX: 1, duration: 0.3, ease: "power2.out", immediateRender: false }, 27.47);
+      tl.fromTo("#nd1-p", { opacity: 0, scale: 0.4, rotation: -10 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.28, ease: "back.out(2)", immediateRender: false }, 27.67);
+      tl.to("#nd1 .n-vide", { opacity: 0, duration: 0.1 }, 27.67);
+      tl.fromTo("#fl1-i", { scaleX: 0 }, { scaleX: 1, duration: 0.3, ease: "power2.out", immediateRender: false }, 28.01);
+      tl.fromTo("#nd2-p", { opacity: 0, scale: 0.4, rotation: -10 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.28, ease: "back.out(2)", immediateRender: false }, 28.21);
+      tl.to("#nd2 .n-vide", { opacity: 0, duration: 0.1 }, 28.21);
+      tl.set("#jeton", { opacity: 1, x: 0 }, 31.23);
+      tl.to("#jeton", { x: 600, duration: 1.0, ease: "none", repeat: 1 }, 31.23);
+      tl.set("#jeton", { opacity: 0 }, 33.28);
+      tl.to("#flux .f-tete", { opacity: 0, duration: 0.1 }, 32.67);
+      tl.fromTo("#fixe", { opacity: 0, scale: 1.8 }, { opacity: 1, scale: 1, duration: 0.14, ease: "power4.in", immediateRender: false }, 32.67);
+      tl.to("#flux", { opacity: 0, scale: 0.85, duration: 0.18, ease: "power2.in" }, 33.05);
+      tl.to("#fixe", { opacity: 0, scale: 0.85, duration: 0.18, ease: "power2.in" }, 33.05);
+      tl.fromTo("#diff", { opacity: 0, scale: 2.6 }, { opacity: 1, scale: 1, duration: 0.14, ease: "power4.in", immediateRender: false }, 37.98);
+      tl.fromTo("#diff", { skewX: -14 }, { skewX: 0, duration: 0.3, ease: "power2.out", immediateRender: false }, 37.98);
+      tl.to("#diff", { opacity: 0, scale: 0.85, duration: 0.18, ease: "power2.in" }, 38.36);
+      tl.fromTo("#agent", { opacity: 0, y: 120, scale: 0.7 }, { opacity: 1, y: 0, scale: 1, duration: 0.3, ease: "back.out(1.7)", immediateRender: false }, 38.71);
+      tl.to("#cine", { scale: 1.18, duration: 0.15, ease: "power4.out" }, 39.15);
+      tl.to("#cine", { scale: 1, duration: 0.5, ease: "power2.inOut" }, 39.69);
+      tl.fromTo("#a-dec", { opacity: 0, y: 30, scale: 0.6 }, { opacity: 1, y: 0, scale: 1, duration: 0.22, ease: "back.out(1.7)", immediateRender: false }, 40.41);
+      tl.fromTo("#et0", { opacity: 0, y: 40, scale: 0.6 }, { opacity: 1, y: 0, scale: 1, duration: 0.2, ease: "back.out(1.7)", immediateRender: false }, 40.81);
+      tl.fromTo("#et1", { opacity: 0, y: 40, scale: 0.6 }, { opacity: 1, y: 0, scale: 1, duration: 0.2, ease: "back.out(1.7)", immediateRender: false }, 40.99);
+      tl.fromTo("#et2", { opacity: 0, y: 40, scale: 0.6 }, { opacity: 1, y: 0, scale: 1, duration: 0.2, ease: "back.out(1.7)", immediateRender: false }, 41.17);
+      tl.fromTo("#et3", { opacity: 0, y: 40, scale: 0.6 }, { opacity: 1, y: 0, scale: 1, duration: 0.2, ease: "back.out(1.7)", immediateRender: false }, 41.35);
+      tl.to("#obj-q", { opacity: 0, duration: 0.12 }, 44.65);
+      tl.fromTo("#obj-v", { opacity: 0, x: 40 }, { opacity: 1, x: 0, duration: 0.3, ease: "power3.out", immediateRender: false }, 44.65);
+      tl.to("#et0-t", { opacity: 0, duration: 0.1 }, 47.15);
+      tl.fromTo("#et0-v", { opacity: 0, x: 30 }, { opacity: 1, x: 0, duration: 0.25, ease: "power3.out", immediateRender: false }, 47.15);
+      tl.to("#et0-c", { backgroundColor: "#34D399", borderColor: "#0B1220", duration: 0.1 }, 47.5);
+      tl.fromTo("#et0-c", { scale: 1.6 }, { scale: 1, duration: 0.25, ease: "back.out(2)", immediateRender: false }, 47.5);
+      tl.fromTo("#et0", { backgroundColor: "rgba(52,211,153,0.35)" }, { backgroundColor: "rgba(255,255,255,0)", duration: 0.6, immediateRender: false }, 47.5);
+      tl.to("#et1-t", { opacity: 0, duration: 0.1 }, 48.59);
+      tl.fromTo("#et1-v", { opacity: 0, x: 30 }, { opacity: 1, x: 0, duration: 0.25, ease: "power3.out", immediateRender: false }, 48.59);
+      tl.to("#et1-c", { backgroundColor: "#34D399", borderColor: "#0B1220", duration: 0.1 }, 48.94);
+      tl.fromTo("#et1-c", { scale: 1.6 }, { scale: 1, duration: 0.25, ease: "back.out(2)", immediateRender: false }, 48.94);
+      tl.fromTo("#et1", { backgroundColor: "rgba(52,211,153,0.35)" }, { backgroundColor: "rgba(255,255,255,0)", duration: 0.6, immediateRender: false }, 48.94);
+      tl.to("#et2-t", { opacity: 0, duration: 0.1 }, 51.07);
+      tl.fromTo("#et2-v", { opacity: 0, x: 30 }, { opacity: 1, x: 0, duration: 0.25, ease: "power3.out", immediateRender: false }, 51.07);
+      tl.to("#et2-c", { backgroundColor: "#34D399", borderColor: "#0B1220", duration: 0.1 }, 51.42);
+      tl.fromTo("#et2-c", { scale: 1.6 }, { scale: 1, duration: 0.25, ease: "back.out(2)", immediateRender: false }, 51.42);
+      tl.fromTo("#et2", { backgroundColor: "rgba(52,211,153,0.35)" }, { backgroundColor: "rgba(255,255,255,0)", duration: 0.6, immediateRender: false }, 51.42);
+      tl.to("#et3-t", { opacity: 0, duration: 0.1 }, 52.91);
+      tl.fromTo("#et3-v", { opacity: 0, x: 30 }, { opacity: 1, x: 0, duration: 0.25, ease: "power3.out", immediateRender: false }, 52.91);
+      tl.to("#et3-c", { backgroundColor: "#34D399", borderColor: "#0B1220", duration: 0.1 }, 53.26);
+      tl.fromTo("#et3-c", { scale: 1.6 }, { scale: 1, duration: 0.25, ease: "back.out(2)", immediateRender: false }, 53.26);
+      tl.fromTo("#et3", { backgroundColor: "rgba(52,211,153,0.35)" }, { backgroundColor: "rgba(255,255,255,0)", duration: 0.6, immediateRender: false }, 53.26);
+      tl.to("#a-dec", { opacity: 0, duration: 0.1 }, 54.15);
+      tl.fromTo("#fait", { opacity: 0, scale: 1.8 }, { opacity: 1, scale: 1, duration: 0.14, ease: "power4.in", immediateRender: false }, 54.15);
+      tl.to("#agent", { opacity: 0, scale: 0.85, duration: 0.18, ease: "power2.in" }, 54.87);
+      tl.to("#fait", { opacity: 0, scale: 0.85, duration: 0.18, ease: "power2.in" }, 54.87);
+      tl.fromTo("#revo", { opacity: 0, scale: 2.6 }, { opacity: 1, scale: 1, duration: 0.14, ease: "power4.in", immediateRender: false }, 56.52);
+      tl.fromTo("#fl62", { opacity: 0.6 }, { opacity: 0, duration: 0.25, immediateRender: false }, 56.52);
+      tl.to("#cine", { scale: 1.25, duration: 0.15, ease: "power4.out" }, 56.48);
+      tl.to("#cine", { scale: 1, duration: 0.5, ease: "power2.inOut" }, 57.02);
+      tl.to("#revo", { scale: 0.6, y: -120, duration: 0.35, ease: "power3.inOut" }, 56.87);
+      tl.set("#av", { opacity: 1 }, 56.97);
+      tl.fromTo("#av-a", { opacity: 0, y: 50, scale: 0.6 }, { opacity: 1, y: 0, scale: 1, duration: 0.25, ease: "back.out(1.7)", immediateRender: false }, 58.33);
+      tl.fromTo("#av-f", { opacity: 0, y: 0, scale: 0.3 }, { opacity: 1, y: 0, scale: 1, duration: 0.2, ease: "back.out(1.7)", immediateRender: false }, 58.89);
+      tl.fromTo("#av-b", { opacity: 0, y: 50, scale: 0.6 }, { opacity: 1, y: 0, scale: 1, duration: 0.25, ease: "back.out(1.7)", immediateRender: false }, 60.09);
+      tl.fromTo("#av-b", { boxShadow: "0 0 0px rgba(242,183,5,0)" }, { boxShadow: "0 0 80px rgba(242,183,5,0.9)", duration: 0.5, yoyo: true, repeat: 3, immediateRender: false }, 60.29);
+      tl.fromTo("#fondu", { opacity: 0 }, { opacity: 1, duration: 0.45, immediateRender: false }, 61.1);
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>
