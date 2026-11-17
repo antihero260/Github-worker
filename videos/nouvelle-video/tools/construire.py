@@ -478,6 +478,14 @@ BROLL = [("v-lasers.mp4", "vertical", W(22) - 0.05, W(24) - 0.05),
          ("robot-yeux.mp4", "plein", W(264) + 0.2, W(287) - 0.08),
          ("v-business.mp4", "vertical", W(363), W(381) - 0.1),
          ("v-gratte-ciel.mp4", "vertical", W(427) - 0.05, W(435) - 0.05),
+         # demande : encore plus de vidéos verticales (Mixkit 1080×1920), placées là où aucune animation importante n'est cachée
+         ("v-clavier.mp4", "vertical", W(191) - 0.03, W(195) - 0.02),          # « vous définissez une série d'actions »
+         ("v-code.mp4", "vertical", W(250) - 0.03, W(252) + 0.05),             # « l'IA exécute simplement »
+         ("v-vr.mp4", "vertical", W(287) - 0.04, W(289) - 0.08),               # « ici c'est différent »
+         ("v-messages.mp4", "vertical", W(381) - 0.05, W(383) + 0.28),         # « il peut consulter vos mails »
+         ("v-lunettes-ordi.mp4", "vertical", W(386) + 0.55, W(408) - 0.15),    # « analyser les anciens échanges »
+         ("v-macbook.mp4", "vertical", W(410) - 0.05, W(413) + 0.25),          # « votre calendrier et vous préparer »
+         ("v-appareils.mp4", "vertical", W(451) + 0.25, W(455) - 0.05),        # « passer d'une IA qui »
          ("v-ferme-laptop.mp4", "vertical", W(465) + 0.15, FIN)]
 # GESTE : paumes ouvertes vers le haut sur « les agents IA » → un écran (vidéo du robot) naît dans les mains, puis zoom jusqu'au plein écran
 t_m = W(262) + 0.05
@@ -699,7 +707,7 @@ page = f"""<!doctype html>
 {NL.join("      " + f for f in FOND_HTML)}
 {NL.join("      " + m for m in MO_HTML)}
       <div id="cine"><div id="pousse"><div id="cam"><div id="coupe">
-        <video id="perso" class="clip" src="assets/perso.webm" data-start="0" data-duration="{r(FIN_VOIX)}" data-media-start="0" data-track-index="1" muted playsinline></video>
+        <video id="perso" class="clip" src="assets/perso-retouche.webm" data-start="0" data-duration="{r(FIN_VOIX)}" data-media-start="0" data-track-index="1" muted playsinline></video>
       </div></div></div></div>
       <audio id="voix" src="assets/voix-forte.wav" data-start="0" data-duration="{r(FIN_VOIX)}" data-volume="1" data-track-index="2"></audio>
 {NL.join("      " + h for h in HTML)}
