@@ -227,13 +227,13 @@ MODELES = [("claude", "Claude", "logo-claude.svg", '<video id="lv-claude" class=
            ("chatgpt", "ChatGPT", "logo-chatgpt.svg", CHAT),
            ("gemini", "Gemini", "logo-gemini.svg", '<video id="lv-gemini" class="clip" src="assets/captures/modele-gemini.mp4" data-start="{a}" data-duration="{d}" data-media-start="0" data-track-index="10" muted playsinline></video>'),
            ("grok", "Grok", "logo-grok.svg", '<video id="lv-grok" class="clip" src="assets/captures/modele-grok.mp4" data-start="{a}" data-duration="{d}" data-media-start="0" data-track-index="11" muted playsinline></video>')]
-GRILLE = [(265, 440), (815, 440), (265, 700), (815, 700)]
+GRILLE = [(265, 480), (815, 480), (265, 740), (815, 740)]
 L_FIN = T(78) - 0.1
 for k, (cle_, nom, logo, contenu) in enumerate(MODELES):
     s0 = 19.72 + 0.12 * k          # naissance au bout du doigt
     lag = 0.07 * k                 # chaque carte suit le doigt avec un petit retard : une file
     contenu = contenu.format(a=r(s0), d=r(L_FIN - s0 + 0.05))
-    MAINS.append(f'<div id="lm-{cle_}" class="liste-mod" style="opacity: 0"><div class="lm-ecran">{contenu}</div>'
+    HTML.append(f'<div id="lm-{cle_}" class="liste-mod" style="opacity: 0"><div class="lm-ecran">{contenu}</div>'
                  f'<div class="lm-nom"><img src="assets/img/{logo}" alt="" />{nom}</div>'
                  f'<b id="lm-ok-{cle_}" class="lm-tampon ok" style="opacity: 0">CODE ✓</b><b id="lm-ko-{cle_}" class="lm-tampon ko" style="opacity: 0">VIDÉO ✗</b></div>')
     x, y = doigt(s0 - lag)
@@ -265,8 +265,8 @@ j('tl.to("#pousse", { x: 0, duration: 0.8, ease: "sine.inOut" }, 21.2);')
 # ================================================================ 7. HyperFrames intervient : références + code → vidéo
 HTML.append('<div id="sch" class="schema" style="opacity: 0"><div id="s1" class="bloc" style="opacity: 0">RÉFÉRENCES</div><i id="s2" style="opacity: 0">+</i>'
             '<div id="s3" class="bloc" style="opacity: 0">CODE</div><i id="s4" style="opacity: 0">→</i>'
-            f'<div id="s5" class="bloc vid" style="opacity: 0"><video id="sch-v" class="clip" src="assets/exemples/enveloppes.mp4" data-start="{r(T(98))}" '
-            f'data-duration="{r(T(103) - T(98))}" data-media-start="0.5" data-track-index="9" muted playsinline></video></div></div>')
+            f'<div id="s5" class="bloc vid" style="opacity: 0"><video id="sch-v" class="clip" src="assets/exemples/enveloppes.mp4" data-start="{r(T(88))}" '
+            f'data-duration="{r(T(99) - T(88))}" data-media-start="0.5" data-track-index="9" muted playsinline></video></div></div>')
 j(f'tl.set("#sch", {{ opacity: 1 }}, {r(T(85))});')
 for sel, t in (("#s5", T(88)), ("#s1", T(94)), ("#s2", T(96)), ("#s3", T(98)), ("#s4", T(98) + 0.25)):
     apparait(sel, t, 40, 0.4, 0.18)
@@ -359,7 +359,7 @@ dans_la_main("mo2", '<b class="m-txt">GAME<br>CHANGER</b>', t, hx, hy, T(48) - 0
 t, hx, hy = geste(18.87)
 dans_la_main("mo3", '<b class="m-txt q">?</b>', t, hx, hy, 19.55, zoom=False)
 t, hx, hy = geste(22.93)
-dans_la_main("mo4", '<b class="m-code">&lt;/&gt;</b>', t, hx, hy, T(78) - 0.1)
+dans_la_main("mo4", '<b class="m-code">&lt;/&gt;</b>', t, hx, hy, T(78) - 0.1, zoom=False)
 t, hx, hy = geste(28.27)
 dans_la_main("mo5", '<img src="assets/img/logo-heygen.png" alt="" class="m-logo rond" />', t, hx, hy, T(94) - 0.1)
 t, hx, hy = geste(31.4)
