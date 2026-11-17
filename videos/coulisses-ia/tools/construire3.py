@@ -172,31 +172,46 @@ j(f'tl.fromTo("#hc-envoi", {{ scale: 1 }}, {{ scale: 1.5, duration: 0.08, yoyo: 
 son(T(1) - 0.12, "pop-click", 0.36, "envoyer")
 j(f'tl.set("#h-chat", {{ opacity: 0 }}, {r(T(1))});')
 # plans sans texte incrusté (sinon leurs sous-titres se mélangent aux nôtres) : son edit Claude, grille rétro, route néon, tunnel
-RES = [("assets/exemples/edit-claude.mp4", False, 0.1), ("assets/magie/retro-soleil.mp4", False, 1.0), ("assets/exemples/edit-claude.mp4", False, 1.3),
-       ("assets/fonds/neon-3d-route.mp4", False, 0.5), ("assets/accroche/passage-cercles.mp4", False, 1.2), ("assets/exemples/edit-claude.mp4", False, 2.6)]
-for k, (src, centre, dep) in enumerate(RES):
-    t0 = T(1 + k)
-    t1 = T(2 + k) if k < 5 else T(7) + 0.3
-    HTML.append(f'<div id="h{k}" class="plein" style="opacity: 0"><video id="h{k}-v" class="clip{" mg-zoom" if centre else ""}" src="{src}" data-start="{r(t0)}" '
-                f'data-duration="{r(t1 - t0 + 0.04)}" data-media-start="{dep}" data-track-index="{5 + k % 3}" muted playsinline></video></div>')
-    j(f'tl.set("#h{k}", {{ opacity: 1 }}, {r(t0)});')
-    j(f'tl.fromTo("#h{k}", {{ scale: 1.45, rotation: {(-4, 3, -3, 4, -2, 2)[k]} }}, {{ scale: 1.04, rotation: 0, duration: {r(max(0.18, t1 - t0))}, ease: "power3.out", immediateRender: false }}, {r(t0)});')
-    j(f'tl.fromTo("#h{k}", {{ x: -24 }}, {{ x: 24, duration: 0.04, repeat: 3, yoyo: true, ease: "none", immediateRender: false }}, {r(t0)});')
-    if k < 5:
-        j(f'tl.set("#h{k}", {{ opacity: 0 }}, {r(t1)});')
-    flash(t0, 0.6)
-    son(t0, tour(["glitch-court", "whoosh-cine", "impact-whoosh", "glitch-mini", "swoosh-court", "zoom-impact"]), 0.2, f"accroche résultat {k}")
+# SATURATION : des vidéos arrivent de tous les côtés, dans toutes les positions, jusqu'à remplir l'écran
+TUILES = [("assets/exemples/edit-claude.mp4", 1), ("assets/magie/retro-soleil.mp4", 0), ("assets/exemples/site-3d-vertical.mp4", 1),
+          ("assets/accroche/supernova.mp4", 0), ("assets/exemples/enveloppes.mp4", 1), ("assets/fonds/neon-3d-route.mp4", 0),
+          ("assets/exemples/salaire-15.mp4", 1), ("assets/accroche/passage-cercles.mp4", 0), ("assets/exemples/classement-ia-vertical.mp4", 1),
+          ("assets/accroche/neon-violet-3d.mp4", 0), ("assets/exemples/tontine-epargne.mp4", 1), ("assets/accroche/planete-rocheuse.mp4", 0),
+          ("assets/exemples/liste-depenser-moins.mp4", 1), ("assets/accroche/explosion-particules.mp4", 0), ("assets/exemples/effet-levier.mp4", 1),
+          ("assets/accroche/lasers.mp4", 0), ("assets/exemples/site-anime-vertical.mp4", 1), ("assets/accroche/nebuleuse.mp4", 0),
+          ("assets/exemples/edit-claude.mp4", 1), ("assets/magie/retro-soleil.mp4", 0)]
+# points d'arrivée qui couvrent tout l'écran (centres), tailles et rotations variées
+ARR = [(540, 960), (230, 420), (850, 380), (200, 1380), (880, 1420), (540, 560), (520, 1500), (180, 820), (900, 900), (380, 1160),
+       (720, 1180), (540, 240), (260, 1720), (840, 1740), (130, 300), (960, 160), (640, 780), (420, 680), (760, 1560), (340, 1000)]
+DIRS = [(-1, 0), (1, 0), (0, -1), (0, 1), (-1, -1), (1, -1), (-1, 1), (1, 1)]
+t_s0, t_s1 = T(1), T(6)
+for k, (src, vert) in enumerate(TUILES):
+    w = (300 + (k * 37) % 120) if vert else (440 + (k * 53) % 140)
+    h = round(w * 16 / 9) if vert else round(w * 9 / 16)
+    cx, cy = ARR[k]
+    dx, dy = DIRS[k % 8]
+    rot = ((k * 47) % 50) - 25
+    t0 = t_s0 + (t_s1 - t_s0) * (k / len(TUILES)) ** 0.85
+    HTML.append(f'<div id="ht{k}" class="h-tuile" style="left: {cx - w // 2}px; top: {cy - h // 2}px; width: {w}px; height: {h}px; opacity: 0">'
+                f'<video id="ht{k}-v" class="clip" src="{src}" data-start="{r(t0)}" data-duration="{r(T(7) + 0.4 - t0)}" data-media-start="{0.3 + (k % 5) * 0.5}" '
+                f'data-track-index="{40 + k}" muted playsinline></video></div>')
+    j(f'tl.set("#ht{k}", {{ opacity: 1 }}, {r(t0)});')
+    j(f'tl.fromTo("#ht{k}", {{ x: {dx * 1300}, y: {dy * 2100}, rotation: {rot * 3}, scale: 1.6 }}, '
+      f'{{ x: 0, y: 0, rotation: {rot}, scale: 1, duration: 0.3, ease: "power3.out", immediateRender: false }}, {r(t0)});')
+    if k % 2 == 0:
+        son(t0, tour(["whoosh-cine", "swoosh-court", "glitch-court", "whoosh-pop", "souffle-rapide", "balaie-rapide"]), 0.14, f"vidéo {k} arrive")
+    # aspirées dans la main
+    j(f'tl.to("#ht{k}", {{ x: {380 - cx}, y: {1600 - cy}, scale: 0.03, rotation: {rot + 180}, duration: 0.3, ease: "power3.in" }}, {r(T(7) - 0.05 + 0.012 * k)});')
+    j(f'tl.set("#ht{k}", {{ opacity: 0 }}, {r(T(7) + 0.3 + 0.012 * k)});')
 HTML.append('<div id="h-tag" class="slam" data-layout-allow-overlap style="top: 760px; z-index: 13; opacity: 0">1 PROMPT<br>= 1 VIDÉO</div>')
-claque("#h-tag", T(1) + 0.02, 2.4)
-cache("#h-tag", T(6))
-son(T(1), "trailer-impact", 0.22, "les résultats explosent")
-# la dernière vidéo rétrécit et rentre dans la main (en bas), on découvre la personne
-j(f'tl.to("#h5", {{ scale: 0.04, y: 760, rotation: 25, duration: 0.32, ease: "power3.in" }}, {r(T(7) - 0.02)});')
-j(f'tl.set("#h5", {{ opacity: 0 }}, {r(T(7) + 0.31)});')
+claque("#h-tag", T(2), 2.4)
+cache("#h-tag", T(7) - 0.06)
+son(T(1), "trailer-impact", 0.22, "les vidéos déferlent")
+son(T(1), "swell-court", 0.24, "saturation")
 HTML.append('<div id="h-eclat" class="mg-eclat" style="opacity: 0"></div>')
-j(f'tl.set("#h-eclat", {{ x: 380, y: 1560 }}, {r(T(7) + 0.28)});')
+j(f'tl.set("#h-eclat", {{ x: 220, y: 1440 }}, {r(T(7) + 0.28)});')
 j(f'tl.fromTo("#h-eclat", {{ opacity: 1, scale: 0.3 }}, {{ opacity: 0, scale: 1.8, duration: 0.45, ease: "power2.out", immediateRender: false }}, {r(T(7) + 0.28)});')
-son(T(7) - 0.02, "rembobine-magie", 0.3, "la rafale rentre dans la main")
+son(T(7) - 0.05, "aspiration", 0.32, "les vidéos sont aspirées dans la main")
 son(T(7) + 0.3, "impact-basse", 0.28, "retour face caméra")
 
 # ================================================================ 3. « certains d'entre vous m'ont contacté » : messages reçus
@@ -778,6 +793,8 @@ CSS = f"""
       .rl-carte.grille {{ position: absolute; width: 300px; height: 210px; margin: 0; }}
       .rl-cadre {{ position: absolute; left: 380px; top: 20px; width: 320px; height: 260px; border: 10px solid #F2B705; border-radius: 38px; box-shadow: 0 0 40px rgba(242,183,5,0.7); }}
       .gm-sel {{ position: absolute; left: 0; top: 0; width: 320px; height: 230px; border: 10px solid #F2B705; border-radius: 36px; box-shadow: 0 0 40px rgba(242,183,5,0.7); z-index: 12; }}
+      .h-tuile {{ position: absolute; z-index: 12; border-radius: 22px; overflow: hidden; border: 6px solid #fff; box-shadow: 0 24px 70px rgba(0,0,0,0.7); background: #000; }}
+      .h-tuile video {{ width: 100%; height: 100%; object-fit: cover; }}
       .h-chat {{ background: radial-gradient(ellipse 80% 60% at 50% 45%, #2a2824 0%, #141311 80%); }}
       .hc-boite {{ position: absolute; left: 50px; right: 50px; top: 820px; height: 190px; border-radius: 95px; background: #2f2d29; border: 5px solid #6b665c;
         display: flex; align-items: center; gap: 26px; padding: 0 30px 0 40px; box-shadow: 0 30px 90px rgba(0,0,0,0.6); }}
