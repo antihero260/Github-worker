@@ -1,0 +1,461 @@
+<!doctype html>
+<html lang="fr" data-resolution="landscape">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "Manrope"; src: url("assets/fonts/manrope-latin.woff2") format("woff2"); font-weight: 200 800; unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215; }
+      @font-face { font-family: "Manrope"; src: url("assets/fonts/manrope-latin-ext.woff2") format("woff2"); font-weight: 200 800; unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF; }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1920px; height: 1080px; overflow: hidden; background: #05070d; font-family: "Manrope", sans-serif; }
+      .plan { position: absolute; inset: 0; overflow: hidden; background: #05070d; }
+      .plein { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+      .floute { filter: blur(6px) brightness(0.8); transform: scale(1.06); }
+      .fondflou { position: absolute; inset: -40px; width: calc(100% + 80px); height: calc(100% + 80px); object-fit: cover; filter: blur(34px) brightness(0.45) saturate(1.2); }
+      .cadre { position: absolute; left: 0; top: 196px; width: 1080px; height: 608px; overflow: hidden; box-shadow: 0 40px 120px rgba(0,0,0,0.6); }
+      .cadre .net { width: 100%; height: 100%; object-fit: cover; }
+      .voile { position: absolute; inset: 0; opacity: 0; background: linear-gradient(180deg, rgba(5,7,13,0.55), rgba(5,7,13,0.25) 45%, rgba(5,7,13,0.7)); }
+      .voile.fort { background: rgba(5,7,13,0.62); }
+      .flash { position: absolute; inset: 0; opacity: 0; pointer-events: none; z-index: 40; }
+      .fond-marque { position: absolute; inset: 0; background: radial-gradient(ellipse 70% 60% at 50% 45%, #14205a 0%, #05070d 70%); z-index: 20; }
+      .fond-blanc { position: absolute; inset: 0; background: #fff; overflow: hidden; z-index: 5; }
+      .mains { position: absolute; left: -300px; top: 140px; width: 1300px; }
+      .partenaire { position: absolute; right: 120px; top: 560px; width: 620px; text-align: center; }
+      .partenaire span { display: block; font-size: 40px; font-weight: 700; color: #0b6b3a; letter-spacing: 1px; margin-bottom: 20px; }
+      .partenaire img { width: 440px; }
+      .logo-centre { position: absolute; left: 50%; top: 38%; width: 640px; margin-left: -320px; margin-top: -130px; z-index: 22;
+        box-shadow: 0 0 80px rgba(31,75,255,0.55); border-radius: 26px; }
+      .ligne { position: absolute; left: 50%; top: 80%; transform: scaleX(0); width: 600px; margin-left: -300px; height: 6px; border-radius: 3px; background: #1f4bff; z-index: 22; transform-origin: 50% 50%; }
+      .txt { position: absolute; left: 0; right: 0; text-align: center; color: #fff; z-index: 25; padding: 0 90px; }
+      .t-ouv { font-size: 110px; font-weight: 800; letter-spacing: 6px; line-height: 1; perspective: 600px; }
+      .bleu { color: #4f74ff; }
+      .t-titre { font-size: 104px; font-weight: 800; line-height: 1.08; text-shadow: 0 10px 50px rgba(0,0,0,0.6); perspective: 600px; }
+      .t-sous { font-size: 54px; font-weight: 600; color: #dfe6ff; text-shadow: 0 6px 30px rgba(0,0,0,0.7); }
+      .t-date { font-size: 38px; font-weight: 500; color: #fff; line-height: 1.4; }
+      .t-date b { display: inline-block; font-weight: 800; color: #05070d; background: #fff; padding: 4px 22px; border-radius: 10px; margin-bottom: 10px; }
+      .t-etiq { font-size: 40px; font-weight: 800; letter-spacing: 8px; color: #FFC000; }
+      .carte-pan { position: absolute; z-index: 26; display: flex; left: 260px; top: 250px; width: 1400px; align-items: center; gap: 60px; }
+      .carte-pan > img { width: 420px; height: 540px; object-fit: cover; border-radius: 28px; border: 8px solid #fff; box-shadow: 0 30px 90px rgba(0,0,0,0.6); }
+      .carte-pan b { display: block; font-size: 84px; font-weight: 800; color: #fff; line-height: 1.05; }
+      .carte-pan span { display: block; margin-top: 18px; font-size: 44px; font-weight: 600; color: #dfe6ff; line-height: 1.25; }
+      .carte-pan em { display: inline-block; margin-top: 30px; background: #fff; border-radius: 16px; padding: 12px 24px; border-left: 10px solid #FFC000; }
+      .carte-pan em img { height: 70px; display: block; }
+      .t-moment { left: 70px; right: auto; bottom: 90px; text-align: left; font-size: 64px; font-weight: 800; padding: 0; }
+      .t-moment i { font-style: normal; display: inline-block; margin-right: 26px; padding: 6px 22px; border-radius: 14px; background: #1f4bff; color: #fff; }
+      .t-message { font-size: 96px; font-weight: 800; line-height: 1.1; text-shadow: 0 10px 50px rgba(0,0,0,0.7); perspective: 600px; }
+      .bleu-clair { color: #a9bcff; }
+      .t-merci { font-size: 200px; font-weight: 800; letter-spacing: 12px; text-shadow: 0 14px 60px rgba(0,0,0,0.6); perspective: 600px; }
+      .entete { position: absolute; left: 0; right: 0; top: 120px; text-align: center; z-index: 30; }
+      .entete img { width: 380px; border-radius: 18px; box-shadow: 0 10px 40px rgba(0,0,0,0.5); }
+      .entete span { display: block; margin-top: 22px; font-size: 40px; font-weight: 700; color: #fff; letter-spacing: 1px; }
+      .pied { position: absolute; left: 0; right: 0; top: 1560px; text-align: center; z-index: 30; font-size: 46px; font-weight: 800; color: #dfe6ff; padding: 0 60px; }
+      .bande { position: absolute; left: 0; right: 0; height: 110px; background: #000; z-index: 35; }
+      .t-ouv.petit { font-size: 64px; letter-spacing: 10px; }
+      .partenaire em { display: block; margin-top: 26px; font-style: normal; font-size: 30px; font-weight: 700; color: #05070d; }
+      .trio { position: absolute; z-index: 26; display: flex; left: 120px; right: 120px; top: 250px; gap: 50px; justify-content: center; }
+      .tr-carte { flex: 1; text-align: center;  }
+      .tr-carte img { width: 440px; height: 520px; object-fit: cover; border-radius: 26px; border: 7px solid #fff; box-shadow: 0 26px 80px rgba(0,0,0,0.6);  }
+      .tr-carte b { display: block; margin-top: 22px; font-size: 52px; font-weight: 800; color: #fff; line-height: 1.05;  }
+      .tr-carte span { display: block; margin-top: 10px; font-size: 30px; font-weight: 600; color: #dfe6ff; line-height: 1.25;  }
+      .t-etiq b { color: #fff; }
+      .motcle { position: absolute; left: 0; right: 0; top: 40%; text-align: center; z-index: 27; padding: 0 60px;
+        font-size: 120px; font-weight: 800; letter-spacing: 4px; color: #fff; line-height: 1.05;
+        text-shadow: 0 0 2px #000, 0 8px 0 rgba(31,75,255,0.9), 0 20px 60px rgba(0,0,0,0.75); }
+      .logo-equipe { position: absolute; left: 50%; top: 14%; width: 420px; margin-left: -210px; z-index: 26; border-radius: 20px;
+        box-shadow: 0 0 60px rgba(31,75,255,0.6); }
+      .t-fin { font-size: 38px; font-weight: 600; color: #c9d3ff; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="45.914" data-width="1920" data-height="1080">
+      <div id="s1" class="fond-marque"></div>
+      <img id="logo1" class="logo-centre" src="assets/img/logo-recadre.png" alt="" style="opacity: 0" />
+      <div id="tx2" class="txt t-ouv petit" style="opacity: 0; top: 64%;">CONFÉRENCE JE-FPA 2026</div>
+      <div id="p1" class="plan" style="opacity: 0"><video id="p1-plein" class="clip plein" src="assets/plans/s-P0.mp4" data-start="2.087" data-duration="0.823" data-media-start="0.1" data-track-index="3" muted playsinline></video></div>
+      <div id="p2" class="plan" style="opacity: 0"><video id="p2-plein" class="clip plein" src="assets/plans/s-Q0.mp4" data-start="2.87" data-duration="0.822" data-media-start="0.1" data-track-index="4" muted playsinline></video></div>
+      <div id="p3" class="plan" style="opacity: 0"><video id="p3-plein" class="clip plein" src="assets/plans/s-K0.mp4" data-start="3.652" data-duration="0.562" data-media-start="0.1" data-track-index="5" muted playsinline></video></div>
+      <div id="mt6" class="txt t-titre" style="top: 38%;"><span id="mt6-0" style="display: inline-block; opacity: 0">Du</span> <span id="mt6-1" style="display: inline-block; opacity: 0">CV</span> <span id="mt6-2" style="display: inline-block; opacity: 0">au</span> <span id="mt6-3" style="display: inline-block; opacity: 0">«</span> <span id="mt6-4" style="display: inline-block; opacity: 0">Vous</span> <span id="mt6-5" style="display: inline-block; opacity: 0">êtes</span> <span id="mt6-6" style="display: inline-block; opacity: 0">retenu(e)</span> <span id="mt6-7" style="display: inline-block; opacity: 0">»</span></div>
+      <div id="voile1" class="voile"></div>
+      <div id="fl8" class="flash" style="background: #ffe2a8"></div>
+      <div id="p4" class="plan" style="opacity: 0"><video id="p4-plein" class="clip plein" src="assets/plans/s-N0.mp4" data-start="4.174" data-duration="0.823" data-media-start="0.1" data-track-index="6" muted playsinline></video></div>
+      <div id="fl10" class="flash" style="background: #ffe2a8"></div>
+      <div id="p5" class="plan" style="opacity: 0"><img class="plein" src="assets/plans/panel-photo.jpg" alt="" /></div>
+      <div id="p6" class="plan" style="opacity: 0"><video id="p6-plein" class="clip plein" src="assets/plans/s-D0.mp4" data-start="5.739" data-duration="0.562" data-media-start="0.1" data-track-index="2" muted playsinline></video></div>
+      <div id="p7" class="plan" style="opacity: 0"><video id="p7-plein" class="clip plein" src="assets/plans/s-E0.mp4" data-start="6.261" data-duration="0.823" data-media-start="0.1" data-track-index="3" muted playsinline></video></div>
+      <div id="fl14" class="flash" style="background: #ffe2a8"></div>
+      <div id="p8" class="plan" style="opacity: 0"><video id="p8-plein" class="clip plein" src="assets/plans/s-H0.mp4" data-start="7.044" data-duration="0.822" data-media-start="0.1" data-track-index="4" muted playsinline></video></div>
+      <div id="p9" class="plan" style="opacity: 0"><video id="p9-plein" class="clip plein" src="assets/plans/s-I0.mp4" data-start="7.826" data-duration="0.562" data-media-start="0.1" data-track-index="5" muted playsinline></video></div>
+      <div id="p10" class="plan" style="opacity: 0"><img class="plein" src="assets/plans/salle-photo.jpg" alt="" /></div>
+      <div id="fl18" class="flash" style="background: #ffe2a8"></div>
+      <div id="p11" class="plan" style="opacity: 0"><video id="p11-plein" class="clip plein" src="assets/plans/s-R0.mp4" data-start="9.131" data-duration="0.822" data-media-start="0.1" data-track-index="7" muted playsinline></video></div>
+      <div id="p12" class="plan" style="opacity: 0"><video id="p12-plein" class="clip plein" src="assets/plans/s-M1.mp4" data-start="9.913" data-duration="0.562" data-media-start="0.1" data-track-index="2" muted playsinline></video></div>
+      <div id="p13" class="plan" style="opacity: 0"><video id="p13-plein" class="clip plein" src="assets/plans/s-C1.mp4" data-start="10.435" data-duration="0.823" data-media-start="0.1" data-track-index="3" muted playsinline></video></div>
+      <div id="fl22" class="flash" style="background: #ffe2a8"></div>
+      <div id="p14" class="plan" style="opacity: 0"><video id="p14-plein" class="clip plein" src="assets/plans/s-F1.mp4" data-start="11.218" data-duration="0.822" data-media-start="0.1" data-track-index="4" muted playsinline></video></div>
+      <div id="p15" class="plan" style="opacity: 0"><img class="plein" src="assets/plans/micro-photo.jpg" alt="" /></div>
+      <div id="mc25" class="motcle" data-layout-allow-overlap style="opacity: 0">PRÉPARER</div>
+      <div id="mc26" class="motcle" data-layout-allow-overlap style="opacity: 0">CONVAINCRE</div>
+      <div id="mc27" class="motcle" data-layout-allow-overlap style="opacity: 0">UN BON CV</div>
+      <div id="mc28" class="motcle" data-layout-allow-overlap style="opacity: 0">SUR MESURE</div>
+      <div id="mc29" class="motcle" data-layout-allow-overlap style="opacity: 0">ALLER À L’ESSENTIEL</div>
+      <div id="mc30" class="motcle" data-layout-allow-overlap style="opacity: 0">OBTENIR L’ENTRETIEN</div>
+      <div id="mc31" class="motcle" data-layout-allow-overlap style="opacity: 0">PARLEZ-MOI DE VOUS</div>
+      <div id="mc32" class="motcle" data-layout-allow-overlap style="opacity: 0">GÉRER LE STRESS</div>
+      <div id="s3" class="fond-blanc" style="opacity: 0"><img id="mains" class="mains" src="assets/img/mains-yako.png" alt="" /><div class="partenaire"><span>En partenariat avec</span><img id="logoyako" src="assets/img/logo-yako.png" alt="" /><em>Samedi 14 novembre 2026 · Université Félix Houphouët-Boigny</em></div></div>
+      <div id="fl34" class="flash" style="background: #ffe2a8"></div>
+      <div id="s5" class="fond-marque" style="opacity: 0; z-index: 6"></div>
+      <div id="fl36" class="flash" style="background: #ffe2a8"></div>
+      <div id="tx37" class="txt t-etiq" style="opacity: 0; top: 8%;">NOS PANÉLISTES · <b>YAKO AFRICA</b></div>
+      <div id="trio" class="trio"><div id="tr0" class="tr-carte" style="opacity: 0"><img src="assets/img/coralie-guei.png" alt="" /><b>Coralie GUEÏ</b><span>Directrice des Ressources et de la Transformation</span></div><div id="tr1" class="tr-carte" style="opacity: 0"><img src="assets/img/emmanuel-kone.png" alt="" /><b>Emmanuel KONE</b><span>Responsable des Ressources Humaines</span></div><div id="tr2" class="tr-carte" style="opacity: 0"><img src="assets/img/oguyr-gagne.png" alt="" /><b>O’guyr GAGNE</b><span>Chargé de projet RH</span></div></div>
+      <div id="p16" class="plan" style="opacity: 0"><video id="p16-plein" class="clip plein" src="assets/plans/s-C0.mp4" data-start="18.783" data-duration="0.823" data-media-start="0.1" data-track-index="6" muted playsinline></video></div>
+      <div id="p17" class="plan" style="opacity: 0"><video id="p17-plein" class="clip plein" src="assets/plans/s-B0.mp4" data-start="19.566" data-duration="0.822" data-media-start="0.1" data-track-index="7" muted playsinline></video></div>
+      <div id="fl41" class="flash" style="background: #ffe2a8"></div>
+      <div id="tx42" class="txt t-moment" style="opacity: 0; "><i>01</i>Vrai ou faux des idées reçues</div>
+      <div id="p18" class="plan" style="opacity: 0"><video id="p18-plein" class="clip plein" src="assets/plans/s-J0.mp4" data-start="20.348" data-duration="0.823" data-media-start="0.1" data-track-index="2" muted playsinline></video></div>
+      <div id="p19" class="plan" style="opacity: 0"><video id="p19-plein" class="clip plein" src="assets/plans/s-O0.mp4" data-start="21.131" data-duration="0.823" data-media-start="0.1" data-track-index="3" muted playsinline></video></div>
+      <div id="fl45" class="flash" style="background: #ffe2a8"></div>
+      <div id="tx46" class="txt t-moment" style="opacity: 0; "><i>02</i>Du CV à l’entretien</div>
+      <div id="p20" class="plan" style="opacity: 0"><video id="p20-plein" class="clip plein" src="assets/plans/s-M0.mp4" data-start="21.914" data-duration="0.822" data-media-start="0.1" data-track-index="4" muted playsinline></video></div>
+      <div id="p21" class="plan" style="opacity: 0"><video id="p21-plein" class="clip plein" src="assets/plans/s-F0.mp4" data-start="22.696" data-duration="0.823" data-media-start="0.1" data-track-index="5" muted playsinline></video></div>
+      <div id="fl49" class="flash" style="background: #ffe2a8"></div>
+      <div id="tx50" class="txt t-moment" style="opacity: 0; "><i>03</i>Simulation d’entretien</div>
+      <div id="p22" class="plan" style="opacity: 0"><video id="p22-plein" class="clip plein" src="assets/plans/s-A0.mp4" data-start="23.479" data-duration="0.822" data-media-start="0.1" data-track-index="6" muted playsinline></video></div>
+      <div id="p23" class="plan" style="opacity: 0"><video id="p23-plein" class="clip plein" src="assets/plans/s-L0.mp4" data-start="24.261" data-duration="0.823" data-media-start="0.1" data-track-index="7" muted playsinline></video></div>
+      <div id="fl53" class="flash" style="background: #ffe2a8"></div>
+      <div id="tx54" class="txt t-moment" style="opacity: 0; "><i>04</i>Questions du public</div>
+      <div id="p24" class="plan" style="opacity: 0"><video id="p24-plein" class="clip plein" src="assets/plans/s-A1.mp4" data-start="25.044" data-duration="0.823" data-media-start="0.1" data-track-index="2" muted playsinline></video></div>
+      <div id="fl56" class="flash" style="background: #ffe2a8"></div>
+      <div id="p25" class="plan" style="opacity: 0"><video id="p25-plein" class="clip plein" src="assets/plans/s-J1.mp4" data-start="25.827" data-duration="0.822" data-media-start="0.1" data-track-index="3" muted playsinline></video></div>
+      <div id="p26" class="plan" style="opacity: 0"><video id="p26-plein" class="clip plein" src="assets/plans/s-O1.mp4" data-start="26.609" data-duration="0.562" data-media-start="0.1" data-track-index="4" muted playsinline></video></div>
+      <div id="p27" class="plan" style="opacity: 0"><video id="p27-plein" class="clip plein" src="assets/plans/s-P1.mp4" data-start="27.131" data-duration="0.301" data-media-start="0.1" data-track-index="5" muted playsinline></video></div>
+      <div id="fl60" class="flash" style="background: #ffe2a8"></div>
+      <div id="p28" class="plan" style="opacity: 0"><img class="plein" src="assets/plans/intervenante-photo.jpg" alt="" /></div>
+      <div id="p29" class="plan" style="opacity: 0"><video id="p29-plein" class="clip plein" src="assets/plans/s-Q1.mp4" data-start="27.653" data-duration="0.301" data-media-start="0.1" data-track-index="7" muted playsinline></video></div>
+      <div id="fl63" class="flash" style="background: #ffe2a8"></div>
+      <div id="p30" class="plan" style="opacity: 0"><video id="p30-plein" class="clip plein" src="assets/plans/s-B1.mp4" data-start="27.914" data-duration="0.301" data-media-start="0.1" data-track-index="2" muted playsinline></video></div>
+      <div id="p31" class="plan" style="opacity: 0"><video id="p31-plein" class="clip plein" src="assets/plans/s-K1.mp4" data-start="28.175" data-duration="0.3" data-media-start="0.1" data-track-index="3" muted playsinline></video></div>
+      <div id="fl66" class="flash" style="background: #ffe2a8"></div>
+      <div id="p32" class="plan" style="opacity: 0"><video id="p32-plein" class="clip plein" src="assets/plans/s-L1.mp4" data-start="28.435" data-duration="0.301" data-media-start="0.1" data-track-index="4" muted playsinline></video></div>
+      <div id="p33" class="plan" style="opacity: 0"><img class="plein" src="assets/plans/panel-large-photo.jpg" alt="" /></div>
+      <div id="fl69" class="flash" style="background: #ffe2a8"></div>
+      <div id="p34" class="plan" style="opacity: 0"><video id="p34-plein" class="clip plein" src="assets/plans/s-N1.mp4" data-start="28.957" data-duration="0.301" data-media-start="0.1" data-track-index="6" muted playsinline></video></div>
+      <div id="mc71" class="motcle" data-layout-allow-overlap style="opacity: 0">ÉCOUTE</div>
+      <div id="mc72" class="motcle" data-layout-allow-overlap style="opacity: 0">MOTIVATION</div>
+      <div id="mc73" class="motcle" data-layout-allow-overlap style="opacity: 0">ESPRIT D’ÉQUIPE</div>
+      <div id="p35" class="plan" style="opacity: 0"><video id="p35-plein" class="clip plein" src="assets/plans/lent-debout-public.mp4" data-start="29.218" data-duration="4.214" data-media-start="0.4" data-track-index="7" muted playsinline></video></div>
+      <div id="voile7" class="voile fort"></div>
+      <div id="mt76" class="txt t-message" style="top: 40%;"><span id="mt76-0" style="display: inline-block; opacity: 0">Un</span> <span id="mt76-1" style="display: inline-block; opacity: 0">CV</span> <span id="mt76-2" style="display: inline-block; opacity: 0">n’est</span> <span id="mt76-3" style="display: inline-block; opacity: 0">pas</span> <span id="mt76-4" style="display: inline-block; opacity: 0">une</span> <span id="mt76-5" style="display: inline-block; opacity: 0">biographie.</span></div>
+      <div id="fl77" class="flash" style="background: #ffe2a8"></div>
+      <div id="p36" class="plan" style="opacity: 0"><video id="p36-plein" class="clip plein" src="assets/plans/s-M2.mp4" data-start="33.392" data-duration="0.823" data-media-start="0.1" data-track-index="2" muted playsinline></video></div>
+      <div id="fl79" class="flash" style="background: #ffe2a8"></div>
+      <div id="p37" class="plan" style="opacity: 0"><video id="p37-plein" class="clip plein" src="assets/plans/s-C2.mp4" data-start="34.175" data-duration="0.822" data-media-start="0.1" data-track-index="3" muted playsinline></video></div>
+      <div id="p38" class="plan" style="opacity: 0"><video id="p38-plein" class="clip plein" src="assets/plans/s-F2.mp4" data-start="34.957" data-duration="0.562" data-media-start="0.1" data-track-index="4" muted playsinline></video></div>
+      <div id="p39" class="plan" style="opacity: 0"><img class="plein" src="assets/plans/ek-photo.jpg" alt="" /></div>
+      <div id="fl83" class="flash" style="background: #ffe2a8"></div>
+      <div id="p40" class="plan" style="opacity: 0"><video id="p40-plein" class="clip plein" src="assets/plans/s-A2.mp4" data-start="36.262" data-duration="0.822" data-media-start="0.1" data-track-index="6" muted playsinline></video></div>
+      <div id="p41" class="plan" style="opacity: 0"><video id="p41-plein" class="clip plein" src="assets/plans/s-J2.mp4" data-start="37.044" data-duration="0.562" data-media-start="0.1" data-track-index="7" muted playsinline></video></div>
+      <div id="voile8b" class="voile fort"></div>
+      <div id="mt87" class="txt t-message bleu-clair" style="top: 36%;"><span id="mt87-0" style="display: inline-block; opacity: 0">C’est</span> <span id="mt87-1" style="display: inline-block; opacity: 0">l’outil</span> <span id="mt87-2" style="display: inline-block; opacity: 0">qui</span> <span id="mt87-3" style="display: inline-block; opacity: 0">vous</span> <span id="mt87-4" style="display: inline-block; opacity: 0">ouvre</span> <span id="mt87-5" style="display: inline-block; opacity: 0">la</span> <span id="mt87-6" style="display: inline-block; opacity: 0">porte</span> <span id="mt87-7" style="display: inline-block; opacity: 0">de</span> <span id="mt87-8" style="display: inline-block; opacity: 0">l’entretien.</span></div>
+      <div id="p42" class="plan" style="opacity: 0"><img class="plein" src="assets/plans/groupe-1.jpg" alt="" /></div>
+      <div id="voile8" class="voile"></div>
+      <div id="fl90" class="flash" style="background: #ffe2a8"></div>
+      <div id="mt91" class="txt t-merci" style="top: 30%;"><span id="mt91-0" style="display: inline-block; opacity: 0">MERCI</span></div>
+      <div id="tx92" class="txt t-sous" style="opacity: 0; top: 50%;">à nos panélistes, à YAKO AFRICA<br>et à tous les participants</div>
+      <div id="p43" class="plan" style="opacity: 0"><img class="plein" src="assets/plans/groupe-jefpa.jpg" alt="" /></div>
+      <div id="voile9" class="voile"></div>
+      <div id="fl95" class="flash" style="background: #ffe2a8"></div>
+      <img id="logo2" class="logo-equipe" src="assets/img/logo-recadre.png" alt="" style="opacity: 0" />
+      <div id="mt97" class="txt t-merci" style="top: 36%;"><span id="mt97-0" style="display: inline-block; opacity: 0">JE-FPA</span></div>
+      <div id="tx98" class="txt t-sous" style="opacity: 0; top: 56%;">Junior Entreprise de la Filière Professionnalisée Actuariat</div>
+      <div id="noir" class="flash" style="background: #000"></div>
+      <audio id="musique" src="assets/music/aftermovie-com.mp3" data-start="0" data-duration="45.914" data-volume="1" data-track-index="20"></audio>
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      tl.to("#s1", { opacity: 0, duration: 0.15 }, 1.987);
+      tl.fromTo("#logo1", { opacity: 0.35, scale: 1.3 }, { opacity: 1, scale: 1, duration: 0.6, ease: "power3.out", immediateRender: false }, 0.05);
+      tl.to("#logo1", { opacity: 0, scale: 0.92, duration: 0.2 }, 1.887);
+      tl.fromTo("#tx2", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.45, ease: "power3.out", immediateRender: false }, 0.45);
+      tl.to("#tx2", { opacity: 0, y: -20, duration: 0.25, ease: "power2.in" }, 1.837);
+      tl.set("#p1", { opacity: 1 }, 2.087);
+      tl.fromTo("#p1 .plein", { scale: 1.12 }, { scale: 1.02, duration: 0.783, ease: "power2.out", immediateRender: false }, 2.087);
+      tl.set("#p1", { opacity: 0 }, 2.87);
+      tl.fromTo("#p1", { scale: 1.35 }, { scale: 1.04, duration: 0.22, ease: "power3.out", immediateRender: false }, 2.087);
+      tl.set("#p2", { opacity: 1 }, 2.87);
+      tl.fromTo("#p2 .plein", { scale: 1.12 }, { scale: 1.02, duration: 0.782, ease: "power2.out", immediateRender: false }, 2.87);
+      tl.set("#p2", { opacity: 0 }, 3.652);
+      tl.fromTo("#p2", { x: 50, rotation: -1.5, scale: 1.14 }, { x: 0, rotation: 0, scale: 1.05, duration: 0.4, ease: "sine.out", immediateRender: false }, 2.87);
+      tl.set("#p3", { opacity: 1 }, 3.652);
+      tl.fromTo("#p3 .plein", { scale: 1.12 }, { scale: 1.02, duration: 0.522, ease: "power2.out", immediateRender: false }, 3.652);
+      tl.set("#p3", { opacity: 0 }, 4.174);
+      tl.fromTo("#p3", { x: -50, rotation: 1.5, scale: 1.14 }, { x: 0, rotation: 0, scale: 1.05, duration: 0.4, ease: "sine.out", immediateRender: false }, 3.652);
+      tl.fromTo("#mt6-0", { opacity: 0, y: 50, rotationX: -60 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.4, ease: "back.out(1.6)", immediateRender: false }, 2.137);
+      tl.fromTo("#mt6-1", { opacity: 0, y: 50, rotationX: -60 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.4, ease: "back.out(1.6)", immediateRender: false }, 2.197);
+      tl.fromTo("#mt6-2", { opacity: 0, y: 50, rotationX: -60 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.4, ease: "back.out(1.6)", immediateRender: false }, 2.257);
+      tl.fromTo("#mt6-3", { opacity: 0, y: 50, rotationX: -60 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.4, ease: "back.out(1.6)", immediateRender: false }, 2.317);
+      tl.fromTo("#mt6-4", { opacity: 0, y: 50, rotationX: -60 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.4, ease: "back.out(1.6)", immediateRender: false }, 2.377);
+      tl.fromTo("#mt6-5", { opacity: 0, y: 50, rotationX: -60 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.4, ease: "back.out(1.6)", immediateRender: false }, 2.437);
+      tl.fromTo("#mt6-6", { opacity: 0, y: 50, rotationX: -60 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.4, ease: "back.out(1.6)", immediateRender: false }, 2.497);
+      tl.fromTo("#mt6-7", { opacity: 0, y: 50, rotationX: -60 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.4, ease: "back.out(1.6)", immediateRender: false }, 2.557);
+      tl.to("#mt6", { opacity: 0, duration: 0.25 }, 3.924);
+      tl.set("#voile1", { opacity: 1 }, 2.087); tl.set("#voile1", { opacity: 0 }, 4.174);
+      tl.fromTo("#fl8", { opacity: 0.8 }, { opacity: 0, duration: 0.25, immediateRender: false }, 4.174);
+      tl.set("#p4", { opacity: 1 }, 4.174);
+      tl.fromTo("#p4 .plein", { scale: 1.12 }, { scale: 1.02, duration: 0.783, ease: "power2.out", immediateRender: false }, 4.174);
+      tl.set("#p4", { opacity: 0 }, 4.957);
+      tl.fromTo("#p4", { scale: 1.35 }, { scale: 1.04, duration: 0.22, ease: "power3.out", immediateRender: false }, 4.174);
+      tl.fromTo("#fl10", { opacity: 0.3 }, { opacity: 0, duration: 0.25, immediateRender: false }, 4.174);
+      tl.set("#p5", { opacity: 1 }, 4.957);
+      tl.fromTo("#p5 .plein", { scale: 1.12 }, { scale: 1.02, duration: 0.782, ease: "power2.out", immediateRender: false }, 4.957);
+      tl.set("#p5", { opacity: 0 }, 5.739);
+      tl.fromTo("#p5", { x: -50, rotation: 1.5, scale: 1.14 }, { x: 0, rotation: 0, scale: 1.05, duration: 0.4, ease: "sine.out", immediateRender: false }, 4.957);
+      tl.set("#p6", { opacity: 1 }, 5.739);
+      tl.fromTo("#p6 .plein", { scale: 1.12 }, { scale: 1.02, duration: 0.522, ease: "power2.out", immediateRender: false }, 5.739);
+      tl.set("#p6", { opacity: 0 }, 6.261);
+      tl.fromTo("#p6", { x: 260, filter: "blur(18px)" }, { x: 0, filter: "blur(0px)", duration: 0.18, ease: "power3.out", immediateRender: false }, 5.739);
+      tl.set("#p7", { opacity: 1 }, 6.261);
+      tl.fromTo("#p7 .plein", { scale: 1.12 }, { scale: 1.02, duration: 0.783, ease: "power2.out", immediateRender: false }, 6.261);
+      tl.set("#p7", { opacity: 0 }, 7.044);
+      tl.fromTo("#p7", { scale: 1.35 }, { scale: 1.04, duration: 0.22, ease: "power3.out", immediateRender: false }, 6.261);
+      tl.fromTo("#fl14", { opacity: 0.3 }, { opacity: 0, duration: 0.25, immediateRender: false }, 6.261);
+      tl.set("#p8", { opacity: 1 }, 7.044);
+      tl.fromTo("#p8 .plein", { scale: 1.12 }, { scale: 1.02, duration: 0.782, ease: "power2.out", immediateRender: false }, 7.044);
+      tl.set("#p8", { opacity: 0 }, 7.826);
+      tl.fromTo("#p8", { x: -50, rotation: 1.5, scale: 1.14 }, { x: 0, rotation: 0, scale: 1.05, duration: 0.4, ease: "sine.out", immediateRender: false }, 7.044);
+      tl.set("#p9", { opacity: 1 }, 7.826);
+      tl.fromTo("#p9 .plein", { scale: 1.12 }, { scale: 1.02, duration: 0.522, ease: "power2.out", immediateRender: false }, 7.826);
+      tl.set("#p9", { opacity: 0 }, 8.348);
+      tl.fromTo("#p9", { scale: 1.35 }, { scale: 1.04, duration: 0.22, ease: "power3.out", immediateRender: false }, 7.826);
+      tl.set("#p10", { opacity: 1 }, 8.348);
+      tl.fromTo("#p10 .plein", { scale: 1.12 }, { scale: 1.02, duration: 0.783, ease: "power2.out", immediateRender: false }, 8.348);
+      tl.set("#p10", { opacity: 0 }, 9.131);
+      tl.fromTo("#p10", { scale: 1.35 }, { scale: 1.04, duration: 0.22, ease: "power3.out", immediateRender: false }, 8.348);
+      tl.fromTo("#fl18", { opacity: 0.3 }, { opacity: 0, duration: 0.25, immediateRender: false }, 8.348);
+      tl.set("#p11", { opacity: 1 }, 9.131);
+      tl.fromTo("#p11 .plein", { scale: 1.12 }, { scale: 1.02, duration: 0.782, ease: "power2.out", immediateRender: false }, 9.131);
+      tl.set("#p11", { opacity: 0 }, 9.913);
+      tl.fromTo("#p11", { x: -50, rotation: 1.5, scale: 1.14 }, { x: 0, rotation: 0, scale: 1.05, duration: 0.4, ease: "sine.out", immediateRender: false }, 9.131);
+      tl.set("#p12", { opacity: 1 }, 9.913);
+      tl.fromTo("#p12 .plein", { scale: 1.12 }, { scale: 1.02, duration: 0.522, ease: "power2.out", immediateRender: false }, 9.913);
+      tl.set("#p12", { opacity: 0 }, 10.435);
+      tl.fromTo("#p12", { x: 260, filter: "blur(18px)" }, { x: 0, filter: "blur(0px)", duration: 0.18, ease: "power3.out", immediateRender: false }, 9.913);
+      tl.set("#p13", { opacity: 1 }, 10.435);
+      tl.fromTo("#p13 .plein", { scale: 1.12 }, { scale: 1.02, duration: 0.783, ease: "power2.out", immediateRender: false }, 10.435);
+      tl.set("#p13", { opacity: 0 }, 11.218);
+      tl.fromTo("#p13", { scale: 1.35 }, { scale: 1.04, duration: 0.22, ease: "power3.out", immediateRender: false }, 10.435);
+      tl.fromTo("#fl22", { opacity: 0.3 }, { opacity: 0, duration: 0.25, immediateRender: false }, 10.435);
+      tl.set("#p14", { opacity: 1 }, 11.218);
+      tl.fromTo("#p14 .plein", { scale: 1.12 }, { scale: 1.02, duration: 0.782, ease: "power2.out", immediateRender: false }, 11.218);
+      tl.set("#p14", { opacity: 0 }, 12.0);
+      tl.fromTo("#p14", { x: -50, rotation: 1.5, scale: 1.14 }, { x: 0, rotation: 0, scale: 1.05, duration: 0.4, ease: "sine.out", immediateRender: false }, 11.218);
+      tl.set("#p15", { opacity: 1 }, 12.0);
+      tl.fromTo("#p15 .plein", { scale: 1.12 }, { scale: 1.02, duration: 0.522, ease: "power2.out", immediateRender: false }, 12.0);
+      tl.set("#p15", { opacity: 0 }, 12.522);
+      tl.fromTo("#p15", { scale: 1.35 }, { scale: 1.04, duration: 0.22, ease: "power3.out", immediateRender: false }, 12.0);
+      tl.fromTo("#mc25", { opacity: 0, scale: 1.5 }, { opacity: 1, scale: 1, duration: 0.14, ease: "power4.in", immediateRender: false }, 4.174);
+      tl.set("#mc25", { opacity: 0 }, 5.198);
+      tl.fromTo("#mc26", { opacity: 0, scale: 1.5 }, { opacity: 1, scale: 1, duration: 0.14, ease: "power4.in", immediateRender: false }, 5.218);
+      tl.set("#mc26", { opacity: 0 }, 6.241);
+      tl.fromTo("#mc27", { opacity: 0, scale: 1.5 }, { opacity: 1, scale: 1, duration: 0.14, ease: "power4.in", immediateRender: false }, 6.261);
+      tl.set("#mc27", { opacity: 0 }, 7.285);
+      tl.fromTo("#mc28", { opacity: 0, scale: 1.5 }, { opacity: 1, scale: 1, duration: 0.14, ease: "power4.in", immediateRender: false }, 7.305);
+      tl.set("#mc28", { opacity: 0 }, 8.328);
+      tl.fromTo("#mc29", { opacity: 0, scale: 1.5 }, { opacity: 1, scale: 1, duration: 0.14, ease: "power4.in", immediateRender: false }, 8.348);
+      tl.set("#mc29", { opacity: 0 }, 9.372);
+      tl.fromTo("#mc30", { opacity: 0, scale: 1.5 }, { opacity: 1, scale: 1, duration: 0.14, ease: "power4.in", immediateRender: false }, 9.392);
+      tl.set("#mc30", { opacity: 0 }, 10.415);
+      tl.fromTo("#mc31", { opacity: 0, scale: 1.5 }, { opacity: 1, scale: 1, duration: 0.14, ease: "power4.in", immediateRender: false }, 10.435);
+      tl.set("#mc31", { opacity: 0 }, 11.459);
+      tl.fromTo("#mc32", { opacity: 0, scale: 1.5 }, { opacity: 1, scale: 1, duration: 0.14, ease: "power4.in", immediateRender: false }, 11.479);
+      tl.set("#mc32", { opacity: 0 }, 12.502);
+      tl.set("#s3", { opacity: 1 }, 12.522); tl.set("#s3", { opacity: 0 }, 14.609);
+      tl.fromTo("#mains", { x: -1100 }, { x: 0, duration: 0.5, ease: "power3.out", immediateRender: false }, 12.522);
+      tl.fromTo("#logoyako", { opacity: 0, scale: 1.4 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(1.6)", immediateRender: false }, 13.305);
+      tl.fromTo("#fl34", { opacity: 0.5 }, { opacity: 0, duration: 0.25, immediateRender: false }, 12.522);
+      tl.set("#s5", { opacity: 1 }, 14.609); tl.set("#s5", { opacity: 0 }, 18.783);
+      tl.fromTo("#fl36", { opacity: 0.5 }, { opacity: 0, duration: 0.25, immediateRender: false }, 14.609);
+      tl.fromTo("#tx37", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.45, ease: "power3.out", immediateRender: false }, 14.609);
+      tl.to("#tx37", { opacity: 0, y: -20, duration: 0.25, ease: "power2.in" }, 18.533);
+      tl.fromTo("#tr0", { opacity: 0, y: 120, rotation: -4 }, { opacity: 1, y: 0, rotation: 0, duration: 0.4, ease: "back.out(1.7)", immediateRender: false }, 14.609);
+      tl.to("#tr0", { opacity: 0, y: -60, duration: 0.2 }, 18.583);
+      tl.fromTo("#tr1", { opacity: 0, y: 120, rotation: 0 }, { opacity: 1, y: 0, rotation: 0, duration: 0.4, ease: "back.out(1.7)", immediateRender: false }, 15.392);
+      tl.to("#tr1", { opacity: 0, y: -60, duration: 0.2 }, 18.583);
+      tl.fromTo("#tr2", { opacity: 0, y: 120, rotation: 4 }, { opacity: 1, y: 0, rotation: 0, duration: 0.4, ease: "back.out(1.7)", immediateRender: false }, 16.174);
+      tl.to("#tr2", { opacity: 0, y: -60, duration: 0.2 }, 18.583);
+      tl.fromTo("#trio", { scale: 1 }, { scale: 1.05, duration: 4.174, ease: "none", immediateRender: false }, 14.609);
+      tl.set("#p16", { opacity: 1 }, 18.783);
+      tl.fromTo("#p16 .plein", { scale: 1.12 }, { scale: 1.02, duration: 0.783, ease: "power2.out", immediateRender: false }, 18.783);
+      tl.set("#p16", { opacity: 0 }, 19.566);
+      tl.fromTo("#p16", { scale: 1.35 }, { scale: 1.04, duration: 0.22, ease: "power3.out", immediateRender: false }, 18.783);
+      tl.set("#p17", { opacity: 1 }, 19.566);
+      tl.fromTo("#p17 .plein", { scale: 1.0 }, { scale: 1.1, duration: 0.782, ease: "power2.out", immediateRender: false }, 19.566);
+      tl.set("#p17", { opacity: 0 }, 20.348);
+      tl.fromTo("#p17", { x: 50, rotation: -1.5, scale: 1.14 }, { x: 0, rotation: 0, scale: 1.05, duration: 0.4, ease: "sine.out", immediateRender: false }, 19.566);
+      tl.fromTo("#fl41", { opacity: 0.4 }, { opacity: 0, duration: 0.25, immediateRender: false }, 18.783);
+      tl.fromTo("#tx42", { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: 0.3, ease: "power3.out", immediateRender: false }, 18.813);
+      tl.to("#tx42", { opacity: 0, y: -20, duration: 0.25, ease: "power2.in" }, 20.098);
+      tl.set("#p18", { opacity: 1 }, 20.348);
+      tl.fromTo("#p18 .plein", { scale: 1.12 }, { scale: 1.02, duration: 0.783, ease: "power2.out", immediateRender: false }, 20.348);
+      tl.set("#p18", { opacity: 0 }, 21.131);
+      tl.fromTo("#p18", { scale: 1.35 }, { scale: 1.04, duration: 0.22, ease: "power3.out", immediateRender: false }, 20.348);
+      tl.set("#p19", { opacity: 1 }, 21.131);
+      tl.fromTo("#p19 .plein", { scale: 1.0 }, { scale: 1.1, duration: 0.783, ease: "power2.out", immediateRender: false }, 21.131);
+      tl.set("#p19", { opacity: 0 }, 21.914);
+      tl.fromTo("#p19", { x: 50, rotation: -1.5, scale: 1.14 }, { x: 0, rotation: 0, scale: 1.05, duration: 0.4, ease: "sine.out", immediateRender: false }, 21.131);
+      tl.fromTo("#fl45", { opacity: 0.4 }, { opacity: 0, duration: 0.25, immediateRender: false }, 20.348);
+      tl.fromTo("#tx46", { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: 0.3, ease: "power3.out", immediateRender: false }, 20.378);
+      tl.to("#tx46", { opacity: 0, y: -20, duration: 0.25, ease: "power2.in" }, 21.664);
+      tl.set("#p20", { opacity: 1 }, 21.914);
+      tl.fromTo("#p20 .plein", { scale: 1.12 }, { scale: 1.02, duration: 0.782, ease: "power2.out", immediateRender: false }, 21.914);
+      tl.set("#p20", { opacity: 0 }, 22.696);
+      tl.fromTo("#p20", { scale: 1.35 }, { scale: 1.04, duration: 0.22, ease: "power3.out", immediateRender: false }, 21.914);
+      tl.set("#p21", { opacity: 1 }, 22.696);
+      tl.fromTo("#p21 .plein", { scale: 1.0 }, { scale: 1.1, duration: 0.783, ease: "power2.out", immediateRender: false }, 22.696);
+      tl.set("#p21", { opacity: 0 }, 23.479);
+      tl.fromTo("#p21", { x: 50, rotation: -1.5, scale: 1.14 }, { x: 0, rotation: 0, scale: 1.05, duration: 0.4, ease: "sine.out", immediateRender: false }, 22.696);
+      tl.fromTo("#fl49", { opacity: 0.4 }, { opacity: 0, duration: 0.25, immediateRender: false }, 21.914);
+      tl.fromTo("#tx50", { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: 0.3, ease: "power3.out", immediateRender: false }, 21.944);
+      tl.to("#tx50", { opacity: 0, y: -20, duration: 0.25, ease: "power2.in" }, 23.229);
+      tl.set("#p22", { opacity: 1 }, 23.479);
+      tl.fromTo("#p22 .plein", { scale: 1.12 }, { scale: 1.02, duration: 0.782, ease: "power2.out", immediateRender: false }, 23.479);
+      tl.set("#p22", { opacity: 0 }, 24.261);
+      tl.fromTo("#p22", { scale: 1.35 }, { scale: 1.04, duration: 0.22, ease: "power3.out", immediateRender: false }, 23.479);
+      tl.set("#p23", { opacity: 1 }, 24.261);
+      tl.fromTo("#p23 .plein", { scale: 1.0 }, { scale: 1.1, duration: 0.783, ease: "power2.out", immediateRender: false }, 24.261);
+      tl.set("#p23", { opacity: 0 }, 25.044);
+      tl.fromTo("#p23", { x: 50, rotation: -1.5, scale: 1.14 }, { x: 0, rotation: 0, scale: 1.05, duration: 0.4, ease: "sine.out", immediateRender: false }, 24.261);
+      tl.fromTo("#fl53", { opacity: 0.4 }, { opacity: 0, duration: 0.25, immediateRender: false }, 23.479);
+      tl.fromTo("#tx54", { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: 0.3, ease: "power3.out", immediateRender: false }, 23.509);
+      tl.to("#tx54", { opacity: 0, y: -20, duration: 0.25, ease: "power2.in" }, 24.794);
+      tl.set("#p24", { opacity: 1 }, 25.044);
+      tl.fromTo("#p24 .plein", { scale: 1.12 }, { scale: 1.02, duration: 0.783, ease: "power2.out", immediateRender: false }, 25.044);
+      tl.set("#p24", { opacity: 0 }, 25.827);
+      tl.fromTo("#p24", { scale: 1.35 }, { scale: 1.04, duration: 0.22, ease: "power3.out", immediateRender: false }, 25.044);
+      tl.fromTo("#fl56", { opacity: 0.3 }, { opacity: 0, duration: 0.25, immediateRender: false }, 25.044);
+      tl.set("#p25", { opacity: 1 }, 25.827);
+      tl.fromTo("#p25 .plein", { scale: 1.12 }, { scale: 1.02, duration: 0.782, ease: "power2.out", immediateRender: false }, 25.827);
+      tl.set("#p25", { opacity: 0 }, 26.609);
+      tl.fromTo("#p25", { x: -50, rotation: 1.5, scale: 1.14 }, { x: 0, rotation: 0, scale: 1.05, duration: 0.4, ease: "sine.out", immediateRender: false }, 25.827);
+      tl.set("#p26", { opacity: 1 }, 26.609);
+      tl.fromTo("#p26 .plein", { scale: 1.12 }, { scale: 1.02, duration: 0.522, ease: "power2.out", immediateRender: false }, 26.609);
+      tl.set("#p26", { opacity: 0 }, 27.131);
+      tl.fromTo("#p26", { x: 260, filter: "blur(18px)" }, { x: 0, filter: "blur(0px)", duration: 0.18, ease: "power3.out", immediateRender: false }, 26.609);
+      tl.set("#p27", { opacity: 1 }, 27.131);
+      tl.fromTo("#p27 .plein", { scale: 1.12 }, { scale: 1.02, duration: 0.261, ease: "power2.out", immediateRender: false }, 27.131);
+      tl.set("#p27", { opacity: 0 }, 27.392);
+      tl.fromTo("#p27", { scale: 1.35 }, { scale: 1.04, duration: 0.22, ease: "power3.out", immediateRender: false }, 27.131);
+      tl.fromTo("#fl60", { opacity: 0.3 }, { opacity: 0, duration: 0.25, immediateRender: false }, 27.131);
+      tl.set("#p28", { opacity: 1 }, 27.392);
+      tl.fromTo("#p28 .plein", { scale: 1.12 }, { scale: 1.02, duration: 0.261, ease: "power2.out", immediateRender: false }, 27.392);
+      tl.set("#p28", { opacity: 0 }, 27.653);
+      tl.fromTo("#p28", { x: -50, rotation: 1.5, scale: 1.14 }, { x: 0, rotation: 0, scale: 1.05, duration: 0.4, ease: "sine.out", immediateRender: false }, 27.392);
+      tl.set("#p29", { opacity: 1 }, 27.653);
+      tl.fromTo("#p29 .plein", { scale: 1.12 }, { scale: 1.02, duration: 0.261, ease: "power2.out", immediateRender: false }, 27.653);
+      tl.set("#p29", { opacity: 0 }, 27.914);
+      tl.fromTo("#p29", { x: 260, filter: "blur(18px)" }, { x: 0, filter: "blur(0px)", duration: 0.18, ease: "power3.out", immediateRender: false }, 27.653);
+      tl.fromTo("#fl63", { opacity: 0.3 }, { opacity: 0, duration: 0.25, immediateRender: false }, 27.653);
+      tl.set("#p30", { opacity: 1 }, 27.914);
+      tl.fromTo("#p30 .plein", { scale: 1.12 }, { scale: 1.02, duration: 0.261, ease: "power2.out", immediateRender: false }, 27.914);
+      tl.set("#p30", { opacity: 0 }, 28.175);
+      tl.fromTo("#p30", { scale: 1.35 }, { scale: 1.04, duration: 0.22, ease: "power3.out", immediateRender: false }, 27.914);
+      tl.set("#p31", { opacity: 1 }, 28.175);
+      tl.fromTo("#p31 .plein", { scale: 1.12 }, { scale: 1.02, duration: 0.26, ease: "power2.out", immediateRender: false }, 28.175);
+      tl.set("#p31", { opacity: 0 }, 28.435);
+      tl.fromTo("#p31", { x: -50, rotation: 1.5, scale: 1.14 }, { x: 0, rotation: 0, scale: 1.05, duration: 0.4, ease: "sine.out", immediateRender: false }, 28.175);
+      tl.fromTo("#fl66", { opacity: 0.3 }, { opacity: 0, duration: 0.25, immediateRender: false }, 28.175);
+      tl.set("#p32", { opacity: 1 }, 28.435);
+      tl.fromTo("#p32 .plein", { scale: 1.12 }, { scale: 1.02, duration: 0.261, ease: "power2.out", immediateRender: false }, 28.435);
+      tl.set("#p32", { opacity: 0 }, 28.696);
+      tl.fromTo("#p32", { scale: 1.35 }, { scale: 1.04, duration: 0.22, ease: "power3.out", immediateRender: false }, 28.435);
+      tl.set("#p33", { opacity: 1 }, 28.696);
+      tl.fromTo("#p33 .plein", { scale: 1.12 }, { scale: 1.02, duration: 0.261, ease: "power2.out", immediateRender: false }, 28.696);
+      tl.set("#p33", { opacity: 0 }, 28.957);
+      tl.fromTo("#p33", { scale: 1.35 }, { scale: 1.04, duration: 0.22, ease: "power3.out", immediateRender: false }, 28.696);
+      tl.fromTo("#fl69", { opacity: 0.3 }, { opacity: 0, duration: 0.25, immediateRender: false }, 28.696);
+      tl.set("#p34", { opacity: 1 }, 28.957);
+      tl.fromTo("#p34 .plein", { scale: 1.12 }, { scale: 1.02, duration: 0.261, ease: "power2.out", immediateRender: false }, 28.957);
+      tl.set("#p34", { opacity: 0 }, 29.218);
+      tl.fromTo("#p34", { x: 50, rotation: -1.5, scale: 1.14 }, { x: 0, rotation: 0, scale: 1.05, duration: 0.4, ease: "sine.out", immediateRender: false }, 28.957);
+      tl.fromTo("#mc71", { opacity: 0, scale: 1.5 }, { opacity: 1, scale: 1, duration: 0.14, ease: "power4.in", immediateRender: false }, 25.044);
+      tl.set("#mc71", { opacity: 0 }, 26.068);
+      tl.fromTo("#mc72", { opacity: 0, scale: 1.5 }, { opacity: 1, scale: 1, duration: 0.14, ease: "power4.in", immediateRender: false }, 26.088);
+      tl.set("#mc72", { opacity: 0 }, 27.111);
+      tl.fromTo("#mc73", { opacity: 0, scale: 1.5 }, { opacity: 1, scale: 1, duration: 0.14, ease: "power4.in", immediateRender: false }, 27.131);
+      tl.set("#mc73", { opacity: 0 }, 28.155);
+      tl.set("#p35", { opacity: 1 }, 29.218);
+      tl.fromTo("#p35 .plein", { scale: 1.04 }, { scale: 1.2, duration: 4.174, ease: "power2.out", immediateRender: false }, 29.218);
+      tl.set("#p35", { opacity: 0 }, 33.392);
+      tl.set("#voile7", { opacity: 1 }, 29.218); tl.set("#voile7", { opacity: 0 }, 33.392);
+      tl.fromTo("#mt76-0", { opacity: 0, y: 50, rotationX: -60 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.4, ease: "back.out(1.6)", immediateRender: false }, 29.268);
+      tl.fromTo("#mt76-1", { opacity: 0, y: 50, rotationX: -60 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.4, ease: "back.out(1.6)", immediateRender: false }, 29.388);
+      tl.fromTo("#mt76-2", { opacity: 0, y: 50, rotationX: -60 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.4, ease: "back.out(1.6)", immediateRender: false }, 29.508);
+      tl.fromTo("#mt76-3", { opacity: 0, y: 50, rotationX: -60 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.4, ease: "back.out(1.6)", immediateRender: false }, 29.628);
+      tl.fromTo("#mt76-4", { opacity: 0, y: 50, rotationX: -60 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.4, ease: "back.out(1.6)", immediateRender: false }, 29.748);
+      tl.fromTo("#mt76-5", { opacity: 0, y: 50, rotationX: -60 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.4, ease: "back.out(1.6)", immediateRender: false }, 29.868);
+      tl.to("#mt76", { opacity: 0, duration: 0.25 }, 33.142);
+      tl.fromTo("#fl77", { opacity: 0.9 }, { opacity: 0, duration: 0.25, immediateRender: false }, 33.392);
+      tl.set("#p36", { opacity: 1 }, 33.392);
+      tl.fromTo("#p36 .plein", { scale: 1.12 }, { scale: 1.02, duration: 0.783, ease: "power2.out", immediateRender: false }, 33.392);
+      tl.set("#p36", { opacity: 0 }, 34.175);
+      tl.fromTo("#p36", { scale: 1.35 }, { scale: 1.04, duration: 0.22, ease: "power3.out", immediateRender: false }, 33.392);
+      tl.fromTo("#fl79", { opacity: 0.3 }, { opacity: 0, duration: 0.25, immediateRender: false }, 33.392);
+      tl.set("#p37", { opacity: 1 }, 34.175);
+      tl.fromTo("#p37 .plein", { scale: 1.12 }, { scale: 1.02, duration: 0.782, ease: "power2.out", immediateRender: false }, 34.175);
+      tl.set("#p37", { opacity: 0 }, 34.957);
+      tl.fromTo("#p37", { x: 50, rotation: -1.5, scale: 1.14 }, { x: 0, rotation: 0, scale: 1.05, duration: 0.4, ease: "sine.out", immediateRender: false }, 34.175);
+      tl.set("#p38", { opacity: 1 }, 34.957);
+      tl.fromTo("#p38 .plein", { scale: 1.12 }, { scale: 1.02, duration: 0.522, ease: "power2.out", immediateRender: false }, 34.957);
+      tl.set("#p38", { opacity: 0 }, 35.479);
+      tl.fromTo("#p38", { x: -260, filter: "blur(18px)" }, { x: 0, filter: "blur(0px)", duration: 0.18, ease: "power3.out", immediateRender: false }, 34.957);
+      tl.set("#p39", { opacity: 1 }, 35.479);
+      tl.fromTo("#p39 .plein", { scale: 1.12 }, { scale: 1.02, duration: 0.783, ease: "power2.out", immediateRender: false }, 35.479);
+      tl.set("#p39", { opacity: 0 }, 36.262);
+      tl.fromTo("#p39", { scale: 1.35 }, { scale: 1.04, duration: 0.22, ease: "power3.out", immediateRender: false }, 35.479);
+      tl.fromTo("#fl83", { opacity: 0.3 }, { opacity: 0, duration: 0.25, immediateRender: false }, 35.479);
+      tl.set("#p40", { opacity: 1 }, 36.262);
+      tl.fromTo("#p40 .plein", { scale: 1.12 }, { scale: 1.02, duration: 0.782, ease: "power2.out", immediateRender: false }, 36.262);
+      tl.set("#p40", { opacity: 0 }, 37.044);
+      tl.fromTo("#p40", { x: 50, rotation: -1.5, scale: 1.14 }, { x: 0, rotation: 0, scale: 1.05, duration: 0.4, ease: "sine.out", immediateRender: false }, 36.262);
+      tl.set("#p41", { opacity: 1 }, 37.044);
+      tl.fromTo("#p41 .plein", { scale: 1.12 }, { scale: 1.02, duration: 0.522, ease: "power2.out", immediateRender: false }, 37.044);
+      tl.set("#p41", { opacity: 0 }, 37.566);
+      tl.fromTo("#p41", { scale: 1.35 }, { scale: 1.04, duration: 0.22, ease: "power3.out", immediateRender: false }, 37.044);
+      tl.set("#voile8b", { opacity: 1 }, 33.392); tl.set("#voile8b", { opacity: 0 }, 37.566);
+      tl.fromTo("#mt87-0", { opacity: 0, y: 50, rotationX: -60 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.4, ease: "back.out(1.6)", immediateRender: false }, 33.442);
+      tl.fromTo("#mt87-1", { opacity: 0, y: 50, rotationX: -60 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.4, ease: "back.out(1.6)", immediateRender: false }, 33.522);
+      tl.fromTo("#mt87-2", { opacity: 0, y: 50, rotationX: -60 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.4, ease: "back.out(1.6)", immediateRender: false }, 33.602);
+      tl.fromTo("#mt87-3", { opacity: 0, y: 50, rotationX: -60 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.4, ease: "back.out(1.6)", immediateRender: false }, 33.682);
+      tl.fromTo("#mt87-4", { opacity: 0, y: 50, rotationX: -60 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.4, ease: "back.out(1.6)", immediateRender: false }, 33.762);
+      tl.fromTo("#mt87-5", { opacity: 0, y: 50, rotationX: -60 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.4, ease: "back.out(1.6)", immediateRender: false }, 33.842);
+      tl.fromTo("#mt87-6", { opacity: 0, y: 50, rotationX: -60 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.4, ease: "back.out(1.6)", immediateRender: false }, 33.922);
+      tl.fromTo("#mt87-7", { opacity: 0, y: 50, rotationX: -60 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.4, ease: "back.out(1.6)", immediateRender: false }, 34.002);
+      tl.fromTo("#mt87-8", { opacity: 0, y: 50, rotationX: -60 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.4, ease: "back.out(1.6)", immediateRender: false }, 34.082);
+      tl.to("#mt87", { opacity: 0, duration: 0.25 }, 37.316);
+      tl.set("#p42", { opacity: 1 }, 37.566);
+      tl.fromTo("#p42 .plein", { scale: 1.04 }, { scale: 1.16, duration: 4.174, ease: "power2.out", immediateRender: false }, 37.566);
+      tl.set("#p42", { opacity: 0 }, 41.74);
+      tl.fromTo("#p42", { scale: 1.35 }, { scale: 1.04, duration: 0.22, ease: "power3.out", immediateRender: false }, 37.566);
+      tl.set("#voile8", { opacity: 1 }, 37.566); tl.set("#voile8", { opacity: 0 }, 41.74);
+      tl.fromTo("#fl90", { opacity: 0.7 }, { opacity: 0, duration: 0.25, immediateRender: false }, 37.566);
+      tl.fromTo("#mt91-0", { opacity: 0, y: 50, rotationX: -60 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.4, ease: "back.out(1.6)", immediateRender: false }, 37.616);
+      tl.to("#mt91", { opacity: 0, duration: 0.25 }, 41.49);
+      tl.fromTo("#tx92", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.45, ease: "power3.out", immediateRender: false }, 38.088);
+      tl.to("#tx92", { opacity: 0, y: -20, duration: 0.25, ease: "power2.in" }, 41.49);
+      tl.set("#p43", { opacity: 1 }, 41.74);
+      tl.fromTo("#p43 .plein", { scale: 1.03 }, { scale: 1.12, duration: 4.174, ease: "power2.out", immediateRender: false }, 41.74);
+      tl.set("#p43", { opacity: 0 }, 45.914);
+      tl.fromTo("#p43", { scale: 1.35 }, { scale: 1.04, duration: 0.22, ease: "power3.out", immediateRender: false }, 41.74);
+      tl.set("#voile9", { opacity: 1 }, 41.74);
+      tl.fromTo("#fl95", { opacity: 0.7 }, { opacity: 0, duration: 0.25, immediateRender: false }, 41.74);
+      tl.fromTo("#logo2", { opacity: 0, scale: 1.4 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(1.5)", immediateRender: false }, 41.79);
+      tl.fromTo("#mt97-0", { opacity: 0, y: 50, rotationX: -60 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.4, ease: "back.out(1.6)", immediateRender: false }, 41.84);
+      tl.to("#mt97", { opacity: 0, duration: 0.25 }, 45.964);
+      tl.fromTo("#tx98", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.45, ease: "power3.out", immediateRender: false }, 42.523);
+      tl.to("#tx98", { opacity: 0, y: -20, duration: 0.25, ease: "power2.in" }, 45.964);
+      tl.fromTo("#noir", { opacity: 0 }, { opacity: 1, duration: 0.9, immediateRender: false }, 45.014);
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>
