@@ -11,7 +11,7 @@ from scipy import ndimage
 W, H = 2160, 3840
 S = 1.1                      # agrandissement de la photo d'origine (2556×3408)
 X0, Y0 = 392, H - round(3408 * S)   # recadrage : visage centré, bas de la photo collé au bas de l'image
-LX, LY, LS = 625, 2590, 560  # centre et taille du logo (dans le creux de la main)
+LX, LY, LS = 521, 2544, 600   # au creux de la main, derrière l'index (x_final = 1,1·x − 392, y_final = 91 + 1,1·y)  # centre et taille du logo (dans le creux de la main)
 rng = np.random.default_rng(7)
 
 
@@ -91,6 +91,19 @@ lisere = np.clip(a - interieur, 0, 1) * 2.4
 dirn = np.clip(0.55 + 0.45 * (xx - 1080) / 1080, 0.15, 1.0) * np.clip(1.2 - yy / H, 0.3, 1)
 rgb = rgb + (lisere * dirn)[..., None] * BLEU * 0.9
 img = fond * (1 - a[..., None]) + np.clip(rgb, 0, 1.4) * a[..., None]
+PERSO, ALPHA = np.clip(rgb, 0, 1.4), a.copy()
+# doigts qui passent DEVANT le logo (pouce, index, deux doigts de droite, dos de la main) : polygones relevés sur la photo d'origine
+import json
+from PIL import ImageDraw
+POLYS = json.loads('''{"pouce": [[330,2120],[385,2092],[440,2118],[490,2140],[525,2250],[565,2380],[650,2490],[600,2580],[520,2580],[460,2480],[410,2330],[360,2230]],
+ "index": [[778,2050],[812,2030],[860,2035],[888,2080],[892,2200],[880,2320],[868,2430],[790,2470],[715,2450],[712,2330],[740,2190],[760,2100]],
+ "droite": [[1010,2560],[1060,2440],[1130,2350],[1180,2290],[1215,2240],[1262,2215],[1300,2245],[1318,2195],[1360,2185],[1392,2240],[1392,2330],[1370,2430],[1320,2540],[1220,2620],[1080,2640]],
+ "dos": [[560,2440],[650,2470],[740,2455],[870,2425],[960,2470],[1030,2530],[1060,2620],[1000,2760],[820,2840],[640,2800],[520,2680],[500,2560]]}''')
+mq = Image.new("L", (W, H), 0)
+dm = ImageDraw.Draw(mq)
+for pts in POLYS.values():
+    dm.polygon([(x * S - X0, y * S + Y0) for x, y in pts], fill=255)
+DEVANT = ndimage.gaussian_filter(np.asarray(mq).astype(np.float32) / 255, 2.5) * ALPHA
 
 # ------------------------------------------------------------------ logo Claude en 3D lumineux
 logo = Image.open(sys.argv[2]).convert("RGBA")
@@ -119,6 +132,7 @@ for s_, k_ in ((40, 0.6), (100, 0.7), (240, 0.6)):
     img += g[..., None] * ORANGE * k_
 # halo sous le logo, posé sur la paume
 img += radial(LX + 10, LY + lh * 0.45, lw * 0.75, lh * 0.30, 1.5)[..., None] * ORANGE * 0.6
+AVANT_LOGO = img.copy()   # l'image juste avant de poser le logo : les doigts « de devant » seront repris d'ici (raccords invisibles)
 # épaisseur (extrusion) : copies décalées de plus en plus sombres, de l'arrière vers l'avant
 PROF = 46
 for i in range(PROF, 0, -1):
@@ -151,6 +165,14 @@ for _ in range(14):
     croix = (np.exp(-((xx - cx) / 2.5) ** 2 - ((yy - cy) / 40) ** 2) + np.exp(-((xx - cx) / 40) ** 2 - ((yy - cy) / 2.5) ** 2)) * 0.6
     point = radial(cx, cy, 14, 14, 1.5) * 1.2
     img += ((croix + point) * t_)[..., None] * np.array([1.0, 0.8, 0.65], np.float32)
+
+# ------------------------------------------------------------------ la main tient le logo : les doigts repassent devant, rétroéclairés
+derriere = np.clip(ndimage.gaussian_filter(gl, 14) * 3, 0, 1)                    # là où le logo est juste derrière
+ombre = 1 - 0.38 * np.clip(ndimage.gaussian_filter(gl, 30) * 1.8, 0, 1)            # doigts à contre-jour devant la lumière
+img = img * (1 - DEVANT[..., None]) + (AVANT_LOGO * ombre[..., None]) * DEVANT[..., None]
+bordd = np.clip(DEVANT - ndimage.gaussian_filter(DEVANT, 6), 0, 1) * 3.0
+img += (bordd * derriere)[..., None] * np.array([1.0, 0.62, 0.38], np.float32) * 1.5   # la lumière du logo passe sur le bord des doigts
+img += (ndimage.gaussian_filter(gl, 40) * 1.4 * DEVANT)[..., None] * ORANGE * 0.12       # et déborde un peu sur eux
 
 # ------------------------------------------------------------------ finition : vignette, grain, compression douce des hautes lumières
 img *= (0.55 + 0.45 * radial(1080, 2000, 1900, 2500, 0.7))[..., None]
