@@ -42,7 +42,7 @@ def radial(cx, cy, rx, ry=None, p=2.0):
 
 
 # ------------------------------------------------------------------ fond sombre et lumineux
-ORANGE = np.array([1.0, 0.50, 0.30], np.float32)
+ORANGE = np.array([1.0, 0.50, 0.30], np.float32) if len(sys.argv) <= 4 or sys.argv[4] != "plat-lumineux" else np.array([1.0, 0.46, 0.12], np.float32)
 BLEU = np.array([0.22, 0.38, 0.95], np.float32)
 VIOLET = np.array([0.45, 0.25, 0.85], np.float32)
 fond = np.zeros((H, W, 3), np.float32) + np.array([0.012, 0.016, 0.03], np.float32)
@@ -161,8 +161,8 @@ if MODE == "plat":
     face = np.broadcast_to(np.array([217, 119, 87], np.float32) / 255, (lh, lw, 3))   # la couleur officielle du logo Claude
 elif MODE == "plat-lumineux":
     # le vrai logo, plat, mais qui émet de la lumière : orange vif sur les bords, presque blanc au cœur des branches
-    interieur = ndimage.gaussian_filter(la, 6) * la * 0.65
-    face = np.array([1.0, 0.50, 0.27], np.float32) * (1 - interieur[..., None]) + np.array([1.3, 0.9, 0.66], np.float32) * interieur[..., None]
+    interieur = ndimage.gaussian_filter(la, 6) * la * 0.5
+    face = np.array([1.05, 0.45, 0.10], np.float32) * (1 - interieur[..., None]) + np.array([1.2, 0.62, 0.22], np.float32) * interieur[..., None]   # orange pur et vif
 poser(np.clip(face, 0, 1.4), la)
 # fine lueur de contour par-dessus (le logo « émet » sans être brûlé)
 g = flou(gl, 12)
