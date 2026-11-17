@@ -91,6 +91,13 @@
         color: #0B1220; } .f-tete2 { background: #F2B705; border-radius: 0; }
       .a-fait { position: absolute; left: 94px; top: 425px; z-index: 13; font-family: "Anton", sans-serif; font-size: 40px; color: #fff; background: #34D399;
         border: 5px solid #0B1220; border-radius: 14px; padding: 4px 18px 0; }
+      .eclat { position: absolute; border-radius: 50%; z-index: 19; pointer-events: none; mix-blend-mode: screen; }
+      .orbe { position: absolute; width: 180px; height: 180px; border-radius: 50%; z-index: 17; display: flex; align-items: center; justify-content: center;
+        font-family: "Anton", sans-serif; font-size: 120px; color: #fff; background: radial-gradient(circle at 35% 30%, #BAE6FD, #38BDF8 55%, #0369A1);
+        border: 7px solid #0B1220; box-shadow: 0 0 60px rgba(56,189,248,0.9); -webkit-text-stroke: 6px #0B1220; paint-order: stroke fill; }
+      .onde { position: absolute; width: 220px; height: 220px; border-radius: 50%; border: 10px solid #FF6B6B; z-index: 18; box-shadow: 0 0 30px rgba(255,107,107,0.8); }
+      .br-main { position: absolute; width: 360px; height: 203px; z-index: 18; border: 6px solid #0B1220; border-radius: 22px; overflow: hidden; background: #000;
+        box-shadow: 0 0 50px rgba(255,107,107,0.8); }
       .avap { position: absolute; left: 0; top: 400px; width: 1080px; z-index: 13; text-align: center; }
       .av-c { display: inline-block; font-family: "Anton", sans-serif; font-size: 70px; color: #0B1220; background: #fff; border: 7px solid #0B1220; border-radius: 26px;
         padding: 10px 30px 4px; box-shadow: 0 18px 44px rgba(0,0,0,0.5); }
@@ -156,15 +163,19 @@
       <div id="h-agents" class="slam" data-layout-allow-overlap style="top: 600px; z-index: 13; opacity: 0">AGENTS IA</div>
       <div id="h-q" class="slam" style="top: 230px; font-size: 380px; color: #38BDF8; opacity: 0">?</div>
       <div id="vs" class="vs" style="opacity: 0"><div id="vs-a" class="vs-carte" style="opacity: 0"><img src="assets/img/logo-chatgpt-noir.svg" alt="" /><b>ChatGPT</b></div><div id="vs-v" class="vs-v" style="opacity: 0">VS</div><div id="vs-b" class="vs-carte" style="opacity: 0"><svg viewBox="0 0 100 100" width="150" height="150"><g fill="none" stroke="#0B1220" stroke-width="9"><circle cx="50" cy="50" r="16"/><path d="M50 8v14M50 78v14M8 50h14M78 50h14M20 20l10 10M70 70l10 10M80 20l-10 10M30 70l-10 10"/></g></svg><b>Automatisations</b></div></div>
+      <div id="ec43" class="eclat" style="left: 94px; top: 1722px; width: 260px; height: 260px; background: radial-gradient(circle, #fff 0%, #38BDF8 30%, rgba(255,255,255,0) 70%); opacity: 0"></div>
+      <div id="ec44" class="eclat" style="left: 748px; top: 1744px; width: 260px; height: 260px; background: radial-gradient(circle, #fff 0%, #F2B705 30%, rgba(255,255,255,0) 70%); opacity: 0"></div>
       <div id="titre" style="opacity: 0"><b>LES 3 NIVEAUX DE <i>L’IA</i></b></div>
+      <div id="orbe1" class="orbe" style="left: 450px; top: 1313px; opacity: 0">1</div>
+      <div id="ec47" class="eclat" style="left: 410px; top: 1273px; width: 260px; height: 260px; background: radial-gradient(circle, #fff 0%, #38BDF8 30%, rgba(255,255,255,0) 70%); opacity: 0"></div>
       <div id="niv1" class="niveau" style="opacity: 0"><span style="background: #38BDF8">NIVEAU 1</span><b>PROMPTING</b><em><i class="on" style="background: #38BDF8"></i><i class="" style=""></i><i class="" style=""></i></em></div>
-      <div id="fl45" class="flash" style="background: #38BDF8"></div>
+      <div id="fl49" class="flash" style="background: #38BDF8"></div>
       <div id="mini1" class="niv-mini" style="opacity: 0"><span style="background: #38BDF8">NIVEAU 1</span> PROMPTING</div>
       <div id="niv2" class="niveau" style="opacity: 0"><span style="background: #F2B705">NIVEAU 2</span><b>AUTOMATISATION IA</b><em><i class="on" style="background: #F2B705"></i><i class="on" style="background: #F2B705"></i><i class="" style=""></i></em></div>
-      <div id="fl48" class="flash" style="background: #F2B705"></div>
+      <div id="fl52" class="flash" style="background: #F2B705"></div>
       <div id="mini2" class="niv-mini" style="opacity: 0"><span style="background: #F2B705">NIVEAU 2</span> AUTOMATISATION IA</div>
       <div id="niv3" class="niveau" style="opacity: 0"><span style="background: #FF6B6B">NIVEAU 3</span><b>AGENTS IA</b><em><i class="on" style="background: #FF6B6B"></i><i class="on" style="background: #FF6B6B"></i><i class="on" style="background: #FF6B6B"></i></em></div>
-      <div id="fl51" class="flash" style="background: #FF6B6B"></div>
+      <div id="fl55" class="flash" style="background: #FF6B6B"></div>
       <div id="mini3" class="niv-mini" style="opacity: 0"><span style="background: #FF6B6B">NIVEAU 3</span> AGENTS IA</div>
       <div id="chat" class="carte" style="opacity: 0"><div class="c-tete"><img src="assets/img/logo-chatgpt-noir.svg" alt="" /><b>ChatGPT</b></div><div id="b1" class="bulle moi" style="opacity: 0">Écris un mail à mon client</div><div id="b2" class="bulle ia" style="opacity: 0">Voici votre mail : « Bonjour Monsieur… »</div><div id="b3" class="bulle moi" style="opacity: 0">Maintenant, résume ce PDF</div><div id="b4" class="bulle moi" style="opacity: 0">Et planifie la réunion</div></div>
       <div id="toi" class="tampon" style="top: 430px; opacity: 0">TOUJOURS TOI</div>
@@ -172,21 +183,29 @@
       <div id="fixe" class="f-tete2" style="opacity: 0">L’IA EXÉCUTE, POINT.</div>
       <div id="diff" class="slam rouge" data-layout-allow-overlap style="top: 560px; z-index: 13; opacity: 0">DIFFÉRENT</div>
       <div id="agent" class="carte agent" style="opacity: 0"><div class="a-obj"><svg viewBox="0 0 100 100" width="96" height="96"><circle cx="50" cy="50" r="42" fill="#FF6B6B"/><circle cx="50" cy="50" r="28" fill="#fff"/><circle cx="50" cy="50" r="14" fill="#FF6B6B"/></svg><div><span>OBJECTIF</span><b id="obj-txt"><em id="obj-q">?</em><em id="obj-v" style="opacity: 0">Préparer le rendez-vous client</em></b></div></div><div id="a-dec" class="a-dec" style="opacity: 0">L’AGENT DÉCIDE LUI-MÊME DES ÉTAPES</div><div id="et0" class="etape" style="opacity: 0"><i id="et0-c" class="case"></i><b id="et0-t" style="opacity: 0.25">Étape 1…</b><b id="et0-v" class="et-v" style="opacity: 0">Consulter vos mails</b></div><div id="et1" class="etape" style="opacity: 0"><i id="et1-c" class="case"></i><b id="et1-t" style="opacity: 0.25">Étape 2…</b><b id="et1-v" class="et-v" style="opacity: 0">Analyser les anciens échanges</b></div><div id="et2" class="etape" style="opacity: 0"><i id="et2-c" class="case"></i><b id="et2-t" style="opacity: 0.25">Étape 3…</b><b id="et2-v" class="et-v" style="opacity: 0">Vérifier votre calendrier</b></div><div id="et3" class="etape" style="opacity: 0"><i id="et3-c" class="case"></i><b id="et3-t" style="opacity: 0.25">Étape 4…</b><b id="et3-v" class="et-v" style="opacity: 0">Préparer un compte rendu</b></div></div>
+      <div id="onde0" class="onde" style="left: 430px; top: 1722px; opacity: 0"></div>
+      <div id="onde1" class="onde" style="left: 430px; top: 1722px; opacity: 0"></div>
+      <div id="onde2" class="onde" style="left: 430px; top: 1722px; opacity: 0"></div>
+      <div id="ec66" class="eclat" style="left: -112px; top: 517px; width: 300px; height: 300px; background: radial-gradient(circle, #fff 0%, #FF6B6B 30%, rgba(255,255,255,0) 70%); opacity: 0"></div>
+      <div id="ec67" class="eclat" style="left: 903px; top: 541px; width: 300px; height: 300px; background: radial-gradient(circle, #fff 0%, #FF6B6B 30%, rgba(255,255,255,0) 70%); opacity: 0"></div>
       <div id="fait" class="a-fait" style="opacity: 0">✓ TOUT FAIT PAR L’AGENT</div>
       <div id="revo" class="slam or" data-layout-allow-overlap style="top: 330px; z-index: 13; opacity: 0">LA RÉVOLUTION</div>
-      <div id="fl61" class="flash" style="background: #F2B705"></div>
+      <div id="fl70" class="flash" style="background: #F2B705"></div>
       <div id="av" class="avap" style="opacity: 0"><div id="av-a" class="av-c gris" style="opacity: 0">UNE IA QUI <b>RÉPOND</b></div><div id="av-f" class="av-f" style="opacity: 0">↓</div><div id="av-b" class="av-c or" style="opacity: 0">UNE IA À QUI ON <b>DÉLÈGUE</b></div></div>
+      <div id="ec72" class="eclat" style="left: 114px; top: 1609px; width: 260px; height: 260px; background: radial-gradient(circle, #fff 0%, #F2B705 30%, rgba(255,255,255,0) 70%); opacity: 0"></div>
       <div id="mo-n1" class="mo-niv" style="opacity: 0"><svg viewBox="0 0 600 600" width="760" height="760"><g id="mo-n1-r" stroke="#38BDF8" stroke-width="10" stroke-linecap="round" opacity="0.55"><line x1="300" y1="300" x2="590" y2="300" /><line x1="300" y1="300" x2="568" y2="411" /><line x1="300" y1="300" x2="505" y2="505" /><line x1="300" y1="300" x2="411" y2="568" /><line x1="300" y1="300" x2="300" y2="590" /><line x1="300" y1="300" x2="189" y2="568" /><line x1="300" y1="300" x2="95" y2="505" /><line x1="300" y1="300" x2="32" y2="411" /><line x1="300" y1="300" x2="10" y2="300" /><line x1="300" y1="300" x2="32" y2="189" /><line x1="300" y1="300" x2="95" y2="95" /><line x1="300" y1="300" x2="189" y2="32" /><line x1="300" y1="300" x2="300" y2="10" /><line x1="300" y1="300" x2="411" y2="32" /><line x1="300" y1="300" x2="505" y2="95" /><line x1="300" y1="300" x2="568" y2="189" /></g><circle id="mo-n1-a1" cx="300" cy="300" r="200" fill="none" stroke="#38BDF8" stroke-width="14" stroke-dasharray="60 30" /><circle id="mo-n1-a2" cx="300" cy="300" r="150" fill="none" stroke="#0B1220" stroke-width="8" stroke-dasharray="14 22" /><g id="mo-n1-o" fill="#38BDF8"><circle cx="550" cy="300" r="12" /><circle cx="425" cy="517" r="12" /><circle cx="175" cy="517" r="12" /><circle cx="50" cy="300" r="12" /><circle cx="175" cy="83" r="12" /><circle cx="425" cy="83" r="12" /></g><text x="300" y="380" text-anchor="middle" font-family="Anton" font-size="260" fill="#38BDF8" opacity="0.18">1</text></svg></div>
       <div id="mo-n2" class="mo-niv" style="opacity: 0"><svg viewBox="0 0 600 600" width="760" height="760"><g id="mo-n2-r" stroke="#F2B705" stroke-width="10" stroke-linecap="round" opacity="0.55"><line x1="300" y1="300" x2="590" y2="300" /><line x1="300" y1="300" x2="568" y2="411" /><line x1="300" y1="300" x2="505" y2="505" /><line x1="300" y1="300" x2="411" y2="568" /><line x1="300" y1="300" x2="300" y2="590" /><line x1="300" y1="300" x2="189" y2="568" /><line x1="300" y1="300" x2="95" y2="505" /><line x1="300" y1="300" x2="32" y2="411" /><line x1="300" y1="300" x2="10" y2="300" /><line x1="300" y1="300" x2="32" y2="189" /><line x1="300" y1="300" x2="95" y2="95" /><line x1="300" y1="300" x2="189" y2="32" /><line x1="300" y1="300" x2="300" y2="10" /><line x1="300" y1="300" x2="411" y2="32" /><line x1="300" y1="300" x2="505" y2="95" /><line x1="300" y1="300" x2="568" y2="189" /></g><circle id="mo-n2-a1" cx="300" cy="300" r="200" fill="none" stroke="#F2B705" stroke-width="14" stroke-dasharray="60 30" /><circle id="mo-n2-a2" cx="300" cy="300" r="150" fill="none" stroke="#0B1220" stroke-width="8" stroke-dasharray="14 22" /><g id="mo-n2-o" fill="#F2B705"><circle cx="550" cy="300" r="12" /><circle cx="425" cy="517" r="12" /><circle cx="175" cy="517" r="12" /><circle cx="50" cy="300" r="12" /><circle cx="175" cy="83" r="12" /><circle cx="425" cy="83" r="12" /></g><text x="300" y="380" text-anchor="middle" font-family="Anton" font-size="260" fill="#F2B705" opacity="0.18">2</text></svg></div>
       <div id="mo-n3" class="mo-niv" style="opacity: 0"><svg viewBox="0 0 600 600" width="760" height="760"><g id="mo-n3-r" stroke="#FF6B6B" stroke-width="10" stroke-linecap="round" opacity="0.55"><line x1="300" y1="300" x2="590" y2="300" /><line x1="300" y1="300" x2="568" y2="411" /><line x1="300" y1="300" x2="505" y2="505" /><line x1="300" y1="300" x2="411" y2="568" /><line x1="300" y1="300" x2="300" y2="590" /><line x1="300" y1="300" x2="189" y2="568" /><line x1="300" y1="300" x2="95" y2="505" /><line x1="300" y1="300" x2="32" y2="411" /><line x1="300" y1="300" x2="10" y2="300" /><line x1="300" y1="300" x2="32" y2="189" /><line x1="300" y1="300" x2="95" y2="95" /><line x1="300" y1="300" x2="189" y2="32" /><line x1="300" y1="300" x2="300" y2="10" /><line x1="300" y1="300" x2="411" y2="32" /><line x1="300" y1="300" x2="505" y2="95" /><line x1="300" y1="300" x2="568" y2="189" /></g><circle id="mo-n3-a1" cx="300" cy="300" r="200" fill="none" stroke="#FF6B6B" stroke-width="14" stroke-dasharray="60 30" /><circle id="mo-n3-a2" cx="300" cy="300" r="150" fill="none" stroke="#0B1220" stroke-width="8" stroke-dasharray="14 22" /><g id="mo-n3-o" fill="#FF6B6B"><circle cx="550" cy="300" r="12" /><circle cx="425" cy="517" r="12" /><circle cx="175" cy="517" r="12" /><circle cx="50" cy="300" r="12" /><circle cx="175" cy="83" r="12" /><circle cx="425" cy="83" r="12" /></g><text x="300" y="380" text-anchor="middle" font-family="Anton" font-size="260" fill="#FF6B6B" opacity="0.18">3</text></svg></div>
+      <div id="main-ecran" class="br-main" style="left: 348px; top: 1186px; opacity: 0"><video id="main-ecran-v" class="clip br-net" src="assets/broll/robot-yeux.mp4" data-start="29.48" data-duration="0.92" data-media-start="0" data-track-index="8" muted playsinline></video></div>
+      <div id="ec77" class="eclat" style="left: 368px; top: 1296px; width: 320px; height: 320px; background: radial-gradient(circle, #fff 0%, #FF6B6B 30%, rgba(255,255,255,0) 70%); opacity: 0"></div>
       <div id="br0" class="br-plein" style="opacity: 0"><video id="br0-br-flou" class="clip br-flou" src="assets/broll/lunettes-ecran.mp4" data-start="2.6" data-duration="0.93" data-media-start="0" data-track-index="5" muted playsinline></video><div class="br-bande"><video id="br0-br-net" class="clip br-net" src="assets/broll/lunettes-ecran.mp4" data-start="2.6" data-duration="0.93" data-media-start="0" data-track-index="5" muted playsinline></video></div></div>
-      <div id="fl67" class="flash" style="background: #fff"></div>
+      <div id="fl79" class="flash" style="background: #fff"></div>
       <div id="br1" class="br-ecran" style="opacity: 0"><video id="br1-br-net" class="clip br-net" src="assets/broll/robot-usine.mp4" data-start="16.98" data-duration="0.99" data-media-start="0" data-track-index="6" muted playsinline></video></div>
-      <div id="br2" class="br-plein" style="opacity: 0"><video id="br2-br-flou" class="clip br-flou" src="assets/broll/robot-yeux.mp4" data-start="29.38" data-duration="1.28" data-media-start="0" data-track-index="7" muted playsinline></video><div class="br-bande"><video id="br2-br-net" class="clip br-net" src="assets/broll/robot-yeux.mp4" data-start="29.38" data-duration="1.28" data-media-start="0" data-track-index="7" muted playsinline></video></div></div>
-      <div id="fl70" class="flash" style="background: #fff"></div>
+      <div id="br2" class="br-plein" style="opacity: 0"><video id="br2-br-flou" class="clip br-flou" src="assets/broll/robot-yeux.mp4" data-start="30.35" data-duration="0.31" data-media-start="0.87" data-track-index="7" muted playsinline></video><div class="br-bande"><video id="br2-br-net" class="clip br-net" src="assets/broll/robot-yeux.mp4" data-start="30.35" data-duration="0.31" data-media-start="0.87" data-track-index="7" muted playsinline></video></div></div>
+      <div id="fl82" class="flash" style="background: #fff"></div>
       <div id="br3" class="br-ecran" style="opacity: 0"><video id="br3-br-net" class="clip br-net" src="assets/broll/reunion.mp4" data-start="36.72" data-duration="2.26" data-media-start="0" data-track-index="5" muted playsinline></video></div>
       <div id="br4" class="br-plein" style="opacity: 0"><video id="br4-br-flou" class="clip br-flou" src="assets/broll/ville-futur.mp4" data-start="46.34" data-duration="1.25" data-media-start="0" data-track-index="6" muted playsinline></video><div class="br-bande"><video id="br4-br-net" class="clip br-net" src="assets/broll/ville-futur.mp4" data-start="46.34" data-duration="1.25" data-media-start="0" data-track-index="6" muted playsinline></video></div></div>
-      <div id="fl73" class="flash" style="background: #fff"></div>
+      <div id="fl85" class="flash" style="background: #fff"></div>
       <div id="sous-titres" data-composition-id="sous-titres" data-composition-src="compositions/sous-titres.html" data-start="0" data-duration="52.46" data-track-index="3"
         data-width="1080" data-height="1920" style="position: absolute; inset: 0; z-index: 35"></div>
       <div id="fondu"></div>
@@ -210,93 +229,99 @@
       <audio id="sfx-016" src="assets/sfx/pop-click.mp3" data-start="1.911" data-duration="1.175" data-volume="0.15" data-track-index="30"></audio><!-- outil Agents IA -->
       <audio id="sfx-017" src="assets/sfx/pop-sec.mp3" data-start="1.946" data-duration="0.305" data-volume="0.15" data-track-index="39"></audio><!-- outil CrewAI -->
       <audio id="sfx-018" src="assets/sfx/swoosh-vitesse.mp3" data-start="2.05" data-duration="2.6" data-volume="0.255" data-track-index="40"></audio><!-- illustration lunettes-ecran.mp4 -->
-      <audio id="sfx-019" src="assets/sfx/riser-tech.mp3" data-start="2.12" data-duration="0.9" data-volume="0.21" data-track-index="36"></audio><!-- montée vers le niveau 1 -->
+      <audio id="sfx-019" src="assets/sfx/riser-tech.mp3" data-start="2.62" data-duration="0.9" data-volume="0.21" data-track-index="32"></audio><!-- montée vers le niveau 1 -->
       <audio id="sfx-020" src="assets/sfx/coup-mystere.mp3" data-start="2.93" data-duration="3.5" data-volume="0.3" data-track-index="31"></audio><!-- qu'est-ce que c'est -->
       <audio id="sfx-021" src="assets/sfx/whoosh-cine.mp3" data-start="3.15" data-duration="1.334" data-volume="0.12" data-track-index="30"></audio><!-- raccord 2 -->
-      <audio id="sfx-022" src="assets/sfx/pop-cartoon.mp3" data-start="5.52" data-duration="0.521" data-volume="0.3" data-track-index="30"></audio><!-- ChatGPT -->
-      <audio id="sfx-023" src="assets/sfx/impact-tambour.mp3" data-start="5.81" data-duration="3.0" data-volume="0.27" data-track-index="32"></audio><!-- VS -->
-      <audio id="sfx-024" src="assets/sfx/clavier-ordi.mp3" data-start="6.37" data-duration="0.9" data-volume="0.225" data-track-index="30"></audio><!-- il tape sa demande -->
-      <audio id="sfx-025" src="assets/sfx/pop-bulle.mp3" data-start="6.94" data-duration="0.381" data-volume="0.3" data-track-index="31"></audio><!-- automatisations -->
-      <audio id="sfx-026" src="assets/sfx/swoosh-tourbillon.mp3" data-start="7.09" data-duration="3.773" data-volume="0.21" data-track-index="33"></audio><!-- motion design niveau 1 -->
-      <audio id="sfx-027" src="assets/sfx/zoom-impact.mp3" data-start="7.18" data-duration="1.222" data-volume="0.225" data-track-index="34"></audio><!-- zoom de cinéma -->
-      <audio id="sfx-028" src="assets/sfx/swoosh-court.mp3" data-start="7.52" data-duration="1.25" data-volume="0.12" data-track-index="30"></audio><!-- raccord 3 -->
-      <audio id="sfx-029" src="assets/sfx/impact-basse.mp3" data-start="7.62" data-duration="1.1" data-volume="0.3" data-track-index="31"></audio><!-- niveau 1 -->
-      <audio id="sfx-030" src="assets/sfx/whoosh-pop.mp3" data-start="8.56" data-duration="0.18" data-volume="0.12" data-track-index="34"></audio><!-- raccord 4 -->
-      <audio id="sfx-031" src="assets/sfx/balaie-rapide.mp3" data-start="9.25" data-duration="1.917" data-volume="0.12" data-track-index="30"></audio><!-- raccord 5 -->
-      <audio id="sfx-032" src="assets/sfx/pop-click.mp3" data-start="9.27" data-duration="1.175" data-volume="0.195" data-track-index="31"></audio><!-- pastille niveau 1 -->
+      <audio id="sfx-022" src="assets/sfx/magie.mp3" data-start="4.57" data-duration="3.5" data-volume="0.255" data-track-index="30"></audio><!-- geste de la main -->
+      <audio id="sfx-023" src="assets/sfx/pop-cartoon.mp3" data-start="5.47" data-duration="0.521" data-volume="0.3" data-track-index="32"></audio><!-- ChatGPT -->
+      <audio id="sfx-024" src="assets/sfx/impact-tambour.mp3" data-start="5.81" data-duration="3.0" data-volume="0.27" data-track-index="33"></audio><!-- VS -->
+      <audio id="sfx-025" src="assets/sfx/clavier-ordi.mp3" data-start="6.37" data-duration="0.9" data-volume="0.225" data-track-index="32"></audio><!-- il tape sa demande -->
+      <audio id="sfx-026" src="assets/sfx/scintille-whoosh.mp3" data-start="6.44" data-duration="4.549" data-volume="0.255" data-track-index="31"></audio><!-- geste de la main -->
+      <audio id="sfx-027" src="assets/sfx/pop-bulle.mp3" data-start="6.94" data-duration="0.381" data-volume="0.3" data-track-index="34"></audio><!-- automatisations -->
+      <audio id="sfx-028" src="assets/sfx/swoosh-court.mp3" data-start="7.52" data-duration="1.25" data-volume="0.12" data-track-index="32"></audio><!-- raccord 3 -->
+      <audio id="sfx-029" src="assets/sfx/swoosh-tourbillon.mp3" data-start="7.59" data-duration="3.773" data-volume="0.21" data-track-index="34"></audio><!-- motion design niveau 1 -->
+      <audio id="sfx-030" src="assets/sfx/impact-basse.mp3" data-start="8.12" data-duration="1.1" data-volume="0.3" data-track-index="30"></audio><!-- niveau 1 -->
+      <audio id="sfx-031" src="assets/sfx/whoosh-pop.mp3" data-start="8.56" data-duration="0.18" data-volume="0.12" data-track-index="35"></audio><!-- raccord 4 -->
+      <audio id="sfx-032" src="assets/sfx/balaie-rapide.mp3" data-start="9.25" data-duration="1.917" data-volume="0.12" data-track-index="30"></audio><!-- raccord 5 -->
       <audio id="sfx-033" src="assets/sfx/swoosh-court.mp3" data-start="9.4" data-duration="1.25" data-volume="0.225" data-track-index="32"></audio><!-- la conversation arrive -->
-      <audio id="sfx-034" src="assets/sfx/riser-tech.mp3" data-start="9.83" data-duration="0.9" data-volume="0.21" data-track-index="34"></audio><!-- montée vers le niveau 2 -->
-      <audio id="sfx-035" src="assets/sfx/notif-positive.mp3" data-start="11.55" data-duration="2.8" data-volume="0.285" data-track-index="30"></audio><!-- ChatGPT répond -->
-      <audio id="sfx-036" src="assets/sfx/souffle-rapide.mp3" data-start="11.64" data-duration="1.757" data-volume="0.12" data-track-index="31"></audio><!-- raccord 6 -->
-      <audio id="sfx-037" src="assets/sfx/whoosh-cine.mp3" data-start="12.49" data-duration="1.334" data-volume="0.12" data-track-index="32"></audio><!-- raccord 7 -->
-      <audio id="sfx-038" src="assets/sfx/clavier-ordi-2.mp3" data-start="12.94" data-duration="0.6" data-volume="0.225" data-track-index="33"></audio><!-- nouvelle tâche -->
-      <audio id="sfx-039" src="assets/sfx/clavier-tel.mp3" data-start="12.94" data-duration="0.5" data-volume="0.225" data-track-index="34"></audio><!-- encore une tâche -->
-      <audio id="sfx-040" src="assets/sfx/buzz-faux.mp3" data-start="14.76" data-duration="1.739" data-volume="0.27" data-track-index="30"></audio><!-- votre intervention -->
-      <audio id="sfx-041" src="assets/sfx/swoosh-tourbillon.mp3" data-start="14.8" data-duration="3.773" data-volume="0.21" data-track-index="31"></audio><!-- motion design niveau 2 -->
-      <audio id="sfx-042" src="assets/sfx/zoom-in.mp3" data-start="14.99" data-duration="0.657" data-volume="0.225" data-track-index="32"></audio><!-- zoom de cinéma -->
-      <audio id="sfx-043" src="assets/sfx/swoosh-court.mp3" data-start="15.23" data-duration="1.25" data-volume="0.12" data-track-index="33"></audio><!-- raccord 8 -->
-      <audio id="sfx-044" src="assets/sfx/impact-basse.mp3" data-start="15.33" data-duration="1.1" data-volume="0.3" data-track-index="34"></audio><!-- niveau 2 -->
-      <audio id="sfx-045" src="assets/sfx/whoosh-pop.mp3" data-start="16.32" data-duration="0.18" data-volume="0.12" data-track-index="32"></audio><!-- raccord 9 -->
-      <audio id="sfx-046" src="assets/sfx/zoom-in.mp3" data-start="16.58" data-duration="0.657" data-volume="0.24" data-track-index="30"></audio><!-- écran robot-usine.mp4 -->
-      <audio id="sfx-047" src="assets/sfx/pop-sec.mp3" data-start="16.88" data-duration="0.305" data-volume="0.195" data-track-index="32"></audio><!-- pastille niveau 2 -->
-      <audio id="sfx-048" src="assets/sfx/balaie-rapide.mp3" data-start="17.38" data-duration="1.917" data-volume="0.12" data-track-index="30"></audio><!-- raccord 10 -->
-      <audio id="sfx-049" src="assets/sfx/whoosh-pop.mp3" data-start="17.97" data-duration="0.18" data-volume="0.225" data-track-index="32"></audio><!-- le scénario apparaît -->
-      <audio id="sfx-050" src="assets/sfx/pop-bulle.mp3" data-start="18.83" data-duration="0.381" data-volume="0.225" data-track-index="31"></audio><!-- case 1 -->
-      <audio id="sfx-051" src="assets/sfx/pop-click.mp3" data-start="19.08" data-duration="1.175" data-volume="0.225" data-track-index="32"></audio><!-- case 2 -->
-      <audio id="sfx-052" src="assets/sfx/souffle-rapide.mp3" data-start="19.1" data-duration="1.757" data-volume="0.12" data-track-index="33"></audio><!-- raccord 11 -->
-      <audio id="sfx-053" src="assets/sfx/pop-sec.mp3" data-start="19.13" data-duration="0.305" data-volume="0.225" data-track-index="34"></audio><!-- case 3 -->
-      <audio id="sfx-054" src="assets/sfx/notif-indice.mp3" data-start="20.43" data-duration="1.716" data-volume="0.285" data-track-index="30"></audio><!-- Recevoir un mail -->
-      <audio id="sfx-055" src="assets/sfx/whoosh-cine.mp3" data-start="20.73" data-duration="1.334" data-volume="0.12" data-track-index="31"></audio><!-- raccord 12 -->
-      <audio id="sfx-056" src="assets/sfx/coche.mp3" data-start="22.01" data-duration="0.237" data-volume="0.285" data-track-index="32"></audio><!-- Le résumer -->
-      <audio id="sfx-057" src="assets/sfx/riser-tech.mp3" data-start="22.15" data-duration="0.9" data-volume="0.21" data-track-index="31"></audio><!-- montée vers le niveau 3 -->
-      <audio id="sfx-058" src="assets/sfx/swoosh-court.mp3" data-start="22.46" data-duration="1.25" data-volume="0.12" data-track-index="30"></audio><!-- raccord 13 -->
-      <audio id="sfx-059" src="assets/sfx/coche.mp3" data-start="22.91" data-duration="0.237" data-volume="0.285" data-track-index="32"></audio><!-- L’enregistrer dans le CRM -->
-      <audio id="sfx-060" src="assets/sfx/scanner.mp3" data-start="23.46" data-duration="1.5" data-volume="0.225" data-track-index="31"></audio><!-- l'IA exécute le scénario -->
-      <audio id="sfx-061" src="assets/sfx/whoosh-pop.mp3" data-start="25.12" data-duration="0.18" data-volume="0.12" data-track-index="30"></audio><!-- raccord 14 -->
-      <audio id="sfx-062" src="assets/sfx/trailer-impact.mp3" data-start="26.8" data-duration="4.866" data-volume="0.3" data-track-index="30"></audio><!-- niveau 3 -->
-      <audio id="sfx-063" src="assets/sfx/trailer-impact-2.mp3" data-start="26.85" data-duration="6.0" data-volume="0.27" data-track-index="31"></audio><!-- changement de musique -->
-      <audio id="sfx-064" src="assets/sfx/verrou.mp3" data-start="27.0" data-duration="1.6" data-volume="0.3" data-track-index="32"></audio><!-- simplement votre scénario -->
-      <audio id="sfx-065" src="assets/sfx/zoom-futur.mp3" data-start="27.11" data-duration="2.171" data-volume="0.225" data-track-index="33"></audio><!-- zoom de cinéma -->
-      <audio id="sfx-066" src="assets/sfx/swoosh-tourbillon.mp3" data-start="27.12" data-duration="3.773" data-volume="0.21" data-track-index="34"></audio><!-- motion design niveau 3 -->
-      <audio id="sfx-067" src="assets/sfx/balaie-rapide.mp3" data-start="27.3" data-duration="1.917" data-volume="0.12" data-track-index="35"></audio><!-- raccord 15 -->
-      <audio id="sfx-068" src="assets/sfx/whoosh-cine.mp3" data-start="28.33" data-duration="1.334" data-volume="0.255" data-track-index="36"></audio><!-- illustration robot-yeux.mp4 -->
-      <audio id="sfx-069" src="assets/sfx/souffle-rapide.mp3" data-start="28.61" data-duration="1.757" data-volume="0.12" data-track-index="37"></audio><!-- raccord 16 -->
-      <audio id="sfx-070" src="assets/sfx/pop-cartoon.mp3" data-start="29.3" data-duration="0.521" data-volume="0.195" data-track-index="32"></audio><!-- pastille niveau 3 -->
-      <audio id="sfx-071" src="assets/sfx/whoosh-cine.mp3" data-start="29.4" data-duration="1.334" data-volume="0.12" data-track-index="33"></audio><!-- raccord 17 -->
-      <audio id="sfx-072" src="assets/sfx/swoosh-court.mp3" data-start="30.53" data-duration="1.25" data-volume="0.12" data-track-index="32"></audio><!-- raccord 18 -->
-      <audio id="sfx-073" src="assets/sfx/glitch-rugit.mp3" data-start="31.57" data-duration="1.081" data-volume="0.27" data-track-index="33"></audio><!-- ici c'est différent -->
-      <audio id="sfx-074" src="assets/sfx/whoosh-cine.mp3" data-start="31.69" data-duration="1.334" data-volume="0.225" data-track-index="30"></audio><!-- zoom de cinéma -->
-      <audio id="sfx-075" src="assets/sfx/balaie-rapide.mp3" data-start="31.9" data-duration="1.917" data-volume="0.225" data-track-index="32"></audio><!-- l'objectif arrive -->
-      <audio id="sfx-076" src="assets/sfx/whoosh-pop.mp3" data-start="31.9" data-duration="0.18" data-volume="0.12" data-track-index="34"></audio><!-- raccord 19 -->
-      <audio id="sfx-077" src="assets/sfx/impact-tambour.mp3" data-start="32.03" data-duration="3.0" data-volume="0.27" data-track-index="35"></audio><!-- un objectif -->
-      <audio id="sfx-078" src="assets/sfx/balaie-rapide.mp3" data-start="32.64" data-duration="1.917" data-volume="0.12" data-track-index="34"></audio><!-- raccord 20 -->
-      <audio id="sfx-079" src="assets/sfx/impact-basse.mp3" data-start="32.68" data-duration="1.1" data-volume="0.18" data-track-index="33"></audio><!-- boom du zoom -->
-      <audio id="sfx-080" src="assets/sfx/robot-scifi.mp3" data-start="33.44" data-duration="1.496" data-volume="0.225" data-track-index="30"></audio><!-- l'agent décide -->
-      <audio id="sfx-081" src="assets/sfx/clavier-ordi.mp3" data-start="33.79" data-duration="0.8" data-volume="0.225" data-track-index="31"></audio><!-- l'objectif s'écrit -->
-      <audio id="sfx-082" src="assets/sfx/pop-cartoon.mp3" data-start="34.39" data-duration="0.521" data-volume="0.21" data-track-index="32"></audio><!-- étape 1 (vide) -->
-      <audio id="sfx-083" src="assets/sfx/pop-bulle.mp3" data-start="34.47" data-duration="0.381" data-volume="0.21" data-track-index="33"></audio><!-- étape 2 (vide) -->
-      <audio id="sfx-084" src="assets/sfx/pop-click.mp3" data-start="34.75" data-duration="1.175" data-volume="0.21" data-track-index="31"></audio><!-- étape 3 (vide) -->
-      <audio id="sfx-085" src="assets/sfx/pop-sec.mp3" data-start="34.83" data-duration="0.305" data-volume="0.21" data-track-index="34"></audio><!-- étape 4 (vide) -->
+      <audio id="sfx-034" src="assets/sfx/pop-click.mp3" data-start="9.77" data-duration="1.175" data-volume="0.195" data-track-index="33"></audio><!-- pastille niveau 1 -->
+      <audio id="sfx-035" src="assets/sfx/riser-tech.mp3" data-start="9.83" data-duration="0.9" data-volume="0.21" data-track-index="35"></audio><!-- montée vers le niveau 2 -->
+      <audio id="sfx-036" src="assets/sfx/notif-positive.mp3" data-start="11.55" data-duration="2.8" data-volume="0.285" data-track-index="30"></audio><!-- ChatGPT répond -->
+      <audio id="sfx-037" src="assets/sfx/souffle-rapide.mp3" data-start="11.64" data-duration="1.757" data-volume="0.12" data-track-index="31"></audio><!-- raccord 6 -->
+      <audio id="sfx-038" src="assets/sfx/whoosh-cine.mp3" data-start="12.49" data-duration="1.334" data-volume="0.12" data-track-index="32"></audio><!-- raccord 7 -->
+      <audio id="sfx-039" src="assets/sfx/clavier-ordi-2.mp3" data-start="12.94" data-duration="0.6" data-volume="0.225" data-track-index="33"></audio><!-- nouvelle tâche -->
+      <audio id="sfx-040" src="assets/sfx/clavier-tel.mp3" data-start="12.94" data-duration="0.5" data-volume="0.225" data-track-index="34"></audio><!-- encore une tâche -->
+      <audio id="sfx-041" src="assets/sfx/buzz-faux.mp3" data-start="14.76" data-duration="1.739" data-volume="0.27" data-track-index="30"></audio><!-- votre intervention -->
+      <audio id="sfx-042" src="assets/sfx/swoosh-tourbillon.mp3" data-start="14.8" data-duration="3.773" data-volume="0.21" data-track-index="31"></audio><!-- motion design niveau 2 -->
+      <audio id="sfx-043" src="assets/sfx/zoom-impact.mp3" data-start="14.89" data-duration="1.222" data-volume="0.225" data-track-index="32"></audio><!-- zoom de cinéma -->
+      <audio id="sfx-044" src="assets/sfx/swoosh-court.mp3" data-start="15.23" data-duration="1.25" data-volume="0.12" data-track-index="33"></audio><!-- raccord 8 -->
+      <audio id="sfx-045" src="assets/sfx/impact-basse.mp3" data-start="15.33" data-duration="1.1" data-volume="0.3" data-track-index="34"></audio><!-- niveau 2 -->
+      <audio id="sfx-046" src="assets/sfx/whoosh-pop.mp3" data-start="16.32" data-duration="0.18" data-volume="0.12" data-track-index="32"></audio><!-- raccord 9 -->
+      <audio id="sfx-047" src="assets/sfx/zoom-in.mp3" data-start="16.58" data-duration="0.657" data-volume="0.24" data-track-index="30"></audio><!-- écran robot-usine.mp4 -->
+      <audio id="sfx-048" src="assets/sfx/pop-sec.mp3" data-start="16.88" data-duration="0.305" data-volume="0.195" data-track-index="32"></audio><!-- pastille niveau 2 -->
+      <audio id="sfx-049" src="assets/sfx/balaie-rapide.mp3" data-start="17.38" data-duration="1.917" data-volume="0.12" data-track-index="30"></audio><!-- raccord 10 -->
+      <audio id="sfx-050" src="assets/sfx/whoosh-pop.mp3" data-start="17.97" data-duration="0.18" data-volume="0.225" data-track-index="32"></audio><!-- le scénario apparaît -->
+      <audio id="sfx-051" src="assets/sfx/pop-bulle.mp3" data-start="18.83" data-duration="0.381" data-volume="0.225" data-track-index="31"></audio><!-- case 1 -->
+      <audio id="sfx-052" src="assets/sfx/pop-click.mp3" data-start="19.08" data-duration="1.175" data-volume="0.225" data-track-index="32"></audio><!-- case 2 -->
+      <audio id="sfx-053" src="assets/sfx/souffle-rapide.mp3" data-start="19.1" data-duration="1.757" data-volume="0.12" data-track-index="33"></audio><!-- raccord 11 -->
+      <audio id="sfx-054" src="assets/sfx/pop-sec.mp3" data-start="19.13" data-duration="0.305" data-volume="0.225" data-track-index="34"></audio><!-- case 3 -->
+      <audio id="sfx-055" src="assets/sfx/notif-indice.mp3" data-start="20.43" data-duration="1.716" data-volume="0.285" data-track-index="30"></audio><!-- Recevoir un mail -->
+      <audio id="sfx-056" src="assets/sfx/whoosh-cine.mp3" data-start="20.73" data-duration="1.334" data-volume="0.12" data-track-index="31"></audio><!-- raccord 12 -->
+      <audio id="sfx-057" src="assets/sfx/coche.mp3" data-start="22.01" data-duration="0.237" data-volume="0.285" data-track-index="32"></audio><!-- Le résumer -->
+      <audio id="sfx-058" src="assets/sfx/riser-tech.mp3" data-start="22.15" data-duration="0.9" data-volume="0.21" data-track-index="31"></audio><!-- montée vers le niveau 3 -->
+      <audio id="sfx-059" src="assets/sfx/swoosh-court.mp3" data-start="22.46" data-duration="1.25" data-volume="0.12" data-track-index="30"></audio><!-- raccord 13 -->
+      <audio id="sfx-060" src="assets/sfx/coche.mp3" data-start="22.91" data-duration="0.237" data-volume="0.285" data-track-index="32"></audio><!-- L’enregistrer dans le CRM -->
+      <audio id="sfx-061" src="assets/sfx/scanner.mp3" data-start="23.46" data-duration="1.5" data-volume="0.225" data-track-index="31"></audio><!-- l'IA exécute le scénario -->
+      <audio id="sfx-062" src="assets/sfx/whoosh-pop.mp3" data-start="25.12" data-duration="0.18" data-volume="0.12" data-track-index="30"></audio><!-- raccord 14 -->
+      <audio id="sfx-063" src="assets/sfx/trailer-impact.mp3" data-start="26.8" data-duration="4.866" data-volume="0.3" data-track-index="30"></audio><!-- niveau 3 -->
+      <audio id="sfx-064" src="assets/sfx/trailer-impact-2.mp3" data-start="26.85" data-duration="6.0" data-volume="0.27" data-track-index="31"></audio><!-- changement de musique -->
+      <audio id="sfx-065" src="assets/sfx/verrou.mp3" data-start="27.0" data-duration="1.6" data-volume="0.3" data-track-index="32"></audio><!-- simplement votre scénario -->
+      <audio id="sfx-066" src="assets/sfx/swoosh-tourbillon.mp3" data-start="27.12" data-duration="3.773" data-volume="0.21" data-track-index="33"></audio><!-- motion design niveau 3 -->
+      <audio id="sfx-067" src="assets/sfx/balaie-rapide.mp3" data-start="27.3" data-duration="1.917" data-volume="0.12" data-track-index="34"></audio><!-- raccord 15 -->
+      <audio id="sfx-068" src="assets/sfx/zoom-in.mp3" data-start="27.31" data-duration="0.657" data-volume="0.225" data-track-index="35"></audio><!-- zoom de cinéma -->
+      <audio id="sfx-069" src="assets/sfx/scintille-whoosh.mp3" data-start="28.13" data-duration="4.549" data-volume="0.255" data-track-index="35"></audio><!-- geste de la main -->
+      <audio id="sfx-070" src="assets/sfx/souffle-rapide.mp3" data-start="28.61" data-duration="1.757" data-volume="0.12" data-track-index="36"></audio><!-- raccord 16 -->
+      <audio id="sfx-071" src="assets/sfx/pop-cartoon.mp3" data-start="29.3" data-duration="0.521" data-volume="0.195" data-track-index="32"></audio><!-- pastille niveau 3 -->
+      <audio id="sfx-072" src="assets/sfx/whoosh-cine.mp3" data-start="29.3" data-duration="1.334" data-volume="0.255" data-track-index="34"></audio><!-- illustration robot-yeux.mp4 -->
+      <audio id="sfx-073" src="assets/sfx/whoosh-cine.mp3" data-start="29.4" data-duration="1.334" data-volume="0.12" data-track-index="37"></audio><!-- raccord 17 -->
+      <audio id="sfx-074" src="assets/sfx/zoom-in.mp3" data-start="29.73" data-duration="0.657" data-volume="0.255" data-track-index="38"></audio><!-- zoom dans l'écran des mains -->
+      <audio id="sfx-075" src="assets/sfx/swoosh-court.mp3" data-start="30.53" data-duration="1.25" data-volume="0.12" data-track-index="32"></audio><!-- raccord 18 -->
+      <audio id="sfx-076" src="assets/sfx/glitch-rugit.mp3" data-start="31.57" data-duration="1.081" data-volume="0.27" data-track-index="33"></audio><!-- ici c'est différent -->
+      <audio id="sfx-077" src="assets/sfx/balaie-rapide.mp3" data-start="31.9" data-duration="1.917" data-volume="0.225" data-track-index="30"></audio><!-- l'objectif arrive -->
+      <audio id="sfx-078" src="assets/sfx/whoosh-pop.mp3" data-start="31.9" data-duration="0.18" data-volume="0.12" data-track-index="32"></audio><!-- raccord 19 -->
+      <audio id="sfx-079" src="assets/sfx/impact-tambour.mp3" data-start="32.03" data-duration="3.0" data-volume="0.27" data-track-index="34"></audio><!-- un objectif -->
+      <audio id="sfx-080" src="assets/sfx/zoom-futur.mp3" data-start="32.14" data-duration="2.171" data-volume="0.225" data-track-index="32"></audio><!-- zoom de cinéma -->
+      <audio id="sfx-081" src="assets/sfx/balaie-rapide.mp3" data-start="32.64" data-duration="1.917" data-volume="0.12" data-track-index="36"></audio><!-- raccord 20 -->
+      <audio id="sfx-082" src="assets/sfx/impact-basse.mp3" data-start="32.68" data-duration="1.1" data-volume="0.18" data-track-index="33"></audio><!-- boom du zoom -->
+      <audio id="sfx-083" src="assets/sfx/aura.mp3" data-start="32.99" data-duration="3.0" data-volume="0.225" data-track-index="31"></audio><!-- mains jointes -->
+      <audio id="sfx-084" src="assets/sfx/robot-scifi.mp3" data-start="33.44" data-duration="1.496" data-volume="0.225" data-track-index="35"></audio><!-- l'agent décide -->
+      <audio id="sfx-085" src="assets/sfx/clavier-ordi.mp3" data-start="33.79" data-duration="0.8" data-volume="0.225" data-track-index="33"></audio><!-- l'objectif s'écrit -->
       <audio id="sfx-086" src="assets/sfx/whoosh-cine.mp3" data-start="35.67" data-duration="1.334" data-volume="0.12" data-track-index="30"></audio><!-- raccord 22 -->
       <audio id="sfx-087" src="assets/sfx/souffle-rapide.mp3" data-start="35.72" data-duration="1.757" data-volume="0.12" data-track-index="32"></audio><!-- raccord 21 -->
-      <audio id="sfx-088" src="assets/sfx/zoom-expand.mp3" data-start="36.32" data-duration="0.645" data-volume="0.24" data-track-index="31"></audio><!-- écran reunion.mp4 -->
-      <audio id="sfx-089" src="assets/sfx/swoosh-court.mp3" data-start="38.77" data-duration="1.25" data-volume="0.12" data-track-index="30"></audio><!-- raccord 23 -->
-      <audio id="sfx-090" src="assets/sfx/whoosh-pop.mp3" data-start="39.03" data-duration="0.18" data-volume="0.12" data-track-index="31"></audio><!-- raccord 24 -->
-      <audio id="sfx-091" src="assets/sfx/coche.mp3" data-start="39.87" data-duration="0.237" data-volume="0.3" data-track-index="31"></audio><!-- étape cochée : Consulter vos mails -->
-      <audio id="sfx-092" src="assets/sfx/coche.mp3" data-start="41.31" data-duration="0.237" data-volume="0.3" data-track-index="30"></audio><!-- étape cochée : Analyser les anciens échanges -->
-      <audio id="sfx-093" src="assets/sfx/balaie-rapide.mp3" data-start="42.53" data-duration="1.917" data-volume="0.12" data-track-index="30"></audio><!-- raccord 25 -->
-      <audio id="sfx-094" src="assets/sfx/coche.mp3" data-start="43.37" data-duration="0.237" data-volume="0.3" data-track-index="31"></audio><!-- étape cochée : Vérifier votre calendrier -->
-      <audio id="sfx-095" src="assets/sfx/coche.mp3" data-start="45.21" data-duration="0.237" data-volume="0.3" data-track-index="30"></audio><!-- étape cochée : Préparer un compte rendu -->
-      <audio id="sfx-096" src="assets/sfx/souffle-rapide.mp3" data-start="45.69" data-duration="1.757" data-volume="0.12" data-track-index="30"></audio><!-- raccord 26 -->
-      <audio id="sfx-097" src="assets/sfx/mission-ok.mp3" data-start="46.0" data-duration="1.553" data-volume="0.3" data-track-index="31"></audio><!-- tout est fait -->
-      <audio id="sfx-098" src="assets/sfx/zoom-swipe.mp3" data-start="46.09" data-duration="1.056" data-volume="0.255" data-track-index="32"></audio><!-- illustration ville-futur.mp4 -->
-      <audio id="sfx-099" src="assets/sfx/trailer-impact.mp3" data-start="46.64" data-duration="4.866" data-volume="0.315" data-track-index="33"></audio><!-- la révolution -->
-      <audio id="sfx-100" src="assets/sfx/trailer-impact-2.mp3" data-start="46.74" data-duration="5.72" data-volume="0.18" data-track-index="34"></audio><!-- boom du zoom -->
-      <audio id="sfx-101" src="assets/sfx/whoosh-cine.mp3" data-start="46.75" data-duration="1.334" data-volume="0.12" data-track-index="35"></audio><!-- raccord 27 -->
-      <audio id="sfx-102" src="assets/sfx/zoom-impact.mp3" data-start="47.05" data-duration="1.222" data-volume="0.225" data-track-index="36"></audio><!-- zoom de cinéma -->
-      <audio id="sfx-103" src="assets/sfx/pop-cartoon.mp3" data-start="49.32" data-duration="0.521" data-volume="0.27" data-track-index="30"></audio><!-- une IA qui répond -->
-      <audio id="sfx-104" src="assets/sfx/swoosh-monte.mp3" data-start="49.78" data-duration="1.03" data-volume="0.225" data-track-index="31"></audio><!-- flèche -->
-      <audio id="sfx-105" src="assets/sfx/power-up.mp3" data-start="50.93" data-duration="1.53" data-volume="0.3" data-track-index="30"></audio><!-- on peut déléguer -->
+      <audio id="sfx-088" src="assets/sfx/whoosh-pop.mp3" data-start="36.26" data-duration="0.18" data-volume="0.255" data-track-index="31"></audio><!-- geste de la main -->
+      <audio id="sfx-089" src="assets/sfx/zoom-expand.mp3" data-start="36.32" data-duration="0.645" data-volume="0.24" data-track-index="33"></audio><!-- écran reunion.mp4 -->
+      <audio id="sfx-090" src="assets/sfx/pop-bulle.mp3" data-start="36.36" data-duration="0.381" data-volume="0.21" data-track-index="34"></audio><!-- étape 2 (vide) -->
+      <audio id="sfx-091" src="assets/sfx/pop-cartoon.mp3" data-start="36.36" data-duration="0.521" data-volume="0.21" data-track-index="35"></audio><!-- étape 1 (vide) -->
+      <audio id="sfx-092" src="assets/sfx/pop-click.mp3" data-start="36.56" data-duration="1.175" data-volume="0.21" data-track-index="31"></audio><!-- étape 3 (vide) -->
+      <audio id="sfx-093" src="assets/sfx/pop-sec.mp3" data-start="36.56" data-duration="0.305" data-volume="0.21" data-track-index="36"></audio><!-- étape 4 (vide) -->
+      <audio id="sfx-094" src="assets/sfx/swoosh-court.mp3" data-start="38.77" data-duration="1.25" data-volume="0.12" data-track-index="30"></audio><!-- raccord 23 -->
+      <audio id="sfx-095" src="assets/sfx/whoosh-pop.mp3" data-start="39.03" data-duration="0.18" data-volume="0.12" data-track-index="31"></audio><!-- raccord 24 -->
+      <audio id="sfx-096" src="assets/sfx/coche.mp3" data-start="39.87" data-duration="0.237" data-volume="0.3" data-track-index="31"></audio><!-- étape cochée : Consulter vos mails -->
+      <audio id="sfx-097" src="assets/sfx/coche.mp3" data-start="41.31" data-duration="0.237" data-volume="0.3" data-track-index="30"></audio><!-- étape cochée : Analyser les anciens échanges -->
+      <audio id="sfx-098" src="assets/sfx/balaie-rapide.mp3" data-start="42.53" data-duration="1.917" data-volume="0.12" data-track-index="30"></audio><!-- raccord 25 -->
+      <audio id="sfx-099" src="assets/sfx/coche.mp3" data-start="43.37" data-duration="0.237" data-volume="0.3" data-track-index="31"></audio><!-- étape cochée : Vérifier votre calendrier -->
+      <audio id="sfx-100" src="assets/sfx/coche.mp3" data-start="45.21" data-duration="0.237" data-volume="0.3" data-track-index="30"></audio><!-- étape cochée : Préparer un compte rendu -->
+      <audio id="sfx-101" src="assets/sfx/souffle-rapide.mp3" data-start="45.69" data-duration="1.757" data-volume="0.12" data-track-index="30"></audio><!-- raccord 26 -->
+      <audio id="sfx-102" src="assets/sfx/mission-ok.mp3" data-start="46.0" data-duration="1.553" data-volume="0.3" data-track-index="31"></audio><!-- tout est fait -->
+      <audio id="sfx-103" src="assets/sfx/zoom-swipe.mp3" data-start="46.09" data-duration="1.056" data-volume="0.255" data-track-index="32"></audio><!-- illustration ville-futur.mp4 -->
+      <audio id="sfx-104" src="assets/sfx/whoosh-cine.mp3" data-start="46.5" data-duration="1.334" data-volume="0.225" data-track-index="33"></audio><!-- zoom de cinéma -->
+      <audio id="sfx-105" src="assets/sfx/trailer-impact.mp3" data-start="46.64" data-duration="4.866" data-volume="0.315" data-track-index="34"></audio><!-- la révolution -->
+      <audio id="sfx-106" src="assets/sfx/trailer-impact-2.mp3" data-start="46.74" data-duration="5.72" data-volume="0.18" data-track-index="35"></audio><!-- boom du zoom -->
+      <audio id="sfx-107" src="assets/sfx/whoosh-cine.mp3" data-start="46.75" data-duration="1.334" data-volume="0.12" data-track-index="36"></audio><!-- raccord 27 -->
+      <audio id="sfx-108" src="assets/sfx/pop-cartoon.mp3" data-start="49.32" data-duration="0.521" data-volume="0.27" data-track-index="30"></audio><!-- une IA qui répond -->
+      <audio id="sfx-109" src="assets/sfx/swoosh-monte.mp3" data-start="49.78" data-duration="1.03" data-volume="0.225" data-track-index="31"></audio><!-- flèche -->
+      <audio id="sfx-110" src="assets/sfx/magie.mp3" data-start="50.18" data-duration="2.28" data-volume="0.255" data-track-index="30"></audio><!-- geste de la main -->
+      <audio id="sfx-111" src="assets/sfx/power-up.mp3" data-start="50.93" data-duration="1.53" data-volume="0.3" data-track-index="31"></audio><!-- on peut déléguer -->
     </div>
     <script>
       window.__timelines = window.__timelines || {};
@@ -441,28 +466,33 @@
       tl.fromTo("#h-q", { rotation: -8 }, { rotation: 8, duration: 0.5, yoyo: true, repeat: 3, ease: "sine.inOut", immediateRender: false }, 3.68);
       tl.to("#h-q", { opacity: 0, scale: 0.85, duration: 0.18, ease: "power2.in" }, 4.78);
       tl.set("#vs", { opacity: 1 }, 4.88);
-      tl.fromTo("#vs-a", { opacity: 0, y: 120, scale: 0.4 }, { opacity: 1, y: 0, scale: 1, duration: 0.25, ease: "back.out(1.7)", immediateRender: false }, 5.52);
+      tl.fromTo("#ec43", { opacity: 1, scale: 0.2 }, { opacity: 0, scale: 1.8, duration: 0.45, ease: "power2.out", immediateRender: false }, 5.47);
+      tl.fromTo("#ec44", { opacity: 1, scale: 0.2 }, { opacity: 0, scale: 1.8, duration: 0.45, ease: "power2.out", immediateRender: false }, 5.55);
+      tl.fromTo("#vs-a", { opacity: 0, x: -21, y: 1322, scale: 0.15, rotation: -12 }, { opacity: 1, x: 0, y: 0, scale: 1, rotation: 0, duration: 0.42, ease: "back.out(1.4)", immediateRender: false }, 5.47);
+      tl.fromTo("#vs-b", { opacity: 0, x: 43, y: 1344, scale: 0.15, rotation: -12 }, { opacity: 1, x: 0, y: 0, scale: 1, rotation: 0, duration: 0.42, ease: "back.out(1.4)", immediateRender: false }, 5.55);
       tl.fromTo("#vs-v", { opacity: 0, y: 0, scale: 2.5 }, { opacity: 1, y: 0, scale: 1, duration: 0.18, ease: "back.out(1.7)", immediateRender: false }, 6.56);
-      tl.fromTo("#vs-b", { opacity: 0, y: 120, scale: 0.4 }, { opacity: 1, y: 0, scale: 1, duration: 0.25, ease: "back.out(1.7)", immediateRender: false }, 7.04);
+      tl.fromTo("#vs-b", { scale: 1 }, { scale: 1.12, duration: 0.15, yoyo: true, repeat: 1, ease: "power2.out", immediateRender: false }, 7.04);
       tl.to("#vs", { opacity: 0, y: -80, duration: 0.25 }, 7.47);
       tl.fromTo("#titre", { opacity: 0, y: -60 }, { opacity: 1, y: 0, duration: 0.35, ease: "power3.out", immediateRender: false }, 7.67);
-      tl.fromTo("#niv1", { opacity: 0, scale: 2.0 }, { opacity: 1, scale: 1, duration: 0.16, ease: "power4.in", immediateRender: false }, 7.72);
-      tl.fromTo("#fl45", { opacity: 0.5 }, { opacity: 0, duration: 0.25, immediateRender: false }, 7.72);
-      tl.to("#niv1", { opacity: 0, scale: 0.85, duration: 0.18, ease: "power2.in" }, 9.22);
-      tl.fromTo("#mini1", { opacity: 0, y: -30, scale: 0.6 }, { opacity: 1, y: 0, scale: 1, duration: 0.25, ease: "back.out(1.7)", immediateRender: false }, 9.27);
+      tl.fromTo("#orbe1", { opacity: 0, scale: 0.1 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(2)", immediateRender: false }, 7.79);
+      tl.to("#orbe1", { x: 0, y: -843, scale: 0.5, duration: 0.22, ease: "power2.in" }, 7.97);
+      tl.set("#orbe1", { opacity: 0 }, 8.21);
+      tl.fromTo("#ec47", { opacity: 1, scale: 0.2 }, { opacity: 0, scale: 1.8, duration: 0.45, ease: "power2.out", immediateRender: false }, 7.79);
+      tl.fromTo("#niv1", { opacity: 0, scale: 2.0 }, { opacity: 1, scale: 1, duration: 0.16, ease: "power4.in", immediateRender: false }, 8.22);
+      tl.fromTo("#fl49", { opacity: 0.5 }, { opacity: 0, duration: 0.25, immediateRender: false }, 8.22);
+      tl.to("#niv1", { opacity: 0, scale: 0.85, duration: 0.18, ease: "power2.in" }, 9.72);
+      tl.fromTo("#mini1", { opacity: 0, y: -30, scale: 0.6 }, { opacity: 1, y: 0, scale: 1, duration: 0.25, ease: "back.out(1.7)", immediateRender: false }, 9.77);
       tl.to("#mini1", { opacity: 0, scale: 0.85, duration: 0.18, ease: "power2.in" }, 15.23);
       tl.fromTo("#niv2", { opacity: 0, scale: 2.0 }, { opacity: 1, scale: 1, duration: 0.16, ease: "power4.in", immediateRender: false }, 15.43);
-      tl.fromTo("#fl48", { opacity: 0.5 }, { opacity: 0, duration: 0.25, immediateRender: false }, 15.43);
+      tl.fromTo("#fl52", { opacity: 0.5 }, { opacity: 0, duration: 0.25, immediateRender: false }, 15.43);
       tl.to("#niv2", { opacity: 0, scale: 0.85, duration: 0.18, ease: "power2.in" }, 16.93);
       tl.fromTo("#mini2", { opacity: 0, y: -30, scale: 0.6 }, { opacity: 1, y: 0, scale: 1, duration: 0.25, ease: "back.out(1.7)", immediateRender: false }, 16.98);
       tl.to("#mini2", { opacity: 0, scale: 0.85, duration: 0.18, ease: "power2.in" }, 27.55);
       tl.fromTo("#niv3", { opacity: 0, scale: 2.0 }, { opacity: 1, scale: 1, duration: 0.16, ease: "power4.in", immediateRender: false }, 27.75);
-      tl.fromTo("#fl51", { opacity: 0.5 }, { opacity: 0, duration: 0.25, immediateRender: false }, 27.75);
+      tl.fromTo("#fl55", { opacity: 0.5 }, { opacity: 0, duration: 0.25, immediateRender: false }, 27.75);
       tl.to("#niv3", { opacity: 0, scale: 0.85, duration: 0.18, ease: "power2.in" }, 29.25);
       tl.fromTo("#mini3", { opacity: 0, y: -30, scale: 0.6 }, { opacity: 1, y: 0, scale: 1, duration: 0.25, ease: "back.out(1.7)", immediateRender: false }, 29.3);
       tl.to("#mini3", { opacity: 0, scale: 0.85, duration: 0.18, ease: "power2.in" }, 46.29);
-      tl.to("#cine", { scale: 1.2, duration: 0.15, ease: "power4.out" }, 7.68);
-      tl.to("#cine", { scale: 1, duration: 0.5, ease: "power2.inOut" }, 8.22);
       tl.to("#cine", { scale: 1.2, duration: 0.15, ease: "power4.out" }, 15.39);
       tl.to("#cine", { scale: 1, duration: 0.5, ease: "power2.inOut" }, 15.93);
       tl.to("#cine", { scale: 1.28, duration: 0.15, ease: "power4.out" }, 27.71);
@@ -503,10 +533,16 @@
       tl.to("#cine", { scale: 1.18, duration: 0.15, ease: "power4.out" }, 32.74);
       tl.to("#cine", { scale: 1, duration: 0.5, ease: "power2.inOut" }, 33.28);
       tl.fromTo("#a-dec", { opacity: 0, y: 30, scale: 0.6 }, { opacity: 1, y: 0, scale: 1, duration: 0.22, ease: "back.out(1.7)", immediateRender: false }, 33.99);
-      tl.fromTo("#et0", { opacity: 0, y: 40, scale: 0.6 }, { opacity: 1, y: 0, scale: 1, duration: 0.2, ease: "back.out(1.7)", immediateRender: false }, 34.39);
-      tl.fromTo("#et1", { opacity: 0, y: 40, scale: 0.6 }, { opacity: 1, y: 0, scale: 1, duration: 0.2, ease: "back.out(1.7)", immediateRender: false }, 34.57);
-      tl.fromTo("#et2", { opacity: 0, y: 40, scale: 0.6 }, { opacity: 1, y: 0, scale: 1, duration: 0.2, ease: "back.out(1.7)", immediateRender: false }, 34.75);
-      tl.fromTo("#et3", { opacity: 0, y: 40, scale: 0.6 }, { opacity: 1, y: 0, scale: 1, duration: 0.2, ease: "back.out(1.7)", immediateRender: false }, 34.93);
+      tl.fromTo("#onde0", { opacity: 0.9, scale: 0.3 }, { opacity: 0, scale: 2.4, duration: 0.6, ease: "power2.out", immediateRender: false }, 34.44);
+      tl.fromTo("#onde1", { opacity: 0.9, scale: 0.3 }, { opacity: 0, scale: 2.4, duration: 0.6, ease: "power2.out", immediateRender: false }, 34.56);
+      tl.fromTo("#onde2", { opacity: 0.9, scale: 0.3 }, { opacity: 0, scale: 2.4, duration: 0.6, ease: "power2.out", immediateRender: false }, 34.68);
+      tl.to("#agent", { scale: 0.84, transformOrigin: "50% 0%", duration: 0.3, ease: "power2.inOut" }, 36.11);
+      tl.fromTo("#ec66", { opacity: 1, scale: 0.2 }, { opacity: 0, scale: 1.8, duration: 0.45, ease: "power2.out", immediateRender: false }, 36.26);
+      tl.fromTo("#ec67", { opacity: 1, scale: 0.2 }, { opacity: 0, scale: 1.8, duration: 0.45, ease: "power2.out", immediateRender: false }, 36.31);
+      tl.fromTo("#et0", { opacity: 0, x: -601, y: 203, scale: 0.15, rotation: -12 }, { opacity: 1, x: 0, y: 0, scale: 1, rotation: 0, duration: 0.4, ease: "back.out(1.4)", immediateRender: false }, 36.36);
+      tl.fromTo("#et1", { opacity: 0, x: 607, y: 149, scale: 0.15, rotation: -12 }, { opacity: 1, x: 0, y: 0, scale: 1, rotation: 0, duration: 0.4, ease: "back.out(1.4)", immediateRender: false }, 36.46);
+      tl.fromTo("#et2", { opacity: 0, x: -601, y: 39, scale: 0.15, rotation: -12 }, { opacity: 1, x: 0, y: 0, scale: 1, rotation: 0, duration: 0.4, ease: "back.out(1.4)", immediateRender: false }, 36.56);
+      tl.fromTo("#et3", { opacity: 0, x: 607, y: -15, scale: 0.15, rotation: -12 }, { opacity: 1, x: 0, y: 0, scale: 1, rotation: 0, duration: 0.4, ease: "back.out(1.4)", immediateRender: false }, 36.66);
       tl.to("#obj-q", { opacity: 0, duration: 0.12 }, 37.34);
       tl.fromTo("#obj-v", { opacity: 0, x: 40 }, { opacity: 1, x: 0, duration: 0.3, ease: "power3.out", immediateRender: false }, 37.34);
       tl.to("#et0-t", { opacity: 0, duration: 0.1 }, 39.62);
@@ -534,14 +570,15 @@
       tl.to("#agent", { opacity: 0, scale: 0.85, duration: 0.18, ease: "power2.in" }, 46.27);
       tl.to("#fait", { opacity: 0, scale: 0.85, duration: 0.18, ease: "power2.in" }, 46.27);
       tl.fromTo("#revo", { opacity: 0, scale: 2.6 }, { opacity: 1, scale: 1, duration: 0.14, ease: "power4.in", immediateRender: false }, 47.59);
-      tl.fromTo("#fl61", { opacity: 0.6 }, { opacity: 0, duration: 0.25, immediateRender: false }, 47.59);
+      tl.fromTo("#fl70", { opacity: 0.6 }, { opacity: 0, duration: 0.25, immediateRender: false }, 47.59);
       tl.to("#cine", { scale: 1.25, duration: 0.15, ease: "power4.out" }, 47.55);
       tl.to("#cine", { scale: 1, duration: 0.5, ease: "power2.inOut" }, 48.09);
       tl.to("#revo", { scale: 0.6, y: -120, duration: 0.35, ease: "power3.inOut" }, 47.86);
       tl.set("#av", { opacity: 1 }, 47.96);
       tl.fromTo("#av-a", { opacity: 0, y: 50, scale: 0.6 }, { opacity: 1, y: 0, scale: 1, duration: 0.25, ease: "back.out(1.7)", immediateRender: false }, 49.32);
       tl.fromTo("#av-f", { opacity: 0, y: 0, scale: 0.3 }, { opacity: 1, y: 0, scale: 1, duration: 0.2, ease: "back.out(1.7)", immediateRender: false }, 49.88);
-      tl.fromTo("#av-b", { opacity: 0, y: 50, scale: 0.6 }, { opacity: 1, y: 0, scale: 1, duration: 0.25, ease: "back.out(1.7)", immediateRender: false }, 51.08);
+      tl.fromTo("#ec72", { opacity: 1, scale: 0.2 }, { opacity: 0, scale: 1.8, duration: 0.45, ease: "power2.out", immediateRender: false }, 51.08);
+      tl.fromTo("#av-b", { opacity: 0, x: -296, y: 1083, scale: 0.15, rotation: -12 }, { opacity: 1, x: 0, y: 0, scale: 1, rotation: 0, duration: 0.45, ease: "back.out(1.4)", immediateRender: false }, 51.08);
       tl.fromTo("#av-b", { boxShadow: "0 0 0px rgba(242,183,5,0)" }, { boxShadow: "0 0 80px rgba(242,183,5,0.9)", duration: 0.5, yoyo: true, repeat: 3, immediateRender: false }, 51.28);
       tl.fromTo("#fondu", { opacity: 0 }, { opacity: 1, duration: 0.45, immediateRender: false }, 52.01);
       tl.fromTo("#lum0", { x: -260, y: 120 }, { x: 300, y: -80, duration: 8.07, ease: "sine.inOut", immediateRender: false }, 0.0);
@@ -553,11 +590,11 @@
       tl.fromTo("#lum3", { x: -260, y: 120 }, { x: 300, y: -80, duration: 19.09, ease: "sine.inOut", immediateRender: false }, 27.7);
       tl.fromTo("#fond4", { opacity: 0 }, { opacity: 1, duration: 0.4, ease: "power1.inOut", immediateRender: false }, 46.39);
       tl.fromTo("#lum4", { x: -260, y: 120 }, { x: 300, y: -80, duration: 6.47, ease: "sine.inOut", immediateRender: false }, 46.39);
-      tl.set("#mo-n1", { opacity: 1 }, 7.69); tl.to("#mo-n1", { opacity: 0, scale: 0.6, duration: 0.25 }, 9.02);
-      tl.fromTo("#mo-n1-r", { scale: 0, transformOrigin: "300px 300px" }, { scale: 1, duration: 0.45, ease: "expo.out", immediateRender: false }, 7.69);
-      tl.fromTo("#mo-n1-a1", { rotation: -120, scale: 0.3, transformOrigin: "300px 300px" }, { rotation: 90, scale: 1, duration: 1.3, ease: "power3.out", immediateRender: false }, 7.69);
-      tl.fromTo("#mo-n1-a2", { rotation: 160, scale: 0.2, transformOrigin: "300px 300px" }, { rotation: -60, scale: 1, duration: 1.3, ease: "power3.out", immediateRender: false }, 7.69);
-      tl.fromTo("#mo-n1-o", { rotation: 0, scale: 0.4, transformOrigin: "300px 300px" }, { rotation: 120, scale: 1, duration: 1.3, ease: "power2.out", immediateRender: false }, 7.69);
+      tl.set("#mo-n1", { opacity: 1 }, 8.19); tl.to("#mo-n1", { opacity: 0, scale: 0.6, duration: 0.25 }, 9.52);
+      tl.fromTo("#mo-n1-r", { scale: 0, transformOrigin: "300px 300px" }, { scale: 1, duration: 0.45, ease: "expo.out", immediateRender: false }, 8.19);
+      tl.fromTo("#mo-n1-a1", { rotation: -120, scale: 0.3, transformOrigin: "300px 300px" }, { rotation: 90, scale: 1, duration: 1.3, ease: "power3.out", immediateRender: false }, 8.19);
+      tl.fromTo("#mo-n1-a2", { rotation: 160, scale: 0.2, transformOrigin: "300px 300px" }, { rotation: -60, scale: 1, duration: 1.3, ease: "power3.out", immediateRender: false }, 8.19);
+      tl.fromTo("#mo-n1-o", { rotation: 0, scale: 0.4, transformOrigin: "300px 300px" }, { rotation: 120, scale: 1, duration: 1.3, ease: "power2.out", immediateRender: false }, 8.19);
       tl.set("#mo-n2", { opacity: 1 }, 15.4); tl.to("#mo-n2", { opacity: 0, scale: 0.6, duration: 0.25 }, 16.73);
       tl.fromTo("#mo-n2-r", { scale: 0, transformOrigin: "300px 300px" }, { scale: 1, duration: 0.45, ease: "expo.out", immediateRender: false }, 15.4);
       tl.fromTo("#mo-n2-a1", { rotation: -120, scale: 0.3, transformOrigin: "300px 300px" }, { rotation: 90, scale: 1, duration: 1.3, ease: "power3.out", immediateRender: false }, 15.4);
@@ -612,21 +649,25 @@
       tl.fromTo("#nn7", { scale: 1, transformOrigin: "680px 1600px" }, { scale: 1.5, duration: 0.5, yoyo: true, repeat: 7, ease: "sine.inOut", immediateRender: false }, 27.7 + 2.59);
       tl.fromTo("#nn8", { scale: 1, transformOrigin: "540px 1760px" }, { scale: 1.5, duration: 0.5, yoyo: true, repeat: 7, ease: "sine.inOut", immediateRender: false }, 27.7 + 2.96);
       tl.fromTo("#nn9", { scale: 1, transformOrigin: "200px 1750px" }, { scale: 1.5, duration: 0.5, yoyo: true, repeat: 7, ease: "sine.inOut", immediateRender: false }, 27.7 + 3.33);
+      tl.fromTo("#main-ecran", { opacity: 0, scale: 0.1, y: 200 }, { opacity: 1, scale: 1, y: 0, duration: 0.4, ease: "back.out(1.6)", immediateRender: false }, 29.48);
+      tl.to("#main-ecran", { x: 12, y: -327, scale: 3.1, duration: 0.22, ease: "power3.in" }, 30.13);
+      tl.set("#main-ecran", { opacity: 0 }, 30.37);
+      tl.fromTo("#ec77", { opacity: 1, scale: 0.2 }, { opacity: 0, scale: 1.8, duration: 0.45, ease: "power2.out", immediateRender: false }, 29.48);
       tl.set("#br0", { opacity: 1 }, 2.6); tl.set("#br0", { opacity: 0 }, 3.48);
       tl.fromTo("#br0 .br-bande", { scale: 1.25 }, { scale: 1.05, duration: 0.88, ease: "power2.out", immediateRender: false }, 2.6);
-      tl.fromTo("#fl67", { opacity: 0.7 }, { opacity: 0, duration: 0.25, immediateRender: false }, 2.6);
+      tl.fromTo("#fl79", { opacity: 0.7 }, { opacity: 0, duration: 0.25, immediateRender: false }, 2.6);
       tl.fromTo("#br1", { opacity: 0, scale: 0.4, rotation: -6 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.3, ease: "back.out(1.5)", immediateRender: false }, 16.98);
       tl.fromTo("#br1-br-net", { scale: 1.15 }, { scale: 1.0, duration: 0.94, ease: "none", immediateRender: false }, 16.98);
       tl.to("#br1", { opacity: 0, scale: 0.85, duration: 0.18, ease: "power2.in" }, 17.77);
-      tl.set("#br2", { opacity: 1 }, 29.38); tl.set("#br2", { opacity: 0 }, 30.61);
-      tl.fromTo("#br2 .br-bande", { scale: 1.25 }, { scale: 1.05, duration: 1.23, ease: "power2.out", immediateRender: false }, 29.38);
-      tl.fromTo("#fl70", { opacity: 0.7 }, { opacity: 0, duration: 0.25, immediateRender: false }, 29.38);
+      tl.set("#br2", { opacity: 1 }, 30.35); tl.set("#br2", { opacity: 0 }, 30.61);
+      tl.fromTo("#br2 .br-bande", { scale: 1.25 }, { scale: 1.05, duration: 0.26, ease: "power2.out", immediateRender: false }, 30.35);
+      tl.fromTo("#fl82", { opacity: 0.7 }, { opacity: 0, duration: 0.25, immediateRender: false }, 30.35);
       tl.fromTo("#br3", { opacity: 0, scale: 0.4, rotation: -6 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.3, ease: "back.out(1.5)", immediateRender: false }, 36.72);
       tl.fromTo("#br3-br-net", { scale: 1.15 }, { scale: 1.0, duration: 2.21, ease: "none", immediateRender: false }, 36.72);
       tl.to("#br3", { opacity: 0, scale: 0.85, duration: 0.18, ease: "power2.in" }, 38.78);
       tl.set("#br4", { opacity: 1 }, 46.34); tl.set("#br4", { opacity: 0 }, 47.54);
       tl.fromTo("#br4 .br-bande", { scale: 1.25 }, { scale: 1.05, duration: 1.2, ease: "power2.out", immediateRender: false }, 46.34);
-      tl.fromTo("#fl73", { opacity: 0.7 }, { opacity: 0, duration: 0.25, immediateRender: false }, 46.34);
+      tl.fromTo("#fl85", { opacity: 0.7 }, { opacity: 0, duration: 0.25, immediateRender: false }, 46.34);
       window.__timelines["main"] = tl;
     </script>
   </body>

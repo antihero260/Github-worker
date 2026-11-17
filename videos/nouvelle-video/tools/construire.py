@@ -131,6 +131,33 @@ for k in range(len(PIECES)):
 j(f'tl.fromTo("#pousse", {{ scale: 1 }}, {{ scale: 1.06, duration: {FIN}, ease: "none", immediateRender: false }}, 0);')
 
 
+def zoom_a(t):
+    k = max(q for q in range(len(PIECES)) if P_T[q] <= t + 1e-6)
+    return 1.0 if k % 2 == 0 else (1.12, 1.15, 1.13)[(k // 2) % 3]
+
+
+def ecran(x, y, t):
+    """position à l'écran d'un point (x, y) de la vidéo de la personne, en tenant compte des zooms de caméra (coupe + poussée lente)"""
+    sc = zoom_a(t) * (1 + 0.06 * t / FIN)
+    return 540 + sc * (x - 540), 1036.8 + sc * (y - 1036.8)
+
+
+def eclat(t, x, y, coul="#F2B705", taille=260, son_=True):
+    """éclat lumineux à l'endroit d'une main (le geste « fait naître » l'objet)"""
+    i = f"ec{len(HTML)}"
+    HTML.append(f'<div id="{i}" class="eclat" style="left: {x - taille / 2:.0f}px; top: {y - taille / 2:.0f}px; width: {taille}px; height: {taille}px; '
+                f'background: radial-gradient(circle, #fff 0%, {coul} 30%, rgba(255,255,255,0) 70%); opacity: 0"></div>')
+    j(f'tl.fromTo("#{i}", {{ opacity: 1, scale: 0.2 }}, {{ opacity: 0, scale: 1.8, duration: 0.45, ease: "power2.out", immediateRender: false }}, {r(t)});')
+    if son_:
+        son(t, tour(["magie", "scintille-whoosh", "whoosh-pop"]), 0.34, "geste de la main")
+
+
+def jaillit(sel, t, hx, hy, cx, cy, d=0.42, local=1.0):
+    """l'élément (centre final cx, cy) part de la main (hx, hy) ; local = échelle du parent (offsets en coordonnées locales)"""
+    j(f'tl.fromTo("{sel}", {{ opacity: 0, x: {(hx - cx) / local:.0f}, y: {(hy - cy) / local:.0f}, scale: 0.15, rotation: -12 }}, '
+      f'{{ opacity: 1, x: 0, y: 0, scale: 1, rotation: 0, duration: {d}, ease: "back.out(1.4)", immediateRender: false }}, {r(t)});')
+
+
 def zoom_cine(t, s=1.22, tenue=0.5, boom="impact-basse"):
     j(f'tl.to("#cine", {{ scale: {s}, duration: 0.15, ease: "power4.out" }}, {r(t - 0.04)});')
     j(f'tl.to("#cine", {{ scale: 1, duration: 0.5, ease: "power2.inOut" }}, {r(t + tenue)});')
@@ -178,18 +205,32 @@ HTML.append('<div id="vs" class="vs" style="opacity: 0"><div id="vs-a" class="vs
             '<circle cx="50" cy="50" r="16"/><path d="M50 8v14M50 78v14M8 50h14M78 50h14M20 20l10 10M70 70l10 10M80 20l-10 10M30 70l-10 10"/></g></svg>'
             '<b>Automatisations</b></div></div>')
 j(f'tl.set("#vs", {{ opacity: 1 }}, {r(W(31))});')
-apparait("#vs-a", W(33), 120, 0.4)
-son(W(33), tour(POPS), 0.4, "ChatGPT")
+# GESTE : les deux mains montent sur « la différence avec ChatGPT » → les deux cartes jaillissent des mains
+t_vs = W(33) - 0.05
+hg, hd = ecran(260, 1760, t_vs), ecran(840, 1780, t_vs)
+eclat(t_vs, *hg, "#38BDF8")
+eclat(t_vs + 0.08, *hd, "#F2B705", son_=False)
+jaillit("#vs-a", t_vs, *hg, 245, 530)
+jaillit("#vs-b", t_vs + 0.08, *hd, 835, 530)
+son(t_vs, tour(POPS), 0.4, "ChatGPT")
 apparait("#vs-v", W(35), 0, 2.5, 0.18)
 son(W(35), "impact-tambour", 0.36, "VS")
-apparait("#vs-b", W(37), 120, 0.4)
+j(f'tl.fromTo("#vs-b", {{ scale: 1 }}, {{ scale: 1.12, duration: 0.15, yoyo: true, repeat: 1, ease: "power2.out", immediateRender: false }}, {r(W(37))});')
 son(W(37), tour(POPS), 0.4, "automatisations")
 j(f'tl.to("#vs", {{ opacity: 0, y: -80, duration: 0.25 }}, {r(T_SEG[1] - 0.2)});')
 
 # ================================================================ bandeau titre (après l'accroche) + jauge des 3 niveaux
 HTML.append('<div id="titre" style="opacity: 0"><b>LES 3 NIVEAUX DE <i>L’IA</i></b></div>')
 j(f'tl.fromTo("#titre", {{ opacity: 0, y: -60 }}, {{ opacity: 1, y: 0, duration: 0.35, ease: "power3.out", immediateRender: false }}, {r(T_SEG[1])});')
-NIV = [("1", "PROMPTING", T_SEG[1], "#38BDF8"), ("2", "AUTOMATISATION IA", T_SEG[5], "#F2B705"), ("3", "AGENTS IA", T_SEG[9], "#FF6B6B")]
+# GESTE : sur « Premier niveau » les mains encadrent un objet invisible → une orbe « 1 » naît entre elles et monte devenir le badge
+t_or = T_SEG[1] + 0.12
+ox_, oy_ = ecran(540, 1400, t_or)
+HTML.append(f'<div id="orbe1" class="orbe" style="left: {ox_ - 90:.0f}px; top: {oy_ - 90:.0f}px; opacity: 0">1</div>')
+j(f'tl.fromTo("#orbe1", {{ opacity: 0, scale: 0.1 }}, {{ opacity: 1, scale: 1, duration: 0.3, ease: "back.out(2)", immediateRender: false }}, {r(t_or)});')
+j(f'tl.to("#orbe1", {{ x: {540 - ox_:.0f}, y: {560 - oy_:.0f}, scale: 0.5, duration: 0.22, ease: "power2.in" }}, {r(T_SEG[1] + 0.30)});')
+j(f'tl.set("#orbe1", {{ opacity: 0 }}, {r(T_SEG[1] + 0.54)});')
+eclat(t_or, ox_, oy_, "#38BDF8")
+NIV = [("1", "PROMPTING", T_SEG[1] + 0.5, "#38BDF8"), ("2", "AUTOMATISATION IA", T_SEG[5], "#F2B705"), ("3", "AGENTS IA", T_SEG[9], "#FF6B6B")]
 for k, (n, nom, t0, c) in enumerate(NIV):
     barres = "".join(f'<i class="{"on" if q <= k else ""}" style="{"background: " + c if q <= k else ""}"></i>' for q in range(3))
     HTML.append(f'<div id="niv{n}" class="niveau" style="opacity: 0"><span style="background: {c}">NIVEAU {n}</span><b>{nom}</b><em>{barres}</em></div>')
@@ -203,7 +244,6 @@ for k, (n, nom, t0, c) in enumerate(NIV):
     son(t0 + 1.6, tour(POPS), 0.26, f"pastille niveau {n}")
     fin_n = NIV[k + 1][2] - 0.15 if k < 2 else T_SEG[16] - 0.1
     cache(f"#mini{n}", fin_n)
-zoom_cine(T_SEG[1] + 0.05, 1.2)
 zoom_cine(T_SEG[5] + 0.05, 1.2)
 zoom_cine(T_SEG[9] + 0.05, 1.28, boom="trailer-impact")
 
@@ -285,9 +325,24 @@ son(W(313), "impact-tambour", 0.36, "un objectif")
 zoom_cine(W(313), 1.18)
 apparait("#a-dec", W(341), 30, 0.6, 0.22)
 son(W(341), "robot-scifi", 0.3, "l'agent décide")
+# GESTE : mains jointes sur « lui-même » → ondes depuis les mains
+t_j = W(342) + 0.05
+jx, jy = ecran(540, 1720, t_j)
+for q in range(3):
+    HTML.append(f'<div id="onde{q}" class="onde" style="left: {jx - 110:.0f}px; top: {jy - 110:.0f}px; opacity: 0"></div>')
+    j(f'tl.fromTo("#onde{q}", {{ opacity: 0.9, scale: 0.3 }}, {{ opacity: 0, scale: 2.4, duration: 0.6, ease: "power2.out", immediateRender: false }}, {r(t_j + 0.12 * q)});')
+son(t_j, "aura", 0.3, "mains jointes")
+# GESTE : les deux mains se lèvent sur « pour l'atteindre » → éclats dans les mains, la carte se range un peu, les 4 étapes jaillissent des mains
+t_l = W(345) + 0.35   # les mains sont vraiment levées ~0,3 s après « pour »
+mg, md = ecran(110, 720, t_l), ecran(980, 740, t_l)
+j(f'tl.to("#agent", {{ scale: 0.84, transformOrigin: "50% 0%", duration: 0.3, ease: "power2.inOut" }}, {r(t_l - 0.15)});')
+eclat(t_l, *mg, "#FF6B6B", 300)
+eclat(t_l + 0.05, *md, "#FF6B6B", 300, son_=False)
 for k in range(4):
-    apparait(f"#et{k}", W(342) + 0.18 * k, 40, 0.6, 0.2)
-    son(W(342) + 0.18 * k, tour(POPS), 0.28, f"étape {k + 1} (vide)")
+    cx_, cy_ = 543, 290 + 0.84 * (246 + 82 * k)
+    hx_, hy_ = (mg if k % 2 == 0 else md)
+    jaillit(f"#et{k}", t_l + 0.1 + 0.1 * k, hx_, hy_, cx_, cy_, 0.4, local=0.84)
+    son(t_l + 0.1 + 0.1 * k, tour(POPS), 0.28, f"étape {k + 1} (vide)")
 j(f'tl.to("#obj-q", {{ opacity: 0, duration: 0.12 }}, {r(W(365))});')
 j(f'tl.fromTo("#obj-v", {{ opacity: 0, x: 40 }}, {{ opacity: 1, x: 0, duration: 0.3, ease: "power3.out", immediateRender: false }}, {r(W(365))});')
 son(W(365), "clavier-ordi", 0.3, "l'objectif s'écrit", d=0.8)
@@ -319,7 +374,10 @@ apparait("#av-a", W(455), 50, 0.6)
 son(W(455), tour(POPS), 0.36, "une IA qui répond")
 apparait("#av-f", W(457), 0, 0.3, 0.2)
 son(W(457), "swoosh-monte", 0.3, "flèche")
-apparait("#av-b", W(463), 50, 0.6)
+# GESTE : la main s'ouvre sur « déléguer » → le cadre doré s'envole depuis la main
+hx_, hy_ = ecran(260, 1700, W(463))
+eclat(W(463), hx_, hy_, "#F2B705")
+jaillit("#av-b", W(463), hx_, hy_, 540, 656, 0.45)
 son(W(463), "power-up", 0.4, "on peut déléguer")
 j(f'tl.fromTo("#av-b", {{ boxShadow: "0 0 0px rgba(242,183,5,0)" }}, {{ boxShadow: "0 0 80px rgba(242,183,5,0.9)", duration: 0.5, yoyo: true, repeat: 3, immediateRender: false }}, {r(W(463) + 0.2)});')
 j(f'tl.fromTo("#fondu", {{ opacity: 0 }}, {{ opacity: 1, duration: 0.45, immediateRender: false }}, {r(FIN - 0.45)});')
@@ -410,13 +468,24 @@ fond_motion("mo-f3", T_SEG[9], T_SEG[16], f'<svg viewBox="0 0 1080 1920" width="
 # « plein » : l'image couvre tout (fond flou de la même vidéo + bande nette 16:9) ; « ecran » : grand écran arrondi en haut, la personne reste visible
 BROLL = [("lunettes-ecran.mp4", "plein", W(22) - 0.05, W(24) - 0.05),
          ("robot-usine.mp4", "ecran", T_SEG[5] + 1.6, W(192) - 0.05),
-         ("robot-yeux.mp4", "plein", W(262) - 0.05, W(287) - 0.08),
+         ("robot-yeux.mp4", "plein", W(264) + 0.2, W(287) - 0.08),
          ("reunion.mp4", "ecran", W(363), W(381) - 0.1),
          ("ville-futur.mp4", "plein", W(427) - 0.05, W(435) - 0.05)]
+# GESTE : paumes ouvertes vers le haut sur « les agents IA » → un écran (vidéo du robot) naît dans les mains, puis zoom jusqu'au plein écran
+t_m = W(262) + 0.05
+px_, py_ = ecran(530, 1440, t_m)
+HTML.append(f'<div id="main-ecran" class="br-main" style="left: {px_ - 180:.0f}px; top: {py_ - 330:.0f}px; opacity: 0">'
+            f'<video id="main-ecran-v" class="clip br-net" src="assets/broll/robot-yeux.mp4" data-start="{r(t_m)}" data-duration="{r(W(264) + 0.25 - t_m)}" '
+            f'data-media-start="0" data-track-index="8" muted playsinline></video></div>')
+j(f'tl.fromTo("#main-ecran", {{ opacity: 0, scale: 0.1, y: 200 }}, {{ opacity: 1, scale: 1, y: 0, duration: 0.4, ease: "back.out(1.6)", immediateRender: false }}, {r(t_m)});')
+j(f'tl.to("#main-ecran", {{ x: {540 - px_:.0f}, y: {960 - (py_ - 330 + 101):.0f}, scale: 3.1, duration: 0.22, ease: "power3.in" }}, {r(W(264) - 0.02)});')
+j(f'tl.set("#main-ecran", {{ opacity: 0 }}, {r(W(264) + 0.22)});')
+eclat(t_m, px_, py_ - 60, "#FF6B6B", 320)
+son(W(264) - 0.02, "zoom-in", 0.34, "zoom dans l'écran des mains")
 for k, (src, mode, t0, t1) in enumerate(BROLL):
     i = f"br{k}"
     vid = lambda c: (f'<video id="{i}-{c}" class="clip {c}" src="assets/broll/{src}" data-start="{r(t0)}" data-duration="{r(t1 - t0 + 0.05)}" '
-                     f'data-media-start="0" data-track-index="{5 + k % 3}" muted playsinline></video>')
+                     f'data-media-start="{r(t0 - t_m) if src == "robot-yeux.mp4" else 0}" data-track-index="{5 + k % 3}" muted playsinline></video>')
     if mode == "plein":
         HTML.append(f'<div id="{i}" class="br-plein" style="opacity: 0">{vid("br-flou")}<div class="br-bande">{vid("br-net")}</div></div>')
         j(f'tl.set("#{i}", {{ opacity: 1 }}, {r(t0)}); tl.set("#{i}", {{ opacity: 0 }}, {r(t1)});')
@@ -586,6 +655,13 @@ CSS = """
         color: #0B1220; } .f-tete2 { background: #F2B705; border-radius: 0; }
       .a-fait { position: absolute; left: 94px; top: 425px; z-index: 13; font-family: "Anton", sans-serif; font-size: 40px; color: #fff; background: #34D399;
         border: 5px solid #0B1220; border-radius: 14px; padding: 4px 18px 0; }
+      .eclat { position: absolute; border-radius: 50%; z-index: 19; pointer-events: none; mix-blend-mode: screen; }
+      .orbe { position: absolute; width: 180px; height: 180px; border-radius: 50%; z-index: 17; display: flex; align-items: center; justify-content: center;
+        font-family: "Anton", sans-serif; font-size: 120px; color: #fff; background: radial-gradient(circle at 35% 30%, #BAE6FD, #38BDF8 55%, #0369A1);
+        border: 7px solid #0B1220; box-shadow: 0 0 60px rgba(56,189,248,0.9); -webkit-text-stroke: 6px #0B1220; paint-order: stroke fill; }
+      .onde { position: absolute; width: 220px; height: 220px; border-radius: 50%; border: 10px solid #FF6B6B; z-index: 18; box-shadow: 0 0 30px rgba(255,107,107,0.8); }
+      .br-main { position: absolute; width: 360px; height: 203px; z-index: 18; border: 6px solid #0B1220; border-radius: 22px; overflow: hidden; background: #000;
+        box-shadow: 0 0 50px rgba(255,107,107,0.8); }
       .avap { position: absolute; left: 0; top: 400px; width: 1080px; z-index: 13; text-align: center; }
       .av-c { display: inline-block; font-family: "Anton", sans-serif; font-size: 70px; color: #0B1220; background: #fff; border: 7px solid #0B1220; border-radius: 26px;
         padding: 10px 30px 4px; box-shadow: 0 18px 44px rgba(0,0,0,0.5); }
