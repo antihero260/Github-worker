@@ -69,7 +69,7 @@ def r(x):
     return round(x, 3)
 
 
-JS, HTML, SONS, FOND_HTML = [], [], [], []
+JS, HTML, SONS, FOND_HTML, MO_HTML = [], [], [], [], []
 
 
 def j(l):
@@ -344,6 +344,70 @@ for k, (t0, c1, c2) in enumerate(FONDS):
         j(f'tl.fromTo("#fond{k}", {{ opacity: 0 }}, {{ opacity: 1, duration: 0.4, ease: "power1.inOut", immediateRender: false }}, {r(t0)});')
     j(f'tl.fromTo("#lum{k}", {{ x: -260, y: 120 }}, {{ x: 300, y: -80, duration: {r(max(t1 - t0, 1) + 0.4)}, ease: "sine.inOut", immediateRender: false }}, {r(t0)});')
 
+# ================================================================ MOTION DESIGN (vectoriel, assorti aux fonds blancs)
+import math
+# 1. intro animée de chaque niveau : anneaux qui tournent, rayons qui jaillissent, grand chiffre, points en orbite (derrière le badge)
+for k, (n, nom, t0, c) in enumerate(NIV):
+    rayons = "".join(f'<line x1="300" y1="300" x2="{300 + 290 * math.cos(a_ * math.pi / 8):.0f}" y2="{300 + 290 * math.sin(a_ * math.pi / 8):.0f}" />' for a_ in range(16))
+    orbite = "".join(f'<circle cx="{300 + 250 * math.cos(a_ * math.pi / 3):.0f}" cy="{300 + 250 * math.sin(a_ * math.pi / 3):.0f}" r="12" />' for a_ in range(6))
+    HTML.append(f'<div id="mo-n{n}" class="mo-niv" style="opacity: 0"><svg viewBox="0 0 600 600" width="760" height="760">'
+                f'<g id="mo-n{n}-r" stroke="{c}" stroke-width="10" stroke-linecap="round" opacity="0.55">{rayons}</g>'
+                f'<circle id="mo-n{n}-a1" cx="300" cy="300" r="200" fill="none" stroke="{c}" stroke-width="14" stroke-dasharray="60 30" />'
+                f'<circle id="mo-n{n}-a2" cx="300" cy="300" r="150" fill="none" stroke="#0B1220" stroke-width="8" stroke-dasharray="14 22" />'
+                f'<g id="mo-n{n}-o" fill="{c}">{orbite}</g>'
+                f'<text x="300" y="380" text-anchor="middle" font-family="Anton" font-size="260" fill="{c}" opacity="0.18">{n}</text></svg></div>')
+    t_ = t0 + 0.02
+    j(f'tl.set("#mo-n{n}", {{ opacity: 1 }}, {r(t_)}); tl.to("#mo-n{n}", {{ opacity: 0, scale: 0.6, duration: 0.25 }}, {r(t0 + 1.35)});')
+    j(f'tl.fromTo("#mo-n{n}-r", {{ scale: 0, transformOrigin: "300px 300px" }}, {{ scale: 1, duration: 0.45, ease: "expo.out", immediateRender: false }}, {r(t_)});')
+    j(f'tl.fromTo("#mo-n{n}-a1", {{ rotation: -120, scale: 0.3, transformOrigin: "300px 300px" }}, {{ rotation: 90, scale: 1, duration: 1.3, ease: "power3.out", immediateRender: false }}, {r(t_)});')
+    j(f'tl.fromTo("#mo-n{n}-a2", {{ rotation: 160, scale: 0.2, transformOrigin: "300px 300px" }}, {{ rotation: -60, scale: 1, duration: 1.3, ease: "power3.out", immediateRender: false }}, {r(t_)});')
+    j(f'tl.fromTo("#mo-n{n}-o", {{ rotation: 0, scale: 0.4, transformOrigin: "300px 300px" }}, {{ rotation: 120, scale: 1, duration: 1.3, ease: "power2.out", immediateRender: false }}, {r(t_)});')
+    son(t_, "swoosh-tourbillon", 0.28, f"motion design niveau {n}")
+
+# 2. fonds animés derrière la personne, un par niveau
+def fond_motion(id_, t0, t1, svg, anim):
+    MO_HTML.append(f'<div id="{id_}" class="mo-fond" style="opacity: 0">{svg}</div>')
+    j(f'tl.fromTo("#{id_}", {{ opacity: 0 }}, {{ opacity: 1, duration: 0.5, immediateRender: false }}, {r(t0)});')
+    j(f'tl.to("#{id_}", {{ opacity: 0, duration: 0.4 }}, {r(t1 - 0.4)});')
+    for a_ in anim:
+        if "{{" in a_:
+            a_ = a_.replace("{{", "{").replace("}}", "}")
+        j(a_.replace("{t0}", str(r(t0))).replace("{d}", str(r(t1 - t0))))
+
+
+# niveau 1 : bulles de discussion qui montent en flottant
+bulles = "".join(f'<g id="mb{q}" transform="translate({60 + (q * 173) % 960},{1500 + (q * 311) % 500})"><rect width="{150 + (q * 37) % 90}" height="80" rx="36" '
+                 f'fill="{"#38BDF8" if q % 2 else "#FFFFFF"}" stroke="#0B1220" stroke-width="5" opacity="0.55" /></g>' for q in range(12))
+fond_motion("mo-f1", T_SEG[1], T_SEG[5], f'<svg viewBox="0 0 1080 1920" width="1080" height="1920">{bulles}</svg>',
+            [f'tl.fromTo("#mb{q}", {{ y: 0 }}, {{ y: -{1500 + (q * 97) % 400}, duration: {{d}}, ease: "none", immediateRender: false }}, {{t0}});' for q in range(12)])
+# niveau 2 : engrenages qui tournent + flux en pointillés qui défile
+def engrenage(cx, cy, rr, dents, coul):
+    pts = []
+    for q in range(dents * 2):
+        a_ = q * math.pi / dents
+        rad = rr if q % 2 == 0 else rr * 0.82
+        pts.append(f"{cx + rad * math.cos(a_):.0f},{cy + rad * math.sin(a_):.0f}")
+    return f'<polygon points="{" ".join(pts)}" fill="{coul}" stroke="#0B1220" stroke-width="6" opacity="0.5" /><circle cx="{cx}" cy="{cy}" r="{rr * 0.3:.0f}" fill="#F7F9FD" stroke="#0B1220" stroke-width="6" opacity="0.6" />'
+fond_motion("mo-f2", T_SEG[5], T_SEG[9],
+            '<svg viewBox="0 0 1080 1920" width="1080" height="1920"><g id="eng1">' + engrenage(120, 1080, 150, 12, "#F2B705") + '</g><g id="eng2">'
+            + engrenage(330, 1260, 95, 9, "#FB923C") + '</g><g id="eng3">' + engrenage(960, 1150, 130, 11, "#F2B705") + '</g>'
+            '<path id="flux-p" d="M0 1880 H1080" stroke="#0B1220" stroke-width="10" stroke-dasharray="40 30" opacity="0.35" /></svg>',
+            ['tl.fromTo("#eng1", {{ rotation: 0, transformOrigin: "120px 1080px" }}, {{ rotation: 360, duration: {d}, ease: "none", immediateRender: false }}, {t0});',
+             'tl.fromTo("#eng2", {{ rotation: 0, transformOrigin: "330px 1260px" }}, {{ rotation: -540, duration: {d}, ease: "none", immediateRender: false }}, {t0});',
+             'tl.fromTo("#eng3", {{ rotation: 0, transformOrigin: "960px 1150px" }}, {{ rotation: -300, duration: {d}, ease: "none", immediateRender: false }}, {t0});',
+             'tl.fromTo("#flux-p", {{ strokeDashoffset: 0 }}, {{ strokeDashoffset: -700, duration: {d}, ease: "none", immediateRender: false }}, {t0});'])
+# niveau 3 : réseau de nœuds qui se dessine et pulse (l'agent qui relie les outils)
+NOEUDS_R = [(110, 1000), (300, 1180), (150, 1420), (420, 1560), (930, 980), (760, 1150), (980, 1400), (680, 1600), (540, 1760), (200, 1750)]
+LIENS = [(0, 1), (1, 2), (1, 3), (2, 9), (3, 8), (4, 5), (5, 6), (5, 7), (6, 7), (7, 8), (3, 7), (0, 4)]
+lignes = "".join(f'<line id="ln{q}" x1="{NOEUDS_R[a_][0]}" y1="{NOEUDS_R[a_][1]}" x2="{NOEUDS_R[b_][0]}" y2="{NOEUDS_R[b_][1]}" stroke="#FF6B6B" stroke-width="6" '
+                 f'stroke-dasharray="1200" stroke-dashoffset="1200" opacity="0.55" />' for q, (a_, b_) in enumerate(LIENS))
+points = "".join(f'<circle id="nn{q}" cx="{x}" cy="{y}" r="22" fill="#fff" stroke="#0B1220" stroke-width="6" opacity="0.8" />' for q, (x, y) in enumerate(NOEUDS_R))
+fond_motion("mo-f3", T_SEG[9], T_SEG[16], f'<svg viewBox="0 0 1080 1920" width="1080" height="1920">{lignes}{points}</svg>',
+            [f'tl.to("#ln{q}", {{ strokeDashoffset: 0, duration: 0.8, ease: "power2.out" }}, {{t0}} + {0.3 + q * 0.25:.2f});' for q in range(len(LIENS))]
+            + [f'tl.fromTo("#nn{q}", {{ scale: 1, transformOrigin: "{x}px {y}px" }}, {{ scale: 1.5, duration: 0.5, yoyo: true, repeat: 7, ease: "sine.inOut", immediateRender: false }}, {{t0}} + {q * 0.37:.2f});'
+               for q, (x, y) in enumerate(NOEUDS_R)])
+
+
 # ================================================================ VIDÉOS D'ILLUSTRATION sur les passages sans graphique
 # « plein » : l'image couvre tout (fond flou de la même vidéo + bande nette 16:9) ; « ecran » : grand écran arrondi en haut, la personne reste visible
 BROLL = [("lunettes-ecran.mp4", "plein", W(22) - 0.05, W(24) - 0.05),
@@ -445,6 +509,8 @@ CSS = """
       #cine, #pousse, #cam, #coupe { position: absolute; inset: 0; transform-origin: 50% 54%; }
       #video { position: absolute; inset: 0; width: 1080px; height: 1920px; object-fit: cover; }
       .fond { position: absolute; inset: 0; overflow: hidden; }
+      .mo-fond { position: absolute; inset: 0; pointer-events: none; }
+      .mo-niv { position: absolute; left: 160px; top: 140px; width: 760px; height: 760px; z-index: 15; pointer-events: none; }
       .f-points { position: absolute; inset: 0; opacity: 0.35; background-image: radial-gradient(rgba(11,18,32,0.22) 2px, transparent 2.5px); background-size: 44px 44px; }
       .f-lum { position: absolute; left: 200px; top: 300px; width: 900px; height: 900px; border-radius: 50%; }
       #perso { position: absolute; inset: 0; width: 1080px; height: 1920px; object-fit: cover; filter: brightness(1.08) contrast(1.04) saturate(1.05) drop-shadow(0 30px 50px rgba(11,18,32,0.28)); }
@@ -540,6 +606,7 @@ page = f"""<!doctype html>
   <body>
     <div id="root" data-composition-id="main" data-start="0" data-duration="{FIN}" data-width="1080" data-height="1920">
 {NL.join("      " + f for f in FOND_HTML)}
+{NL.join("      " + m for m in MO_HTML)}
       <div id="cine"><div id="pousse"><div id="cam"><div id="coupe">
         <video id="perso" class="clip" src="assets/perso.webm" data-start="0" data-duration="{r(FIN_VOIX)}" data-media-start="0" data-track-index="1" muted playsinline></video>
       </div></div></div></div>
