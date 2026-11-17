@@ -155,7 +155,7 @@ flash(T(49), 0.6)
 cache("#gc", T(54) - 0.05)
 cap = ICI / "assets/captures/hyperframes-accueil.mp4"
 fen = (f'<video id="hf-v" class="clip" src="assets/captures/hyperframes-accueil.mp4" data-start="{r(T(54))}" data-duration="{r(T(57) - T(54) + 0.3)}" '
-       f'data-media-start="0.5" data-track-index="9" muted playsinline></video>') if cap.exists() else ""
+       f'data-media-start="0.0" data-track-index="9" muted playsinline></video>') if cap.exists() else ""
 HTML.append(f'<div id="hf" class="carte-hf" style="opacity: 0"><div class="hf-tete"><img src="assets/img/logo-heygen.png" alt="" /><b>HYPERFRAMES</b></div>'
             f'<span>une skill · gratuite et open source</span>{("<div class=" + chr(34) + "hf-fen" + chr(34) + ">" + fen + "</div>") if fen else ""}</div>')
 apparait("#hf", T(54), 120, 0.5, 0.3)
@@ -355,7 +355,7 @@ CSS = f"""
       .hf-tete img {{ width: 90px; height: 90px; border-radius: 20px; }}
       .hf-tete b {{ font-family: "Anton", sans-serif; font-weight: 400; font-size: 110px; color: {NUIT}; }}
       .carte-hf > span {{ display: block; font-family: "Inter Lf", sans-serif; font-weight: 800; font-size: 38px; color: #0284C7; margin-top: 4px; }}
-      .hf-fen {{ margin-top: 20px; height: 300px; border-radius: 18px; overflow: hidden; border: 4px solid {NUIT}; }}
+      .hf-fen {{ margin-top: 16px; height: 220px; border-radius: 18px; overflow: hidden; border: 4px solid {NUIT}; }}
       .hf-fen video {{ width: 100%; height: 100%; object-fit: cover; object-position: 50% 0; }}
       .verdict {{ position: absolute; top: 380px; width: 460px; text-align: center; }}
       .mini-ecran {{ height: 300px; border-radius: 24px; overflow: hidden; border: 7px solid #fff; background: {NUIT}; box-shadow: 0 20px 60px rgba(0,0,0,0.5); }}
