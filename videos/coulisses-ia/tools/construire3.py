@@ -360,10 +360,38 @@ cache("#hfi", T(85))
 HTML.append('<div id="poss" class="tag clair" style="left: 150px; top: 420px; opacity: 0">PLUSIEURS POSSIBILITÉS</div>')
 claque("#poss", T(101), 1.8)
 son(T(101), "impact-tambour", 0.38, "plusieurs possibilités")
-cache("#poss", T(103) - 0.05)
+j('tl.set("#poss", { zIndex: 14 }, 0);')
+cache("#poss", T(103) + 0.2)
+# saturation : l'écran se remplit de toutes les façons d'utiliser HyperFrames, arrivées de tous les côtés, puis aspirées
+POSS = ["Claude Pro", "Claude Max", "Claude Code", "Claude Desktop", "claude.ai", "Terminal", "VS Code", "Cursor", "API", "Chatbot",
+        "Codex", "Gemini CLI", "Windsurf", "Copilot", "Mac", "Windows", "Linux", "Navigateur", "Mobile", "npx hyperframes", "Skill",
+        "Plugin", "MCP", "Cloud", "Studio", "Opus 5.5", "Fable 5.2", "Sonnet", "GPT", "Gemini", "Grok", "DeepSeek", "Projet", "Équipe",
+        "Claude Pro", "Claude Code", "Terminal", "Cursor", "API", "VS Code", "Chatbot", "Skill", "Claude Max", "MCP", "Cloud", "Studio",
+        "Mac", "Windows", "Codex", "claude.ai", "Plugin", "Navigateur", "Opus 5.5", "Fable 5.2", "Gemini CLI"]
+HTML.append('<div id="poss-voile" class="flash" style="background: rgba(5,8,15,0.55); z-index: 11"></div>')
+j(f'tl.fromTo("#poss-voile", {{ opacity: 0 }}, {{ opacity: 1, duration: 0.2, immediateRender: false }}, {r(T(101))});')
+j(f'tl.to("#poss-voile", {{ opacity: 0, duration: 0.25 }}, {r(T(103) + 0.25)});')
+DIRS_P = [(-1, 0), (1, 0), (0, -1), (0, 1), (-1, -1), (1, -1), (-1, 1), (1, 1)]
+t_p0, t_p1, t_asp = T(101), T(102) + 0.45, T(103) + 0.2
+for k, nom in enumerate(POSS):
+    col, row = k % 5, k // 5
+    x = 30 + col * 205 + ((row * 41 + k * 59) % 60) - 30
+    y = 150 + row * 140 + ((k * 67) % 40) - 20
+    rot = ((k * 43) % 34) - 17
+    ic = '<img src="assets/img/logo-claude.svg" alt="" />' if nom.startswith("Claude") or nom.startswith("claude") else f'<i style="background: {COUL[k % len(COUL)]}"></i>'
+    HTML.append(f'<div id="ps{k}" class="sat-chip" data-layout-allow-overlap style="left: {x}px; top: {y}px; opacity: 0">{ic}{nom}</div>')
+    t0 = t_p0 + (t_p1 - t_p0) * (k / len(POSS)) ** 0.8
+    dx, dy = DIRS_P[k % 8]
+    j(f'tl.fromTo("#ps{k}", {{ opacity: 0, x: {dx * 900}, y: {dy * 1500}, rotation: {rot * 4}, scale: 1.8 }}, '
+      f'{{ opacity: 1, x: 0, y: 0, rotation: {rot}, scale: 1, duration: 0.22, ease: "power3.out", immediateRender: false }}, {r(t0)});')
+    j(f'tl.to("#ps{k}", {{ opacity: 0, scale: 0.15, x: {round((540 - x) * 0.85)}, y: {round((900 - y) * 0.85)}, rotation: {rot + 120}, duration: 0.24, ease: "power3.in" }}, {r(t_asp + 0.004 * k)});')
+    if k % 3 == 0:
+        son(t0, tour(["whoosh-pop", "swoosh-court", "souffle-rapide"] + POPS), 0.2, f"possibilité {nom}")
+son(t_p0, "swell-court", 0.3, "saturation de possibilités")
+son(t_asp, "aspiration", 0.32, "les possibilités sont aspirées")
 HTML.append('<div id="p1" class="prix" style="left: 60px; opacity: 0"><img src="assets/img/logo-claude.svg" alt="" /><b>CLAUDE PRO</b><span>20 $ / mois</span><em>pour commencer</em></div>')
 HTML.append('<div id="p2" class="prix" style="left: 560px; opacity: 0"><img src="assets/img/logo-claude.svg" alt="" /><b>CLAUDE MAX</b><span>pour aller plus loin</span></div>')
-apparait("#p1", T(103), 100, 0.5, 0.25)
+apparait("#p1", T(105) - 0.1, 100, 0.5, 0.25)  # après la saturation des possibilités
 son(T(110), "scanner-caisse", 0.42, "20 dollars")
 apparait("#p2", T(124), 100, 0.5, 0.25)
 son(T(124), "pieces-tintent", 0.4, "Claude Max")
@@ -504,7 +532,7 @@ def ville_iso():
 
 # --- « il permet de créer des vidéos à partir de références visuelles et de code » : une de ses vidéos sort de la main
 tA = geste(DD(31.4))[0]
-magie("mgA", contenu_video("mgA-v", "assets/exemples/liste-depenser-moins.mp4", tA, T(101), 0.2, centre=True), "A", tA, T(98) + 0.05, T(101), "LE RÉSULTAT")
+magie("mgA", contenu_video("mgA-v", "assets/exemples/liste-depenser-moins.mp4", tA, T(101) + 0.9, 0.2, centre=True), "A", tA, T(98) + 0.05, T(101), "LE RÉSULTAT")
 # --- « installer la skill dans un environnement de chatbot » : un vrai chatbot sort de la main
 tB = geste(DD(40.87))[0]
 magie("mgB", contenu_video("mgB-v", "assets/captures/modele-gemini.mp4", tB, T(137), 0.0, large=True), "B", tB, T(131), T(137) - 0.3, "TON CHATBOT")
