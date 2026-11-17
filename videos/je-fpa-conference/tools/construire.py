@@ -133,6 +133,14 @@ def Bv(k):
     return round(T0 + P * k, 3)
 
 
+# mots-clés tirés du dossier des panélistes et de la présentation Yako Africa
+def motcle(txt, t0, t1):
+    i = f"mc{len(HTML)}"
+    HTML.append(f'<div id="{i}" class="motcle" data-layout-allow-overlap style="opacity: 0">{txt}</div>')
+    j(f'tl.fromTo("#{i}", {{ opacity: 0, scale: 1.7 }}, {{ opacity: 1, scale: 1, duration: 0.12, ease: "power4.in", immediateRender: false }}, {r(t0)});')
+    j(f'tl.set("#{i}", {{ opacity: 0 }}, {r(t1)});')
+
+
 EFFETS = ["punch", "glisse", "punch+secousse", "punch", "glisse", "punch"]
 def rafale(k0, pas, n, flash_tous=4):
     """n coupes de `pas` temps chacune à partir du temps k0 ; renvoie le temps suivant"""
@@ -172,6 +180,8 @@ j(f'tl.set("#voile1", {{ opacity: 1 }}, {Bv(-4)}); tl.set("#voile1", {{ opacity:
 # ---- DROP 1 (5 → 15 s) : 16 coupes sur les temps
 flash(T0, 1.0)
 k = rafale(0, 1, 16)
+for m, mot in enumerate(["PRÉPARER", "CONVAINCRE", "UN BON CV", "SUR MESURE", "ALLER À L’ESSENTIEL", "OBTENIR L’ENTRETIEN", "PARLEZ-MOI DE VOUS", "GÉRER LE STRESS"]):
+    motcle(mot, Bv(2 * m), Bv(2 * m + 2) - 0.02)
 
 # ---- PARTENAIRE + DATE (15 → 17,5 s)
 HTML.append(f'<div id="s3" class="fond-blanc" style="opacity: 0"><img id="mains" class="mains" src="assets/img/mains-yako.png" alt="" />'
@@ -217,6 +227,8 @@ for kk, (num, titre, _) in enumerate(MOM):
 # ---- RAFALE (33,75 → 43,1 s) : 11 coupes d'un temps puis 8 demi-temps (montée vers la cassure)
 k = rafale(46, 1, 11)
 k = rafale(k, 0.5, 8, flash_tous=2)
+for m, mot in enumerate(["ÉCOUTE", "MOTIVATION", "ESPRIT D’ÉQUIPE", "ÉVITER LES ERREURS", "L’APRÈS-ENTRETIEN", "PREMIERS PAS EN ENTREPRISE"]):
+    motcle(mot, Bv(46 + 2 * m), Bv(48 + 2 * m) - 0.02)
 
 # ---- CASSURE (43,1 → 45,6 s) : le 2e ralenti + message
 coupe("lent-debout-public.mp4", Bv(61), Bv(65), "aucun", (1.04, 1.2), depart=0.4)
@@ -231,18 +243,21 @@ HTML.append('<div id="voile8b" class="voile fort"></div>')
 j(f'tl.set("#voile8b", {{ opacity: 1 }}, {Bv(65)}); tl.set("#voile8b", {{ opacity: 0 }}, {Bv(73)});')
 mots("C’est l’outil qui vous ouvre la porte de l’entretien.", Bv(65) + 0.05, Bv(73), "t-message bleu-clair", "top: 36%;" if not V else "top: 11%;", 0.07)
 
-# ---- MERCI (50,6 → 53,1 s) puis logo (53,1 → 55,6 s)
-coupe("groupe-1.jpg", Bv(73), Bv(77), "punch", (1.04, 1.16))
+# ---- MERCI sur la grande photo de groupe (tous les participants), puis JE-FPA sur la photo de l'équipe (moins nombreux)
+coupe("groupe-1.jpg", Bv(73), Bv(76), "punch", (1.04, 1.14))
 HTML.append('<div id="voile8" class="voile"></div>')
-j(f'tl.set("#voile8", {{ opacity: 1 }}, {Bv(73)}); tl.set("#voile8", {{ opacity: 0 }}, {Bv(77)});')
+j(f'tl.set("#voile8", {{ opacity: 1 }}, {Bv(73)}); tl.set("#voile8", {{ opacity: 0 }}, {Bv(76)});')
 flash(Bv(73), 0.8)
-mots("MERCI", Bv(73) + 0.05, Bv(77), "t-merci", "top: 30%;" if not V else "top: 14%;", 0.0)
-texte("à nos panélistes, à YAKO AFRICA<br>et à tous les participants", Bv(74), Bv(77), "t-sous", "top: 50%;" if not V else "top: 25%;")
-HTML.append('<div id="s9" class="fond-marque" style="opacity: 0"></div>')
-j(f'tl.fromTo("#s9", {{ opacity: 0 }}, {{ opacity: 1, duration: 0.2, immediateRender: false }}, {Bv(77)});')
-HTML.append('<img id="logo2" class="logo-centre" src="assets/img/logo-recadre.png" alt="" style="opacity: 0" />')
-j(f'tl.fromTo("#logo2", {{ opacity: 0, scale: 1.4 }}, {{ opacity: 1, scale: 1, duration: 0.4, ease: "power3.out", immediateRender: false }}, {Bv(77) + 0.05});')
-texte("Junior Entreprise de la Filière Professionnalisée Actuariat", Bv(78), FIN + 0.3, "t-fin", "top: 66%;" if not V else "top: 60%;")
+mots("MERCI", Bv(73) + 0.05, Bv(76), "t-merci", "top: 30%;" if not V else "top: 14%;", 0.0)
+texte("à nos panélistes, à YAKO AFRICA<br>et à tous les participants", Bv(73) + 0.4, Bv(76), "t-sous", "top: 50%;" if not V else "top: 25%;")
+coupe("groupe-jefpa.jpg", Bv(76), FIN, "punch+secousse", (1.03, 1.12))
+HTML.append('<div id="voile9" class="voile"></div>')
+j(f'tl.set("#voile9", {{ opacity: 1 }}, {Bv(76)});')
+flash(Bv(76), 0.9)
+HTML.append('<img id="logo2" class="logo-equipe" src="assets/img/logo-recadre.png" alt="" style="opacity: 0" />')
+j(f'tl.fromTo("#logo2", {{ opacity: 0, scale: 1.5 }}, {{ opacity: 1, scale: 1, duration: 0.25, ease: "power4.in", immediateRender: false }}, {Bv(76) + 0.05});')
+mots("JE-FPA", Bv(76) + 0.1, FIN + 0.3, "t-merci", "top: 36%;" if not V else "top: 24%;", 0.0)
+texte("Junior Entreprise de la Filière Professionnalisée Actuariat", Bv(77), FIN + 0.3, "t-sous", "top: 56%;" if not V else "top: 37%;")
 HTML.append('<div id="noir" class="flash" style="background: #000"></div>')
 j(f'tl.fromTo("#noir", {{ opacity: 0 }}, {{ opacity: 1, duration: 0.7, immediateRender: false }}, {r(FIN - 0.7)});')
 print(len(UTILISES), "plans différents utilisés,", len(POOL), "restants")
@@ -314,6 +329,11 @@ CSS = f"""
       .tr-carte b {{ display: block; margin-top: {22 if not V else 0}px; font-size: {52 if not V else 56}px; font-weight: 800; color: #fff; line-height: 1.05; {"" if not V else "align-self: end;"} }}
       .tr-carte span {{ display: block; margin-top: 10px; font-size: {30 if not V else 34}px; font-weight: 600; color: #dfe6ff; line-height: 1.25; {"" if not V else "align-self: start;"} }}
       .t-etiq b {{ color: #fff; }}
+      .motcle {{ position: absolute; left: 0; right: 0; {"top: 40%;" if not V else "top: 1260px;"} text-align: center; z-index: 27; padding: 0 60px;
+        font-size: {120 if not V else 88}px; font-weight: 800; letter-spacing: 4px; color: #fff; line-height: 1.05;
+        text-shadow: 0 0 2px #000, 0 8px 0 rgba(31,75,255,0.9), 0 20px 60px rgba(0,0,0,0.75); }}
+      .logo-equipe {{ position: absolute; left: 50%; top: {"14%" if not V else "6%"}; width: {420 if not V else 460}px; margin-left: -{210 if not V else 230}px; z-index: 26; border-radius: 20px;
+        box-shadow: 0 0 60px rgba(31,75,255,0.6); }}
       .t-fin {{ font-size: {38 if not V else 40}px; font-weight: 600; color: #c9d3ff; }}
 """
 if V:  # en vertical, les textes des temps forts sous le cadre et les messages au-dessus
