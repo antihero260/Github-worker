@@ -2,7 +2,7 @@
 """Photo de l'utilisateur retravaillée en 4K vertical (2160×3840) : fond sombre et lumineux, logo Claude en 3D lumineux
 qui flotte dans le creux de la main et éclaire la main et le visage.
 Entrées : la photo détourée (hyperframes remove-background) et le logo rendu en PNG. Sortie : PNG + JPG.
-Usage : python3 tools/photo-claude.py <detoure.png> <logo.png> <sortie-sans-extension>"""
+Usage : python3 tools/photo-claude.py <detoure.png> <logo.png> <sortie-sans-extension> [plat]"""
 import sys
 import numpy as np
 from PIL import Image, ImageFilter
@@ -13,6 +13,8 @@ S = 1.1                      # agrandissement de la photo d'origine (2556×3408)
 X0, Y0 = 392, H - round(3408 * S)   # recadrage : visage centré, bas de la photo collé au bas de l'image
 LX, LY, LS = 521, 2544, 600   # au creux de la main, derrière l'index (x_final = 1,1·x − 392, y_final = 91 + 1,1·y)  # centre et taille du logo (dans le creux de la main)
 rng = np.random.default_rng(7)
+PLAT = len(sys.argv) > 4 and sys.argv[4] == 'plat'   # 'plat' : le vrai logo, couleur d'origine, sans relief ni brillance
+L = 0.0 if PLAT else 1.0                            # intensité de tout ce qui « brille » autour du logo
 
 
 def flou(a, s):
@@ -43,13 +45,13 @@ VIOLET = np.array([0.45, 0.25, 0.85], np.float32)
 fond = np.zeros((H, W, 3), np.float32) + np.array([0.012, 0.016, 0.03], np.float32)
 fond += radial(1150, 1350, 1500, 1300, 1.6)[..., None] * BLEU * 0.30
 fond += radial(1700, 700, 900, 900, 2.0)[..., None] * VIOLET * 0.22
-fond += radial(LX, LY, 1300, 1300, 2.2)[..., None] * ORANGE * 0.55
+fond += radial(LX, LY, 1300, 1300, 2.2)[..., None] * ORANGE * (0.55 if not PLAT else 0.10)
 # rayons de lumière qui partent du logo
 ang = np.arctan2(yy - LY, xx - LX)
 dist = np.sqrt((xx - LX) ** 2 + (yy - LY) ** 2)
 rayons = (0.5 + 0.5 * np.sin(ang * 9 + 0.6)) ** 6 * 0.6 + (0.5 + 0.5 * np.sin(ang * 23 + 1.9)) ** 10 * 0.4
 rayons *= np.exp(-dist / 1500) * np.clip(dist / 250, 0, 1)
-fond += rayons[..., None] * ORANGE * 0.22
+fond += rayons[..., None] * ORANGE * 0.22 * L
 # particules de lumière (bokeh)
 bokeh = np.zeros((H, W, 3), np.float32)
 for _ in range(90):
@@ -84,7 +86,7 @@ rgb = np.clip((rgb - 0.5) * 1.10 + 0.5 - 0.02, 0, 1)
 # lumière chaude du logo sur la main, le visage et le t-shirt
 chaud = np.exp(-((xx - LX) ** 2 + (yy - LY) ** 2) / (2 * 620.0 ** 2))
 chaud2 = np.exp(-((xx - LX) ** 2 + (yy - LY) ** 2) / (2 * 1250.0 ** 2))
-rgb = rgb * (1 + (chaud * 1.15 + chaud2 * 0.35)[..., None] * (ORANGE - 0.25))
+rgb = rgb * (1 + L * (chaud * 1.15 + chaud2 * 0.35)[..., None] * (ORANGE - 0.25))
 # liseré bleu froid sur les contours (séparation avec le fond), plus fort à droite et en haut
 interieur = ndimage.gaussian_filter(a, 14)
 lisere = np.clip(a - interieur, 0, 1) * 2.4
@@ -109,8 +111,9 @@ DEVANT = ndimage.gaussian_filter(np.asarray(mq).astype(np.float32) / 255, 2.5) *
 logo = Image.open(sys.argv[2]).convert("RGBA")
 bb = logo.getbbox()
 logo = logo.crop(bb).resize((LS, round(LS * (bb[3] - bb[1]) / (bb[2] - bb[0]))), Image.LANCZOS)
-logo = logo.rotate(-12, resample=Image.BICUBIC, expand=True)
-logo = logo.resize((logo.width, round(logo.height * 0.86)), Image.LANCZOS)   # légèrement couché vers nous
+if not PLAT:
+    logo = logo.rotate(-12, resample=Image.BICUBIC, expand=True)
+    logo = logo.resize((logo.width, round(logo.height * 0.86)), Image.LANCZOS)   # légèrement couché vers nous
 la = np.asarray(logo).astype(np.float32)[..., 3] / 255
 lh, lw = la.shape
 ox, oy = LX - lw // 2, LY - lh // 2
@@ -129,12 +132,12 @@ gl[oy:oy + lh, ox:ox + lw] = la
 for s_, k_ in ((40, 0.6), (100, 0.7), (240, 0.6)):
     g = flou(gl, s_)
     g = g / (g.max() + 1e-6)
-    img += g[..., None] * ORANGE * k_
+    img += g[..., None] * ORANGE * k_ * L
 # halo sous le logo, posé sur la paume
-img += radial(LX + 10, LY + lh * 0.45, lw * 0.75, lh * 0.30, 1.5)[..., None] * ORANGE * 0.6
+img += radial(LX + 10, LY + lh * 0.45, lw * 0.75, lh * 0.30, 1.5)[..., None] * ORANGE * 0.6 * L
 AVANT_LOGO = img.copy()   # l'image juste avant de poser le logo : les doigts « de devant » seront repris d'ici (raccords invisibles)
 # épaisseur (extrusion) : copies décalées de plus en plus sombres, de l'arrière vers l'avant
-PROF = 46
+PROF = 0 if PLAT else 46
 for i in range(PROF, 0, -1):
     t = i / PROF
     c = np.array([0.72, 0.28, 0.15], np.float32) * (1 - t) + np.array([0.22, 0.07, 0.04], np.float32) * t
@@ -151,13 +154,15 @@ biseau = np.clip(-(nx * -0.7 + ny * -0.7) * 9, -1, 1)
 face = face * (1 + 0.35 * biseau[..., None]) + np.clip(biseau, 0, 1)[..., None] * 0.35
 reflet = np.clip(1 - np.sqrt(((gx - lw * 0.35) / (lw * 0.35)) ** 2 + ((gy - lh * 0.3) / (lh * 0.25)) ** 2), 0, 1) ** 2
 face = face + reflet[..., None] * 0.25
+if PLAT:
+    face = np.broadcast_to(np.array([217, 119, 87], np.float32) / 255, (lh, lw, 3))   # la couleur officielle du logo Claude
 poser(np.clip(face, 0, 1.3), la)
 # fine lueur de contour par-dessus (le logo « émet » sans être brûlé)
 g = flou(gl, 12)
 contour = np.clip(g / (g.max() + 1e-6) - gl * 0.85, 0, 1)
-img += contour[..., None] * ORANGE * 1.1
+img += contour[..., None] * ORANGE * 1.1 * L
 # étincelles en étoile autour du logo
-for _ in range(14):
+for _ in range(0 if PLAT else 14):
     a_ = rng.uniform(0, 2 * np.pi)
     r_ = rng.uniform(lw * 0.55, lw * 1.25)
     cx, cy = LX + np.cos(a_) * r_, LY + np.sin(a_) * r_ * 0.8
@@ -168,11 +173,11 @@ for _ in range(14):
 
 # ------------------------------------------------------------------ la main tient le logo : les doigts repassent devant, rétroéclairés
 derriere = np.clip(ndimage.gaussian_filter(gl, 14) * 3, 0, 1)                    # là où le logo est juste derrière
-ombre = 1 - 0.38 * np.clip(ndimage.gaussian_filter(gl, 30) * 1.8, 0, 1)            # doigts à contre-jour devant la lumière
+ombre = 1 - 0.38 * L * np.clip(ndimage.gaussian_filter(gl, 30) * 1.8, 0, 1)            # doigts à contre-jour devant la lumière
 img = img * (1 - DEVANT[..., None]) + (AVANT_LOGO * ombre[..., None]) * DEVANT[..., None]
 bordd = np.clip(DEVANT - ndimage.gaussian_filter(DEVANT, 6), 0, 1) * 3.0
-img += (bordd * derriere)[..., None] * np.array([1.0, 0.62, 0.38], np.float32) * 1.5   # la lumière du logo passe sur le bord des doigts
-img += (ndimage.gaussian_filter(gl, 40) * 1.4 * DEVANT)[..., None] * ORANGE * 0.12       # et déborde un peu sur eux
+img += (bordd * derriere)[..., None] * np.array([1.0, 0.62, 0.38], np.float32) * 1.5 * L   # la lumière du logo passe sur le bord des doigts
+img += (ndimage.gaussian_filter(gl, 40) * 1.4 * DEVANT)[..., None] * ORANGE * 0.12 * L       # et déborde un peu sur eux
 
 # ------------------------------------------------------------------ finition : vignette, grain, compression douce des hautes lumières
 img *= (0.55 + 0.45 * radial(1080, 2000, 1900, 2500, 0.7))[..., None]
