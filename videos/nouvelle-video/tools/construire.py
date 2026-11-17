@@ -248,7 +248,7 @@ zoom_cine(T_SEG[5] + 0.05, 1.2)
 zoom_cine(T_SEG[9] + 0.05, 1.28, boom="trailer-impact")
 
 # ================================================================ 2. NIVEAU 1 : la conversation ; chaque nouvelle tâche revient vers toi
-t_c = W(115) - 0.1
+t_c = W(120) - 0.12   # après la vidéo verticale du téléphone
 HTML.append('<div id="chat" class="carte" style="opacity: 0"><div class="c-tete"><img src="assets/img/logo-chatgpt-noir.svg" alt="" /><b>ChatGPT</b></div>'
             '<div id="b1" class="bulle moi" style="opacity: 0">Écris un mail à mon client</div>'
             '<div id="b2" class="bulle ia" style="opacity: 0">Voici votre mail : « Bonjour Monsieur… »</div>'
@@ -256,7 +256,7 @@ HTML.append('<div id="chat" class="carte" style="opacity: 0"><div class="c-tete"
             '<div id="b4" class="bulle moi" style="opacity: 0">Et planifie la réunion</div></div>')
 apparait("#chat", t_c, 120, 0.7, 0.3)
 son(t_c, tour(WH), 0.3, "la conversation arrive")
-apparait("#b1", W(116), 40, 0.6)
+apparait("#b1", t_c + 0.12, 40, 0.6)
 son(W(116), "clavier-ordi", 0.3, "il tape sa demande", d=0.9)
 apparait("#b2", W(124) - 0.15, 40, 0.6)
 son(W(124) - 0.15, "notif-positive", 0.38, "ChatGPT répond")
@@ -265,7 +265,7 @@ apparait("#b3", W(155), 40, 0.6)
 son(W(155), "clavier-ordi-2", 0.3, "nouvelle tâche", d=0.6)
 apparait("#b4", W(157), 40, 0.6)
 son(W(157), "clavier-tel", 0.3, "encore une tâche", d=0.5)
-HTML.append('<div id="toi" class="tampon" style="top: 430px; opacity: 0">TOUJOURS TOI</div>')
+HTML.append('<div id="toi" class="tampon" style="top: 430px; z-index: 22; opacity: 0">TOUJOURS TOI</div>')
 claque("#toi", W(159) + 0.1, 2.6)
 son(W(159) + 0.1, "buzz-faux", 0.36, "votre intervention")
 j(f'tl.fromTo("#toi", {{ x: -10 }}, {{ x: 10, duration: 0.04, repeat: 7, yoyo: true, ease: "none", immediateRender: false }}, {r(W(159) + 0.25)});')
@@ -388,13 +388,16 @@ FONDS = [  # (début, couleur de la lumière principale, couleur secondaire)
     (0.0, "56,189,248", "167,139,250"),          # accroche : bleu ciel + violet
     (T_SEG[1], "56,189,248", "125,211,252"),     # niveau 1 : bleu
     (T_SEG[5], "242,183,5", "251,146,60"),       # niveau 2 : or
-    (T_SEG[9], "255,107,107", "244,114,182"),    # niveau 3 : corail
+    (T_SEG[9], "139,92,246", "217,70,239"),      # niveau 3 (agents IA) : NOIR lumineux violet
     (T_SEG[16], "242,183,5", "56,189,248"),      # la révolution : or + bleu
 ]
 for k, (t0, c1, c2) in enumerate(FONDS):
     t1 = FONDS[k + 1][0] if k + 1 < len(FONDS) else FIN
-    FOND_HTML.append(f'<div id="fond{k}" class="fond" style="opacity: {1 if k == 0 else 0}; background: radial-gradient(ellipse 60% 45% at 22% 18%, rgba({c1},0.42), rgba({c1},0) 70%), '
-                     f'radial-gradient(ellipse 55% 40% at 82% 30%, rgba({c2},0.34), rgba({c2},0) 70%), radial-gradient(ellipse 90% 60% at 50% 105%, rgba({c1},0.22), rgba({c1},0) 70%), #F7F9FD">'
+    sombre = k == 3
+    base = "#07030F" if sombre else "#F7F9FD"
+    fort = 0.75 if sombre else 0.42
+    FOND_HTML.append(f'<div id="fond{k}" class="fond{" sombre" if sombre else ""}" style="opacity: {1 if k == 0 else 0}; background: radial-gradient(ellipse 60% 45% at 22% 18%, rgba({c1},{fort}), rgba({c1},0) 70%), '
+                     f'radial-gradient(ellipse 55% 40% at 82% 30%, rgba({c2},0.34), rgba({c2},0) 70%), radial-gradient(ellipse 90% 60% at 50% 105%, rgba({c1},0.22), rgba({c1},0) 70%), {base}">'
                      f'<div class="f-points"></div><div id="lum{k}" class="f-lum" style="background: radial-gradient(circle, rgba({c1},0.55), rgba({c1},0) 65%)"></div></div>')
     if k:
         j(f'tl.fromTo("#fond{k}", {{ opacity: 0 }}, {{ opacity: 1, duration: 0.4, ease: "power1.inOut", immediateRender: false }}, {r(t0)});')
@@ -455,7 +458,7 @@ fond_motion("mo-f2", T_SEG[5], T_SEG[9],
 # niveau 3 : réseau de nœuds qui se dessine et pulse (l'agent qui relie les outils)
 NOEUDS_R = [(110, 1000), (300, 1180), (150, 1420), (420, 1560), (930, 980), (760, 1150), (980, 1400), (680, 1600), (540, 1760), (200, 1750)]
 LIENS = [(0, 1), (1, 2), (1, 3), (2, 9), (3, 8), (4, 5), (5, 6), (5, 7), (6, 7), (7, 8), (3, 7), (0, 4)]
-lignes = "".join(f'<line id="ln{q}" x1="{NOEUDS_R[a_][0]}" y1="{NOEUDS_R[a_][1]}" x2="{NOEUDS_R[b_][0]}" y2="{NOEUDS_R[b_][1]}" stroke="#FF6B6B" stroke-width="6" '
+lignes = "".join(f'<line id="ln{q}" x1="{NOEUDS_R[a_][0]}" y1="{NOEUDS_R[a_][1]}" x2="{NOEUDS_R[b_][0]}" y2="{NOEUDS_R[b_][1]}" stroke="#A78BFA" stroke-width="6" '
                  f'stroke-dasharray="1200" stroke-dashoffset="1200" opacity="0.55" />' for q, (a_, b_) in enumerate(LIENS))
 points = "".join(f'<circle id="nn{q}" cx="{x}" cy="{y}" r="22" fill="#fff" stroke="#0B1220" stroke-width="6" opacity="0.8" />' for q, (x, y) in enumerate(NOEUDS_R))
 fond_motion("mo-f3", T_SEG[9], T_SEG[16], f'<svg viewBox="0 0 1080 1920" width="1080" height="1920">{lignes}{points}</svg>',
@@ -464,13 +467,18 @@ fond_motion("mo-f3", T_SEG[9], T_SEG[16], f'<svg viewBox="0 0 1080 1920" width="
                for q, (x, y) in enumerate(NOEUDS_R)])
 
 
+# titre lisible sur le fond noir des agents IA
 # ================================================================ VIDÉOS D'ILLUSTRATION sur les passages sans graphique
 # « plein » : l'image couvre tout (fond flou de la même vidéo + bande nette 16:9) ; « ecran » : grand écran arrondi en haut, la personne reste visible
-BROLL = [("lunettes-ecran.mp4", "plein", W(22) - 0.05, W(24) - 0.05),
+# « vertical » : vraie vidéo verticale 1080×1920 (Mixkit) qui remplace tout l'écran
+BROLL = [("v-lasers.mp4", "vertical", W(22) - 0.05, W(24) - 0.05),
+         ("v-telephone.mp4", "vertical", W(115) - 0.05, W(120) - 0.12),
+         ("v-epuise.mp4", "vertical", W(158) - 0.05, T_SEG[5] - 0.12),
          ("robot-usine.mp4", "ecran", T_SEG[5] + 1.6, W(192) - 0.05),
          ("robot-yeux.mp4", "plein", W(264) + 0.2, W(287) - 0.08),
-         ("reunion.mp4", "ecran", W(363), W(381) - 0.1),
-         ("ville-futur.mp4", "plein", W(427) - 0.05, W(435) - 0.05)]
+         ("v-business.mp4", "vertical", W(363), W(381) - 0.1),
+         ("v-gratte-ciel.mp4", "vertical", W(427) - 0.05, W(435) - 0.05),
+         ("v-ferme-laptop.mp4", "vertical", W(465) + 0.15, FIN)]
 # GESTE : paumes ouvertes vers le haut sur « les agents IA » → un écran (vidéo du robot) naît dans les mains, puis zoom jusqu'au plein écran
 t_m = W(262) + 0.05
 px_, py_ = ecran(530, 1440, t_m)
@@ -486,7 +494,13 @@ for k, (src, mode, t0, t1) in enumerate(BROLL):
     i = f"br{k}"
     vid = lambda c: (f'<video id="{i}-{c}" class="clip {c}" src="assets/broll/{src}" data-start="{r(t0)}" data-duration="{r(t1 - t0 + 0.05)}" '
                      f'data-media-start="{r(t0 - t_m) if src == "robot-yeux.mp4" else 0}" data-track-index="{5 + k % 3}" muted playsinline></video>')
-    if mode == "plein":
+    if mode == "vertical":
+        HTML.append(f'<div id="{i}" class="br-vert" style="opacity: 0">{vid("br-net")}</div>')
+        j(f'tl.set("#{i}", {{ opacity: 1 }}, {r(t0)}); tl.set("#{i}", {{ opacity: 0 }}, {r(min(t1, FIN - 0.01))});')
+        j(f'tl.fromTo("#{i}-br-net", {{ scale: 1.18 }}, {{ scale: 1.02, duration: {r(t1 - t0)}, ease: "power2.out", immediateRender: false }}, {r(t0)});')
+        flash(t0, 0.6)
+        son(t0, tour(["whoosh-cine", "zoom-swipe", "swoosh-vitesse", "impact-whoosh"]), 0.34, f"vidéo verticale {src}")
+    elif mode == "plein":
         HTML.append(f'<div id="{i}" class="br-plein" style="opacity: 0">{vid("br-flou")}<div class="br-bande">{vid("br-net")}</div></div>')
         j(f'tl.set("#{i}", {{ opacity: 1 }}, {r(t0)}); tl.set("#{i}", {{ opacity: 0 }}, {r(t1)});')
         j(f'tl.fromTo("#{i} .br-bande", {{ scale: 1.25 }}, {{ scale: 1.05, duration: {r(t1 - t0)}, ease: "power2.out", immediateRender: false }}, {r(t0)});')
@@ -577,6 +591,8 @@ CSS = """
       #video { position: absolute; inset: 0; width: 1080px; height: 1920px; object-fit: cover; }
       .fond { position: absolute; inset: 0; overflow: hidden; }
       .mo-fond { position: absolute; inset: 0; pointer-events: none; }
+      .fond.sombre .f-points { background-image: radial-gradient(rgba(255,255,255,0.28) 2px, transparent 2.5px); }
+      .br-vert { position: absolute; inset: 0; z-index: 20; overflow: hidden; background: #000; }
       .mo-niv { position: absolute; left: 160px; top: 140px; width: 760px; height: 760px; z-index: 15; pointer-events: none; }
       .f-points { position: absolute; inset: 0; opacity: 0.35; background-image: radial-gradient(rgba(11,18,32,0.22) 2px, transparent 2.5px); background-size: 44px 44px; }
       .f-lum { position: absolute; left: 200px; top: 300px; width: 900px; height: 900px; border-radius: 50%; }
@@ -590,8 +606,9 @@ CSS = """
       .flash { position: absolute; inset: 0; opacity: 0; pointer-events: none; z-index: 40; }
       #fondu { position: absolute; inset: 0; opacity: 0; z-index: 60; background: #000; }
       #titre { position: absolute; left: 0; top: 0; width: 1080px; height: 270px; z-index: 30; display: flex; justify-content: center; padding-top: 120px; }
-      #titre b { font-family: "Anton", sans-serif; font-weight: 400; font-size: 66px; color: #0B1220; letter-spacing: 1px; text-shadow: 0 4px 18px rgba(255,255,255,0.9); }
-      #titre b i { font-style: normal; color: #0369A1; }
+      #titre b { font-family: "Anton", sans-serif; font-weight: 400; font-size: 62px; color: #FFFFFF; letter-spacing: 1px; background: rgba(11,18,32,0.82);
+        padding: 6px 26px 8px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.25); line-height: 1.15; }
+      #titre b i { font-style: normal; color: #38BDF8; }
       .chip { position: absolute; display: flex; align-items: center; gap: 10px; font-family: "Anton", sans-serif; font-size: 44px; color: #0B1220; background: #fff;
         border: 5px solid #0B1220; border-radius: 18px; padding: 6px 16px 2px; white-space: nowrap; z-index: 12; box-shadow: 0 12px 30px rgba(0,0,0,0.45); }
       .chip img { width: 46px; height: 46px; } .chip i { width: 22px; height: 22px; border-radius: 50%; display: inline-block; }
@@ -648,8 +665,8 @@ CSS = """
       .case { width: 54px; height: 54px; border: 6px solid #9CA3AF; border-radius: 14px; flex: none; background: #fff; }
       .etape b { font-family: "Inter Lf", sans-serif; font-weight: 800; font-size: 42px; color: #0B1220; }
       .et-v { position: absolute; left: 88px; }
-      .niv-mini { position: absolute; left: 0; top: 200px; width: 1080px; text-align: center; z-index: 31; font-family: "Anton", sans-serif; font-size: 40px;
-        color: #0B1220; }
+      .niv-mini { position: absolute; left: 0; right: 0; margin: 0 auto; width: fit-content; top: 236px; z-index: 31; font-family: "Anton", sans-serif; font-size: 40px;
+        color: #0B1220; background: rgba(255,255,255,0.94); border-radius: 16px; padding: 6px 18px 4px 8px; box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
       .niv-mini span { display: inline-block; color: #0B1220; -webkit-text-stroke: 0; border: 4px solid #0B1220; border-radius: 12px; padding: 2px 14px 0; margin-right: 8px; }
       .f-tete2 { position: absolute; left: 40px; top: 318px; width: 1000px; text-align: center; z-index: 13; font-family: "Anton", sans-serif; font-size: 54px;
         color: #0B1220; } .f-tete2 { background: #F2B705; border-radius: 0; }
@@ -662,7 +679,7 @@ CSS = """
       .onde { position: absolute; width: 220px; height: 220px; border-radius: 50%; border: 10px solid #FF6B6B; z-index: 18; box-shadow: 0 0 30px rgba(255,107,107,0.8); }
       .br-main { position: absolute; width: 360px; height: 203px; z-index: 18; border: 6px solid #0B1220; border-radius: 22px; overflow: hidden; background: #000;
         box-shadow: 0 0 50px rgba(255,107,107,0.8); }
-      .avap { position: absolute; left: 0; top: 400px; width: 1080px; z-index: 13; text-align: center; }
+      .avap { position: absolute; left: 0; top: 400px; width: 1080px; z-index: 21; text-align: center; }
       .av-c { display: inline-block; font-family: "Anton", sans-serif; font-size: 70px; color: #0B1220; background: #fff; border: 7px solid #0B1220; border-radius: 26px;
         padding: 10px 30px 4px; box-shadow: 0 18px 44px rgba(0,0,0,0.5); }
       .av-c.gris { background: #E5E7EB; color: #4B5563; } .av-c.gris b { color: #4B5563; text-decoration: line-through; text-decoration-thickness: 8px; }
