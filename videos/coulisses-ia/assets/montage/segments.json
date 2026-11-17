@@ -5,7 +5,7 @@
    "prise": "20261116_161444",
    "note": "certains d'entre vous",
    "debut_montage": 0.0,
-   "duree": 4.53,
+   "duree": 4.68,
    "morceaux": 2,
    "texte": "certaines d'envoy m'ont contacté pour me demander comment je faisais mes vidéos avec l'IA."
   },
@@ -13,7 +13,7 @@
    "k": 1,
    "prise": "20261116_161444",
    "note": "Claude et les autres",
-   "debut_montage": 4.53,
+   "debut_montage": 4.68,
    "duree": 9.29,
    "morceaux": 3,
    "texte": "Alors généralement j'utilise Claude, notamment au plus 5.5, mais il n'y a pas que Claude. Chat GPT, Gog, Gemini et bien d'autres modèles aussi peuvent le faire."
@@ -22,7 +22,7 @@
    "k": 2,
    "prise": "20261116_161514",
    "note": "game changer HyperFrames",
-   "debut_montage": 13.82,
+   "debut_montage": 13.97,
    "duree": 4.68,
    "morceaux": 3,
    "texte": "Le veritable game changer, c'est une skills appelé hyperframe."
@@ -31,7 +31,7 @@
    "k": 3,
    "prise": "20261116_162024",
    "note": "pourquoi : le code",
-   "debut_montage": 18.5,
+   "debut_montage": 18.65,
    "duree": 7.74,
    "morceaux": 3,
    "texte": "Alors pourquoi? Tout le modèle que je viens de citer jusqu'à présent sont très fort pour écrire du code. Mais pas pour générer des vidéos en tant que tel"
@@ -40,7 +40,7 @@
    "k": 4,
    "prise": "20261116_162024",
    "note": "HyperFrames intervient",
-   "debut_montage": 26.24,
+   "debut_montage": 26.39,
    "duree": 3.3,
    "morceaux": 1,
    "texte": "et c'est exactement là que Hyper FM intervient."
@@ -49,7 +49,7 @@
    "k": 5,
    "prise": "20261116_161514",
    "note": "références visuelles et code",
-   "debut_montage": 29.54,
+   "debut_montage": 29.69,
    "duree": 3.77,
    "morceaux": 2,
    "texte": "Il permet de créer des vidéos à partir de références visuelles et de code."
@@ -58,7 +58,7 @@
    "k": 6,
    "prise": "20261116_162024",
    "note": "plusieurs possibilités",
-   "debut_montage": 33.31,
+   "debut_montage": 33.46,
    "duree": 1.45,
    "morceaux": 1,
    "texte": "Tu as plusieurs possibilités."
@@ -67,7 +67,7 @@
    "k": 7,
    "prise": "20261116_161514",
    "note": "abonnements",
-   "debut_montage": 34.76,
+   "debut_montage": 34.91,
    "duree": 5.58,
    "morceaux": 1,
    "texte": "Tu peux utiliser Claude avec l'abonnement à 20 dollars pour commencer. Ou si tu veux le plus loin, tu peux prendre Claude Max."
@@ -76,7 +76,7 @@
    "k": 8,
    "prise": "20261116_161514",
    "note": "chatbot + attention",
-   "debut_montage": 40.34,
+   "debut_montage": 40.49,
    "duree": 5.72,
    "morceaux": 2,
    "texte": "Tu peux également installer la skills dans un environnement de chatbot. Mais attention, l'outil ne fait pas tout."
@@ -85,7 +85,7 @@
    "k": 9,
    "prise": "20261116_162024",
    "note": "tout se joue sur le modèle",
-   "debut_montage": 46.06,
+   "debut_montage": 46.21,
    "duree": 4.79,
    "morceaux": 1,
    "texte": "Mais tout va se jouer réellement sur le modèle que tu vas utiliser pour générer ta vidéo."
@@ -94,7 +94,7 @@
    "k": 10,
    "prise": "20261116_161514",
    "note": "Opus 5.5 et Fable 5.2",
-   "debut_montage": 50.85,
+   "debut_montage": 51.0,
    "duree": 7.45,
    "morceaux": 2,
    "texte": "O plus 5.5 est très intéressant. Mais je pense honnêtement que Fab 5.2 qui vient de sortir peut faire mieux pour certaines créations."
@@ -103,7 +103,7 @@
    "k": 11,
    "prise": "20261116_161514",
    "note": "3D, 2D, isométrique",
-   "debut_montage": 58.3,
+   "debut_montage": 58.45,
    "duree": 4.9,
    "morceaux": 1,
    "texte": "des vidéos de 3D, des vidéos en DD, des vidéos en 3D isométrique, et j'en passe."
@@ -112,7 +112,7 @@
    "k": 12,
    "prise": "20261116_161514",
    "note": "abonne-toi",
-   "debut_montage": 63.2,
+   "debut_montage": 63.35,
    "duree": 7.44,
    "morceaux": 3,
    "texte": "Abonne toi, parce que dans la prochaine vidéo, je vais te montrer comment reproduit le style visuel d'un autre créateur pour faire tes vidéos."
@@ -124,99 +124,99 @@
    "phrase": 0
   },
   {
-   "t": 1.79,
+   "t": 1.94,
    "phrase": 0
   },
   {
-   "t": 4.53,
+   "t": 4.68,
    "phrase": 1
   },
   {
-   "t": 6.36,
+   "t": 6.51,
    "phrase": 1
   },
   {
-   "t": 9.44,
+   "t": 9.59,
    "phrase": 1
   },
   {
-   "t": 13.82,
+   "t": 13.97,
    "phrase": 2
   },
   {
-   "t": 15.61,
+   "t": 15.76,
    "phrase": 2
   },
   {
-   "t": 18.15,
+   "t": 18.3,
    "phrase": 2
   },
   {
-   "t": 18.5,
+   "t": 18.65,
    "phrase": 3
   },
   {
-   "t": 19.39,
+   "t": 19.54,
    "phrase": 3
   },
   {
-   "t": 24.11,
+   "t": 24.26,
    "phrase": 3
   },
   {
-   "t": 26.24,
+   "t": 26.39,
    "phrase": 4
   },
   {
-   "t": 29.54,
+   "t": 29.69,
    "phrase": 5
   },
   {
-   "t": 29.75,
+   "t": 29.9,
    "phrase": 5
   },
   {
-   "t": 33.31,
+   "t": 33.46,
    "phrase": 6
   },
   {
-   "t": 34.76,
+   "t": 34.91,
    "phrase": 7
   },
   {
-   "t": 40.34,
+   "t": 40.49,
    "phrase": 8
   },
   {
-   "t": 43.94,
+   "t": 44.09,
    "phrase": 8
   },
   {
-   "t": 46.06,
+   "t": 46.21,
    "phrase": 9
   },
   {
-   "t": 50.85,
+   "t": 51.0,
    "phrase": 10
   },
   {
-   "t": 52.92,
+   "t": 53.07,
    "phrase": 10
   },
   {
-   "t": 58.3,
+   "t": 58.45,
    "phrase": 11
   },
   {
-   "t": 63.2,
+   "t": 63.35,
    "phrase": 12
   },
   {
-   "t": 65.94,
+   "t": 66.09,
    "phrase": 12
   },
   {
-   "t": 69.54,
+   "t": 69.69,
    "phrase": 12
   }
  ]

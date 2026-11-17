@@ -26,6 +26,7 @@ EDL = [  # choix faits avec tools/comparer_prises.py (fidélité au script, flui
     ("20261116_161514", 193.77, 198.33, "3D, 2D, isométrique"),
     ("20261116_161514", 208.65, 216.01, "abonne-toi"),
 ]
+DEBUT_FORCE = {("20261116_161444", 9.44): 9.20}  # le « Cer- » de « certains » commence avant le temps du mot : on le garde
 FIN_FORCEE = {("20261116_162024", 27.28): 35.80}  # couper avant « comme Gemini Omni »
 RECADRE = {"20261116_162912": (1.35, 1140)}  # prise filmée de plus loin : on resserre pour garder la même taille de visage
 segs, t = [], 0.0
@@ -40,6 +41,8 @@ for k, (p, a, b, note) in enumerate(EDL):
     fin = mots[i1]["end"] + 0.18
     if i1 + 1 < len(mots):
         fin = min(fin, mots[i1 + 1]["start"] - 0.04)
+    if (p, a) in DEBUT_FORCE:
+        debut = DEBUT_FORCE[(p, a)]
     if (p, a) in FIN_FORCEE:
         fin = FIN_FORCEE[(p, a)]
     d = round(fin - debut, 3)
@@ -89,8 +92,8 @@ for k, (p, a, b, note) in enumerate(EDL):
     segs.append({"k": k, "prise": p, "note": note, "debut_montage": round(seg_t0, 3), "duree": round(t - seg_t0, 3), "morceaux": len(morceaux),
                  "texte": " ".join(m["text"] for m in mots[i0:i1 + 1])})
 (OUT / "liste.txt").write_text("".join(f"file '{f}'\n" for f in FICHIERS))
-subprocess.run(["ffmpeg", "-nostdin", "-v", "error", "-y", "-f", "concat", "-safe", "0", "-i", str(OUT / "liste.txt"), "-c:v", "libx264", "-crf", "18",
-                "-preset", "veryfast", "-pix_fmt", "yuv420p", "-af", "loudnorm=I=-15:TP=-1.5:LRA=9", "-ar", "48000", "-c:a", "aac", "-b:a", "192k",
+subprocess.run(["ffmpeg", "-nostdin", "-v", "error", "-y", "-f", "concat", "-safe", "0", "-i", str(OUT / "liste.txt"), "-c:v", "libx264", "-crf", "12",
+                "-preset", "medium", "-pix_fmt", "yuv420p", "-af", "loudnorm=I=-15:TP=-1.5:LRA=9", "-ar", "48000", "-c:a", "aac", "-b:a", "192k",
                 str(OUT / "parole.mp4")], check=True)
 (OUT / "segments.json").write_text(json.dumps({"phrases": segs, "coupes": COUPES}, indent=1, ensure_ascii=False))
 for s in segs:
