@@ -1,0 +1,68 @@
+[
+  {
+    "id": "w0",
+    "text": "Alors,",
+    "start": 0,
+    "end": 0.32
+  },
+  {
+    "id": "w1",
+    "text": "il",
+    "start": 0.32,
+    "end": 0.4
+  },
+  {
+    "id": "w2",
+    "text": "y",
+    "start": 0.4,
+    "end": 0.48
+  },
+  {
+    "id": "w3",
+    "text": "a",
+    "start": 0.48,
+    "end": 0.56
+  },
+  {
+    "id": "w4",
+    "text": "ces",
+    "start": 0.64,
+    "end": 0.72
+  },
+  {
+    "id": "w5",
+    "text": "données",
+    "start": 1.04,
+    "end": 1.28
+  },
+  {
+    "id": "w6",
+    "text": "vous.",
+    "start": 1.28,
+    "end": 1.6
+  },
+  {
+    "id": "w7",
+    "text": "Alors,",
+    "start": 1.76,
+    "end": 2.16
+  },
+  {
+    "id": "w8",
+    "text": "certains",
+    "start": 2.16,
+    "end": 2.56
+  },
+  {
+    "id": "w9",
+    "text": "d'entre",
+    "start": 2.64,
+    "end": 2.96
+  },
+  {
+    "id": "w10",
+    "text": "vous...",
+    "start": 2.96,
+    "end": 4.24
+  }
+]

@@ -1,4 +1,8 @@
-# Prises vidéo de l'utilisateur (privées, trop lourdes pour git) et rendus
 assets/prises/
+assets/audio/
+assets/montage/seg*.mp4
+assets/montage/parole.wav
 renders/
 .hyperframes/
+.media/
+assets/montage/parole.mp4

@@ -1,0 +1,296 @@
+[
+  {
+    "id": "w0",
+    "text": "Alors",
+    "start": 0.24,
+    "end": 0.56
+  },
+  {
+    "id": "w1",
+    "text": "il",
+    "start": 0.64,
+    "end": 0.72
+  },
+  {
+    "id": "w2",
+    "text": "y",
+    "start": 0.72,
+    "end": 0.88
+  },
+  {
+    "id": "w3",
+    "text": "a",
+    "start": 0.88,
+    "end": 0.96
+  },
+  {
+    "id": "w4",
+    "text": "certaines",
+    "start": 1.04,
+    "end": 1.28
+  },
+  {
+    "id": "w5",
+    "text": "d'en",
+    "start": 1.36,
+    "end": 1.6
+  },
+  {
+    "id": "w6",
+    "text": "vous",
+    "start": 1.68,
+    "end": 1.84
+  },
+  {
+    "id": "w7",
+    "text": "alors",
+    "start": 8.88,
+    "end": 9.28
+  },
+  {
+    "id": "w8",
+    "text": "certaines",
+    "start": 9.44,
+    "end": 9.76
+  },
+  {
+    "id": "w9",
+    "text": "d'envoy",
+    "start": 9.84,
+    "end": 10.4
+  },
+  {
+    "id": "w10",
+    "text": "m'ont",
+    "start": 10.4,
+    "end": 10.64
+  },
+  {
+    "id": "w11",
+    "text": "contacté",
+    "start": 10.64,
+    "end": 11.2
+  },
+  {
+    "id": "w12",
+    "text": "pour",
+    "start": 11.2,
+    "end": 11.44
+  },
+  {
+    "id": "w13",
+    "text": "me",
+    "start": 11.44,
+    "end": 11.52
+  },
+  {
+    "id": "w14",
+    "text": "demander",
+    "start": 11.52,
+    "end": 11.92
+  },
+  {
+    "id": "w15",
+    "text": "comment",
+    "start": 12,
+    "end": 12.32
+  },
+  {
+    "id": "w16",
+    "text": "je",
+    "start": 12.32,
+    "end": 12.48
+  },
+  {
+    "id": "w17",
+    "text": "faisais",
+    "start": 12.48,
+    "end": 12.88
+  },
+  {
+    "id": "w18",
+    "text": "mes",
+    "start": 12.88,
+    "end": 13.04
+  },
+  {
+    "id": "w19",
+    "text": "vidéos",
+    "start": 13.04,
+    "end": 13.36
+  },
+  {
+    "id": "w20",
+    "text": "avec",
+    "start": 13.36,
+    "end": 13.52
+  },
+  {
+    "id": "w21",
+    "text": "l'IA.",
+    "start": 13.52,
+    "end": 14.4
+  },
+  {
+    "id": "w22",
+    "text": "Alors",
+    "start": 14.4,
+    "end": 14.56
+  },
+  {
+    "id": "w23",
+    "text": "généralement",
+    "start": 14.72,
+    "end": 15.2
+  },
+  {
+    "id": "w24",
+    "text": "j'utilise",
+    "start": 15.36,
+    "end": 15.84
+  },
+  {
+    "id": "w25",
+    "text": "Claude,",
+    "start": 15.84,
+    "end": 16.56
+  },
+  {
+    "id": "w26",
+    "text": "notamment",
+    "start": 16.56,
+    "end": 17.04
+  },
+  {
+    "id": "w27",
+    "text": "au",
+    "start": 17.04,
+    "end": 17.2
+  },
+  {
+    "id": "w28",
+    "text": "plus",
+    "start": 17.2,
+    "end": 17.44
+  },
+  {
+    "id": "w29",
+    "text": "5.5,",
+    "start": 17.68,
+    "end": 18.48
+  },
+  {
+    "id": "w30",
+    "text": "mais",
+    "start": 18.48,
+    "end": 18.64
+  },
+  {
+    "id": "w31",
+    "text": "il",
+    "start": 18.64,
+    "end": 18.72
+  },
+  {
+    "id": "w32",
+    "text": "n'y",
+    "start": 18.72,
+    "end": 18.88
+  },
+  {
+    "id": "w33",
+    "text": "a",
+    "start": 18.88,
+    "end": 18.96
+  },
+  {
+    "id": "w34",
+    "text": "pas",
+    "start": 18.96,
+    "end": 19.12
+  },
+  {
+    "id": "w35",
+    "text": "que",
+    "start": 19.12,
+    "end": 19.2
+  },
+  {
+    "id": "w36",
+    "text": "Claude.",
+    "start": 19.28,
+    "end": 19.92
+  },
+  {
+    "id": "w37",
+    "text": "Chat",
+    "start": 19.92,
+    "end": 20.32
+  },
+  {
+    "id": "w38",
+    "text": "GPT,",
+    "start": 20.32,
+    "end": 21.12
+  },
+  {
+    "id": "w39",
+    "text": "Gog,",
+    "start": 21.12,
+    "end": 21.68
+  },
+  {
+    "id": "w40",
+    "text": "Gemini",
+    "start": 21.68,
+    "end": 22.24
+  },
+  {
+    "id": "w41",
+    "text": "et",
+    "start": 22.4,
+    "end": 22.48
+  },
+  {
+    "id": "w42",
+    "text": "bien",
+    "start": 22.48,
+    "end": 22.56
+  },
+  {
+    "id": "w43",
+    "text": "d'autres",
+    "start": 22.64,
+    "end": 22.8
+  },
+  {
+    "id": "w44",
+    "text": "modèles",
+    "start": 22.88,
+    "end": 23.44
+  },
+  {
+    "id": "w45",
+    "text": "aussi",
+    "start": 23.44,
+    "end": 23.68
+  },
+  {
+    "id": "w46",
+    "text": "peuvent",
+    "start": 23.68,
+    "end": 24
+  },
+  {
+    "id": "w47",
+    "text": "le",
+    "start": 24,
+    "end": 24.24
+  },
+  {
+    "id": "w48",
+    "text": "faire.",
+    "start": 24.24,
+    "end": 24.88
+  }
+]
