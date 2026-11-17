@@ -85,7 +85,7 @@ def son(t, nom, v=0.35, note="", sur_pic=True, d=None):
     debut = max(0.0, t - (p["pic"] if sur_pic else 0))
     duree = min(p["duree"], d or 99, FIN - debut)
     if duree > 0.05:
-        SONS.append((r(debut), nom, round(v * 0.75, 3), note, r(duree)))
+        SONS.append((r(debut), nom, round(v * 0.49, 3), note, r(duree)))   # bruitages baissés : la voix doit rester devant
 
 
 TOURS = {}
@@ -568,8 +568,8 @@ for nom, src, debut, d, fe, ff in (("piste-1.mp3", MUS / "creepin-long.wav", 0.0
     subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(src), "-af",
                     f"atrim=start={debut}:duration={d:.3f},asetpts=PTS-STARTPTS,loudnorm=I=-17:TP=-2:LRA=8,afade=t=in:d={fe},afade=t=out:st={max(0, d - ff):.3f}:d={ff}",
                     "-ar", "48000", "-b:a", "192k", str(MUS / nom)], check=True)
-MUSIQUES = [f'<audio id="musique-1" src="assets/music/piste-1.mp3" data-start="0" data-duration="{r(COUPURE + 0.3)}" data-volume="0.30" data-track-index="20"></audio>',
-            f'<audio id="musique-2" src="assets/music/piste-2.mp3" data-start="{r(COUPURE)}" data-duration="{r(FIN - COUPURE)}" data-volume="0.32" data-track-index="21"></audio>']
+MUSIQUES = [f'<audio id="musique-1" src="assets/music/piste-1.mp3" data-start="0" data-duration="{r(COUPURE + 0.3)}" data-volume="0.465" data-track-index="20"></audio>',
+            f'<audio id="musique-2" src="assets/music/piste-2.mp3" data-start="{r(COUPURE)}" data-duration="{r(FIN - COUPURE)}" data-volume="0.50" data-track-index="21"></audio>']
 son(COUPURE, "trailer-impact-2", 0.36, "changement de musique")
 
 _vus = set()
@@ -701,7 +701,7 @@ page = f"""<!doctype html>
       <div id="cine"><div id="pousse"><div id="cam"><div id="coupe">
         <video id="perso" class="clip" src="assets/perso.webm" data-start="0" data-duration="{r(FIN_VOIX)}" data-media-start="0" data-track-index="1" muted playsinline></video>
       </div></div></div></div>
-      <audio id="voix" src="assets/voix-montage.m4a" data-start="0" data-duration="{r(FIN_VOIX)}" data-volume="1" data-track-index="2"></audio>
+      <audio id="voix" src="assets/voix-forte.wav" data-start="0" data-duration="{r(FIN_VOIX)}" data-volume="1" data-track-index="2"></audio>
 {NL.join("      " + h for h in HTML)}
       <div id="sous-titres" data-composition-id="sous-titres" data-composition-src="compositions/sous-titres.html" data-start="0" data-duration="{FIN}" data-track-index="3"
         data-width="1080" data-height="1920" style="position: absolute; inset: 0; z-index: 35"></div>
