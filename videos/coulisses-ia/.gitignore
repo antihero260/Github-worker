@@ -7,3 +7,8 @@ renders/
 .media/
 assets/montage/parole.mp4
 .cap/
+assets/audio-voix.wav
+assets/montage/parole-hd.mp4
+assets/montage/personne*.webm
+assets/montage/.tmp-*
+assets/fonds/*.mp4

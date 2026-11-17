@@ -1,0 +1,62 @@
+[
+ {
+  "k": "A",
+  "src": "tel-scroll",
+  "debut": 2.4,
+  "fin": 7.12
+ },
+ {
+  "k": "B",
+  "src": "docs-modeles-haut",
+  "debut": 7.12,
+  "fin": 16.56
+ },
+ {
+  "k": "C",
+  "src": "hyperframes-accueil",
+  "debut": 16.56,
+  "fin": 20.96
+ },
+ {
+  "k": "D",
+  "src": "ecrans-code",
+  "debut": 20.96,
+  "fin": 28.88
+ },
+ {
+  "k": "E",
+  "src": "mur-videos",
+  "debut": 28.88,
+  "fin": 36.4
+ },
+ {
+  "k": "F",
+  "src": "claude-accueil",
+  "debut": 36.4,
+  "fin": 41.84
+ },
+ {
+  "k": "G",
+  "src": "tunnel-neon-rouge",
+  "debut": 41.84,
+  "fin": 48.4
+ },
+ {
+  "k": "H",
+  "src": "serveurs-lumieres",
+  "debut": 48.4,
+  "fin": 55.92
+ },
+ {
+  "k": "I",
+  "src": "neon-3d-route",
+  "debut": 55.92,
+  "fin": 63.49
+ },
+ {
+  "k": "J",
+  "src": "particules-lumineuses",
+  "debut": 63.49,
+  "fin": 71.31
+ }
+]
