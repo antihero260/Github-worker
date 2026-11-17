@@ -21,6 +21,7 @@ import numpy as np
 ICI = Path(__file__).resolve().parent.parent
 MOTS = json.loads((ICI / "assets/mots.json").read_text())
 SEG = json.loads((ICI / "assets/montage/segments.json").read_text())
+D = SEG["phrases"][1]["debut_montage"] - 4.53  # décalage depuis la v3 (début de la 1re phrase repris plus tôt)
 FIN = round(float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", str(ICI / "assets/montage/parole.mp4")],
                                  capture_output=True, text=True).stdout) + 0.6, 2)
 TERRA, CREME, NUIT, CIEL = "#D97757", "#F0EEE6", "#0B1220", "#38BDF8"
@@ -160,13 +161,13 @@ for k, f in enumerate(EX):
     t0 = 0.0 if k == 0 else T(k)
     t1 = T(k + 1) if k + 1 < 7 else T(7) - 0.02
     video_plein(f"h{k}", f"assets/exemples/{f}.mp4", t0, t1, 0.2 + (k % 3) * 0.6)
-    son(t0, tour(WH), 0.4 if k == 0 else 0.3, f"accroche {f}")
-son(0.0, "trailer-impact", 0.45, "début")
+    son(t0, tour(WH), 0.2 if k == 0 else 0.15, f"accroche {f}")
+son(0.0, "trailer-impact", 0.22, "début")
 HTML.append('<div id="h-tag" class="tag" style="left: 220px; top: 360px; opacity: 0">MES VIDÉOS</div>')
 claque("#h-tag", 0.05, 2.2)
 cache("#h-tag", T(7) - 0.05)
 flash(T(7), 0.8)
-son(T(7), "impact-basse", 0.45, "retour face caméra")
+son(T(7), "impact-basse", 0.28, "retour face caméra")
 
 # ================================================================ 3. « certains d'entre vous m'ont contacté » : messages reçus
 MSG = [("Tu fais comment tes vidéos ?", T(8)), ("C’est quelle appli ?? 🔥", T(11)), ("Tu peux m’apprendre ?", T(13))]
@@ -208,7 +209,7 @@ cache("#hf", T(49) - 0.05)
 # trajectoire du bout des doigts relevée image par image (montage, pixels 1080×1920), passée dans le repère de la vidéo studio agrandie
 DOIGT = [(19.53, 650, 1500), (19.62, 700, 1400), (19.70, 729, 1296), (19.80, 702, 1188), (19.90, 594, 1134), (20.00, 486, 1107),
          (20.10, 260, 1040), (20.20, 200, 1048), (20.30, 190, 1048), (20.40, 120, 1048), (20.50, 60, 1050), (20.60, -40, 1060)]
-DOIGT = [(t, -60 + x * 1200 / 1080, -106 + y * 1200 / 1080) for t, x, y in DOIGT]
+DOIGT = [(t + D, -60 + x * 1200 / 1080, -106 + y * 1200 / 1080) for t, x, y in DOIGT]
 
 
 def doigt(t):
@@ -230,7 +231,7 @@ MODELES = [("claude", "Claude", "logo-claude.svg", '<video id="lv-claude" class=
 GRILLE = [(265, 480), (815, 480), (265, 740), (815, 740)]
 L_FIN = T(78) - 0.1
 for k, (cle_, nom, logo, contenu) in enumerate(MODELES):
-    s0 = 19.72 + 0.12 * k          # naissance au bout du doigt
+    s0 = 19.72 + D + 0.12 * k          # naissance au bout du doigt
     lag = 0.07 * k                 # chaque carte suit le doigt avec un petit retard : une file
     contenu = contenu.format(a=r(s0), d=r(L_FIN - s0 + 0.05))
     HTML.append(f'<div id="lm-{cle_}" class="liste-mod" style="opacity: 0"><div class="lm-ecran">{contenu}</div>'
@@ -240,27 +241,27 @@ for k, (cle_, nom, logo, contenu) in enumerate(MODELES):
     j(f'tl.set("#lm-{cle_}", {{ x: {round(x)}, y: {round(y - 150)}, xPercent: -50, yPercent: -50, scale: 0.1, opacity: 1 }}, {r(s0)});')
     j(f'tl.to("#lm-{cle_}", {{ scale: 0.5, duration: 0.15, ease: "back.out(2)" }}, {r(s0)});')
     t = s0
-    while t < 20.52:
+    while t < 20.52 + D:
         x, y = doigt(t + 0.05 - lag)
         j(f'tl.to("#lm-{cle_}", {{ x: {round(x)}, y: {round(y - 150 - 20 * k)}, duration: 0.05, ease: "none" }}, {r(t)});')
         t += 0.05
     gx, gy = GRILLE[k]
-    j(f'tl.to("#lm-{cle_}", {{ x: {gx}, y: {gy}, scale: 1, rotation: {(-3, 2, 3, -2)[k]}, duration: 0.38, ease: "back.out(1.4)" }}, {r(20.55 + 0.06 * k)});')
+    j(f'tl.to("#lm-{cle_}", {{ x: {gx}, y: {gy}, scale: 1, rotation: {(-3, 2, 3, -2)[k]}, duration: 0.38, ease: "back.out(1.4)" }}, {r(20.55 + D + 0.06 * k)});')
     son(s0, tour(POPS), 0.4, f"{nom} sort du doigt")
     j(f'tl.to("#lm-{cle_}", {{ opacity: 0, scale: 0.7, duration: 0.18 }}, {r(L_FIN)});')
     # verdicts : code oui, vidéo non
     j(f'tl.fromTo("#lm-ok-{cle_}", {{ opacity: 0, scale: 2.2 }}, {{ opacity: 1, scale: 1, duration: 0.14, ease: "power4.in", immediateRender: false }}, {r(T(65) + 0.08 * k)});')
     j(f'tl.to("#lm-ok-{cle_}", {{ opacity: 0, duration: 0.12 }}, {r(T(71) - 0.05)});')
     j(f'tl.fromTo("#lm-ko-{cle_}", {{ opacity: 0, scale: 2.2 }}, {{ opacity: 1, scale: 1, duration: 0.14, ease: "power4.in", immediateRender: false }}, {r(T(71) + 0.08 * k)});')
-son(20.55, "whoosh-cine", 0.4, "la liste se range")
+son(20.55 + D, "whoosh-cine", 0.4, "la liste se range")
 son(T(65), "bonne-reponse", 0.42, "code ✓")
 son(T(71), "buzzer-faux", 0.4, "vidéo ✗")
 for k in range(4):
     son(T(65) + 0.08 * k, "impact-tambour", 0.18, "tampon code")
     son(T(71) + 0.08 * k, "impact-basse", 0.18, "tampon vidéo")
 # la caméra accompagne le balayage du bras vers la gauche, puis revient
-j('tl.to("#pousse", { x: 70, duration: 0.9, ease: "sine.inOut" }, 19.75);')
-j('tl.to("#pousse", { x: 0, duration: 0.8, ease: "sine.inOut" }, 21.2);')
+j(f'tl.to("#pousse", {{ x: 70, duration: 0.9, ease: "sine.inOut" }}, {r(19.75 + D)});')
+j(f'tl.to("#pousse", {{ x: 0, duration: 0.8, ease: "sine.inOut" }}, {r(21.2 + D)});')
 
 # ================================================================ 7. HyperFrames intervient : références + code → vidéo
 HTML.append('<div id="sch" class="schema" style="opacity: 0"><div id="s1" class="bloc" style="opacity: 0">RÉFÉRENCES</div><i id="s2" style="opacity: 0">+</i>'
@@ -272,7 +273,7 @@ for sel, t in (("#s5", T(88)), ("#s1", T(94)), ("#s2", T(96)), ("#s3", T(98)), (
     apparait(sel, t, 40, 0.4, 0.18)
     son(t, tour(POPS), 0.38, "schéma")
 son(T(88), "magie", 0.4, "la vidéo apparaît")
-cache("#sch", T(99) - 0.05)
+cache("#sch", T(98) + 0.02)
 HTML.append('<div id="hfi" class="tag" style="left: 240px; top: 380px; opacity: 0">HYPERFRAMES</div>')
 claque("#hfi", T(83), 1.8)
 son(T(83), "impact-futur", 0.4, "HyperFrames intervient")
@@ -291,10 +292,6 @@ apparait("#p2", T(124), 100, 0.5, 0.25)
 son(T(124), "pieces-tintent", 0.4, "Claude Max")
 cache("#p1", T(126) - 0.05)
 cache("#p2", T(126) - 0.05)
-HTML.append('<div id="p3" class="prix" style="left: 240px; width: 600px; opacity: 0"><b>💬 TON CHATBOT</b><span>installe la skill dedans</span></div>')
-apparait("#p3", T(126), 100, 0.5, 0.25)
-son(T(126), tour(WH), 0.4, "chatbot")
-cache("#p3", T(137) - 0.05)
 
 # ================================================================ 9. Attention : le modèle fait la différence
 HTML.append('<div id="att" class="alerte" style="opacity: 0">⚠ L’OUTIL NE FAIT PAS TOUT</div>')
@@ -319,25 +316,6 @@ son(T(178), "cloche-succes", 0.4, "peut faire mieux")
 for s_ in ("#m1", "#m2", "#mieux"):
     cache(s_, T(183) - 0.05)
 
-# ================================================================ 11. 3D, 2D, isométrique : vrais exemples
-video_plein("ex1", "assets/exemples/site-3d-vertical.mp4", T(183), T(187), 0.5)
-video_plein("ex2", "assets/exemples/enveloppes.mp4", T(187), T(191), 1.0)
-video_plein("ex3", "assets/exemples/classement-ia-vertical.mp4", T(191), T(196), 0.5)
-FINS = (T(187), T(191), T(196))
-for k, (txt, t) in enumerate((("3D", T(186)), ("2D", T(190)), ("3D ISOMÉTRIQUE", T(194)))):
-    HTML.append(f'<div id="ty{k}" class="slam petit" style="top: 760px; opacity: 0">{txt}</div>')
-    claque(f"#ty{k}", t, 2.2)
-    son(t, tour(["impact-tambour", "impact-futur", "impact-whoosh"]), 0.42, f"type {txt}")
-    cache(f"#ty{k}", FINS[k] - 0.02, 0.05)
-    flash(t, 0.5)
-HTML.append('<div id="iso" class="iso" style="opacity: 0"><svg viewBox="0 0 200 200" width="260" height="260"><path d="M100 20 L170 60 L100 100 L30 60 Z" fill="#7DD3FC" stroke="#0B1220" stroke-width="6" stroke-linejoin="round" />'
-            '<path d="M30 60 L100 100 L100 180 L30 140 Z" fill="#38BDF8" stroke="#0B1220" stroke-width="6" stroke-linejoin="round" />'
-            '<path d="M170 60 L100 100 L100 180 L170 140 Z" fill="#0284C7" stroke="#0B1220" stroke-width="6" stroke-linejoin="round" /></svg></div>')
-apparait("#iso", T(196), 60, 0.3, 0.25)
-son(T(196), "pop-long", 0.36, "et j'en passe")
-j(f'tl.to("#iso svg", {{ rotation: 360, duration: 1.0, ease: "power2.inOut" }}, {r(T(196) + 0.1)});')
-cache("#iso", T(199) - 0.05)
-
 # ================================================================ 12. Abonne-toi + prochaine vidéo
 HTML.append('<div id="proch" class="prochaine" style="opacity: 0"><span>PROCHAINE VIDÉO</span><b>Copier le style visuel<br>d’un autre créateur</b></div>')
 apparait("#proch", T(204), 100, 0.5, 0.3)
@@ -346,33 +324,169 @@ j(f'tl.fromTo("#fondu", {{ opacity: 0 }}, {{ opacity: 1, duration: 0.4, immediat
 HTML.append('<div id="fondu" class="flash" style="background: #000"></div>')
 
 
+# ================================================================ MAGIE : une vidéo naît dans la main, la suit, puis plein écran (zoom), puis retourne dans la main
+MAINS_TRAJ = json.loads((ICI / "assets/montage/mains.json").read_text())
+
+
+def geste(t0):
+    g = min(GESTES, key=lambda e: abs(e[0] - t0))
+    return g[0], g[3], g[4]
+
+
+# positions de la paume relevées à l'œil sur les images (le suivi automatique se perd quand la main sort du cadre)
+MANUEL = {
+    "A": [(31.4, 380, 1760), (33.7, 420, 1760)],
+    "B": [(40.9, 700, 1760), (44.3, 700, 1760)],
+    "C": [(49.0, 400, 1650), (49.5, 220, 1300), (49.9, 190, 1260), (51.2, 190, 1260)],
+    "E2": [(59.75, 760, 1560), (60.0, 770, 1570), (60.4, 950, 1330), (60.9, 950, 1330)],
+    "E3": [(60.85, 330, 1380), (62.45, 330, 1380)],
+    "E4": [(62.45, 560, 1660), (63.8, 560, 1660)],
+    "D": [(68.8, 560, 1700), (70.7, 560, 1700)],
+}
+
+
+def _lin(kf, t):
+    if t <= kf[0][0]:
+        return kf[0][1:]
+    for (t0, x0, y0), (t1, x1, y1) in zip(kf, kf[1:]):
+        if t <= t1:
+            m = (t - t0) / (t1 - t0)
+            return x0 + (x1 - x0) * m, y0 + (y1 - y0) * m
+    return kf[-1][1:]
+
+
+def paume(nom, t):
+    if nom == "E":  # 3D : suivi automatique (paume ouverte bien visible) ; ensuite relevés à l'œil
+        nom = "E" if t < 59.75 else "E2" if t < 60.85 else "E3" if t < 62.45 else "E4"
+    if nom in MANUEL:
+        x, y = _lin(MANUEL[nom], t)
+        return -60 + x * 1200 / 1080, -106 + y * 1200 / 1080
+    tr = MAINS_TRAJ[nom]
+    p = min(tr, key=lambda e: abs(e[0] - t))
+    # repère écran : vidéo studio agrandie (×1200/1080, décalée de -60, -106)
+    return -60 + p[1] * 1200 / 1080, -106 + p[2] * 1200 / 1080
+
+
+def contenu_video(vid, src, t0, t1, depart=0.0, large=False, centre=False):
+    """vertical : la vidéo couvre la carte ; 16:9 : copie floutée derrière + vidéo entière en largeur"""
+    d = r(t1 - t0 + 0.05)
+    if not large:
+        return (f'<video id="{vid}" class="clip{" mg-zoom" if centre else ""}" src="{src}" data-start="{r(t0)}" data-duration="{d}" data-media-start="{depart}" '
+                f'data-track-index="{12 + len(HTML) % 4}" muted playsinline></video>')
+    return (f'<video id="{vid}-f" class="clip mg-flou" src="{src}" data-start="{r(t0)}" data-duration="{d}" data-media-start="{depart}" '
+            f'data-track-index="{16 + len(HTML) % 3}" muted playsinline></video>'
+            f'<video id="{vid}" class="clip mg-large" src="{src}" data-start="{r(t0)}" data-duration="{d}" data-media-start="{depart}" '
+            f'data-track-index="{12 + len(HTML) % 4}" muted playsinline></video>')
+
+
+def magie(mid, contenu, nom_main, t_app, t_zoom, t_fin, etiquette="", retour=True):
+    HTML.append(f'<div id="{mid}" class="magie" style="opacity: 0"><div class="mg-carte">{contenu}'
+                f'{("<b class=" + chr(34) + "mg-etiq" + chr(34) + ">" + etiquette + "</b>") if etiquette else ""}</div></div>')
+    HTML.append(f'<div id="{mid}-eclat" class="mg-eclat" style="opacity: 0"></div>')
+    x, y = paume(nom_main, t_app)
+    # éclat de magie dans la paume
+    j(f'tl.set("#{mid}-eclat", {{ x: {round(x - 160)}, y: {round(y - 160)} }}, {r(t_app)});')
+    j(f'tl.fromTo("#{mid}-eclat", {{ opacity: 1, scale: 0.2 }}, {{ opacity: 0, scale: 1.6, duration: 0.45, ease: "power2.out", immediateRender: false }}, {r(t_app)});')
+    # la vidéo naît au-dessus de la paume
+    j(f'tl.set("#{mid}", {{ opacity: 1, x: {round(x - 540)}, y: {round(y - 960 - 170)}, scale: 0.02, rotation: -14 }}, {r(t_app)});')
+    j(f'tl.to("#{mid}", {{ scale: 0.17, rotation: -6, duration: 0.22, ease: "back.out(2.2)" }}, {r(t_app)});')
+    t = t_app + 0.1
+    while t < t_zoom - 0.05:
+        x, y = paume(nom_main, t + 0.1)
+        j(f'tl.to("#{mid}", {{ x: {round(x - 540)}, y: {round(y - 960 - 170)}, duration: 0.1, ease: "none" }}, {r(t)});')
+        t += 0.1
+    # grand zoom : la vidéo remplit l'écran
+    j(f'tl.to("#{mid}", {{ x: 0, y: 0, scale: 1, rotation: 0, duration: 0.34, ease: "power3.inOut" }}, {r(t_zoom)});')
+    j(f'tl.to("#{mid} .mg-carte", {{ borderRadius: 0, borderWidth: 0, duration: 0.34, ease: "power3.inOut" }}, {r(t_zoom)});')
+    j(f'tl.to("#titre", {{ opacity: 0, duration: 0.2 }}, {r(t_zoom + 0.1)});')
+    if t_fin is not None:
+        j(f'tl.to("#titre", {{ opacity: 1, duration: 0.2 }}, {r(t_fin)});')
+    son(t_app, tour(["magie", "scintille-whoosh", "power-up"]), 0.42, f"{mid} naît dans la main")
+    son(t_zoom, tour(["zoom-impact", "zoom-futur", "zoom-in"]), 0.42, f"{mid} plein écran")
+    son(t_zoom, tour(WH), 0.3, f"{mid} souffle")
+    if t_fin is None:
+        return
+    if retour:  # elle retourne dans la main
+        x, y = paume(nom_main, t_fin + 0.25)
+        j(f'tl.to("#{mid} .mg-carte", {{ borderRadius: 70, borderWidth: 12, duration: 0.25, ease: "power2.in" }}, {r(t_fin)});')
+        j(f'tl.to("#{mid}", {{ x: {round(x - 540)}, y: {round(y - 960 - 120)}, scale: 0.05, rotation: 10, duration: 0.25, ease: "power3.in" }}, {r(t_fin)});')
+        j(f'tl.set("#{mid}", {{ opacity: 0 }}, {r(t_fin + 0.26)});')
+        son(t_fin, tour(["swoosh-court", "balaie-petit", "whoosh-pop"]), 0.3, f"{mid} retourne dans la main")
+    else:
+        j(f'tl.to("#{mid}", {{ opacity: 0, duration: 0.12 }}, {r(t_fin)});')
+
+
+def ville_iso():
+    """petite ville en 3D isométrique (SVG) dont les blocs sortent du sol"""
+    blocs, js_ = [], []
+    k = 0
+    for gx, gy in sorted(((a, b) for a in range(4) for b in range(5)), key=lambda e: e[0] + e[1]):  # du fond vers l'avant
+        if True:
+            hgt = (40, 110, 70, 160, 90, 130, 60, 190, 100, 80)[(gx * 3 + gy * 7) % 10]
+            cx, cy = 540 + (gx - gy) * 120, 760 + (gx + gy) * 70
+            col = ("#7DD3FC", "#38BDF8", "#0284C7") if (gx + gy) % 3 else ("#FDE68A", "#F2B705", "#B07D00")
+            blocs.append(f'<g id="iso-b{k}" style="transform-origin: {cx}px {cy + 70}px">'
+                         f'<path d="M{cx} {cy - hgt} L{cx + 120} {cy + 70 - hgt} L{cx} {cy + 140 - hgt} L{cx - 120} {cy + 70 - hgt} Z" fill="{col[0]}" stroke="#0B1220" stroke-width="5" />'
+                         f'<path d="M{cx - 120} {cy + 70 - hgt} L{cx} {cy + 140 - hgt} L{cx} {cy + 140} L{cx - 120} {cy + 70} Z" fill="{col[1]}" stroke="#0B1220" stroke-width="5" />'
+                         f'<path d="M{cx + 120} {cy + 70 - hgt} L{cx} {cy + 140 - hgt} L{cx} {cy + 140} L{cx + 120} {cy + 70} Z" fill="{col[2]}" stroke="#0B1220" stroke-width="5" /></g>')
+            k += 1
+    return ('<div class="mg-iso"><svg viewBox="0 0 1080 1920" width="1080" height="1920">' + "".join(blocs) + '</svg></div>'), k
+
+
+# --- « il permet de créer des vidéos à partir de références visuelles et de code » : une de ses vidéos sort de la main
+tA = geste(31.4 + D)[0]
+magie("mgA", contenu_video("mgA-v", "assets/exemples/liste-depenser-moins.mp4", tA, T(101), 0.2, centre=True), "A", tA, T(98) + 0.05, T(101), "LE RÉSULTAT")
+# --- « installer la skill dans un environnement de chatbot » : un vrai chatbot sort de la main
+tB = geste(40.87 + D)[0]
+magie("mgB", contenu_video("mgB-v", "assets/captures/modele-gemini.mp4", tB, T(137), 0.0, large=True), "B", tB, T(131), T(137) - 0.3, "TON CHATBOT")
+# --- « pour générer ta vidéo »
+magie("mgC", contenu_video("mgC-v", "assets/exemples/effet-levier.mp4", T(155), T(161), 0.3, centre=True), "C", T(155), T(158), T(161) - 0.25)
+# --- « des vidéos en 3D, des vidéos en 2D, des vidéos en 3D isométrique, et j'en passe » : le tour de magie
+magie("mg3d", contenu_video("mg3d-v", "assets/magie/retro-soleil.mp4", T(183), T(187), 0.5, large=True), "E", T(183), T(185), T(187) - 0.28, "3D")
+magie("mg2d", contenu_video("mg2d-v", "assets/exemples/enveloppes.mp4", T(187), T(191), 0.6, centre=True), "E", T(187), T(189), T(191) - 0.28, "2D")
+iso_html, n_iso = ville_iso()
+magie("mgiso", iso_html, "E", T(191), T(193), T(196) - 0.05, "3D ISOMÉTRIQUE")
+for i in range(n_iso):
+    j(f'tl.fromTo("#iso-b{i}", {{ scaleY: 0, transformOrigin: "50% 100%" }}, {{ scaleY: 1, duration: 0.3, ease: "back.out(2)", immediateRender: false }}, {r(T(193) + 0.2 + 0.035 * i)});')
+son(T(193) + 0.3, "pop-long", 0.3, "la ville isométrique sort du sol")
+# « et j'en passe » : six de ses vidéos jaillissent de la main
+EXB = ["salaire-15", "site-3d-vertical", "edit-claude", "tontine-epargne", "site-anime-vertical", "classement-ia-vertical"]
+GR = [(200, 560), (540, 560), (880, 560), (200, 1010), (540, 1010), (880, 1010)]
+for k, f in enumerate(EXB):
+    t0 = T(196) + 0.05 * k
+    x, y = paume("E", t0)
+    HTML.append(f'<div id="mb{k}" class="mg-mini" style="opacity: 0"><video id="mb{k}-v" class="clip" src="assets/exemples/{f}.mp4" data-start="{r(t0)}" '
+                f'data-duration="{r(T(199) - t0 + 0.1)}" data-media-start="0.6" data-track-index="{20 + k}" muted playsinline></video></div>')
+    gx, gy = GR[k]
+    j(f'tl.set("#mb{k}", {{ opacity: 1, x: {round(x - 130)}, y: {round(y - 231)}, scale: 0.05, rotation: -20 }}, {r(t0)});')
+    j(f'tl.to("#mb{k}", {{ x: {gx - 130}, y: {gy - 231}, scale: 1, rotation: {(-6, 3, 7, -4, 5, -7)[k]}, duration: 0.35, ease: "back.out(1.6)" }}, {r(t0)});')
+    j(f'tl.to("#mb{k}", {{ scale: 0, opacity: 0, duration: 0.18, ease: "power2.in" }}, {r(T(199) - 0.15)});')
+    son(t0, tour(POPS), 0.3, f"vidéo {f} jaillit")
+son(T(196), "magie", 0.4, "et j'en passe")
+# --- fin : « pour faire tes vidéos » : une dernière vidéo sort de la main et remplit l'écran
+magie("mgD", contenu_video("mgD-v", "assets/exemples/edit-claude.mp4", T(216), FIN, 0.2), "D", T(216), T(219), None)
+
 # ================================================================ OBJETS QUI NAISSENT DANS LES MAINS (gestes détectés)
 def geste(t0):
     g = min(GESTES, key=lambda e: abs(e[0] - t0))
     return g[0], g[3], g[4]
 
 
-t, hx, hy = geste(6.8)
+t, hx, hy = geste(6.8 + D)
 dans_la_main("mo1", '<img src="assets/img/logo-claude.svg" alt="" class="m-logo" />', t, hx, hy, T(29) - 0.1)
-t, hx, hy = geste(14.53)
+t, hx, hy = geste(14.53 + D)
 dans_la_main("mo2", '<b class="m-txt">GAME<br>CHANGER</b>', t, hx, hy, T(48) - 0.1, monte=230)
-t, hx, hy = geste(18.87)
-dans_la_main("mo3", '<b class="m-txt q">?</b>', t, hx, hy, 19.55, zoom=False)
-t, hx, hy = geste(22.93)
+t, hx, hy = geste(18.87 + D)
+dans_la_main("mo3", '<b class="m-txt q">?</b>', t, hx, hy, 19.55 + D, zoom=False)
+t, hx, hy = geste(22.93 + D)
 dans_la_main("mo4", '<b class="m-code">&lt;/&gt;</b>', t, hx, hy, T(78) - 0.1, zoom=False)
-t, hx, hy = geste(28.27)
+t, hx, hy = geste(28.27 + D)
 dans_la_main("mo5", '<img src="assets/img/logo-heygen.png" alt="" class="m-logo rond" />', t, hx, hy, T(94) - 0.1)
-t, hx, hy = geste(31.4)
-dans_la_main("mo6", '<b class="m-chip">IMAGES</b>', t, hx, hy, T(99) - 0.1, zoom=False, monte=190)
-t, hx, hy = geste(33.13)
-dans_la_main("mo7", '<b class="m-chip">CODE</b>', t, hx, hy, T(99) + 0.6, zoom=False, monte=120)
-t, hx, hy = geste(40.87)
-dans_la_main("mo11", '<b class="m-txt q">💬</b>', t, hx, hy, T(137) - 0.1, monte=210)
-t, hx, hy = geste(52.0)
+t, hx, hy = geste(52.0 + D)
 dans_la_main("mo9", '<b class="m-chip">OPUS 5.5</b>', t, hx, hy, T(171) - 0.1, zoom=False, monte=190)
-t, hx, hy = geste(54.53)
+t, hx, hy = geste(54.53 + D)
 dans_la_main("mo8", '<b class="m-chip or">FABLE 5.2</b>', t, hx, hy, T(183) - 0.1)
-t, hx, hy = geste(63.4)
+t, hx, hy = geste(63.4 + D)
 dans_la_main("mo10", '<b class="m-abo">S’ABONNER 🔔</b>', t, hx, hy, T(204) - 0.1, monte=210)
 
 
@@ -473,6 +587,19 @@ CSS = f"""
       .faux-chat img {{ width: 54px; height: 54px; }}
       .fc-q {{ background: #303030; color: #fff; font-family: "Inter Lf", sans-serif; font-weight: 800; font-size: 22px; padding: 10px 18px; border-radius: 20px; }}
       .fc-r i {{ display: inline-block; width: 12px; height: 12px; margin: 0 4px; border-radius: 6px; background: #bbb; }}
+      .magie {{ position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; z-index: 35; transform-origin: 50% 50%; }}
+      .mg-carte {{ position: absolute; inset: 0; overflow: hidden; border-radius: 70px; border: 12px solid #fff; background: #05070d; box-shadow: 0 40px 120px rgba(0,0,0,0.7); }}
+      .mg-carte video {{ position: absolute; left: 0; top: 0; width: 100%; height: 100%; object-fit: cover; }}
+      .mg-carte video.mg-zoom {{ transform: scale(1.35); transform-origin: 50% -86px; }}
+      .mg-carte video.mg-flou {{ filter: blur(40px) brightness(0.55); transform: scale(1.2); }}
+      .mg-carte video.mg-large {{ top: 50%; height: 608px; margin-top: -304px; object-fit: cover; }}
+      .mg-etiq {{ position: absolute; left: 0; right: 0; top: 1440px; text-align: center; font-family: "Anton", sans-serif; font-weight: 400; font-size: 150px; line-height: 1; color: #fff;
+        -webkit-text-stroke: 14px {NUIT}; paint-order: stroke fill; }}
+      .mg-eclat {{ position: absolute; left: 0; top: 0; width: 320px; height: 320px; z-index: 34; border-radius: 50%;
+        background: radial-gradient(circle, rgba(255,255,255,0.95) 0%, rgba(125,211,252,0.6) 35%, rgba(56,189,248,0) 70%); }}
+      .mg-iso {{ position: absolute; inset: 0; background: radial-gradient(ellipse 80% 60% at 50% 50%, #16346a 0%, #05070d 80%); }}
+      .mg-mini {{ position: absolute; left: 0; top: 0; width: 260px; height: 462px; z-index: 33; border-radius: 30px; overflow: hidden; border: 7px solid #fff; box-shadow: 0 20px 60px rgba(0,0,0,0.6); }}
+      .mg-mini video {{ width: 100%; height: 100%; object-fit: cover; }}
       #calques {{ position: absolute; inset: 0; z-index: 10; pointer-events: none; }}
       .plein {{ position: absolute; inset: 0; overflow: hidden; background: #000; }}
       .plein video {{ width: 100%; height: 100%; object-fit: cover; }}
@@ -564,7 +691,8 @@ page = f"""<!doctype html>
       <div id="sous-titres" data-composition-id="sous-titres" data-composition-src="compositions/sous-titres.html" data-start="0" data-duration="{FIN}" data-track-index="3"
         data-width="1080" data-height="1920" style="z-index: 50"></div>
       <audio id="voix" src="assets/audio-voix.wav" data-start="0" data-duration="{FIN - 0.6}" data-volume="1" data-track-index="19"></audio>
-      <audio id="musique-1" src="assets/music/greed.mp3" data-start="0" data-duration="{FIN}" data-volume="0.22" data-track-index="20"></audio>
+      <audio id="musique-0" src="assets/music/greed.mp3" data-start="0" data-duration="{r(T(15))}" data-volume="0.12" data-track-index="20"></audio>
+      <audio id="musique-1" src="assets/music/greed.mp3" data-start="{r(T(15))}" data-duration="{r(FIN - T(15))}" data-media-start="{r(T(15))}" data-volume="0.22" data-track-index="21"></audio>
 {NL.join("      " + s for s in sons_html)}
     </div>
     <script>
