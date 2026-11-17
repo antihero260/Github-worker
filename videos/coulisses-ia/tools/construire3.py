@@ -390,13 +390,45 @@ for k, nom in enumerate(POSS):
 son(t_p0, "swell-court", 0.3, "saturation de possibilités")
 son(t_asp, "aspiration", 0.32, "les possibilités sont aspirées")
 HTML.append('<div id="p1" class="prix" style="left: 60px; opacity: 0"><img src="assets/img/logo-claude.svg" alt="" /><b>CLAUDE PRO</b><span>20 $ / mois</span><em>pour commencer</em></div>')
-HTML.append('<div id="p2" class="prix" style="left: 560px; opacity: 0"><img src="assets/img/logo-claude.svg" alt="" /><b>CLAUDE MAX</b><span>pour aller plus loin</span></div>')
 apparait("#p1", T(105) - 0.1, 100, 0.5, 0.25)  # après la saturation des possibilités
 son(T(110), "scanner-caisse", 0.42, "20 dollars")
-apparait("#p2", T(124), 100, 0.5, 0.25)
-son(T(124), "pieces-tintent", 0.4, "Claude Max")
+# CLAUDE MAX (v10) : une jauge de puissance monte sur « si tu veux aller plus loin », puis explosion sur « Claude Max »
+t_j0, t_max, t_mfin = T(118) - 0.1, T(124), T(126) + 0.3
+HTML.append('<div id="jauge" class="jauge" style="opacity: 0"><span>PUISSANCE</span><div class="j-tube"><div id="j-niv" class="j-niv"></div>'
+            '<i style="bottom: 30%">PRO</i><i id="j-max" style="bottom: 94%">MAX</i></div></div>')
+apparait("#jauge", t_j0, 80, 0.7, 0.25)
+j(f'tl.fromTo("#j-niv", {{ scaleY: 0.3 }}, {{ scaleY: 1, duration: {r(t_max - t_j0 - 0.05)}, ease: "power2.in", immediateRender: false }}, {r(t_j0)});')
+j(f'tl.fromTo("#jauge", {{ x: -5 }}, {{ x: 5, duration: 0.03, repeat: 13, yoyo: true, ease: "none", immediateRender: false }}, {r(t_max - 0.45)});')
+j(f'tl.to("#p1", {{ opacity: 0.45, scale: 0.92, duration: 0.3 }}, {r(t_j0 + 0.2)});')
+son(t_j0, "riser-synth", 0.34, "la jauge monte", d=t_max - t_j0)
+son(t_j0 + 0.15, "power-up", 0.36, "montée en puissance")
+HTML.append('<div id="max-voile" class="max-voile" style="opacity: 0"></div>')
+for k in range(3):
+    HTML.append(f'<div id="onde{k}" class="onde" style="opacity: 0"></div>')
+    j(f'tl.fromTo("#onde{k}", {{ opacity: 1, scale: 0.2 }}, {{ opacity: 0, scale: {5 + k}, duration: 0.7, ease: "power2.out", immediateRender: false }}, {r(t_max + 0.07 * k)});')
+ECLAIRS = [("120,0 60,140 110,150 30,320", 70, 380, -8), ("80,0 140,130 90,145 160,300", 820, 360, 10), ("100,0 40,120 95,135 20,280", 40, 1120, 14),
+           ("60,0 120,120 70,140 150,290", 860, 1100, -12)]
+for k, (pts, x, y, rot) in enumerate(ECLAIRS):
+    HTML.append(f'<svg id="ecl{k}" class="eclair" style="left: {x}px; top: {y}px; transform: rotate({rot}deg); opacity: 0" width="180" height="330" viewBox="0 0 180 330">'
+                f'<polyline points="{pts}" fill="none" stroke="#FFF6C8" stroke-width="12" stroke-linejoin="round" stroke-linecap="round" /></svg>')
+    for n, (dt, op) in enumerate(((0.0, 1), (0.06, 0), (0.1, 1), (0.18, 0), (0.24, 1), (0.42, 0))):
+        j(f'tl.set("#ecl{k}", {{ opacity: {op} }}, {r(t_max + 0.03 * k + dt)});')
+HTML.append('<div id="max-titre" class="max-titre" style="opacity: 0"><img src="assets/img/logo-claude.svg" alt="" /><b>CLAUDE</b><em>MAX</em></div>')
+HTML.append('<div id="max-badge" class="max-badge" style="opacity: 0"><span>JUSQU’À 20X PLUS D’USAGE</span></div>')
+j(f'tl.set("#max-voile", {{ opacity: 1 }}, {r(t_max)}); tl.to("#max-voile", {{ opacity: 0, duration: 0.25 }}, {r(t_mfin)});')
+j(f'tl.set("#jauge", {{ opacity: 0 }}, {r(t_max + 0.05)}); tl.set("#p1", {{ opacity: 0 }}, {r(t_max)});')
+claque("#max-titre", t_max, 3.0, 0.16)
+j(f'tl.fromTo("#max-titre", {{ x: -22 }}, {{ x: 22, duration: 0.035, repeat: 7, yoyo: true, ease: "none", immediateRender: false }}, {r(t_max + 0.16)});')
+j(f'tl.set("#max-titre", {{ x: 0 }}, {r(t_max + 0.45)});')
+j(f'tl.fromTo("#max-titre em", {{ scale: 1 }}, {{ scale: 1.08, duration: 0.5, yoyo: true, repeat: 1, ease: "sine.inOut", immediateRender: false }}, {r(t_max + 0.5)});')
+apparait("#max-badge", t_max + 0.3, 50, 0.6, 0.2)
+flash(t_max, 0.9)
+son(t_max, "trailer-impact", 0.42, "Claude Max : explosion")
+son(t_max + 0.02, "tonnerre", 0.32, "éclairs")
+son(t_max + 0.05, "etincelles", 0.3, "étincelles")
+son(t_max + 0.3, "pop-sec", 0.34, "badge ×20")
+j(f'tl.to(["#max-titre", "#max-badge"], {{ opacity: 0, scale: 0.6, duration: 0.25, ease: "power2.in" }}, {r(t_mfin)});')
 cache("#p1", T(126) - 0.05)
-cache("#p2", T(126) - 0.05)
 
 # ================================================================ 9. Attention : le modèle fait la différence
 HTML.append('<div id="att" class="alerte" style="opacity: 0">⚠ L’OUTIL NE FAIT PAS TOUT</div>')
@@ -670,7 +702,7 @@ def zoom_cine(t, s=1.28, tenue=0.55, boom="impact-basse"):
     son(t, boom, 0.26, "boom du zoom")
 
 
-for i_, s_ in ((42, 1.25), (48, 1.3), (50, 1.22), (83, 1.3), (110, 1.22), (124, 1.25), (138, 1.32), (149, 1.22), (152, 1.35), (199, 1.3), (211, 1.22)):
+for i_, s_ in ((42, 1.25), (48, 1.3), (50, 1.22), (83, 1.3), (110, 1.22), (124, 1.35), (138, 1.32), (149, 1.22), (152, 1.35), (199, 1.3), (211, 1.22)):
     zoom_cine(T(i_), s_, boom=("trailer-impact" if i_ in (48, 152) else "impact-basse"))
 
 # ================================================================ TENSION (montées sonores et battements)
@@ -733,7 +765,7 @@ def sous_titres():
 
 MUSIQUES = []
 for k_, m_ in enumerate(json.loads((ICI / "assets/music/tension.json").read_text())):
-    vol = (0.50, 0.50)[k_]  # deux morceaux à −17 LUFS : la musique reste environ 5–6 dB sous la voix
+    vol = (0.48, 0.52)[k_]  # deux beats à −17 LUFS : la musique reste environ 5–6 dB sous la voix
     MUSIQUES.append(f'      <audio id="musique-{k_ + 1}" src="assets/music/{m_["fichier"]}" data-start="{m_["debut"]}" data-duration="{min(m_["duree"], round(FIN - m_["debut"], 3))}" '
                     f'data-volume="{vol}" data-track-index="{20 + k_ % 2}"></audio>')
 sous_titres()
@@ -857,6 +889,28 @@ CSS = f"""
       .slam {{ position: absolute; left: 0; top: 420px; width: 1080px; text-align: center; font-family: "Anton", sans-serif; font-size: 170px; line-height: 1; color: #fff;
         -webkit-text-stroke: 14px {NUIT}; paint-order: stroke fill; text-shadow: 0 0 50px rgba(56,189,248,0.7); }}
       .slam.petit {{ font-size: 130px; }}
+      .jauge {{ position: absolute; left: 920px; top: 520px; width: 130px; height: 800px; z-index: 14; text-align: center; }}
+      .jauge span {{ display: block; margin-bottom: 14px; font-family: "Anton", sans-serif; font-size: 30px; color: #fff; letter-spacing: 2px; -webkit-text-stroke: 5px #000; paint-order: stroke fill; }}
+      .j-tube {{ position: relative; width: 70px; height: 700px; margin: 0 auto; border: 6px solid #fff; border-radius: 40px; background: rgba(5,8,15,0.7);
+        box-shadow: 0 0 40px rgba(217,119,87,0.7), inset 0 0 20px rgba(0,0,0,0.6); }}
+      .j-niv {{ position: absolute; left: 7px; right: 7px; bottom: 7px; top: 7px; border-radius: 30px; transform-origin: 50% 100%;
+        background: linear-gradient(0deg, {CIEL} 0%, {TERRA} 55%, #FFD54A 100%); box-shadow: 0 0 30px #FFB020; }}
+      .j-tube i {{ position: absolute; right: 88px; transform: translateY(50%); font-style: normal; font-family: "Anton", sans-serif; font-size: 40px; color: #fff;
+        -webkit-text-stroke: 6px #000; paint-order: stroke fill; }}
+      .max-voile {{ position: absolute; inset: 0; z-index: 13; background: radial-gradient(circle at 50% 44%, rgba(217,119,87,0.55), rgba(5,8,15,0.88) 72%); }}
+      .onde {{ position: absolute; left: 390px; top: 700px; width: 300px; height: 300px; border-radius: 50%; border: 14px solid #FFD54A; z-index: 14;
+        box-shadow: 0 0 60px {TERRA}, inset 0 0 40px {TERRA}; }}
+      .eclair {{ position: absolute; z-index: 14; filter: drop-shadow(0 0 14px #FFD54A) drop-shadow(0 0 30px {TERRA}); }}
+      .max-titre {{ position: absolute; left: 0; top: 520px; width: 1080px; text-align: center; z-index: 15; }}
+      .max-titre img {{ display: block; width: 170px; margin: 0 auto 6px; filter: drop-shadow(0 0 30px {TERRA}); }}
+      .max-titre b {{ display: block; font-family: "Anton", sans-serif; font-weight: 400; font-size: 120px; line-height: 1; color: #fff; letter-spacing: 14px;
+        -webkit-text-stroke: 10px {NUIT}; paint-order: stroke fill; }}
+      .max-titre em {{ display: block; font-style: normal; font-family: "Anton", sans-serif; font-size: 330px; line-height: 0.95; color: #FFB020;
+        background: linear-gradient(180deg, #FFF0A8 0%, #FFB020 45%, {TERRA} 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+        filter: drop-shadow(0 0 40px rgba(255,170,40,0.85)) drop-shadow(0 10px 0 {NUIT}); }}
+      .max-badge {{ position: absolute; left: 0; top: 1200px; width: 1080px; text-align: center; z-index: 15; }}
+      .max-badge span {{ display: inline-block; font-family: "Anton", sans-serif; font-size: 58px; color: {NUIT}; background: #FFD54A; border: 6px solid {NUIT};
+        padding: 6px 28px 0; transform: rotate(-2deg); box-shadow: 0 16px 40px rgba(0,0,0,0.5); }}
       .msg {{ position: absolute; width: 760px; background: #fff; border-radius: 28px; padding: 18px 26px; font-family: "Inter Lf", sans-serif; font-weight: 800; font-size: 40px;
         color: {NUIT}; box-shadow: 0 20px 60px rgba(0,0,0,0.5); border-left: 14px solid {CIEL}; }}
       .msg b {{ display: block; font-size: 28px; color: #0284C7; margin-bottom: 4px; }}

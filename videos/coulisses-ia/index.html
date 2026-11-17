@@ -115,6 +115,28 @@
       .slam { position: absolute; left: 0; top: 420px; width: 1080px; text-align: center; font-family: "Anton", sans-serif; font-size: 170px; line-height: 1; color: #fff;
         -webkit-text-stroke: 14px #0B1220; paint-order: stroke fill; text-shadow: 0 0 50px rgba(56,189,248,0.7); }
       .slam.petit { font-size: 130px; }
+      .jauge { position: absolute; left: 920px; top: 520px; width: 130px; height: 800px; z-index: 14; text-align: center; }
+      .jauge span { display: block; margin-bottom: 14px; font-family: "Anton", sans-serif; font-size: 30px; color: #fff; letter-spacing: 2px; -webkit-text-stroke: 5px #000; paint-order: stroke fill; }
+      .j-tube { position: relative; width: 70px; height: 700px; margin: 0 auto; border: 6px solid #fff; border-radius: 40px; background: rgba(5,8,15,0.7);
+        box-shadow: 0 0 40px rgba(217,119,87,0.7), inset 0 0 20px rgba(0,0,0,0.6); }
+      .j-niv { position: absolute; left: 7px; right: 7px; bottom: 7px; top: 7px; border-radius: 30px; transform-origin: 50% 100%;
+        background: linear-gradient(0deg, #38BDF8 0%, #D97757 55%, #FFD54A 100%); box-shadow: 0 0 30px #FFB020; }
+      .j-tube i { position: absolute; right: 88px; transform: translateY(50%); font-style: normal; font-family: "Anton", sans-serif; font-size: 40px; color: #fff;
+        -webkit-text-stroke: 6px #000; paint-order: stroke fill; }
+      .max-voile { position: absolute; inset: 0; z-index: 13; background: radial-gradient(circle at 50% 44%, rgba(217,119,87,0.55), rgba(5,8,15,0.88) 72%); }
+      .onde { position: absolute; left: 390px; top: 700px; width: 300px; height: 300px; border-radius: 50%; border: 14px solid #FFD54A; z-index: 14;
+        box-shadow: 0 0 60px #D97757, inset 0 0 40px #D97757; }
+      .eclair { position: absolute; z-index: 14; filter: drop-shadow(0 0 14px #FFD54A) drop-shadow(0 0 30px #D97757); }
+      .max-titre { position: absolute; left: 0; top: 520px; width: 1080px; text-align: center; z-index: 15; }
+      .max-titre img { display: block; width: 170px; margin: 0 auto 6px; filter: drop-shadow(0 0 30px #D97757); }
+      .max-titre b { display: block; font-family: "Anton", sans-serif; font-weight: 400; font-size: 120px; line-height: 1; color: #fff; letter-spacing: 14px;
+        -webkit-text-stroke: 10px #0B1220; paint-order: stroke fill; }
+      .max-titre em { display: block; font-style: normal; font-family: "Anton", sans-serif; font-size: 330px; line-height: 0.95; color: #FFB020;
+        background: linear-gradient(180deg, #FFF0A8 0%, #FFB020 45%, #D97757 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+        filter: drop-shadow(0 0 40px rgba(255,170,40,0.85)) drop-shadow(0 10px 0 #0B1220); }
+      .max-badge { position: absolute; left: 0; top: 1200px; width: 1080px; text-align: center; z-index: 15; }
+      .max-badge span { display: inline-block; font-family: "Anton", sans-serif; font-size: 58px; color: #0B1220; background: #FFD54A; border: 6px solid #0B1220;
+        padding: 6px 28px 0; transform: rotate(-2deg); box-shadow: 0 16px 40px rgba(0,0,0,0.5); }
       .msg { position: absolute; width: 760px; background: #fff; border-radius: 28px; padding: 18px 26px; font-family: "Inter Lf", sans-serif; font-weight: 800; font-size: 40px;
         color: #0B1220; box-shadow: 0 20px 60px rgba(0,0,0,0.5); border-left: 14px solid #38BDF8; }
       .msg b { display: block; font-size: 28px; color: #0284C7; margin-bottom: 4px; }
@@ -344,17 +366,28 @@
         <div id="ps53" class="sat-chip" data-layout-allow-overlap style="left: 672px; top: 1561px; opacity: 0"><i style="background: #34D399"></i>Fable 5.2</div>
         <div id="ps54" class="sat-chip" data-layout-allow-overlap style="left: 876px; top: 1548px; opacity: 0"><i style="background: #FB923C"></i>Gemini CLI</div>
         <div id="p1" class="prix" style="left: 60px; opacity: 0"><img src="assets/img/logo-claude.svg" alt="" /><b>CLAUDE PRO</b><span>20 $ / mois</span><em>pour commencer</em></div>
-        <div id="p2" class="prix" style="left: 560px; opacity: 0"><img src="assets/img/logo-claude.svg" alt="" /><b>CLAUDE MAX</b><span>pour aller plus loin</span></div>
+        <div id="jauge" class="jauge" style="opacity: 0"><span>PUISSANCE</span><div class="j-tube"><div id="j-niv" class="j-niv"></div><i style="bottom: 30%">PRO</i><i id="j-max" style="bottom: 94%">MAX</i></div></div>
+        <div id="max-voile" class="max-voile" style="opacity: 0"></div>
+        <div id="onde0" class="onde" style="opacity: 0"></div>
+        <div id="onde1" class="onde" style="opacity: 0"></div>
+        <div id="onde2" class="onde" style="opacity: 0"></div>
+        <svg id="ecl0" class="eclair" style="left: 70px; top: 380px; transform: rotate(-8deg); opacity: 0" width="180" height="330" viewBox="0 0 180 330"><polyline points="120,0 60,140 110,150 30,320" fill="none" stroke="#FFF6C8" stroke-width="12" stroke-linejoin="round" stroke-linecap="round" /></svg>
+        <svg id="ecl1" class="eclair" style="left: 820px; top: 360px; transform: rotate(10deg); opacity: 0" width="180" height="330" viewBox="0 0 180 330"><polyline points="80,0 140,130 90,145 160,300" fill="none" stroke="#FFF6C8" stroke-width="12" stroke-linejoin="round" stroke-linecap="round" /></svg>
+        <svg id="ecl2" class="eclair" style="left: 40px; top: 1120px; transform: rotate(14deg); opacity: 0" width="180" height="330" viewBox="0 0 180 330"><polyline points="100,0 40,120 95,135 20,280" fill="none" stroke="#FFF6C8" stroke-width="12" stroke-linejoin="round" stroke-linecap="round" /></svg>
+        <svg id="ecl3" class="eclair" style="left: 860px; top: 1100px; transform: rotate(-12deg); opacity: 0" width="180" height="330" viewBox="0 0 180 330"><polyline points="60,0 120,120 70,140 150,290" fill="none" stroke="#FFF6C8" stroke-width="12" stroke-linejoin="round" stroke-linecap="round" /></svg>
+        <div id="max-titre" class="max-titre" style="opacity: 0"><img src="assets/img/logo-claude.svg" alt="" /><b>CLAUDE</b><em>MAX</em></div>
+        <div id="max-badge" class="max-badge" style="opacity: 0"><span>JUSQU’À 20X PLUS D’USAGE</span></div>
+        <div id="fl169" class="flash"></div>
         <div id="att" class="alerte" style="opacity: 0">⚠ L’OUTIL NE FAIT PAS TOUT</div>
         <div id="cle" class="slam petit" style="top: 660px; font-size: 104px; opacity: 0">LE MODÈLE = LA CLÉ</div>
         <div id="proch" class="prochaine" style="opacity: 0"><span>PROCHAINE VIDÉO</span><b>Copier le style visuel<br>d’un autre créateur</b></div>
         <div id="fondu" class="flash" style="background: #000"></div>
-        <div id="mgA" class="magie" style="opacity: 0"><div class="mg-carte"><video id="mgA-v" class="clip mg-zoom" src="assets/exemples/liste-depenser-moins.mp4" data-start="30.73" data-duration="3.42" data-media-start="0.2" data-track-index="15" muted playsinline></video><b class="mg-etiq">LE RÉSULTAT</b></div></div>
+        <div id="mgA" class="magie" style="opacity: 0"><div class="mg-carte"><video id="mgA-v" class="clip mg-zoom" src="assets/exemples/liste-depenser-moins.mp4" data-start="30.73" data-duration="3.42" data-media-start="0.2" data-track-index="14" muted playsinline></video><b class="mg-etiq">LE RÉSULTAT</b></div></div>
         <div id="mgA-eclat" class="mg-eclat" style="opacity: 0"></div>
-        <div id="mgB" class="magie" style="opacity: 0"><div class="mg-carte"><video id="mgB-v-f" class="clip mg-flou" src="assets/captures/modele-gemini.mp4" data-start="40.2" data-duration="3.29" data-media-start="0.0" data-track-index="16" muted playsinline></video><video id="mgB-v" class="clip mg-large" src="assets/captures/modele-gemini.mp4" data-start="40.2" data-duration="3.29" data-media-start="0.0" data-track-index="13" muted playsinline></video><b class="mg-etiq">TON CHATBOT</b></div></div>
+        <div id="mgB" class="magie" style="opacity: 0"><div class="mg-carte"><video id="mgB-v-f" class="clip mg-flou" src="assets/captures/modele-gemini.mp4" data-start="40.2" data-duration="3.29" data-media-start="0.0" data-track-index="18" muted playsinline></video><video id="mgB-v" class="clip mg-large" src="assets/captures/modele-gemini.mp4" data-start="40.2" data-duration="3.29" data-media-start="0.0" data-track-index="12" muted playsinline></video><b class="mg-etiq">TON CHATBOT</b></div></div>
         <div id="mgB-eclat" class="mg-eclat" style="opacity: 0"></div>
         <div id="roul" class="roulette" style="opacity: 0"><div id="roul-bande" class="rl-bande"><div class="rl-carte"><img src="assets/img/logo-grok.svg" alt="" /><b>Grok</b></div><div class="rl-carte"><img src="assets/img/logo-gemini.svg" alt="" /><b>Gemini</b></div><div class="rl-carte"><i>D</i><b>DeepSeek</b></div><div class="rl-carte"><img src="assets/img/logo-chatgpt.svg" alt="" /><b>ChatGPT</b></div><div class="rl-carte"><i>M</i><b>Mistral</b></div><div class="rl-carte"><i>L</i><b>Llama</b></div><div class="rl-carte"><i>Q</i><b>Qwen</b></div><div class="rl-carte"><img src="assets/img/logo-claude.svg" alt="" /><b>Fable 5.2</b></div><div class="rl-carte"><img src="assets/img/logo-gemini.svg" alt="" /><b>Gemini</b></div><div class="rl-carte"><img src="assets/img/logo-grok.svg" alt="" /><b>Grok</b></div><div class="rl-carte"><img src="assets/img/logo-chatgpt.svg" alt="" /><b>ChatGPT</b></div><div class="rl-carte"><i>D</i><b>DeepSeek</b></div><div class="rl-carte cible"><img src="assets/img/logo-claude.svg" alt="" /><b>Opus 5.5</b></div><div class="rl-carte"><i>K</i><b>Kimi</b></div><div class="rl-carte"><i>M</i><b>Mistral</b></div></div><div class="rl-cadre"></div></div>
-        <div id="fl168" class="flash"></div>
+        <div id="fl179" class="flash"></div>
         <div id="gm0" class="rl-carte grille" style="left: 60px; top: 330px; opacity: 0"><img src="assets/img/logo-claude.svg" alt="" /><b>Opus 5.5</b></div>
         <div id="gm1" class="rl-carte grille" style="left: 390px; top: 330px; opacity: 0"><img src="assets/img/logo-claude.svg" alt="" /><b>Fable 5.2</b></div>
         <div id="gm2" class="rl-carte grille" style="left: 720px; top: 330px; opacity: 0"><img src="assets/img/logo-chatgpt.svg" alt="" /><b>ChatGPT</b></div>
@@ -362,9 +395,9 @@
         <div id="gm4" class="rl-carte grille" style="left: 390px; top: 560px; opacity: 0"><img src="assets/img/logo-grok.svg" alt="" /><b>Grok</b></div>
         <div id="gm5" class="rl-carte grille" style="left: 720px; top: 560px; opacity: 0"><i>D</i><b>DeepSeek</b></div>
         <div id="gm-sel" class="gm-sel" style="opacity: 0"></div>
-        <div id="mg3d" class="magie" style="opacity: 0"><div class="mg-carte"><video id="mg3d-v-f" class="clip mg-flou" src="assets/magie/retro-soleil.mp4" data-start="57.85" data-duration="1.17" data-media-start="0.5" data-track-index="18" muted playsinline></video><video id="mg3d-v" class="clip mg-large" src="assets/magie/retro-soleil.mp4" data-start="57.85" data-duration="1.17" data-media-start="0.5" data-track-index="12" muted playsinline></video><b class="mg-etiq">3D</b></div></div>
+        <div id="mg3d" class="magie" style="opacity: 0"><div class="mg-carte"><video id="mg3d-v-f" class="clip mg-flou" src="assets/magie/retro-soleil.mp4" data-start="57.85" data-duration="1.17" data-media-start="0.5" data-track-index="17" muted playsinline></video><video id="mg3d-v" class="clip mg-large" src="assets/magie/retro-soleil.mp4" data-start="57.85" data-duration="1.17" data-media-start="0.5" data-track-index="15" muted playsinline></video><b class="mg-etiq">3D</b></div></div>
         <div id="mg3d-eclat" class="mg-eclat" style="opacity: 0"></div>
-        <div id="mg2d" class="magie" style="opacity: 0"><div class="mg-carte"><video id="mg2d-v" class="clip mg-zoom" src="assets/exemples/enveloppes.mp4" data-start="58.97" data-duration="1.09" data-media-start="0.6" data-track-index="14" muted playsinline></video><b class="mg-etiq">2D</b></div></div>
+        <div id="mg2d" class="magie" style="opacity: 0"><div class="mg-carte"><video id="mg2d-v" class="clip mg-zoom" src="assets/exemples/enveloppes.mp4" data-start="58.97" data-duration="1.09" data-media-start="0.6" data-track-index="13" muted playsinline></video><b class="mg-etiq">2D</b></div></div>
         <div id="mg2d-eclat" class="mg-eclat" style="opacity: 0"></div>
         <div id="mgiso" class="magie" style="opacity: 0"><div class="mg-carte"><div class="mg-iso"><svg viewBox="0 0 1080 1920" width="1080" height="1920"><g id="iso-b0" style="transform-origin: 540px 830px"><path d="M540 720 L660 790 L540 860 L420 790 Z" fill="#FDE68A" stroke="#0B1220" stroke-width="5" /><path d="M420 790 L540 860 L540 900 L420 830 Z" fill="#F2B705" stroke="#0B1220" stroke-width="5" /><path d="M660 790 L540 860 L540 900 L660 830 Z" fill="#B07D00" stroke="#0B1220" stroke-width="5" /></g><g id="iso-b1" style="transform-origin: 420px 900px"><path d="M420 640 L540 710 L420 780 L300 710 Z" fill="#7DD3FC" stroke="#0B1220" stroke-width="5" /><path d="M300 710 L420 780 L420 970 L300 900 Z" fill="#38BDF8" stroke="#0B1220" stroke-width="5" /><path d="M540 710 L420 780 L420 970 L540 900 Z" fill="#0284C7" stroke="#0B1220" stroke-width="5" /></g><g id="iso-b2" style="transform-origin: 660px 900px"><path d="M660 670 L780 740 L660 810 L540 740 Z" fill="#7DD3FC" stroke="#0B1220" stroke-width="5" /><path d="M540 740 L660 810 L660 970 L540 900 Z" fill="#38BDF8" stroke="#0B1220" stroke-width="5" /><path d="M780 740 L660 810 L660 970 L780 900 Z" fill="#0284C7" stroke="#0B1220" stroke-width="5" /></g><g id="iso-b3" style="transform-origin: 300px 970px"><path d="M300 810 L420 880 L300 950 L180 880 Z" fill="#7DD3FC" stroke="#0B1220" stroke-width="5" /><path d="M180 880 L300 950 L300 1040 L180 970 Z" fill="#38BDF8" stroke="#0B1220" stroke-width="5" /><path d="M420 880 L300 950 L300 1040 L420 970 Z" fill="#0284C7" stroke="#0B1220" stroke-width="5" /></g><g id="iso-b4" style="transform-origin: 540px 970px"><path d="M540 860 L660 930 L540 1000 L420 930 Z" fill="#7DD3FC" stroke="#0B1220" stroke-width="5" /><path d="M420 930 L540 1000 L540 1040 L420 970 Z" fill="#38BDF8" stroke="#0B1220" stroke-width="5" /><path d="M660 930 L540 1000 L540 1040 L660 970 Z" fill="#0284C7" stroke="#0B1220" stroke-width="5" /></g><g id="iso-b5" style="transform-origin: 780px 970px"><path d="M780 840 L900 910 L780 980 L660 910 Z" fill="#7DD3FC" stroke="#0B1220" stroke-width="5" /><path d="M660 910 L780 980 L780 1040 L660 970 Z" fill="#38BDF8" stroke="#0B1220" stroke-width="5" /><path d="M900 910 L780 980 L780 1040 L900 970 Z" fill="#0284C7" stroke="#0B1220" stroke-width="5" /></g><g id="iso-b6" style="transform-origin: 180px 1040px"><path d="M180 860 L300 930 L180 1000 L60 930 Z" fill="#FDE68A" stroke="#0B1220" stroke-width="5" /><path d="M60 930 L180 1000 L180 1110 L60 1040 Z" fill="#F2B705" stroke="#0B1220" stroke-width="5" /><path d="M300 930 L180 1000 L180 1110 L300 1040 Z" fill="#B07D00" stroke="#0B1220" stroke-width="5" /></g><g id="iso-b7" style="transform-origin: 420px 1040px"><path d="M420 780 L540 850 L420 920 L300 850 Z" fill="#FDE68A" stroke="#0B1220" stroke-width="5" /><path d="M300 850 L420 920 L420 1110 L300 1040 Z" fill="#F2B705" stroke="#0B1220" stroke-width="5" /><path d="M540 850 L420 920 L420 1110 L540 1040 Z" fill="#B07D00" stroke="#0B1220" stroke-width="5" /></g><g id="iso-b8" style="transform-origin: 660px 1040px"><path d="M660 810 L780 880 L660 950 L540 880 Z" fill="#FDE68A" stroke="#0B1220" stroke-width="5" /><path d="M540 880 L660 950 L660 1110 L540 1040 Z" fill="#F2B705" stroke="#0B1220" stroke-width="5" /><path d="M780 880 L660 950 L660 1110 L780 1040 Z" fill="#B07D00" stroke="#0B1220" stroke-width="5" /></g><g id="iso-b9" style="transform-origin: 900px 1040px"><path d="M900 890 L1020 960 L900 1030 L780 960 Z" fill="#FDE68A" stroke="#0B1220" stroke-width="5" /><path d="M780 960 L900 1030 L900 1110 L780 1040 Z" fill="#F2B705" stroke="#0B1220" stroke-width="5" /><path d="M1020 960 L900 1030 L900 1110 L1020 1040 Z" fill="#B07D00" stroke="#0B1220" stroke-width="5" /></g><g id="iso-b10" style="transform-origin: 60px 1110px"><path d="M60 940 L180 1010 L60 1080 L-60 1010 Z" fill="#7DD3FC" stroke="#0B1220" stroke-width="5" /><path d="M-60 1010 L60 1080 L60 1180 L-60 1110 Z" fill="#38BDF8" stroke="#0B1220" stroke-width="5" /><path d="M180 1010 L60 1080 L60 1180 L180 1110 Z" fill="#0284C7" stroke="#0B1220" stroke-width="5" /></g><g id="iso-b11" style="transform-origin: 300px 1110px"><path d="M300 950 L420 1020 L300 1090 L180 1020 Z" fill="#7DD3FC" stroke="#0B1220" stroke-width="5" /><path d="M180 1020 L300 1090 L300 1180 L180 1110 Z" fill="#38BDF8" stroke="#0B1220" stroke-width="5" /><path d="M420 1020 L300 1090 L300 1180 L420 1110 Z" fill="#0284C7" stroke="#0B1220" stroke-width="5" /></g><g id="iso-b12" style="transform-origin: 540px 1110px"><path d="M540 1000 L660 1070 L540 1140 L420 1070 Z" fill="#7DD3FC" stroke="#0B1220" stroke-width="5" /><path d="M420 1070 L540 1140 L540 1180 L420 1110 Z" fill="#38BDF8" stroke="#0B1220" stroke-width="5" /><path d="M660 1070 L540 1140 L540 1180 L660 1110 Z" fill="#0284C7" stroke="#0B1220" stroke-width="5" /></g><g id="iso-b13" style="transform-origin: 780px 1110px"><path d="M780 980 L900 1050 L780 1120 L660 1050 Z" fill="#7DD3FC" stroke="#0B1220" stroke-width="5" /><path d="M660 1050 L780 1120 L780 1180 L660 1110 Z" fill="#38BDF8" stroke="#0B1220" stroke-width="5" /><path d="M900 1050 L780 1120 L780 1180 L900 1110 Z" fill="#0284C7" stroke="#0B1220" stroke-width="5" /></g><g id="iso-b14" style="transform-origin: 180px 1180px"><path d="M180 1000 L300 1070 L180 1140 L60 1070 Z" fill="#7DD3FC" stroke="#0B1220" stroke-width="5" /><path d="M60 1070 L180 1140 L180 1250 L60 1180 Z" fill="#38BDF8" stroke="#0B1220" stroke-width="5" /><path d="M300 1070 L180 1140 L180 1250 L300 1180 Z" fill="#0284C7" stroke="#0B1220" stroke-width="5" /></g><g id="iso-b15" style="transform-origin: 420px 1180px"><path d="M420 920 L540 990 L420 1060 L300 990 Z" fill="#7DD3FC" stroke="#0B1220" stroke-width="5" /><path d="M300 990 L420 1060 L420 1250 L300 1180 Z" fill="#38BDF8" stroke="#0B1220" stroke-width="5" /><path d="M540 990 L420 1060 L420 1250 L540 1180 Z" fill="#0284C7" stroke="#0B1220" stroke-width="5" /></g><g id="iso-b16" style="transform-origin: 660px 1180px"><path d="M660 950 L780 1020 L660 1090 L540 1020 Z" fill="#7DD3FC" stroke="#0B1220" stroke-width="5" /><path d="M540 1020 L660 1090 L660 1250 L540 1180 Z" fill="#38BDF8" stroke="#0B1220" stroke-width="5" /><path d="M780 1020 L660 1090 L660 1250 L780 1180 Z" fill="#0284C7" stroke="#0B1220" stroke-width="5" /></g><g id="iso-b17" style="transform-origin: 300px 1250px"><path d="M300 1090 L420 1160 L300 1230 L180 1160 Z" fill="#FDE68A" stroke="#0B1220" stroke-width="5" /><path d="M180 1160 L300 1230 L300 1320 L180 1250 Z" fill="#F2B705" stroke="#0B1220" stroke-width="5" /><path d="M420 1160 L300 1230 L300 1320 L420 1250 Z" fill="#B07D00" stroke="#0B1220" stroke-width="5" /></g><g id="iso-b18" style="transform-origin: 540px 1250px"><path d="M540 1140 L660 1210 L540 1280 L420 1210 Z" fill="#FDE68A" stroke="#0B1220" stroke-width="5" /><path d="M420 1210 L540 1280 L540 1320 L420 1250 Z" fill="#F2B705" stroke="#0B1220" stroke-width="5" /><path d="M660 1210 L540 1280 L540 1320 L660 1250 Z" fill="#B07D00" stroke="#0B1220" stroke-width="5" /></g><g id="iso-b19" style="transform-origin: 420px 1320px"><path d="M420 1060 L540 1130 L420 1200 L300 1130 Z" fill="#7DD3FC" stroke="#0B1220" stroke-width="5" /><path d="M300 1130 L420 1200 L420 1390 L300 1320 Z" fill="#38BDF8" stroke="#0B1220" stroke-width="5" /><path d="M540 1130 L420 1200 L420 1390 L540 1320 Z" fill="#0284C7" stroke="#0B1220" stroke-width="5" /></g></svg></div><b class="mg-etiq">3D ISOMÉTRIQUE</b></div></div>
         <div id="mgiso-eclat" class="mg-eclat" style="opacity: 0"></div>
@@ -378,15 +411,15 @@
         <div id="mb3" class="mg-mini" style="opacity: 0"><video id="mb3-v" class="clip" src="assets/exemples/tontine-epargne.mp4" data-start="61.84" data-duration="1.15" data-media-start="0.6" data-track-index="23" muted playsinline></video></div>
         <div id="mb4" class="mg-mini" style="opacity: 0"><video id="mb4-v" class="clip" src="assets/exemples/site-anime-vertical.mp4" data-start="61.89" data-duration="1.1" data-media-start="0.6" data-track-index="24" muted playsinline></video></div>
         <div id="mb5" class="mg-mini" style="opacity: 0"><video id="mb5-v" class="clip" src="assets/exemples/classement-ia-vertical.mp4" data-start="61.94" data-duration="1.05" data-media-start="0.6" data-track-index="25" muted playsinline></video></div>
-        <div id="mgD" class="magie" style="opacity: 0"><div class="mg-carte"><video id="mgD-v" class="clip" src="assets/exemples/edit-claude.mp4" data-start="68.17" data-duration="2.71" data-media-start="0.2" data-track-index="12" muted playsinline></video></div></div>
+        <div id="mgD" class="magie" style="opacity: 0"><div class="mg-carte"><video id="mgD-v" class="clip" src="assets/exemples/edit-claude.mp4" data-start="68.17" data-duration="2.71" data-media-start="0.2" data-track-index="15" muted playsinline></video></div></div>
         <div id="mgD-eclat" class="mg-eclat" style="opacity: 0"></div>
       </div>
       <div id="titre" class="clip" data-layout-allow-overlap data-start="0" data-duration="70.83" data-track-index="0"><b>COMMENT JE FAIS MES <i>VIDÉOS</i></b></div>
       <div id="sous-titres" data-composition-id="sous-titres" data-composition-src="compositions/sous-titres.html" data-start="0" data-duration="70.83" data-track-index="3"
         data-width="1080" data-height="1920" style="z-index: 50"></div>
       <audio id="voix" src="assets/audio-voix.wav" data-start="0" data-duration="70.23" data-volume="1" data-track-index="19"></audio>
-      <audio id="musique-1" src="assets/music/tension-1.mp3" data-start="0.0" data-duration="27.95" data-volume="0.5" data-track-index="20"></audio>
-      <audio id="musique-2" src="assets/music/tension-2.mp3" data-start="27.6" data-duration="43.226" data-volume="0.5" data-track-index="21"></audio>
+      <audio id="musique-1" src="assets/music/tension-1.mp3" data-start="0.0" data-duration="27.95" data-volume="0.48" data-track-index="20"></audio>
+      <audio id="musique-2" src="assets/music/tension-2.mp3" data-start="27.6" data-duration="43.226" data-volume="0.52" data-track-index="21"></audio>
       <audio id="sfx-001" src="assets/sfx/clavier-ordi.mp3" data-start="0.0" data-duration="0.5" data-volume="0.24" data-track-index="30"></audio><!-- on tape le prompt -->
       <audio id="sfx-002" src="assets/sfx/swell-court.mp3" data-start="0.0" data-duration="2.91" data-volume="0.18" data-track-index="31"></audio><!-- saturation -->
       <audio id="sfx-003" src="assets/sfx/trailer-impact.mp3" data-start="0.0" data-duration="4.866" data-volume="0.165" data-track-index="32"></audio><!-- les vidéos déferlent -->
@@ -522,105 +555,110 @@
       <audio id="sfx-133" src="assets/sfx/whoosh-pop.mp3" data-start="34.07" data-duration="0.18" data-volume="0.075" data-track-index="33"></audio><!-- coupe -->
       <audio id="sfx-134" src="assets/sfx/scanner-caisse.mp3" data-start="35.39" data-duration="1.4" data-volume="0.315" data-track-index="30"></audio><!-- 20 dollars -->
       <audio id="sfx-135" src="assets/sfx/zoom-impact.mp3" data-start="35.7" data-duration="1.222" data-volume="0.255" data-track-index="32"></audio><!-- zoom de cinéma -->
-      <audio id="sfx-136" src="assets/sfx/impact-basse.mp3" data-start="36.14" data-duration="1.1" data-volume="0.195" data-track-index="33"></audio><!-- boom du zoom -->
-      <audio id="sfx-137" src="assets/sfx/pieces-tintent.mp3" data-start="38.38" data-duration="1.024" data-volume="0.3" data-track-index="30"></audio><!-- Claude Max -->
-      <audio id="sfx-138" src="assets/sfx/zoom-in.mp3" data-start="38.44" data-duration="0.657" data-volume="0.255" data-track-index="31"></audio><!-- zoom de cinéma -->
-      <audio id="sfx-139" src="assets/sfx/impact-basse.mp3" data-start="38.78" data-duration="1.1" data-volume="0.195" data-track-index="32"></audio><!-- boom du zoom -->
-      <audio id="sfx-140" src="assets/sfx/scintille-whoosh.mp3" data-start="38.85" data-duration="4.549" data-volume="0.315" data-track-index="33"></audio><!-- mgB naît dans la main -->
-      <audio id="sfx-141" src="assets/sfx/swoosh-court.mp3" data-start="39.5" data-duration="1.25" data-volume="0.075" data-track-index="30"></audio><!-- coupe -->
-      <audio id="sfx-142" src="assets/sfx/whoosh-cine.mp3" data-start="40.07" data-duration="1.334" data-volume="0.225" data-track-index="31"></audio><!-- mgB souffle -->
-      <audio id="sfx-143" src="assets/sfx/zoom-futur.mp3" data-start="40.52" data-duration="2.171" data-volume="0.315" data-track-index="32"></audio><!-- mgB plein écran -->
-      <audio id="sfx-144" src="assets/sfx/roulement-suspense.mp3" data-start="41.04" data-duration="1.2" data-volume="0.225" data-track-index="30"></audio><!-- roulement avant attention -->
-      <audio id="sfx-145" src="assets/sfx/alarme-alerte.mp3" data-start="42.34" data-duration="0.8" data-volume="0.225" data-track-index="30"></audio><!-- attention -->
-      <audio id="sfx-146" src="assets/sfx/battements.mp3" data-start="42.84" data-duration="2.6" data-volume="0.24" data-track-index="31"></audio><!-- tension : l'outil ne fait pas tout -->
-      <audio id="sfx-147" src="assets/sfx/whoosh-tunnel.mp3" data-start="42.84" data-duration="6.747" data-volume="0.12" data-track-index="32"></audio><!-- nouveau fond bordeaux -->
-      <audio id="sfx-148" src="assets/sfx/balaie-petit.mp3" data-start="42.89" data-duration="0.781" data-volume="0.225" data-track-index="34"></audio><!-- mgB retourne dans la main -->
-      <audio id="sfx-149" src="assets/sfx/balaie-petit.mp3" data-start="43.0" data-duration="0.781" data-volume="0.075" data-track-index="35"></audio><!-- coupe -->
-      <audio id="sfx-150" src="assets/sfx/zoom-futur.mp3" data-start="43.04" data-duration="2.171" data-volume="0.255" data-track-index="36"></audio><!-- zoom de cinéma -->
-      <audio id="sfx-151" src="assets/sfx/impact-basse.mp3" data-start="43.58" data-duration="1.1" data-volume="0.195" data-track-index="30"></audio><!-- boom du zoom -->
-      <audio id="sfx-152" src="assets/sfx/tic.mp3" data-start="45.32" data-duration="0.849" data-volume="0.225" data-track-index="30"></audio><!-- la roulette tourne -->
-      <audio id="sfx-153" src="assets/sfx/tic.mp3" data-start="45.334" data-duration="0.849" data-volume="0.225" data-track-index="33"></audio><!-- la roulette tourne -->
-      <audio id="sfx-154" src="assets/sfx/whoosh-pop.mp3" data-start="45.37" data-duration="0.18" data-volume="0.075" data-track-index="34"></audio><!-- coupe -->
-      <audio id="sfx-155" src="assets/sfx/tic.mp3" data-start="45.384" data-duration="0.849" data-volume="0.225" data-track-index="35"></audio><!-- la roulette tourne -->
-      <audio id="sfx-156" src="assets/sfx/tic.mp3" data-start="45.477" data-duration="0.849" data-volume="0.225" data-track-index="31"></audio><!-- la roulette tourne -->
-      <audio id="sfx-157" src="assets/sfx/tic.mp3" data-start="45.616" data-duration="0.849" data-volume="0.225" data-track-index="34"></audio><!-- la roulette tourne -->
-      <audio id="sfx-158" src="assets/sfx/tic.mp3" data-start="45.803" data-duration="0.849" data-volume="0.225" data-track-index="36"></audio><!-- la roulette tourne -->
-      <audio id="sfx-159" src="assets/sfx/whoosh-cine.mp3" data-start="45.87" data-duration="1.334" data-volume="0.255" data-track-index="37"></audio><!-- zoom de cinéma -->
-      <audio id="sfx-160" src="assets/sfx/tic.mp3" data-start="46.041" data-duration="0.849" data-volume="0.225" data-track-index="38"></audio><!-- la roulette tourne -->
-      <audio id="sfx-161" src="assets/sfx/tic.mp3" data-start="46.332" data-duration="0.849" data-volume="0.225" data-track-index="30"></audio><!-- la roulette tourne -->
-      <audio id="sfx-162" src="assets/sfx/clavier-bit.mp3" data-start="46.65" data-duration="7.5" data-volume="0.135" data-track-index="31"></audio><!-- code qui s'écrit -->
-      <audio id="sfx-163" src="assets/sfx/tic.mp3" data-start="46.678" data-duration="0.849" data-volume="0.225" data-track-index="33"></audio><!-- la roulette tourne -->
-      <audio id="sfx-164" src="assets/sfx/trailer-impact.mp3" data-start="46.73" data-duration="4.866" data-volume="0.225" data-track-index="34"></audio><!-- la roulette s'arrête sur Opus 5.5 -->
-      <audio id="sfx-165" src="assets/sfx/clavier-bit.mp3" data-start="46.8" data-duration="7.5" data-volume="0.135" data-track-index="35"></audio><!-- code qui s'écrit -->
-      <audio id="sfx-166" src="assets/sfx/impact-basse.mp3" data-start="46.86" data-duration="1.1" data-volume="0.195" data-track-index="36"></audio><!-- boom du zoom -->
-      <audio id="sfx-167" src="assets/sfx/clavier-bit.mp3" data-start="46.95" data-duration="7.5" data-volume="0.135" data-track-index="38"></audio><!-- code qui s'écrit -->
-      <audio id="sfx-168" src="assets/sfx/clavier-bit.mp3" data-start="47.1" data-duration="7.5" data-volume="0.135" data-track-index="39"></audio><!-- code qui s'écrit -->
-      <audio id="sfx-169" src="assets/sfx/zoom-impact.mp3" data-start="47.14" data-duration="1.222" data-volume="0.255" data-track-index="40"></audio><!-- zoom de cinéma -->
-      <audio id="sfx-170" src="assets/sfx/clavier-ordi.mp3" data-start="47.27" data-duration="0.55" data-volume="0.225" data-track-index="30"></audio><!-- co on tape la demande -->
-      <audio id="sfx-171" src="assets/sfx/whoosh-cine.mp3" data-start="47.27" data-duration="1.334" data-volume="0.255" data-track-index="37"></audio><!-- les modèles s'alignent -->
-      <audio id="sfx-172" src="assets/sfx/impact-basse.mp3" data-start="47.58" data-duration="1.1" data-volume="0.338" data-track-index="33"></audio><!-- le modèle -->
-      <audio id="sfx-173" src="assets/sfx/riser-synth.mp3" data-start="47.7" data-duration="1.0" data-volume="0.225" data-track-index="41"></audio><!-- montée vers Opus / Fable -->
-      <audio id="sfx-174" src="assets/sfx/clic-souris.mp3" data-start="48.38" data-duration="1.376" data-volume="0.225" data-track-index="30"></audio><!-- on choisit le modèle -->
-      <audio id="sfx-175" src="assets/sfx/clic-souris.mp3" data-start="48.63" data-duration="1.376" data-volume="0.225" data-track-index="36"></audio><!-- on choisit le modèle -->
-      <audio id="sfx-176" src="assets/sfx/clic-souris.mp3" data-start="48.88" data-duration="1.376" data-volume="0.225" data-track-index="33"></audio><!-- on choisit le modèle -->
-      <audio id="sfx-177" src="assets/sfx/clic-souris.mp3" data-start="49.13" data-duration="1.376" data-volume="0.225" data-track-index="37"></audio><!-- on choisit le modèle -->
-      <audio id="sfx-178" src="assets/sfx/whoosh-cine.mp3" data-start="49.35" data-duration="1.334" data-volume="0.12" data-track-index="40"></audio><!-- nouveau fond petrole -->
-      <audio id="sfx-179" src="assets/sfx/clic-souris.mp3" data-start="49.38" data-duration="1.376" data-volume="0.225" data-track-index="41"></audio><!-- on choisit le modèle -->
-      <audio id="sfx-180" src="assets/sfx/trailer-impact-2.mp3" data-start="49.55" data-duration="6.0" data-volume="0.27" data-track-index="42"></audio><!-- boom : changement de musique -->
-      <audio id="sfx-181" src="assets/sfx/clic-souris.mp3" data-start="49.63" data-duration="1.376" data-volume="0.225" data-track-index="32"></audio><!-- on choisit le modèle -->
-      <audio id="sfx-182" src="assets/sfx/swoosh-court.mp3" data-start="50.01" data-duration="1.25" data-volume="0.075" data-track-index="30"></audio><!-- coupe -->
-      <audio id="sfx-183" src="assets/sfx/power-up.mp3" data-start="50.25" data-duration="2.0" data-volume="0.315" data-track-index="36"></audio><!-- mgO naît dans la main -->
-      <audio id="sfx-184" src="assets/sfx/zoom-in.mp3" data-start="50.25" data-duration="0.657" data-volume="0.315" data-track-index="43"></audio><!-- mgO plein écran -->
-      <audio id="sfx-185" src="assets/sfx/clavier-ordi.mp3" data-start="50.43" data-duration="0.7" data-volume="0.225" data-track-index="33"></audio><!-- cf on tape la demande -->
-      <audio id="sfx-186" src="assets/sfx/fouet.mp3" data-start="50.65" data-duration="1.051" data-volume="0.225" data-track-index="37"></audio><!-- mgO souffle -->
-      <audio id="sfx-187" src="assets/sfx/pop-click.mp3" data-start="51.39" data-duration="1.175" data-volume="0.24" data-track-index="30"></audio><!-- co envoyer -->
-      <audio id="sfx-188" src="assets/sfx/magie.mp3" data-start="51.5" data-duration="3.5" data-volume="0.315" data-track-index="32"></audio><!-- mgF naît dans la main -->
-      <audio id="sfx-189" src="assets/sfx/whoosh-cine.mp3" data-start="51.65" data-duration="1.334" data-volume="0.225" data-track-index="33"></audio><!-- mgF souffle -->
-      <audio id="sfx-190" src="assets/sfx/balaie-petit.mp3" data-start="51.98" data-duration="0.781" data-volume="0.075" data-track-index="34"></audio><!-- coupe -->
-      <audio id="sfx-191" src="assets/sfx/zoom-impact.mp3" data-start="52.2" data-duration="1.222" data-volume="0.315" data-track-index="37"></audio><!-- mgF plein écran -->
-      <audio id="sfx-192" src="assets/sfx/whoosh-pop.mp3" data-start="52.42" data-duration="0.18" data-volume="0.225" data-track-index="36"></audio><!-- mgO retourne dans la main -->
-      <audio id="sfx-193" src="assets/sfx/revelation.mp3" data-start="53.03" data-duration="3.0" data-volume="0.315" data-track-index="30"></audio><!-- on passe sur Fable 5.2 -->
-      <audio id="sfx-194" src="assets/sfx/magie.mp3" data-start="54.3" data-duration="3.5" data-volume="0.27" data-track-index="31"></audio><!-- la vidéo 3D de Fable apparaît -->
-      <audio id="sfx-195" src="assets/sfx/pop-click.mp3" data-start="54.7" data-duration="1.175" data-volume="0.24" data-track-index="33"></audio><!-- cf envoyer -->
-      <audio id="sfx-196" src="assets/sfx/cloche-succes.mp3" data-start="55.85" data-duration="2.4" data-volume="0.285" data-track-index="32"></audio><!-- peut faire mieux -->
-      <audio id="sfx-197" src="assets/sfx/swoosh-court.mp3" data-start="57.09" data-duration="1.25" data-volume="0.225" data-track-index="30"></audio><!-- mgF retourne dans la main -->
-      <audio id="sfx-198" src="assets/sfx/swoosh-vitesse.mp3" data-start="57.3" data-duration="2.6" data-volume="0.12" data-track-index="33"></audio><!-- nouveau fond sarcelle -->
-      <audio id="sfx-199" src="assets/sfx/riser-tech.mp3" data-start="57.44" data-duration="0.8" data-volume="0.225" data-track-index="34"></audio><!-- montée vers abonne-toi -->
-      <audio id="sfx-200" src="assets/sfx/whoosh-pop.mp3" data-start="57.61" data-duration="0.18" data-volume="0.075" data-track-index="35"></audio><!-- coupe -->
-      <audio id="sfx-201" src="assets/sfx/power-up.mp3" data-start="57.7" data-duration="2.0" data-volume="0.315" data-track-index="36"></audio><!-- mg3d naît dans la main -->
-      <audio id="sfx-202" src="assets/sfx/zoom-in.mp3" data-start="57.85" data-duration="0.657" data-volume="0.315" data-track-index="31"></audio><!-- mg3d plein écran -->
-      <audio id="sfx-203" src="assets/sfx/magie.mp3" data-start="58.07" data-duration="3.5" data-volume="0.315" data-track-index="35"></audio><!-- mg2d naît dans la main -->
-      <audio id="sfx-204" src="assets/sfx/swoosh-court.mp3" data-start="58.1" data-duration="1.25" data-volume="0.225" data-track-index="37"></audio><!-- mg3d souffle -->
-      <audio id="sfx-205" src="assets/sfx/scintille-whoosh.mp3" data-start="58.66" data-duration="4.549" data-volume="0.315" data-track-index="30"></audio><!-- mgiso naît dans la main -->
-      <audio id="sfx-206" src="assets/sfx/whoosh-pop.mp3" data-start="58.69" data-duration="0.18" data-volume="0.225" data-track-index="31"></audio><!-- mg3d retourne dans la main -->
-      <audio id="sfx-207" src="assets/sfx/zoom-impact.mp3" data-start="58.87" data-duration="1.222" data-volume="0.315" data-track-index="32"></audio><!-- mg2d plein écran -->
-      <audio id="sfx-208" src="assets/sfx/whoosh-pop.mp3" data-start="59.37" data-duration="0.18" data-volume="0.225" data-track-index="31"></audio><!-- mg2d souffle -->
-      <audio id="sfx-209" src="assets/sfx/swoosh-court.mp3" data-start="59.58" data-duration="1.25" data-volume="0.225" data-track-index="31"></audio><!-- mg2d retourne dans la main -->
-      <audio id="sfx-210" src="assets/sfx/zoom-futur.mp3" data-start="59.73" data-duration="2.171" data-volume="0.315" data-track-index="34"></audio><!-- mgiso plein écran -->
-      <audio id="sfx-211" src="assets/sfx/balaie-rapide.mp3" data-start="59.93" data-duration="1.917" data-volume="0.225" data-track-index="33"></audio><!-- mgiso souffle -->
-      <audio id="sfx-212" src="assets/sfx/pop-long.mp3" data-start="60.63" data-duration="0.479" data-volume="0.225" data-track-index="32"></audio><!-- la ville isométrique sort du sol -->
-      <audio id="sfx-213" src="assets/sfx/magie.mp3" data-start="60.79" data-duration="3.5" data-volume="0.3" data-track-index="36"></audio><!-- et j'en passe -->
-      <audio id="sfx-214" src="assets/sfx/scintille-whoosh.mp3" data-start="61.38" data-duration="4.549" data-volume="0.315" data-track-index="31"></audio><!-- objet dans la main mo10 -->
-      <audio id="sfx-215" src="assets/sfx/balaie-petit.mp3" data-start="61.39" data-duration="0.781" data-volume="0.225" data-track-index="32"></audio><!-- mgiso retourne dans la main -->
-      <audio id="sfx-216" src="assets/sfx/pop-bulle.mp3" data-start="61.64" data-duration="0.381" data-volume="0.225" data-track-index="35"></audio><!-- vidéo site-3d-vertical jaillit -->
-      <audio id="sfx-217" src="assets/sfx/pop-cartoon.mp3" data-start="61.69" data-duration="0.521" data-volume="0.225" data-track-index="37"></audio><!-- vidéo salaire-15 jaillit -->
-      <audio id="sfx-218" src="assets/sfx/pop-sec.mp3" data-start="61.74" data-duration="0.305" data-volume="0.225" data-track-index="38"></audio><!-- vidéo tontine-epargne jaillit -->
-      <audio id="sfx-219" src="assets/sfx/pop-click.mp3" data-start="61.79" data-duration="1.175" data-volume="0.225" data-track-index="39"></audio><!-- vidéo edit-claude jaillit -->
-      <audio id="sfx-220" src="assets/sfx/pop-bulle.mp3" data-start="61.84" data-duration="0.381" data-volume="0.225" data-track-index="40"></audio><!-- vidéo classement-ia-vertical jaillit -->
-      <audio id="sfx-221" src="assets/sfx/pop-cartoon.mp3" data-start="61.89" data-duration="0.521" data-volume="0.225" data-track-index="33"></audio><!-- vidéo site-anime-vertical jaillit -->
-      <audio id="sfx-222" src="assets/sfx/whoosh-tunnel.mp3" data-start="62.29" data-duration="6.747" data-volume="0.12" data-track-index="32"></audio><!-- nouveau fond nuit -->
-      <audio id="sfx-223" src="assets/sfx/swoosh-court.mp3" data-start="62.36" data-duration="1.25" data-volume="0.075" data-track-index="34"></audio><!-- coupe -->
-      <audio id="sfx-224" src="assets/sfx/zoom-in.mp3" data-start="62.43" data-duration="0.657" data-volume="0.285" data-track-index="33"></audio><!-- zoom sur la main -->
-      <audio id="sfx-225" src="assets/sfx/zoom-in.mp3" data-start="62.45" data-duration="0.657" data-volume="0.255" data-track-index="35"></audio><!-- zoom de cinéma -->
-      <audio id="sfx-226" src="assets/sfx/impact-basse.mp3" data-start="62.79" data-duration="1.1" data-volume="0.195" data-track-index="37"></audio><!-- boom du zoom -->
-      <audio id="sfx-227" src="assets/sfx/whoosh-tunnel.mp3" data-start="63.73" data-duration="6.747" data-volume="0.315" data-track-index="30"></audio><!-- prochaine vidéo -->
-      <audio id="sfx-228" src="assets/sfx/balaie-petit.mp3" data-start="65.0" data-duration="0.781" data-volume="0.075" data-track-index="33"></audio><!-- coupe -->
-      <audio id="sfx-229" src="assets/sfx/zoom-futur.mp3" data-start="65.93" data-duration="2.171" data-volume="0.255" data-track-index="33"></audio><!-- zoom de cinéma -->
-      <audio id="sfx-230" src="assets/sfx/impact-basse.mp3" data-start="66.47" data-duration="1.1" data-volume="0.195" data-track-index="31"></audio><!-- boom du zoom -->
-      <audio id="sfx-231" src="assets/sfx/scintille-whoosh.mp3" data-start="66.82" data-duration="4.01" data-volume="0.315" data-track-index="34"></audio><!-- mgD naît dans la main -->
-      <audio id="sfx-232" src="assets/sfx/zoom-futur.mp3" data-start="68.69" data-duration="2.14" data-volume="0.315" data-track-index="31"></audio><!-- mgD plein écran -->
-      <audio id="sfx-233" src="assets/sfx/whoosh-pop.mp3" data-start="68.85" data-duration="0.18" data-volume="0.075" data-track-index="33"></audio><!-- coupe -->
-      <audio id="sfx-234" src="assets/sfx/swoosh-court.mp3" data-start="69.14" data-duration="1.25" data-volume="0.225" data-track-index="32"></audio><!-- mgD souffle -->
+      <audio id="sfx-136" src="assets/sfx/riser-synth.mp3" data-start="36.04" data-duration="1.14" data-volume="0.255" data-track-index="33"></audio><!-- la jauge monte -->
+      <audio id="sfx-137" src="assets/sfx/impact-basse.mp3" data-start="36.14" data-duration="1.1" data-volume="0.195" data-track-index="34"></audio><!-- boom du zoom -->
+      <audio id="sfx-138" src="assets/sfx/etincelles.mp3" data-start="37.58" data-duration="4.549" data-volume="0.225" data-track-index="30"></audio><!-- étincelles -->
+      <audio id="sfx-139" src="assets/sfx/power-up.mp3" data-start="37.74" data-duration="2.0" data-volume="0.27" data-track-index="32"></audio><!-- montée en puissance -->
+      <audio id="sfx-140" src="assets/sfx/trailer-impact.mp3" data-start="37.93" data-duration="4.866" data-volume="0.315" data-track-index="33"></audio><!-- Claude Max : explosion -->
+      <audio id="sfx-141" src="assets/sfx/tonnerre.mp3" data-start="38.0" data-duration="5.5" data-volume="0.24" data-track-index="34"></audio><!-- éclairs -->
+      <audio id="sfx-142" src="assets/sfx/zoom-in.mp3" data-start="38.44" data-duration="0.657" data-volume="0.255" data-track-index="31"></audio><!-- zoom de cinéma -->
+      <audio id="sfx-143" src="assets/sfx/impact-basse.mp3" data-start="38.78" data-duration="1.1" data-volume="0.195" data-track-index="35"></audio><!-- boom du zoom -->
+      <audio id="sfx-144" src="assets/sfx/scintille-whoosh.mp3" data-start="38.85" data-duration="4.549" data-volume="0.315" data-track-index="36"></audio><!-- mgB naît dans la main -->
+      <audio id="sfx-145" src="assets/sfx/pop-sec.mp3" data-start="39.08" data-duration="0.305" data-volume="0.255" data-track-index="37"></audio><!-- badge ×20 -->
+      <audio id="sfx-146" src="assets/sfx/swoosh-court.mp3" data-start="39.5" data-duration="1.25" data-volume="0.075" data-track-index="31"></audio><!-- coupe -->
+      <audio id="sfx-147" src="assets/sfx/whoosh-cine.mp3" data-start="40.07" data-duration="1.334" data-volume="0.225" data-track-index="32"></audio><!-- mgB souffle -->
+      <audio id="sfx-148" src="assets/sfx/zoom-futur.mp3" data-start="40.52" data-duration="2.171" data-volume="0.315" data-track-index="35"></audio><!-- mgB plein écran -->
+      <audio id="sfx-149" src="assets/sfx/roulement-suspense.mp3" data-start="41.04" data-duration="1.2" data-volume="0.225" data-track-index="31"></audio><!-- roulement avant attention -->
+      <audio id="sfx-150" src="assets/sfx/alarme-alerte.mp3" data-start="42.34" data-duration="0.8" data-volume="0.225" data-track-index="30"></audio><!-- attention -->
+      <audio id="sfx-151" src="assets/sfx/battements.mp3" data-start="42.84" data-duration="2.6" data-volume="0.24" data-track-index="31"></audio><!-- tension : l'outil ne fait pas tout -->
+      <audio id="sfx-152" src="assets/sfx/whoosh-tunnel.mp3" data-start="42.84" data-duration="6.747" data-volume="0.12" data-track-index="32"></audio><!-- nouveau fond bordeaux -->
+      <audio id="sfx-153" src="assets/sfx/balaie-petit.mp3" data-start="42.89" data-duration="0.781" data-volume="0.225" data-track-index="33"></audio><!-- mgB retourne dans la main -->
+      <audio id="sfx-154" src="assets/sfx/balaie-petit.mp3" data-start="43.0" data-duration="0.781" data-volume="0.075" data-track-index="35"></audio><!-- coupe -->
+      <audio id="sfx-155" src="assets/sfx/zoom-futur.mp3" data-start="43.04" data-duration="2.171" data-volume="0.255" data-track-index="37"></audio><!-- zoom de cinéma -->
+      <audio id="sfx-156" src="assets/sfx/impact-basse.mp3" data-start="43.58" data-duration="1.1" data-volume="0.195" data-track-index="30"></audio><!-- boom du zoom -->
+      <audio id="sfx-157" src="assets/sfx/tic.mp3" data-start="45.32" data-duration="0.849" data-volume="0.225" data-track-index="30"></audio><!-- la roulette tourne -->
+      <audio id="sfx-158" src="assets/sfx/tic.mp3" data-start="45.334" data-duration="0.849" data-volume="0.225" data-track-index="33"></audio><!-- la roulette tourne -->
+      <audio id="sfx-159" src="assets/sfx/whoosh-pop.mp3" data-start="45.37" data-duration="0.18" data-volume="0.075" data-track-index="34"></audio><!-- coupe -->
+      <audio id="sfx-160" src="assets/sfx/tic.mp3" data-start="45.384" data-duration="0.849" data-volume="0.225" data-track-index="35"></audio><!-- la roulette tourne -->
+      <audio id="sfx-161" src="assets/sfx/tic.mp3" data-start="45.477" data-duration="0.849" data-volume="0.225" data-track-index="31"></audio><!-- la roulette tourne -->
+      <audio id="sfx-162" src="assets/sfx/tic.mp3" data-start="45.616" data-duration="0.849" data-volume="0.225" data-track-index="34"></audio><!-- la roulette tourne -->
+      <audio id="sfx-163" src="assets/sfx/tic.mp3" data-start="45.803" data-duration="0.849" data-volume="0.225" data-track-index="36"></audio><!-- la roulette tourne -->
+      <audio id="sfx-164" src="assets/sfx/whoosh-cine.mp3" data-start="45.87" data-duration="1.334" data-volume="0.255" data-track-index="37"></audio><!-- zoom de cinéma -->
+      <audio id="sfx-165" src="assets/sfx/tic.mp3" data-start="46.041" data-duration="0.849" data-volume="0.225" data-track-index="38"></audio><!-- la roulette tourne -->
+      <audio id="sfx-166" src="assets/sfx/tic.mp3" data-start="46.332" data-duration="0.849" data-volume="0.225" data-track-index="30"></audio><!-- la roulette tourne -->
+      <audio id="sfx-167" src="assets/sfx/clavier-bit.mp3" data-start="46.65" data-duration="7.5" data-volume="0.135" data-track-index="31"></audio><!-- code qui s'écrit -->
+      <audio id="sfx-168" src="assets/sfx/tic.mp3" data-start="46.678" data-duration="0.849" data-volume="0.225" data-track-index="33"></audio><!-- la roulette tourne -->
+      <audio id="sfx-169" src="assets/sfx/trailer-impact.mp3" data-start="46.73" data-duration="4.866" data-volume="0.225" data-track-index="34"></audio><!-- la roulette s'arrête sur Opus 5.5 -->
+      <audio id="sfx-170" src="assets/sfx/clavier-bit.mp3" data-start="46.8" data-duration="7.5" data-volume="0.135" data-track-index="35"></audio><!-- code qui s'écrit -->
+      <audio id="sfx-171" src="assets/sfx/impact-basse.mp3" data-start="46.86" data-duration="1.1" data-volume="0.195" data-track-index="36"></audio><!-- boom du zoom -->
+      <audio id="sfx-172" src="assets/sfx/clavier-bit.mp3" data-start="46.95" data-duration="7.5" data-volume="0.135" data-track-index="38"></audio><!-- code qui s'écrit -->
+      <audio id="sfx-173" src="assets/sfx/clavier-bit.mp3" data-start="47.1" data-duration="7.5" data-volume="0.135" data-track-index="39"></audio><!-- code qui s'écrit -->
+      <audio id="sfx-174" src="assets/sfx/zoom-impact.mp3" data-start="47.14" data-duration="1.222" data-volume="0.255" data-track-index="40"></audio><!-- zoom de cinéma -->
+      <audio id="sfx-175" src="assets/sfx/clavier-ordi.mp3" data-start="47.27" data-duration="0.55" data-volume="0.225" data-track-index="30"></audio><!-- co on tape la demande -->
+      <audio id="sfx-176" src="assets/sfx/whoosh-cine.mp3" data-start="47.27" data-duration="1.334" data-volume="0.255" data-track-index="37"></audio><!-- les modèles s'alignent -->
+      <audio id="sfx-177" src="assets/sfx/impact-basse.mp3" data-start="47.58" data-duration="1.1" data-volume="0.338" data-track-index="33"></audio><!-- le modèle -->
+      <audio id="sfx-178" src="assets/sfx/riser-synth.mp3" data-start="47.7" data-duration="1.0" data-volume="0.225" data-track-index="41"></audio><!-- montée vers Opus / Fable -->
+      <audio id="sfx-179" src="assets/sfx/clic-souris.mp3" data-start="48.38" data-duration="1.376" data-volume="0.225" data-track-index="30"></audio><!-- on choisit le modèle -->
+      <audio id="sfx-180" src="assets/sfx/clic-souris.mp3" data-start="48.63" data-duration="1.376" data-volume="0.225" data-track-index="36"></audio><!-- on choisit le modèle -->
+      <audio id="sfx-181" src="assets/sfx/clic-souris.mp3" data-start="48.88" data-duration="1.376" data-volume="0.225" data-track-index="33"></audio><!-- on choisit le modèle -->
+      <audio id="sfx-182" src="assets/sfx/clic-souris.mp3" data-start="49.13" data-duration="1.376" data-volume="0.225" data-track-index="37"></audio><!-- on choisit le modèle -->
+      <audio id="sfx-183" src="assets/sfx/whoosh-cine.mp3" data-start="49.35" data-duration="1.334" data-volume="0.12" data-track-index="40"></audio><!-- nouveau fond petrole -->
+      <audio id="sfx-184" src="assets/sfx/clic-souris.mp3" data-start="49.38" data-duration="1.376" data-volume="0.225" data-track-index="41"></audio><!-- on choisit le modèle -->
+      <audio id="sfx-185" src="assets/sfx/trailer-impact-2.mp3" data-start="49.55" data-duration="6.0" data-volume="0.27" data-track-index="42"></audio><!-- boom : changement de musique -->
+      <audio id="sfx-186" src="assets/sfx/clic-souris.mp3" data-start="49.63" data-duration="1.376" data-volume="0.225" data-track-index="32"></audio><!-- on choisit le modèle -->
+      <audio id="sfx-187" src="assets/sfx/swoosh-court.mp3" data-start="50.01" data-duration="1.25" data-volume="0.075" data-track-index="30"></audio><!-- coupe -->
+      <audio id="sfx-188" src="assets/sfx/power-up.mp3" data-start="50.25" data-duration="2.0" data-volume="0.315" data-track-index="36"></audio><!-- mgO naît dans la main -->
+      <audio id="sfx-189" src="assets/sfx/zoom-in.mp3" data-start="50.25" data-duration="0.657" data-volume="0.315" data-track-index="43"></audio><!-- mgO plein écran -->
+      <audio id="sfx-190" src="assets/sfx/clavier-ordi.mp3" data-start="50.43" data-duration="0.7" data-volume="0.225" data-track-index="33"></audio><!-- cf on tape la demande -->
+      <audio id="sfx-191" src="assets/sfx/fouet.mp3" data-start="50.65" data-duration="1.051" data-volume="0.225" data-track-index="37"></audio><!-- mgO souffle -->
+      <audio id="sfx-192" src="assets/sfx/pop-click.mp3" data-start="51.39" data-duration="1.175" data-volume="0.24" data-track-index="30"></audio><!-- co envoyer -->
+      <audio id="sfx-193" src="assets/sfx/magie.mp3" data-start="51.5" data-duration="3.5" data-volume="0.315" data-track-index="32"></audio><!-- mgF naît dans la main -->
+      <audio id="sfx-194" src="assets/sfx/whoosh-cine.mp3" data-start="51.65" data-duration="1.334" data-volume="0.225" data-track-index="33"></audio><!-- mgF souffle -->
+      <audio id="sfx-195" src="assets/sfx/balaie-petit.mp3" data-start="51.98" data-duration="0.781" data-volume="0.075" data-track-index="34"></audio><!-- coupe -->
+      <audio id="sfx-196" src="assets/sfx/zoom-impact.mp3" data-start="52.2" data-duration="1.222" data-volume="0.315" data-track-index="37"></audio><!-- mgF plein écran -->
+      <audio id="sfx-197" src="assets/sfx/whoosh-pop.mp3" data-start="52.42" data-duration="0.18" data-volume="0.225" data-track-index="36"></audio><!-- mgO retourne dans la main -->
+      <audio id="sfx-198" src="assets/sfx/revelation.mp3" data-start="53.03" data-duration="3.0" data-volume="0.315" data-track-index="30"></audio><!-- on passe sur Fable 5.2 -->
+      <audio id="sfx-199" src="assets/sfx/magie.mp3" data-start="54.3" data-duration="3.5" data-volume="0.27" data-track-index="31"></audio><!-- la vidéo 3D de Fable apparaît -->
+      <audio id="sfx-200" src="assets/sfx/pop-click.mp3" data-start="54.7" data-duration="1.175" data-volume="0.24" data-track-index="33"></audio><!-- cf envoyer -->
+      <audio id="sfx-201" src="assets/sfx/cloche-succes.mp3" data-start="55.85" data-duration="2.4" data-volume="0.285" data-track-index="32"></audio><!-- peut faire mieux -->
+      <audio id="sfx-202" src="assets/sfx/swoosh-court.mp3" data-start="57.09" data-duration="1.25" data-volume="0.225" data-track-index="30"></audio><!-- mgF retourne dans la main -->
+      <audio id="sfx-203" src="assets/sfx/swoosh-vitesse.mp3" data-start="57.3" data-duration="2.6" data-volume="0.12" data-track-index="33"></audio><!-- nouveau fond sarcelle -->
+      <audio id="sfx-204" src="assets/sfx/riser-tech.mp3" data-start="57.44" data-duration="0.8" data-volume="0.225" data-track-index="34"></audio><!-- montée vers abonne-toi -->
+      <audio id="sfx-205" src="assets/sfx/whoosh-pop.mp3" data-start="57.61" data-duration="0.18" data-volume="0.075" data-track-index="35"></audio><!-- coupe -->
+      <audio id="sfx-206" src="assets/sfx/power-up.mp3" data-start="57.7" data-duration="2.0" data-volume="0.315" data-track-index="36"></audio><!-- mg3d naît dans la main -->
+      <audio id="sfx-207" src="assets/sfx/zoom-in.mp3" data-start="57.85" data-duration="0.657" data-volume="0.315" data-track-index="31"></audio><!-- mg3d plein écran -->
+      <audio id="sfx-208" src="assets/sfx/magie.mp3" data-start="58.07" data-duration="3.5" data-volume="0.315" data-track-index="35"></audio><!-- mg2d naît dans la main -->
+      <audio id="sfx-209" src="assets/sfx/swoosh-court.mp3" data-start="58.1" data-duration="1.25" data-volume="0.225" data-track-index="37"></audio><!-- mg3d souffle -->
+      <audio id="sfx-210" src="assets/sfx/scintille-whoosh.mp3" data-start="58.66" data-duration="4.549" data-volume="0.315" data-track-index="30"></audio><!-- mgiso naît dans la main -->
+      <audio id="sfx-211" src="assets/sfx/whoosh-pop.mp3" data-start="58.69" data-duration="0.18" data-volume="0.225" data-track-index="31"></audio><!-- mg3d retourne dans la main -->
+      <audio id="sfx-212" src="assets/sfx/zoom-impact.mp3" data-start="58.87" data-duration="1.222" data-volume="0.315" data-track-index="32"></audio><!-- mg2d plein écran -->
+      <audio id="sfx-213" src="assets/sfx/whoosh-pop.mp3" data-start="59.37" data-duration="0.18" data-volume="0.225" data-track-index="31"></audio><!-- mg2d souffle -->
+      <audio id="sfx-214" src="assets/sfx/swoosh-court.mp3" data-start="59.58" data-duration="1.25" data-volume="0.225" data-track-index="31"></audio><!-- mg2d retourne dans la main -->
+      <audio id="sfx-215" src="assets/sfx/zoom-futur.mp3" data-start="59.73" data-duration="2.171" data-volume="0.315" data-track-index="34"></audio><!-- mgiso plein écran -->
+      <audio id="sfx-216" src="assets/sfx/balaie-rapide.mp3" data-start="59.93" data-duration="1.917" data-volume="0.225" data-track-index="33"></audio><!-- mgiso souffle -->
+      <audio id="sfx-217" src="assets/sfx/pop-long.mp3" data-start="60.63" data-duration="0.479" data-volume="0.225" data-track-index="32"></audio><!-- la ville isométrique sort du sol -->
+      <audio id="sfx-218" src="assets/sfx/magie.mp3" data-start="60.79" data-duration="3.5" data-volume="0.3" data-track-index="36"></audio><!-- et j'en passe -->
+      <audio id="sfx-219" src="assets/sfx/scintille-whoosh.mp3" data-start="61.38" data-duration="4.549" data-volume="0.315" data-track-index="31"></audio><!-- objet dans la main mo10 -->
+      <audio id="sfx-220" src="assets/sfx/balaie-petit.mp3" data-start="61.39" data-duration="0.781" data-volume="0.225" data-track-index="32"></audio><!-- mgiso retourne dans la main -->
+      <audio id="sfx-221" src="assets/sfx/pop-bulle.mp3" data-start="61.64" data-duration="0.381" data-volume="0.225" data-track-index="35"></audio><!-- vidéo site-3d-vertical jaillit -->
+      <audio id="sfx-222" src="assets/sfx/pop-cartoon.mp3" data-start="61.69" data-duration="0.521" data-volume="0.225" data-track-index="37"></audio><!-- vidéo salaire-15 jaillit -->
+      <audio id="sfx-223" src="assets/sfx/pop-sec.mp3" data-start="61.74" data-duration="0.305" data-volume="0.225" data-track-index="38"></audio><!-- vidéo tontine-epargne jaillit -->
+      <audio id="sfx-224" src="assets/sfx/pop-click.mp3" data-start="61.79" data-duration="1.175" data-volume="0.225" data-track-index="39"></audio><!-- vidéo edit-claude jaillit -->
+      <audio id="sfx-225" src="assets/sfx/pop-bulle.mp3" data-start="61.84" data-duration="0.381" data-volume="0.225" data-track-index="40"></audio><!-- vidéo classement-ia-vertical jaillit -->
+      <audio id="sfx-226" src="assets/sfx/pop-cartoon.mp3" data-start="61.89" data-duration="0.521" data-volume="0.225" data-track-index="33"></audio><!-- vidéo site-anime-vertical jaillit -->
+      <audio id="sfx-227" src="assets/sfx/whoosh-tunnel.mp3" data-start="62.29" data-duration="6.747" data-volume="0.12" data-track-index="32"></audio><!-- nouveau fond nuit -->
+      <audio id="sfx-228" src="assets/sfx/swoosh-court.mp3" data-start="62.36" data-duration="1.25" data-volume="0.075" data-track-index="34"></audio><!-- coupe -->
+      <audio id="sfx-229" src="assets/sfx/zoom-in.mp3" data-start="62.43" data-duration="0.657" data-volume="0.285" data-track-index="33"></audio><!-- zoom sur la main -->
+      <audio id="sfx-230" src="assets/sfx/zoom-in.mp3" data-start="62.45" data-duration="0.657" data-volume="0.255" data-track-index="35"></audio><!-- zoom de cinéma -->
+      <audio id="sfx-231" src="assets/sfx/impact-basse.mp3" data-start="62.79" data-duration="1.1" data-volume="0.195" data-track-index="37"></audio><!-- boom du zoom -->
+      <audio id="sfx-232" src="assets/sfx/whoosh-tunnel.mp3" data-start="63.73" data-duration="6.747" data-volume="0.315" data-track-index="30"></audio><!-- prochaine vidéo -->
+      <audio id="sfx-233" src="assets/sfx/balaie-petit.mp3" data-start="65.0" data-duration="0.781" data-volume="0.075" data-track-index="33"></audio><!-- coupe -->
+      <audio id="sfx-234" src="assets/sfx/zoom-futur.mp3" data-start="65.93" data-duration="2.171" data-volume="0.255" data-track-index="33"></audio><!-- zoom de cinéma -->
+      <audio id="sfx-235" src="assets/sfx/impact-basse.mp3" data-start="66.47" data-duration="1.1" data-volume="0.195" data-track-index="31"></audio><!-- boom du zoom -->
+      <audio id="sfx-236" src="assets/sfx/scintille-whoosh.mp3" data-start="66.82" data-duration="4.01" data-volume="0.315" data-track-index="34"></audio><!-- mgD naît dans la main -->
+      <audio id="sfx-237" src="assets/sfx/zoom-futur.mp3" data-start="68.69" data-duration="2.14" data-volume="0.315" data-track-index="31"></audio><!-- mgD plein écran -->
+      <audio id="sfx-238" src="assets/sfx/whoosh-pop.mp3" data-start="68.85" data-duration="0.18" data-volume="0.075" data-track-index="33"></audio><!-- coupe -->
+      <audio id="sfx-239" src="assets/sfx/swoosh-court.mp3" data-start="69.14" data-duration="1.25" data-volume="0.225" data-track-index="32"></audio><!-- mgD souffle -->
     </div>
     <script>
       window.__timelines = window.__timelines || {};
@@ -1158,9 +1196,47 @@
       tl.fromTo("#ps54", { opacity: 0, x: -900, y: 1500, rotation: -28, scale: 1.8 }, { opacity: 1, x: 0, y: 0, rotation: -7, scale: 1, duration: 0.22, ease: "power3.out", immediateRender: false }, 34.038);
       tl.to("#ps54", { opacity: 0, scale: 0.15, x: -286, y: -551, rotation: 113, duration: 0.24, ease: "power3.in" }, 34.736);
       tl.fromTo("#p1", { opacity: 0, y: 100, scale: 0.5 }, { opacity: 1, y: 0, scale: 1, duration: 0.25, ease: "back.out(2)", immediateRender: false }, 34.62);
-      tl.fromTo("#p2", { opacity: 0, y: 100, scale: 0.5 }, { opacity: 1, y: 0, scale: 1, duration: 0.25, ease: "back.out(2)", immediateRender: false }, 38.88);
+      tl.fromTo("#jauge", { opacity: 0, y: 80, scale: 0.7 }, { opacity: 1, y: 0, scale: 1, duration: 0.25, ease: "back.out(2)", immediateRender: false }, 37.74);
+      tl.fromTo("#j-niv", { scaleY: 0.3 }, { scaleY: 1, duration: 1.09, ease: "power2.in", immediateRender: false }, 37.74);
+      tl.fromTo("#jauge", { x: -5 }, { x: 5, duration: 0.03, repeat: 13, yoyo: true, ease: "none", immediateRender: false }, 38.43);
+      tl.to("#p1", { opacity: 0.45, scale: 0.92, duration: 0.3 }, 37.94);
+      tl.fromTo("#onde0", { opacity: 1, scale: 0.2 }, { opacity: 0, scale: 5, duration: 0.7, ease: "power2.out", immediateRender: false }, 38.88);
+      tl.fromTo("#onde1", { opacity: 1, scale: 0.2 }, { opacity: 0, scale: 6, duration: 0.7, ease: "power2.out", immediateRender: false }, 38.95);
+      tl.fromTo("#onde2", { opacity: 1, scale: 0.2 }, { opacity: 0, scale: 7, duration: 0.7, ease: "power2.out", immediateRender: false }, 39.02);
+      tl.set("#ecl0", { opacity: 1 }, 38.88);
+      tl.set("#ecl0", { opacity: 0 }, 38.94);
+      tl.set("#ecl0", { opacity: 1 }, 38.98);
+      tl.set("#ecl0", { opacity: 0 }, 39.06);
+      tl.set("#ecl0", { opacity: 1 }, 39.12);
+      tl.set("#ecl0", { opacity: 0 }, 39.3);
+      tl.set("#ecl1", { opacity: 1 }, 38.91);
+      tl.set("#ecl1", { opacity: 0 }, 38.97);
+      tl.set("#ecl1", { opacity: 1 }, 39.01);
+      tl.set("#ecl1", { opacity: 0 }, 39.09);
+      tl.set("#ecl1", { opacity: 1 }, 39.15);
+      tl.set("#ecl1", { opacity: 0 }, 39.33);
+      tl.set("#ecl2", { opacity: 1 }, 38.94);
+      tl.set("#ecl2", { opacity: 0 }, 39.0);
+      tl.set("#ecl2", { opacity: 1 }, 39.04);
+      tl.set("#ecl2", { opacity: 0 }, 39.12);
+      tl.set("#ecl2", { opacity: 1 }, 39.18);
+      tl.set("#ecl2", { opacity: 0 }, 39.36);
+      tl.set("#ecl3", { opacity: 1 }, 38.97);
+      tl.set("#ecl3", { opacity: 0 }, 39.03);
+      tl.set("#ecl3", { opacity: 1 }, 39.07);
+      tl.set("#ecl3", { opacity: 0 }, 39.15);
+      tl.set("#ecl3", { opacity: 1 }, 39.21);
+      tl.set("#ecl3", { opacity: 0 }, 39.39);
+      tl.set("#max-voile", { opacity: 1 }, 38.88); tl.to("#max-voile", { opacity: 0, duration: 0.25 }, 40.06);
+      tl.set("#jauge", { opacity: 0 }, 38.93); tl.set("#p1", { opacity: 0 }, 38.88);
+      tl.fromTo("#max-titre", { opacity: 0, scale: 3.0 }, { opacity: 1, scale: 1, duration: 0.16, ease: "power4.in", immediateRender: false }, 38.88);
+      tl.fromTo("#max-titre", { x: -22 }, { x: 22, duration: 0.035, repeat: 7, yoyo: true, ease: "none", immediateRender: false }, 39.04);
+      tl.set("#max-titre", { x: 0 }, 39.33);
+      tl.fromTo("#max-titre em", { scale: 1 }, { scale: 1.08, duration: 0.5, yoyo: true, repeat: 1, ease: "sine.inOut", immediateRender: false }, 39.38);
+      tl.fromTo("#max-badge", { opacity: 0, y: 50, scale: 0.6 }, { opacity: 1, y: 0, scale: 1, duration: 0.2, ease: "back.out(2)", immediateRender: false }, 39.18);
+      tl.fromTo("#fl169", { opacity: 0.9 }, { opacity: 0, duration: 0.18, immediateRender: false }, 38.88);
+      tl.to(["#max-titre", "#max-badge"], { opacity: 0, scale: 0.6, duration: 0.25, ease: "power2.in" }, 40.06);
       tl.to("#p1", { opacity: 0, scale: 0.8, duration: 0.15 }, 39.71);
-      tl.to("#p2", { opacity: 0, scale: 0.8, duration: 0.15 }, 39.71);
       tl.fromTo("#att", { opacity: 0, scale: 1.8 }, { opacity: 1, scale: 1, duration: 0.14, ease: "power4.in", immediateRender: false }, 43.44);
       tl.to("#att", { opacity: 0, scale: 0.8, duration: 0.15 }, 45.6);
       tl.fromTo("#cle", { opacity: 0, scale: 2.0 }, { opacity: 1, scale: 1, duration: 0.14, ease: "power4.in", immediateRender: false }, 47.68);
@@ -1216,7 +1292,7 @@
       tl.set("#mgB", { opacity: 0 }, 43.4);
       tl.set("#roul", { opacity: 1 }, 45.92);
       tl.fromTo("#roul-bande", { x: 0 }, { x: -3210, duration: 1.76, ease: "power4.out", immediateRender: false }, 45.92);
-      tl.fromTo("#fl168", { opacity: 0.45 }, { opacity: 0, duration: 0.18, immediateRender: false }, 47.68);
+      tl.fromTo("#fl179", { opacity: 0.45 }, { opacity: 0, duration: 0.18, immediateRender: false }, 47.68);
       tl.to("#roul", { opacity: 0, duration: 0.15 }, 48.27);
       tl.fromTo("#gm0", { opacity: 0, y: 60, scale: 0.4 }, { opacity: 1, y: 0, scale: 1, duration: 0.2, ease: "back.out(2)", immediateRender: false }, 48.32);
       tl.to("#gm0", { opacity: 0, scale: 0.8, duration: 0.15 }, 50.35);
@@ -1439,7 +1515,7 @@
       tl.to("#cine", { scale: 1, duration: 0.55, ease: "power2.inOut" }, 28.15);
       tl.to("#cine", { scale: 1.22, duration: 0.16, ease: "power4.out" }, 36.2);
       tl.to("#cine", { scale: 1, duration: 0.55, ease: "power2.inOut" }, 36.79);
-      tl.to("#cine", { scale: 1.25, duration: 0.16, ease: "power4.out" }, 38.84);
+      tl.to("#cine", { scale: 1.35, duration: 0.16, ease: "power4.out" }, 38.84);
       tl.to("#cine", { scale: 1, duration: 0.55, ease: "power2.inOut" }, 39.43);
       tl.to("#cine", { scale: 1.32, duration: 0.16, ease: "power4.out" }, 43.64);
       tl.to("#cine", { scale: 1, duration: 0.55, ease: "power2.inOut" }, 44.23);

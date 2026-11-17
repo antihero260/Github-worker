@@ -1,13 +1,13 @@
 [
  {
   "fichier": "tension-1.mp3",
-  "source": "c01.mp3",
+  "source": "b01.mp3",
   "debut": 0.0,
   "duree": 27.95
  },
  {
   "fichier": "tension-2.mp3",
-  "source": "victory-long.wav",
+  "source": "timeless-long.wav",
   "debut": 27.6,
   "duree": 43.226
  }
