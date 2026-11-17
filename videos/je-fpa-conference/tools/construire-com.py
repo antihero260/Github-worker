@@ -216,18 +216,18 @@ j(f'tl.fromTo("#logoyako", {{ opacity: 0, scale: 1.4 }}, {{ opacity: 1, scale: 1
 flash(Bv(16), 0.5, CHAUD)
 
 # ---- PANÉLISTES : les trois ensemble, entrées sur le 3-3-2 (k 20 → 28)
-PAN = [("coralie-guei.png", "Coralie GUEÏ", "Directrice des Ressources et de la Transformation"),
-       ("emmanuel-kone.png", "Emmanuel KONE", "Responsable des Ressources Humaines"),
-       ("oguyr-gagne.png", "O’guyr GAGNE", "Chargé de projet RH")]
+PAN = [("emmanuel-kone.png", "Emmanuel KONE", "Responsable des Ressources Humaines"),
+       ("coralie-guei.png", "Coralie GUEÏ", "Directrice des Ressources et de la Transformation"),
+       ("oguyr-gagne.png", "O’guyr GAGNE", "Chargé de projet RH")]  # la panéliste au milieu, cadre plus grand
 HTML.append('<div id="s5" class="fond-marque" style="opacity: 0; z-index: 6"></div>')
 j(f'tl.set("#s5", {{ opacity: 1 }}, {Bv(20)}); tl.set("#s5", {{ opacity: 0 }}, {Bv(28)});')
 flash(Bv(20), 0.5, CHAUD)
-texte("NOS PANÉLISTES · <b>YAKO AFRICA</b>", Bv(20), Bv(28), "t-etiq", "top: 8%;")
+texte("NOS PANÉLISTES · <b>YAKO AFRICA</b>", Bv(20), Bv(28), "t-etiq", "top: 5%;")
 HTML.append('<div id="trio" class="trio">' + "".join(
-    f'<div id="tr{kk}" class="tr-carte" style="opacity: 0"><img src="assets/img/{img}" alt="" /><b>{nom}</b><span>{role}</span></div>'
+    f'<div id="tr{kk}" class="tr-carte{' centre' if kk == 1 else ''}" style="opacity: 0"><img src="assets/img/{img}" alt="" /><b>{nom}</b><span>{role}</span></div>'
     for kk, (img, nom, role) in enumerate(PAN)) + '</div>')
 for kk in range(3):
-    j(f'tl.fromTo("#tr{kk}", {{ opacity: 0, y: 120, rotation: {(-4, 0, 4)[kk]} }}, {{ opacity: 1, y: 0, rotation: 0, duration: 0.4, ease: "back.out(1.7)", immediateRender: false }}, {Bv(20 + kk * 1.5)});')
+    j(f'tl.fromTo("#tr{kk}", {{ opacity: 0, y: 120, rotation: {(-4, 0, 4)[kk]} }}, {{ opacity: 1, y: 0, rotation: 0, duration: 0.4, ease: "back.out(1.7)", immediateRender: false }}, {Bv(20 + (1, 0, 2)[kk] * 1.5)});')  # le milieu entre en premier
     j(f'tl.to("#tr{kk}", {{ opacity: 0, y: -60, duration: 0.2 }}, {r(Bv(28) - 0.2)});')
 j(f'tl.fromTo("#trio", {{ scale: 1 }}, {{ scale: 1.05, duration: {r(Bv(28) - Bv(20))}, ease: "none", immediateRender: false }}, {Bv(20)});')
 
@@ -329,11 +329,14 @@ CSS = f"""
       .bande {{ position: absolute; left: 0; right: 0; height: 110px; background: #000; z-index: 35; }}
       .t-ouv.petit {{ font-size: {64 if not V else 64}px; letter-spacing: 10px; }}
       .partenaire em {{ display: block; margin-top: 26px; font-style: normal; font-size: {30 if not V else 34}px; font-weight: 700; color: {ENCRE}; }}
-      .trio {{ position: absolute; z-index: 26; display: flex; {"left: 120px; right: 120px; top: 250px; gap: 50px; justify-content: center;" if not V else "left: 80px; right: 80px; top: 330px; flex-direction: column; gap: 34px;"} }}
-      .tr-carte {{ flex: 1; text-align: center; {"" if not V else "display: grid; grid-template-columns: 300px 1fr; grid-template-rows: auto auto; column-gap: 34px; align-items: center; text-align: left;"} }}
-      .tr-carte img {{ width: {440 if not V else 300}px; height: {520 if not V else 360}px; object-fit: cover; border-radius: 26px; border: 7px solid #fff; box-shadow: 0 26px 80px rgba(0,0,0,0.6); {"" if not V else "grid-row: 1 / span 2;"} }}
-      .tr-carte b {{ display: block; margin-top: {22 if not V else 0}px; font-size: {52 if not V else 56}px; font-weight: 800; color: #fff; line-height: 1.05; {"" if not V else "align-self: end;"} }}
-      .tr-carte span {{ display: block; margin-top: 10px; font-size: {30 if not V else 34}px; font-weight: 600; color: #dfe6ff; line-height: 1.25; {"" if not V else "align-self: start;"} }}
+      .trio {{ position: absolute; z-index: 26; display: flex; left: 60px; right: 60px; top: 150px; gap: 40px; justify-content: center; align-items: center; }}
+      .tr-carte {{ flex: 1; text-align: center; }}
+      .tr-carte.centre {{ flex: 1.3; }}
+      .tr-carte img {{ width: 380px; height: 460px; object-fit: cover; border-radius: 26px; border: 7px solid #fff; box-shadow: 0 26px 80px rgba(0,0,0,0.6); }}
+      .tr-carte.centre img {{ width: 500px; height: 610px; border: 9px solid #fff; box-shadow: 0 0 0 6px {BLEU}, 0 30px 100px rgba(0,0,0,0.7); }}
+      .tr-carte b {{ display: block; margin-top: 22px; font-size: 64px; font-weight: 800; color: #fff; line-height: 1.02; text-shadow: 0 6px 30px rgba(0,0,0,0.6); }}
+      .tr-carte.centre b {{ font-size: 76px; }}
+      .tr-carte span {{ display: block; min-height: 2.5em; margin-top: 10px; font-size: 28px; font-weight: 600; color: #dfe6ff; line-height: 1.25; }}
       .t-etiq b {{ color: #fff; }}
       .motcle {{ position: absolute; left: 0; right: 0; {"top: 40%;" if not V else "top: 1260px;"} text-align: center; z-index: 27; padding: 0 60px;
         font-size: {120 if not V else 88}px; font-weight: 800; letter-spacing: 4px; color: #fff; line-height: 1.05;
