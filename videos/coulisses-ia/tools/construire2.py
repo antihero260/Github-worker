@@ -103,7 +103,7 @@ def zoom_main(t, hx, hy, s=1.38, d=0.85):
 MAINS = []
 
 
-def dans_la_main(oid, html, t, hx, hy, t_fin, zoom=True, monte=330):
+def dans_la_main(oid, html, t, hx, hy, t_fin, zoom=True, monte=200):
     """Un objet naît dans la main (petit, lumineux), monte au-dessus d'elle, la caméra zoome dessus."""
     MAINS.append(f'<div id="{oid}" class="main-obj" style="left: {round(hx)}px; top: {round(hy)}px; opacity: 0">{html}</div>')
     j(f'tl.fromTo("#{oid}", {{ opacity: 0, scale: 0.1, y: 0, rotation: -25 }}, {{ opacity: 1, scale: 1, y: -{monte}, rotation: 0, duration: 0.42, ease: "back.out(1.8)", immediateRender: false }}, {r(t)});')
@@ -295,7 +295,7 @@ def geste(t0):
 t, hx, hy = geste(8.93)
 dans_la_main("mo1", '<img src="assets/img/logo-claude.svg" alt="" class="m-logo" />', t, hx, hy, T(37) - 0.1)
 t, hx, hy = geste(16.40)
-dans_la_main("mo2", '<b class="m-txt">GAME<br>CHANGER</b>', t, hx, hy, T(54) - 0.1, monte=420)
+dans_la_main("mo2", '<b class="m-txt">GAME<br>CHANGER</b>', t, hx, hy, T(54) - 0.1, monte=230)
 t, hx, hy = geste(21.13)
 dans_la_main("mo3", '<b class="m-txt q">?</b>', t, hx, hy, T(69), zoom=False)
 t, hx, hy = geste(24.40)
@@ -303,9 +303,9 @@ dans_la_main("mo4", '<b class="m-code">&lt;/&gt;</b>', t, hx, hy, T(86) - 0.1)
 t, hx, hy = geste(30.47)
 dans_la_main("mo5", '<img src="assets/img/logo-heygen.png" alt="" class="m-logo rond" />', t, hx, hy, T(96) - 0.1)
 t, hx, hy = geste(32.67)
-dans_la_main("mo6", '<b class="m-chip">IMAGES</b>', t, hx, hy, T(105) - 0.1, zoom=False, monte=260)
+dans_la_main("mo6", '<b class="m-chip">IMAGES</b>', t, hx, hy, T(105) - 0.1, zoom=False, monte=190)
 t, hx, hy = geste(33.33)
-dans_la_main("mo7", '<b class="m-chip">CODE</b>', t, hx, hy, T(105) - 0.1, zoom=False, monte=200)
+dans_la_main("mo7", '<b class="m-chip">CODE</b>', t, hx, hy, T(105) - 0.1, zoom=False, monte=120)
 t, hx, hy = geste(50.87)
 dans_la_main("mo8", '<b class="m-chip or">FABLE 5.2</b>', t, hx, hy, T(174) - 0.1)
 t, hx, hy = geste(59.07)
@@ -313,7 +313,7 @@ dans_la_main("mo9", '<svg viewBox="0 0 200 200" width="230" height="230"><path d
              '<path d="M30 60 L100 100 L100 180 L30 140 Z" fill="#38BDF8" stroke="#0B1220" stroke-width="6" /><path d="M170 60 L100 100 L100 180 L170 140 Z" fill="#0284C7" stroke="#0B1220" stroke-width="6" /></svg>',
              t, hx, hy, T(189) - 0.05)
 t, hx, hy = geste(63.27)
-dans_la_main("mo10", '<b class="m-abo">S’ABONNER 🔔</b>', t, hx, hy, T(209) - 0.1, monte=380)
+dans_la_main("mo10", '<b class="m-abo">S’ABONNER 🔔</b>', t, hx, hy, T(209) - 0.1, monte=210)
 
 
 # ================================================================ TENSION (montées sonores et battements)
