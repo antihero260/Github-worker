@@ -111,7 +111,8 @@ MAINS = []
 
 def dans_la_main(oid, html, t, hx, hy, t_fin, zoom=True, monte=200):
     """Un objet naît dans la main (petit, lumineux), monte au-dessus d'elle, la caméra zoome dessus."""
-    hx, hy = min(max(hx, 220), 860), max(hy, 1700)
+    hx, hy = min(max(hx, 260), 760), max(hy, 1700)
+    monte = max(40, monte - 150)  # les objets restent sous les sous-titres (descendus à 1420 px)
     hx, hy = -60 + hx * 1200 / 1080, -106 + hy * 1200 / 1080  # repère de la vidéo studio agrandie
     MAINS.append(f'<div id="{oid}" class="main-obj" style="left: {round(hx)}px; top: {round(hy)}px; opacity: 0">{html}</div>')
     j(f'tl.fromTo("#{oid}", {{ opacity: 0, scale: 0.1, y: 0, rotation: -25 }}, {{ opacity: 1, scale: 1, y: -{monte}, rotation: 0, duration: 0.42, ease: "back.out(1.8)", immediateRender: false }}, {r(t)});')
@@ -532,7 +533,7 @@ dans_la_main("mo4", '<b class="m-code">&lt;/&gt;</b>', t, hx, hy, T(78) - 0.1, z
 t, hx, hy = geste(28.27 + D)
 dans_la_main("mo5", '<img src="assets/img/logo-heygen.png" alt="" class="m-logo rond" />', t, hx, hy, T(94) - 0.1)
 t, hx, hy = geste(63.4 + D)
-dans_la_main("mo10", '<b class="m-abo">S’ABONNER 🔔</b>', t, hx, hy, T(204) - 0.1, monte=210)
+dans_la_main("mo10", '<b class="m-abo">S’ABONNER 🔔</b>', t, hx, hy, T(204) - 0.1, monte=300)
 
 
 # ================================================================ ZOOMS DE CINÉMA (coup de zoom sur les mots forts, souffle + boom)
@@ -586,7 +587,7 @@ def sous_titres():
 <template>
   <style>
     #root {{ position: absolute; inset: 0; pointer-events: none; }}
-    .st-groupe {{ position: absolute; left: 40px; width: 1000px; top: 1240px; text-align: center; }}
+    .st-groupe {{ position: absolute; left: 40px; width: 1000px; top: 1420px; text-align: center; }}
     .st-bandeau {{ display: inline-block; background: #FFFFFF; color: #0B1220; font-family: "Anton", sans-serif; font-size: 84px;
       line-height: 1; padding: 14px 24px 12px; text-transform: uppercase; box-shadow: 0 18px 50px rgba(0, 0, 0, 0.55); transform: rotate(-1.5deg); }}
   </style>
@@ -659,7 +660,7 @@ CSS = f"""
       .mg-carte video.mg-zoom {{ transform: scale(1.35); transform-origin: 50% -86px; }}
       .mg-carte video.mg-flou {{ filter: blur(40px) brightness(0.55); transform: scale(1.2); }}
       .mg-carte video.mg-large {{ top: 50%; height: 608px; margin-top: -304px; object-fit: cover; }}
-      .mg-etiq {{ position: absolute; left: 0; right: 0; top: 1440px; text-align: center; font-family: "Anton", sans-serif; font-weight: 400; font-size: 150px; line-height: 1; color: #fff;
+      .mg-etiq {{ position: absolute; left: 0; right: 0; top: 1580px; text-align: center; font-family: "Anton", sans-serif; font-weight: 400; font-size: 150px; line-height: 1; color: #fff;
         -webkit-text-stroke: 14px {NUIT}; paint-order: stroke fill; }}
       .mg-eclat {{ position: absolute; left: 0; top: 0; width: 320px; height: 320px; z-index: 34; border-radius: 50%;
         background: radial-gradient(circle, rgba(255,255,255,0.95) 0%, rgba(125,211,252,0.6) 35%, rgba(56,189,248,0) 70%); }}
