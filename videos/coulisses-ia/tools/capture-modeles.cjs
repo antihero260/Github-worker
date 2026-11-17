@@ -4,7 +4,7 @@ const {chromium} = require('playwright');
 const fs = require('fs'), path = require('path'), {execFileSync} = require('child_process');
 const ICI = path.resolve(__dirname, '..');
 const PLAN = [
-  {nom: 'chatgpt', url: 'https://openai.com/chatgpt/overview/'},
+  // ChatGPT : page protégée par Cloudflare en navigateur automatisé ; vignette remplacée par une interface de discussion simple (construire3.py)
   {nom: 'gemini', url: 'https://gemini.google.com/'},
   {nom: 'grok', url: 'https://grok.com/'},
 ];
