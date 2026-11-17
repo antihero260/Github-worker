@@ -11,19 +11,19 @@ ICI = Path(__file__).resolve().parent.parent
 PR, TR, OUT = ICI / "assets/prises", ICI / "assets/transcripts", ICI / "assets/montage"
 OUT.mkdir(parents=True, exist_ok=True)
 # (prise, temps du 1er mot, temps du dernier mot, recadrage : zoom, centre y du visage dans l'image d'origine)
-EDL = [
-    ("20261116_162912", 43.84, 45.84, "accroche"),
-    ("20261116_161444", 9.44, 13.52, "on me demande"),
+EDL = [  # choix faits avec tools/comparer_prises.py (fidélité au script, fluidité, son, image) ; voir assets/montage/comparaison.json
+    ("20261116_161444", 9.44, 13.52, "certains d'entre vous"),
     ("20261116_161444", 14.40, 24.24, "Claude et les autres"),
     ("20261116_161514", 28.24, 31.68, "game changer HyperFrames"),
     ("20261116_162024", 27.28, 35.60, "pourquoi : le code"),
-    ("20261116_161514", 79.19, 81.35, "HyperFrames intervient"),
-    ("20261116_162024", 68.09, 72.57, "références et code"),
+    ("20261116_162024", 53.36, 56.16, "HyperFrames intervient"),
+    ("20261116_161514", 94.11, 97.79, "références visuelles et code"),
+    ("20261116_162024", 73.29, 74.09, "plusieurs possibilités"),
     ("20261116_161514", 118.02, 123.06, "abonnements"),
-    ("20261116_161514", 150.18, 151.94, "attention"),
+    ("20261116_161514", 140.66, 147.14, "chatbot + attention"),
     ("20261116_162024", 115.93, 120.09, "tout se joue sur le modèle"),
     ("20261116_161514", 172.41, 180.41, "Opus 5.5 et Fable 5.2"),
-    ("20261116_162912", 145.10, 152.38, "3D, 2D, isométrique"),
+    ("20261116_161514", 193.77, 198.33, "3D, 2D, isométrique"),
     ("20261116_161514", 208.65, 216.01, "abonne-toi"),
 ]
 FIN_FORCEE = {("20261116_162024", 27.28): 35.80}  # couper avant « comme Gemini Omni »
@@ -82,7 +82,7 @@ for k, (p, a, b, note) in enumerate(EDL):
         du = round(u1 - u0, 3)
         subprocess.run(["ffmpeg", "-nostdin", "-v", "error", "-y", "-ss", f"{debut + u0:.3f}", "-i", str(PR / f"{p}.mp4"), "-t", f"{du:.3f}",
                         "-vf", vf, "-af", f"afade=t=in:d=0.015,afade=t=out:st={max(0, du - 0.03):.3f}:d=0.03,aresample=48000",
-                        "-c:v", "libx264", "-crf", "18", "-preset", "veryfast", "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "192k", str(f)], check=True)
+                        "-c:v", "libx264", "-crf", "12", "-preset", "medium", "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "192k", str(f)], check=True)
         FICHIERS.append(f.name)
         COUPES.append({"t": round(t, 3), "phrase": k})
         t += du

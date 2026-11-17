@@ -1,1328 +1,1112 @@
 [
 {
-"i": 0,
-"text": "COMMENT",
-"start": 0,
+"text": "Certains",
+"start": 0.24,
 "end": 0.48
 },
 {
-"i": 1,
-"text": "JE",
-"start": 0.56,
-"end": 0.72
+"text": "d'entre",
+"start": 0.48,
+"end": 1.12
 },
 {
-"i": 2,
-"text": "CRÉE",
-"start": 0.72,
-"end": 0.96
+"text": "vous",
+"start": 1.12,
+"end": 1.12
 },
 {
-"i": 3,
-"text": "MES",
+"text": "m'ont",
 "start": 1.12,
 "end": 1.28
 },
 {
-"i": 4,
-"text": "VIDÉOS",
+"text": "contacté",
 "start": 1.28,
-"end": 1.6
-},
-{
-"i": 5,
-"text": "AVEC",
-"start": 1.6,
 "end": 1.76
 },
 {
-"i": 6,
-"text": "L’IA ?",
-"start": 1.84,
-"end": 2.24
+"text": "pour",
+"start": 1.76,
+"end": 1.84
 },
 {
-"i": 7,
-"text": "ALORS,",
-"start": 2.4,
-"end": 2.56
+"text": "me",
+"start": 2,
+"end": 2.16
 },
 {
-"i": 8,
-"text": "CERTAINS",
-"start": 2.64,
+"text": "demander",
+"start": 2.16,
+"end": 2.4
+},
+{
+"text": "comment",
+"start": 2.56,
+"end": 2.72
+},
+{
+"text": "je",
+"start": 2.88,
 "end": 2.96
 },
 {
-"i": 9,
-"text": "D’ENTRE",
+"text": "faisais",
 "start": 3.04,
-"end": 3.2
-},
-{
-"i": 10,
-"text": "VOUS",
-"start": 3.2,
 "end": 3.36
 },
 {
-"i": 11,
-"text": "M’ONT",
+"text": "mes",
+"start": 3.36,
+"end": 3.52
+},
+{
+"text": "vidéos",
 "start": 3.52,
-"end": 3.76
+"end": 3.84
 },
 {
-"i": 12,
-"text": "CONTACTÉ",
-"start": 3.76,
-"end": 4.16
+"text": "avec",
+"start": 3.84,
+"end": 3.92
 },
 {
-"i": 13,
-"text": "POUR",
-"start": 4.24,
-"end": 4.48
+"text": "l'IA.",
+"start": 4,
+"end": 4.72
 },
 {
-"i": 14,
-"text": "ME",
-"start": 4.48,
-"end": 4.56
-},
-{
-"i": 15,
-"text": "DEMANDER",
-"start": 4.56,
+"text": "Alors",
+"start": 4.72,
 "end": 4.88
 },
 {
-"i": 16,
-"text": "COMMENT",
-"start": 5.04,
+"text": "généralement",
+"start": 4.96,
 "end": 5.28
 },
 {
-"i": 17,
-"text": "JE",
-"start": 5.28,
-"end": 5.44
-},
-{
-"i": 18,
-"text": "FAISAIS",
+"text": "j'utilise",
 "start": 5.44,
 "end": 5.84
 },
 {
-"i": 19,
-"text": "MES",
-"start": 5.84,
-"end": 6
+"text": "Claude,",
+"start": 5.92,
+"end": 6.4
 },
 {
-"i": 20,
-"text": "VIDÉOS",
-"start": 6,
-"end": 6.32
+"text": "notamment",
+"start": 6.4,
+"end": 6.8
 },
 {
-"i": 21,
-"text": "AVEC",
-"start": 6.32,
-"end": 6.48
+"text": "Opus",
+"start": 6.8,
+"end": 7.12
 },
 {
-"i": 22,
-"text": "L’IA.",
-"start": 6.48,
-"end": 7.04
-},
-{
-"i": 23,
-"text": "ALORS",
-"start": 7.12,
-"end": 7.28
-},
-{
-"i": 24,
-"text": "GÉNÉRALEMENT",
+"text": "5.5,",
 "start": 7.36,
-"end": 7.84
+"end": 8.16
 },
 {
-"i": 25,
-"text": "J’UTILISE",
-"start": 7.92,
+"text": "mais",
+"start": 8.16,
+"end": 8.32
+},
+{
+"text": "il",
+"start": 8.32,
 "end": 8.4
 },
 {
-"i": 26,
-"text": "CLAUDE,",
+"text": "n'y",
 "start": 8.4,
-"end": 8.88
+"end": 8.56
 },
 {
-"i": 27,
-"text": "NOTAMMENT",
-"start": 8.88,
-"end": 9.12
+"text": "a",
+"start": 8.56,
+"end": 8.64
 },
 {
-"i": 28,
-"text": "OPUS",
-"start": 9.28,
-"end": 9.52
+"text": "pas",
+"start": 8.64,
+"end": 8.72
 },
 {
-"i": 29,
-"text": "5.5,",
-"start": 9.84,
-"end": 10.64
+"text": "que",
+"start": 8.8,
+"end": 8.96
 },
 {
-"i": 30,
-"text": "MAIS",
-"start": 10.64,
-"end": 10.8
+"text": "Claude.",
+"start": 8.96,
+"end": 9.68
 },
 {
-"i": 31,
-"text": "IL",
-"start": 10.8,
-"end": 10.88
+"text": "ChatGPT,",
+"start": 9.68,
+"end": 10.4
 },
 {
-"i": 32,
-"text": "N’Y",
-"start": 10.88,
-"end": 11.04
-},
-{
-"i": 33,
-"text": "A",
-"start": 11.04,
+"text": "Grok,",
+"start": 10.4,
 "end": 11.12
 },
 {
-"i": 34,
-"text": "PAS",
+"text": "Gemini",
 "start": 11.12,
-"end": 11.2
+"end": 11.68
 },
 {
-"i": 35,
-"text": "QUE",
-"start": 11.2,
-"end": 11.36
+"text": "et",
+"start": 11.84,
+"end": 12
 },
 {
-"i": 36,
-"text": "CLAUDE.",
-"start": 11.36,
-"end": 11.92
+"text": "bien",
+"start": 12,
+"end": 12.08
 },
 {
-"i": 37,
-"text": "CHATGPT,",
-"start": 11.92,
-"end": 12.76
+"text": "d'autres",
+"start": 12.16,
+"end": 12.52
 },
 {
-"i": 38,
-"text": "GROK,",
-"start": 12.76,
+"text": "modèles",
+"start": 12.52,
+"end": 12.88
+},
+{
+"text": "aussi",
+"start": 12.88,
+"end": 12.96
+},
+{
+"text": "peuvent",
+"start": 13.12,
+"end": 13.2
+},
+{
+"text": "le",
+"start": 13.44,
 "end": 13.6
 },
 {
-"i": 39,
-"text": "GEMINI",
+"text": "faire.",
 "start": 13.6,
-"end": 14.08
+"end": 13.92
 },
 {
-"i": 40,
-"text": "ET",
-"start": 14.32,
+"text": "Le",
+"start": 14.08,
+"end": 14.24
+},
+{
+"text": "véritable",
+"start": 14.24,
 "end": 14.4
 },
 {
-"i": 41,
-"text": "BIEN",
-"start": 14.4,
-"end": 14.56
+"text": "game",
+"start": 14.8,
+"end": 15.12
 },
 {
-"i": 42,
-"text": "D’AUTRES",
-"start": 14.56,
-"end": 14.8
+"text": "changer,",
+"start": 15.12,
+"end": 15.52
 },
 {
-"i": 43,
-"text": "MODÈLES",
-"start": 14.88,
-"end": 15.28
-},
-{
-"i": 44,
-"text": "AUSSI",
-"start": 15.28,
-"end": 15.6
-},
-{
-"i": 45,
-"text": "PEUVENT",
-"start": 15.6,
+"text": "c'est",
+"start": 15.76,
 "end": 15.84
 },
 {
-"i": 46,
-"text": "LE",
-"start": 15.84,
-"end": 16
-},
-{
-"i": 47,
-"text": "FAIRE.",
+"text": "une",
 "start": 16,
-"end": 16.56
+"end": 16.16
 },
 {
-"i": 48,
-"text": "LE",
-"start": 16.56,
-"end": 16.72
+"text": "skill",
+"start": 16.16,
+"end": 16.96
 },
 {
-"i": 49,
-"text": "VÉRITABLE",
-"start": 16.72,
-"end": 17.12
+"text": "appelée",
+"start": 16.96,
+"end": 17.76
 },
 {
-"i": 50,
-"text": "GAME",
-"start": 17.28,
-"end": 17.6
+"text": "HyperFrames.",
+"start": 17.76,
+"end": 18.56
 },
 {
-"i": 51,
-"text": "CHANGER,",
-"start": 17.6,
-"end": 18.16
-},
-{
-"i": 52,
-"text": "C’EST",
-"start": 18.16,
-"end": 18.4
-},
-{
-"i": 53,
-"text": "UNE",
-"start": 18.4,
-"end": 18.48
-},
-{
-"i": 54,
-"text": "SKILL",
+"text": "Alors",
 "start": 18.56,
-"end": 18.88
+"end": 18.8
 },
 {
-"i": 55,
-"text": "APPELÉE",
-"start": 19.2,
-"end": 19.6
+"text": "pourquoi ?",
+"start": 18.88,
+"end": 19.44
 },
 {
-"i": 56,
-"text": "HYPERFRAMES.",
-"start": 19.6,
-"end": 20.96
+"text": "Tous",
+"start": 19.44,
+"end": 19.68
 },
 {
-"i": 57,
-"text": "ALORS",
-"start": 20.96,
+"text": "les",
+"start": 19.68,
+"end": 19.92
+},
+{
+"text": "modèles",
+"start": 19.92,
+"end": 20.16
+},
+{
+"text": "que",
+"start": 20.16,
+"end": 20.32
+},
+{
+"text": "je",
+"start": 20.32,
+"end": 20.4
+},
+{
+"text": "viens",
+"start": 20.48,
+"end": 20.64
+},
+{
+"text": "de",
+"start": 20.64,
+"end": 20.72
+},
+{
+"text": "citer",
+"start": 20.8,
+"end": 21.04
+},
+{
+"text": "jusqu'à",
+"start": 21.12,
 "end": 21.36
 },
 {
-"i": 58,
-"text": "POURQUOI ?",
-"start": 21.36,
-"end": 21.92
+"text": "présent",
+"start": 21.44,
+"end": 21.76
 },
 {
-"i": 59,
-"text": "TOUS",
-"start": 21.92,
-"end": 22.16
+"text": "sont",
+"start": 22,
+"end": 22.24
 },
 {
-"i": 60,
-"text": "LES",
-"start": 22.16,
-"end": 22.32
+"text": "très",
+"start": 22.24,
+"end": 22.48
 },
 {
-"i": 61,
-"text": "MODÈLES",
-"start": 22.32,
+"text": "forts",
+"start": 22.48,
 "end": 22.64
 },
 {
-"i": 62,
-"text": "QUE",
-"start": 22.64,
-"end": 22.8
-},
-{
-"i": 63,
-"text": "JE",
-"start": 22.8,
+"text": "pour",
+"start": 22.88,
 "end": 22.96
 },
 {
-"i": 64,
-"text": "VIENS",
-"start": 22.96,
-"end": 23.12
-},
-{
-"i": 65,
-"text": "DE",
+"text": "écrire",
 "start": 23.12,
-"end": 23.28
+"end": 23.44
 },
 {
-"i": 66,
-"text": "CITER",
-"start": 23.28,
-"end": 23.6
+"text": "du",
+"start": 23.52,
+"end": 23.68
 },
 {
-"i": 67,
-"text": "JUSQU’À",
-"start": 23.6,
-"end": 23.92
+"text": "code,",
+"start": 23.68,
+"end": 24.16
 },
 {
-"i": 68,
-"text": "PRÉSENT",
-"start": 23.92,
-"end": 24.24
+"text": "mais",
+"start": 24.16,
+"end": 24.4
 },
 {
-"i": 69,
-"text": "SONT",
-"start": 24.48,
+"text": "pas",
+"start": 24.4,
+"end": 24.56
+},
+{
+"text": "pour",
+"start": 24.56,
 "end": 24.72
 },
 {
-"i": 70,
-"text": "TRÈS",
-"start": 24.72,
-"end": 24.96
+"text": "générer",
+"start": 24.8,
+"end": 25.12
 },
 {
-"i": 71,
-"text": "FORTS",
-"start": 24.96,
-"end": 25.28
+"text": "des",
+"start": 25.12,
+"end": 25.2
 },
 {
-"i": 72,
-"text": "POUR",
+"text": "vidéos",
 "start": 25.28,
-"end": 25.52
+"end": 25.44
 },
 {
-"i": 73,
-"text": "ÉCRIRE",
-"start": 25.52,
-"end": 26
+"text": "en",
+"start": 25.6,
+"end": 25.68
 },
 {
-"i": 74,
-"text": "DU",
-"start": 26,
-"end": 26.16
+"text": "tant",
+"start": 25.68,
+"end": 25.76
 },
 {
-"i": 75,
-"text": "CODE,",
-"start": 26.16,
-"end": 26.64
+"text": "que",
+"start": 25.76,
+"end": 25.84
 },
 {
-"i": 76,
-"text": "MAIS",
-"start": 26.64,
-"end": 26.88
+"text": "telles.",
+"start": 26.08,
+"end": 26.4
 },
 {
-"i": 77,
-"text": "PAS",
-"start": 26.88,
-"end": 27.04
+"text": "Et",
+"start": 26.4,
+"end": 26.48
 },
 {
-"i": 78,
-"text": "POUR",
-"start": 27.04,
-"end": 27.2
+"text": "c'est",
+"start": 26.56,
+"end": 26.72
 },
 {
-"i": 79,
-"text": "GÉNÉRER",
+"text": "exactement",
+"start": 26.72,
+"end": 27.12
+},
+{
+"text": "là",
 "start": 27.2,
-"end": 27.6
+"end": 27.28
 },
 {
-"i": 80,
-"text": "DES",
+"text": "que",
+"start": 27.36,
+"end": 27.44
+},
+{
+"text": "HyperFrames",
 "start": 27.6,
-"end": 27.76
+"end": 28.26
 },
 {
-"i": 81,
-"text": "VIDÉOS",
-"start": 27.76,
-"end": 28.08
+"text": "intervient.",
+"start": 28.26,
+"end": 28.92
 },
 {
-"i": 82,
-"text": "EN",
-"start": 28.08,
-"end": 28.16
+"text": "Il",
+"start": 28.92,
+"end": 29.58
 },
 {
-"i": 83,
-"text": "TANT",
-"start": 28.16,
-"end": 28.32
+"text": "permet",
+"start": 29.58,
+"end": 30.24
 },
 {
-"i": 84,
-"text": "QUE",
-"start": 28.32,
-"end": 28.4
+"text": "de",
+"start": 30.32,
+"end": 30.48
 },
 {
-"i": 85,
-"text": "TELLES.",
-"start": 28.56,
-"end": 28.88
+"text": "créer",
+"start": 30.48,
+"end": 30.8
 },
 {
-"i": 86,
-"text": "ET",
-"start": 28.88,
-"end": 29.04
-},
-{
-"i": 87,
-"text": "C’EST",
-"start": 29.04,
-"end": 29.2
-},
-{
-"i": 88,
-"text": "EXACTEMENT",
-"start": 29.2,
-"end": 29.52
-},
-{
-"i": 89,
-"text": "LÀ",
-"start": 29.52,
-"end": 29.6
-},
-{
-"i": 90,
-"text": "QUE",
-"start": 29.68,
-"end": 29.84
-},
-{
-"i": 91,
-"text": "HYPERFRAMES",
-"start": 29.84,
+"text": "des",
+"start": 30.8,
 "end": 30.88
 },
 {
-"i": 92,
-"text": "INTERVIENT.",
-"start": 30.88,
+"text": "vidéos",
+"start": 30.96,
+"end": 31.12
+},
+{
+"text": "à",
+"start": 31.28,
 "end": 31.52
 },
 {
-"i": 93,
-"text": "IL",
+"text": "partir",
 "start": 31.52,
-"end": 31.8
+"end": 31.76
 },
 {
-"i": 94,
-"text": "UTILISE",
-"start": 31.8,
-"end": 32.08
+"text": "de",
+"start": 31.76,
+"end": 31.92
 },
 {
-"i": 95,
-"text": "DES",
-"start": 32.08,
-"end": 32.24
+"text": "références",
+"start": 31.92,
+"end": 32.48
 },
 {
-"i": 96,
-"text": "RÉFÉRENCES",
-"start": 32.24,
-"end": 32.96
+"text": "visuelles",
+"start": 32.48,
+"end": 32.88
 },
 {
-"i": 97,
-"text": "VISUELLES",
-"start": 32.96,
-"end": 33.44
+"text": "et",
+"start": 32.88,
+"end": 33.04
 },
 {
-"i": 98,
-"text": "ET",
-"start": 33.44,
-"end": 33.76
+"text": "de",
+"start": 33.04,
+"end": 33.2
 },
 {
-"i": 99,
-"text": "DU",
+"text": "code.",
+"start": 33.2,
+"end": 33.52
+},
+{
+"text": "Tu",
+"start": 33.6,
+"end": 33.68
+},
+{
+"text": "as",
 "start": 33.76,
-"end": 34.08
+"end": 33.84
 },
 {
-"i": 100,
-"text": "CODE",
-"start": 34.08,
-"end": 34.64
+"text": "plusieurs",
+"start": 33.92,
+"end": 34.24
 },
 {
-"i": 101,
-"text": "POUR",
-"start": 34.72,
-"end": 34.96
+"text": "possibilités.",
+"start": 34.32,
+"end": 34.656
 },
 {
-"i": 102,
-"text": "CRÉER",
-"start": 34.96,
-"end": 35.44
+"text": "Tu",
+"start": 34.656,
+"end": 34.992
 },
 {
-"i": 103,
-"text": "LES",
-"start": 35.44,
-"end": 35.68
+"text": "peux",
+"start": 34.992,
+"end": 35.328
 },
 {
-"i": 104,
-"text": "VIDÉOS.",
-"start": 35.68,
-"end": 36.4
+"text": "utiliser",
+"start": 35.328,
+"end": 35.664
 },
 {
-"i": 105,
-"text": "TU",
-"start": 36.4,
-"end": 36.56
+"text": "Claude",
+"start": 35.664,
+"end": 36.0
 },
 {
-"i": 106,
-"text": "PEUX",
-"start": 36.56,
-"end": 36.72
+"text": "avec",
+"start": 36.08,
+"end": 36.16
 },
 {
-"i": 107,
-"text": "UTILISER",
+"text": "l'abonnement",
+"start": 36.24,
+"end": 36.8
+},
+{
+"text": "à",
 "start": 36.8,
 "end": 36.96
 },
 {
-"i": 108,
-"text": "CLAUDE",
-"start": 37.12,
-"end": 37.52
+"text": "20",
+"start": 36.96,
+"end": 37.2
 },
 {
-"i": 109,
-"text": "AVEC",
+"text": "dollars",
+"start": 37.2,
+"end": 37.36
+},
+{
+"text": "pour",
 "start": 37.52,
-"end": 37.68
+"end": 37.6
 },
 {
-"i": 110,
-"text": "L’ABONNEMENT",
-"start": 37.68,
+"text": "commencer.",
+"start": 37.6,
+"end": 38
+},
+{
+"text": "Ou",
+"start": 38.0,
+"end": 38.08
+},
+{
+"text": "si",
+"start": 38.16,
 "end": 38.24
 },
 {
-"i": 111,
-"text": "À",
-"start": 38.24,
+"text": "tu",
+"start": 38.32,
 "end": 38.4
 },
 {
-"i": 112,
-"text": "20",
+"text": "veux",
 "start": 38.4,
-"end": 38.72
+"end": 38.48
 },
 {
-"i": 113,
-"text": "DOLLARS",
-"start": 38.72,
-"end": 38.96
+"text": "aller",
+"start": 38.48,
+"end": 38.8
 },
 {
-"i": 114,
-"text": "POUR",
-"start": 38.96,
-"end": 39.04
+"text": "plus",
+"start": 38.8,
+"end": 38.88
 },
 {
-"i": 115,
-"text": "COMMENCER.",
-"start": 39.04,
+"text": "loin,",
+"start": 38.88,
+"end": 39.12
+},
+{
+"text": "tu",
+"start": 39.12,
+"end": 39.2
+},
+{
+"text": "peux",
+"start": 39.2,
+"end": 39.28
+},
+{
+"text": "prendre",
+"start": 39.36,
 "end": 39.44
 },
 {
-"i": 116,
-"text": "OU",
-"start": 39.44,
-"end": 39.6
-},
-{
-"i": 117,
-"text": "SI",
-"start": 39.6,
+"text": "Claude",
+"start": 39.52,
 "end": 39.76
 },
 {
-"i": 118,
-"text": "TU",
-"start": 39.76,
-"end": 39.84
-},
-{
-"i": 119,
-"text": "VEUX",
+"text": "Max.",
 "start": 39.84,
-"end": 40.0
+"end": 40.48
 },
 {
-"i": 120,
-"text": "ALLER",
-"start": 40,
-"end": 40.08
-},
-{
-"i": 121,
-"text": "PLUS",
-"start": 40.24,
-"end": 40.32
-},
-{
-"i": 122,
-"text": "LOIN,",
-"start": 40.32,
+"text": "Tu",
+"start": 40.48,
 "end": 40.56
 },
 {
-"i": 123,
-"text": "TU",
-"start": 40.56,
-"end": 40.64
-},
-{
-"i": 124,
-"text": "PEUX",
+"text": "peux",
 "start": 40.64,
 "end": 40.8
 },
 {
-"i": 125,
-"text": "PRENDRE",
-"start": 40.8,
+"text": "également",
+"start": 40.88,
 "end": 40.96
 },
 {
-"i": 126,
-"text": "CLAUDE",
-"start": 40.96,
-"end": 41.28
+"text": "installer",
+"start": 41.12,
+"end": 41.6
 },
 {
-"i": 127,
-"text": "MAX.",
-"start": 41.28,
-"end": 41.68
+"text": "la",
+"start": 41.6,
+"end": 41.76
 },
 {
-"i": 128,
-"text": "MAIS",
-"start": 41.84,
-"end": 42
+"text": "skill",
+"start": 41.76,
+"end": 42.027
 },
 {
-"i": 129,
-"text": "ATTENTION,",
-"start": 42,
-"end": 42.32
+"text": "dans",
+"start": 42.027,
+"end": 42.293
 },
 {
-"i": 130,
-"text": "L’OUTIL",
-"start": 42.4,
-"end": 42.72
+"text": "un",
+"start": 42.293,
+"end": 42.56
 },
 {
-"i": 131,
-"text": "NE",
-"start": 42.96,
-"end": 43.04
-},
-{
-"i": 132,
-"text": "FAIT",
-"start": 43.04,
+"text": "environnement",
+"start": 42.72,
 "end": 43.12
 },
 {
-"i": 133,
-"text": "PAS",
-"start": 43.2,
-"end": 43.36
+"text": "de",
+"start": 43.12,
+"end": 43.28
 },
 {
-"i": 134,
-"text": "TOUT.",
-"start": 43.36,
-"end": 43.68
+"text": "chatbot.",
+"start": 43.28,
+"end": 44
 },
 {
-"i": 135,
-"text": "MAIS",
-"start": 43.68,
-"end": 43.92
+"text": "Mais",
+"start": 44.08,
+"end": 44.32
 },
 {
-"i": 136,
-"text": "TOUT",
-"start": 43.92,
-"end": 44.08
+"text": "attention,",
+"start": 44.32,
+"end": 44.88
 },
 {
-"i": 137,
-"text": "VA",
-"start": 44.24,
-"end": 44.4
-},
-{
-"i": 138,
-"text": "SE",
-"start": 44.4,
-"end": 44.64
-},
-{
-"i": 139,
-"text": "JOUER",
-"start": 44.64,
-"end": 44.96
-},
-{
-"i": 140,
-"text": "RÉELLEMENT",
-"start": 44.96,
+"text": "l'outil",
+"start": 44.88,
 "end": 45.36
 },
 {
-"i": 141,
-"text": "SUR",
-"start": 45.36,
-"end": 45.52
-},
-{
-"i": 142,
-"text": "LE",
+"text": "ne",
 "start": 45.52,
-"end": 45.68
+"end": 45.6
 },
 {
-"i": 143,
-"text": "MODÈLE",
+"text": "fait",
 "start": 45.68,
+"end": 45.76
+},
+{
+"text": "pas",
+"start": 45.84,
 "end": 46
 },
 {
-"i": 144,
-"text": "QUE",
+"text": "tout.",
 "start": 46,
-"end": 46.16
-},
-{
-"i": 145,
-"text": "TU",
-"start": 46.16,
 "end": 46.32
 },
 {
-"i": 146,
-"text": "VAS",
+"text": "Mais",
 "start": 46.32,
-"end": 46.48
+"end": 46.4
 },
 {
-"i": 147,
-"text": "UTILISER",
-"start": 46.48,
-"end": 46.8
+"text": "tout",
+"start": 46.56,
+"end": 46.72
 },
 {
-"i": 148,
-"text": "POUR",
+"text": "va",
 "start": 46.88,
-"end": 47.04
+"end": 47.12
 },
 {
-"i": 149,
-"text": "GÉNÉRER",
-"start": 47.04,
-"end": 47.36
+"text": "se",
+"start": 47.12,
+"end": 47.28
 },
 {
-"i": 150,
-"text": "TA",
-"start": 47.36,
-"end": 47.72
+"text": "jouer",
+"start": 47.28,
+"end": 47.68
 },
 {
-"i": 151,
-"text": "VIDÉO.",
-"start": 47.72,
-"end": 48.08
+"text": "réellement",
+"start": 47.68,
+"end": 47.92
 },
 {
-"i": 152,
-"text": "OPUS",
+"text": "sur",
+"start": 48.08,
+"end": 48.16
+},
+{
+"text": "le",
+"start": 48.24,
+"end": 48.4
+},
+{
+"text": "modèle",
 "start": 48.4,
-"end": 48.64
+"end": 48.72
 },
 {
-"i": 153,
-"text": "5.5",
+"text": "que",
+"start": 48.72,
+"end": 48.88
+},
+{
+"text": "tu",
 "start": 48.88,
-"end": 49.28
+"end": 48.96
 },
 {
-"i": 154,
-"text": "EST",
+"text": "vas",
 "start": 49.44,
+"end": 49.52
+},
+{
+"text": "utiliser",
+"start": 49.52,
 "end": 49.6
 },
 {
-"i": 155,
-"text": "TRÈS",
+"text": "pour",
 "start": 49.6,
-"end": 49.84
+"end": 49.68
 },
 {
-"i": 156,
-"text": "INTÉRESSANT.",
-"start": 49.84,
-"end": 50.4
+"text": "générer",
+"start": 49.68,
+"end": 50.08
 },
 {
-"i": 157,
-"text": "MAIS",
-"start": 50.4,
-"end": 50.64
+"text": "ta",
+"start": 50.08,
+"end": 50.16
 },
 {
-"i": 158,
-"text": "JE",
-"start": 50.64,
-"end": 50.8
+"text": "vidéo.",
+"start": 50.24,
+"end": 50.56
 },
 {
-"i": 159,
-"text": "PENSE",
-"start": 50.8,
-"end": 50.96
+"text": "Opus",
+"start": 50.76,
+"end": 51.32
 },
 {
-"i": 160,
-"text": "HONNÊTEMENT",
-"start": 51.04,
-"end": 51.36
+"text": "5.5",
+"start": 51.56,
+"end": 51.96
 },
 {
-"i": 161,
-"text": "QUE",
-"start": 51.44,
-"end": 51.6
+"text": "est",
+"start": 52.12,
+"end": 52.28
 },
 {
-"i": 162,
-"text": "FABLE",
-"start": 51.68,
-"end": 52.0
+"text": "très",
+"start": 52.28,
+"end": 52.44
 },
 {
-"i": 163,
-"text": "5.2",
-"start": 52.16,
-"end": 52.64
+"text": "intéressant.",
+"start": 52.44,
+"end": 52.84
 },
 {
-"i": 164,
-"text": "QUI",
-"start": 52.72,
-"end": 52.88
+"text": "Mais",
+"start": 53.12,
+"end": 53.28
 },
 {
-"i": 165,
-"text": "VIENT",
-"start": 52.88,
-"end": 53.04
+"text": "je",
+"start": 53.28,
+"end": 53.36
 },
 {
-"i": 166,
-"text": "DE",
-"start": 53.04,
-"end": 53.2
-},
-{
-"i": 167,
-"text": "SORTIR",
-"start": 53.2,
+"text": "pense",
+"start": 53.44,
 "end": 53.6
 },
 {
-"i": 168,
-"text": "PEUT",
+"text": "honnêtement",
 "start": 53.76,
-"end": 53.92
+"end": 54.16
 },
 {
-"i": 169,
-"text": "FAIRE",
-"start": 54,
-"end": 54.24
+"text": "que",
+"start": 54.16,
+"end": 54.32
 },
 {
-"i": 170,
-"text": "MIEUX",
-"start": 54.24,
-"end": 54.48
+"text": "Fable",
+"start": 54.4,
+"end": 54.72
 },
 {
-"i": 171,
-"text": "POUR",
-"start": 54.48,
-"end": 54.64
+"text": "5.2",
+"start": 54.88,
+"end": 55.28
 },
 {
-"i": 172,
-"text": "CERTAINES",
-"start": 54.64,
-"end": 54.96
+"text": "qui",
+"start": 55.36,
+"end": 55.52
 },
 {
-"i": 173,
-"text": "CRÉATIONS.",
-"start": 55.12,
-"end": 55.92
+"text": "vient",
+"start": 55.52,
+"end": 55.68
 },
 {
-"i": 174,
-"text": "GRÂCE",
-"start": 55.92,
-"end": 56.24
+"text": "de",
+"start": 55.68,
+"end": 55.76
 },
 {
-"i": 175,
-"text": "À",
-"start": 56.24,
-"end": 56.48
+"text": "sortir",
+"start": 55.84,
+"end": 56.16
 },
 {
-"i": 176,
-"text": "HYPERFRAMES,",
+"text": "peut",
 "start": 56.48,
-"end": 57.52
+"end": 56.56
 },
 {
-"i": 177,
-"text": "JE",
-"start": 57.52,
+"text": "faire",
+"start": 56.72,
+"end": 56.96
+},
+{
+"text": "mieux",
+"start": 56.96,
+"end": 57.12
+},
+{
+"text": "pour",
+"start": 57.2,
+"end": 57.28
+},
+{
+"text": "certaines",
+"start": 57.36,
 "end": 57.68
 },
 {
-"i": 178,
-"text": "PEUX",
-"start": 57.68,
-"end": 57.84
-},
-{
-"i": 179,
-"text": "FAIRE",
+"text": "créations.",
 "start": 57.84,
-"end": 58
+"end": 58.32
 },
 {
-"i": 180,
-"text": "PLUSIEURS",
-"start": 58,
-"end": 58.4
+"text": "Des",
+"start": 58.55,
+"end": 58.63
 },
 {
-"i": 181,
-"text": "TYPES",
-"start": 58.4,
-"end": 58.64
+"text": "vidéos",
+"start": 58.71,
+"end": 58.95
 },
 {
-"i": 182,
-"text": "DE",
-"start": 58.64,
-"end": 58.8
+"text": "en",
+"start": 58.95,
+"end": 59.11
 },
 {
-"i": 183,
-"text": "VIDÉOS,",
-"start": 58.8,
-"end": 59.12
-},
-{
-"i": 184,
-"text": "DE",
-"start": 59.12,
-"end": 59.28
-},
-{
-"i": 185,
-"text": "LA",
-"start": 59.28,
-"end": 59.44
-},
-{
-"i": 186,
 "text": "3D,",
-"start": 59.44,
-"end": 60
+"start": 59.11,
+"end": 59.59
 },
 {
-"i": 187,
-"text": "DE",
-"start": 60,
-"end": 60.08
+"text": "des",
+"start": 59.67,
+"end": 59.83
 },
 {
-"i": 188,
-"text": "LA",
-"start": 60.16,
-"end": 60.24
+"text": "vidéos",
+"start": 59.83,
+"end": 60.07
 },
 {
-"i": 189,
+"text": "en",
+"start": 60.07,
+"end": 60.15
+},
+{
 "text": "2D,",
-"start": 60.4,
-"end": 60.88
+"start": 60.15,
+"end": 60.63
 },
 {
-"i": 190,
-"text": "DE",
-"start": 60.88,
-"end": 60.96
+"text": "des",
+"start": 60.71,
+"end": 60.79
 },
 {
-"i": 191,
-"text": "LA",
-"start": 60.96,
-"end": 61.04
+"text": "vidéos",
+"start": 60.79,
+"end": 61.03
 },
 {
-"i": 192,
+"text": "en",
+"start": 61.03,
+"end": 61.11
+},
+{
 "text": "3D",
-"start": 61.12,
-"end": 61.44
+"start": 61.11,
+"end": 61.59
 },
 {
-"i": 193,
-"text": "ISOMÉTRIQUE",
-"start": 61.52,
-"end": 62.24
+"text": "isométrique,",
+"start": 61.59,
+"end": 62.39
 },
 {
-"i": 194,
-"text": "ET",
-"start": 62.24,
-"end": 62.32
+"text": "et",
+"start": 62.39,
+"end": 62.55
 },
 {
-"i": 195,
-"text": "AINSI",
-"start": 62.32,
-"end": 62.64
+"text": "j'en",
+"start": 62.55,
+"end": 62.87
 },
 {
-"i": 196,
-"text": "DE",
-"start": 62.64,
-"end": 62.72
+"text": "passe.",
+"start": 62.87,
+"end": 63.35
 },
 {
-"i": 197,
-"text": "SUITE.",
-"start": 62.72,
-"end": 63.12
+"text": "Abonne-toi,",
+"start": 63.59,
+"end": 64.23
 },
 {
-"i": 198,
-"text": "ABONNE-TOI,",
-"start": 63.49,
-"end": 64.13
+"text": "parce",
+"start": 64.39,
+"end": 64.55
 },
 {
-"i": 199,
-"text": "PARCE",
-"start": 64.21,
-"end": 64.37
+"text": "que",
+"start": 64.55,
+"end": 64.71
 },
 {
-"i": 200,
-"text": "QUE",
-"start": 64.37,
-"end": 64.53
+"text": "dans",
+"start": 64.71,
+"end": 64.87
 },
 {
-"i": 201,
-"text": "DANS",
-"start": 64.53,
-"end": 64.69
+"text": "la",
+"start": 64.87,
+"end": 65.03
 },
 {
-"i": 202,
-"text": "LA",
-"start": 64.69,
-"end": 64.77
+"text": "prochaine",
+"start": 65.03,
+"end": 65.27
 },
 {
-"i": 203,
-"text": "PROCHAINE",
-"start": 64.77,
-"end": 65.09
+"text": "vidéo,",
+"start": 65.27,
+"end": 65.67
 },
 {
-"i": 204,
-"text": "VIDÉO,",
-"start": 65.09,
-"end": 65.49
+"text": "je",
+"start": 65.67,
+"end": 65.83
 },
 {
-"i": 205,
-"text": "JE",
-"start": 65.49,
-"end": 65.65
+"text": "vais",
+"start": 65.83,
+"end": 66.23
 },
 {
-"i": 206,
-"text": "VAIS",
-"start": 65.65,
-"end": 65.97
+"text": "te",
+"start": 66.23,
+"end": 66.39
 },
 {
-"i": 207,
-"text": "TE",
-"start": 65.97,
-"end": 66.21
+"text": "montrer",
+"start": 66.39,
+"end": 66.87
 },
 {
-"i": 208,
-"text": "MONTRER",
-"start": 66.21,
-"end": 66.69
+"text": "comment",
+"start": 66.87,
+"end": 67.27
 },
 {
-"i": 209,
-"text": "COMMENT",
-"start": 66.69,
-"end": 67.09
+"text": "reproduire",
+"start": 67.27,
+"end": 67.83
 },
 {
-"i": 210,
-"text": "REPRODUIRE",
-"start": 67.09,
-"end": 67.57
+"text": "le",
+"start": 67.83,
+"end": 67.91
 },
 {
-"i": 211,
-"text": "LE",
-"start": 67.57,
-"end": 67.73
+"text": "style",
+"start": 67.91,
+"end": 68.15
 },
 {
-"i": 212,
-"text": "STYLE",
-"start": 67.73,
-"end": 67.97
+"text": "visuel",
+"start": 68.15,
+"end": 68.55
 },
 {
-"i": 213,
-"text": "VISUEL",
-"start": 67.97,
-"end": 68.37
+"text": "d'un",
+"start": 68.55,
+"end": 68.87
 },
 {
-"i": 214,
-"text": "D’UN",
-"start": 68.37,
-"end": 68.69
+"text": "autre",
+"start": 68.87,
+"end": 69.11
 },
 {
-"i": 215,
-"text": "AUTRE",
-"start": 68.69,
-"end": 68.93
+"text": "créateur",
+"start": 69.11,
+"end": 69.75
 },
 {
-"i": 216,
-"text": "CRÉATEUR",
-"start": 68.93,
-"end": 69.57
+"text": "pour",
+"start": 69.75,
+"end": 69.91
 },
 {
-"i": 217,
-"text": "POUR",
-"start": 69.57,
-"end": 69.73
+"text": "faire",
+"start": 69.91,
+"end": 70.15
 },
 {
-"i": 218,
-"text": "FAIRE",
-"start": 69.73,
-"end": 69.97
+"text": "tes",
+"start": 70.15,
+"end": 70.39
 },
 {
-"i": 219,
-"text": "TES",
-"start": 69.97,
-"end": 70.21
-},
-{
-"i": 220,
-"text": "VIDÉOS.",
-"start": 70.21,
-"end": 70.69
+"text": "vidéos.",
+"start": 70.39,
+"end": 70.87
 }
 ]
