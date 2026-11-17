@@ -169,15 +169,16 @@ for k, mot in enumerate(["PRÉPARER", "CONVAINCRE", "UN BON CV", "SUR MESURE"]):
 # ---- partenaire (24 → 28)
 papier(T(24), T(28))
 HTML.append(f'<div id="part" class="partenaire" style="opacity: 0"><img id="mains" class="mains" src="assets/img/mains-yako.png" alt="" />'
-            f'<div class="part-txt"><span>EN PARTENARIAT AVEC</span><img id="logoyako" src="assets/img/logo-yako.png" alt="" /></div></div>')
+            f'<div class="part-txt"><span>EN PARTENARIAT AVEC</span><img id="logoyako" src="assets/img/logo-yako.png" alt="" /><b id="nomyako">Yako Africa Assurances Vie</b></div></div>')
 montrer("part", T(24), T(28))
 j(f'tl.fromTo("#mains", {{ x: -1200 }}, {{ x: 0, duration: 0.55, ease: "power3.out", immediateRender: false }}, {T(24)});')
 j(f'tl.fromTo("#logoyako", {{ opacity: 0, scale: 1.4 }}, {{ opacity: 1, scale: 1, duration: 0.35, ease: "back.out(1.7)", immediateRender: false }}, {T(25.5)});')
-etiquette("Samedi 14 novembre 2026 · Université Félix Houphouët-Boigny", T(24.5), T(28), "right: 110px; top: 800px;", -1.5, ENCRE, CREME, 34)
+j(f'tl.fromTo("#nomyako", {{ opacity: 0, y: 30 }}, {{ opacity: 1, y: 0, duration: 0.35, ease: "power3.out", immediateRender: false }}, {T(26)});')
+etiquette("Samedi 14 novembre 2026 · Université Félix Houphouët-Boigny", T(24.5), T(28), "right: 110px; top: 890px;", -1.5, ENCRE, CREME, 34)
 
 # ---- panélistes (28 → 36) : Coralie Gueï au milieu, cadre plus grand, noms en grand
 papier(T(28), T(36))
-etiquette('NOS PANÉLISTES · <b style="color: #f2b33d">YAKO AFRICA</b>', T(28), T(36), "left: 50%; margin-left: -330px; top: 46px; width: 660px; text-align: center;", -1.5, ENCRE, CREME, 40)
+etiquette('NOS PANÉLISTES · <b style="color: #f2b33d">YAKO AFRICA ASSURANCES VIE</b>', T(28), T(36), "left: 50%; margin-left: -470px; top: 46px; width: 940px; text-align: center;", -1.5, ENCRE, CREME, 40)
 PAN = [("emmanuel-kone.png", "EMMANUEL KONE", "Responsable des Ressources Humaines", -3),
        ("coralie-guei.png", "CORALIE GUEÏ", "Directrice des Ressources et de la Transformation", 0),
        ("oguyr-gagne.png", "O’GUYR GAGNE", "Chargé de projet RH", 3)]
@@ -246,7 +247,7 @@ polaroid("a-salle-rangs.jpg", T(75), T(80), 1350, 100, 520, 420, 5, -1)
 polaroid("a-coralie-etudiantes.jpg", T(76), T(80), 100, 600, 470, 380, 4, 1)
 polaroid("a-ek-table.jpg", T(77), T(80), 1340, 600, 470, 380, -4, 1)
 mots("MERCI", T(74), T(80), "t-merci", "top: 720px;", 0)
-HTML.append('<div id="merci-sous" class="txt t-merci-sous" style="opacity: 0">à nos panélistes, à Yako Africa et à tous les participants</div>')
+HTML.append('<div id="merci-sous" class="txt t-merci-sous" style="opacity: 0">à nos panélistes, à Yako Africa Assurances Vie et à tous les participants</div>')
 j(f'tl.fromTo("#merci-sous", {{ opacity: 0, y: 30 }}, {{ opacity: 1, y: 0, duration: 0.4, ease: "power3.out", immediateRender: false }}, {T(75)});')
 j(f'tl.to("#merci-sous", {{ opacity: 0, duration: 0.2 }}, {r(T(80) - 0.2)});')
 flash(T(72), 0.4)
@@ -298,6 +299,7 @@ CSS = f"""
       .part-txt {{ position: absolute; right: 150px; top: 330px; width: 600px; text-align: center; }}
       .part-txt span {{ display: block; font-size: 42px; font-weight: 800; color: {VERT}; letter-spacing: 2px; margin-bottom: 26px; }}
       .part-txt img {{ width: 460px; }}
+      .part-txt b {{ display: block; margin-top: 22px; font-family: "Anton", sans-serif; font-weight: 400; font-size: 50px; color: {VERT}; letter-spacing: 1px; white-space: nowrap; }}
       .trio {{ position: absolute; z-index: 20; left: 60px; right: 60px; top: 170px; display: flex; gap: 46px; justify-content: center; align-items: center; }}
       .tr-carte {{ flex: 1; text-align: center; }}
       .tr-carte.centre {{ flex: 1.3; }}
