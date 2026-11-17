@@ -146,7 +146,9 @@ DROP = [("public-micro.mp4", 1, "punch+secousse"), ("panel-table.mp4", 1, "punch
         ("question-duo.mp4", 1, "punch"), ("public-micro-2.mp4", 1, "punch"), ("groupe-2.jpg", 1, "punch+secousse"), ("debout-public.mp4", 1, "punch"),
         ("simulation-1.mp4", 1, "punch"), ("lent-simulation-1.mp4", 3, "aucun"),
         ("panel-large.mp4", 1, "punch"), ("question-micro.mp4", 1, "punch+secousse"), ("salle-photo.jpg", 1, "punch"), ("intervenante.mp4", 1, "punch"),
-        ("panel-photo.jpg", 1, "punch"), ("lent-public-micro.mp4", 4, "aucun")]
+        ("panel-photo.jpg", 1, "punch"), ("lent-public-micro.mp4", 4, "aucun"),
+        ("groupe-3.jpg", 1, "punch+secousse"), ("simulation-2.mp4", 1, "punch"), ("intervenante-face.mp4", 1, "punch")]
+assert sum(n for _, n, _ in DROP) == 28, "la rafale doit remplir exactement 28 temps (20 → 37,5 s)"
 k = 32
 for src_, n, effet in DROP:
     coupe(src_, Bt(k), Bt(k + n), effet, (1.08, 1.0) if src_.startswith("lent") else (1.12, 1.02), depart=0.3)
