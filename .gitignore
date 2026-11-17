@@ -1,2 +1,5 @@
 __pycache__/
 *.pyc
+videos/nouvelle-video/brut/
+videos/nouvelle-video/renders/
+videos/nouvelle-video/assets/
