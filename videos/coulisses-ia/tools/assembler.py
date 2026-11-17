@@ -16,7 +16,7 @@ EDL = [  # choix faits avec tools/comparer_prises.py (fidélité au script, flui
     ("20261116_161444", 14.40, 24.24, "Claude et les autres"),
     ("20261116_161514", 28.24, 31.68, "game changer HyperFrames"),
     ("20261116_162024", 27.28, 35.60, "pourquoi : le code"),
-    ("20261116_162024", 53.36, 56.16, "HyperFrames intervient"),
+    ("20261116_161514", 79.19, 81.35, "HyperFrames intervient"),  # v9 : la prise 162024 bégayait sur « Hyper… FM »
     ("20261116_161514", 94.11, 97.79, "références visuelles et code"),
     ("20261116_162024", 73.29, 74.09, "plusieurs possibilités"),
     ("20261116_161514", 118.02, 123.06, "abonnements"),

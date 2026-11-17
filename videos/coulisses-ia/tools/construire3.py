@@ -22,6 +22,12 @@ ICI = Path(__file__).resolve().parent.parent
 MOTS = json.loads((ICI / "assets/mots.json").read_text())
 SEG = json.loads((ICI / "assets/montage/segments.json").read_text())
 D = SEG["phrases"][1]["debut_montage"] - 4.53  # décalage depuis la v3 (début de la 1re phrase repris plus tôt)
+D2 = SEG["phrases"][5]["debut_montage"] - 29.69  # décalage depuis la v8 (« HyperFrames intervient » repris dans une autre prise)
+
+
+def DD(x):
+    """temps relevé sur l'ancien montage (v3) → nouveau montage"""
+    return x + D + (D2 if x + D > 27.5 else 0)
 FIN = round(float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", str(ICI / "assets/montage/parole.mp4")],
                                  capture_output=True, text=True).stdout) + 0.6, 2)
 TERRA, CREME, NUIT, CIEL = "#D97757", "#F0EEE6", "#0B1220", "#38BDF8"
@@ -405,6 +411,9 @@ MANUEL = {
 }
 
 
+MANUEL = {k_: [(t_ + (D2 if t_ > 27.5 else 0), x_, y_) for t_, x_, y_ in v_] for k_, v_ in MANUEL.items()}
+
+
 def _lin(kf, t):
     if t <= kf[0][0]:
         return kf[0][1:]
@@ -417,7 +426,7 @@ def _lin(kf, t):
 
 def paume(nom, t):
     if nom == "E":  # 3D : suivi automatique (paume ouverte bien visible) ; ensuite relevés à l'œil
-        nom = "E" if t < 59.75 else "E2" if t < 60.85 else "E3" if t < 62.45 else "E4"
+        nom = "E" if t < 59.75 + D2 else "E2" if t < 60.85 + D2 else "E3" if t < 62.45 + D2 else "E4"
     if nom in MANUEL:
         x, y = _lin(MANUEL[nom], t)
         return -60 + x * 1200 / 1080, -106 + y * 1200 / 1080
@@ -494,10 +503,10 @@ def ville_iso():
 
 
 # --- « il permet de créer des vidéos à partir de références visuelles et de code » : une de ses vidéos sort de la main
-tA = geste(31.4 + D)[0]
+tA = geste(DD(31.4))[0]
 magie("mgA", contenu_video("mgA-v", "assets/exemples/liste-depenser-moins.mp4", tA, T(101), 0.2, centre=True), "A", tA, T(98) + 0.05, T(101), "LE RÉSULTAT")
 # --- « installer la skill dans un environnement de chatbot » : un vrai chatbot sort de la main
-tB = geste(40.87 + D)[0]
+tB = geste(DD(40.87))[0]
 magie("mgB", contenu_video("mgB-v", "assets/captures/modele-gemini.mp4", tB, T(137), 0.0, large=True), "B", tB, T(131), T(137) - 0.3, "TON CHATBOT")
 # --- « pour générer ta vidéo »
 ROUL = [("Grok", "logo-grok.svg"), ("Gemini", "logo-gemini.svg"), ("DeepSeek", None), ("ChatGPT", "logo-chatgpt.svg"), ("Mistral", None),
@@ -611,17 +620,17 @@ def geste(t0):
     return g[0], g[3], g[4]
 
 
-t, hx, hy = geste(6.8 + D)
+t, hx, hy = geste(DD(6.8))
 dans_la_main("mo1", '<img src="assets/img/logo-claude.svg" alt="" class="m-logo" />', t, hx, hy, T(29) - 0.1)
-t, hx, hy = geste(14.53 + D)
+t, hx, hy = geste(DD(14.53))
 dans_la_main("mo2", '<b class="m-txt">GAME<br>CHANGER</b>', t, hx, hy, T(48) - 0.1, monte=230)
-t, hx, hy = geste(18.87 + D)
+t, hx, hy = geste(DD(18.87))
 dans_la_main("mo3", '<b class="m-txt q">?</b>', t, hx, hy, 19.55 + D, zoom=False, monte=750)
-t, hx, hy = geste(22.93 + D)
+t, hx, hy = geste(DD(22.93))
 dans_la_main("mo4", '<b class="m-code">&lt;/&gt;</b>', t, hx, hy, T(78) - 0.1, zoom=False)
-t, hx, hy = geste(28.27 + D)
+t, hx, hy = geste(DD(28.27))
 dans_la_main("mo5", '<img src="assets/img/logo-heygen.png" alt="" class="m-logo rond" />', t, hx, hy, T(94) - 0.1)
-t, hx, hy = geste(63.4 + D)
+t, hx, hy = geste(DD(63.4))
 dans_la_main("mo10", '<b class="m-abo">S’ABONNER 🔔</b>', t, hx, hy, T(204) - 0.1, monte=300)
 
 
