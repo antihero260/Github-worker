@@ -178,9 +178,9 @@ etiquette("Samedi 14 novembre 2026 · Université Félix Houphouët-Boigny", T(2
 # ---- panélistes (28 → 36) : Coralie Gueï au milieu, cadre plus grand, noms en grand
 papier(T(28), T(36))
 etiquette('NOS PANÉLISTES · <b style="color: #f2b33d">YAKO AFRICA</b>', T(28), T(36), "left: 50%; margin-left: -330px; top: 46px; width: 660px; text-align: center;", -1.5, ENCRE, CREME, 40)
-PAN = [("emmanuel-kone.png", "Emmanuel KONE", "Responsable des Ressources Humaines", -3),
-       ("coralie-guei.png", "Coralie GUEÏ", "Directrice des Ressources et de la Transformation", 0),
-       ("oguyr-gagne.png", "O’guyr GAGNE", "Chargé de projet RH", 3)]
+PAN = [("emmanuel-kone.png", "EMMANUEL KONE", "Responsable des Ressources Humaines", -3),
+       ("coralie-guei.png", "CORALIE GUEÏ", "Directrice des Ressources et de la Transformation", 0),
+       ("oguyr-gagne.png", "O’GUYR GAGNE", "Chargé de projet RH", 3)]
 HTML.append('<div id="trio" class="trio" style="opacity: 0">' + "".join(
     f'<div id="tr{k}" class="tr-carte{" centre" if k == 1 else ""}" style="opacity: 0"><div class="tr-photo"><img src="assets/img/{img}" alt="" /></div>'
     f'<b>{nom}</b><span>{role}</span></div>' for k, (img, nom, role, _) in enumerate(PAN)) + '</div>')
