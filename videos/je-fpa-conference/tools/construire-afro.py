@@ -241,13 +241,13 @@ flash(T(64), 0.4)
 
 # ---- MERCI (72 → 80) : mur de photos, la grande photo de groupe au centre
 papier(T(72), T(80))
-polaroid("lent-groupe.mp4", T(72), T(80), 560, 90, 800, 620, -1, -1, z=20)
+polaroid("lent-groupe.mp4", T(72), T(80), 580, 40, 760, 590, -1, -1, z=20)
 polaroid("a-groupe.jpg", T(73.5), T(80), 50, 110, 520, 420, -6, -1)
 polaroid("a-salle-rangs.jpg", T(75), T(80), 1350, 100, 520, 420, 5, -1)
 polaroid("a-coralie-etudiantes.jpg", T(76), T(80), 100, 600, 470, 380, 4, 1)
 polaroid("a-ek-table.jpg", T(77), T(80), 1340, 600, 470, 380, -4, 1)
-mots("MERCI", T(74), T(80), "t-merci", "top: 720px;", 0)
-HTML.append('<div id="merci-sous" class="txt t-merci-sous" style="opacity: 0">à nos panélistes, à Yako Africa Assurances Vie et à tous les participants</div>')
+mots("MERCI", T(74), T(80), "t-merci", "top: 650px;", 0)
+HTML.append('<div id="merci-sous" class="txt t-merci-sous" style="opacity: 0">à nos panélistes, à<br><b>YAKO AFRICA ASSURANCES VIE</b><br>et à tous les participants</div>')
 j(f'tl.fromTo("#merci-sous", {{ opacity: 0, y: 30 }}, {{ opacity: 1, y: 0, duration: 0.4, ease: "power3.out", immediateRender: false }}, {T(75)});')
 j(f'tl.to("#merci-sous", {{ opacity: 0, duration: 0.2 }}, {r(T(80) - 0.2)});')
 flash(T(72), 0.4)
@@ -320,8 +320,9 @@ CSS = f"""
       .trait {{ position: absolute; left: 50%; top: 540px; width: 900px; margin-left: -450px; height: 10px; border-radius: 5px; background: {ORANGE}; z-index: 41; transform-origin: 0 50%; opacity: 0; }}
       .t-split {{ left: 960px; right: 0; padding: 0 70px; font-family: "Anton", sans-serif; font-size: 110px; line-height: 1.04; color: {ENCRE}; text-align: left; }}
       .t-split.orange {{ color: {ORANGE}; }}
-      .t-merci {{ font-family: "Anton", sans-serif; font-size: 230px; line-height: 1; color: {ORANGE}; text-shadow: 0 8px 0 {ENCRE}, 0 20px 50px rgba(0,0,0,0.35); letter-spacing: 6px; }}
-      .t-merci-sous {{ top: 975px; font-size: 34px; font-weight: 800; color: {ENCRE}; }}
+      .t-merci {{ font-family: "Anton", sans-serif; font-size: 200px; line-height: 1; color: {ORANGE}; text-shadow: 0 8px 0 {ENCRE}, 0 20px 50px rgba(0,0,0,0.35); letter-spacing: 6px; }}
+      .t-merci-sous {{ top: 858px; font-size: 32px; font-weight: 800; color: {ENCRE}; line-height: 1.25; }}
+      .t-merci-sous b {{ display: inline-block; margin: 4px 0 6px; font-family: "Anton", sans-serif; font-weight: 400; font-size: 64px; line-height: 1.05; color: {VERT}; letter-spacing: 1px; }}
       .logo-fin {{ position: absolute; left: 50%; top: 110px; width: 440px; margin-left: -220px; z-index: 41; border-radius: 22px; box-shadow: 0 16px 50px rgba(0,0,0,0.4); }}
       .t-jefpa {{ font-family: "Anton", sans-serif; font-size: 240px; line-height: 1; color: {CREME}; text-shadow: 0 8px 0 {ORANGE}, 0 24px 60px rgba(0,0,0,0.5); letter-spacing: 8px; }}
       .t-fin-sous {{ top: 680px; font-size: 48px; font-weight: 800; color: {CREME}; text-shadow: 0 6px 30px rgba(0,0,0,0.6); }}
