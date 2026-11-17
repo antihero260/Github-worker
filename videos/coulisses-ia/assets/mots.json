@@ -6,7 +6,7 @@
 },
 {
 "text": "d'entre",
-"start": 0.64,
+"start": 0.72,
 "end": 0.96
 },
 {
@@ -47,7 +47,7 @@
 {
 "text": "je",
 "start": 2.96,
-"end": 3.04
+"end": 3.12
 },
 {
 "text": "faisais",
@@ -67,22 +67,22 @@
 {
 "text": "avec",
 "start": 4,
-"end": 4.08
+"end": 4.16
 },
 {
 "text": "l'IA.",
 "start": 4.16,
-"end": 4.88
+"end": 4.8
 },
 {
 "text": "Alors",
-"start": 4.88,
+"start": 4.8,
 "end": 5.04
 },
 {
 "text": "généralement",
 "start": 5.12,
-"end": 5.52
+"end": 5.44
 },
 {
 "text": "j'utilise",
@@ -177,17 +177,17 @@
 {
 "text": "modèles",
 "start": 12.56,
-"end": 13.04
+"end": 12.96
 },
 {
 "text": "aussi",
-"start": 13.04,
+"start": 12.96,
 "end": 13.12
 },
 {
 "text": "peuvent",
 "start": 13.28,
-"end": 13.36
+"end": 13.6
 },
 {
 "text": "le",
@@ -197,17 +197,17 @@
 {
 "text": "faire.",
 "start": 13.76,
-"end": 14
+"end": 14.08
 },
 {
 "text": "Le",
 "start": 14.24,
-"end": 14.4
+"end": 14.48
 },
 {
 "text": "véritable",
-"start": 14.4,
-"end": 14.56
+"start": 14.48,
+"end": 14.88
 },
 {
 "text": "game",
@@ -217,16 +217,16 @@
 {
 "text": "changer,",
 "start": 15.28,
-"end": 15.76
+"end": 15.92
 },
 {
 "text": "c'est",
 "start": 15.92,
-"end": 16.0
+"end": 16.08
 },
 {
 "text": "une",
-"start": 16.16,
+"start": 16.08,
 "end": 16.32
 },
 {
@@ -257,16 +257,16 @@
 {
 "text": "Tous",
 "start": 19.6,
-"end": 19.84
+"end": 19.76
 },
 {
 "text": "les",
 "start": 19.84,
-"end": 20.08
+"end": 20
 },
 {
 "text": "modèles",
-"start": 20.08,
+"start": 20,
 "end": 20.32
 },
 {
@@ -277,7 +277,7 @@
 {
 "text": "je",
 "start": 20.48,
-"end": 20.56
+"end": 20.64
 },
 {
 "text": "viens",
@@ -322,12 +322,12 @@
 {
 "text": "pour",
 "start": 23.04,
-"end": 23.12
+"end": 23.2
 },
 {
 "text": "écrire",
-"start": 23.28,
-"end": 23.68
+"start": 23.2,
+"end": 23.6
 },
 {
 "text": "du",
@@ -367,7 +367,7 @@
 {
 "text": "vidéos",
 "start": 25.44,
-"end": 25.6
+"end": 25.76
 },
 {
 "text": "en",
@@ -377,12 +377,12 @@
 {
 "text": "tant",
 "start": 25.84,
-"end": 25.92
+"end": 26
 },
 {
 "text": "que",
-"start": 25.92,
-"end": 26
+"start": 26,
+"end": 26.08
 },
 {
 "text": "telles.",
@@ -392,7 +392,7 @@
 {
 "text": "Et",
 "start": 26.56,
-"end": 26.64
+"end": 26.72
 },
 {
 "text": "c'est",
@@ -402,711 +402,711 @@
 {
 "text": "exactement",
 "start": 26.88,
-"end": 27.28
+"end": 27.2
 },
 {
 "text": "là",
-"start": 27.28,
-"end": 27.44
+"start": 27.2,
+"end": 27.28
 },
 {
 "text": "que",
-"start": 27.52,
+"start": 27.36,
 "end": 27.6
 },
 {
 "text": "HyperFrames",
-"start": 27.76,
-"end": 28.533
+"start": 27.6,
+"end": 28.56
 },
 {
 "text": "intervient.",
-"start": 28.533,
-"end": 29.307
+"start": 28.56,
+"end": 29.04
 },
 {
 "text": "Il",
-"start": 29.307,
-"end": 30.08
+"start": 29.2,
+"end": 29.28
 },
 {
 "text": "permet",
-"start": 30.16,
-"end": 30.32
+"start": 29.36,
+"end": 29.6
 },
 {
 "text": "de",
-"start": 30.48,
-"end": 30.64
+"start": 29.68,
+"end": 29.84
 },
 {
 "text": "créer",
-"start": 30.64,
-"end": 30.96
+"start": 29.84,
+"end": 30.08
 },
 {
 "text": "des",
-"start": 30.96,
-"end": 31.12
+"start": 30.08,
+"end": 30.24
 },
 {
 "text": "vidéos",
-"start": 31.12,
-"end": 31.2
+"start": 30.24,
+"end": 30.64
 },
 {
 "text": "à",
-"start": 31.44,
-"end": 31.6
+"start": 30.64,
+"end": 30.72
 },
 {
 "text": "partir",
-"start": 31.6,
-"end": 31.76
+"start": 30.72,
+"end": 31.04
 },
 {
 "text": "de",
-"start": 31.92,
-"end": 32.08
+"start": 31.04,
+"end": 31.2
 },
 {
 "text": "références",
-"start": 32.08,
-"end": 32.48
+"start": 31.2,
+"end": 31.68
 },
 {
 "text": "visuelles",
-"start": 32.56,
-"end": 32.96
+"start": 31.76,
+"end": 32.08
 },
 {
 "text": "et",
-"start": 32.96,
-"end": 33.12
+"start": 32.16,
+"end": 32.32
 },
 {
 "text": "de",
-"start": 33.12,
-"end": 33.28
+"start": 32.32,
+"end": 32.48
 },
 {
 "text": "code.",
-"start": 33.28,
-"end": 33.6
+"start": 32.48,
+"end": 32.8
 },
 {
 "text": "Tu",
-"start": 33.68,
-"end": 33.76
+"start": 32.88,
+"end": 32.96
 },
 {
 "text": "as",
-"start": 33.92,
-"end": 34.0
+"start": 33.04,
+"end": 33.12
 },
 {
 "text": "plusieurs",
-"start": 34.08,
-"end": 34.32
+"start": 33.2,
+"end": 33.44
 },
 {
 "text": "possibilités.",
-"start": 34.4,
-"end": 35.2
+"start": 33.6,
+"end": 34.16
 },
 {
 "text": "Tu",
-"start": 35.2,
-"end": 35.28
+"start": 34.32,
+"end": 34.48
 },
 {
 "text": "peux",
-"start": 35.36,
-"end": 35.44
+"start": 34.48,
+"end": 34.64
 },
 {
 "text": "utiliser",
-"start": 35.52,
-"end": 35.68
+"start": 34.72,
+"end": 34.88
 },
 {
 "text": "Claude",
-"start": 35.84,
-"end": 36.24
+"start": 35.04,
+"end": 35.44
 },
 {
 "text": "avec",
-"start": 36.24,
-"end": 36.4
+"start": 35.44,
+"end": 35.6
 },
 {
 "text": "l'abonnement",
-"start": 36.4,
-"end": 36.96
+"start": 35.6,
+"end": 36.16
 },
 {
 "text": "à",
-"start": 36.96,
-"end": 37.12
+"start": 36.16,
+"end": 36.24
 },
 {
 "text": "20",
-"start": 37.12,
-"end": 37.36
+"start": 36.24,
+"end": 36.56
 },
 {
 "text": "dollars",
-"start": 37.36,
-"end": 37.52
+"start": 36.56,
+"end": 36.8
 },
 {
 "text": "pour",
+"start": 36.8,
+"end": 36.96
+},
+{
+"text": "commencer.",
+"start": 36.96,
+"end": 37.36
+},
+{
+"text": "Ou",
+"start": 37.36,
+"end": 37.44
+},
+{
+"text": "si",
+"start": 37.52,
+"end": 37.68
+},
+{
+"text": "tu",
 "start": 37.68,
 "end": 37.76
 },
 {
-"text": "commencer.",
+"text": "veux",
 "start": 37.76,
+"end": 37.84
+},
+{
+"text": "aller",
+"start": 37.84,
+"end": 37.92
+},
+{
+"text": "plus",
+"start": 38.08,
 "end": 38.16
 },
 {
-"text": "Ou",
+"text": "loin,",
 "start": 38.16,
-"end": 38.24
-},
-{
-"text": "si",
-"start": 38.32,
-"end": 38.48
+"end": 38.4
 },
 {
 "text": "tu",
+"start": 38.4,
+"end": 38.48
+},
+{
+"text": "peux",
 "start": 38.48,
 "end": 38.56
 },
 {
-"text": "veux",
-"start": 38.56,
-"end": 38.64
-},
-{
-"text": "aller",
-"start": 38.72,
+"text": "prendre",
+"start": 38.64,
 "end": 38.8
 },
 {
-"text": "plus",
-"start": 38.96,
-"end": 39.04
-},
-{
-"text": "loin,",
-"start": 39.04,
-"end": 39.28
-},
-{
-"text": "tu",
-"start": 39.28,
-"end": 39.36
-},
-{
-"text": "peux",
-"start": 39.36,
-"end": 39.44
-},
-{
-"text": "prendre",
-"start": 39.52,
-"end": 39.6
-},
-{
 "text": "Claude",
-"start": 39.68,
-"end": 40.0
+"start": 38.88,
+"end": 39.2
 },
 {
 "text": "Max.",
-"start": 40,
-"end": 40.64
+"start": 39.2,
+"end": 39.76
 },
 {
 "text": "Tu",
-"start": 40.64,
-"end": 40.72
+"start": 39.76,
+"end": 39.92
 },
 {
 "text": "peux",
-"start": 40.8,
-"end": 40.96
+"start": 39.92,
+"end": 40.16
 },
 {
 "text": "également",
-"start": 40.96,
-"end": 41.12
+"start": 40.16,
+"end": 40.32
 },
 {
 "text": "installer",
-"start": 41.28,
-"end": 41.76
+"start": 40.48,
+"end": 40.88
 },
 {
 "text": "la",
-"start": 41.76,
-"end": 41.92
+"start": 40.88,
+"end": 40.96
 },
 {
 "text": "skill",
-"start": 41.92,
-"end": 42.32
+"start": 41.12,
+"end": 41.68
 },
 {
 "text": "dans",
-"start": 42.48,
-"end": 42.64
+"start": 41.68,
+"end": 41.84
 },
 {
 "text": "un",
-"start": 42.64,
-"end": 42.72
+"start": 41.84,
+"end": 42
 },
 {
 "text": "environnement",
-"start": 42.88,
-"end": 43.28
+"start": 42,
+"end": 42.4
 },
 {
 "text": "de",
-"start": 43.28,
-"end": 43.44
+"start": 42.4,
+"end": 42.56
 },
 {
 "text": "chatbot.",
-"start": 43.44,
-"end": 44.24
+"start": 42.56,
+"end": 43.44
 },
 {
 "text": "Mais",
-"start": 44.24,
-"end": 44.48
+"start": 43.44,
+"end": 43.68
 },
 {
 "text": "attention,",
-"start": 44.48,
-"end": 45.04
+"start": 43.68,
+"end": 44.16
 },
 {
 "text": "l'outil",
-"start": 45.04,
-"end": 45.52
+"start": 44.16,
+"end": 44.72
 },
 {
 "text": "ne",
-"start": 45.68,
-"end": 45.84
+"start": 44.88,
+"end": 45.04
 },
 {
 "text": "fait",
-"start": 45.84,
-"end": 45.92
+"start": 45.04,
+"end": 45.2
 },
 {
 "text": "pas",
-"start": 46,
-"end": 46.16
+"start": 45.2,
+"end": 45.36
 },
 {
 "text": "tout.",
+"start": 45.36,
+"end": 45.6
+},
+{
+"text": "Mais",
+"start": 45.6,
+"end": 45.92
+},
+{
+"text": "tout",
+"start": 45.92,
+"end": 46.16
+},
+{
+"text": "va",
 "start": 46.16,
 "end": 46.4
 },
 {
-"text": "Mais",
-"start": 46.48,
-"end": 46.56
-},
-{
-"text": "tout",
-"start": 46.72,
-"end": 46.88
-},
-{
-"text": "va",
-"start": 47.04,
-"end": 47.28
-},
-{
 "text": "se",
-"start": 47.28,
-"end": 47.44
+"start": 46.4,
+"end": 46.64
 },
 {
 "text": "jouer",
-"start": 47.44,
-"end": 47.84
+"start": 46.64,
+"end": 46.96
 },
 {
 "text": "réellement",
-"start": 47.84,
-"end": 48.08
+"start": 46.96,
+"end": 47.28
 },
 {
 "text": "sur",
-"start": 48.24,
-"end": 48.4
+"start": 47.36,
+"end": 47.6
 },
 {
 "text": "le",
-"start": 48.4,
-"end": 48.56
+"start": 47.6,
+"end": 47.68
 },
 {
 "text": "modèle",
-"start": 48.56,
-"end": 48.88
+"start": 47.68,
+"end": 48
 },
 {
 "text": "que",
+"start": 48,
+"end": 48.16
+},
+{
+"text": "tu",
+"start": 48.16,
+"end": 48.32
+},
+{
+"text": "vas",
+"start": 48.32,
+"end": 48.48
+},
+{
+"text": "utiliser",
+"start": 48.48,
+"end": 48.8
+},
+{
+"text": "pour",
 "start": 48.88,
 "end": 49.04
 },
 {
-"text": "tu",
-"start": 49.04,
-"end": 49.12
-},
-{
-"text": "vas",
-"start": 49.12,
-"end": 49.2
-},
-{
-"text": "utiliser",
-"start": 49.36,
-"end": 49.6
-},
-{
-"text": "pour",
-"start": 49.68,
-"end": 49.84
-},
-{
 "text": "générer",
-"start": 49.84,
-"end": 50.24
+"start": 49.04,
+"end": 49.36
 },
 {
 "text": "ta",
-"start": 50.24,
-"end": 50.56
+"start": 49.36,
+"end": 49.72
 },
 {
 "text": "vidéo.",
-"start": 50.56,
-"end": 50.88
+"start": 49.72,
+"end": 50.08
 },
 {
 "text": "Opus",
-"start": 51.2,
-"end": 51.44
+"start": 50.4,
+"end": 50.64
 },
 {
 "text": "5.5",
-"start": 51.68,
-"end": 52.16
+"start": 50.88,
+"end": 51.28
 },
 {
 "text": "est",
-"start": 52.32,
-"end": 52.48
+"start": 51.44,
+"end": 51.6
 },
 {
 "text": "très",
-"start": 52.48,
-"end": 52.64
+"start": 51.6,
+"end": 51.84
 },
 {
 "text": "intéressant.",
-"start": 52.64,
-"end": 53.28
+"start": 51.84,
+"end": 52.4
 },
 {
 "text": "Mais",
-"start": 53.28,
-"end": 53.44
+"start": 52.4,
+"end": 52.64
 },
 {
 "text": "je",
-"start": 53.44,
-"end": 53.6
+"start": 52.64,
+"end": 52.8
 },
 {
 "text": "pense",
-"start": 53.6,
-"end": 53.76
+"start": 52.8,
+"end": 52.96
 },
 {
 "text": "honnêtement",
-"start": 53.84,
-"end": 54.32
+"start": 53.04,
+"end": 53.52
 },
 {
 "text": "que",
-"start": 54.32,
-"end": 54.4
+"start": 53.52,
+"end": 53.6
 },
 {
 "text": "Fable",
-"start": 54.56,
-"end": 54.88
+"start": 53.68,
+"end": 54.0
 },
 {
 "text": "5.2",
-"start": 54.96,
-"end": 55.44
+"start": 54.16,
+"end": 54.64
 },
 {
 "text": "qui",
-"start": 55.52,
-"end": 55.68
+"start": 54.72,
+"end": 54.88
 },
 {
 "text": "vient",
-"start": 55.68,
-"end": 55.84
+"start": 54.88,
+"end": 55.04
 },
 {
 "text": "de",
-"start": 55.84,
-"end": 56
+"start": 55.04,
+"end": 55.2
 },
 {
 "text": "sortir",
+"start": 55.2,
+"end": 55.6
+},
+{
+"text": "peut",
+"start": 55.76,
+"end": 55.84
+},
+{
+"text": "faire",
 "start": 56,
 "end": 56.24
 },
 {
-"text": "peut",
-"start": 56.56,
-"end": 56.64
-},
-{
-"text": "faire",
-"start": 56.8,
-"end": 57.12
-},
-{
 "text": "mieux",
-"start": 57.12,
-"end": 57.36
+"start": 56.24,
+"end": 56.48
 },
 {
 "text": "pour",
-"start": 57.36,
-"end": 57.52
+"start": 56.48,
+"end": 56.64
 },
 {
 "text": "certaines",
-"start": 57.52,
-"end": 57.84
+"start": 56.72,
+"end": 57.04
 },
 {
 "text": "créations.",
-"start": 58,
-"end": 58.48
+"start": 57.12,
+"end": 57.76
 },
 {
 "text": "Des",
-"start": 58.65,
-"end": 58.81
+"start": 57.85,
+"end": 58.01
 },
 {
 "text": "vidéos",
-"start": 58.89,
-"end": 59.13
+"start": 58.09,
+"end": 58.25
 },
 {
 "text": "en",
-"start": 59.13,
-"end": 59.21
+"start": 58.25,
+"end": 58.41
 },
 {
 "text": "3D,",
-"start": 59.21,
-"end": 59.85
+"start": 58.41,
+"end": 58.97
 },
 {
 "text": "des",
-"start": 59.85,
-"end": 60.01
+"start": 58.97,
+"end": 59.13
 },
 {
 "text": "vidéos",
+"start": 59.13,
+"end": 59.37
+},
+{
+"text": "en",
+"start": 59.37,
+"end": 59.53
+},
+{
+"text": "2D,",
+"start": 59.53,
+"end": 60.01
+},
+{
+"text": "des",
 "start": 60.01,
 "end": 60.17
 },
 {
-"text": "en",
+"text": "vidéos",
 "start": 60.17,
 "end": 60.33
 },
 {
-"text": "2D,",
-"start": 60.33,
-"end": 60.89
-},
-{
-"text": "des",
-"start": 60.89,
-"end": 60.97
-},
-{
-"text": "vidéos",
-"start": 60.97,
-"end": 61.29
-},
-{
 "text": "en",
-"start": 61.29,
-"end": 61.29
+"start": 60.33,
+"end": 60.41
 },
 {
 "text": "3D",
-"start": 61.29,
-"end": 61.77
+"start": 60.41,
+"end": 60.89
 },
 {
 "text": "isométrique,",
-"start": 61.77,
-"end": 62.49
+"start": 60.89,
+"end": 61.69
 },
 {
 "text": "et",
-"start": 62.49,
-"end": 62.73
+"start": 61.69,
+"end": 61.85
 },
 {
 "text": "j'en",
-"start": 62.73,
-"end": 63.05
+"start": 61.85,
+"end": 62.25
 },
 {
 "text": "passe.",
-"start": 63.05,
-"end": 63.53
+"start": 62.25,
+"end": 62.57
 },
 {
 "text": "Abonne-toi,",
-"start": 63.77,
-"end": 64.41
+"start": 62.89,
+"end": 63.61
 },
 {
 "text": "parce",
-"start": 64.57,
-"end": 64.73
+"start": 63.69,
+"end": 63.85
 },
 {
 "text": "que",
-"start": 64.73,
-"end": 64.89
+"start": 63.85,
+"end": 64.01
 },
 {
 "text": "dans",
-"start": 64.89,
-"end": 65.05
+"start": 64.01,
+"end": 64.17
 },
 {
 "text": "la",
-"start": 65.05,
-"end": 65.13
+"start": 64.17,
+"end": 64.33
 },
 {
 "text": "prochaine",
-"start": 65.13,
-"end": 65.45
+"start": 64.33,
+"end": 64.65
 },
 {
 "text": "vidéo,",
-"start": 65.45,
-"end": 65.77
+"start": 64.65,
+"end": 64.97
 },
 {
 "text": "je",
-"start": 65.85,
-"end": 66.01
+"start": 64.97,
+"end": 65.21
 },
 {
 "text": "vais",
-"start": 66.01,
-"end": 66.33
+"start": 65.21,
+"end": 65.45
 },
 {
 "text": "te",
-"start": 66.33,
-"end": 66.57
+"start": 65.45,
+"end": 65.69
 },
 {
 "text": "montrer",
-"start": 66.57,
-"end": 67.05
+"start": 65.69,
+"end": 66.17
 },
 {
 "text": "comment",
-"start": 67.05,
-"end": 67.45
+"start": 66.17,
+"end": 66.57
 },
 {
 "text": "reproduire",
-"start": 67.45,
-"end": 67.93
+"start": 66.57,
+"end": 67.13
 },
 {
 "text": "le",
-"start": 67.93,
-"end": 68.09
+"start": 67.13,
+"end": 67.21
 },
 {
 "text": "style",
-"start": 68.09,
-"end": 68.33
+"start": 67.21,
+"end": 67.53
 },
 {
 "text": "visuel",
-"start": 68.33,
-"end": 68.73
+"start": 67.53,
+"end": 67.85
 },
 {
 "text": "d'un",
-"start": 68.73,
-"end": 68.97
+"start": 67.93,
+"end": 68.17
 },
 {
 "text": "autre",
-"start": 68.97,
-"end": 69.21
+"start": 68.17,
+"end": 68.41
 },
 {
 "text": "créateur",
-"start": 69.21,
-"end": 69.85
+"start": 68.41,
+"end": 69.05
 },
 {
 "text": "pour",
-"start": 69.85,
-"end": 70.09
+"start": 69.05,
+"end": 69.29
 },
 {
 "text": "faire",
-"start": 70.09,
-"end": 70.33
+"start": 69.29,
+"end": 69.45
 },
 {
 "text": "tes",
-"start": 70.33,
-"end": 70.57
+"start": 69.45,
+"end": 69.77
 },
 {
 "text": "vidéos.",
-"start": 70.57,
-"end": 70.97
+"start": 69.77,
+"end": 70.17
 }
 ]

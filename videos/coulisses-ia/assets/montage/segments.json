@@ -38,18 +38,18 @@
   },
   {
    "k": 4,
-   "prise": "20261116_162024",
+   "prise": "20261116_161514",
    "note": "HyperFrames intervient",
    "debut_montage": 26.39,
-   "duree": 3.3,
+   "duree": 2.46,
    "morceaux": 1,
-   "texte": "et c'est exactement là que Hyper FM intervient."
+   "texte": "Et c'est exactement là que hyperframe interven."
   },
   {
    "k": 5,
    "prise": "20261116_161514",
    "note": "références visuelles et code",
-   "debut_montage": 29.69,
+   "debut_montage": 28.85,
    "duree": 3.77,
    "morceaux": 2,
    "texte": "Il permet de créer des vidéos à partir de références visuelles et de code."
@@ -58,7 +58,7 @@
    "k": 6,
    "prise": "20261116_162024",
    "note": "plusieurs possibilités",
-   "debut_montage": 33.46,
+   "debut_montage": 32.62,
    "duree": 1.45,
    "morceaux": 1,
    "texte": "Tu as plusieurs possibilités."
@@ -67,7 +67,7 @@
    "k": 7,
    "prise": "20261116_161514",
    "note": "abonnements",
-   "debut_montage": 34.91,
+   "debut_montage": 34.07,
    "duree": 5.58,
    "morceaux": 1,
    "texte": "Tu peux utiliser Claude avec l'abonnement à 20 dollars pour commencer. Ou si tu veux le plus loin, tu peux prendre Claude Max."
@@ -76,7 +76,7 @@
    "k": 8,
    "prise": "20261116_161514",
    "note": "chatbot + attention",
-   "debut_montage": 40.49,
+   "debut_montage": 39.65,
    "duree": 5.72,
    "morceaux": 2,
    "texte": "Tu peux également installer la skills dans un environnement de chatbot. Mais attention, l'outil ne fait pas tout."
@@ -85,7 +85,7 @@
    "k": 9,
    "prise": "20261116_162024",
    "note": "tout se joue sur le modèle",
-   "debut_montage": 46.21,
+   "debut_montage": 45.37,
    "duree": 4.79,
    "morceaux": 1,
    "texte": "Mais tout va se jouer réellement sur le modèle que tu vas utiliser pour générer ta vidéo."
@@ -94,7 +94,7 @@
    "k": 10,
    "prise": "20261116_161514",
    "note": "Opus 5.5 et Fable 5.2",
-   "debut_montage": 51.0,
+   "debut_montage": 50.16,
    "duree": 7.45,
    "morceaux": 2,
    "texte": "O plus 5.5 est très intéressant. Mais je pense honnêtement que Fab 5.2 qui vient de sortir peut faire mieux pour certaines créations."
@@ -103,7 +103,7 @@
    "k": 11,
    "prise": "20261116_161514",
    "note": "3D, 2D, isométrique",
-   "debut_montage": 58.45,
+   "debut_montage": 57.61,
    "duree": 4.9,
    "morceaux": 1,
    "texte": "des vidéos de 3D, des vidéos en DD, des vidéos en 3D isométrique, et j'en passe."
@@ -112,7 +112,7 @@
    "k": 12,
    "prise": "20261116_161514",
    "note": "abonne-toi",
-   "debut_montage": 63.35,
+   "debut_montage": 62.51,
    "duree": 7.44,
    "morceaux": 3,
    "texte": "Abonne toi, parce que dans la prochaine vidéo, je vais te montrer comment reproduit le style visuel d'un autre créateur pour faire tes vidéos."
@@ -168,55 +168,55 @@
    "phrase": 4
   },
   {
-   "t": 29.69,
+   "t": 28.85,
    "phrase": 5
   },
   {
-   "t": 29.9,
+   "t": 29.06,
    "phrase": 5
   },
   {
-   "t": 33.46,
+   "t": 32.62,
    "phrase": 6
   },
   {
-   "t": 34.91,
+   "t": 34.07,
    "phrase": 7
   },
   {
-   "t": 40.49,
+   "t": 39.65,
    "phrase": 8
   },
   {
-   "t": 44.09,
+   "t": 43.25,
    "phrase": 8
   },
   {
-   "t": 46.21,
+   "t": 45.37,
    "phrase": 9
   },
   {
-   "t": 51.0,
+   "t": 50.16,
    "phrase": 10
   },
   {
-   "t": 53.07,
+   "t": 52.23,
    "phrase": 10
   },
   {
-   "t": 58.45,
+   "t": 57.61,
    "phrase": 11
   },
   {
-   "t": 63.35,
+   "t": 62.51,
    "phrase": 12
   },
   {
-   "t": 66.09,
+   "t": 65.25,
    "phrase": 12
   },
   {
-   "t": 69.69,
+   "t": 68.85,
    "phrase": 12
   }
  ]
