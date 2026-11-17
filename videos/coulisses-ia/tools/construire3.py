@@ -114,6 +114,9 @@ def dans_la_main(oid, html, t, hx, hy, t_fin, zoom=True, monte=200):
     hx, hy = min(max(hx, 260), 760), max(hy, 1700)
     monte = max(40, monte - 150)  # les objets restent sous les sous-titres (descendus à 1420 px)
     hx, hy = -60 + hx * 1200 / 1080, -106 + hy * 1200 / 1080  # repère de la vidéo studio agrandie
+    MAINS.append(f'<div id="{oid}-eclat" class="mg-eclat" style="opacity: 0"></div>')
+    j(f'tl.set("#{oid}-eclat", {{ x: {round(hx - 160)}, y: {round(hy - 220)} }}, {r(t)});')
+    j(f'tl.fromTo("#{oid}-eclat", {{ opacity: 1, scale: 0.2 }}, {{ opacity: 0, scale: 1.7, duration: 0.5, ease: "power2.out", immediateRender: false }}, {r(t)});')
     MAINS.append(f'<div id="{oid}" class="main-obj" style="left: {round(hx)}px; top: {round(hy)}px; opacity: 0">{html}</div>')
     j(f'tl.fromTo("#{oid}", {{ opacity: 0, scale: 0.1, y: 0, rotation: -25 }}, {{ opacity: 1, scale: 1, y: -{monte}, rotation: 0, duration: 0.42, ease: "back.out(1.8)", immediateRender: false }}, {r(t)});')
     j(f'tl.to("#{oid}", {{ y: -{monte + 30}, duration: 0.6, yoyo: true, repeat: 1, ease: "sine.inOut" }}, {r(t + 0.45)});')
@@ -198,15 +201,41 @@ for k, (f, n, t, x) in enumerate(LOGOS):
     HTML.append(f'<div id="lg{k}" class="logo-chip" style="left: {x}px; top: 400px; opacity: 0"><img src="assets/img/{f}" alt="" /><span>{n}</span></div>')
     apparait(f"#lg{k}", t, 80, 0.3)
     son(t, tour(POPS), 0.42, f"logo {n}")
-    cache(f"#lg{k}", T(40) - 0.1)
+    cache(f"#lg{k}", T(33))
 HTML.append('<div id="opus" class="tag" style="left: 70px; top: 640px; opacity: 0">OPUS 5.5</div>')
 claque("#opus", T(20), 1.8)
 son(T(20), "impact-tambour", 0.38, "Opus 5.5")
 cache("#opus", T(29) - 0.05)
-HTML.append('<div id="autres" class="tag clair" style="left: 300px; top: 640px; opacity: 0">+ BIEN D’AUTRES</div>')
-claque("#autres", T(33), 1.8)
-son(T(33), "pop-long", 0.36, "et bien d'autres")
-cache("#autres", T(40) - 0.1)
+# saturation : l'écran se remplit de modèles d'IA
+SAT = ["DeepSeek", "Mistral", "Llama", "Qwen", "Copilot", "Perplexity", "Kimi", "Midjourney", "Sora", "Veo", "Kling", "Runway", "Suno",
+       "Flux", "Gemma", "Phi", "GLM", "Hailuo", "Seedance", "Pika", "Luma", "Ideogram", "MiniMax", "Codestral", "Command R", "Ernie",
+       "Nova", "Yi", "Claude", "ChatGPT", "Gemini", "Grok", "DeepSeek", "Mistral", "Llama", "Qwen", "Sora", "Veo", "Kling", "Midjourney",
+       "Perplexity", "Copilot", "Flux", "Runway", "Gemma", "Hailuo", "Pika", "Luma", "Suno", "Seedance", "Ideogram", "Phi", "GLM", "Yi",
+       "Nova", "Kimi", "MiniMax", "Ernie", "Claude", "ChatGPT"]
+LOGO_SAT = {"Claude": "logo-claude.svg", "ChatGPT": "logo-chatgpt.svg", "Gemini": "logo-gemini.svg", "Grok": "logo-grok.svg"}
+COUL = ["#38BDF8", "#F2B705", "#FF6B6B", "#7DD3FC", "#A78BFA", "#34D399", "#FB923C", "#F472B6"]
+HTML.append('<div id="sat-voile" class="flash" style="background: rgba(5,8,15,0.55); z-index: 11"></div>')
+j(f'tl.fromTo("#sat-voile", {{ opacity: 0 }}, {{ opacity: 1, duration: 0.3, immediateRender: false }}, {r(T(33))});')
+j(f'tl.to("#sat-voile", {{ opacity: 0, duration: 0.2 }}, {r(T(40) - 0.12)});')
+t_sat0, t_sat1 = T(33), T(39)
+for k, nom in enumerate(SAT):
+    col, row = k % 5, k // 5
+    x = 30 + col * 205 + ((row * 37 + k * 53) % 60) - 30
+    y = 170 + row * 128 + ((k * 71) % 40) - 20  # 13 rangées : tout l'écran est rempli
+    rot = ((k * 37) % 30) - 15
+    ic = f'<img src="assets/img/{LOGO_SAT[nom]}" alt="" />' if nom in LOGO_SAT else f'<i style="background: {COUL[k % len(COUL)]}"></i>'
+    HTML.append(f'<div id="sat{k}" class="sat-chip" data-layout-allow-overlap style="left: {x}px; top: {y}px; opacity: 0; transform: rotate({rot}deg)">{ic}{nom}</div>')
+    t0 = t_sat0 + (t_sat1 - t_sat0) * (k / len(SAT)) ** 0.8
+    j(f'tl.fromTo("#sat{k}", {{ opacity: 0, scale: 2.4 }}, {{ opacity: 1, scale: 1, duration: 0.14, ease: "power4.in", immediateRender: false }}, {r(t0)});')
+    j(f'tl.to("#sat{k}", {{ opacity: 0, scale: 0.2, x: {round((540 - x) * 0.8)}, y: {round((960 - y) * 0.8)}, duration: 0.22, ease: "power3.in" }}, {r(T(40) - 0.18)});')
+    if k % 4 == 0:
+        son(t0, tour(POPS), 0.26, f"modèle {nom}")
+son(t_sat0, "swell-court", 0.3, "saturation de modèles")
+son(T(40) - 0.18, "aspiration", 0.32, "les modèles sont aspirés")
+HTML.append('<div id="autres" class="slam" data-layout-allow-overlap style="top: 860px; z-index: 13; opacity: 0">+ BIEN<br>D’AUTRES</div>')
+claque("#autres", T(34), 2.2)
+son(T(34), "impact-basse", 0.3, "et bien d'autres")
+cache("#autres", T(40) - 0.12)
 
 # ================================================================ 5. Le game changer : HyperFrames
 cap = ICI / "assets/captures/hyperframes-accueil.mp4"
@@ -312,10 +341,10 @@ HTML.append('<div id="att" class="alerte" style="opacity: 0">⚠ L’OUTIL NE FA
 claque("#att", T(137), 1.8)
 son(T(137), "alarme-alerte", 0.3, "attention", d=0.8)
 cache("#att", T(144))
-HTML.append('<div id="cle" class="slam petit" style="opacity: 0">LE MODÈLE<br>= LA CLÉ</div>')
+HTML.append('<div id="cle" class="slam petit" style="top: 660px; font-size: 104px; opacity: 0">LE MODÈLE = LA CLÉ</div>')
 claque("#cle", T(152), 2.0)
 son(T(152), "impact-basse", 0.45, "le modèle")
-cache("#cle", T(161) - 0.05)
+cache("#cle", T(155) - 0.05)
 
 # ================================================================ 12. Abonne-toi + prochaine vidéo
 HTML.append('<div id="proch" class="prochaine" style="opacity: 0"><span>PROCHAINE VIDÉO</span><b>Copier le style visuel<br>d’un autre créateur</b></div>')
@@ -443,7 +472,39 @@ magie("mgA", contenu_video("mgA-v", "assets/exemples/liste-depenser-moins.mp4", 
 tB = geste(40.87 + D)[0]
 magie("mgB", contenu_video("mgB-v", "assets/captures/modele-gemini.mp4", tB, T(137), 0.0, large=True), "B", tB, T(131), T(137) - 0.3, "TON CHATBOT")
 # --- « pour générer ta vidéo »
-magie("mgC", contenu_video("mgC-v", "assets/exemples/effet-levier.mp4", T(155), T(161), 0.3, centre=True), "C", T(155), T(158), T(161) - 0.25)
+ROUL = [("Grok", "logo-grok.svg"), ("Gemini", "logo-gemini.svg"), ("DeepSeek", None), ("ChatGPT", "logo-chatgpt.svg"), ("Mistral", None),
+        ("Llama", None), ("Qwen", None), ("Fable 5.2", "logo-claude.svg"), ("Gemini", "logo-gemini.svg"), ("Grok", "logo-grok.svg"),
+        ("ChatGPT", "logo-chatgpt.svg"), ("DeepSeek", None), ("Opus 5.5", "logo-claude.svg"), ("Kimi", None), ("Mistral", None)]
+cartes = "".join(f'<div class="rl-carte{" cible" if n == "Opus 5.5" else ""}">' + (f'<img src="assets/img/{l}" alt="" />' if l else f'<i>{n[0]}</i>') + f'<b>{n}</b></div>'
+                 for n, l in ROUL)
+HTML.append(f'<div id="roul" class="roulette" style="opacity: 0"><div id="roul-bande" class="rl-bande">{cartes}</div><div class="rl-cadre"></div></div>')
+t_r0, t_r1 = T(145), T(152)
+cible = [n for n, _ in ROUL].index("Opus 5.5")
+j(f'tl.set("#roul", {{ opacity: 1 }}, {r(t_r0)});')
+j(f'tl.fromTo("#roul-bande", {{ x: 0 }}, {{ x: {-(cible * 300) + 390}, duration: {r(t_r1 - t_r0)}, ease: "power4.out", immediateRender: false }}, {r(t_r0)});')
+for k in range(9):
+    son(t_r0 + (t_r1 - t_r0) * (k / 9) ** 2.2, "tic", 0.3, "la roulette tourne")
+son(t_r1, "trailer-impact", 0.3, "la roulette s'arrête sur Opus 5.5")
+flash(t_r1, 0.45)
+j(f'tl.to("#roul", {{ opacity: 0, duration: 0.15 }}, {r(T(155) - 0.05)});')
+# puis plusieurs modèles côte à côte : le cadre de sélection saute de l'un à l'autre
+GRM = [("Opus 5.5", "logo-claude.svg"), ("Fable 5.2", "logo-claude.svg"), ("ChatGPT", "logo-chatgpt.svg"), ("Gemini", "logo-gemini.svg"),
+       ("Grok", "logo-grok.svg"), ("DeepSeek", None)]
+for k, (n, l) in enumerate(GRM):
+    gx, gy = 60 + (k % 3) * 330, 330 + (k // 3) * 230
+    ic = f'<img src="assets/img/{l}" alt="" />' if l else f'<i>{n[0]}</i>'
+    HTML.append(f'<div id="gm{k}" class="rl-carte grille" style="left: {gx}px; top: {gy}px; opacity: 0">{ic}<b>{n}</b></div>')
+    apparait(f"#gm{k}", T(155) + 0.05 * k, 60, 0.4, 0.2)
+    j(f'tl.to("#gm{k}", {{ opacity: 0, scale: 0.8, duration: 0.15 }}, {r(T(161) - 0.05)});')
+son(T(155), "whoosh-cine", 0.34, "les modèles s'alignent")
+HTML.append('<div id="gm-sel" class="gm-sel" style="opacity: 0"></div>')
+ordre = [2, 3, 4, 5, 1, 0]
+for k, i in enumerate(ordre):
+    t = T(156) + 0.25 * k
+    gx, gy = 60 + (i % 3) * 330, 330 + (i // 3) * 230
+    j(f'tl.set("#gm-sel", {{ opacity: 1, x: {gx - 10}, y: {gy - 10} }}, {r(t)});')
+    son(t, "clic-souris", 0.3, "on choisit le modèle")
+j(f'tl.to("#gm-sel", {{ opacity: 0, duration: 0.15 }}, {r(T(161) - 0.05)});')
 # --- « des vidéos en 3D, des vidéos en 2D, des vidéos en 3D isométrique, et j'en passe » : le tour de magie
 magie("mg3d", contenu_video("mg3d-v", "assets/magie/retro-soleil.mp4", T(183), T(187), 0.5, large=True), "E", T(183), T(185), T(187) - 0.28, "3D")
 magie("mg2d", contenu_video("mg2d-v", "assets/exemples/enveloppes.mp4", T(187), T(191), 0.6, centre=True), "E", T(187), T(189), T(191) - 0.28, "2D")
@@ -527,7 +588,7 @@ dans_la_main("mo1", '<img src="assets/img/logo-claude.svg" alt="" class="m-logo"
 t, hx, hy = geste(14.53 + D)
 dans_la_main("mo2", '<b class="m-txt">GAME<br>CHANGER</b>', t, hx, hy, T(48) - 0.1, monte=230)
 t, hx, hy = geste(18.87 + D)
-dans_la_main("mo3", '<b class="m-txt q">?</b>', t, hx, hy, 19.55 + D, zoom=False)
+dans_la_main("mo3", '<b class="m-txt q">?</b>', t, hx, hy, 19.55 + D, zoom=False, monte=750)
 t, hx, hy = geste(22.93 + D)
 dans_la_main("mo4", '<b class="m-code">&lt;/&gt;</b>', t, hx, hy, T(78) - 0.1, zoom=False)
 t, hx, hy = geste(28.27 + D)
@@ -688,6 +749,22 @@ CSS = f"""
       .ch-mieux {{ position: absolute; right: 16px; top: 16px; z-index: 2; font-family: "Anton", sans-serif; font-weight: 400; font-size: 70px; color: {NUIT}; background: #F2B705; padding: 6px 28px 0; border: 6px solid {NUIT}; transform: rotate(-3deg); }}
       .ch-saisie {{ position: absolute; left: 60px; right: 60px; top: 1560px; height: 130px; border-radius: 65px; background: #2f2d29; border: 4px solid #5a564d; display: flex; align-items: center; padding: 0 50px; font-size: 44px; color: #8a857a; }}
       .ch-saisie i {{ margin-left: auto; font-style: normal; width: 80px; height: 80px; border-radius: 40px; background: {TERRA}; color: #fff; text-align: center; line-height: 80px; }}
+      .sat-chip {{ position: absolute; display: flex; align-items: center; gap: 12px; background: #fff; color: {NUIT}; font-family: "Anton", sans-serif; font-size: 44px;
+        padding: 10px 22px 6px 14px; border-radius: 18px; border: 5px solid {NUIT}; box-shadow: 0 14px 40px rgba(0,0,0,0.55); white-space: nowrap; z-index: 12; }}
+      .sat-chip img {{ width: 44px; height: 44px; background: {NUIT}; border-radius: 10px; padding: 4px; }}
+      .sat-chip i {{ display: inline-block; width: 26px; height: 26px; border-radius: 50%; }}
+      .roulette {{ position: absolute; left: 0; top: 340px; width: 1080px; height: 300px; overflow: hidden; }}
+      .rl-bande {{ position: absolute; left: 0; top: 30px; display: flex; gap: 0; }}
+      .rl-carte {{ width: 280px; height: 240px; margin-right: 20px; flex: none; background: #fff; border: 7px solid {NUIT}; border-radius: 30px; display: flex; flex-direction: column;
+        align-items: center; justify-content: center; gap: 12px; box-shadow: 0 20px 60px rgba(0,0,0,0.55); }}
+      .rl-carte img {{ width: 96px; height: 96px; background: {NUIT}; border-radius: 22px; padding: 10px; }}
+      .rl-carte i {{ width: 96px; height: 96px; border-radius: 22px; background: {CIEL}; color: {NUIT}; font-style: normal; font-family: "Anton", sans-serif; font-size: 64px;
+        display: flex; align-items: center; justify-content: center; }}
+      .rl-carte b {{ font-family: "Anton", sans-serif; font-weight: 400; font-size: 48px; color: {NUIT}; }}
+      .rl-carte.cible {{ background: #FFF4D6; border-color: {TERRA}; }}
+      .rl-carte.grille {{ position: absolute; width: 300px; height: 210px; margin: 0; }}
+      .rl-cadre {{ position: absolute; left: 380px; top: 20px; width: 320px; height: 260px; border: 10px solid #F2B705; border-radius: 38px; box-shadow: 0 0 40px rgba(242,183,5,0.7); }}
+      .gm-sel {{ position: absolute; left: 0; top: 0; width: 320px; height: 230px; border: 10px solid #F2B705; border-radius: 36px; box-shadow: 0 0 40px rgba(242,183,5,0.7); z-index: 12; }}
       #calques {{ position: absolute; inset: 0; z-index: 10; pointer-events: none; }}
       .plein {{ position: absolute; inset: 0; overflow: hidden; background: #000; }}
       .plein video {{ width: 100%; height: 100%; object-fit: cover; }}

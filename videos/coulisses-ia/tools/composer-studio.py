@@ -53,7 +53,7 @@ def morceau(args):
             break
         rgb = np.frombuffer(b, np.uint8).reshape(H, W, 3)
         al = np.frombuffer(ba, np.uint8).reshape(H, W) if len(ba) == W * H else np.zeros((H, W), np.uint8)
-        out, prec = studio.composer(rgb, al, fond_a(i / FPS, cache), prec)
+        out, prec = studio.composer(rgb, al, fond_a(i / FPS, cache), prec, i)
         ecrire.stdin.write((out * 255 + 0.5).astype(np.uint8).tobytes())
         if (i - i0) % 100 == 0:
             print(f"morceau {q} : image {i - i0}/{i1 - i0}", flush=True)

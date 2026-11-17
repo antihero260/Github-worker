@@ -90,16 +90,20 @@ def decontaminer(rgb, alpha):
     return (c * 255).astype(np.uint8)
 
 
-def nettete(p, a):
-    """accentuation douce (masque flou) sur la personne seulement"""
-    b = np.stack([ndimage.gaussian_filter(p[..., i], 1.3) for i in range(3)], -1)
-    return np.clip(p + 0.9 * (p - b) * a[..., None], 0, 1)
+def nettete(p, a, graine=0):
+    """accentuation fine (petit rayon, moins de halos) + accentuation moyenne légère, sur la personne ;
+    puis grain très léger (masque les aplats de la compression du téléphone, rendu plus « caméra »)"""
+    b1 = np.stack([ndimage.gaussian_filter(p[..., i], 0.8) for i in range(3)], -1)
+    b2 = np.stack([ndimage.gaussian_filter(p[..., i], 2.2) for i in range(3)], -1)
+    p = p + (0.75 * (p - b1) + 0.25 * (p - b2)) * a[..., None]
+    g = np.random.default_rng(graine).standard_normal(p.shape[:2]).astype(np.float32) * 0.010
+    return np.clip(p + g[..., None], 0, 1)
 
 
-def composer(rgb, alpha, fond, prec=None):
+def composer(rgb, alpha, fond, prec=None, graine=0):
     rgb = decontaminer(rgb, alpha)
     a = detourage(alpha, prec)
-    p = nettete(eclairer(rgb, a), a)
+    p = nettete(eclairer(rgb, a), a, graine)
     # bord : le mur clair déborde sur les contours -> on assombrit la frange (pas de liseré clair)
     p *= (0.7 + 0.3 * np.clip(a * 1.15, 0, 1))[..., None]
     out = p * a[..., None] + fond * (1 - a[..., None])
