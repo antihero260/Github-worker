@@ -733,7 +733,7 @@ def sous_titres():
 
 MUSIQUES = []
 for k_, m_ in enumerate(json.loads((ICI / "assets/music/tension.json").read_text())):
-    vol = (0.45, 0.52, 0.56, 0.52)[k_]  # morceaux à −17 LUFS : la musique reste environ 5–6 dB sous la voix (l'accroche plus bas)
+    vol = (0.50, 0.50)[k_]  # deux morceaux à −17 LUFS : la musique reste environ 5–6 dB sous la voix
     MUSIQUES.append(f'      <audio id="musique-{k_ + 1}" src="assets/music/{m_["fichier"]}" data-start="{m_["debut"]}" data-duration="{min(m_["duree"], round(FIN - m_["debut"], 3))}" '
                     f'data-volume="{vol}" data-track-index="{20 + k_ % 2}"></audio>')
 sous_titres()
