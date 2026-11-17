@@ -147,8 +147,6 @@ LOGO = {"ChatGPT": "logo-chatgpt-noir.svg", "Claude": "logo-claude.svg", "Gemini
 COUL = ["#38BDF8", "#F2B705", "#FF6B6B", "#A78BFA", "#34D399", "#FB923C", "#F472B6", "#7DD3FC"]
 DIRS = [(-1, 0), (1, 0), (0, -1), (0, 1), (-1, -1), (1, -1), (-1, 1), (1, 1)]
 t_s0, t_s1, t_asp = 0.0, W(21), W(22) - 0.05
-HTML.append('<div id="sat-voile" class="flash" style="background: rgba(255,255,255,0.45); z-index: 11"></div>')
-j(f'tl.set("#sat-voile", {{ opacity: 1 }}, 0); tl.to("#sat-voile", {{ opacity: 0, duration: 0.25 }}, {r(t_asp + 0.1)});')
 for k, nom in enumerate(OUTILS):
     col, row = k % 5, k // 5
     x = 30 + col * 205 + ((row * 41 + k * 59) % 60) - 30
@@ -523,8 +521,8 @@ CSS = """
       .flash { position: absolute; inset: 0; opacity: 0; pointer-events: none; z-index: 40; }
       #fondu { position: absolute; inset: 0; opacity: 0; z-index: 60; background: #000; }
       #titre { position: absolute; left: 0; top: 0; width: 1080px; height: 270px; z-index: 30; display: flex; justify-content: center; padding-top: 120px; }
-      #titre b { font-family: "Anton", sans-serif; font-weight: 400; font-size: 64px; color: #fff; letter-spacing: 1px; -webkit-text-stroke: 8px #000; paint-order: stroke fill; }
-      #titre b i { font-style: normal; color: #38BDF8; }
+      #titre b { font-family: "Anton", sans-serif; font-weight: 400; font-size: 66px; color: #0B1220; letter-spacing: 1px; text-shadow: 0 4px 18px rgba(255,255,255,0.9); }
+      #titre b i { font-style: normal; color: #0369A1; }
       .chip { position: absolute; display: flex; align-items: center; gap: 10px; font-family: "Anton", sans-serif; font-size: 44px; color: #0B1220; background: #fff;
         border: 5px solid #0B1220; border-radius: 18px; padding: 6px 16px 2px; white-space: nowrap; z-index: 12; box-shadow: 0 12px 30px rgba(0,0,0,0.45); }
       .chip img { width: 46px; height: 46px; } .chip i { width: 22px; height: 22px; border-radius: 50%; display: inline-block; }
@@ -582,7 +580,7 @@ CSS = """
       .etape b { font-family: "Inter Lf", sans-serif; font-weight: 800; font-size: 42px; color: #0B1220; }
       .et-v { position: absolute; left: 88px; }
       .niv-mini { position: absolute; left: 0; top: 200px; width: 1080px; text-align: center; z-index: 31; font-family: "Anton", sans-serif; font-size: 40px;
-        color: #fff; -webkit-text-stroke: 6px #000; paint-order: stroke fill; }
+        color: #0B1220; }
       .niv-mini span { display: inline-block; color: #0B1220; -webkit-text-stroke: 0; border: 4px solid #0B1220; border-radius: 12px; padding: 2px 14px 0; margin-right: 8px; }
       .f-tete2 { position: absolute; left: 40px; top: 318px; width: 1000px; text-align: center; z-index: 13; font-family: "Anton", sans-serif; font-size: 54px;
         color: #0B1220; } .f-tete2 { background: #F2B705; border-radius: 0; }
