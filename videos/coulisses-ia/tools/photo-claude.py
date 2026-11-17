@@ -2,7 +2,7 @@
 """Photo de l'utilisateur retravaillée en 4K vertical (2160×3840) : fond sombre et lumineux, logo Claude en 3D lumineux
 qui flotte dans le creux de la main et éclaire la main et le visage.
 Entrées : la photo détourée (hyperframes remove-background) et le logo rendu en PNG. Sortie : PNG + JPG.
-Usage : python3 tools/photo-claude.py <detoure.png> <logo.png> <sortie-sans-extension> [plat]"""
+Usage : python3 tools/photo-claude.py <detoure.png> <logo.png> <sortie-sans-extension> [3d | plat | plat-lumineux]"""
 import sys
 import numpy as np
 from PIL import Image, ImageFilter
@@ -13,8 +13,11 @@ S = 1.1                      # agrandissement de la photo d'origine (2556×3408)
 X0, Y0 = 392, H - round(3408 * S)   # recadrage : visage centré, bas de la photo collé au bas de l'image
 LX, LY, LS = 521, 2544, 600   # au creux de la main, derrière l'index (x_final = 1,1·x − 392, y_final = 91 + 1,1·y)  # centre et taille du logo (dans le creux de la main)
 rng = np.random.default_rng(7)
-PLAT = len(sys.argv) > 4 and sys.argv[4] == 'plat'   # 'plat' : le vrai logo, couleur d'origine, sans relief ni brillance
-L = 0.0 if PLAT else 1.0                            # intensité de tout ce qui « brille » autour du logo
+MODE = sys.argv[4] if len(sys.argv) > 4 else "3d"
+# "3d" : logo en relief lumineux + étincelles ; "plat" : vrai logo, sans brillance ; "plat-lumineux" : vrai logo qui brille, sans aucune particule
+PLAT = MODE in ("plat", "plat-lumineux")
+L = 1.0 if MODE in ("3d", "plat-lumineux") else 0.0   # intensité de ce qui « brille » autour du logo
+PARTICULES = MODE == "3d"
 
 
 def flou(a, s):
@@ -45,13 +48,13 @@ VIOLET = np.array([0.45, 0.25, 0.85], np.float32)
 fond = np.zeros((H, W, 3), np.float32) + np.array([0.012, 0.016, 0.03], np.float32)
 fond += radial(1150, 1350, 1500, 1300, 1.6)[..., None] * BLEU * 0.30
 fond += radial(1700, 700, 900, 900, 2.0)[..., None] * VIOLET * 0.22
-fond += radial(LX, LY, 1300, 1300, 2.2)[..., None] * ORANGE * (0.55 if not PLAT else 0.10)
+fond += radial(LX, LY, 1300, 1300, 2.2)[..., None] * ORANGE * {"3d": 0.55, "plat": 0.10, "plat-lumineux": 0.40}[MODE]
 # rayons de lumière qui partent du logo
 ang = np.arctan2(yy - LY, xx - LX)
 dist = np.sqrt((xx - LX) ** 2 + (yy - LY) ** 2)
 rayons = (0.5 + 0.5 * np.sin(ang * 9 + 0.6)) ** 6 * 0.6 + (0.5 + 0.5 * np.sin(ang * 23 + 1.9)) ** 10 * 0.4
 rayons *= np.exp(-dist / 1500) * np.clip(dist / 250, 0, 1)
-fond += rayons[..., None] * ORANGE * 0.22 * L
+fond += rayons[..., None] * ORANGE * 0.22 * PARTICULES
 # particules de lumière (bokeh)
 bokeh = np.zeros((H, W, 3), np.float32)
 for _ in range(90):
@@ -60,7 +63,7 @@ for _ in range(90):
     c = ORANGE if rng.random() < 0.55 else (BLEU if rng.random() < 0.6 else VIOLET)
     k = radial(cx, cy, r, r, 0.6) * rng.uniform(0.25, 0.8)
     bokeh += k[..., None] * c
-fond += flou(bokeh, 6) * 0.9
+fond += flou(bokeh, 6) * 0.9 * PARTICULES
 tex = flou(rng.standard_normal((H // 4, W // 4)).astype(np.float32), 8)
 tex = ndimage.zoom(tex / (np.abs(tex).max() + 1e-6), 4, order=1)[:H, :W]
 fond *= (1 + 0.12 * tex)[..., None]
@@ -129,7 +132,7 @@ def poser(couche_rgb, couche_a, dx=0, dy=0):
 # lueurs larges (avant de poser le logo, pour qu'il reste net et bien orange)
 gl = np.zeros((H, W), np.float32)
 gl[oy:oy + lh, ox:ox + lw] = la
-for s_, k_ in ((40, 0.6), (100, 0.7), (240, 0.6)):
+for s_, k_ in (((40, 0.6), (100, 0.7), (240, 0.6)) if MODE == "3d" else ((30, 0.45), (90, 0.45), (220, 0.4))):
     g = flou(gl, s_)
     g = g / (g.max() + 1e-6)
     img += g[..., None] * ORANGE * k_ * L
@@ -154,15 +157,19 @@ biseau = np.clip(-(nx * -0.7 + ny * -0.7) * 9, -1, 1)
 face = face * (1 + 0.35 * biseau[..., None]) + np.clip(biseau, 0, 1)[..., None] * 0.35
 reflet = np.clip(1 - np.sqrt(((gx - lw * 0.35) / (lw * 0.35)) ** 2 + ((gy - lh * 0.3) / (lh * 0.25)) ** 2), 0, 1) ** 2
 face = face + reflet[..., None] * 0.25
-if PLAT:
+if MODE == "plat":
     face = np.broadcast_to(np.array([217, 119, 87], np.float32) / 255, (lh, lw, 3))   # la couleur officielle du logo Claude
-poser(np.clip(face, 0, 1.3), la)
+elif MODE == "plat-lumineux":
+    # le vrai logo, plat, mais qui émet de la lumière : orange vif sur les bords, presque blanc au cœur des branches
+    interieur = ndimage.gaussian_filter(la, 6) * la * 0.65
+    face = np.array([1.0, 0.50, 0.27], np.float32) * (1 - interieur[..., None]) + np.array([1.3, 0.9, 0.66], np.float32) * interieur[..., None]
+poser(np.clip(face, 0, 1.4), la)
 # fine lueur de contour par-dessus (le logo « émet » sans être brûlé)
 g = flou(gl, 12)
 contour = np.clip(g / (g.max() + 1e-6) - gl * 0.85, 0, 1)
 img += contour[..., None] * ORANGE * 1.1 * L
 # étincelles en étoile autour du logo
-for _ in range(0 if PLAT else 14):
+for _ in range(14 if PARTICULES else 0):
     a_ = rng.uniform(0, 2 * np.pi)
     r_ = rng.uniform(lw * 0.55, lw * 1.25)
     cx, cy = LX + np.cos(a_) * r_, LY + np.sin(a_) * r_ * 0.8
