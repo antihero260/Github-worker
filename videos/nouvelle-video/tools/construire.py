@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Montage « Les 3 niveaux de l'IA » (agents IA) : vertical 1080×1920, face caméra.
-Base : assets/montage.mp4 (découpage de tools/decouper.py, étalonné). Les graphiques occupent le haut de l'image (le plafond),
+Base : assets/perso.webm (personne détourée, hyperframes remove-background) sur des fonds blancs lumineux qui changent par partie ; voix : assets/voix-montage.m4a. Les graphiques occupent le haut de l image,
 le visage reste libre, les sous-titres mot à mot sont posés sur le t-shirt (y ≈ 1420).
 Scènes : accroche (saturation d'outils IA) → niveau 1 prompting (conversation) → niveau 2 automatisation (scénario mail → résumé → CRM)
 → niveau 3 agents IA (objectif + étapes cochées par l'agent) → la révolution (répond → délègue).
@@ -17,28 +17,47 @@ BRUT = BRUT if isinstance(BRUT, list) else BRUT["words"]
 DECAL = 0.18   # les temps de Parakeet arrivent ~0,2 s en avance sur le son (vérifié sur l'énergie)
 
 # indices de mots par morceau (mêmes que tools/decouper.py)
-PLAGES = [(15, 37), (103, 104), (105, 106), (115, 124), (153, 159), (164, 167), (191, 205), (239, 244), (250, 254), (257, 264),
+PLAGES = [(15, 37), (103, 104), (105, 106), (115, 124), (153, 159), (164, 167), (191, 204), (238, 244), (250, 254), (257, 264),
           (287, 289), (310, 313), (339, 346), (363, 368), (381, 389), (408, 416), (427, 435), (451, 465)]
 CORR = {33: "ChatGPT", 37: "automatisations ?", 104: "niveau :", 120: "ChatGPT,", 124: "répond,", 157: "nécessite", 167: "IA.",
-        204: "résumer,", 239: "enregistrer", 263: "agents", 339: "et", 408: "vérifier", 451: "passer", 435: "révolution :"}
+        204: "résumer,", 238: "puis", 239: "enregistrer", 263: "agents", 339: "et", 408: "vérifier", 451: "passer", 435: "révolution :"}
 SUPPR = {34, 121}   # « GPT » fusionné dans « ChatGPT »
 
-T_SEG, MOTS, IDX = [], [], {}
+# découpage en pièces (une phrase peut avoir plusieurs pièces quand une pause interne a été retirée)
+T_SEG, P_T, MOTS, IDX = [], [], [], {}
 t = 0.0
-for (m0, m1), o in zip(PLAGES, DEC):
-    T_SEG.append(t)
-    d = o["fin"] - o["debut"]
+PIECES = []
+for o in DEC:
+    PIECES.append(dict(o, t=t))
+    t += o["fin"] - o["debut"]
+FIN_VOIX = t
+FIN = round(t + 0.5, 2)
+for n in range(1, len(PLAGES) + 1):
+    T_SEG.append(next(p["t"] for p in PIECES if p["n"] == n))
+T_SEG.append(FIN_VOIX)
+P_T = [p["t"] for p in PIECES] + [FIN_VOIX]
+
+
+def place(n, t_orig):
+    """temps dans le montage d'un instant t_orig de la prise brute, dans la phrase n"""
+    ps = [p for p in PIECES if p["n"] == n]
+    for p in ps:
+        if p["debut"] <= t_orig < p["fin"]:
+            return p["t"] + t_orig - p["debut"]
+    p = min(ps, key=lambda p: min(abs(t_orig - p["debut"]), abs(t_orig - p["fin"])))
+    return p["t"] + min(max(t_orig - p["debut"], 0.0), p["fin"] - p["debut"] - 0.1)
+
+
+for n, (m0, m1) in enumerate(PLAGES, start=1):
     for i in range(m0, m1 + 1):
         if i in SUPPR:
             continue
-        s = min(max(BRUT[i]["start"] + DECAL - o["debut"], 0.0), d - 0.1) + t
         IDX[i] = len(MOTS)
-        MOTS.append({"text": CORR.get(i, BRUT[i]["text"]), "start": round(s, 3), "orig": i})
+        MOTS.append({"text": CORR.get(i, BRUT[i]["text"]), "start": round(place(n, BRUT[i]["start"] + DECAL), 3), "orig": i})
         if i == 344:   # « nécessaires » : dit, mais absent de la transcription (vérifié avec Whisper)
-            MOTS.append({"text": "nécessaires", "start": round(t + 196.30 - o["debut"], 3), "orig": None})
-    t += d
-FIN = round(t + 0.5, 2)
-T_SEG.append(t)
+            MOTS.append({"text": "nécessaires", "start": round(place(n, 196.30), 3), "orig": None})
+MOTS.sort(key=lambda m: m["start"])
+IDX = {m["orig"]: k for k, m in enumerate(MOTS) if m["orig"] is not None}
 
 
 def W(i):
@@ -50,7 +69,7 @@ def r(x):
     return round(x, 3)
 
 
-JS, HTML, SONS = [], [], []
+JS, HTML, SONS, FOND_HTML = [], [], [], []
 
 
 def j(l):
@@ -101,10 +120,10 @@ def flash(t, op=0.6, coul="#fff"):
 
 
 # ================================================================ caméra : zoom alterné à chaque coupe + poussée lente + zooms de cinéma
-ZOOMS = [1.0, 1.14, 1.0, 1.12, 1.0, 1.15, 1.0, 1.13, 1.0, 1.16, 1.0, 1.12, 1.0, 1.14, 1.0, 1.13, 1.0, 1.15]
-for k in range(len(DEC)):
-    a, b = T_SEG[k], T_SEG[k + 1]
-    z = ZOOMS[k]
+# zoom alterné à chaque coupe (y compris les pauses retirées dans une phrase) : cache les sauts d'image
+for k in range(len(PIECES)):
+    a = P_T[k]
+    z = 1.0 if k % 2 == 0 else (1.12, 1.15, 1.13)[(k // 2) % 3]
     j(f'tl.set("#coupe", {{ scale: {z} }}, {r(a)});')
     if k:
         j(f'tl.fromTo("#cam", {{ scale: 1.05 }}, {{ scale: 1, duration: 0.22, ease: "power3.out", immediateRender: false }}, {r(a)});')
@@ -128,7 +147,7 @@ LOGO = {"ChatGPT": "logo-chatgpt-noir.svg", "Claude": "logo-claude.svg", "Gemini
 COUL = ["#38BDF8", "#F2B705", "#FF6B6B", "#A78BFA", "#34D399", "#FB923C", "#F472B6", "#7DD3FC"]
 DIRS = [(-1, 0), (1, 0), (0, -1), (0, 1), (-1, -1), (1, -1), (-1, 1), (1, 1)]
 t_s0, t_s1, t_asp = 0.0, W(21), W(22) - 0.05
-HTML.append('<div id="sat-voile" class="flash" style="background: rgba(5,8,15,0.55); z-index: 11"></div>')
+HTML.append('<div id="sat-voile" class="flash" style="background: rgba(255,255,255,0.45); z-index: 11"></div>')
 j(f'tl.set("#sat-voile", {{ opacity: 1 }}, 0); tl.to("#sat-voile", {{ opacity: 0, duration: 0.25 }}, {r(t_asp + 0.1)});')
 for k, nom in enumerate(OUTILS):
     col, row = k % 5, k // 5
@@ -308,6 +327,48 @@ j(f'tl.fromTo("#av-b", {{ boxShadow: "0 0 0px rgba(242,183,5,0)" }}, {{ boxShado
 j(f'tl.fromTo("#fondu", {{ opacity: 0 }}, {{ opacity: 1, duration: 0.45, immediateRender: false }}, {r(FIN - 0.45)});')
 
 
+# ================================================================ FONDS blancs et lumineux, un par partie (fondus enchaînés), lumière qui bouge
+FONDS = [  # (début, couleur de la lumière principale, couleur secondaire)
+    (0.0, "56,189,248", "167,139,250"),          # accroche : bleu ciel + violet
+    (T_SEG[1], "56,189,248", "125,211,252"),     # niveau 1 : bleu
+    (T_SEG[5], "242,183,5", "251,146,60"),       # niveau 2 : or
+    (T_SEG[9], "255,107,107", "244,114,182"),    # niveau 3 : corail
+    (T_SEG[16], "242,183,5", "56,189,248"),      # la révolution : or + bleu
+]
+for k, (t0, c1, c2) in enumerate(FONDS):
+    t1 = FONDS[k + 1][0] if k + 1 < len(FONDS) else FIN
+    FOND_HTML.append(f'<div id="fond{k}" class="fond" style="opacity: {1 if k == 0 else 0}; background: radial-gradient(ellipse 60% 45% at 22% 18%, rgba({c1},0.42), rgba({c1},0) 70%), '
+                     f'radial-gradient(ellipse 55% 40% at 82% 30%, rgba({c2},0.34), rgba({c2},0) 70%), radial-gradient(ellipse 90% 60% at 50% 105%, rgba({c1},0.22), rgba({c1},0) 70%), #F7F9FD">'
+                     f'<div class="f-points"></div><div id="lum{k}" class="f-lum" style="background: radial-gradient(circle, rgba({c1},0.55), rgba({c1},0) 65%)"></div></div>')
+    if k:
+        j(f'tl.fromTo("#fond{k}", {{ opacity: 0 }}, {{ opacity: 1, duration: 0.4, ease: "power1.inOut", immediateRender: false }}, {r(t0)});')
+    j(f'tl.fromTo("#lum{k}", {{ x: -260, y: 120 }}, {{ x: 300, y: -80, duration: {r(max(t1 - t0, 1) + 0.4)}, ease: "sine.inOut", immediateRender: false }}, {r(t0)});')
+
+# ================================================================ VIDÉOS D'ILLUSTRATION sur les passages sans graphique
+# « plein » : l'image couvre tout (fond flou de la même vidéo + bande nette 16:9) ; « ecran » : grand écran arrondi en haut, la personne reste visible
+BROLL = [("lunettes-ecran.mp4", "plein", W(22) - 0.05, W(24) - 0.05),
+         ("robot-usine.mp4", "ecran", T_SEG[5] + 1.6, W(192) - 0.05),
+         ("robot-yeux.mp4", "plein", W(262) - 0.05, W(287) - 0.08),
+         ("reunion.mp4", "ecran", W(363), W(381) - 0.1),
+         ("ville-futur.mp4", "plein", W(427) - 0.05, W(435) - 0.05)]
+for k, (src, mode, t0, t1) in enumerate(BROLL):
+    i = f"br{k}"
+    vid = lambda c: (f'<video id="{i}-{c}" class="clip {c}" src="assets/broll/{src}" data-start="{r(t0)}" data-duration="{r(t1 - t0 + 0.05)}" '
+                     f'data-media-start="0" data-track-index="{5 + k % 3}" muted playsinline></video>')
+    if mode == "plein":
+        HTML.append(f'<div id="{i}" class="br-plein" style="opacity: 0">{vid("br-flou")}<div class="br-bande">{vid("br-net")}</div></div>')
+        j(f'tl.set("#{i}", {{ opacity: 1 }}, {r(t0)}); tl.set("#{i}", {{ opacity: 0 }}, {r(t1)});')
+        j(f'tl.fromTo("#{i} .br-bande", {{ scale: 1.25 }}, {{ scale: 1.05, duration: {r(t1 - t0)}, ease: "power2.out", immediateRender: false }}, {r(t0)});')
+        flash(t0, 0.7)
+        son(t0, tour(["whoosh-cine", "zoom-swipe", "swoosh-vitesse"]), 0.34, f"illustration {src}")
+    else:
+        HTML.append(f'<div id="{i}" class="br-ecran" style="opacity: 0">{vid("br-net")}</div>')
+        j(f'tl.fromTo("#{i}", {{ opacity: 0, scale: 0.4, rotation: -6 }}, {{ opacity: 1, scale: 1, rotation: 0, duration: 0.3, ease: "back.out(1.5)", immediateRender: false }}, {r(t0)});')
+        j(f'tl.fromTo("#{i}-br-net", {{ scale: 1.15 }}, {{ scale: 1.0, duration: {r(t1 - t0)}, ease: "none", immediateRender: false }}, {r(t0)});')
+        cache(f"#{i}", t1 - 0.15)
+        son(t0, tour(["zoom-in", "zoom-expand", "whoosh-pop"]), 0.32, f"écran {src}")
+
+
 # ================================================================ sous-titres mot à mot
 def sous_titres():
     groupes, cur = [], []
@@ -380,15 +441,22 @@ CSS = """
       @font-face { font-family: "Anton"; src: url("assets/fonts/Anton-Regular.woff2") format("woff2"); }
       @font-face { font-family: "Inter Lf"; src: url("assets/fonts/Inter-ExtraBold.otf") format("opentype"); font-weight: 800; }
       * { margin: 0; padding: 0; box-sizing: border-box; }
-      html, body { width: 1080px; height: 1920px; overflow: hidden; background: #000; }
+      html, body { width: 1080px; height: 1920px; overflow: hidden; background: #F7F9FD; }
       #cine, #pousse, #cam, #coupe { position: absolute; inset: 0; transform-origin: 50% 54%; }
       #video { position: absolute; inset: 0; width: 1080px; height: 1920px; object-fit: cover; }
-      #vignette { position: absolute; inset: 0; z-index: 9; pointer-events: none; background: radial-gradient(ellipse 80% 70% at 50% 52%, rgba(0,0,0,0) 58%, rgba(0,0,0,0.5) 100%); }
-      #haut { position: absolute; left: 0; top: 0; width: 1080px; height: 900px; z-index: 9; pointer-events: none; background: linear-gradient(180deg, rgba(5,8,15,0.55), rgba(5,8,15,0) 100%); }
+      .fond { position: absolute; inset: 0; overflow: hidden; }
+      .f-points { position: absolute; inset: 0; opacity: 0.35; background-image: radial-gradient(rgba(11,18,32,0.22) 2px, transparent 2.5px); background-size: 44px 44px; }
+      .f-lum { position: absolute; left: 200px; top: 300px; width: 900px; height: 900px; border-radius: 50%; }
+      #perso { position: absolute; inset: 0; width: 1080px; height: 1920px; object-fit: cover; filter: brightness(1.08) contrast(1.04) saturate(1.05) drop-shadow(0 30px 50px rgba(11,18,32,0.28)); }
+      .br-plein { position: absolute; inset: 0; z-index: 20; overflow: hidden; background: #000; }
+      .br-flou { position: absolute; inset: -60px; width: calc(100% + 120px); height: calc(100% + 120px); object-fit: cover; filter: blur(30px) brightness(0.6); }
+      .br-bande { position: absolute; left: 0; top: 656px; width: 1080px; height: 608px; overflow: hidden; box-shadow: 0 30px 90px rgba(0,0,0,0.6); }
+      .br-net { width: 100%; height: 100%; object-fit: cover; display: block; }
+      .br-ecran { position: absolute; left: 40px; top: 300px; width: 1000px; height: 563px; z-index: 12; border: 8px solid #0B1220; border-radius: 36px; overflow: hidden;
+        box-shadow: 0 30px 80px rgba(11,18,32,0.35); background: #000; }
       .flash { position: absolute; inset: 0; opacity: 0; pointer-events: none; z-index: 40; }
       #fondu { position: absolute; inset: 0; opacity: 0; z-index: 60; background: #000; }
-      #titre { position: absolute; left: 0; top: 0; width: 1080px; height: 270px; z-index: 30; display: flex; justify-content: center; padding-top: 120px;
-        background: linear-gradient(180deg, rgba(0,0,0,0.9), rgba(0,0,0,0.5) 70%, rgba(0,0,0,0)); }
+      #titre { position: absolute; left: 0; top: 0; width: 1080px; height: 270px; z-index: 30; display: flex; justify-content: center; padding-top: 120px; }
       #titre b { font-family: "Anton", sans-serif; font-weight: 400; font-size: 64px; color: #fff; letter-spacing: 1px; -webkit-text-stroke: 8px #000; paint-order: stroke fill; }
       #titre b i { font-style: normal; color: #38BDF8; }
       .chip { position: absolute; display: flex; align-items: center; gap: 10px; font-family: "Anton", sans-serif; font-size: 44px; color: #0B1220; background: #fff;
@@ -471,11 +539,11 @@ page = f"""<!doctype html>
   </head>
   <body>
     <div id="root" data-composition-id="main" data-start="0" data-duration="{FIN}" data-width="1080" data-height="1920">
+{NL.join("      " + f for f in FOND_HTML)}
       <div id="cine"><div id="pousse"><div id="cam"><div id="coupe">
-        <video id="video" class="clip" src="assets/montage.mp4" data-start="0" data-duration="{r(T_SEG[-1])}" data-media-start="0" data-has-audio="true" data-track-index="1" playsinline></video>
+        <video id="perso" class="clip" src="assets/perso.webm" data-start="0" data-duration="{r(FIN_VOIX)}" data-media-start="0" data-track-index="1" muted playsinline></video>
       </div></div></div></div>
-      <div id="haut"></div>
-      <div id="vignette"></div>
+      <audio id="voix" src="assets/voix-montage.m4a" data-start="0" data-duration="{r(FIN_VOIX)}" data-volume="1" data-track-index="2"></audio>
 {NL.join("      " + h for h in HTML)}
       <div id="sous-titres" data-composition-id="sous-titres" data-composition-src="compositions/sous-titres.html" data-start="0" data-duration="{FIN}" data-track-index="3"
         data-width="1080" data-height="1920" style="position: absolute; inset: 0; z-index: 35"></div>
