@@ -11,7 +11,7 @@ ICI = Path(__file__).resolve().parent.parent
 MODE = (sys.argv[1] if len(sys.argv) > 1 else "H").upper()
 W, H = (1920, 1080) if MODE == "H" else (1080, 1920)
 V = MODE == "V"
-FIN = 55.6
+FIN = 45.6
 BLEU, ENCRE, VERT, JAUNE = "#1f4bff", "#05070d", "#0b6b3a", "#FFC000"
 
 
@@ -75,7 +75,7 @@ def mots(phrase, t0, t1, cls="", style="", pas=0.07):
 
 
 # ============================================================ v3 : TRÈS DYNAMIQUE, plus court (55,6 s). Musique « Thunder » prise à 15,0 s :
-#   drop à 5,0 s ; cassure 43,1–45,6 s ; 2e drop 45,6 s. Une coupe par temps (0,625 s), demi-temps dans les montées, zooms qui claquent,
+#   drop à 5,0 s ; cassure 33,1–35,6 s ; 2e drop 35,6 s (version courte de 45,6 s). Une coupe par temps (0,625 s), demi-temps dans les montées, zooms qui claquent,
 #   secousses, flous de mouvement, éclairs. AUCUN plan ni aucune image utilisé deux fois ; deux ralentis seulement.
 import json as _json
 POOL = _json.loads((ICI / "assets/plans/segments.json").read_text())
@@ -159,7 +159,7 @@ MOM = [("01", "Vrai ou faux des idées reçues", "BCK"), ("02", "Du CV à l’en
 # on les réserve AVANT la rafale d'ouverture pour qu'il en reste
 RESERVE = {}
 for num_, _, lt in MOM:
-    RESERVE[num_] = [prochain(lettres=lt) for _ in range(4 if num_ != "03" else 3)]
+    RESERVE[num_] = [prochain(lettres=lt) for _ in range(2)]
 k = 26
 
 # ---- OUVERTURE (0 → 5 s) : logo + titre, puis 4 coupes qui accélèrent jusqu'au drop
@@ -208,63 +208,58 @@ for kk in range(3):
     j(f'tl.to("#tr{kk}", {{ opacity: 0, y: -60, duration: 0.2 }}, {r(Bv(26) - 0.2)});')
 j(f'tl.fromTo("#trio", {{ scale: 1 }}, {{ scale: 1.06, duration: {r(Bv(26) - Bv(20))}, ease: "none", immediateRender: false }}, {Bv(20)});')
 
-# ---- TEMPS FORTS (21,25 → 33,75 s) : 4 × 5 temps, coupes 1-1-1-2 ; un seul ralenti (simulation)
+# ---- TEMPS FORTS (21,25 → 26,25 s) : 4 × 2 temps (version courte : la musique perd 16 temps entre 25 et 35 s du fichier v3)
 k = 26
 for kk, (num, titre, _) in enumerate(MOM):
     t0 = Bv(k)
     res = RESERVE[num]
-    for pas in (1, 1, 1):
-        coupe(res.pop(0), Bv(k), Bv(k + pas), "punch+secousse" if k == 26 + 5 * kk else "punch")
-        k += pas
-    if num == "03":
-        coupe("lent-simulation-2.mp4", Bv(k), Bv(k + 2), "glisse", (1.0, 1.14), depart=0.5)
-    else:
-        coupe(res.pop(0), Bv(k), Bv(k + 2), "glisse", (1.0, 1.12))
+    coupe(res.pop(0), Bv(k), Bv(k + 1), "punch+secousse")
+    coupe(res.pop(0), Bv(k + 1), Bv(k + 2), "glisse", (1.0, 1.1))
     k += 2
     flash(t0, 0.5)
     texte(f'<i>{num}</i>{titre}', t0 + 0.03, Bv(k), "t-moment", monte=60, d=0.25)
 
-# ---- RAFALE (33,75 → 43,1 s) : 11 coupes d'un temps puis 8 demi-temps (montée vers la cassure)
-k = rafale(46, 1, 11)
+# ---- RAFALE (26,25 → 33,1 s) : 7 coupes d'un temps puis 8 demi-temps (montée vers la cassure)
+k = rafale(34, 1, 7)
 k = rafale(k, 0.5, 8, flash_tous=2)
-for m, mot in enumerate(["ÉCOUTE", "MOTIVATION", "ESPRIT D’ÉQUIPE", "ÉVITER LES ERREURS", "L’APRÈS-ENTRETIEN", "PREMIERS PAS EN ENTREPRISE"]):
-    motcle(mot, Bv(46 + 2 * m), Bv(48 + 2 * m) - 0.02)
+for m, mot in enumerate(["ÉCOUTE", "MOTIVATION", "ESPRIT D’ÉQUIPE"]):
+    motcle(mot, Bv(34 + 2 * m), Bv(36 + 2 * m) - 0.02)
 
-# ---- CASSURE (43,1 → 45,6 s) : le 2e ralenti + message
-coupe("lent-debout-public.mp4", Bv(61), Bv(65), "aucun", (1.04, 1.2), depart=0.4)
+# ---- CASSURE (33,1 → 35,6 s) : le 2e ralenti + message
+coupe("lent-debout-public.mp4", Bv(45), Bv(49), "aucun", (1.04, 1.2), depart=0.4)
 HTML.append('<div id="voile7" class="voile fort"></div>')
-j(f'tl.set("#voile7", {{ opacity: 1 }}, {Bv(61)}); tl.set("#voile7", {{ opacity: 0 }}, {Bv(65)});')
-mots("Un CV n’est pas une biographie.", Bv(61) + 0.05, Bv(65), "t-message", "top: 40%;" if not V else "top: 20%;", 0.1)
+j(f'tl.set("#voile7", {{ opacity: 1 }}, {Bv(45)}); tl.set("#voile7", {{ opacity: 0 }}, {Bv(49)});')
+mots("Un CV n’est pas une biographie.", Bv(45) + 0.05, Bv(49), "t-message", "top: 40%;" if not V else "top: 20%;", 0.1)
 
-# ---- 2e DROP (45,6 → 50,6 s) : 8 coupes + message
-flash(Bv(65), 1.0)
-rafale(65, 2, 4, flash_tous=1)
+# ---- 2e DROP (35,6 → 40,6 s) : 8 coupes + message
+flash(Bv(49), 1.0)
+rafale(49, 2, 4, flash_tous=1)
 HTML.append('<div id="voile8b" class="voile fort"></div>')
-j(f'tl.set("#voile8b", {{ opacity: 1 }}, {Bv(65)}); tl.set("#voile8b", {{ opacity: 0 }}, {Bv(73)});')
-mots("C’est l’outil qui vous ouvre la porte de l’entretien.", Bv(65) + 0.05, Bv(73), "t-message bleu-clair", "top: 36%;" if not V else "top: 11%;", 0.07)
+j(f'tl.set("#voile8b", {{ opacity: 1 }}, {Bv(49)}); tl.set("#voile8b", {{ opacity: 0 }}, {Bv(57)});')
+mots("C’est l’outil qui vous ouvre la porte de l’entretien.", Bv(49) + 0.05, Bv(57), "t-message bleu-clair", "top: 36%;" if not V else "top: 11%;", 0.07)
 
 # ---- MERCI sur la grande photo de groupe (tous les participants), puis JE-FPA sur la photo de l'équipe (moins nombreux)
-coupe("groupe-1.jpg", Bv(73), Bv(76), "punch", (1.04, 1.14))
+coupe("groupe-1.jpg", Bv(57), Bv(60), "punch", (1.04, 1.14))
 HTML.append('<div id="voile8" class="voile"></div>')
-j(f'tl.set("#voile8", {{ opacity: 1 }}, {Bv(73)}); tl.set("#voile8", {{ opacity: 0 }}, {Bv(76)});')
-flash(Bv(73), 0.8)
-mots("MERCI", Bv(73) + 0.05, Bv(76), "t-merci", "top: 30%;" if not V else "top: 14%;", 0.0)
-texte("à nos panélistes, à YAKO AFRICA<br>et à tous les participants", Bv(73) + 0.4, Bv(76), "t-sous", "top: 50%;" if not V else "top: 25%;")
-coupe("groupe-jefpa.jpg", Bv(76), FIN, "punch+secousse", (1.03, 1.12))
+j(f'tl.set("#voile8", {{ opacity: 1 }}, {Bv(57)}); tl.set("#voile8", {{ opacity: 0 }}, {Bv(60)});')
+flash(Bv(57), 0.8)
+mots("MERCI", Bv(57) + 0.05, Bv(60), "t-merci", "top: 30%;" if not V else "top: 14%;", 0.0)
+texte("à nos panélistes, à YAKO AFRICA<br>et à tous les participants", Bv(57) + 0.4, Bv(60), "t-sous", "top: 50%;" if not V else "top: 25%;")
+coupe("groupe-jefpa.jpg", Bv(60), FIN, "punch+secousse", (1.03, 1.12))
 HTML.append('<div id="voile9" class="voile"></div>')
-j(f'tl.set("#voile9", {{ opacity: 1 }}, {Bv(76)});')
-flash(Bv(76), 0.9)
+j(f'tl.set("#voile9", {{ opacity: 1 }}, {Bv(60)});')
+flash(Bv(60), 0.9)
 HTML.append('<img id="logo2" class="logo-equipe" src="assets/img/logo-recadre.png" alt="" style="opacity: 0" />')
-j(f'tl.fromTo("#logo2", {{ opacity: 0, scale: 1.5 }}, {{ opacity: 1, scale: 1, duration: 0.25, ease: "power4.in", immediateRender: false }}, {Bv(76) + 0.05});')
-mots("JE-FPA", Bv(76) + 0.1, FIN + 0.3, "t-merci", "top: 36%;" if not V else "top: 24%;", 0.0)
-texte("Junior Entreprise de la Filière Professionnalisée Actuariat", Bv(77), FIN + 0.3, "t-sous", "top: 56%;" if not V else "top: 37%;")
+j(f'tl.fromTo("#logo2", {{ opacity: 0, scale: 1.5 }}, {{ opacity: 1, scale: 1, duration: 0.25, ease: "power4.in", immediateRender: false }}, {Bv(60) + 0.05});')
+mots("JE-FPA", Bv(60) + 0.1, FIN + 0.3, "t-merci", "top: 36%;" if not V else "top: 24%;", 0.0)
+texte("Junior Entreprise de la Filière Professionnalisée Actuariat", Bv(61), FIN + 0.3, "t-sous", "top: 56%;" if not V else "top: 37%;")
 HTML.append('<div id="noir" class="flash" style="background: #000"></div>')
 j(f'tl.fromTo("#noir", {{ opacity: 0 }}, {{ opacity: 1, duration: 0.7, immediateRender: false }}, {r(FIN - 0.7)});')
 print(len(UTILISES), "plans différents utilisés,", len(POOL), "restants")
 
 # ============================================================ vertical : en-tête et pied pendant les plans (sinon le haut et le bas restent vides)
 if V:
-    for a, b in ((5.0, 15.0), (21.25, 43.125)):  # seulement pendant la rafale et les temps forts (pas sur les panélistes ni les messages)
+    for a, b in ((5.0, 15.0), (21.25, 33.125)):  # seulement pendant la rafale et les temps forts (pas sur les panélistes ni les messages)
         e = f"entete{int(a)}"
         HTML.append(f'<div id="{e}" class="entete" style="opacity: 0"><img src="assets/img/logo-recadre.png" alt="" /><span>Conférence · 14 novembre 2026</span></div>')
         j(f'tl.fromTo("#{e}", {{ opacity: 0, y: -40 }}, {{ opacity: 1, y: 0, duration: 0.4, immediateRender: false }}, {a});')
@@ -349,7 +344,7 @@ page = f"""<!doctype html>
   <body>
     <div id="root" data-composition-id="main" data-start="0" data-duration="{FIN}" data-width="{W}" data-height="{H}">
 {chr(10).join("      " + h for h in HTML)}
-      <audio id="musique" src="assets/music/aftermovie3.mp3" data-start="0" data-duration="{FIN}" data-volume="1" data-track-index="20"></audio>
+      <audio id="musique" src="assets/music/aftermovie4.mp3" data-start="0" data-duration="{FIN}" data-volume="1" data-track-index="20"></audio>
     </div>
     <script>
       window.__timelines = window.__timelines || {{}};
