@@ -204,16 +204,63 @@ son(T(44), "whoosh-tunnel", 0.45, "carte HyperFrames")
 son(T(48), "revelation", 0.4, "HyperFrames")
 cache("#hf", T(49) - 0.05)
 
-# ================================================================ 6. Pourquoi ? Code ✓ / vidéo ✗
-HTML.append(f'<div id="ok-code" class="verdict" style="left: 60px; opacity: 0"><div class="mini-ecran"><video id="code-v" class="clip" src="assets/video/code-html-bleu.mp4" '
-            f'data-start="{r(T(64))}" data-duration="{r(T(78) - T(64))}" data-media-start="0.5" data-track-index="9" muted playsinline></video></div><b class="vert">CODE ✓</b></div>')
-HTML.append('<div id="ko-vid" class="verdict" style="left: 540px; opacity: 0"><div class="mini-ecran barre"><i>🎬</i></div><b class="rouge">VIDÉO ✗</b></div>')
-apparait("#ok-code", T(65), 80, 0.6)
+# ================================================================ 6. « Tous les modèles… » : la liste des modèles sort du doigt et le suit
+# trajectoire du bout des doigts relevée image par image (montage, pixels 1080×1920), passée dans le repère de la vidéo studio agrandie
+DOIGT = [(19.53, 650, 1500), (19.62, 700, 1400), (19.70, 729, 1296), (19.80, 702, 1188), (19.90, 594, 1134), (20.00, 486, 1107),
+         (20.10, 260, 1040), (20.20, 200, 1048), (20.30, 190, 1048), (20.40, 120, 1048), (20.50, 60, 1050), (20.60, -40, 1060)]
+DOIGT = [(t, -60 + x * 1200 / 1080, -106 + y * 1200 / 1080) for t, x, y in DOIGT]
+
+
+def doigt(t):
+    if t <= DOIGT[0][0]:
+        return DOIGT[0][1:]
+    for (t0, x0, y0), (t1, x1, y1) in zip(DOIGT, DOIGT[1:]):
+        if t <= t1:
+            m = (t - t0) / (t1 - t0)
+            return x0 + (x1 - x0) * m, y0 + (y1 - y0) * m
+    return DOIGT[-1][1:]
+
+
+CHAT = ('<div class="faux-chat"><img src="assets/img/logo-chatgpt.svg" alt="" /><div class="fc-q">Fais-moi une vidéo animée</div>'
+        '<div class="fc-r"><i></i><i></i><i></i></div></div>')
+MODELES = [("claude", "Claude", "logo-claude.svg", '<video id="lv-claude" class="clip" src="assets/fonds/claude-accueil.mp4" data-start="{a}" data-duration="{d}" data-media-start="0.3" data-track-index="9" muted playsinline></video>'),
+           ("chatgpt", "ChatGPT", "logo-chatgpt.svg", CHAT),
+           ("gemini", "Gemini", "logo-gemini.svg", '<video id="lv-gemini" class="clip" src="assets/captures/modele-gemini.mp4" data-start="{a}" data-duration="{d}" data-media-start="0" data-track-index="10" muted playsinline></video>'),
+           ("grok", "Grok", "logo-grok.svg", '<video id="lv-grok" class="clip" src="assets/captures/modele-grok.mp4" data-start="{a}" data-duration="{d}" data-media-start="0" data-track-index="11" muted playsinline></video>')]
+GRILLE = [(265, 440), (815, 440), (265, 700), (815, 700)]
+L_FIN = T(78) - 0.1
+for k, (cle_, nom, logo, contenu) in enumerate(MODELES):
+    s0 = 19.72 + 0.12 * k          # naissance au bout du doigt
+    lag = 0.07 * k                 # chaque carte suit le doigt avec un petit retard : une file
+    contenu = contenu.format(a=r(s0), d=r(L_FIN - s0 + 0.05))
+    MAINS.append(f'<div id="lm-{cle_}" class="liste-mod" style="opacity: 0"><div class="lm-ecran">{contenu}</div>'
+                 f'<div class="lm-nom"><img src="assets/img/{logo}" alt="" />{nom}</div>'
+                 f'<b id="lm-ok-{cle_}" class="lm-tampon ok" style="opacity: 0">CODE ✓</b><b id="lm-ko-{cle_}" class="lm-tampon ko" style="opacity: 0">VIDÉO ✗</b></div>')
+    x, y = doigt(s0 - lag)
+    j(f'tl.set("#lm-{cle_}", {{ x: {round(x)}, y: {round(y - 150)}, xPercent: -50, yPercent: -50, scale: 0.1, opacity: 1 }}, {r(s0)});')
+    j(f'tl.to("#lm-{cle_}", {{ scale: 0.5, duration: 0.15, ease: "back.out(2)" }}, {r(s0)});')
+    t = s0
+    while t < 20.52:
+        x, y = doigt(t + 0.05 - lag)
+        j(f'tl.to("#lm-{cle_}", {{ x: {round(x)}, y: {round(y - 150 - 20 * k)}, duration: 0.05, ease: "none" }}, {r(t)});')
+        t += 0.05
+    gx, gy = GRILLE[k]
+    j(f'tl.to("#lm-{cle_}", {{ x: {gx}, y: {gy}, scale: 1, rotation: {(-3, 2, 3, -2)[k]}, duration: 0.38, ease: "back.out(1.4)" }}, {r(20.55 + 0.06 * k)});')
+    son(s0, tour(POPS), 0.4, f"{nom} sort du doigt")
+    j(f'tl.to("#lm-{cle_}", {{ opacity: 0, scale: 0.7, duration: 0.18 }}, {r(L_FIN)});')
+    # verdicts : code oui, vidéo non
+    j(f'tl.fromTo("#lm-ok-{cle_}", {{ opacity: 0, scale: 2.2 }}, {{ opacity: 1, scale: 1, duration: 0.14, ease: "power4.in", immediateRender: false }}, {r(T(65) + 0.08 * k)});')
+    j(f'tl.to("#lm-ok-{cle_}", {{ opacity: 0, duration: 0.12 }}, {r(T(71) - 0.05)});')
+    j(f'tl.fromTo("#lm-ko-{cle_}", {{ opacity: 0, scale: 2.2 }}, {{ opacity: 1, scale: 1, duration: 0.14, ease: "power4.in", immediateRender: false }}, {r(T(71) + 0.08 * k)});')
+son(20.55, "whoosh-cine", 0.4, "la liste se range")
 son(T(65), "bonne-reponse", 0.42, "code ✓")
-apparait("#ko-vid", T(71), 80, 0.6)
 son(T(71), "buzzer-faux", 0.4, "vidéo ✗")
-cache("#ok-code", T(78) - 0.1)
-cache("#ko-vid", T(78) - 0.1)
+for k in range(4):
+    son(T(65) + 0.08 * k, "impact-tambour", 0.18, "tampon code")
+    son(T(71) + 0.08 * k, "impact-basse", 0.18, "tampon vidéo")
+# la caméra accompagne le balayage du bras vers la gauche, puis revient
+j('tl.to("#pousse", { x: 70, duration: 0.9, ease: "sine.inOut" }, 19.75);')
+j('tl.to("#pousse", { x: 0, duration: 0.8, ease: "sine.inOut" }, 21.2);')
 
 # ================================================================ 7. HyperFrames intervient : références + code → vidéo
 HTML.append('<div id="sch" class="schema" style="opacity: 0"><div id="s1" class="bloc" style="opacity: 0">RÉFÉRENCES</div><i id="s2" style="opacity: 0">+</i>'
@@ -310,7 +357,7 @@ dans_la_main("mo1", '<img src="assets/img/logo-claude.svg" alt="" class="m-logo"
 t, hx, hy = geste(14.53)
 dans_la_main("mo2", '<b class="m-txt">GAME<br>CHANGER</b>', t, hx, hy, T(48) - 0.1, monte=230)
 t, hx, hy = geste(18.87)
-dans_la_main("mo3", '<b class="m-txt q">?</b>', t, hx, hy, T(58), zoom=False)
+dans_la_main("mo3", '<b class="m-txt q">?</b>', t, hx, hy, 19.55, zoom=False)
 t, hx, hy = geste(22.93)
 dans_la_main("mo4", '<b class="m-code">&lt;/&gt;</b>', t, hx, hy, T(78) - 0.1)
 t, hx, hy = geste(28.27)
@@ -412,6 +459,20 @@ CSS = f"""
       .m-chip {{ display: inline-block; font-family: "Anton", sans-serif; font-weight: 400; font-size: 64px; color: #0B1220; background: #fff; border: 6px solid #0B1220; border-radius: 22px; padding: 6px 20px 0; white-space: nowrap; }}
       .m-chip.or {{ background: #F2B705; font-size: 80px; }}
       .m-abo {{ display: inline-block; font-family: "Anton", sans-serif; font-weight: 400; font-size: 70px; color: #fff; background: #FF0033; border: 7px solid #0B1220; border-radius: 26px; padding: 10px 28px 2px; white-space: nowrap; margin-left: -120px; }}
+      .liste-mod {{ position: absolute; left: 0; top: 0; width: 380px; z-index: 5; }}
+      .lm-ecran {{ width: 380px; height: 214px; border-radius: 22px; overflow: hidden; border: 6px solid #fff; background: #fff; box-shadow: 0 22px 60px rgba(0,0,0,0.6); }}
+      .lm-ecran video {{ width: 100%; height: 100%; object-fit: cover; object-position: 50% 0; }}
+      .lm-nom {{ position: absolute; left: 14px; top: 160px; display: flex; align-items: center; gap: 10px; background: {NUIT}; color: #fff; font-family: "Anton", sans-serif;
+        font-size: 40px; padding: 6px 18px 2px 10px; border-radius: 16px; border: 4px solid #fff; }}
+      .lm-nom img {{ width: 40px; height: 40px; }}
+      .lm-tampon {{ position: absolute; right: -10px; top: -26px; font-family: "Anton", sans-serif; font-weight: 400; font-size: 54px; padding: 4px 18px 0; border: 6px solid {NUIT};
+        transform: rotate(8deg); color: {NUIT}; white-space: nowrap; }}
+      .lm-tampon.ok {{ background: {CIEL}; }}
+      .lm-tampon.ko {{ background: #FF6B6B; }}
+      .faux-chat {{ position: absolute; inset: 0; background: #212121; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; }}
+      .faux-chat img {{ width: 54px; height: 54px; }}
+      .fc-q {{ background: #303030; color: #fff; font-family: "Inter Lf", sans-serif; font-weight: 800; font-size: 22px; padding: 10px 18px; border-radius: 20px; }}
+      .fc-r i {{ display: inline-block; width: 12px; height: 12px; margin: 0 4px; border-radius: 6px; background: #bbb; }}
       #calques {{ position: absolute; inset: 0; z-index: 10; pointer-events: none; }}
       .plein {{ position: absolute; inset: 0; overflow: hidden; background: #000; }}
       .plein video {{ width: 100%; height: 100%; object-fit: cover; }}
