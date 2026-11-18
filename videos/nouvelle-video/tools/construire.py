@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Montage « Les 3 niveaux de l'IA » (agents IA) : vertical 1080×1920, face caméra.
-Base : assets/perso.webm (personne détourée, hyperframes remove-background) sur des fonds blancs lumineux qui changent par partie ; voix : assets/voix-montage.m4a. Les graphiques occupent le haut de l image,
+Base : assets/perso.webm (personne détourée, hyperframes remove-background) sur des fonds blancs lumineux qui changent par partie ; voix : assets/voix-montage.wav (tools/voix.py). Les graphiques occupent le haut de l image,
 le visage reste libre, les sous-titres mot à mot sont posés sur le t-shirt (y ≈ 1420).
 Scènes : accroche (saturation d'outils IA) → niveau 1 prompting (conversation) → niveau 2 automatisation (scénario mail → résumé → CRM)
 → niveau 3 agents IA (objectif + étapes cochées par l'agent) → la révolution (répond → délègue).
@@ -24,14 +24,12 @@ CORR = {33: "ChatGPT", 37: "automatisations ?", 104: "niveau :", 120: "ChatGPT,"
 SUPPR = {34, 121}   # « GPT » fusionné dans « ChatGPT »
 
 # découpage en pièces (une phrase peut avoir plusieurs pièces quand une pause interne a été retirée)
+# position RÉELLE de chaque pièce sous les images du montage (tools/voix.py ; avant, la dérive atteignait 0,5 s à la fin)
+POS = json.loads((ICI / "assets/positions.json").read_text())
 T_SEG, P_T, MOTS, IDX = [], [], [], {}
-t = 0.0
-PIECES = []
-for o in DEC:
-    PIECES.append(dict(o, t=t))
-    t += o["fin"] - o["debut"]
-FIN_VOIX = t
-FIN = round(t + 0.5, 2)
+PIECES = [dict(o, t=t0) for o, t0 in zip(DEC, POS["pieces"])]
+FIN_VOIX = POS["fin_voix"]
+FIN = round(FIN_VOIX + 0.5, 2)
 for n in range(1, len(PLAGES) + 1):
     T_SEG.append(next(p["t"] for p in PIECES if p["n"] == n))
 T_SEG.append(FIN_VOIX)
@@ -568,17 +566,30 @@ def sous_titres():
 
 sous_titres()
 
-# ================================================================ musiques (deux beats, ≈ 5–6 dB sous la voix qui est à −22 LUFS)
+# ================================================================ musique : Superhero sur toute la vidéo
+# (retour de l'utilisateur : « la seule musique bonne c'est celle des agents IA ») ; extrait Deezer de 30 s, TikTok uniquement.
+# Prolongé au temps près (117,5 BPM, boucles de 16 temps = 8,22 s, raccords cherchés par similarité chroma + MFCC à 0,98–0,99) :
+# [0 ; 12,771[ + [4,551 ; 28,700[ + [20,480 ; 28,700[ + [20,480 ; 30[  →  54,7 s, fondus de 40 ms sur le temps
 MUS = ICI / "assets/music"
 COUPURE = T_SEG[9]
-for nom, src, debut, d, fe, ff in (("piste-1.mp3", MUS / "creepin-long.wav", 0.0, COUPURE + 0.3, 0.05, 0.3),
-                                   ("piste-2.mp3", MUS / "superhero.mp3", 0.0, FIN - COUPURE, 0.02, 1.2)):
-    subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(src), "-af",
-                    f"atrim=start={debut}:duration={d:.3f},asetpts=PTS-STARTPTS,loudnorm=I=-17:TP=-2:LRA=8,afade=t=in:d={fe},afade=t=out:st={max(0, d - ff):.3f}:d={ff}",
-                    "-ar", "48000", "-b:a", "192k", str(MUS / nom)], check=True)
-MUSIQUES = [f'<audio id="musique-1" src="assets/music/piste-1.mp3" data-start="0" data-duration="{r(COUPURE + 0.3)}" data-volume="0.465" data-track-index="20"></audio>',
-            f'<audio id="musique-2" src="assets/music/piste-2.mp3" data-start="{r(COUPURE)}" data-duration="{r(FIN - COUPURE)}" data-volume="0.50" data-track-index="21"></audio>']
-son(COUPURE, "trailer-impact-2", 0.36, "changement de musique")
+LONG = MUS / "superhero-long.wav"
+morceaux_m = [(0.0, 12.771), (4.551, 28.700), (20.480, 28.700), (20.480, 29.98)]
+fc = ";".join(f"[0:a]atrim={x0}:{x1 + 0.02},asetpts=PTS-STARTPTS[m{q}]" for q, (x0, x1) in enumerate(morceaux_m))
+cur = "m0"
+for q in range(1, len(morceaux_m)):
+    fc += f";[{cur}][m{q}]acrossfade=d=0.04:c1=tri:c2=tri[x{q}]"
+    cur = f"x{q}"
+subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(MUS / "superhero.mp3"), "-filter_complex", fc, "-map", f"[{cur}]", str(LONG)], check=True)
+subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(LONG), "-af",
+                f"atrim=duration={FIN:.3f},asetpts=PTS-STARTPTS,loudnorm=I=-17:TP=-2:LRA=8,afade=t=in:d=0.03,afade=t=out:st={FIN - 1.2:.3f}:d=1.2",
+                "-ar", "48000", "-b:a", "192k", str(MUS / "piste-unique.mp3")], check=True)
+MUSIQUES = [f'<audio id="musique-1" src="assets/music/piste-unique.mp3" data-start="0" data-duration="{r(FIN)}" data-volume="0.50" data-track-index="20"></audio>']
+son(COUPURE, "trailer-impact-2", 0.36, "entrée dans les agents IA")
+# dernière phrase (« passer d'une IA qui répond à une IA à laquelle on peut déléguer du travail ») : rien ne doit couvrir la voix
+# → aucun bruitage sur « on peut déléguer du travail », et la musique baisse de ~5 dB (appliqué par tools/mixer.py)
+ZONE_CLAIRE = (W(461) - 0.35, W(465) + 0.45)
+SONS[:] = [x for x in SONS if not (x[0] < ZONE_CLAIRE[1] and x[0] + min(x[4], 0.9) > ZONE_CLAIRE[0])]
+(ICI / "assets/duck.json").write_text(json.dumps([[round(W(451) - 0.15, 3), round(FIN, 3), 0.56]]))
 
 _vus = set()
 SONS[:] = [x for x in SONS if not ((x[0], x[1]) in _vus or _vus.add((x[0], x[1])))]

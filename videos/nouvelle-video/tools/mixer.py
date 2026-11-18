@@ -17,9 +17,10 @@ print(len(pistes), "pistes")
 
 # voix plus forte et régulière
 voix = ICI / "assets/voix-forte.wav"
-subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(ICI / "assets/voix-montage.m4a"), "-af",
+subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(ICI / "assets/voix-montage.wav"), "-af",
                 "highpass=f=80,acompressor=threshold=-24dB:ratio=3:attack=5:release=120:makeup=2,loudnorm=I=-16:TP=-1.5:LRA=7",
                 "-ar", "48000", str(voix)], check=True)
+DUCK = json.loads((ICI / "assets/duck.json").read_text()) if (ICI / "assets/duck.json").exists() else []
 GAIN = {"voix": 1.0, "musique": 1.55, "sfx": 0.65}   # musique : fichiers à −17 LUFS × 0,30 d'origine → ~ −24 LUFS une fois × 1,55
 entrees, filtres, labels = [], [], []
 for k, p in enumerate(pistes):
@@ -28,7 +29,11 @@ for k, p in enumerate(pistes):
     vol = 1.0 if kind == "voix" else p["vol"] * GAIN[kind]
     entrees += ["-i", str(src)]
     d_ms = int(p["debut"] * 1000)
-    filtres.append(f"[{k}:a]aresample=48000,aformat=channel_layouts=stereo,atrim=0:{p['duree']:.3f},asetpts=PTS-STARTPTS,volume={vol:.3f},adelay={d_ms}|{d_ms}[a{k}]")
+    duck = ""
+    if kind == "musique" and DUCK:   # musique baissée sous certaines phrases (assets/duck.json, écrit par construire.py)
+        expr = "*".join(f"(1-{1 - g:.3f}*min(1,max(0,(t-{a0 - p['debut'] - 0.25:.3f})/0.25))*min(1,max(0,({a1 - p['debut']:.3f}-t)/0.25)))" for a0, a1, g in DUCK)
+        duck = f",volume='{expr}':eval=frame"
+    filtres.append(f"[{k}:a]aresample=48000,aformat=channel_layouts=stereo,atrim=0:{p['duree']:.3f},asetpts=PTS-STARTPTS,volume={vol:.3f}{duck},adelay={d_ms}|{d_ms}[a{k}]")
     labels.append(f"[a{k}]")
 fc = ";".join(filtres) + ";" + "".join(labels) + f"amix=inputs={len(labels)}:normalize=0:dropout_transition=0[m]"
 (ICI / "assets/mix-filtre.txt").write_text(fc)
