@@ -99,7 +99,7 @@
 \begin{tikzpicture}[remember picture,overlay]
   \fill[encre] (current page.south west) rectangle (current page.north east);
   \node[anchor=north west] at ($(current page.north west)+(1.2cm,-1.3cm)$)
-    {\anton\fontsize{12}{14}\selectfont\color{citron}CLAUDE\hspace{0.2em}CODE\hspace{0.2em}+\hspace{0.2em}HYPERFRAMES};
+    {\anton\fontsize{12}{14}\selectfont\color{citron}CLAUDE\hspace{0.2em}+\hspace{0.2em}HYPERFRAMES};
   \node[anchor=north west,text width=12.8cm,align=left] at ($(current page.north west)+(1.1cm,-2.0cm)$)
     {\anton\fontsize{58}{58}\selectfont\color{white}CRÉE\hspace{0.22em}TES\\VIDÉOS\\[0.06em]{\setlength{\fboxsep}{2pt}\colorbox{citron}{\color{encre}AVEC\hspace{0.22em}L'IA}}};
   % le téléphone avec une vraie image de vidéo
@@ -111,7 +111,7 @@
   \end{scope}
   \node[anchor=south west,text width=12.4cm,align=left] at ($(current page.south west)+(1.2cm,2.3cm)$)
     {\fontsize{13.5}{17}\selectfont\color{white}La méthode pas à pas pour faire tes vidéos TikTok, Reels et Shorts avec Claude Opus 5.5.};
-  \node[anchor=south west,fill=citron,text=encre,inner sep=5pt,font=\bfseries\small] at ($(current page.south west)+(1.2cm,1.2cm)$) {57 PROMPTS PRÊTS À COPIER};
+  \node[anchor=south west,fill=citron,text=encre,inner sep=5pt,font=\bfseries\small] at ($(current page.south west)+(1.2cm,1.2cm)$) {55 PROMPTS PRÊTS À COPIER};
   \node[anchor=south east] at ($(current page.south east)+(-1.2cm,1.25cm)$) {\anton\fontsize{14}{16}\selectfont\color{white}GAUSSCODE};
 \end{tikzpicture}
 \restoregeometry
@@ -123,11 +123,11 @@
 {\footnotesize\color{gris}
 \textbf{\color{encre}Crée tes vidéos TikTok avec l'IA}\\
 Formation pas à pas pour créer des vidéos courtes avec Claude Opus 5.5.\\
-Version 2.2, novembre 2026. Informations vérifiées le 18 novembre 2026.
+Version 3.0, novembre 2026. Informations vérifiées le 18 novembre 2026.
 
 © 2026 Gausscode. Tous droits réservés. Toute reproduction, même partielle, est interdite sans autorisation.
 
-Crédits des images. Captures d'écran de claude.com (Anthropic), elevenlabs.io, de l'App Store (Apple) et de Google Play réalisées par l'auteur en novembre 2026 et utilisées à titre d'illustration ; les marques citées appartiennent à leurs propriétaires. La capture de l'application Claude vient du téléphone de l'auteur. Les deux images de l'interface GitHub (étape 1) viennent de la page « \lien{https://docs.github.com/fr/repositories/creating-and-managing-repositories/creating-a-new-repository}{Création d'un dépôt} » de GitHub Docs, © GitHub, Inc., sous licence \lien{https://creativecommons.org/licenses/by/4.0/deed.fr}{CC BY 4.0} ; elles ont été recadrées et annotées par l'auteur. Annotations et images de vidéos : l'auteur.
+Crédits des images. Captures d'écran de claude.com (Anthropic), elevenlabs.io, de l'App Store (Apple) et de Google Play réalisées par l'auteur en novembre 2026 et utilisées à titre d'illustration ; les marques citées appartiennent à leurs propriétaires. Les captures de l'application Claude viennent du téléphone de l'auteur. Annotations et images de vidéos : l'auteur.
 
 Les applications et les offres changent souvent. Si un bouton n'est plus au même endroit, cherche le même mot. Les liens officiels sont à la fin du guide. Les mises à jour du guide sont envoyées gratuitement aux acheteurs.
 
@@ -141,7 +141,7 @@ Ce guide n'est affilié à aucune des entreprises citées. Il donne des repères
 \addcontentsline{toc}{chapter}{Ce que tu sauras faire}
 \markboth{Ce que tu sauras faire}{}
 
-À la fin de ce guide, tu sauras faire monter par Claude Code et HyperFrames une vidéo de 30 à 60 secondes dans notre style, prête à publier sur TikTok, Instagram Reels ou YouTube Shorts. Tu lui donnes l'idée, la voix et tes remarques par messages ; il fait le montage.
+À la fin de ce guide, tu sauras faire monter par Claude et HyperFrames une vidéo de 30 à 60 secondes dans notre style, prête à publier sur TikTok, Instagram Reels ou YouTube Shorts. Tu lui donnes l'idée, la voix et tes remarques par messages ; il fait le montage.
 
 \begin{figure}[H]\centering
 \begin{tikzpicture}
@@ -154,7 +154,7 @@ Ce guide n'est affilié à aucune des entreprises citées. Il donne des repères
   \telephone[8]{2.2,-0.35}{1.8cm}{images/galerie/skills.jpg}
   \telephone[0]{0,-0.25}{2.1cm}{images/galerie/jeu-video.jpg}
   \begin{scope}[shift={(-5.5,-1.75)}]\persovert{0.17}{150}{-150}\end{scope}
-  \node[anchor=south east,fill=citron,text=encre,font=\bfseries\scriptsize,inner sep=3pt] at (5.6,-3.35) {Toutes réalisées avec Claude Code + HyperFrames};
+  \node[anchor=south east,fill=citron,text=encre,font=\bfseries\scriptsize,inner sep=3pt] at (5.6,-3.35) {Toutes réalisées avec Claude + HyperFrames};
 \end{tikzpicture}
 \caption{Des vidéos réalisées avec cette méthode.}
 \end{figure}
@@ -182,20 +182,20 @@ Le guide s'adresse aux créateurs, aux indépendants et aux commerçants qui veu
 
 \section*{Ce qu'il te faut}
 \begin{itemize}[label={}]
-  \item \coche un abonnement payant à Claude (Pro, Max ou plus) : Claude Code n'est pas inclus dans l'offre gratuite ;
-  \item \coche un ordinateur (Windows, Mac ou Linux) ou un téléphone avec l'application Claude ;
-  \item \coche un assistant pour écrire le texte de la voix (j'utilise ChatGPT ; l'offre gratuite suffit pour commencer) ;
-  \item \coche ta propre voix, ou un compte ElevenLabs (payant si tes vidéos sont commerciales, voir l'étape 5) ;
-  \item \coche sur téléphone seulement, un compte GitHub gratuit.
+  \item \coche l'application Claude sur ton téléphone, ou claude.ai sur ton ordinateur ;
+  \item \coche un abonnement Claude payant, pour le modèle Opus 5.5 (c'est lui qui fait les plus beaux designs ; la version gratuite permet d'essayer avec un autre modèle) ;
+  \item \coche un assistant pour écrire le texte de la voix (j'utilise ChatGPT ; l'offre gratuite suffit) ;
+  \item \coche ta propre voix, ou un compte ElevenLabs (payant si tes vidéos sont commerciales, voir l'étape 5).
 \end{itemize}
+Pas d'installation compliquée, pas de code : tout se passe dans une conversation avec Claude.
 
 \begin{tcolorbox}[enhanced,colback=fondgris,colframe=encre!25,boxrule=0.6pt,arc=3pt,left=7pt,right=7pt,top=3pt,bottom=3pt,fontupper=\small,title={Le budget},fonttitle=\bfseries\small,coltitle=white,colbacktitle=encre]
 \textbf{Payant} : l'abonnement Claude. Il a une limite d'utilisation qui se recharge avec le temps.\\
-\textbf{Gratuit} : GitHub, HyperFrames, ChatGPT, ta propre voix, et les images et musiques gratuites.\\
+\textbf{Gratuit} : HyperFrames, ChatGPT, ta propre voix, et les images et musiques gratuites.\\
 \textbf{Selon ton usage} : ElevenLabs, payant si tes vidéos sont commerciales.
 \end{tcolorbox}
 
-Chez moi, la première vidéo a pris une à deux heures, installation comprise. Ensuite, compte souvent une vingtaine de minutes de ton temps par vidéo, selon sa longueur et tes corrections.
+Chez moi, la première vidéo a pris une à deux heures, réglages compris. Ensuite, compte souvent une vingtaine de minutes de ton temps par vidéo, selon sa longueur et tes corrections.
 
 \section*{Le parcours d'une vidéo}
 \begin{figure}[H]\centering
@@ -217,88 +217,66 @@ Chez moi, la première vidéo a pris une à deux heures, installation comprise. 
 
 \mainmatter
 % ======================================================================== 1
-\chapter{Claude Code et Opus 5.5}
-\objectif{installer Claude Code, choisir Opus 5.5 en effort « Élevé » et ajouter HyperFrames.}
-Claude Code est la partie de Claude qui fabrique des fichiers, et donc des vidéos. La discussion habituelle ne sait pas le faire. Ce chapitre l'installe sur ton ordinateur ou ton téléphone, choisit le bon modèle et ajoute l'outil de montage.
+\chapter{Ton studio vidéo dans Claude}
+\objectif{préparer en 10 minutes un projet Claude qui fabrique tes vidéos.}
+Tout se passe dans l'application Claude ou sur claude.ai. Tu crées une seule fois un « projet » : un espace qui garde tes réglages. Ensuite, chaque vidéo se fait dans une conversation de ce projet.
 
-\begin{attention}
-L'abonnement payant à Claude est obligatoire : sans lui, tu n'as pas accès à Claude Code. Il a une limite d'utilisation : si Claude t'annonce qu'elle est atteinte, attends qu'elle se recharge.
-\end{attention}
-
-\section{Sur ordinateur}
 \begin{enumerate}
-  \item Sur la page de Claude Code, clique sur « Essayer Claude » pour créer ton compte et prendre l'abonnement.
-  \item Clique sur « Télécharger » et installe l'application.
-  \item Ouvre-la et connecte-toi. Choisis ensuite un dossier vide dans tes Documents, par exemple un dossier nommé \texttt{mes-videos}. Tes vidéos y seront enregistrées.
+  \item Installe l'application Claude (App Store ou Google Play), ou ouvre claude.ai sur ton ordinateur.
+  \item Connecte-toi et prends l'abonnement.
 \end{enumerate}
-\capture{images/claude-code.jpg}{\pastille{1} « Essayer Claude ». \pastille{2} « Télécharger », qui indique ton système. \pastille{3} La version Web.}
 
-\section{Sur téléphone}
-Télécharge l'application Claude sur l'App Store (iPhone) ou sur Google Play (Android), puis connecte-toi.
+\section{Activer la création de fichiers}
+Claude doit avoir le droit de fabriquer des fichiers. Ouvre le menu, puis \textbf{Paramètres → Capacités}, et active \textbf{« Exécution de code et création de fichiers »}. Laisse l'accès réseau activé : Claude en a besoin pour installer HyperFrames et trouver de vraies vidéos.
 
+\section{Créer ton projet vidéo}
+\begin{enumerate}
+  \item Dans le menu, touche « Projets », puis « Créer un projet ».
+  \item Donne-lui un nom, par exemple « Mes vidéos », et touche « Créer le projet ».
+\end{enumerate}
 \begin{figure}[H]\centering
-\begin{minipage}{0.47\linewidth}\centering\fcolorbox{encre!20}{white}{\includegraphics[width=0.95\linewidth]{images/appstore.jpg}}\\[0.4em]\fcolorbox{encre!20}{white}{\includegraphics[width=0.95\linewidth]{images/playstore.jpg}}\end{minipage}\hfill
-\begin{minipage}{0.4\linewidth}\centering\fcolorbox{encre!20}{white}{\includegraphics[width=0.95\linewidth]{images/app-claude-menu.jpg}}\end{minipage}
-\caption{À gauche, l'application sur l'App Store et sur Google Play (\pastille{1} « Installer »). À droite, le menu de l'application : \pastille{1} « Code », puis \pastille{2} « Nouvelle session ».}
+\begin{minipage}[t]{0.45\linewidth}\vspace{0pt}\centering\fcolorbox{encre!20}{white}{\includegraphics[width=0.92\linewidth]{images/claude-creer-projet.jpg}}\end{minipage}\hfill
+\begin{minipage}[t]{0.45\linewidth}\vspace{0pt}\centering\fcolorbox{encre!20}{white}{\includegraphics[width=0.92\linewidth]{images/claude-projet.jpg}}\end{minipage}
+\caption{À gauche : \pastille{1} le nom du projet. À droite, la page du projet : \pastille{1} les instructions, \pastille{2} tes fichiers, \pastille{3} une nouvelle conversation.}
 \end{figure}
 
-Dans l'application, ouvre le menu, touche « Code », puis « Nouvelle session ». La première fois, l'application te demande de relier un compte GitHub : c'est là que Claude range tes vidéos.
-\begin{enumerate}
-  \item Crée un compte gratuit sur github.com.
-  \item Touche le « + », puis « New repository ». Appelle-le \texttt{mes-videos}, coche \textbf{Private} et valide.
-  \item Reviens dans Claude et relie GitHub. Choisis « Only select repositories », puis \texttt{mes-videos}.
-\end{enumerate}
-\capture[0.62]{images/github-nouveau-depot.jpg}{\pastille{1} Le « + » de GitHub. \pastille{2} « New repository ».}
-
-\begin{attention}
-Sur téléphone, termine toujours par « Enregistre tout sur GitHub ». Sinon, ton travail peut disparaître à la fin de la séance.
-\end{attention}
-
-\section{Télécharger ta vidéo sur téléphone}
-\begin{acopier}[Prompt : récupérer la vidéo sur téléphone]
-Enregistre la vidéo finale sur GitHub (moins de 100 Mo) et donne-moi le lien pour la télécharger.
+\section{Donner tes instructions au projet}
+Les instructions du projet sont relues par Claude au début de chaque conversation. Touche \pastille{1} « Ajouter des instructions » et colle ce texte. Tu y ajouteras ton style à l'étape 2.
+\begin{acopier}[À coller dans les instructions du projet]
+Réponds-moi en français, simplement.\\
+Tu fabriques mes vidéos avec HyperFrames.\\
+Au début de chaque conversation, installe HyperFrames depuis https://github.com/heygen-com/hyperframes si ce n'est pas déjà fait.\\
+Livre chaque vidéo en MP4 1080×1920, en moins de 28 Mo, prête à télécharger.\\
+Avant le fichier final, vérifie la vidéo et montre-moi une image de chaque scène.
 \end{acopier}
-Touche le lien, puis le bouton de téléchargement de GitHub (« Download »).
+Dans \pastille{2} « Ajouter des fichiers », tu peux aussi déposer ce qui sert à toutes tes vidéos : ton logo, tes photos, une liste de tes prompts préférés.
 
 \section{Choisir Opus 5.5 en effort « Élevé »}
-Toutes les vidéos de ce guide ont été faites avec Opus 5.5 réglé sur l'effort « Élevé ». Au début de chaque session, ouvre le sélecteur de modèle, choisis Opus 5.5, puis règle l'effort sur « Élevé ». Sur ordinateur, tu peux aussi taper :
-\begin{acopier}[Commande]
-/model
-\end{acopier}
-puis sélectionner Opus 5.5 et l'effort « Élevé ».
+Toutes les vidéos de ce guide ont été faites avec Opus 5.5, réglé sur l'effort « Élevé » : c'est lui qui soigne le mieux le design. Dans une conversation, touche le nom du modèle, choisis Opus 5.5, puis l'effort « Élevé ». Les autres modèles savent aussi faire des vidéos, plus simples : pratique pour une petite correction.
+\capture[0.7]{images/claude-modele.jpg}{\pastille{1} Le sélecteur de modèle et d'effort.}
 
-\section{Installer l'outil de montage}
-Claude monte les vidéos avec HyperFrames, un outil gratuit. Copie le prompt qui correspond à ton appareil et envoie-le une seule fois.
-\begin{acopier}[Prompt : installer HyperFrames sur ordinateur]
-Installe HyperFrames pour Claude Code :\\
-claude plugin marketplace add heygen-com/hyperframes\\
-claude plugin install hyperframes@hyperframes\\
-Si ça ne marche pas, utilise : npx skills add heygen-com/hyperframes\\
-Puis lance npx hyperframes doctor, installe ce qui manque et dis-moi quand tout est prêt.
-\end{acopier}
-Ouvre ensuite une nouvelle session pour que Claude prenne en compte l'installation.
-\begin{acopier}[Prompt : installer HyperFrames sur téléphone]
-Installe HyperFrames dans ce projet avec npx skills add heygen-com/hyperframes, lance npx hyperframes doctor, installe ce qui manque, puis enregistre tout sur GitHub.
-\end{acopier}
+\section{Une conversation par vidéo}
+Touche \pastille{3} « Nouvelle session » pour commencer une vidéo. Quand une conversation devient trop longue, ouvre-en une nouvelle dans le même projet : tes instructions et tes fichiers suivent, mais pas le reste de la conversation. Renvoie alors ta voix et ton texte.
 
 \begin{victoire}
-Vérifie que tout marche avec une vidéo test de 10 secondes : « Fais une vidéo verticale de 10 secondes avec le titre BONJOUR, une vraie vidéo de ville la nuit en fond et une musique gratuite. » Si tu reçois la vidéo, l'installation est terminée.
+Ouvre une conversation dans ton projet et envoie : « Fais une vidéo verticale de 10 secondes avec le titre BONJOUR, une vraie vidéo de ville la nuit en fond et une musique gratuite. » Si tu reçois la vidéo et que tu peux la télécharger, ton studio est prêt.
 \end{victoire}
 
 \begin{attention}
-Quand Claude demande une autorisation, lis ce qu'il propose avant d'accepter. Si tu ne comprends pas, réponds : « Explique-moi ce que fait cette commande. »
+Claude ne peut pas envoyer de fichier de plus de 30 Mo, d'où les 28 Mo des instructions. Pour une vidéo d'une minute, la qualité reste très bonne.
 \end{attention}
 
+\enlargethispage{3\baselineskip}
 \begin{bilan}
-  \item \coche J'ai pris l'abonnement et installé Claude Code (ou l'application sur mon téléphone).
-  \item \coche J'ai choisi Opus 5.5 en effort « Élevé ».
-  \item \coche J'ai installé HyperFrames et reçu ma vidéo test.
+  \item \coche J'ai activé « Exécution de code et création de fichiers ».
+  \item \coche J'ai créé mon projet et collé les instructions.
+  \item \coche J'ai choisi Opus 5.5 en effort « Élevé » et reçu ma vidéo test.
 \end{bilan}
 
 % ======================================================================== 2
 \chapter[Notre style et le personnage vert]{Notre style\\ et le personnage vert}
-\objectif{donner notre style à Claude en un prompt.}
-Ce chapitre donne à Claude les règles de notre style en un seul message. Il les garde dans un fichier de consignes et les relit avant chaque vidéo.
+\objectif{donner notre style à ton projet, une fois pour toutes.}
+Ce chapitre ajoute notre style aux instructions de ton projet. Claude le relit avant chaque vidéo, dans chaque conversation.
 
 \begin{figure}[H]\centering
 \begin{tikzpicture}[lbl/.style={font=\bfseries\scriptsize,text=citron,anchor=west},pt/.style={font=\scriptsize,text=white}]
@@ -368,9 +346,9 @@ Ce chapitre donne à Claude les règles de notre style en un seul message. Il le
 \caption{Notre style en une seule image.}
 \end{figure}
 
-\begin{acopier}[Prompt : notre style]
-Crée un fichier de consignes que tu reliras avant chaque vidéo :\\
-- Réponds-moi en français, simplement.\\
+Ouvre ton projet, touche « Instructions » et colle ce texte sous les lignes de l'étape 1.
+\begin{acopier}[À coller dans les instructions du projet : notre style]
+Mon style pour toutes les vidéos :\\
 - Format vertical 1080×1920 : titre blanc en haut, film 16:9 dans un bandeau au centre, sous-titres mot à mot dans des étiquettes noires.\\
 - Couleurs : fond noir, accent jaune citron (\#DCFC1C), police Anton pour les mots qui claquent.\\
 - Un personnage vert citron (petit bonhomme articulé : tête ronde, corps, bras et jambes) qui joue chaque phrase : il marche, pointe, saute, lève les bras, panique ou se gratte la tête.\\
@@ -384,7 +362,7 @@ Crée un fichier de consignes que tu reliras avant chaque vidéo :\\
 - Vérifie toujours la vidéo avant de fabriquer le fichier final.
 \end{acopier}
 
-Ce style est très rythmé. Pour un sujet sérieux ou une vidéo plus longue, essaie la version calme.
+Ce style est très rythmé. Pour un sujet sérieux ou une vidéo plus longue, demande la version calme dans la conversation.
 \begin{acopier}[Prompt : version calme]
 Garde mon style, mais en plus calme : une image toutes les 3 à 4 secondes, un bruitage seulement aux changements de scène, une seule musique discrète et pas plus de deux éléments à l'écran en même temps.
 \end{acopier}
@@ -410,19 +388,17 @@ Garde mon style mais sur fond blanc, avec des textes noirs et le personnage en b
 \end{acopier}
 
 \section{Faire évoluer tes règles}
-\begin{acopier}[Prompt : nouvelle règle]
-Ajoute à mes consignes : [ta remarque]. Applique-la à toutes mes prochaines vidéos.
-\end{acopier}
+Quand une remarque revient souvent, ajoute-la toi-même aux instructions du projet : ouvre le projet, touche « Instructions » et écris une ligne de plus. Par exemple : « Les sous-titres sont toujours en jaune. » Elle s'appliquera à toutes tes prochaines conversations.
 
 \begin{bilan}
-  \item \coche J'ai envoyé le prompt « notre style ».
-  \item \coche Claude m'a confirmé qu'il a créé le fichier de consignes.
+  \item \coche J'ai collé notre style dans les instructions du projet.
+  \item \coche Ma vidéo test suit bien ce style.
 \end{bilan}
 
 % ======================================================================== 3
 \chapter{Copier le style d'une vidéo que tu aimes}
 \objectif{faire reprendre par Claude le style d'une vidéo existante.}
-Tu peux montrer à Claude des vidéos dont tu aimes le style et lui demander de les imiter. Télécharge-les d'abord sur ton appareil, puis joins-les au message.
+Tu peux montrer à Claude des vidéos dont tu aimes le style et lui demander de les imiter. Télécharge-les d'abord sur ton appareil, puis joins-les au message (30 Mo maximum par fichier : prends des extraits courts).
 
 \begin{figure}[H]\centering
 \begin{tikzpicture}[lb/.style={font=\bfseries\scriptsize,anchor=west},tx/.style={font=\scriptsize,text width=4.55cm,align=left}]
@@ -454,7 +430,7 @@ Tu peux montrer à Claude des vidéos dont tu aimes le style et lui demander de 
 \end{figure}
 
 \begin{acopier}[Prompt : analyser un style]
-Voici 3 vidéos dont j'aime le style (jointes). Décris leur rythme de montage, leurs couleurs, leurs polices, leurs sous-titres, leurs transitions et leurs sons. Ajoute ce style à mes consignes et garde le personnage vert.
+Voici 3 vidéos dont j'aime le style (jointes). Décris leur rythme de montage, leurs couleurs, leurs polices, leurs sous-titres, leurs transitions et leurs sons, en quelques lignes que je pourrai coller dans les instructions de mon projet. Garde le personnage vert.
 \end{acopier}
 \begin{acopier}[Prompt : tester le style avant de l'appliquer]
 Avant de refaire toute la vidéo, montre-moi trois images de test dans ce nouveau style (le titre, une scène avec le personnage vert, la fin). J'attends ton feu vert pour continuer.
@@ -469,7 +445,7 @@ Copie un style (rythme, couleurs, ambiance), pas le contenu : n'utilise pas les 
 
 \begin{bilan}
   \item \coche J'ai choisi une à trois vidéos de référence.
-  \item \coche Leur style est ajouté à mes consignes.
+  \item \coche J'ai collé leur style dans les instructions du projet.
 \end{bilan}
 
 % ======================================================================== 4
@@ -661,10 +637,10 @@ Ouvre toi-même les liens avant de publier : Claude peut se tromper.
 % ======================================================================== 8
 \chapter{Récupérer la vidéo}
 \objectif{obtenir le fichier final, la miniature et les versions utiles.}
-Quand la vidéo te convient, demande le fichier final. Sur ordinateur, il est aussi enregistré dans ton dossier \texttt{mes-videos}.
+Quand la vidéo te convient, demande le fichier final. Claude te l'envoie dans la conversation : touche-le, puis « Télécharger ».
 
 \begin{acopier}[Prompt : fichier final et miniature]
-La vidéo me convient. Fabrique la version finale en 1080×1920 et une miniature verticale avec mon titre en gros, puis envoie-les-moi.
+La vidéo me convient. Fabrique la version finale en 1080×1920, en moins de 28 Mo, et une miniature verticale avec mon titre en gros, puis envoie-les-moi.
 \end{acopier}
 \begin{acopier}[Prompt : version YouTube]
 Fais aussi une version horizontale 1920×1080 de cette vidéo. Replace le titre, le personnage et les sous-titres pour le format large, sans bandes noires ni éléments coupés. Garde le même son.
@@ -699,7 +675,7 @@ Fabrique 4 miniatures verticales différentes pour cette vidéo : 3 à 5 mots en
 
 \section{Aller plus loin avec HyperFrames}
 \begin{acopier}[Prompt : voir avant le rendu]
-Ouvre l'aperçu HyperFrames pour que je regarde la vidéo avant que tu fabriques le fichier final.
+Avant de fabriquer le fichier final, montre-moi une image de chaque scène pour que je valide.
 \end{acopier}
 \begin{acopier}[Prompt : blocs prêts à l'emploi]
 Cherche dans le registre HyperFrames des transitions, des sous-titres animés et des effets de caméra qui iraient avec ma vidéo, et utilise les meilleurs.
@@ -708,12 +684,39 @@ Cherche dans le registre HyperFrames des transitions, des sous-titres animés et
 Lance la vérification HyperFrames, corrige toutes les erreurs, puis montre-moi une image de chaque scène.
 \end{acopier}
 \begin{acopier}[Prompt : réutiliser une vidéo]
-Reprends le projet de ma vidéo « [titre] » et refais-la avec ce nouveau texte et cette nouvelle voix (jointe), en gardant les mêmes scènes.
+Dans cette conversation, refais la vidéo avec ce nouveau texte et cette nouvelle voix (jointe), en gardant les mêmes scènes.
 \end{acopier}
 
 \begin{bilan}
   \item \coche J'ai reçu le fichier final et la miniature.
 \end{bilan}
+
+% ======================================================================== BONUS CLAUDE CODE
+\chapter*{Bonus : Claude Code}
+\addcontentsline{toc}{chapter}{Bonus : Claude Code sur ordinateur}
+\markboth{Bonus : Claude Code}{}
+Le projet Claude suffit pour tes vidéos. Claude Code est une option pour plus tard, sur ordinateur, si tu veux :
+\begin{itemize}
+  \item des vidéos plus longues ou plus lourdes, sans la limite de 30 Mo ;
+  \item garder tous tes projets vidéo dans un dossier de ton ordinateur.
+\end{itemize}
+\begin{enumerate}
+  \item Sur la page de Claude Code, clique sur « Télécharger » et installe l'application.
+  \item Ouvre-la, connecte-toi et choisis un dossier vide, par exemple \texttt{mes-videos}.
+  \item Envoie le prompt ci-dessous, puis ouvre une nouvelle session.
+\end{enumerate}
+\capture[0.72]{images/claude-code.jpg}{\pastille{1} « Essayer Claude ». \pastille{2} « Télécharger », qui indique ton système. \pastille{3} La version Web.}
+\begin{acopier}[Prompt : installer HyperFrames dans Claude Code]
+Installe HyperFrames pour Claude Code :\\
+claude plugin marketplace add heygen-com/hyperframes\\
+claude plugin install hyperframes@hyperframes\\
+Si ça ne marche pas, utilise : npx skills add heygen-com/hyperframes\\
+Puis lance npx hyperframes doctor, installe ce qui manque et dis-moi quand tout est prêt.
+\end{acopier}
+\begin{acopier}[Prompt : reprendre tes réglages]
+Crée un fichier de consignes que tu reliras avant chaque vidéo, avec ce texte : [colle les instructions de ton projet Claude].
+\end{acopier}
+Ensuite, tous les prompts de ce guide marchent de la même façon. Claude Code demande parfois une autorisation avant d'agir : lis ce qu'il propose, et si tu ne comprends pas, réponds « Explique-moi ce que fait cette commande ».
 
 % ======================================================================== DÉPANNAGE
 \chapter*{En cas de problème}
@@ -724,19 +727,18 @@ Reprends le projet de ma vidéo « [titre] » et refais-la avec ce nouveau texte
 \begin{xltabular}{\linewidth}{>{\raggedright\arraybackslash}p{3.2cm}>{\raggedright\arraybackslash}X}
 \toprule
 \textbf{Problème} & \textbf{Solution} \\ \midrule
-Claude répond mais ne fabrique pas de vidéo & Vérifie que tu es dans Claude Code (menu « Code » sur téléphone) et que HyperFrames est installé. \\
+Claude répond mais ne fabrique pas de vidéo & Vérifie que « Exécution de code et création de fichiers » est activé (Paramètres → Capacités), puis demande « Installe HyperFrames ». \\
 Le résultat est moins bon que prévu & Vérifie que le modèle choisi est Opus 5.5 avec l'effort « Élevé ». \\
-Claude a oublié mon style & Demande-lui : « Relis mon fichier de consignes et applique-le. » \\
-Sur téléphone, mon projet a disparu & Il n'avait pas été enregistré : termine chaque séance par « Enregistre tout sur GitHub ». \\
-Claude demande une autorisation & Lis ce qu'il propose. Si tu ne comprends pas, demande-lui de l'expliquer avant d'accepter. \\
+Claude a oublié mon style & Vérifie que la conversation est bien dans ton projet, puis demande « Relis les instructions du projet ». \\
+La conversation devient lente ou trop longue & Ouvre une nouvelle conversation dans le même projet et renvoie ta voix et ton texte. \\
 Le montage est long & C'est normal pour une première vidéo ; sur ordinateur, laisse-le allumé. \\
 Limite d'utilisation atteinte & Attends qu'elle se recharge, puis reprends la même session. \\
 Un téléchargement d'image échoue & Demande « remplace ce fichier par une autre vidéo gratuite ». \\
 Une image ne colle pas au texte & Donne le moment et ce que tu veux voir : « À 8 s, montre [sujet]. » \\
 Un sous-titre est faux & Recolle le texte exact et donne le moment de l'erreur. \\
-Le rendu échoue & Demande « Lance npx hyperframes doctor, installe ce qui manque et relance le rendu ». \\
-Le MP4 ne passe pas sur GitHub & Demande une version de moins de 100 Mo. \\
-Je veux voir la vidéo avant le rendu & Demande « Ouvre l'aperçu HyperFrames ». \\ \bottomrule
+Le rendu échoue & Demande « Réinstalle HyperFrames et relance le rendu ». \\
+Le fichier dépasse 30 Mo & Demande « Refais l'export en moins de 28 Mo ». \\
+Je veux voir la vidéo avant le rendu & Demande « Montre-moi une image de chaque scène ». \\ \bottomrule
 \end{xltabular}}
 
 \begin{acopier}[Prompt : quand quelque chose bloque]
@@ -772,13 +774,13 @@ Voix & Ta voix, ou ElevenLabs (payant si commercial) & Copier la voix d'une vrai
 \toprule
 Accroche (hook) & Les premières secondes de la vidéo, faites pour donner envie de rester \\
 ChatGPT & L'assistant d'OpenAI que j'utilise pour écrire le texte de la voix \\
-Claude Code & La partie de Claude qui fabrique des fichiers, dont des vidéos \\
+Claude Code & La version de Claude pour ordinateur qui travaille dans tes dossiers (voir le bonus) \\
 Edit & Une vidéo sans voix, montée sur le rythme d'une musique \\
-Fichier de consignes & Le texte où sont tes règles ; Claude le relit avant chaque vidéo \\
-GitHub & Le service en ligne qui garde tes projets, nécessaire seulement sur téléphone \\
 HyperFrames & L'outil de montage que Claude utilise \\
+Instructions du projet & Le texte où sont tes règles ; Claude le relit au début de chaque conversation \\
 Licence & Les conditions d'utilisation d'un fichier ou d'un service \\
 Opus 5.5 & Le modèle de Claude utilisé dans ce guide, réglé sur l'effort « Élevé » \\
+Projet Claude & Un espace qui garde tes instructions et tes fichiers pour toutes ses conversations \\
 Prompt & Le message que tu envoies à Claude \\
 Rendu & La fabrication du fichier MP4 final à partir du montage \\ \bottomrule
 \end{xltabular}}
@@ -805,8 +807,8 @@ Les liens se touchent directement dans le PDF.
 \toprule
 Claude Code & \lien{https://claude.com/product/claude-code}{claude.com/product/claude-code} \\
 Offres et limites de Claude & \lien{https://claude.com/pricing}{claude.com/pricing} \\
-HyperFrames & \lien{https://hyperframes.heygen.com/guides/with-claude-code}{hyperframes.heygen.com} \\
-GitHub, créer un dépôt & \lien{https://docs.github.com/fr/repositories/creating-and-managing-repositories/creating-a-new-repository}{docs.github.com} \\
+HyperFrames & \lien{https://hyperframes.heygen.com}{hyperframes.heygen.com} \\
+Création de fichiers dans Claude & \lien{https://support.claude.com/en/articles/12111783}{support.claude.com} \\
 ElevenLabs, droits & \lien{https://elevenlabs.io/docs/help-center/legal/can-i-publish-the-content-i-generate-on-the-platform}{elevenlabs.io/docs} \\
 Licences Mixkit & \lien{https://mixkit.co/license/}{mixkit.co/license} \\
 Licence Pexels & \lien{https://www.pexels.com/fr-fr/license/}{pexels.com/license} \\
