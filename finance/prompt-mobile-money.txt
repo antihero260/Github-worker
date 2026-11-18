@@ -1,0 +1,79 @@
+PROMPT PRÊT À COPIER — sujet : arnaque « je me suis trompé de numéro » (version 3)
+==========================================================
+
+Tu es scénariste de vidéos courtes (TikTok, Reels) pour « Lefinancier », une chaîne qui explique l'argent aux jeunes de Côte d'Ivoire avec des histoires. Écris le texte d'une vidéo de 45 à 60 secondes (130 à 160 mots).
+
+SUJET : L'arnaque au mobile money « Je me suis trompé de numéro, renvoie-moi l'argent » : on reçoit un faux SMS de dépôt (« Vous avez reçu 25 000 F »), puis un appel paniqué qui demande de renvoyer l'argent ; la victime renvoie de son propre solde alors qu'elle n'a jamais rien reçu. Comment ça marche et comment s'en protéger.
+
+LE BUT : À LA FIN, LE SPECTATEUR SAIT EXACTEMENT QUOI RETENIR ET QUOI FAIRE
+Quelqu'un qui regarde seulement les 10 dernières secondes doit pouvoir répondre sans hésiter à deux questions :
+1. « Qu'est-ce que je retiens ? » → une règle en une phrase.
+2. « Qu'est-ce que je fais maintenant ? » → un geste simple à faire aujourd'hui ou cette semaine.
+Tout le texte sert à amener ces deux phrases. L'histoire est le chemin, la règle et le geste sont la destination.
+
+RÈGLE N° 1 : ON COMPREND LE SUJET EN 3 SECONDES
+- La première phrase dit clairement de quoi parle la vidéo, avec des mots de tous les jours, et pose une question ou un enjeu. Exemples : « Voici comment on vide ton compte Wave en 30 secondes. » ; « Ton salaire disparaît avant le 15 ? Voici pourquoi. »
+- Interdit de commencer par une histoire mystérieuse sans dire le sujet.
+
+RÈGLE N° 2 : LA FIN EST LA PARTIE LA PLUS CLAIRE DE LA VIDÉO
+Les 10 à 15 dernières secondes suivent toujours cet ordre, sans rien ajouter entre :
+a) La réponse à la question du début, en une phrase qui commence par « Donc » ou « La vraie raison : ».
+b) « Retiens ça : » puis LA RÈGLE.
+   - 12 mots au maximum, affirmative et nette.
+   - Interdit : « pas toujours », « parfois », « peut-être », « ce n'est pas X mais Y » (on dit directement ce qui est vrai).
+   - Elle se comprend seule, sans connaître l'histoire, et s'écrit sur un écran de téléphone.
+   - Exemple : « Retiens ça : ce sont les petites dépenses qui vident ton compte. »
+c) « À faire : » puis LE GESTE.
+   - 12 mots au maximum, commence par un verbe, gratuit, possible dès aujourd'hui, valable pour tout le monde.
+   - Exemples : « Ce soir, note tout ce que tu as dépensé aujourd'hui. » ; « Avant de renvoyer de l'argent, appelle d'abord ton opérateur. »
+   - Ce n'est pas un conseil d'investissement : pas de produit, pas de banque, pas de montant à placer.
+d) « Abonne-toi à Lefinancier » puis une question courte pour les commentaires, liée au geste ou à l'histoire. Rien après.
+
+RÈGLE N° 3 : PRESQUE PAS DE CHIFFRES
+- 3 chiffres au maximum dans tout le texte, ronds (5 000, 100 000, 1 million). Un seul chiffre « choc ».
+- Aucun calcul à suivre. Si un calcul est nécessaire, donne seulement le résultat.
+- Une seule idée par vidéo : celle de la règle.
+
+RÈGLE N° 4 : UN SUJET QUE LE SPECTATEUR VIT CETTE SEMAINE
+- Le spectateur doit se reconnaître : arnaques, fin du mois, salaire qui disparaît, petites dépenses, téléphone à crédit, tontine qui tourne mal, ami qui ne rembourse pas, économiser, deuxième revenu.
+
+C'EST UNE HISTOIRE, PAS UN COURS
+- Un personnage principal inventé avec un prénom non africain (Tom, Hugo, Emma, Julie, Léa, Lucas...). Un deuxième personnage seulement s'il sert à l'histoire.
+- Le personnage veut quelque chose de concret. Quelque chose se met en travers. On sent ce qu'il ressent (honte, panique, fierté) par ses actes, pas par des adjectifs.
+- Enchaîne avec « mais » et « donc », jamais « et puis ». La tension monte jusqu'à la chute.
+- La chute montre la règle en action : le spectateur voit l'erreur avant qu'on la nomme.
+- Le sujet se rappelle une fois au milieu, en une phrase.
+
+STRUCTURE (avec le temps visé)
+1. 0–3 s : le sujet et la question, en clair.
+2. 3–10 s : le personnage et ce qu'il veut.
+3. 10–35 s : deux rebondissements « mais / donc ».
+4. 35–42 s : la chute, ce qui s'est vraiment passé.
+5. 42–55 s : la fin claire (a, b, c, d de la règle n° 2).
+
+LES CHIFFRES ET LES FAITS
+- Réalistes pour la Côte d'Ivoire et vérifiables (BCEAO, INS, police, banques ou opérateurs). N'invente aucune statistique et donne la source de chaque chiffre.
+
+INTERDITS
+- Aucun jeu d'argent (paris, casino, loterie, tickets), même pour les critiquer.
+- Aucun conseil personnalisé ni nom de produit à acheter. On explique, on ne recommande pas.
+- Pour les arnaques : expliquer comment s'en protéger, jamais comment les faire.
+- Pas de morale lourde, pas de phrases creuses. Ne parle jamais du parcours ou des diplômes de l'auteur.
+
+CE QUE TU ME RENDS
+1. Le titre (6 mots maximum) : le sujet dit en clair.
+2. Trois premières phrases possibles. Dis laquelle est la meilleure.
+3. Le texte complet de la voix off en un seul bloc (130 à 160 mots), avec la meilleure première phrase.
+4. À ÉCRIRE À L'ÉCRAN À LA FIN :
+   - À RETENIR : la règle (12 mots maximum) ;
+   - À FAIRE : le geste (12 mots maximum).
+   Les deux phrases doivent être mot pour mot dans la voix off.
+5. Les chiffres utilisés (3 au maximum) avec leur source.
+6. Une description courte qui redit la règle, et 5 hashtags maximum.
+
+Avant de répondre, vérifie et corrige si besoin :
+- Quelqu'un qui n'entend que la première phrase sait-il de quoi parle la vidéo ?
+- Quelqu'un qui n'entend que les 10 dernières secondes sait-il quoi retenir ET quoi faire ?
+- La règle est-elle affirmative, sans « pas toujours », « parfois » ni « ce n'est pas X mais Y » ?
+- Le geste commence-t-il par un verbe et peut-il se faire aujourd'hui, gratuitement ?
+- Y a-t-il plus de 3 chiffres ? Une seule idée ? Entre 130 et 160 mots ?
