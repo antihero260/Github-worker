@@ -35,10 +35,10 @@ for n in range(1, len(PLAGES) + 1):
 T_SEG.append(FIN_VOIX)
 P_T = [p["t"] for p in PIECES] + [FIN_VOIX]
 # demande du 18 nov. : la vidéo s'arrête à « … vous préparer un compte rendu » (fin de la phrase 16) ;
-# le dernier instant est couvert par la vidéo verticale de l'ordinateur qu'on referme, puis fondu au noir
+# on finit sur le visage (demande : « on doit toujours voir mon visage ») : dernière image figée puis fondu au noir
 COUPE = T_SEG[16]
 FIN_VOIX = COUPE
-FIN = round(COUPE + 1.2, 2)
+FIN = round(COUPE + 0.9, 2)   # fin sur le visage : dernière image figée (assets/img/fin-perso.png), puis fondu au noir
 
 
 def place(n, t_orig):
@@ -126,6 +126,8 @@ def flash(t, op=0.6, coul="#fff"):
 # zoom alterné à chaque coupe (y compris les pauses retirées dans une phrase) : cache les sauts d'image
 for k in range(len(PIECES)):
     a = P_T[k]
+    if a >= COUPE - 0.01:   # après « un compte rendu » : plus de raccord (image figée de fin)
+        break
     z = 1.0 if k % 2 == 0 else (1.12, 1.15, 1.13)[(k // 2) % 3]
     j(f'tl.set("#coupe", {{ scale: {z} }}, {r(a)});')
     if k:
@@ -245,7 +247,7 @@ for k, (n, nom, t0, c) in enumerate(NIV):
     HTML.append(f'<div id="mini{n}" class="niv-mini" style="opacity: 0"><span style="background: {c}">NIVEAU {n}</span> {nom}</div>')
     apparait(f"#mini{n}", t0 + 1.6, -30, 0.6, 0.25)
     son(t0 + 1.6, tour(POPS), 0.26, f"pastille niveau {n}")
-    fin_n = NIV[k + 1][2] - 0.15 if k < 2 else T_SEG[16] - 0.1
+    fin_n = NIV[k + 1][2] - 0.15 if k < 2 else FIN
     cache(f"#mini{n}", fin_n)
 zoom_cine(T_SEG[5] + 0.05, 1.2)
 zoom_cine(T_SEG[9] + 0.05, 1.28, boom="trailer-impact")
@@ -360,8 +362,7 @@ HTML.append('<div id="fait" class="a-fait" style="opacity: 0">✓ TOUT FAIT PAR 
 j(f'tl.to("#a-dec", {{ opacity: 0, duration: 0.1 }}, {r(W(416) + 0.2)});')
 claque("#fait", W(416) + 0.2, 1.8)
 son(W(416) + 0.2, "mission-ok", 0.4, "tout est fait")
-cache("#agent", T_SEG[16] - 0.12)
-cache("#fait", T_SEG[16] - 0.12)
+# la carte de l'agent (« tout est fait ») reste jusqu'à la fin
 
 # ================================================================ 5. LA RÉVOLUTION : une IA qui répond → une IA à qui on délègue
 HTML.append('<div id="revo" class="slam or" data-layout-allow-overlap style="top: 330px; z-index: 13; opacity: 0">LA RÉVOLUTION</div>')
@@ -383,7 +384,7 @@ eclat(W(463), hx_, hy_, "#F2B705")
 jaillit("#av-b", W(463), hx_, hy_, 540, 656, 0.45)
 son(W(463), "power-up", 0.4, "on peut déléguer")
 j(f'tl.fromTo("#av-b", {{ boxShadow: "0 0 0px rgba(242,183,5,0)" }}, {{ boxShadow: "0 0 80px rgba(242,183,5,0.9)", duration: 0.5, yoyo: true, repeat: 3, immediateRender: false }}, {r(W(463) + 0.2)});')
-j(f'tl.fromTo("#fondu", {{ opacity: 0 }}, {{ opacity: 1, duration: 0.45, immediateRender: false }}, {r(FIN - 0.45)});')
+j(f'tl.fromTo("#fondu", {{ opacity: 0 }}, {{ opacity: 1, duration: 0.45, immediateRender: false }}, {r(FIN - 0.4)});')
 
 
 # ================================================================ FONDS blancs et lumineux, un par partie (fondus enchaînés), lumière qui bouge
@@ -394,6 +395,7 @@ FONDS = [  # (début, couleur de la lumière principale, couleur secondaire)
     (T_SEG[9], "139,92,246", "217,70,239"),      # niveau 3 (agents IA) : NOIR lumineux violet
     (T_SEG[16], "242,183,5", "56,189,248"),      # la révolution : or + bleu
 ]
+FONDS = [f for f in FONDS if f[0] < COUPE]   # vidéo arrêtée à « un compte rendu » : le fond violet reste
 for k, (t0, c1, c2) in enumerate(FONDS):
     t1 = FONDS[k + 1][0] if k + 1 < len(FONDS) else FIN
     sombre = k == 3
@@ -464,7 +466,7 @@ LIENS = [(0, 1), (1, 2), (1, 3), (2, 9), (3, 8), (4, 5), (5, 6), (5, 7), (6, 7),
 lignes = "".join(f'<line id="ln{q}" x1="{NOEUDS_R[a_][0]}" y1="{NOEUDS_R[a_][1]}" x2="{NOEUDS_R[b_][0]}" y2="{NOEUDS_R[b_][1]}" stroke="#A78BFA" stroke-width="6" '
                  f'stroke-dasharray="1200" stroke-dashoffset="1200" opacity="0.55" />' for q, (a_, b_) in enumerate(LIENS))
 points = "".join(f'<circle id="nn{q}" cx="{x}" cy="{y}" r="22" fill="#fff" stroke="#0B1220" stroke-width="6" opacity="0.8" />' for q, (x, y) in enumerate(NOEUDS_R))
-fond_motion("mo-f3", T_SEG[9], T_SEG[16], f'<svg viewBox="0 0 1080 1920" width="1080" height="1920">{lignes}{points}</svg>',
+fond_motion("mo-f3", T_SEG[9], FIN, f'<svg viewBox="0 0 1080 1920" width="1080" height="1920">{lignes}{points}</svg>',
             [f'tl.to("#ln{q}", {{ strokeDashoffset: 0, duration: 0.8, ease: "power2.out" }}, {{t0}} + {0.3 + q * 0.25:.2f});' for q in range(len(LIENS))]
             + [f'tl.fromTo("#nn{q}", {{ scale: 1, transformOrigin: "{x}px {y}px" }}, {{ scale: 1.5, duration: 0.5, yoyo: true, repeat: 7, ease: "sine.inOut", immediateRender: false }}, {{t0}} + {q * 0.37:.2f});'
                for q, (x, y) in enumerate(NOEUDS_R)])
@@ -493,10 +495,13 @@ BROLL = [("v-lasers.mp4", "vertical", W(22) - 0.05, W(24) - 0.05),
          ("v-tape-laptop.mp4", "vertical", W(240) - 0.03, W(250) - 0.06),     # « les informations dans votre CRM »
          ("v-hologramme.mp4", "vertical", W(339) - 0.03, W(342) - 0.02),      # « et l'agent décide »
          ("v-circuit.mp4", "vertical", W(343) + 0.13, W(345) + 0.15),         # « des étapes »
-         ("v-ferme-laptop.mp4", "vertical", COUPE - 0.05, FIN)]                 # fin : l'ordinateur se referme (travail fait)
+         ("v-robot-ligne.mp4", "vertical", W(37) - 0.05, T_SEG[1] - 0.05),    # « les automatisations ? »
+         ("v-machine-circuit.mp4", "vertical", W(166) + 0.7, W(191) - 0.05),  # « l'automatisation IA »
+         ("v-mail-tel.mp4", "vertical", W(383) + 0.31, W(386) - 0.06),        # « vos mails »
+         ("v-calendrier-tablette.mp4", "vertical", W(408) + 0.3, W(410) - 0.06)]  # « votre calendrier »
 BROLL = [b for b in BROLL if b[2] < FIN]
 HTML.append('<div id="noir-fin" style="position: absolute; inset: 0; background: #000; opacity: 0; z-index: 95"></div>')
-j(f'tl.fromTo("#noir-fin", {{ opacity: 0 }}, {{ opacity: 1, duration: 0.45, ease: "power2.in", immediateRender: false }}, {r(FIN - 0.45)});')
+j(f'tl.fromTo("#noir-fin", {{ opacity: 0 }}, {{ opacity: 1, duration: 0.38, ease: "power2.in", immediateRender: false }}, {r(FIN - 0.4)});')
 # GESTE : paumes ouvertes vers le haut sur « les agents IA » → un écran (vidéo du robot) naît dans les mains, puis zoom jusqu'au plein écran
 t_m = W(262) + 0.05
 px_, py_ = ecran(530, 1440, t_m)
@@ -638,7 +643,7 @@ CSS = """
       .mo-niv { position: absolute; left: 160px; top: 140px; width: 760px; height: 760px; z-index: 15; pointer-events: none; }
       .f-points { position: absolute; inset: 0; opacity: 0.35; background-image: radial-gradient(rgba(11,18,32,0.22) 2px, transparent 2.5px); background-size: 44px 44px; }
       .f-lum { position: absolute; left: 200px; top: 300px; width: 900px; height: 900px; border-radius: 50%; }
-      #perso { position: absolute; inset: 0; width: 1080px; height: 1920px; object-fit: cover; filter: brightness(1.08) contrast(1.04) saturate(1.05) drop-shadow(0 30px 50px rgba(11,18,32,0.28)); }
+      #perso, #perso-fin { position: absolute; inset: 0; width: 1080px; height: 1920px; object-fit: cover; filter: brightness(1.08) contrast(1.04) saturate(1.05) drop-shadow(0 30px 50px rgba(11,18,32,0.28)); }
       .br-plein { position: absolute; inset: 0; z-index: 20; overflow: hidden; background: #000; }
       .br-flou { position: absolute; inset: -60px; width: calc(100% + 120px); height: calc(100% + 120px); object-fit: cover; filter: blur(30px) brightness(0.6); }
       .br-bande { position: absolute; left: 0; top: 656px; width: 1080px; height: 608px; overflow: hidden; box-shadow: 0 30px 90px rgba(0,0,0,0.6); }
@@ -742,6 +747,7 @@ page = f"""<!doctype html>
 {NL.join("      " + m for m in MO_HTML)}
       <div id="cine"><div id="pousse"><div id="cam"><div id="coupe">
         <video id="perso" class="clip" src="assets/perso.webm" data-start="0" data-duration="{r(FIN_VOIX)}" data-media-start="0" data-track-index="1" muted playsinline></video>
+        <img id="perso-fin" class="clip" src="assets/img/fin-perso.png" alt="" data-start="{r(COUPE)}" data-duration="{r(FIN - COUPE)}" data-track-index="1" />
       </div></div></div></div>
       <audio id="voix" src="assets/voix-forte.wav" data-start="0" data-duration="{r(FIN_VOIX)}" data-volume="1" data-track-index="2"></audio>
 {NL.join("      " + h for h in HTML)}
