@@ -718,7 +718,7 @@ page = f"""<!doctype html>
 {NL.join("      " + f for f in FOND_HTML)}
 {NL.join("      " + m for m in MO_HTML)}
       <div id="cine"><div id="pousse"><div id="cam"><div id="coupe">
-        <video id="perso" class="clip" src="assets/perso-retouche.webm" data-start="0" data-duration="{r(FIN_VOIX)}" data-media-start="0" data-track-index="1" muted playsinline></video>
+        <video id="perso" class="clip" src="assets/perso.webm" data-start="0" data-duration="{r(FIN_VOIX)}" data-media-start="0" data-track-index="1" muted playsinline></video>
       </div></div></div></div>
       <audio id="voix" src="assets/voix-forte.wav" data-start="0" data-duration="{r(FIN_VOIX)}" data-volume="1" data-track-index="2"></audio>
 {NL.join("      " + h for h in HTML)}
