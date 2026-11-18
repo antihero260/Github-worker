@@ -34,6 +34,11 @@ for n in range(1, len(PLAGES) + 1):
     T_SEG.append(next(p["t"] for p in PIECES if p["n"] == n))
 T_SEG.append(FIN_VOIX)
 P_T = [p["t"] for p in PIECES] + [FIN_VOIX]
+# demande du 18 nov. : la vidéo s'arrête à « … vous préparer un compte rendu » (fin de la phrase 16) ;
+# le dernier instant est couvert par la vidéo verticale de l'ordinateur qu'on referme, puis fondu au noir
+COUPE = T_SEG[16]
+FIN_VOIX = COUPE
+FIN = round(COUPE + 1.2, 2)
 
 
 def place(n, t_orig):
@@ -475,7 +480,6 @@ BROLL = [("v-lasers.mp4", "vertical", W(22) - 0.05, W(24) - 0.05),
          ("robot-usine.mp4", "ecran", T_SEG[5] + 1.6, W(192) - 0.05),
          ("robot-yeux.mp4", "plein", W(264) + 0.2, W(287) - 0.08),
          ("v-business.mp4", "vertical", W(363), W(381) - 0.1),
-         ("v-gratte-ciel.mp4", "vertical", W(427) - 0.05, W(435) - 0.05),
          # demande : encore plus de vidéos verticales (Mixkit 1080×1920), placées là où aucune animation importante n'est cachée
          ("v-clavier.mp4", "vertical", W(191) - 0.03, W(195) - 0.02),          # « vous définissez une série d'actions »
          ("v-code.mp4", "vertical", W(250) - 0.03, W(252) + 0.05),             # « l'IA exécute simplement »
@@ -483,8 +487,16 @@ BROLL = [("v-lasers.mp4", "vertical", W(22) - 0.05, W(24) - 0.05),
          ("v-messages.mp4", "vertical", W(381) - 0.05, W(383) + 0.28),         # « il peut consulter vos mails »
          ("v-lunettes-ordi.mp4", "vertical", W(386) + 0.55, W(408) - 0.15),    # « analyser les anciens échanges »
          ("v-macbook.mp4", "vertical", W(410) - 0.05, W(413) + 0.25),          # « votre calendrier et vous préparer »
-         ("v-appareils.mp4", "vertical", W(451) + 0.25, W(455) - 0.05),        # « passer d'une IA qui »
-         ("v-ferme-laptop.mp4", "vertical", W(465) + 0.15, FIN)]
+         # 18 nov. : « plus de vidéos verticales là où mon visage stagne » (sans cacher les étapes des cartes ni les gestes)
+         ("v-pensive.mp4", "vertical", W(26) - 0.03, W(33) - 0.12),           # « et quelle est la différence avec »
+         ("v-planifie.mp4", "vertical", W(197) - 0.03, W(200) - 0.1),         # « à l'avance, par exemple »
+         ("v-tape-laptop.mp4", "vertical", W(240) - 0.03, W(250) - 0.06),     # « les informations dans votre CRM »
+         ("v-hologramme.mp4", "vertical", W(339) - 0.03, W(342) - 0.02),      # « et l'agent décide »
+         ("v-circuit.mp4", "vertical", W(343) + 0.13, W(345) + 0.15),         # « des étapes »
+         ("v-ferme-laptop.mp4", "vertical", COUPE - 0.05, FIN)]                 # fin : l'ordinateur se referme (travail fait)
+BROLL = [b for b in BROLL if b[2] < FIN]
+HTML.append('<div id="noir-fin" style="position: absolute; inset: 0; background: #000; opacity: 0; z-index: 95"></div>')
+j(f'tl.fromTo("#noir-fin", {{ opacity: 0 }}, {{ opacity: 1, duration: 0.45, ease: "power2.in", immediateRender: false }}, {r(FIN - 0.45)});')
 # GESTE : paumes ouvertes vers le haut sur « les agents IA » → un écran (vidéo du robot) naît dans les mains, puis zoom jusqu'au plein écran
 t_m = W(262) + 0.05
 px_, py_ = ecran(530, 1440, t_m)
@@ -524,6 +536,8 @@ for k, (src, mode, t0, t1) in enumerate(BROLL):
 def sous_titres():
     groupes, cur = [], []
     for i, m in enumerate(MOTS):
+        if m["start"] >= COUPE - 0.05:   # la vidéo s'arrête à « un compte rendu »
+            break
         cur.append(i)
         if m["text"][-1] in ".,;:!?…" or len(cur) >= 3 or len(" ".join(MOTS[x]["text"] for x in cur)) >= 16:
             groupes.append(cur)
@@ -597,8 +611,9 @@ SONS[:] = [x for x in SONS if not (zr0 - 0.3 < x[0] < zr1)                      
            and not (x[0] < zd1 and x[0] + min(x[4], 0.9) > zd0)]                             # « déléguer du travail » : rien qui déborde
 # les longs impacts lancés juste avant « la révolution » traînent dessus : moitié moins forts
 SONS[:] = [(x[0], x[1], round(x[2] * 0.5, 3), x[3], x[4]) if (zr0 - 1.5 < x[0] <= zr0 - 0.3 and x[4] > 2) else x for x in SONS]
-(ICI / "assets/duck.json").write_text(json.dumps([[round(W(434) - 0.3, 3), round(FIN, 3), 0.56]]))   # dès « la révolution »
+(ICI / "assets/duck.json").write_text(json.dumps([]))   # plus de dernière phrase (vidéo arrêtée à « un compte rendu »)
 
+SONS[:] = [x for x in SONS if x[0] < FIN - 0.1]
 _vus = set()
 SONS[:] = [x for x in SONS if not ((x[0], x[1]) in _vus or _vus.add((x[0], x[1])))]
 pistes, sons_html = {}, []
