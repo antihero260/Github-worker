@@ -496,6 +496,11 @@ BROLL = [("v-lasers.mp4", "vertical", W(22) - 0.05, W(24) - 0.05),
          ("v-hologramme.mp4", "vertical", W(339) - 0.03, W(342) - 0.02),      # « et l'agent décide »
          ("v-circuit.mp4", "vertical", W(343) + 0.13, W(345) + 0.15),         # « des étapes »
          ("v-robot-ligne.mp4", "vertical", W(37) - 0.05, T_SEG[1] - 0.05),    # « les automatisations ? »
+         # 18 nov. (bis) : « peu de vidéos dans la première partie et le milieu »
+         ("v-femme-tel.mp4", "vertical", W(120) + 0.16, W(124) - 0.2),       # « ChatGPT, il vous… » (avant la réponse)
+         ("v-fatigue-ordi.mp4", "vertical", W(153) - 0.05, W(155) - 0.05),   # « mais chaque… »
+         ("v-macbook-pro.mp4", "vertical", W(200) + 0.3, W(203) - 0.05),     # « un mail »
+         ("v-appareils-gens.mp4", "vertical", W(252) + 0.1, W(254) - 0.06),  # « simplement votre… »
          ("v-machine-circuit.mp4", "vertical", W(166) + 0.7, W(191) - 0.05),  # « l'automatisation IA »
          ("v-mail-tel.mp4", "vertical", W(383) + 0.31, W(386) - 0.06),        # « vos mails »
          ("v-calendrier-tablette.mp4", "vertical", W(408) + 0.3, W(410) - 0.06)]  # « votre calendrier »
@@ -599,14 +604,17 @@ for q in range(1, len(morceaux_m)):
     fc += f";[{cur}][m{q}]acrossfade=d=0.04:c1=tri:c2=tri[x{q}]"
     cur = f"x{q}"
 subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(MUS / "superhero.mp3"), "-filter_complex", fc, "-map", f"[{cur}]", str(LONG)], check=True)
-# partie agents IA : comme avant (demande du 18 nov.) → Superhero REPART DU DÉBUT à l'entrée dans les agents IA, avec l'impact
-for nom, src, d, fe, ff in (("piste-1.mp3", LONG, COUPURE + 0.3, 0.03, 0.3), ("piste-2.mp3", MUS / "superhero.mp3", FIN - COUPURE, 0.02, 1.2)):
+# partie agents IA (18 nov., bis) : « une meilleure musique, il faut qu'on sente le changement d'ambiance » →
+# « Derezzed » (Daft Punk, bande originale de Tron : électro futuriste, extrait Deezer, TikTok uniquement), calée sur son premier temps ;
+# riser juste avant, impact au changement. Le début garde Superhero (hip-hop sombre).
+for nom, src, d, fe, ff in (("piste-1.mp3", LONG, COUPURE + 0.12, 0.03, 0.15), ("piste-2.mp3", MUS / "derezzed-cale.mp3", FIN - COUPURE, 0.01, 0.6)):
     subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(src), "-af",
                     f"atrim=duration={d:.3f},asetpts=PTS-STARTPTS,loudnorm=I=-17:TP=-2:LRA=8,afade=t=in:d={fe},afade=t=out:st={max(0, d - ff):.3f}:d={ff}",
                     "-ar", "48000", "-b:a", "192k", str(MUS / nom)], check=True)
-MUSIQUES = [f'<audio id="musique-1" src="assets/music/piste-1.mp3" data-start="0" data-duration="{r(COUPURE + 0.3)}" data-volume="0.50" data-track-index="20"></audio>',
-            f'<audio id="musique-2" src="assets/music/piste-2.mp3" data-start="{r(COUPURE)}" data-duration="{r(FIN - COUPURE)}" data-volume="0.50" data-track-index="21"></audio>']
+MUSIQUES = [f'<audio id="musique-1" src="assets/music/piste-1.mp3" data-start="0" data-duration="{r(COUPURE + 0.12)}" data-volume="0.50" data-track-index="20"></audio>',
+            f'<audio id="musique-2" src="assets/music/piste-2.mp3" data-start="{r(COUPURE)}" data-duration="{r(FIN - COUPURE)}" data-volume="0.46" data-track-index="21"></audio>']
 son(COUPURE, "trailer-impact-2", 0.36, "entrée dans les agents IA")
+son(COUPURE - 0.95, "riser-synth", 0.34, "montée vers les agents IA", d=0.95)
 # dernière phrase (« passer d'une IA qui répond à une IA à laquelle on peut déléguer du travail ») : rien ne doit couvrir la voix
 # → aucun bruitage sur « on peut déléguer du travail », et la musique baisse de ~5 dB (appliqué par tools/mixer.py)
 # (et de même sur « la révolution », masqué par un bruitage de zoom)
