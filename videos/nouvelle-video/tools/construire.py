@@ -580,10 +580,13 @@ for q in range(1, len(morceaux_m)):
     fc += f";[{cur}][m{q}]acrossfade=d=0.04:c1=tri:c2=tri[x{q}]"
     cur = f"x{q}"
 subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(MUS / "superhero.mp3"), "-filter_complex", fc, "-map", f"[{cur}]", str(LONG)], check=True)
-subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(LONG), "-af",
-                f"atrim=duration={FIN:.3f},asetpts=PTS-STARTPTS,loudnorm=I=-17:TP=-2:LRA=8,afade=t=in:d=0.03,afade=t=out:st={FIN - 1.2:.3f}:d=1.2",
-                "-ar", "48000", "-b:a", "192k", str(MUS / "piste-unique.mp3")], check=True)
-MUSIQUES = [f'<audio id="musique-1" src="assets/music/piste-unique.mp3" data-start="0" data-duration="{r(FIN)}" data-volume="0.50" data-track-index="20"></audio>']
+# partie agents IA : comme avant (demande du 18 nov.) → Superhero REPART DU DÉBUT à l'entrée dans les agents IA, avec l'impact
+for nom, src, d, fe, ff in (("piste-1.mp3", LONG, COUPURE + 0.3, 0.03, 0.3), ("piste-2.mp3", MUS / "superhero.mp3", FIN - COUPURE, 0.02, 1.2)):
+    subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(src), "-af",
+                    f"atrim=duration={d:.3f},asetpts=PTS-STARTPTS,loudnorm=I=-17:TP=-2:LRA=8,afade=t=in:d={fe},afade=t=out:st={max(0, d - ff):.3f}:d={ff}",
+                    "-ar", "48000", "-b:a", "192k", str(MUS / nom)], check=True)
+MUSIQUES = [f'<audio id="musique-1" src="assets/music/piste-1.mp3" data-start="0" data-duration="{r(COUPURE + 0.3)}" data-volume="0.50" data-track-index="20"></audio>',
+            f'<audio id="musique-2" src="assets/music/piste-2.mp3" data-start="{r(COUPURE)}" data-duration="{r(FIN - COUPURE)}" data-volume="0.50" data-track-index="21"></audio>']
 son(COUPURE, "trailer-impact-2", 0.36, "entrée dans les agents IA")
 # dernière phrase (« passer d'une IA qui répond à une IA à laquelle on peut déléguer du travail ») : rien ne doit couvrir la voix
 # → aucun bruitage sur « on peut déléguer du travail », et la musique baisse de ~5 dB (appliqué par tools/mixer.py)
