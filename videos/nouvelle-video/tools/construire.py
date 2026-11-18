@@ -587,9 +587,14 @@ MUSIQUES = [f'<audio id="musique-1" src="assets/music/piste-unique.mp3" data-sta
 son(COUPURE, "trailer-impact-2", 0.36, "entrée dans les agents IA")
 # dernière phrase (« passer d'une IA qui répond à une IA à laquelle on peut déléguer du travail ») : rien ne doit couvrir la voix
 # → aucun bruitage sur « on peut déléguer du travail », et la musique baisse de ~5 dB (appliqué par tools/mixer.py)
-ZONE_CLAIRE = (W(461) - 0.35, W(465) + 0.45)
-SONS[:] = [x for x in SONS if not (x[0] < ZONE_CLAIRE[1] and x[0] + min(x[4], 0.9) > ZONE_CLAIRE[0])]
-(ICI / "assets/duck.json").write_text(json.dumps([[round(W(451) - 0.15, 3), round(FIN, 3), 0.56]]))
+# (et de même sur « la révolution », masqué par un bruitage de zoom)
+ZONES_CLAIRES = [(W(434) - 0.25, W(435) + 0.55), (W(461) - 0.35, W(465) + 0.45)]
+(zr0, zr1), (zd0, zd1) = ZONES_CLAIRES
+SONS[:] = [x for x in SONS if not (zr0 - 0.3 < x[0] < zr1)                                   # « la révolution » : sons qui démarrent dessus
+           and not (x[0] < zd1 and x[0] + min(x[4], 0.9) > zd0)]                             # « déléguer du travail » : rien qui déborde
+# les longs impacts lancés juste avant « la révolution » traînent dessus : moitié moins forts
+SONS[:] = [(x[0], x[1], round(x[2] * 0.5, 3), x[3], x[4]) if (zr0 - 1.5 < x[0] <= zr0 - 0.3 and x[4] > 2) else x for x in SONS]
+(ICI / "assets/duck.json").write_text(json.dumps([[round(W(434) - 0.3, 3), round(FIN, 3), 0.56]]))   # dès « la révolution »
 
 _vus = set()
 SONS[:] = [x for x in SONS if not ((x[0], x[1]) in _vus or _vus.add((x[0], x[1])))]
