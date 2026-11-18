@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Refait le mixage audio de la vidéo à partir des pistes déclarées dans index.html (voix, musiques, bruitages),
 avec la voix nettement devant (retour de l'utilisateur : « ma voix est trop en bas, on l'entend presque pas »).
-Voix : plus énergique (demande du 18 nov.) : bas-médiums −2,5 dB, présence +4 dB vers 3,2 kHz, brillance +3 dB, compression 4:1 rapide, −15 LUFS ; musiques : ~8 dB sous la voix ; bruitages : baissés d'un tiers.
+Voix : nettement plus énergique (2e demande du 18 nov., « on ne sent pas la différence ») : +0,7 demi-ton (rubberband, durée identique, formants gardés), syllabes faibles remontées (speechnorm), bas-médiums −4 dB, présence +6 dB vers 2,9 kHz, brillance +4 dB, excitateur, compression 6:1, dé-esseur, −14 LUFS ; musiques : ~8 dB sous la voix ; bruitages : baissés d'un tiers.
 Puis remplace le son de la vidéo rendue (image copiée telle quelle) et masterise à −14 LUFS.
 Usage : python3 tools/mixer.py renders/Les-3-niveaux-de-l-IA.mp4"""
 import re, subprocess, sys, json
@@ -18,7 +18,7 @@ print(len(pistes), "pistes")
 # voix plus forte et régulière
 voix = ICI / "assets/voix-forte.wav"
 subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(ICI / "assets/voix-montage.wav"), "-af",
-                "highpass=f=90,equalizer=f=250:width_type=o:w=1.2:g=-2.5,equalizer=f=3200:width_type=o:w=1.3:g=4,treble=g=3:f=7500,acompressor=threshold=-26dB:ratio=4:attack=3:release=70:makeup=3,alimiter=limit=0.89:attack=2:release=40,loudnorm=I=-15:TP=-1.5:LRA=6",
+                "highpass=f=95,rubberband=pitch=1.042:tempo=1:formant=preserved:pitchq=quality,speechnorm=e=5:r=0.0003:l=1,equalizer=f=320:width_type=o:w=1.3:g=-4,equalizer=f=130:width_type=o:w=1:g=2,equalizer=f=2900:width_type=o:w=1.5:g=6,treble=g=4:f=9000,aexciter=amount=1.5:drive=6:freq=4500:blend=0,acompressor=threshold=-28dB:ratio=6:attack=2:release=60:makeup=4,deesser=i=0.4,alimiter=limit=0.89:attack=2:release=40,loudnorm=I=-14:TP=-1.5:LRA=5",
                 "-ar", "48000", str(voix)], check=True)
 DUCK = json.loads((ICI / "assets/duck.json").read_text()) if (ICI / "assets/duck.json").exists() else []
 GAIN = {"voix": 1.0, "musique": 1.55, "sfx": 0.65}   # musique : fichiers à −17 LUFS × 0,30 d'origine → ~ −24 LUFS une fois × 1,55
