@@ -29,6 +29,23 @@ for cle in ("ext", "int"):
             B[k] = (A[k - 1] + 2 * A[k] + A[k + 1]) / 4
     D[cle] = B
 SS = 3   # suréchantillonnage du masque (bords anticrénelés)
+# dents : masque stable calculé par tools/dents.py dans un repère fixe de la bouche (médiane sur 5 images)
+DENTS = np.load(ICI / "assets/dents.npy").astype(np.float32)
+_dj = json.loads((ICI / "assets/dents.json").read_text())
+CW, CH, ECH = _dj["canevas"]
+REP = _dj["reperes"]
+EMAIL = _dj["email"]   # luminosité de l'émail lissée par plan (tools/dents.py)
+
+
+def masque_dents(k, x0, y0, w, h):
+    if k >= len(REP):
+        return np.zeros((h, w), np.float32)
+    cx, cy, mw, th = REP[k]
+    yy, xx = np.mgrid[y0:y0 + h, x0:x0 + w].astype(np.float32)
+    dx, dy = xx - cx, yy - cy
+    u = (dx * np.cos(th) + dy * np.sin(th)) * (ECH / mw) + CW / 2
+    v = (-dx * np.sin(th) + dy * np.cos(th)) * (ECH / mw) + CH / 2
+    return ndimage.map_coordinates(DENTS[k], [v, u], order=1, mode="constant", cval=0.0)
 
 
 def masque(poly, x0, y0, w, h):
@@ -93,18 +110,14 @@ def retouche(rgba, k):
     rose = np.stack([Y * 1.16 + 24, Y * 0.86 + 2, Y * 0.98 + 10], -1)
     ROSE = 0.0   # lèvres laissées au naturel (demande du 18 nov. : « remets mes lèvres au naturel ») ; 0,40 = rose léger
     out = roi * (1 - ROSE * ml[..., None]) + np.clip(rose, 0, 255) * (ROSE * ml[..., None])
-    # force progressive (pas de bord net) : plus c'est clair et ivoire, plus on blanchit ; les dents dans l'ombre un peu moins
-    wY = np.clip((Y - (peau + 5)) / 45, 0, 1)
-    wGB = np.clip((GB - 1.0) / 5.0, 0, 1)
-    coeur = ndimage.grey_erosion(mint, size=3) > 0.5
-    lab, n = ndimage.label(dents)
-    if n:   # on ne garde que les zones de dents qui touchent le cœur de l'ouverture (pas un coin de lèvre)
-        dents = np.isin(lab, [q for q in range(1, n + 1) if (coeur & (lab == q)).any() and (lab == q).sum() >= 25])
-    md = ndimage.gaussian_filter(ndimage.grey_dilation(poids * dents, size=3) * wY * wGB, 1.2) * a
-    md *= ~ndimage.binary_dilation(bas, iterations=1)
+    md = masque_dents(k, x0, y0, w, h) * a
     lum = 0.299 * out[..., 0] + 0.587 * out[..., 1] + 0.114 * out[..., 2]
-    nl = lum * 1.45 + 30   # dents très blanches (demande de l'utilisateur)
-    blanc = np.stack([nl, nl * 0.98, nl * 0.95], -1)   # blanc chaud (R > V > B, comme l'éclairage), texture conservée
+    # dents très blanches en gardant le relief : on multiplie la luminosité (les interstices restent plus sombres que l'émail)
+    # pour amener l'émail vers 225, et on retire la teinte orangée
+    # courbe douce : l'émail va vers 225, les écarts d'ombre sont adoucis (puissance 0,6) mais les interstices restent visibles
+    L75 = EMAIL[min(k, len(EMAIL) - 1)] or 150.0
+    nl = np.minimum(225 * np.power(np.maximum(lum, 1) / L75, 0.6), 250)
+    blanc = np.stack([nl, nl * 0.985, nl * 0.96], -1)   # blanc à peine chaud
     out = out * (1 - 0.95 * md[..., None]) + np.clip(blanc, 0, 255) * (0.95 * md[..., None])
     rgba[y0:y1, x0:x1, :3] = np.clip(out, 0, 255).astype(np.uint8)
     return rgba
