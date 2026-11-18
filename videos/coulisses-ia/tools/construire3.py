@@ -38,6 +38,13 @@ def T(i):
     return MOTS[i]["start"]
 
 
+# v12 : la vidéo commence directement sur « comment je faisais mes vidéos avec l'IA » (mot 8, 2,72 s) : on rend tout et on coupe
+# les S premières secondes au montage final (tools/finaliser.sh) ; accroche (prompt + saturation de vraies vidéos) recalée sur ces mots
+S = 2.64
+HS0 = S  # la saturation démarre dès la première image (les 4 premières vidéos sont déjà en vol)
+A7 = round(T(14) + 0.27, 3)  # les vidéos sont aspirées dans la main (fin de « l'IA »)
+
+
 def r(x):
     return round(x, 3)
 
@@ -87,7 +94,7 @@ from scipy.ndimage import median_filter
 VX = median_filter(np.clip(np.array([v[1] for v in VISAGE], float), 380, 700), 5)
 VY = median_filter(np.clip(np.array([v[2] for v in VISAGE], float), 900, 1150), 5)
 for (t, _, _), x, y in zip(VISAGE, VX, VY):
-    if t < T(7):
+    if t < A7:
         continue
     dx, dy = np.clip((540 - x) * 0.45, -55, 55), np.clip((1000 - y) * 0.4, -50, 50)
     kf.append(f'tl.to("#suivi", {{ x: {round(dx)}, y: {round(dy)}, duration: 0.5, ease: "sine.inOut" }}, {t});')
@@ -172,11 +179,11 @@ lettres = "".join(f'<span id="hq{i}" style="opacity: 0">{c}</span>' for i, c in 
 HTML.append(f'<div id="h-chat" class="plein h-chat" style="opacity: 1"><div class="hc-boite"><img src="assets/img/logo-claude.svg" alt="" />'
             f'<div class="hc-texte">{lettres}<i id="hc-curseur">|</i></div><b id="hc-envoi">↑</b></div></div>')
 for i in range(len(QH)):
-    j(f'tl.set("#hq{i}", {{ opacity: 1 }}, {r(0.04 + 0.024 * i)});')
-son(0.02, "clavier-ordi", 0.32, "on tape le prompt", d=0.5)
-j(f'tl.fromTo("#hc-envoi", {{ scale: 1 }}, {{ scale: 1.5, duration: 0.08, yoyo: true, repeat: 1, immediateRender: false }}, {r(T(1) - 0.12)});')
-son(T(1) - 0.12, "pop-click", 0.36, "envoyer")
-j(f'tl.set("#h-chat", {{ opacity: 0 }}, {r(T(1))});')
+    j(f'tl.set("#hq{i}", {{ opacity: 1 }}, {r(S + 0.015 * i)});')
+son(S, "impact-basse", 0.3, "première image : coup d'entrée")
+j(f'tl.fromTo("#hc-envoi", {{ scale: 1 }}, {{ scale: 1.5, duration: 0.08, yoyo: true, repeat: 1, immediateRender: false }}, {r(HS0 - 0.1)});')
+son(HS0 - 0.1, "pop-click", 0.36, "envoyer")
+j(f'tl.set("#h-chat", {{ opacity: 0 }}, {r(HS0)});')
 # plans sans texte incrusté (sinon leurs sous-titres se mélangent aux nôtres) : son edit Claude, grille rétro, route néon, tunnel
 # SATURATION : des vidéos arrivent de tous les côtés, dans toutes les positions, jusqu'à remplir l'écran
 TUILES = [("assets/exemples/edit-claude.mp4", 1), ("assets/magie/retro-soleil.mp4", 0), ("assets/exemples/site-3d-vertical.mp4", 1),
@@ -190,7 +197,7 @@ TUILES = [("assets/exemples/edit-claude.mp4", 1), ("assets/magie/retro-soleil.mp
 ARR = [(540, 960), (230, 420), (850, 380), (200, 1380), (880, 1420), (540, 560), (520, 1500), (180, 820), (900, 900), (380, 1160),
        (720, 1180), (540, 240), (260, 1720), (840, 1740), (130, 300), (960, 160), (640, 780), (420, 680), (760, 1560), (340, 1000)]
 DIRS = [(-1, 0), (1, 0), (0, -1), (0, 1), (-1, -1), (1, -1), (-1, 1), (1, 1)]
-t_s0, t_s1 = T(1), T(6)
+t_s0, t_s1 = HS0, T(13) + 0.1
 for k, (src, vert) in enumerate(TUILES):
     w = (300 + (k * 37) % 120) if vert else (440 + (k * 53) % 140)
     h = round(w * 16 / 9) if vert else round(w * 9 / 16)
@@ -198,8 +205,10 @@ for k, (src, vert) in enumerate(TUILES):
     dx, dy = DIRS[k % 8]
     rot = ((k * 47) % 50) - 25
     t0 = t_s0 + (t_s1 - t_s0) * (k / len(TUILES)) ** 0.85
+    if k < 4:  # déjà à l'écran sur la première image
+        t0 = t_s0 - 0.3 + 0.07 * k
     HTML.append(f'<div id="ht{k}" class="h-tuile" style="left: {cx - w // 2}px; top: {cy - h // 2}px; width: {w}px; height: {h}px; opacity: 0">'
-                f'<video id="ht{k}-v" class="clip" src="{src}" data-start="{r(t0)}" data-duration="{r(T(7) + 0.4 - t0)}" data-media-start="{0.3 + (k % 5) * 0.5}" '
+                f'<video id="ht{k}-v" class="clip" src="{src}" data-start="{r(t0)}" data-duration="{r(A7 + 0.4 - t0)}" data-media-start="{0.3 + (k % 5) * 0.5}" '
                 f'data-track-index="{40 + k}" muted playsinline></video></div>')
     j(f'tl.set("#ht{k}", {{ opacity: 1 }}, {r(t0)});')
     j(f'tl.fromTo("#ht{k}", {{ x: {dx * 1300}, y: {dy * 2100}, rotation: {rot * 3}, scale: 1.6 }}, '
@@ -207,26 +216,22 @@ for k, (src, vert) in enumerate(TUILES):
     if k % 2 == 0:
         son(t0, tour(["whoosh-cine", "swoosh-court", "glitch-court", "whoosh-pop", "souffle-rapide", "balaie-rapide"]), 0.14, f"vidéo {k} arrive")
     # aspirées dans la main
-    j(f'tl.to("#ht{k}", {{ x: {380 - cx}, y: {1600 - cy}, scale: 0.03, rotation: {rot + 180}, duration: 0.3, ease: "power3.in" }}, {r(T(7) - 0.05 + 0.012 * k)});')
-    j(f'tl.set("#ht{k}", {{ opacity: 0 }}, {r(T(7) + 0.3 + 0.012 * k)});')
+    j(f'tl.to("#ht{k}", {{ x: {380 - cx}, y: {1600 - cy}, scale: 0.03, rotation: {rot + 180}, duration: 0.3, ease: "power3.in" }}, {r(A7 - 0.05 + 0.012 * k)});')
+    j(f'tl.set("#ht{k}", {{ opacity: 0 }}, {r(A7 + 0.3 + 0.012 * k)});')
 HTML.append('<div id="h-tag" class="slam" data-layout-allow-overlap style="top: 760px; z-index: 13; opacity: 0">1 PROMPT<br>= 1 VIDÉO</div>')
-claque("#h-tag", T(2), 2.4)
-cache("#h-tag", T(7) - 0.06)
-son(T(1), "trailer-impact", 0.22, "les vidéos déferlent")
-son(T(1), "swell-court", 0.24, "saturation")
+claque("#h-tag", T(10), 2.4)
+son(T(10), "impact-tambour", 0.3, "1 prompt = 1 vidéo")
+cache("#h-tag", A7 - 0.06)
+son(HS0, "trailer-impact", 0.22, "les vidéos déferlent")
+son(HS0, "swell-court", 0.24, "saturation")
 HTML.append('<div id="h-eclat" class="mg-eclat" style="opacity: 0"></div>')
-j(f'tl.set("#h-eclat", {{ x: 220, y: 1440 }}, {r(T(7) + 0.28)});')
-j(f'tl.fromTo("#h-eclat", {{ opacity: 1, scale: 0.3 }}, {{ opacity: 0, scale: 1.8, duration: 0.45, ease: "power2.out", immediateRender: false }}, {r(T(7) + 0.28)});')
-son(T(7) - 0.05, "aspiration", 0.32, "les vidéos sont aspirées dans la main")
-son(T(7) + 0.3, "impact-basse", 0.28, "retour face caméra")
+j(f'tl.set("#h-eclat", {{ x: 220, y: 1440 }}, {r(A7 + 0.28)});')
+j(f'tl.fromTo("#h-eclat", {{ opacity: 1, scale: 0.3 }}, {{ opacity: 0, scale: 1.8, duration: 0.45, ease: "power2.out", immediateRender: false }}, {r(A7 + 0.28)});')
+son(A7 - 0.05, "aspiration", 0.32, "les vidéos sont aspirées dans la main")
+son(A7 + 0.3, "impact-basse", 0.28, "retour face caméra")
 
 # ================================================================ 3. « certains d'entre vous m'ont contacté » : messages reçus
-MSG = [("Tu fais comment tes vidéos ?", T(8)), ("C’est quelle appli ?? 🔥", T(11)), ("Tu peux m’apprendre ?", T(13))]
-for k, (txt, t) in enumerate(MSG):
-    HTML.append(f'<div id="msg{k}" class="msg" style="top: {360 + k * 135}px; left: {60 + (k % 2) * 140}px; opacity: 0"><b>Nouveau message</b>{txt}</div>')
-    apparait(f"#msg{k}", t, 50, 0.7)
-    son(t, tour(["notif-indice", "notif-positive", "notif-magique"]), 0.42, "message reçu")
-    cache(f"#msg{k}", T(17) - 0.1)
+# v12 : messages retirés, la vidéo commence sur « comment je faisais mes vidéos avec l'IA »
 
 # ================================================================ 4. Claude, Opus 5.5 ; ChatGPT, Grok, Gemini…
 LOGOS = [("logo-claude.svg", "Claude", T(18), 70), ("logo-chatgpt.svg", "ChatGPT", T(29), 290), ("logo-grok.svg", "Grok", T(30), 510),
@@ -722,6 +727,8 @@ j(f'tl.to("#tension", {{ opacity: 0, duration: 0.6 }}, {r(T(161))});')
 def sous_titres():
     groupes, cur = [], []
     for i, m in enumerate(MOTS):
+        if i < 8:
+            continue
         cur.append(i)
         if m["text"][-1] in ".,;:!?…" or len(cur) >= 3 or len(" ".join(MOTS[x]["text"] for x in cur)) >= 16:
             groupes.append(cur)
@@ -770,6 +777,7 @@ for k_, m_ in enumerate(json.loads((ICI / "assets/music/tension.json").read_text
                     f'data-volume="{vol}" data-track-index="{20 + k_ % 2}"></audio>')
 sous_titres()
 _vus = set()
+SONS[:] = [x for x in SONS if x[0] >= S - 0.001]
 SONS[:] = [x for x in SONS if not ((x[0], x[1]) in _vus or _vus.add((x[0], x[1])))]
 pistes, sons_html = {}, []
 for n, (d0, f, v, note, dd) in enumerate(sorted(SONS), start=1):

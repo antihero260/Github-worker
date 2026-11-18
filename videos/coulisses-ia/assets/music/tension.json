@@ -1,13 +1,13 @@
 [
  {
   "fichier": "tension-1.mp3",
-  "source": "b01.mp3",
-  "debut": 0.0,
-  "duree": 27.95
+  "source": "meta-long.wav",
+  "debut": 2.64,
+  "duree": 25.31
  },
  {
   "fichier": "tension-2.mp3",
-  "source": "timeless-long.wav",
+  "source": "sahara-long.wav",
   "debut": 27.6,
   "duree": 43.226
  }
