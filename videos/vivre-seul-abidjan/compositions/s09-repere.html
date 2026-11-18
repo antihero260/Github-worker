@@ -1,0 +1,65 @@
+<!-- Un autre repère : environ 114 000 F de revenu moyen chez les jeunes salariés ; pas garanti ; il manquerait encore 96 000 / 196 000 (78.23 → 97.51 s). Écrit par tools/construire-scenes.py. -->
+<template>
+  <style>
+    #root { position: absolute; inset: 0; }
+  </style>
+  <div id="root" data-composition-id="s09-repere" data-width="1080" data-height="1920">
+    <div class="sc">
+      <div id="s09-repere-cam" class="sc-cam">
+        <div id="s09-repere-cadre" class="sc-cadre">
+        <div class="decor"><div class="ciel" style="background: radial-gradient(ellipse 90% 60% at 50% 40%, #16346a 0%, #0b1220 78%)"></div></div>
+        <div id="o-ec" class="ecran ecran-panneau" style="left: 60px; top: 360px; width: 960px; height: 420px; opacity: 0"><div class="ecran-in"><div id="o-ec-v-0" class="vplein" style="opacity: 0"><video id="o-ec-v-0-v" class="clip" src="assets/video/depenses-revenus.mp4" data-start="0.0" data-duration="4.86" data-track-index="5" muted playsinline></video></div><div id="o-ec-v-1" class="vplein" style="opacity: 0"><video id="o-ec-v-1-v" class="clip" src="assets/video/separe-budgets.mp4" data-start="4.76" data-duration="2.98" data-track-index="6" muted playsinline></video></div><div id="o-ec-v-2" class="vplein" style="opacity: 0"><video id="o-ec-v-2-v" class="clip" src="assets/video/stress-tete.mp4" data-start="7.64" data-duration="2.98" data-track-index="7" muted playsinline></video></div><div id="o-ec-v-3" class="vplein" style="opacity: 0"><video id="o-ec-v-3-v" class="clip" src="assets/video/frustree-compte.mp4" data-start="10.52" data-duration="8.86" data-track-index="8" muted playsinline></video></div></div></div>
+        <div id="o-r" class="etiq" style="left: 80px; top: 340px; font-size: 54px; background: #F2B705; color: #0B1220; transform: rotate(-3deg); opacity: 0">AUTRE REPÈRE</div>
+        <div id="o-x" class="compte" style="left: 140px; top: 820px; width: 800px; border-color: #F2B705; opacity: 0"><span>REVENU MOYEN DES JEUNES SALARIÉS</span><b style="font-size: 110px"><span id="o-x-n" style="display: inline; font-size: inherit; color: inherit">114 000</span> F</b></div>
+        <div id="o-t" class="tampon" data-layout-allow-overlap style="left: 300px; top: 1060px; font-size: 90px; color: #FF6B6B; border-color: #FF6B6B; transform: rotate(-8deg); opacity: 0">PAS GARANTI</div>
+        <div id="o-m" class="gros" style="left: 0px; top: 420px; font-size: 100px; color: #FF6B6B; width: 1080px; text-align: center; transform: rotate(0deg); opacity: 0">IL MANQUE ENCORE</div>
+        <div id="o-p1" class="compte" style="left: 120px; top: 620px; width: 840px; border-color: #FF6B6B; opacity: 0"><span>QUARTIER POPULAIRE</span><b style="font-size: 100px"><span id="o-p1-n" style="display: inline; font-size: inherit; color: inherit">-96 000</span> F</b></div>
+        <div id="o-p2" class="compte" style="left: 120px; top: 900px; width: 840px; border-color: #FF6B6B; opacity: 0"><span>COCODY</span><b style="font-size: 100px"><span id="o-p2-n" style="display: inline; font-size: inherit; color: inherit">-196 000</span> F</b></div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#s09-repere-cam", { filter: "blur(14px)", scale: 1.12 }, { filter: "blur(0px)", scale: 1, duration: 0.18, ease: "power2.out" }, 0);
+    tl.to("#s09-repere-cam", { scale: 1.04, duration: 18.88, ease: "none" }, 0.18);
+    tl.set("#o-ec-v-0", { opacity: 1 }, 0.0);
+    tl.fromTo("#o-ec-v-0", { scale: 1.18 }, { scale: 1.02, duration: 4.76, ease: "power2.out", immediateRender: false }, 0.0);
+    tl.set("#o-ec-v-0", { opacity: 0 }, 4.78);
+    tl.set("#o-ec-v-1", { opacity: 1 }, 4.76);
+    tl.fromTo("#o-ec-v-1", { scale: 1.18 }, { scale: 1.02, duration: 2.88, ease: "power2.out", immediateRender: false }, 4.76);
+    tl.set("#o-ec-v-1", { opacity: 0 }, 7.66);
+    tl.set("#o-ec-v-2", { opacity: 1 }, 7.64);
+    tl.fromTo("#o-ec-v-2", { scale: 1.18 }, { scale: 1.02, duration: 2.88, ease: "power2.out", immediateRender: false }, 7.64);
+    tl.set("#o-ec-v-2", { opacity: 0 }, 10.54);
+    tl.set("#o-ec-v-3", { opacity: 1 }, 10.52);
+    tl.fromTo("#o-ec-v-3", { scale: 1.18 }, { scale: 1.02, duration: 8.76, ease: "power2.out", immediateRender: false }, 10.52);
+    tl.fromTo("#o-ec", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.22, ease: "back.out(1.8)", immediateRender: false }, 0.0);
+    tl.fromTo("#o-r", { opacity: 0, x: -80 }, { opacity: 1, x: 0, duration: 0.2, ease: "power4.out", immediateRender: false }, 1.48);
+    tl.fromTo("#o-x", { opacity: 0, scale: 1.7 }, { opacity: 1, scale: 1, duration: 0.16, ease: "power4.in", immediateRender: false }, 3.32);
+    const p1 = { v: 75000 };
+    tl.fromTo(p1, { v: 75000 }, { v: 114000, duration: 0.7, ease: "power2.out", immediateRender: false, onUpdate: () => { document.querySelector("#o-x-n").textContent = String(Math.round(p1.v)).replace(/\B(?=(\d{3})+(?!\d))/g, "\u202f") + ""; } }, 3.32);
+    tl.to("#s09-repere-cadre", { x: 0, y: 67, scale: 1.12, duration: 0.28, ease: "power3.inOut" }, 3.22);
+    tl.to("#s09-repere-cadre", { keyframes: [{ filter: "blur(9px)", duration: 0.14 }, { filter: "blur(0px)", duration: 0.14 }] }, 3.22);
+    tl.fromTo("#o-t", { opacity: 0, scale: 2.4 }, { opacity: 1, scale: 1, duration: 0.14, ease: "power4.in", immediateRender: false }, 8.44);
+    tl.to("#s09-repere-cam", { keyframes: [{ x: -12, duration: 0.03 }, { x: 12, duration: 0.04 }, { x: -6, duration: 0.04 }, { x: 0, duration: 0.03 }] }, 8.58);
+    tl.to("#s09-repere-cadre", { x: 0, y: 0, scale: 1.0, duration: 0.3, ease: "power3.inOut" }, 10.52);
+    tl.to("#s09-repere-cadre", { keyframes: [{ filter: "blur(9px)", duration: 0.15 }, { filter: "blur(0px)", duration: 0.15 }] }, 10.52);
+    tl.to("#o-x", { opacity: 0, duration: 0.15 }, 10.84);
+    tl.to("#o-t", { opacity: 0, duration: 0.15 }, 10.84);
+    tl.to("#o-ec", { opacity: 0, duration: 0.15 }, 10.84);
+    tl.to("#o-r", { opacity: 0, duration: 0.15 }, 10.84);
+    tl.fromTo("#o-m", { opacity: 0, scale: 2.0 }, { opacity: 1, scale: 1, duration: 0.16, ease: "power4.in", immediateRender: false }, 12.2);
+    tl.fromTo("#o-p1", { opacity: 0, scale: 1.7 }, { opacity: 1, scale: 1, duration: 0.16, ease: "power4.in", immediateRender: false }, 13.24);
+    tl.fromTo("#o-p2", { opacity: 0, scale: 1.7 }, { opacity: 1, scale: 1, duration: 0.16, ease: "power4.in", immediateRender: false }, 16.6);
+    tl.to("#s09-repere-cadre", { x: 0, y: 151, scale: 1.08, duration: 0.26, ease: "power3.inOut" }, 13.14);
+    tl.to("#s09-repere-cadre", { keyframes: [{ filter: "blur(9px)", duration: 0.13 }, { filter: "blur(0px)", duration: 0.13 }] }, 13.14);
+    tl.to("#s09-repere-cadre", { x: 0, y: 65, scale: 1.08, duration: 0.26, ease: "power3.inOut" }, 16.5);
+    tl.to("#s09-repere-cadre", { keyframes: [{ filter: "blur(9px)", duration: 0.13 }, { filter: "blur(0px)", duration: 0.13 }] }, 16.5);
+    tl.to("#s09-repere-cadre", { x: 0, y: 60, scale: 1.0, duration: 0.25, ease: "power3.inOut" }, 18.36);
+    tl.to("#s09-repere-cadre", { keyframes: [{ filter: "blur(9px)", duration: 0.125 }, { filter: "blur(0px)", duration: 0.125 }] }, 18.36);
+    tl.to("#s09-repere-cam", { scale: 1.25, filter: "blur(14px)", duration: 0.2, ease: "power3.in" }, 19.08);
+    window.__timelines["s09-repere"] = tl;
+  </script>
+</template>

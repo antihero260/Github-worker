@@ -1,0 +1,54 @@
+<!-- Lucas comprend qu'il aurait dû calculer le coût d'entrée et le coût de chaque mois avant de signer (97.51 → 103.03 s). Écrit par tools/construire-scenes.py. -->
+<template>
+  <style>
+    #root { position: absolute; inset: 0; }
+  </style>
+  <div id="root" data-composition-id="s10-comprend" data-width="1080" data-height="1920">
+    <div class="sc">
+      <div id="s10-comprend-cam" class="sc-cam">
+        <div id="s10-comprend-cadre" class="sc-cadre">
+        <div class="decor" style="left: -1080px; top: 0px; width: 3240px"><div class="mur"></div><div class="fenetre" style="left: 1150px; top: 380px"><i class="lune" style="left: 150px; top: 40px; width: 70px; height: 70px"></i></div><div class="plinthe" style="top: 1270px"></div><div class="parquet" style="top: 1290px"></div></div>
+        <svg id="k-lucas" class="perso" viewBox="-30 -20 160 290" style="left: 85px; top: 736px; width: 331px; height: 600px"><g id="k-lucas-vie"><g id="k-lucas-corps"><g id="k-lucas-jg"><g class="c"><rect x="24" y="136" width="24" height="112" rx="8" /></g><g class="p" style="--pc: #38BDF8"><rect x="24" y="136" width="24" height="112" rx="8" /></g></g><g id="k-lucas-jd"><g class="c"><rect x="52" y="136" width="24" height="112" rx="8" /></g><g class="p" style="--pc: #38BDF8"><rect x="52" y="136" width="24" height="112" rx="8" /></g></g><g id="k-lucas-tronc"><g class="c"><rect x="22" y="52" width="56" height="94" rx="12" /></g><g class="p" style="--pc: #38BDF8"><rect x="22" y="52" width="56" height="94" rx="12" /></g><path d="M44 56 L56 56 L53 64 L57 104 L50 112 L43 104 L47 64 Z" fill="#0B1220" /></g><g id="k-lucas-bg"><g class="c"><rect x="2" y="54" width="18" height="86" rx="9" /></g><g class="p" style="--pc: #38BDF8"><rect x="2" y="54" width="18" height="86" rx="9" /></g></g><g id="k-lucas-bd"><g class="c"><rect x="80" y="54" width="18" height="86" rx="9" /></g><g class="p" style="--pc: #38BDF8"><rect x="80" y="54" width="18" height="86" rx="9" /></g></g><g id="k-lucas-tete"><g class="c"><circle cx="50" cy="24" r="22" /></g><g class="p" style="--pc: #38BDF8"><circle cx="50" cy="24" r="22" /></g><g><g id="k-lucas-yeux"><circle cx="41" cy="20" r="6.5" fill="#fff" /><circle cx="59" cy="20" r="6.5" fill="#fff" /><g id="k-lucas-pup"><circle cx="42" cy="21" r="3" fill="#0B1220" /><circle cx="60" cy="21" r="3" fill="#0B1220" /></g></g><path id="k-lucas-bouche" d="M41 32 Q50 40 59 32" fill="none" stroke="#0B1220" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" /><path d="M28 14 Q30 -4 50 -3 Q70 -4 72 14 Q66 6 58 8 Q50 2 42 8 Q34 6 28 14 Z" fill="#0B1220" /></g></g></g></g></svg>
+        <svg id="k-amp" viewBox="0 0 100 130" style="position: absolute; left: 200px; top: 300px; width: 110px; height: 143px; opacity: 0"><path d="M50 8 Q86 8 86 46 Q86 66 68 80 L68 96 L32 96 L32 80 Q14 66 14 46 Q14 8 50 8 Z" fill="#F2B705" stroke="#0B1220" stroke-width="6" /><rect x="32" y="100" width="36" height="20" rx="6" fill="#94A3B8" stroke="#0B1220" stroke-width="5" /></svg>
+        <div id="k-ec" class="ecran ecran-tele" style="left: 580px; top: 360px; width: 440px; height: 320px; opacity: 0"><div class="ecran-in"><div id="k-ec-v-0" class="vplein" style="opacity: 0"><video id="k-ec-v-0-v" class="clip" src="assets/video/calculatrice.mp4" data-start="1.72" data-duration="1.46" data-track-index="5" muted playsinline></video></div><div id="k-ec-v-1" class="vplein" style="opacity: 0"><video id="k-ec-v-1-v" class="clip" src="assets/video/recus-calcul.mp4" data-start="3.08" data-duration="1.46" data-track-index="6" muted playsinline></video></div><div id="k-ec-v-2" class="vplein" style="opacity: 0"><video id="k-ec-v-2-v" class="clip" src="assets/video/notes-stylo.mp4" data-start="4.44" data-duration="1.18" data-track-index="7" muted playsinline></video></div></div><i class="tele-pied"></i></div>
+        <div id="k-b1" class="bloc" style="left: 470px; top: 760px; width: 270px; opacity: 0"><b>COÛT</b><span>D’ENTRÉE</span></div><div id="k-plus" class="gros" style="left: 760px; top: 770px; font-size: 110px; color: #F2B705; opacity: 0">+</div><div id="k-b2" class="bloc" style="left: 800px; top: 760px; width: 250px; background: #F2B705; opacity: 0"><b>COÛT</b><span>DE CHAQUE MOIS</span></div>
+        <div id="k-av" class="etiq" style="left: 500px; top: 980px; font-size: 56px; background: #FF6B6B; color: #F1F5F9; transform: rotate(-3deg); opacity: 0">AVANT DE SIGNER</div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#s10-comprend-cam", { filter: "blur(14px)", scale: 1.12 }, { filter: "blur(0px)", scale: 1, duration: 0.18, ease: "power2.out" }, 0);
+    tl.to("#s10-comprend-cam", { scale: 1.04, duration: 5.12, ease: "none" }, 0.18);
+    tl.fromTo("#k-lucas-vie", { y: 0 }, { y: -5, duration: 0.42, repeat: 11, yoyo: true, ease: "sine.inOut", immediateRender: false }, 0.0);
+    tl.to("#k-lucas-yeux", { scaleY: 0.1, duration: 0.06, yoyo: true, repeat: 1, svgOrigin: "50 20" }, 0.7);
+    tl.to("#k-lucas-yeux", { scaleY: 0.1, duration: 0.06, yoyo: true, repeat: 1, svgOrigin: "50 20" }, 3.233);
+    tl.to("#k-lucas-bd", { rotation: -158, svgOrigin: "89 62", duration: 0.16, ease: "power2.out" }, 0.68);
+    tl.to("#k-lucas-tete", { rotation: -8, svgOrigin: "50 50", duration: 0.16, ease: "power2.out" }, 0.68);
+    tl.to("#k-lucas-bd", { rotation: -146, svgOrigin: "89 62", duration: 0.09, repeat: 5, yoyo: true }, 0.86);
+    tl.set("#k-lucas-bouche", { attr: { d: "M43 34 L57 34", fill: "none" } }, 0.68);
+    tl.fromTo("#k-amp", { opacity: 0, scale: 2.0 }, { opacity: 1, scale: 1, duration: 0.16, ease: "power4.in", immediateRender: false }, 0.88);
+    tl.set("#k-ec-v-0", { opacity: 1 }, 1.72);
+    tl.fromTo("#k-ec-v-0", { scale: 1.18 }, { scale: 1.02, duration: 1.36, ease: "power2.out", immediateRender: false }, 1.72);
+    tl.set("#k-ec-v-0", { opacity: 0 }, 3.1);
+    tl.set("#k-ec-v-1", { opacity: 1 }, 3.08);
+    tl.fromTo("#k-ec-v-1", { scale: 1.18 }, { scale: 1.02, duration: 1.36, ease: "power2.out", immediateRender: false }, 3.08);
+    tl.set("#k-ec-v-1", { opacity: 0 }, 4.46);
+    tl.set("#k-ec-v-2", { opacity: 1 }, 4.44);
+    tl.fromTo("#k-ec-v-2", { scale: 1.18 }, { scale: 1.02, duration: 1.08, ease: "power2.out", immediateRender: false }, 4.44);
+    tl.fromTo("#k-ec", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.22, ease: "back.out(1.8)", immediateRender: false }, 1.48);
+    tl.fromTo("#k-b1", { opacity: 0, scale: 1.8 }, { opacity: 1, scale: 1, duration: 0.16, ease: "power4.in", immediateRender: false }, 2.28);
+    tl.fromTo("#k-plus", { opacity: 0, scale: 2 }, { opacity: 1, scale: 1, duration: 0.16, ease: "power4.in", immediateRender: false }, 3.08);
+    tl.fromTo("#k-b2", { opacity: 0, scale: 1.8 }, { opacity: 1, scale: 1, duration: 0.16, ease: "power4.in", immediateRender: false }, 3.32);
+    tl.fromTo("#k-av", { opacity: 0, x: -80 }, { opacity: 1, x: 0, duration: 0.2, ease: "power4.out", immediateRender: false }, 4.44);
+    tl.to("#k-lucas-tete", { svgOrigin: "50 50", keyframes: [{ rotation: 14, duration: 0.11 }, { rotation: -2, duration: 0.11 }, { rotation: 14, duration: 0.11 }, { rotation: -2, duration: 0.11 }, { rotation: 14, duration: 0.11 }, { rotation: -2, duration: 0.11 }, { rotation: 14, duration: 0.11 }, { rotation: -2, duration: 0.11 }, { rotation: 0, duration: 0.11 }] }, 4.44);
+    tl.to("#s10-comprend-cadre", { x: -135, y: 175, scale: 1.25, duration: 0.28, ease: "power3.inOut" }, 2.12);
+    tl.to("#s10-comprend-cadre", { keyframes: [{ filter: "blur(9px)", duration: 0.14 }, { filter: "blur(0px)", duration: 0.14 }] }, 2.12);
+    tl.to("#s10-comprend-cadre", { x: 0, y: 63, scale: 1.05, duration: 0.25, ease: "power3.inOut" }, 4.39);
+    tl.to("#s10-comprend-cadre", { keyframes: [{ filter: "blur(9px)", duration: 0.125 }, { filter: "blur(0px)", duration: 0.125 }] }, 4.39);
+    tl.to("#s10-comprend-cam", { scale: 1.25, filter: "blur(14px)", duration: 0.2, ease: "power3.in" }, 5.32);
+    window.__timelines["s10-comprend"] = tl;
+  </script>
+</template>

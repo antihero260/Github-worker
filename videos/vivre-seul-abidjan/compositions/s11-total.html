@@ -1,0 +1,79 @@
+<!-- Donc, vivre seul à Abidjan demande environ 210 000 francs par mois dans un quartier populaire, et 300 000 dans un quartier plus cher (103.03 → 112.71 s). Écrit par tools/construire-scenes.py. -->
+<template>
+  <style>
+    #root { position: absolute; inset: 0; }
+  </style>
+  <div id="root" data-composition-id="s11-total" data-width="1080" data-height="1920">
+    <div class="sc">
+      <div id="s11-total-cam" class="sc-cam">
+        <div id="s11-total-cadre" class="sc-cadre">
+        <div class="decor"><div class="ciel" style="background: radial-gradient(ellipse 90% 60% at 50% 40%, #1a3b78 0%, #0b1220 78%)"></div></div>
+        <div id="t-d" class="gros" style="left: 0px; top: 360px; font-size: 92px; color: #F1F5F9; width: 1080px; text-align: center; transform: rotate(0deg); opacity: 0">VIVRE SEUL À ABIDJAN</div>
+        <div id="t-h1" class="maison" style="left: 70px; top: 520px; width: 440px; height: 360px; --c: #38BDF8; opacity: 0"><em class="toit"></em><i style="left: 24px; top: 70px"></i><i style="left: 154px; top: 70px"></i><i style="left: 285px; top: 70px"></i><i style="left: 24px; top: 160px"></i><i style="left: 154px; top: 160px"></i><i style="left: 285px; top: 160px"></i><b>POPULAIRE</b><u class="porte"></u></div><div id="t-h2" class="maison" style="left: 570px; top: 520px; width: 440px; height: 360px; --c: #F2B705; opacity: 0"><em class="toit"></em><i style="left: 24px; top: 70px"></i><i style="left: 154px; top: 70px"></i><i style="left: 285px; top: 70px"></i><i style="left: 24px; top: 160px"></i><i style="left: 154px; top: 160px"></i><i style="left: 285px; top: 160px"></i><b>PLUS CHER</b><u class="porte"></u></div>
+        <div id="t-p1" class="compte" style="left: 70px; top: 920px; width: 440px; border-color: #38BDF8; opacity: 0"><span>PAR MOIS</span><b style="font-size: 84px"><span id="t-p1-n" style="display: inline; font-size: inherit; color: inherit">210 000</span> F</b></div>
+        <div id="t-p2" class="compte" style="left: 570px; top: 920px; width: 440px; border-color: #F2B705; opacity: 0"><span>PAR MOIS</span><b style="font-size: 84px"><span id="t-p2-n" style="display: inline; font-size: inherit; color: inherit">300 000</span> F</b></div>
+        <i id="t-cf-0" style="position: absolute; left: 540px; top: 760px; width: 14px; height: 14px; background: #38BDF8; opacity: 0"></i>
+        <i id="t-cf-1" style="position: absolute; left: 540px; top: 760px; width: 22px; height: 12px; background: #F2B705; opacity: 0"></i>
+        <i id="t-cf-2" style="position: absolute; left: 540px; top: 760px; width: 14px; height: 14px; background: #F1F5F9; opacity: 0"></i>
+        <i id="t-cf-3" style="position: absolute; left: 540px; top: 760px; width: 22px; height: 12px; background: #7DD3FC; opacity: 0"></i>
+        <i id="t-cf-4" style="position: absolute; left: 540px; top: 760px; width: 14px; height: 14px; background: #38BDF8; opacity: 0"></i>
+        <i id="t-cf-5" style="position: absolute; left: 540px; top: 760px; width: 22px; height: 12px; background: #F2B705; opacity: 0"></i>
+        <i id="t-cf-6" style="position: absolute; left: 540px; top: 760px; width: 14px; height: 14px; background: #F1F5F9; opacity: 0"></i>
+        <i id="t-cf-7" style="position: absolute; left: 540px; top: 760px; width: 22px; height: 12px; background: #7DD3FC; opacity: 0"></i>
+        <i id="t-cf-8" style="position: absolute; left: 540px; top: 760px; width: 14px; height: 14px; background: #38BDF8; opacity: 0"></i>
+        <i id="t-cf-9" style="position: absolute; left: 540px; top: 760px; width: 22px; height: 12px; background: #F2B705; opacity: 0"></i>
+        <i id="t-cf-10" style="position: absolute; left: 540px; top: 760px; width: 14px; height: 14px; background: #F1F5F9; opacity: 0"></i>
+        <i id="t-cf-11" style="position: absolute; left: 540px; top: 760px; width: 22px; height: 12px; background: #7DD3FC; opacity: 0"></i>
+        <i id="t-cf-12" style="position: absolute; left: 540px; top: 760px; width: 14px; height: 14px; background: #38BDF8; opacity: 0"></i>
+        <i id="t-cf-13" style="position: absolute; left: 540px; top: 760px; width: 22px; height: 12px; background: #F2B705; opacity: 0"></i>
+        <i id="t-cf-14" style="position: absolute; left: 540px; top: 760px; width: 14px; height: 14px; background: #F1F5F9; opacity: 0"></i>
+        <i id="t-cf-15" style="position: absolute; left: 540px; top: 760px; width: 22px; height: 12px; background: #7DD3FC; opacity: 0"></i>
+        <i id="t-cf-16" style="position: absolute; left: 540px; top: 760px; width: 14px; height: 14px; background: #38BDF8; opacity: 0"></i>
+        <i id="t-cf-17" style="position: absolute; left: 540px; top: 760px; width: 22px; height: 12px; background: #F2B705; opacity: 0"></i>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#s11-total-cam", { filter: "blur(14px)", scale: 1.12 }, { filter: "blur(0px)", scale: 1, duration: 0.18, ease: "power2.out" }, 0);
+    tl.to("#s11-total-cam", { scale: 1.04, duration: 9.28, ease: "none" }, 0.18);
+    tl.fromTo("#t-d", { opacity: 0, scale: 2.0 }, { opacity: 1, scale: 1, duration: 0.16, ease: "power4.in", immediateRender: false }, 0.1);
+    tl.fromTo("#t-h1", { opacity: 0, y: 80, scale: 0.7 }, { opacity: 1, y: 0, scale: 1, duration: 0.24, ease: "back.out(1.8)", immediateRender: false }, 1.24);
+    tl.fromTo("#t-h2", { opacity: 0, y: 80, scale: 0.7 }, { opacity: 1, y: 0, scale: 1, duration: 0.24, ease: "back.out(1.8)", immediateRender: false }, 1.32);
+    tl.fromTo("#t-p1", { opacity: 0, scale: 1.7 }, { opacity: 1, scale: 1, duration: 0.16, ease: "power4.in", immediateRender: false }, 3.4);
+    const p1 = { v: 0 };
+    tl.fromTo(p1, { v: 0 }, { v: 210000, duration: 0.7, ease: "power2.out", immediateRender: false, onUpdate: () => { document.querySelector("#t-p1-n").textContent = String(Math.round(p1.v)).replace(/\B(?=(\d{3})+(?!\d))/g, "\u202f") + ""; } }, 3.4);
+    tl.fromTo("#t-p2", { opacity: 0, scale: 1.7 }, { opacity: 1, scale: 1, duration: 0.16, ease: "power4.in", immediateRender: false }, 7.0);
+    const p2 = { v: 210000 };
+    tl.fromTo(p2, { v: 210000 }, { v: 300000, duration: 0.6, ease: "power2.out", immediateRender: false, onUpdate: () => { document.querySelector("#t-p2-n").textContent = String(Math.round(p2.v)).replace(/\B(?=(\d{3})+(?!\d))/g, "\u202f") + ""; } }, 7.0);
+    tl.to("#t-d", { opacity: 0, duration: 0.15 }, 3.25);
+    tl.to("#s11-total-cadre", { x: 97, y: 118, scale: 1.18, duration: 0.26, ease: "power3.inOut" }, 3.3);
+    tl.to("#s11-total-cadre", { keyframes: [{ filter: "blur(9px)", duration: 0.13 }, { filter: "blur(0px)", duration: 0.13 }] }, 3.3);
+    tl.to("#s11-total-cadre", { x: -97, y: 118, scale: 1.18, duration: 0.28, ease: "power3.inOut" }, 6.9);
+    tl.to("#s11-total-cadre", { keyframes: [{ filter: "blur(9px)", duration: 0.14 }, { filter: "blur(0px)", duration: 0.14 }] }, 6.9);
+    tl.to("#s11-total-cadre", { x: 0, y: 60, scale: 1.0, duration: 0.28, ease: "power3.inOut" }, 8.44);
+    tl.to("#s11-total-cadre", { keyframes: [{ filter: "blur(9px)", duration: 0.14 }, { filter: "blur(0px)", duration: 0.14 }] }, 8.44);
+    tl.fromTo("#t-cf-0", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: 171, y: 160, rotation: -270, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 8.44);
+    tl.fromTo("#t-cf-1", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: -188, y: 298, rotation: -173, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 8.44);
+    tl.fromTo("#t-cf-2", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: 30, y: -110, rotation: -76, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 8.44);
+    tl.fromTo("#t-cf-3", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: 117, y: 282, rotation: 21, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 8.44);
+    tl.fromTo("#t-cf-4", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: -271, y: 122, rotation: 118, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 8.44);
+    tl.fromTo("#t-cf-5", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: 303, y: 6, rotation: 215, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 8.44);
+    tl.fromTo("#t-cf-6", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: -55, y: 324, rotation: -228, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 8.44);
+    tl.fromTo("#t-cf-7", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: -137, y: -50, rotation: -131, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 8.44);
+    tl.fromTo("#t-cf-8", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: 357, y: 264, rotation: -34, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 8.44);
+    tl.fromTo("#t-cf-9", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: -216, y: 231, rotation: 63, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 8.44);
+    tl.fromTo("#t-cf-10", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: 134, y: -70, rotation: 160, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 8.44);
+    tl.fromTo("#t-cf-11", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: 51, y: 291, rotation: 257, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 8.44);
+    tl.fromTo("#t-cf-12", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: -220, y: 58, rotation: -186, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 8.44);
+    tl.fromTo("#t-cf-13", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: 330, y: 102, rotation: -89, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 8.44);
+    tl.fromTo("#t-cf-14", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: -110, y: 286, rotation: 8, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 8.44);
+    tl.fromTo("#t-cf-15", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: -35, y: -59, rotation: 105, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 8.44);
+    tl.fromTo("#t-cf-16", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: 275, y: 345, rotation: 202, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 8.44);
+    tl.fromTo("#t-cf-17", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: -213, y: 167, rotation: -241, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 8.44);
+    tl.to("#s11-total-cam", { scale: 1.25, filter: "blur(14px)", duration: 0.2, ease: "power3.in" }, 9.48);
+    window.__timelines["s11-total"] = tl;
+  </script>
+</template>
