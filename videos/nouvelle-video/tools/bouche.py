@@ -91,7 +91,8 @@ def retouche(rgba, k):
     ml = np.maximum(ndimage.gaussian_filter(bas.astype(np.float32), 1.3), 0.55 * ndimage.gaussian_filter(haut.astype(np.float32), 2.0)) * a
     # rose : teinte rose appliquée en gardant la texture (lumière) de la lèvre
     rose = np.stack([Y * 1.16 + 24, Y * 0.86 + 2, Y * 0.98 + 10], -1)
-    out = roi * (1 - 0.40 * ml[..., None]) + np.clip(rose, 0, 255) * (0.40 * ml[..., None])
+    ROSE = 0.0   # lèvres laissées au naturel (demande du 18 nov. : « remets mes lèvres au naturel ») ; 0,40 = rose léger
+    out = roi * (1 - ROSE * ml[..., None]) + np.clip(rose, 0, 255) * (ROSE * ml[..., None])
     # force progressive (pas de bord net) : plus c'est clair et ivoire, plus on blanchit ; les dents dans l'ombre un peu moins
     wY = np.clip((Y - (peau + 5)) / 45, 0, 1)
     wGB = np.clip((GB - 1.0) / 5.0, 0, 1)
@@ -102,9 +103,9 @@ def retouche(rgba, k):
     md = ndimage.gaussian_filter(ndimage.grey_dilation(poids * dents, size=3) * wY * wGB, 1.2) * a
     md *= ~ndimage.binary_dilation(bas, iterations=1)
     lum = 0.299 * out[..., 0] + 0.587 * out[..., 1] + 0.114 * out[..., 2]
-    nl = lum * 1.32 + 22
-    blanc = np.stack([nl, nl * 0.965, nl * 0.91], -1)   # blanc chaud (R > V > B, comme l'éclairage), texture conservée
-    out = out * (1 - 0.85 * md[..., None]) + np.clip(blanc, 0, 255) * (0.85 * md[..., None])
+    nl = lum * 1.45 + 30   # dents très blanches (demande de l'utilisateur)
+    blanc = np.stack([nl, nl * 0.98, nl * 0.95], -1)   # blanc chaud (R > V > B, comme l'éclairage), texture conservée
+    out = out * (1 - 0.95 * md[..., None]) + np.clip(blanc, 0, 255) * (0.95 * md[..., None])
     rgba[y0:y1, x0:x1, :3] = np.clip(out, 0, 255).astype(np.uint8)
     return rgba
 
