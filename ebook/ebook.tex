@@ -111,7 +111,7 @@
   \end{scope}
   \node[anchor=south west,text width=12.4cm,align=left] at ($(current page.south west)+(1.2cm,2.3cm)$)
     {\fontsize{13.5}{17}\selectfont\color{white}La méthode pas à pas pour faire tes vidéos TikTok, Reels et Shorts avec Claude Opus 5.5.};
-  \node[anchor=south west,fill=citron,text=encre,inner sep=5pt,font=\bfseries\small] at ($(current page.south west)+(1.2cm,1.2cm)$) {56 PROMPTS PRÊTS À COPIER};
+  \node[anchor=south west,fill=citron,text=encre,inner sep=5pt,font=\bfseries\small] at ($(current page.south west)+(1.2cm,1.2cm)$) {57 PROMPTS PRÊTS À COPIER};
   \node[anchor=south east] at ($(current page.south east)+(-1.2cm,1.25cm)$) {\anton\fontsize{14}{16}\selectfont\color{white}GAUSSCODE};
 \end{tikzpicture}
 \restoregeometry
@@ -123,15 +123,15 @@
 {\footnotesize\color{gris}
 \textbf{\color{encre}Crée tes vidéos TikTok avec l'IA}\\
 Formation pas à pas pour créer des vidéos courtes avec Claude Opus 5.5.\\
-Version 2.1, novembre 2026. Informations techniques, offres et licences vérifiées le 18 novembre 2026.
+Version 2.2, novembre 2026. Informations vérifiées le 18 novembre 2026.
 
 © 2026 Gausscode. Tous droits réservés. Toute reproduction, même partielle, est interdite sans autorisation.
 
 Crédits des images. Captures d'écran de claude.com (Anthropic), elevenlabs.io, de l'App Store (Apple) et de Google Play réalisées par l'auteur en novembre 2026 et utilisées à titre d'illustration ; les marques citées appartiennent à leurs propriétaires. La capture de l'application Claude vient du téléphone de l'auteur. Les deux images de l'interface GitHub (étape 1) viennent de la page « \lien{https://docs.github.com/fr/repositories/creating-and-managing-repositories/creating-a-new-repository}{Création d'un dépôt} » de GitHub Docs, © GitHub, Inc., sous licence \lien{https://creativecommons.org/licenses/by/4.0/deed.fr}{CC BY 4.0} ; elles ont été recadrées et annotées par l'auteur. Annotations et images de vidéos : l'auteur.
 
-Les applications, les offres et les licences changent souvent. Si un bouton n'est plus au même endroit, cherche le même mot. Vérifie les prix et les conditions sur le site de chaque service : la page « Ressources officielles », à la fin du guide, donne les liens. Les corrections de ce guide sont envoyées gratuitement aux acheteurs, avec la nouvelle version du PDF.
+Les applications et les offres changent souvent. Si un bouton n'est plus au même endroit, cherche le même mot. Les liens officiels sont à la fin du guide. Les mises à jour du guide sont envoyées gratuitement aux acheteurs.
 
-Ce guide n'est affilié à aucune des entreprises citées. Il donne des repères pratiques sur les licences, pas un avis juridique : en cas de doute pour un usage commercial, lis la licence complète ou demande à un professionnel.}
+Ce guide n'est affilié à aucune des entreprises citées. Il donne des repères pratiques, pas un avis juridique.}
 
 \clearpage
 \begingroup\setlength{\parskip}{0pt}\titlespacing*{\chapter}{0pt}{-0.6cm}{0.4em}\tableofcontents\endgroup
@@ -189,14 +189,13 @@ Le guide s'adresse aux créateurs, aux indépendants et aux commerçants qui veu
   \item \coche sur téléphone seulement, un compte GitHub gratuit.
 \end{itemize}
 
-\begin{tcolorbox}[enhanced,breakable,colback=fondgris,colframe=encre!25,boxrule=0.6pt,arc=3pt,left=7pt,right=7pt,top=3pt,bottom=3pt,fontupper=\footnotesize,title={Le budget à prévoir},fonttitle=\bfseries\small,coltitle=white,colbacktitle=encre]
-\begin{itemize}
-  \item \textbf{Claude} : un abonnement payant. Il n'est pas illimité : tes messages et tes montages consomment une limite d'utilisation qui se recharge avec le temps. Opus consomme cette limite plus vite que Sonnet. Les prix et les limites sont sur claude.com.
-  \item \textbf{La voix} : gratuite si tu t'enregistres. Avec ElevenLabs, l'offre gratuite interdit l'usage commercial ; il faut une offre payante pour une pub, un produit ou une vidéo monétisée.
-  \item \textbf{Les images et les musiques} : gratuites si tu prends des fichiers dont la licence couvre ton usage (voir « Les règles à respecter »).
-  \item \textbf{GitHub, HyperFrames, ChatGPT} : gratuits pour ce guide.
-\end{itemize}
+\begin{tcolorbox}[enhanced,colback=fondgris,colframe=encre!25,boxrule=0.6pt,arc=3pt,left=7pt,right=7pt,top=3pt,bottom=3pt,fontupper=\small,title={Le budget},fonttitle=\bfseries\small,coltitle=white,colbacktitle=encre]
+\textbf{Payant} : l'abonnement Claude. Il a une limite d'utilisation qui se recharge avec le temps.\\
+\textbf{Gratuit} : GitHub, HyperFrames, ChatGPT, ta propre voix, et les images et musiques gratuites.\\
+\textbf{Selon ton usage} : ElevenLabs, payant si tes vidéos sont commerciales.
 \end{tcolorbox}
+
+Chez moi, la première vidéo a pris une à deux heures, installation comprise. Ensuite, compte souvent une vingtaine de minutes de ton temps par vidéo, selon sa longueur et tes corrections.
 
 \section*{Le parcours d'une vidéo}
 \begin{figure}[H]\centering
@@ -216,8 +215,6 @@ Le guide s'adresse aux créateurs, aux indépendants et aux commerçants qui veu
 \caption{Tu interviens au début et à la fin ; Claude fait le montage.}
 \end{figure}
 
-Lors de mes essais, la première vidéo m'a demandé une à deux heures, installation comprise. Une fois la méthode prise en main, certaines vidéos se font en une vingtaine de minutes de ton temps, sans compter le temps où Claude travaille seul. Le temps réel dépend de la longueur de la vidéo, du nombre d'images à trouver et des corrections.
-
 \mainmatter
 % ======================================================================== 1
 \chapter{Claude Code et Opus 5.5}
@@ -225,7 +222,7 @@ Lors de mes essais, la première vidéo m'a demandé une à deux heures, install
 Claude Code est la partie de Claude qui fabrique des fichiers, et donc des vidéos. La discussion habituelle ne sait pas le faire. Ce chapitre l'installe sur ton ordinateur ou ton téléphone, choisit le bon modèle et ajoute l'outil de montage.
 
 \begin{attention}
-L'abonnement payant à Claude est obligatoire : sans lui, tu n'as pas accès à Claude Code. Il n'est pas illimité pour autant. Un montage consomme beaucoup, et Opus 5.5 use ta limite plus vite que les autres modèles. Si Claude t'annonce que la limite est atteinte, attends qu'elle se recharge ou passe à une offre plus haute.
+L'abonnement payant à Claude est obligatoire : sans lui, tu n'as pas accès à Claude Code. Il a une limite d'utilisation : si Claude t'annonce qu'elle est atteinte, attends qu'elle se recharge.
 \end{attention}
 
 \section{Sur ordinateur}
@@ -245,55 +242,51 @@ Télécharge l'application Claude sur l'App Store (iPhone) ou sur Google Play (A
 \caption{À gauche, l'application sur l'App Store et sur Google Play (\pastille{1} « Installer »). À droite, le menu de l'application : \pastille{1} « Code », puis \pastille{2} « Nouvelle session ».}
 \end{figure}
 
-Dans l'application, ouvre le menu, touche « Code », puis « Nouvelle session ». La première fois, l'application te demande de relier un compte GitHub. GitHub garde tes projets en ligne, dans un « dépôt » (un dossier de projet).
+Dans l'application, ouvre le menu, touche « Code », puis « Nouvelle session ». La première fois, l'application te demande de relier un compte GitHub : c'est là que Claude range tes vidéos.
 \begin{enumerate}
   \item Crée un compte gratuit sur github.com.
-  \item Touche le « + », puis « New repository ». Appelle-le \texttt{mes-videos}, coche \textbf{Private} (privé) et valide. Un dépôt public peut être lu par tout le monde.
-  \item Reviens dans Claude et relie ton compte GitHub. GitHub te demande d'autoriser l'application Claude : choisis « Only select repositories » et coche \texttt{mes-videos}, pour que Claude n'accède qu'à ce dépôt.
-  \item Au début de chaque session, choisis le dépôt \texttt{mes-videos}.
+  \item Touche le « + », puis « New repository ». Appelle-le \texttt{mes-videos}, coche \textbf{Private} et valide.
+  \item Reviens dans Claude et relie GitHub. Choisis « Only select repositories », puis \texttt{mes-videos}.
 \end{enumerate}
 \capture[0.62]{images/github-nouveau-depot.jpg}{\pastille{1} Le « + » de GitHub. \pastille{2} « New repository ».}
 
-\section{Comment marche une session sur téléphone}
-Sur téléphone, Claude ne travaille pas sur ton appareil. Chaque session tourne sur un ordinateur temporaire dans le cloud, qui reçoit une copie de ton dépôt GitHub. Claude y range son travail sur une « branche », une version de travail du dépôt. Quand la session reste inactive, cet ordinateur est rendu : tout ce qui n'a pas été envoyé sur GitHub disparaît.
-\begin{itemize}
-  \item Termine chaque séance par « Enregistre tout sur GitHub ». Claude envoie ses fichiers sur sa branche.
-  \item Claude peut te proposer une « pull request » (une demande de fusion de sa branche). Elle n'est pas obligatoire pour récupérer une vidéo.
-  \item Pour récupérer le fichier MP4 sur ton téléphone, ouvre ton dépôt dans l'application GitHub ou sur github.com, choisis la branche de Claude, touche le fichier MP4, puis « Download » (Télécharger).
-\end{itemize}
+\begin{attention}
+Sur téléphone, termine toujours par « Enregistre tout sur GitHub ». Sinon, ton travail peut disparaître à la fin de la séance.
+\end{attention}
+
+\section{Télécharger ta vidéo sur téléphone}
 \begin{acopier}[Prompt : récupérer la vidéo sur téléphone]
-Enregistre la vidéo finale sur GitHub, dans le dossier renders, en moins de 100 Mo. Donne-moi le nom de la branche et le chemin exact du fichier pour que je la télécharge.
+Enregistre la vidéo finale sur GitHub (moins de 100 Mo) et donne-moi le lien pour la télécharger.
 \end{acopier}
-GitHub refuse les fichiers de plus de 100 Mo : d'où la limite dans le prompt.
+Touche le lien, puis le bouton de téléchargement de GitHub (« Download »).
 
 \section{Choisir Opus 5.5 en effort « Élevé »}
-Toutes les vidéos de ce guide ont été faites avec Opus 5.5 réglé sur l'effort « Élevé ». Au début de chaque session, ouvre le sélecteur de modèle, choisis Opus 5.5, puis règle l'effort sur « Élevé ». Si ta limite d'utilisation baisse trop vite, Sonnet coûte moins cher en limite pour les petites corrections. Sur ordinateur, tu peux aussi taper :
+Toutes les vidéos de ce guide ont été faites avec Opus 5.5 réglé sur l'effort « Élevé ». Au début de chaque session, ouvre le sélecteur de modèle, choisis Opus 5.5, puis règle l'effort sur « Élevé ». Sur ordinateur, tu peux aussi taper :
 \begin{acopier}[Commande]
 /model
 \end{acopier}
 puis sélectionner Opus 5.5 et l'effort « Élevé ».
 
 \section{Installer l'outil de montage}
-Claude monte les vidéos avec HyperFrames, un outil gratuit et open source de HeyGen. Il s'ajoute à Claude Code sous forme de « compétences » (skills) : des modes d'emploi que Claude lit avant de monter. Pour fabriquer le fichier MP4, il a aussi besoin de Node.js (version 22 ou plus) et de FFmpeg. Envoie le prompt qui correspond à ton appareil, une seule fois.
+Claude monte les vidéos avec HyperFrames, un outil gratuit. Copie le prompt qui correspond à ton appareil et envoie-le une seule fois.
 \begin{acopier}[Prompt : installer HyperFrames sur ordinateur]
-Installe le plugin HyperFrames pour Claude Code avec ces deux commandes :\\
+Installe HyperFrames pour Claude Code :\\
 claude plugin marketplace add heygen-com/hyperframes\\
 claude plugin install hyperframes@hyperframes\\
-Si la commande claude n'est pas disponible, installe plutôt les compétences avec : npx skills add heygen-com/hyperframes (choisis Core Skills).\\
-Vérifie ensuite Node.js 22 et FFmpeg avec npx hyperframes doctor, installe ce qui manque et dis-moi quand tout est prêt.
+Si ça ne marche pas, utilise : npx skills add heygen-com/hyperframes\\
+Puis lance npx hyperframes doctor, installe ce qui manque et dis-moi quand tout est prêt.
 \end{acopier}
-Ferme ensuite la session et ouvre-en une nouvelle : Claude charge les compétences au démarrage.
+Ouvre ensuite une nouvelle session pour que Claude prenne en compte l'installation.
 \begin{acopier}[Prompt : installer HyperFrames sur téléphone]
-Installe les compétences HyperFrames dans ce dépôt avec npx skills add heygen-com/hyperframes (Core Skills, pour Claude Code), vérifie l'installation avec npx skills list, puis lance npx hyperframes doctor et installe ce qui manque. Enregistre tout sur GitHub pour que les compétences soient là à chaque session.
+Installe HyperFrames dans ce projet avec npx skills add heygen-com/hyperframes, lance npx hyperframes doctor, installe ce qui manque, puis enregistre tout sur GitHub.
 \end{acopier}
-Sur téléphone, les compétences sont rangées dans ton dépôt : chaque nouvelle session les retrouve. Ce que Claude installe en dehors du dépôt (FFmpeg par exemple) peut être à refaire : s'il manque, Claude le dira au moment du rendu.
 
 \begin{victoire}
-Vérifie que tout marche avec une vidéo test de 10 secondes : « Fais une vidéo verticale de 10 secondes avec le titre BONJOUR, une vraie vidéo de ville la nuit en fond (licence gratuite pour un usage commercial) et une musique dont la licence autorise TikTok. » Si tu reçois la vidéo, l'installation est terminée.
+Vérifie que tout marche avec une vidéo test de 10 secondes : « Fais une vidéo verticale de 10 secondes avec le titre BONJOUR, une vraie vidéo de ville la nuit en fond et une musique gratuite. » Si tu reçois la vidéo, l'installation est terminée.
 \end{victoire}
 
 \begin{attention}
-Claude te demande parfois une autorisation : lancer une commande, installer un outil, aller sur Internet, modifier des fichiers. Lis ce qu'il propose avant d'accepter. N'autorise jamais une commande que tu ne comprends pas. En cas de doute, réponds : « Explique-moi ce que fait cette commande avant que je l'autorise. »
+Quand Claude demande une autorisation, lis ce qu'il propose avant d'accepter. Si tu ne comprends pas, réponds : « Explique-moi ce que fait cette commande. »
 \end{attention}
 
 \begin{bilan}
@@ -385,14 +378,14 @@ Crée un fichier de consignes que tu reliras avant chaque vidéo :\\
 - Pendant les 3 premières secondes, de vraies vidéos qui changent à chaque mot. Ensuite, un fond de vraies vidéos qui change tous les 1 à 2 mots, avec les éléments par-dessus.\\
 - Quand je donne une liste, cache chaque point derrière une case « ? » sous le film et dévoile-le quand la voix l'annonce.\\
 - Transitions : volet rayé jaune et noir, glitch et secousses sur les mots forts.\\
-- Trois musiques à la mode (hip-hop, trap, house), une par partie, dont la licence autorise mon usage. La voix reste toujours claire : la musique s'entend, mais ne la couvre jamais.\\
+- Trois musiques à la mode (hip-hop, trap, house), une par partie, autorisées pour mon usage. La musique s'entend, mais ne couvre jamais la voix.\\
 - Beaucoup de bruitages : un souffle à chaque changement d'image, des impacts, des clics et des « pop ».\\
-- Pour chaque vidéo, image, musique et bruitage, note la source, le lien et la licence dans un fichier sources.txt.\\
+- Garde la liste des sources de chaque image et musique.\\
 - Vérifie toujours la vidéo avant de fabriquer le fichier final.
 \end{acopier}
 
-Ce style est volontairement très rythmé. Il retient l'attention, mais il peut fatiguer sur une vidéo longue ou un sujet sérieux. Teste aussi la version sobre et garde celle que ton public regarde jusqu'au bout.
-\begin{acopier}[Prompt : version sobre]
+Ce style est très rythmé. Pour un sujet sérieux ou une vidéo plus longue, essaie la version calme.
+\begin{acopier}[Prompt : version calme]
 Garde mon style, mais en plus calme : une image toutes les 3 à 4 secondes, un bruitage seulement aux changements de scène, une seule musique discrète et pas plus de deux éléments à l'écran en même temps.
 \end{acopier}
 
@@ -553,12 +546,10 @@ Prépare ce texte pour ElevenLabs : ajoute la ponctuation qui donne du rythme, �
 \end{acopier}
 
 \begin{attention}
-\textbf{Usage commercial.} L'offre gratuite d'ElevenLabs n'inclut pas de licence commerciale et oblige à citer ElevenLabs. Si ta vidéo vend un produit, fait la pub d'un commerce ou est monétisée, prends une offre payante : elles incluent la licence commerciale, selon les conditions d'ElevenLabs. Le plus simple reste ta propre voix.
-\end{attention}
-\begin{attention}
-\textbf{Copier une voix.} N'utilise jamais la voix d'une autre personne sans son accord. Et l'accord ne suffit pas toujours : chez ElevenLabs, le clonage « professionnel » est réservé à ta propre voix. Si quelqu'un veut te prêter la sienne, il crée et vérifie son clone sur son compte, puis le partage avec toi.
+L'offre gratuite d'ElevenLabs ne permet pas les vidéos commerciales (pub, produit, vidéo monétisée) : pour ça, prends une offre payante ou utilise ta propre voix. Et ne copie jamais la voix de quelqu'un d'autre.
 \end{attention}
 
+\enlargethispage{3\baselineskip}
 \begin{bilan}
   \item \coche J'ai le fichier MP3 de la voix.
 \end{bilan}
@@ -578,22 +569,22 @@ Fin : [ta demande].
 \end{acopier}
 
 \section{Faire trouver de vraies vidéos qui collent au texte}
-Claude peut chercher sur Internet des vidéos gratuites, les télécharger et les faire jouer dans ta vidéo, au bon moment. « Gratuit » ne veut pas dire « sans conditions » : chaque fichier a sa licence. Sur Mixkit par exemple, la plupart des vidéos sont sous « Free License » (usage commercial permis), mais certaines sont sous « Restricted License », réservée aux projets personnels non commerciaux.
+Claude peut chercher sur Internet des vidéos gratuites, les télécharger et les faire jouer dans ta vidéo, au bon moment.
 \begin{acopier}[Prompt : vidéos gratuites qui collent]
-Pour chaque phrase de mon texte, cherche sur Mixkit et Pexels des vidéos qui montrent exactement ce qui est dit. Vérifie la licence de chaque fichier avant de l'utiliser : sur Mixkit, prends seulement des vidéos sous Free License, jamais sous Restricted License. Fais-les jouer en fond, une nouvelle toutes les 1 à 2 secondes. Note chaque fichier dans sources.txt (lien, auteur, licence).
+Pour chaque phrase de mon texte, cherche sur Mixkit et Pexels des vidéos qui montrent exactement ce qui est dit, autorisées pour un usage commercial (sur Mixkit : Free License seulement). Fais-les jouer en fond, une nouvelle toutes les 1 à 2 secondes, et garde la liste des sources.
 \end{acopier}
 \begin{acopier}[Prompt : hook plein de vidéos]
-Pour les 3 premières secondes, trouve 10 à 15 vraies vidéos ou photos sur [thème], une par mot, avec un gros bruitage à chaque coupe. Même règle de licence que pour les autres images.
+Pour les 3 premières secondes, trouve 10 à 15 vraies vidéos ou photos sur [thème], une par mot, avec un gros bruitage à chaque coupe.
 \end{acopier}
 \begin{acopier}[Prompt : logos et vrais sites]
-Récupère les logos officiels de [marques] et filme les vrais sites [adresses] pour illustrer ce que je dis. Ne laisse jamais croire que ces marques sont mes partenaires, mes sponsors ou mes clientes.
+Récupère les logos officiels de [marques] et filme les vrais sites [adresses] pour illustrer ce que je dis, sans laisser croire que ces marques sont mes partenaires.
 \end{acopier}
 \begin{acopier}[Prompt : musique à la mode]
-Choisis 3 musiques parmi les plus téléchargées de Mixkit en hip-hop, trap ou house, une par partie de la vidéo. Vérifie que leur licence couvre mon usage et note-les dans sources.txt.
+Choisis 3 musiques parmi les plus téléchargées de Mixkit en hip-hop, trap ou house, une par partie de la vidéo.
 \end{acopier}
 
 \begin{attention}
-Une personne reconnaissable dans une image, un logo ou une marque demande des précautions, même quand l'image est gratuite. Ne montre pas une personne sous un jour gênant (moquerie, sujet sensible) et ne laisse pas croire qu'elle ou une marque soutient ton produit. Le détail est dans « Les règles à respecter ».
+Avant d'utiliser une musique ou une vidéo, vérifie qu'elle est autorisée pour ton usage. Pour une vidéo commerciale, choisis des ressources clairement autorisées pour ça.
 \end{attention}
 
 \section{Exemples par format}
@@ -616,7 +607,7 @@ Voici ma voix et mon texte : [texte]. Titre : « 3 choses à savoir sur [sujet] 
 Voici ma voix et mon texte : [texte]. Titre : « [nom du commerce] à [ville] ». Mets mes photos (jointes) en plein écran avec des zooms, l'adresse et l'horaire à la fin, et termine sur l'offre.
 \end{acopier}
 \begin{acopier}[Edit sans voix]
-Fais un edit de 20 secondes sans voix et sans texte dans la vidéo, calé sur cette musique (jointe). Utilise de vraies vidéos de [thème] sous licence gratuite pour un usage commercial, coupe sur chaque temps, ajoute des zooms et des flashs sur les temps forts et fais monter la tension jusqu'au drop.
+Fais un edit de 20 secondes sans voix et sans texte dans la vidéo, calé sur cette musique (jointe). Utilise de vraies vidéos gratuites de [thème], coupe sur chaque temps, ajoute des zooms et des flashs sur les temps forts et fais monter la tension jusqu'au drop.
 \end{acopier}
 
 \begin{astuce}
@@ -658,9 +649,9 @@ Fin molle & Termine sur un gros « Abonne-toi » avec un bruitage et un bouton q
 Avant de fabriquer le fichier final, regarde une image de chaque scène et corrige les textes coupés, les chevauchements et les sons trop forts.
 \end{acopier}
 \begin{acopier}[Prompt : vérifier les faits]
-Vérifie chaque chiffre, chaque date et chaque affirmation de mon texte à partir de sources fiables. Pour chacune, donne le lien exact et la phrase de la source qui la justifie. N'invente aucune source et signale clairement ce que tu n'as pas pu vérifier.
+Vérifie chaque chiffre et chaque date de mon texte. Donne-moi le lien de la source pour chacun, n'invente rien et dis-moi ce que tu n'as pas pu vérifier.
 \end{acopier}
-Claude peut se tromper de source ou mal la lire. Ouvre toi-même les liens et vérifie qu'ils disent bien ce qui est écrit avant de publier.
+Ouvre toi-même les liens avant de publier : Claude peut se tromper.
 
 \begin{bilan}
   \item \coche J'ai regardé la vidéo sur mon téléphone, le son allumé.
@@ -676,7 +667,7 @@ Quand la vidéo te convient, demande le fichier final. Sur ordinateur, il est au
 La vidéo me convient. Fabrique la version finale en 1080×1920 et une miniature verticale avec mon titre en gros, puis envoie-les-moi.
 \end{acopier}
 \begin{acopier}[Prompt : version YouTube]
-Fais aussi une version horizontale 1920×1080 de cette vidéo. Ne te contente pas de changer la taille : recompose chaque scène pour le format large (place du titre, du personnage, des sous-titres et des vidéos de fond), sans bandes noires ni éléments coupés. Garde le même son, puis montre-moi une image de chaque scène.
+Fais aussi une version horizontale 1920×1080 de cette vidéo. Replace le titre, le personnage et les sous-titres pour le format large, sans bandes noires ni éléments coupés. Garde le même son.
 \end{acopier}
 
 \section{Des miniatures qui donnent envie}
@@ -739,8 +730,8 @@ Claude a oublié mon style & Demande-lui : « Relis mon fichier de consignes et 
 Sur téléphone, mon projet a disparu & Il n'avait pas été enregistré : termine chaque séance par « Enregistre tout sur GitHub ». \\
 Claude demande une autorisation & Lis ce qu'il propose. Si tu ne comprends pas, demande-lui de l'expliquer avant d'accepter. \\
 Le montage est long & C'est normal pour une première vidéo ; sur ordinateur, laisse-le allumé. \\
-Limite d'utilisation atteinte & Attends qu'elle se recharge, ou fais les petites corrections avec Sonnet. \\
-Un téléchargement d'image échoue & Demande « remplace ce fichier par un autre, sous une licence qui couvre mon usage ». \\
+Limite d'utilisation atteinte & Attends qu'elle se recharge, puis reprends la même session. \\
+Un téléchargement d'image échoue & Demande « remplace ce fichier par une autre vidéo gratuite ». \\
 Une image ne colle pas au texte & Donne le moment et ce que tu veux voir : « À 8 s, montre [sujet]. » \\
 Un sous-titre est faux & Recolle le texte exact et donne le moment de l'erreur. \\
 Le rendu échoue & Demande « Lance npx hyperframes doctor, installe ce qui manque et relance le rendu ». \\
@@ -748,91 +739,73 @@ Le MP4 ne passe pas sur GitHub & Demande une version de moins de 100 Mo. \\
 Je veux voir la vidéo avant le rendu & Demande « Ouvre l'aperçu HyperFrames ». \\ \bottomrule
 \end{xltabular}}
 
-\section*{La méthode quand quelque chose bloque}
-\begin{enumerate}
-  \item \textbf{Repère l'erreur} : copie le message d'erreur ou note le moment de la vidéo qui pose problème.
-  \item \textbf{Fais-la expliquer} : « Explique-moi simplement cette erreur et ce que tu proposes. »
-  \item \textbf{Fais corriger} : valide la correction proposée, ou demande une autre solution.
-  \item \textbf{Relance} : « Relance la vérification HyperFrames, puis le rendu. »
-  \item \textbf{Vérifie le MP4} : regarde-le en entier sur ton téléphone, le son allumé, avant de publier.
-\end{enumerate}
+\begin{acopier}[Prompt : quand quelque chose bloque]
+Il y a un problème : [copie le message d'erreur ou décris ce qui ne va pas]. Explique-moi simplement ce qui se passe, corrige-le, puis relance la vidéo.
+\end{acopier}
+Ensuite, regarde la vidéo en entier sur ton téléphone, le son allumé, avant de publier.
 
 % ======================================================================== RÈGLES
 \chapter*{Les règles à respecter}
 \addcontentsline{toc}{chapter}{Les règles à respecter}
 \markboth{Les règles à respecter}{}
-Une vidéo peut être bloquée ou retirée pour une question de droits. Ces règles valent pour tout le monde.
+Une vidéo peut être bloquée ou retirée pour une question de droits. Retiens surtout ceci : avant d'utiliser une musique ou une vidéo, vérifie qu'elle est autorisée pour ton usage. Pour une vidéo commerciale, choisis des ressources clairement autorisées pour ça.
 
-\renewcommand{\arraystretch}{1.35}
+\renewcommand{\arraystretch}{1.1}
 {\small
 \begin{xltabular}{\linewidth}{>{\bfseries}p{1.7cm}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X}
 \toprule
  & \textcolor{vert}{Tu peux} & \textcolor{rouge}{Évite} \\ \midrule
-Musique & Une musique dont la licence couvre ton usage et ta plateforme ; les sons de TikTok, ajoutés dans TikTok & Une chanson connue téléchargée sur Internet ; un son TikTok réutilisé sur Instagram ou YouTube \\
-Images & Des vidéos et photos dont tu as vérifié la licence ; tes propres images & Extraits de films ou de séries, images prises au hasard sur Internet \\
-Sons & Bruitages sous licence gratuite (Mixkit par exemple), dans ta vidéo & Revendre ou redistribuer les bruitages seuls \\
-Gens et marques & Illustrer ton propos avec un logo ou un site & Montrer une personne reconnaissable sous un jour gênant ; laisser croire à un partenariat \\
+Musique & Une musique gratuite autorisée pour ton usage ; les sons de TikTok, ajoutés dans TikTok & Une chanson connue téléchargée sur Internet ; un son TikTok réutilisé ailleurs \\
+Images & Des vidéos et photos gratuites autorisées pour ton usage ; tes propres images & Extraits de films ou de séries, images prises au hasard sur Internet \\
+Marques & Montrer un logo ou un site pour illustrer & Laisser croire à un partenariat \\
 Style & S'inspirer du rythme et de l'ambiance d'une vidéo & Reprendre les images, la musique ou le texte d'un autre créateur \\
-Voix & Ta voix, ou une voix ElevenLabs (offre payante pour un usage commercial) & Copier la voix d'une vraie personne \\
-Infos & Faire vérifier chaque chiffre, puis ouvrir toi-même les sources & Présenter une rumeur comme un fait \\ \bottomrule
+Voix & Ta voix, ou ElevenLabs (payant si commercial) & Copier la voix d'une vraie personne \\ \bottomrule
 \end{xltabular}}
-
-\section*{Les licences en bref}
-Une licence, ce sont les conditions d'utilisation d'un fichier. Vérifie-la pour chaque fichier, et garde la liste dans \texttt{sources.txt} : si une plateforme te pose la question, tu as la réponse.
-\renewcommand{\arraystretch}{1.25}
-{\footnotesize
-\begin{xltabular}{\linewidth}{>{\raggedright\arraybackslash\bfseries}p{2.5cm}>{\raggedright\arraybackslash}X}
-\toprule
-Mixkit, vidéos & « Free License » : projets commerciaux et non commerciaux. « Restricted License » : projets personnels non commerciaux seulement. La licence est indiquée sur la page de chaque vidéo. \\
-Mixkit, musiques et sons & Licences gratuites, utilisables dans tes vidéos, y compris commerciales ; interdit de revendre ou redistribuer les fichiers seuls. \\
-Pexels & Usage gratuit, commercial compris. Interdit : montrer une personne reconnaissable de façon offensante, laisser croire qu'une personne ou une marque soutient ton produit, revendre les fichiers tels quels. \\
-Sons de TikTok & La bibliothèque générale sert aux vidéos personnelles, dans TikTok. Pour promouvoir une marque, un produit ou un service, utilise la bibliothèque musicale commerciale (CML). Un son autorisé dans TikTok ne l'est pas forcément sur Instagram ou YouTube. \\
-ElevenLabs & Offre gratuite : pas d'usage commercial et citation d'ElevenLabs obligatoire. Offres payantes : licence commerciale incluse, selon leurs conditions. \\
-Logos et sites & Un logo en ligne n'est pas libre pour autant : illustre, n'en fais pas une pub et ne suggère aucun partenariat. \\ \bottomrule
-\end{xltabular}}
-Les licences changent : relis celle du site au moment où tu télécharges.
-
 
 % ======================================================================== LEXIQUE
 \chapter*{Petit lexique}
 \addcontentsline{toc}{chapter}{Petit lexique}
 \markboth{Petit lexique}{}
+\renewcommand{\arraystretch}{1.1}
 {\small
 \begin{xltabular}{\linewidth}{>{\raggedright\arraybackslash\leavevmode\bfseries\color{violet}}p{2.6cm}X}
 \toprule
 Accroche (hook) & Les premières secondes de la vidéo, faites pour donner envie de rester \\
-Branche & Une version de travail du dépôt, où Claude range ses fichiers \\
 ChatGPT & L'assistant d'OpenAI que j'utilise pour écrire le texte de la voix \\
 Claude Code & La partie de Claude qui fabrique des fichiers, dont des vidéos \\
-Clonage vocal & Créer une voix artificielle qui imite une vraie voix \\
-Compétence (skill) & Un mode d'emploi que Claude lit avant une tâche, comme ceux d'HyperFrames \\
-Dépôt (repository) & Le dossier d'un projet sur GitHub ; garde-le privé \\
 Edit & Une vidéo sans voix, montée sur le rythme d'une musique \\
 Fichier de consignes & Le texte où sont tes règles ; Claude le relit avant chaque vidéo \\
 GitHub & Le service en ligne qui garde tes projets, nécessaire seulement sur téléphone \\
 HyperFrames & L'outil de montage que Claude utilise \\
-Libre de droits & Utilisable sans payer à chaque utilisation, mais toujours selon une licence qui fixe les conditions (usage commercial ou non, crédit, interdits) \\
 Licence & Les conditions d'utilisation d'un fichier ou d'un service \\
 Opus 5.5 & Le modèle de Claude utilisé dans ce guide, réglé sur l'effort « Élevé » \\
 Prompt & Le message que tu envoies à Claude \\
-Pull request & Une demande de fusion d'une branche dans le dépôt principal ; facultative ici \\
 Rendu & La fabrication du fichier MP4 final à partir du montage \\ \bottomrule
 \end{xltabular}}
 
 % ======================================================================== RESSOURCES
-\chapter*{Ressources officielles}
-\addcontentsline{toc}{chapter}{Ressources officielles}
-\markboth{Ressources officielles}{}
-Les liens se touchent directement dans le PDF. En cas de doute, la page officielle a toujours raison sur ce guide.
+\chapter*{Pour aller plus loin}
+\addcontentsline{toc}{chapter}{Pour aller plus loin}
+\markboth{Pour aller plus loin}{}
+Tu n'as pas besoin de cette page pour faire tes vidéos. Elle sert si tu veux vérifier un détail.
+
+\section*{Les licences les plus utiles}
+\begin{itemize}
+  \item \textbf{Mixkit} : prends les vidéos marquées « Free License ». Les vidéos « Restricted » sont réservées aux projets personnels. Musiques et bruitages : utilisables dans tes vidéos, mais pas revendus seuls.
+  \item \textbf{Pexels} : gratuit, commercial compris, sans montrer une personne de façon blessante.
+  \item \textbf{Sons TikTok} : pour une vidéo de marque, utilise la bibliothèque commerciale de TikTok. Un son TikTok reste dans TikTok.
+  \item \textbf{ElevenLabs} : l'offre gratuite oblige à citer ElevenLabs et interdit l'usage commercial.
+\end{itemize}
+
+\section*{Les liens officiels}
+Les liens se touchent directement dans le PDF.
 \renewcommand{\arraystretch}{1.12}
 {\small
 \begin{xltabular}{\linewidth}{>{\raggedright\arraybackslash\bfseries}p{3.1cm}>{\raggedright\arraybackslash}X}
 \toprule
 Claude Code & \lien{https://claude.com/product/claude-code}{claude.com/product/claude-code} \\
 Offres et limites de Claude & \lien{https://claude.com/pricing}{claude.com/pricing} \\
-Claude Code dans le cloud & \lien{https://code.claude.com/docs/en/claude-code-on-the-web}{code.claude.com/docs} \\
 HyperFrames & \lien{https://hyperframes.heygen.com/guides/with-claude-code}{hyperframes.heygen.com} \\
-Code d'HyperFrames & \lien{https://github.com/heygen-com/hyperframes}{github.com/heygen-com/hyperframes} \\
 GitHub, créer un dépôt & \lien{https://docs.github.com/fr/repositories/creating-and-managing-repositories/creating-a-new-repository}{docs.github.com} \\
 ElevenLabs, droits & \lien{https://elevenlabs.io/docs/help-center/legal/can-i-publish-the-content-i-generate-on-the-platform}{elevenlabs.io/docs} \\
 Licences Mixkit & \lien{https://mixkit.co/license/}{mixkit.co/license} \\
