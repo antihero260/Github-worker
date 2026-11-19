@@ -1,0 +1,1040 @@
+[
+{
+"i": 0,
+"text": "10",
+"start": 0,
+"end": 0.32
+},
+{
+"i": 1,
+"text": "TECHNIQUES",
+"start": 0.4,
+"end": 0.8
+},
+{
+"i": 2,
+"text": "POUR",
+"start": 0.8,
+"end": 1.04
+},
+{
+"i": 3,
+"text": "DÉPENSER",
+"start": 1.04,
+"end": 1.52
+},
+{
+"i": 4,
+"text": "MOINS",
+"start": 1.52,
+"end": 1.84
+},
+{
+"i": 5,
+"text": "SANS",
+"start": 1.84,
+"end": 2.16
+},
+{
+"i": 6,
+"text": "TE",
+"start": 2.16,
+"end": 2.32
+},
+{
+"i": 7,
+"text": "PRIVER.",
+"start": 2.32,
+"end": 2.64
+},
+{
+"i": 8,
+"text": "LUCAS",
+"start": 2.88,
+"end": 3.28
+},
+{
+"i": 9,
+"text": "LES",
+"start": 3.36,
+"end": 3.6
+},
+{
+"i": 10,
+"text": "TESTE",
+"start": 3.6,
+"end": 3.84
+},
+{
+"i": 11,
+"text": "CETTE",
+"start": 4,
+"end": 4.08
+},
+{
+"i": 12,
+"text": "SEMAINE.",
+"start": 4.24,
+"end": 4.72
+},
+{
+"i": 13,
+"text": "NUMÉRO",
+"start": 4.96,
+"end": 5.44
+},
+{
+"i": 14,
+"text": "10 :",
+"start": 5.44,
+"end": 5.76
+},
+{
+"i": 15,
+"text": "VÉRIFIE",
+"start": 6,
+"end": 6.64
+},
+{
+"i": 16,
+"text": "TON",
+"start": 6.64,
+"end": 6.8
+},
+{
+"i": 17,
+"text": "TRAJET.",
+"start": 6.8,
+"end": 7.2
+},
+{
+"i": 18,
+"text": "AVANT",
+"start": 7.44,
+"end": 7.76
+},
+{
+"i": 19,
+"text": "LE",
+"start": 7.76,
+"end": 7.92
+},
+{
+"i": 20,
+"text": "TAXI,",
+"start": 7.92,
+"end": 8.32
+},
+{
+"i": 21,
+"text": "REGARDE",
+"start": 8.48,
+"end": 8.88
+},
+{
+"i": 22,
+"text": "SI",
+"start": 8.88,
+"end": 9.12
+},
+{
+"i": 23,
+"text": "MARCHER",
+"start": 9.12,
+"end": 9.44
+},
+{
+"i": 24,
+"text": "SUFFIT.",
+"start": 9.6,
+"end": 10
+},
+{
+"i": 25,
+"text": "NUMÉRO",
+"start": 10.24,
+"end": 10.64
+},
+{
+"i": 26,
+"text": "9 :",
+"start": 10.64,
+"end": 10.96
+},
+{
+"i": 27,
+"text": "REGROUPE",
+"start": 11.2,
+"end": 11.84
+},
+{
+"i": 28,
+"text": "TES",
+"start": 11.84,
+"end": 12
+},
+{
+"i": 29,
+"text": "COURSES.",
+"start": 12,
+"end": 12.4
+},
+{
+"i": 30,
+"text": "ACHÈTE",
+"start": 12.56,
+"end": 12.96
+},
+{
+"i": 31,
+"text": "TOUT",
+"start": 13.04,
+"end": 13.28
+},
+{
+"i": 32,
+"text": "AU",
+"start": 13.28,
+"end": 13.44
+},
+{
+"i": 33,
+"text": "MARCHÉ",
+"start": 13.44,
+"end": 13.76
+},
+{
+"i": 34,
+"text": "EN",
+"start": 13.76,
+"end": 14
+},
+{
+"i": 35,
+"text": "UN",
+"start": 14,
+"end": 14.24
+},
+{
+"i": 36,
+"text": "DÉPLACEMENT.",
+"start": 14.24,
+"end": 14.88
+},
+{
+"i": 37,
+"text": "NUMÉRO",
+"start": 15.04,
+"end": 15.44
+},
+{
+"i": 38,
+"text": "8 :",
+"start": 15.44,
+"end": 15.76
+},
+{
+"i": 39,
+"text": "EMPORTE",
+"start": 16.08,
+"end": 16.64
+},
+{
+"i": 40,
+"text": "TA",
+"start": 16.64,
+"end": 16.8
+},
+{
+"i": 41,
+"text": "BOUTEILLE.",
+"start": 16.8,
+"end": 17.28
+},
+{
+"i": 42,
+"text": "ÉVITE",
+"start": 17.44,
+"end": 17.76
+},
+{
+"i": 43,
+"text": "D’ACHETER",
+"start": 17.76,
+"end": 18.24
+},
+{
+"i": 44,
+"text": "À",
+"start": 18.24,
+"end": 18.32
+},
+{
+"i": 45,
+"text": "BOIRE",
+"start": 18.32,
+"end": 18.64
+},
+{
+"i": 46,
+"text": "À",
+"start": 18.64,
+"end": 18.72
+},
+{
+"i": 47,
+"text": "CHAQUE",
+"start": 18.72,
+"end": 18.96
+},
+{
+"i": 48,
+"text": "SORTIE.",
+"start": 18.96,
+"end": 19.36
+},
+{
+"i": 49,
+"text": "NUMÉRO",
+"start": 19.6,
+"end": 20
+},
+{
+"i": 50,
+"text": "7 :",
+"start": 20,
+"end": 20.32
+},
+{
+"i": 51,
+"text": "PRÉPARE",
+"start": 20.56,
+"end": 20.96
+},
+{
+"i": 52,
+"text": "TES",
+"start": 21.12,
+"end": 21.28
+},
+{
+"i": 53,
+"text": "REPAS.",
+"start": 21.28,
+"end": 21.6
+},
+{
+"i": 54,
+"text": "CUISINER",
+"start": 21.84,
+"end": 22.32
+},
+{
+"i": 55,
+"text": "CHEZ",
+"start": 22.4,
+"end": 22.56
+},
+{
+"i": 56,
+"text": "TOI",
+"start": 22.56,
+"end": 22.72
+},
+{
+"i": 57,
+"text": "ÉVITE",
+"start": 22.88,
+"end": 23.12
+},
+{
+"i": 58,
+"text": "LES",
+"start": 23.2,
+"end": 23.28
+},
+{
+"i": 59,
+"text": "LIVRAISONS",
+"start": 23.28,
+"end": 23.92
+},
+{
+"i": 60,
+"text": "IMPROVISÉES.",
+"start": 23.92,
+"end": 24.48
+},
+{
+"i": 61,
+"text": "NUMÉRO",
+"start": 24.64,
+"end": 25.12
+},
+{
+"i": 62,
+"text": "6 :",
+"start": 25.12,
+"end": 25.36
+},
+{
+"i": 63,
+"text": "COUPE",
+"start": 25.68,
+"end": 26.08
+},
+{
+"i": 64,
+"text": "LES",
+"start": 26.08,
+"end": 26.24
+},
+{
+"i": 65,
+"text": "ACHATS",
+"start": 26.24,
+"end": 26.64
+},
+{
+"i": 66,
+"text": "AUTOMATIQUES.",
+"start": 26.64,
+"end": 27.2
+},
+{
+"i": 67,
+"text": "REPÈRE",
+"start": 27.36,
+"end": 27.92
+},
+{
+"i": 68,
+"text": "LES",
+"start": 27.92,
+"end": 28
+},
+{
+"i": 69,
+"text": "PETITS",
+"start": 28,
+"end": 28.32
+},
+{
+"i": 70,
+"text": "PRÉLÈVEMENTS",
+"start": 28.32,
+"end": 28.88
+},
+{
+"i": 71,
+"text": "OUBLIÉS.",
+"start": 28.88,
+"end": 29.28
+},
+{
+"i": 72,
+"text": "ET",
+"start": 29.44,
+"end": 29.6
+},
+{
+"i": 73,
+"text": "ATTENDS",
+"start": 29.6,
+"end": 30
+},
+{
+"i": 74,
+"text": "LA",
+"start": 30,
+"end": 30.16
+},
+{
+"i": 75,
+"text": "NUMÉRO",
+"start": 30.16,
+"end": 30.4
+},
+{
+"i": 76,
+"text": "1 :",
+"start": 30.56,
+"end": 30.8
+},
+{
+"i": 77,
+"text": "ELLE",
+"start": 31.04,
+"end": 31.28
+},
+{
+"i": 78,
+"text": "CHANGE",
+"start": 31.28,
+"end": 31.68
+},
+{
+"i": 79,
+"text": "TA",
+"start": 31.68,
+"end": 31.84
+},
+{
+"i": 80,
+"text": "FAÇON",
+"start": 31.84,
+"end": 32.16
+},
+{
+"i": 81,
+"text": "DE",
+"start": 32.16,
+"end": 32.32
+},
+{
+"i": 82,
+"text": "DÉPENSER.",
+"start": 32.32,
+"end": 32.88
+},
+{
+"i": 83,
+"text": "NUMÉRO",
+"start": 33.12,
+"end": 33.6
+},
+{
+"i": 84,
+"text": "5 :",
+"start": 33.6,
+"end": 33.92
+},
+{
+"i": 85,
+"text": "EMPRUNTE",
+"start": 34.24,
+"end": 34.96
+},
+{
+"i": 86,
+"text": "AVANT",
+"start": 34.96,
+"end": 35.2
+},
+{
+"i": 87,
+"text": "D’ACHETER.",
+"start": 35.2,
+"end": 35.68
+},
+{
+"i": 88,
+"text": "POUR",
+"start": 35.92,
+"end": 36.08
+},
+{
+"i": 89,
+"text": "UN",
+"start": 36.08,
+"end": 36.24
+},
+{
+"i": 90,
+"text": "OBJET",
+"start": 36.24,
+"end": 36.56
+},
+{
+"i": 91,
+"text": "RAREMENT",
+"start": 36.56,
+"end": 36.96
+},
+{
+"i": 92,
+"text": "UTILISÉ,",
+"start": 36.96,
+"end": 37.36
+},
+{
+"i": 93,
+"text": "DEMANDE",
+"start": 37.52,
+"end": 38
+},
+{
+"i": 94,
+"text": "AUTOUR",
+"start": 38,
+"end": 38.32
+},
+{
+"i": 95,
+"text": "DE",
+"start": 38.32,
+"end": 38.4
+},
+{
+"i": 96,
+"text": "TOI.",
+"start": 38.4,
+"end": 38.64
+},
+{
+"i": 97,
+"text": "NUMÉRO",
+"start": 38.88,
+"end": 39.28
+},
+{
+"i": 98,
+"text": "4 :",
+"start": 39.28,
+"end": 39.6
+},
+{
+"i": 99,
+"text": "COMPARE",
+"start": 39.84,
+"end": 40.32
+},
+{
+"i": 100,
+"text": "LES",
+"start": 40.32,
+"end": 40.48
+},
+{
+"i": 101,
+"text": "PRIX.",
+"start": 40.48,
+"end": 40.72
+},
+{
+"i": 102,
+"text": "AU",
+"start": 40.96,
+"end": 41.12
+},
+{
+"i": 103,
+"text": "MARCHÉ,",
+"start": 41.12,
+"end": 41.44
+},
+{
+"i": 104,
+"text": "INTERROGE",
+"start": 41.68,
+"end": 42.32
+},
+{
+"i": 105,
+"text": "PLUSIEURS",
+"start": 42.32,
+"end": 42.56
+},
+{
+"i": 106,
+"text": "VENDEURS.",
+"start": 42.64,
+"end": 43.2
+},
+{
+"i": 107,
+"text": "NUMÉRO",
+"start": 43.36,
+"end": 43.84
+},
+{
+"i": 108,
+"text": "3 :",
+"start": 43.84,
+"end": 44.08
+},
+{
+"i": 109,
+"text": "ATTENDS",
+"start": 44.4,
+"end": 44.88
+},
+{
+"i": 110,
+"text": "AVANT",
+"start": 44.88,
+"end": 45.12
+},
+{
+"i": 111,
+"text": "D’ACHETER.",
+"start": 45.12,
+"end": 45.6
+},
+{
+"i": 112,
+"text": "LAISSE",
+"start": 45.84,
+"end": 46.16
+},
+{
+"i": 113,
+"text": "PASSER",
+"start": 46.16,
+"end": 46.4
+},
+{
+"i": 114,
+"text": "UNE",
+"start": 46.4,
+"end": 46.56
+},
+{
+"i": 115,
+"text": "NUIT",
+"start": 46.56,
+"end": 46.8
+},
+{
+"i": 116,
+"text": "AVANT",
+"start": 46.8,
+"end": 47.04
+},
+{
+"i": 117,
+"text": "UN",
+"start": 47.04,
+"end": 47.2
+},
+{
+"i": 118,
+"text": "ACHAT",
+"start": 47.2,
+"end": 47.52
+},
+{
+"i": 119,
+"text": "NON",
+"start": 47.52,
+"end": 47.68
+},
+{
+"i": 120,
+"text": "URGENT.",
+"start": 47.76,
+"end": 48.24
+},
+{
+"i": 121,
+"text": "NUMÉRO",
+"start": 48.4,
+"end": 48.8
+},
+{
+"i": 122,
+"text": "2 :",
+"start": 48.8,
+"end": 49.04
+},
+{
+"i": 123,
+"text": "ÉCRIS",
+"start": 49.28,
+"end": 49.68
+},
+{
+"i": 124,
+"text": "TA",
+"start": 49.76,
+"end": 50
+},
+{
+"i": 125,
+"text": "LISTE.",
+"start": 50,
+"end": 50.24
+},
+{
+"i": 126,
+"text": "AU",
+"start": 50.48,
+"end": 50.56
+},
+{
+"i": 127,
+"text": "MAGASIN,",
+"start": 50.64,
+"end": 51.12
+},
+{
+"i": 128,
+"text": "PRENDS",
+"start": 51.2,
+"end": 51.44
+},
+{
+"i": 129,
+"text": "SEULEMENT",
+"start": 51.52,
+"end": 51.84
+},
+{
+"i": 130,
+"text": "CE",
+"start": 51.84,
+"end": 52
+},
+{
+"i": 131,
+"text": "QUI",
+"start": 52,
+"end": 52.16
+},
+{
+"i": 132,
+"text": "EST",
+"start": 52.16,
+"end": 52.32
+},
+{
+"i": 133,
+"text": "NOTÉ.",
+"start": 52.32,
+"end": 52.72
+},
+{
+"i": 134,
+"text": "NUMÉRO",
+"start": 52.88,
+"end": 53.28
+},
+{
+"i": 135,
+"text": "1 :",
+"start": 53.28,
+"end": 53.52
+},
+{
+"i": 136,
+"text": "FIXE",
+"start": 53.76,
+"end": 54.24
+},
+{
+"i": 137,
+"text": "TON",
+"start": 54.24,
+"end": 54.4
+},
+{
+"i": 138,
+"text": "PLAFOND",
+"start": 54.4,
+"end": 54.96
+},
+{
+"i": 139,
+"text": "AVANT",
+"start": 54.96,
+"end": 55.2
+},
+{
+"i": 140,
+"text": "DE",
+"start": 55.2,
+"end": 55.36
+},
+{
+"i": 141,
+"text": "SORTIR.",
+"start": 55.36,
+"end": 55.68
+},
+{
+"i": 142,
+"text": "DÉCIDE",
+"start": 56,
+"end": 56.48
+},
+{
+"i": 143,
+"text": "COMBIEN",
+"start": 56.48,
+"end": 56.88
+},
+{
+"i": 144,
+"text": "DÉPENSER",
+"start": 56.88,
+"end": 57.28
+},
+{
+"i": 145,
+"text": "AU",
+"start": 57.28,
+"end": 57.44
+},
+{
+"i": 146,
+"text": "MAQUIS.",
+"start": 57.44,
+"end": 57.92
+},
+{
+"i": 147,
+"text": "RETIENS",
+"start": 58.16,
+"end": 58.64
+},
+{
+"i": 148,
+"text": "ÇA :",
+"start": 58.64,
+"end": 59.04
+},
+{
+"i": 149,
+"text": "CHAQUE",
+"start": 59.04,
+"end": 59.28
+},
+{
+"i": 150,
+"text": "DÉPENSE",
+"start": 59.36,
+"end": 59.84
+},
+{
+"i": 151,
+"text": "DOIT",
+"start": 59.84,
+"end": 60.16
+},
+{
+"i": 152,
+"text": "AVOIR",
+"start": 60.16,
+"end": 60.4
+},
+{
+"i": 153,
+"text": "UNE",
+"start": 60.4,
+"end": 60.48
+},
+{
+"i": 154,
+"text": "PLACE",
+"start": 60.48,
+"end": 60.72
+},
+{
+"i": 155,
+"text": "DANS",
+"start": 60.72,
+"end": 60.88
+},
+{
+"i": 156,
+"text": "TON",
+"start": 60.88,
+"end": 61.04
+},
+{
+"i": 157,
+"text": "BUDGET.",
+"start": 61.04,
+"end": 61.44
+},
+{
+"i": 158,
+"text": "À",
+"start": 61.75,
+"end": 62.07
+},
+{
+"i": 159,
+"text": "FAIRE :",
+"start": 62.07,
+"end": 62.39
+},
+{
+"i": 160,
+"text": "FIXE",
+"start": 62.55,
+"end": 63.03
+},
+{
+"i": 161,
+"text": "TON",
+"start": 63.03,
+"end": 63.19
+},
+{
+"i": 162,
+"text": "PLAFOND",
+"start": 63.19,
+"end": 63.67
+},
+{
+"i": 163,
+"text": "AVANT",
+"start": 63.75,
+"end": 63.99
+},
+{
+"i": 164,
+"text": "TA",
+"start": 63.99,
+"end": 64.15
+},
+{
+"i": 165,
+"text": "PROCHAINE",
+"start": 64.15,
+"end": 64.55
+},
+{
+"i": 166,
+"text": "SORTIE.",
+"start": 64.55,
+"end": 65.11
+},
+{
+"i": 167,
+"text": "ABONNE-TOI",
+"start": 65.11,
+"end": 65.67
+},
+{
+"i": 168,
+"text": "À",
+"start": 65.67,
+"end": 65.83
+},
+{
+"i": 169,
+"text": "LEFINANCIER.",
+"start": 65.83,
+"end": 66.55
+},
+{
+"i": 170,
+"text": "LAQUELLE",
+"start": 66.63,
+"end": 67.03
+},
+{
+"i": 171,
+"text": "VAS-TU",
+"start": 67.03,
+"end": 67.43
+},
+{
+"i": 172,
+"text": "TESTER ?",
+"start": 67.43,
+"end": 67.75
+}
+]

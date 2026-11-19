@@ -1,0 +1,33 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:Anton;src:url(src/Anton-Regular.woff2)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:1080px;height:1920px;overflow:hidden;background:#0C0C0C;font-family:Inter,sans-serif;position:relative}
+.abs{position:absolute}
+.anton{font-family:Anton;text-transform:uppercase;line-height:.92;letter-spacing:.5px}
+.fond{position:absolute;inset:0;background-size:cover;background-position:center}
+.nav{background:#1b1b1f;border-radius:22px;overflow:hidden;border:3px solid #333;box-shadow:0 30px 80px rgba(0,0,0,.7)}
+.nav .barre{height:46px;background:#2a2a30;display:flex;align-items:center;gap:12px;padding-left:20px}
+.nav .barre i{width:16px;height:16px;border-radius:50%;background:#555;display:block}
+.nav img{display:block;width:100%}
+.ombre{text-shadow:0 8px 0 #000,0 0 40px rgba(0,0,0,.8)}
+.contour{-webkit-text-stroke:10px #000;paint-order:stroke fill}
+.etiq{background:#DCFC1C;color:#0C0C0C;padding:10px 26px 4px}
+.case{width:150px;height:170px;border:8px solid #DCFC1C;border-radius:16px;background:#0C0C0C;display:flex;align-items:center;justify-content:center;color:#DCFC1C;font-family:Anton;font-size:120px;box-shadow:0 0 40px rgba(220,252,28,.55)}
+</style></head><body>
+<div class="fond" style="background-image:url(src/frustree.jpg);background-position:62% center;filter:brightness(.55) saturate(1.1)"></div>
+<div class="fond" style="background:linear-gradient(180deg,#0C0C0C 0%,rgba(12,12,12,.2) 38%,rgba(12,12,12,.15) 70%,#0C0C0C 100%)"></div>
+<div class="abs anton ombre" style="top:250px;left:0;right:0;text-align:center;color:#fff;font-size:150px">Ton site</div>
+<div class="abs anton contour" style="top:390px;left:0;right:0;text-align:center;color:#DCFC1C;font-size:300px">crie</div>
+<div class="abs nav" style="top:760px;left:110px;width:860px;transform:rotate(-4deg)"><div class="barre"><i></i><i></i><i></i></div><img src="src/siteia0.jpg"></div>
+<svg class="abs" style="top:770px;left:180px" width="720" height="260"><ellipse cx="360" cy="125" rx="330" ry="95" fill="none" stroke="#E8112D" stroke-width="12" transform="rotate(-4 360 125)"/></svg>
+<div class="abs anton" style="top:1210px;left:130px;transform:rotate(-7deg);background:#E8112D;color:#fff;font-size:120px;padding:18px 40px 8px;box-shadow:0 20px 50px rgba(0,0,0,.6);border:6px solid #fff">Fait par l'IA</div>
+<div class="abs" style="top:1440px;left:160px;display:flex;gap:30px"><div class="case">?</div><div class="case">?</div><div class="case">?</div></div>
+<div class="abs anton" style="top:1640px;left:160px;color:#fff;font-size:64px">Les <span style="color:#DCFC1C">3 signes</span></div>
+<div class="abs" style="top:1300px;right:70px"><svg width="169" height="380" viewBox="-10 -10 120 270" style="overflow:visible">
+<g fill="#DCFC1C" stroke="#000" stroke-width="10" stroke-linejoin="round">
+<rect x="24" y="136" width="24" height="112" rx="8"/><rect x="52" y="136" width="24" height="112" rx="8"/>
+<rect x="22" y="52" width="56" height="94" rx="12"/>
+<rect x="2" y="54" width="18" height="86" rx="8" transform="rotate(0 11 62)"/>
+<rect x="80" y="54" width="18" height="86" rx="8" transform="rotate(-150 89 62)"/>
+<circle cx="50" cy="24" r="22"/></g></svg></div>
+</body></html>

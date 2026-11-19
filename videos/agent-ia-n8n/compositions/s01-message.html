@@ -1,0 +1,59 @@
+<!-- Scène 1 · « Imagine que tu envoies simplement un message à ton téléphone : « Fais-moi un résumé… » » (0 → 6.76 s). Fichier écrit par un générateur, modifiable à la main. -->
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+    }
+
+  </style>
+  <div id="root" data-composition-id="s01-message" data-width="1920" data-height="1080">
+    <div class="pj-scene">
+      <div id="s01-message-cam" class="pj-cam">
+        <div id="s01-message-cadre" class="pj-cadre">
+        <div class="pj-horizon" style="top: 760px"></div>
+        <div id="s01-vid" class="pj-panneau" style="left: 113px; top: 230px; width: 720px; height: 405px; opacity: 0"><video id="s01-vid-v" class="clip" src="assets/video/message-nuit.mp4" data-start="0" data-duration="6.76" data-track-index="5" muted playsinline></video><div class="pj-equerres" style="left: -18px; top: -18px; right: -18px; bottom: -18px"><i></i><i></i><i></i><i></i></div><div id="s01-vid-tag" class="pj-panneau-tag">Toi, ce soir</div></div>
+        <svg id="s01-toi" class="pj-perso pj-toi-perso" viewBox="-30 -20 160 290" style="left: 939px; top: 495px; width: 182px; height: 330px"><g id="s01-toi-vie"><g id="s01-toi-corps"><g id="s01-toi-jg"><g class="c"><rect x="24" y="136" width="24" height="112" rx="8" /></g><g class="p"><rect x="24" y="136" width="24" height="112" rx="8" /></g></g><g id="s01-toi-jd"><g class="c"><rect x="52" y="136" width="24" height="112" rx="8" /></g><g class="p"><rect x="52" y="136" width="24" height="112" rx="8" /></g></g><g id="s01-toi-tronc"><g class="c"><rect x="22" y="52" width="56" height="94" rx="12" /></g><g class="p"><rect x="22" y="52" width="56" height="94" rx="12" /></g></g><g id="s01-toi-bg"><g class="c"><rect x="2" y="54" width="18" height="86" rx="9" /></g><g class="p"><rect x="2" y="54" width="18" height="86" rx="9" /></g></g><g id="s01-toi-bd"><g class="c"><rect x="80" y="54" width="18" height="86" rx="9" /></g><g class="p"><rect x="80" y="54" width="18" height="86" rx="9" /></g></g><g id="s01-toi-tete"><g class="c"><circle cx="50" cy="24" r="22" /></g><g class="p"><circle cx="50" cy="24" r="22" /></g></g></g></g></svg>
+        <div id="s01-tg" class="pj-tg" style="left: 1320px; top: 100px; width: 420px; height: 740px"><div class="pj-tg-tete"><img src="assets/img/logo-telegram.svg" alt="" /><b>Mon assistant IA</b></div><div class="pj-tg-conv"><div id="s01-tg-m1" class="pj-tg-bulle pj-tg-moi" style="opacity: 0"><span id="s01-tg-m1-10" style="opacity: 0"> Fais-moi</span> <span id="s01-tg-m1-11" style="opacity: 0">un</span> <span id="s01-tg-m1-12" style="opacity: 0">résumé</span> <span id="s01-tg-m1-13" style="opacity: 0">des</span> <span id="s01-tg-m1-14" style="opacity: 0">dernières</span> <span id="s01-tg-m1-15" style="opacity: 0">actualités</span> <span id="s01-tg-m1-16" style="opacity: 0">sur</span> <span id="s01-tg-m1-17" style="opacity: 0">l'intelligence</span> <span id="s01-tg-m1-18" style="opacity: 0">artificielle. </span></div></div><div class="pj-tg-champ"><span>Message</span><i></i></div></div>
+        </div>
+      </div>
+      <div id="s01-hud" class="pj-label" style="left: 113px; top: 107px; "><span class="pj-k">Imagine</span><span class="pj-d">Un simple message</span></div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#s01-message-cam", { scale: 1 }, { scale: 1.05, duration: 6.56, ease: "none" }, 0);
+    tl.set("#s01-vid", { opacity: 1 }, 0.0);
+    tl.fromTo("#s01-toi-vie", { y: 0 }, { y: -5, duration: 0.42, repeat: 14, yoyo: true, ease: "sine.inOut", immediateRender: false }, 0.0);
+    tl.to("#s01-toi-bg", { rotation: 110, svgOrigin: "11 62", duration: 0.16, ease: "back.out(2)" }, 1.2);
+    tl.to("#s01-toi-tete", { rotation: 6, svgOrigin: "50 50", duration: 0.16, ease: "back.out(2)" }, 1.2);
+    tl.to("#s01-message-cadre", { x: 566, y: 130, scale: 1.18, duration: 0.26, ease: "power3.inOut" }, 1.5);
+    tl.to("#s01-message-cadre", { keyframes: [{ filter: "blur(10px)", duration: 0.13 }, { filter: "blur(0px)", duration: 0.13 }] }, 1.5);
+    tl.to("#s01-toi-bg", { rotation: 0, svgOrigin: "11 62", duration: 0.12, ease: "power2.out" }, 2.32);
+    tl.to("#s01-toi-tete", { rotation: 0, svgOrigin: "50 50", duration: 0.12, ease: "power2.out" }, 2.32);
+    tl.to("#s01-toi-bg", { rotation: -28, svgOrigin: "11 62", duration: 0.15, ease: "power2.out" }, 2.86);
+    tl.to("#s01-toi-bd", { rotation: 28, svgOrigin: "89 62", duration: 0.15, ease: "power2.out" }, 2.86);
+    tl.to("#s01-toi-tete", { rotation: 10, svgOrigin: "50 50", duration: 0.15, ease: "power2.out" }, 2.86);
+    tl.to("#s01-toi-bg", { rotation: -18, svgOrigin: "11 62", duration: 0.11, repeat: 27, yoyo: true, ease: "sine.inOut" }, 3.01);
+    tl.to("#s01-toi-bd", { rotation: 38, svgOrigin: "89 62", duration: 0.11, repeat: 27, yoyo: true, ease: "sine.inOut" }, 3.065);
+    tl.to("#s01-toi-bg", { rotation: 0, svgOrigin: "11 62", duration: 0.2, ease: "power2.out" }, 6.22);
+    tl.to("#s01-toi-bd", { rotation: 0, svgOrigin: "89 62", duration: 0.2, ease: "power2.out" }, 6.22);
+    tl.to("#s01-toi-jg", { rotation: 0, svgOrigin: "36 142", duration: 0.2, ease: "power2.out" }, 6.22);
+    tl.to("#s01-toi-jd", { rotation: 0, svgOrigin: "64 142", duration: 0.2, ease: "power2.out" }, 6.22);
+    tl.to("#s01-toi-tete", { rotation: 0, svgOrigin: "50 50", duration: 0.2, ease: "power2.out" }, 6.22);
+    tl.fromTo("#s01-tg-m1", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.18, ease: "power3.out" }, 2.88);
+    tl.set("#s01-tg-m1-10", { opacity: 1 }, 2.96);
+    tl.set("#s01-tg-m1-11", { opacity: 1 }, 3.52);
+    tl.set("#s01-tg-m1-12", { opacity: 1 }, 3.6);
+    tl.set("#s01-tg-m1-13", { opacity: 1 }, 4);
+    tl.set("#s01-tg-m1-14", { opacity: 1 }, 4.16);
+    tl.set("#s01-tg-m1-15", { opacity: 1 }, 4.56);
+    tl.set("#s01-tg-m1-16", { opacity: 1 }, 5.04);
+    tl.set("#s01-tg-m1-17", { opacity: 1 }, 5.12);
+    tl.set("#s01-tg-m1-18", { opacity: 1 }, 5.92);
+    tl.to("#s01-message-cadre", { x: -741, y: 208, scale: 1.3, duration: 0.26, ease: "power3.inOut" }, 2.81);
+    tl.to("#s01-message-cadre", { keyframes: [{ filter: "blur(10px)", duration: 0.13 }, { filter: "blur(0px)", duration: 0.13 }] }, 2.81);
+    tl.to("#s01-message-cam", { scale: 1.3, filter: "blur(14px)", duration: 0.2, ease: "power3.in" }, 6.56);
+    window.__timelines["s01-message"] = tl;
+  </script>
+</template>

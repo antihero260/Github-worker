@@ -1,0 +1,1256 @@
+[
+{
+"i": 0,
+"text": "5",
+"start": 0.05,
+"end": 0.2
+},
+{
+"i": 1,
+"text": "SITES",
+"start": 0.2,
+"end": 0.53
+},
+{
+"i": 2,
+"text": "WEB",
+"start": 0.57,
+"end": 0.73
+},
+{
+"i": 3,
+"text": "DE",
+"start": 0.73,
+"end": 0.86
+},
+{
+"i": 4,
+"text": "BUSINESS",
+"start": 0.86,
+"end": 1.39
+},
+{
+"i": 5,
+"text": "QUE",
+"start": 1.39,
+"end": 1.55
+},
+{
+"i": 6,
+"text": "TU",
+"start": 1.55,
+"end": 1.65
+},
+{
+"i": 7,
+"text": "PEUX",
+"start": 1.65,
+"end": 1.81
+},
+{
+"i": 8,
+"text": "CRÉER",
+"start": 1.87,
+"end": 2.12
+},
+{
+"i": 9,
+"text": "AVEC",
+"start": 2.12,
+"end": 2.48
+},
+{
+"i": 10,
+"text": "L'IA",
+"start": 2.48,
+"end": 2.78
+},
+{
+"i": 11,
+"text": "ET",
+"start": 2.89,
+"end": 2.95
+},
+{
+"i": 12,
+"text": "VENDRE",
+"start": 2.95,
+"end": 3.28
+},
+{
+"i": 13,
+"text": "À",
+"start": 3.28,
+"end": 3.33
+},
+{
+"i": 14,
+"text": "DES",
+"start": 3.33,
+"end": 3.48
+},
+{
+"i": 15,
+"text": "CLIENTS.",
+"start": 3.55,
+"end": 3.85
+},
+{
+"i": 16,
+"text": "1.",
+"start": 3.95,
+"end": 4.9
+},
+{
+"i": 17,
+"text": "LE",
+"start": 4.9,
+"end": 5.05
+},
+{
+"i": 18,
+"text": "SITE",
+"start": 5.05,
+"end": 5.29
+},
+{
+"i": 19,
+"text": "D'UN",
+"start": 5.36,
+"end": 5.56
+},
+{
+"i": 20,
+"text": "RESTAURANT.",
+"start": 5.63,
+"end": 6.4
+},
+{
+"i": 21,
+"text": "IMAGINE",
+"start": 6.4,
+"end": 6.85
+},
+{
+"i": 22,
+"text": "UN",
+"start": 6.85,
+"end": 6.98
+},
+{
+"i": 23,
+"text": "SITE",
+"start": 6.98,
+"end": 7.23
+},
+{
+"i": 24,
+"text": "AVEC",
+"start": 7.23,
+"end": 7.48
+},
+{
+"i": 25,
+"text": "DES",
+"start": 7.48,
+"end": 7.66
+},
+{
+"i": 26,
+"text": "PHOTOS",
+"start": 7.66,
+"end": 7.75
+},
+{
+"i": 27,
+"text": "DE",
+"start": 7.96,
+"end": 8.18
+},
+{
+"i": 28,
+"text": "PLATS",
+"start": 8.42,
+"end": 8.54
+},
+{
+"i": 29,
+"text": "QUI",
+"start": 8.59,
+"end": 8.74
+},
+{
+"i": 30,
+"text": "DONNENT",
+"start": 8.74,
+"end": 9.2
+},
+{
+"i": 31,
+"text": "FAIM,",
+"start": 9.2,
+"end": 9.58
+},
+{
+"i": 32,
+"text": "UN",
+"start": 9.62,
+"end": 9.72
+},
+{
+"i": 33,
+"text": "MENU",
+"start": 9.72,
+"end": 9.93
+},
+{
+"i": 34,
+"text": "INTERACTIF,",
+"start": 10.02,
+"end": 10.77
+},
+{
+"i": 35,
+"text": "LES",
+"start": 10.77,
+"end": 10.97
+},
+{
+"i": 36,
+"text": "PRIX,",
+"start": 10.97,
+"end": 11.32
+},
+{
+"i": 37,
+"text": "LA",
+"start": 11.43,
+"end": 11.49
+},
+{
+"i": 38,
+"text": "RÉSERVATION",
+"start": 11.49,
+"end": 12.22
+},
+{
+"i": 39,
+"text": "DE",
+"start": 12.22,
+"end": 12.35
+},
+{
+"i": 40,
+"text": "TABLES",
+"start": 12.35,
+"end": 12.4
+},
+{
+"i": 41,
+"text": "ET",
+"start": 12.4,
+"end": 13.06
+},
+{
+"i": 42,
+"text": "MÊME",
+"start": 13.06,
+"end": 13.24
+},
+{
+"i": 43,
+"text": "LA",
+"start": 13.24,
+"end": 13.65
+},
+{
+"i": 44,
+"text": "COMMANDE",
+"start": 13.65,
+"end": 13.7
+},
+{
+"i": 45,
+"text": "EN",
+"start": 13.75,
+"end": 13.98
+},
+{
+"i": 46,
+"text": "LIGNE.",
+"start": 13.98,
+"end": 14.7
+},
+{
+"i": 47,
+"text": "2.",
+"start": 14.75,
+"end": 15.14
+},
+{
+"i": 48,
+"text": "LE",
+"start": 15.14,
+"end": 15.28
+},
+{
+"i": 49,
+"text": "SITE",
+"start": 15.28,
+"end": 15.57
+},
+{
+"i": 50,
+"text": "D'UNE",
+"start": 15.57,
+"end": 15.93
+},
+{
+"i": 51,
+"text": "AGENCE",
+"start": 15.93,
+"end": 16.35
+},
+{
+"i": 52,
+"text": "IMMOBILIÈRE.",
+"start": 16.36,
+"end": 17.2
+},
+{
+"i": 53,
+"text": "UN",
+"start": 17.2,
+"end": 17.31
+},
+{
+"i": 54,
+"text": "CATALOGUE",
+"start": 17.31,
+"end": 17.89
+},
+{
+"i": 55,
+"text": "DE",
+"start": 17.89,
+"end": 18.01
+},
+{
+"i": 56,
+"text": "MAISONS",
+"start": 18.01,
+"end": 18.39
+},
+{
+"i": 57,
+"text": "ET",
+"start": 18.39,
+"end": 18.51
+},
+{
+"i": 58,
+"text": "D'APPARTEMENTS",
+"start": 18.51,
+"end": 19.4
+},
+{
+"i": 59,
+"text": "AVEC",
+"start": 19.4,
+"end": 19.71
+},
+{
+"i": 60,
+"text": "DES",
+"start": 19.71,
+"end": 19.83
+},
+{
+"i": 61,
+"text": "VISITES",
+"start": 19.83,
+"end": 20.19
+},
+{
+"i": 62,
+"text": "VIRTUELLES,",
+"start": 20.23,
+"end": 20.88
+},
+{
+"i": 63,
+"text": "DES",
+"start": 20.88,
+"end": 21.05
+},
+{
+"i": 64,
+"text": "FILTRES",
+"start": 21.05,
+"end": 21.44
+},
+{
+"i": 65,
+"text": "DE",
+"start": 21.44,
+"end": 21.54
+},
+{
+"i": 66,
+"text": "RECHERCHE",
+"start": 21.55,
+"end": 22.05
+},
+{
+"i": 67,
+"text": "ET",
+"start": 22.06,
+"end": 22.17
+},
+{
+"i": 68,
+"text": "UN",
+"start": 22.17,
+"end": 22.27
+},
+{
+"i": 69,
+"text": "FORMULAIRE",
+"start": 22.27,
+"end": 22.84
+},
+{
+"i": 70,
+"text": "POUR",
+"start": 22.84,
+"end": 23.06
+},
+{
+"i": 71,
+"text": "CONTACTER",
+"start": 23.06,
+"end": 23.51
+},
+{
+"i": 72,
+"text": "DIRECTEMENT",
+"start": 24.18,
+"end": 24.26
+},
+{
+"i": 73,
+"text": "LES",
+"start": 24.31,
+"end": 24.59
+},
+{
+"i": 74,
+"text": "AGENTS.",
+"start": 24.59,
+"end": 25.26
+},
+{
+"i": 75,
+"text": "3.",
+"start": 25.31,
+"end": 25.66
+},
+{
+"i": 76,
+"text": "LE",
+"start": 25.66,
+"end": 25.79
+},
+{
+"i": 77,
+"text": "SITE",
+"start": 25.83,
+"end": 26.05
+},
+{
+"i": 78,
+"text": "D'UN",
+"start": 26.05,
+"end": 26.29
+},
+{
+"i": 79,
+"text": "SALON",
+"start": 26.3,
+"end": 26.62
+},
+{
+"i": 80,
+"text": "DE",
+"start": 26.62,
+"end": 26.76
+},
+{
+"i": 81,
+"text": "COIFFURE",
+"start": 26.76,
+"end": 27.29
+},
+{
+"i": 82,
+"text": "OU",
+"start": 27.29,
+"end": 27.42
+},
+{
+"i": 83,
+"text": "DE",
+"start": 27.42,
+"end": 27.54
+},
+{
+"i": 84,
+"text": "BEAUTÉ.",
+"start": 27.55,
+"end": 27.94
+},
+{
+"i": 85,
+"text": "PRÉSENTATION",
+"start": 27.94,
+"end": 28.73
+},
+{
+"i": 86,
+"text": "DES",
+"start": 28.73,
+"end": 28.93
+},
+{
+"i": 87,
+"text": "PRESTATIONS,",
+"start": 28.93,
+"end": 29.79
+},
+{
+"i": 88,
+"text": "GALERIE",
+"start": 29.79,
+"end": 30.42
+},
+{
+"i": 89,
+"text": "DES",
+"start": 30.47,
+"end": 30.63
+},
+{
+"i": 90,
+"text": "RÉALISATIONS,",
+"start": 30.63,
+"end": 31.61
+},
+{
+"i": 91,
+"text": "TARIFS",
+"start": 31.61,
+"end": 32.03
+},
+{
+"i": 92,
+"text": "ET",
+"start": 32.03,
+"end": 32.17
+},
+{
+"i": 93,
+"text": "SURTOUT",
+"start": 32.17,
+"end": 32.66
+},
+{
+"i": 94,
+"text": "UN",
+"start": 32.66,
+"end": 32.73
+},
+{
+"i": 95,
+"text": "SYSTÈME",
+"start": 32.81,
+"end": 33.2
+},
+{
+"i": 96,
+"text": "DE",
+"start": 33.31,
+"end": 33.43
+},
+{
+"i": 97,
+"text": "RÉSERVATION",
+"start": 33.43,
+"end": 34.2
+},
+{
+"i": 98,
+"text": "EN",
+"start": 34.2,
+"end": 34.27
+},
+{
+"i": 99,
+"text": "LIGNE.",
+"start": 34.74,
+"end": 34.9
+},
+{
+"i": 100,
+"text": "FINI",
+"start": 34.95,
+"end": 35.11
+},
+{
+"i": 101,
+"text": "LES",
+"start": 35.11,
+"end": 35.27
+},
+{
+"i": 102,
+"text": "RENDEZ-VOUS",
+"start": 35.27,
+"end": 35.87
+},
+{
+"i": 103,
+"text": "GÉRÉS",
+"start": 35.87,
+"end": 36.14
+},
+{
+"i": 104,
+"text": "UNIQUEMENT",
+"start": 36.14,
+"end": 36.68
+},
+{
+"i": 105,
+"text": "PAR",
+"start": 36.68,
+"end": 36.83
+},
+{
+"i": 106,
+"text": "MESSAGES !",
+"start": 36.84,
+"end": 37.3
+},
+{
+"i": 107,
+"text": "4.",
+"start": 37.35,
+"end": 37.78
+},
+{
+"i": 108,
+"text": "LE",
+"start": 37.78,
+"end": 37.94
+},
+{
+"i": 109,
+"text": "SITE",
+"start": 37.94,
+"end": 38.26
+},
+{
+"i": 110,
+"text": "D'UN",
+"start": 38.26,
+"end": 38.58
+},
+{
+"i": 111,
+"text": "COACH",
+"start": 38.58,
+"end": 38.96
+},
+{
+"i": 112,
+"text": "SPORTIF.",
+"start": 39.03,
+"end": 39.54
+},
+{
+"i": 113,
+"text": "PROGRAMMES",
+"start": 39.54,
+"end": 40.26
+},
+{
+"i": 114,
+"text": "D'ENTRAÎNEMENT,",
+"start": 40.26,
+"end": 41.54
+},
+{
+"i": 115,
+"text": "SUIVI",
+"start": 41.82,
+"end": 41.94
+},
+{
+"i": 116,
+"text": "DES",
+"start": 41.94,
+"end": 42
+},
+{
+"i": 117,
+"text": "CLIENTS,",
+"start": 42.49,
+"end": 43.32
+},
+{
+"i": 118,
+"text": "PRÉSENTATION",
+"start": 43.39,
+"end": 43.87
+},
+{
+"i": 119,
+"text": "DES",
+"start": 43.91,
+"end": 44.03
+},
+{
+"i": 120,
+"text": "FORMULES",
+"start": 44.03,
+"end": 44.38
+},
+{
+"i": 121,
+"text": "ET",
+"start": 44.42,
+"end": 44.48
+},
+{
+"i": 122,
+"text": "ESPACE",
+"start": 44.48,
+"end": 44.73
+},
+{
+"i": 123,
+"text": "POUR",
+"start": 44.8,
+"end": 44.94
+},
+{
+"i": 124,
+"text": "ACHETER",
+"start": 44.94,
+"end": 45.26
+},
+{
+"i": 125,
+"text": "DIRECTEMENT",
+"start": 45.26,
+"end": 45.77
+},
+{
+"i": 126,
+"text": "DES",
+"start": 45.77,
+"end": 45.91
+},
+{
+"i": 127,
+"text": "ACCOMPAGNEMENTS.",
+"start": 45.91,
+"end": 46.74
+},
+{
+"i": 128,
+"text": "5.",
+"start": 46.79,
+"end": 47.22
+},
+{
+"i": 129,
+"text": "LE",
+"start": 47.22,
+"end": 47.38
+},
+{
+"i": 130,
+"text": "SITE",
+"start": 47.38,
+"end": 47.71
+},
+{
+"i": 131,
+"text": "D'UNE",
+"start": 47.71,
+"end": 48.1
+},
+{
+"i": 132,
+"text": "ENTREPRISE",
+"start": 48.1,
+"end": 48.93
+},
+{
+"i": 133,
+"text": "DE",
+"start": 48.93,
+"end": 49.05
+},
+{
+"i": 134,
+"text": "SERVICES.",
+"start": 49.13,
+"end": 49.67
+},
+{
+"i": 135,
+"text": "PLOMBIER,",
+"start": 49.67,
+"end": 50.47
+},
+{
+"i": 136,
+"text": "ÉLECTRICIEN,",
+"start": 50.47,
+"end": 51.44
+},
+{
+"i": 137,
+"text": "MÉCANICIEN",
+"start": 51.68,
+"end": 52.46
+},
+{
+"i": 138,
+"text": "OU",
+"start": 52.46,
+"end": 52.5
+},
+{
+"i": 139,
+"text": "ENTREPRISE",
+"start": 52.5,
+"end": 53.05
+},
+{
+"i": 140,
+"text": "DE",
+"start": 53.05,
+"end": 53.11
+},
+{
+"i": 141,
+"text": "NETTOYAGE :",
+"start": 53.19,
+"end": 53.82
+},
+{
+"i": 142,
+"text": "PRÉSENTATION",
+"start": 53.82,
+"end": 54.49
+},
+{
+"i": 143,
+"text": "DES",
+"start": 54.49,
+"end": 54.67
+},
+{
+"i": 144,
+"text": "SERVICES,",
+"start": 54.67,
+"end": 55.24
+},
+{
+"i": 145,
+"text": "TÉMOIGNAGES",
+"start": 55.24,
+"end": 55.92
+},
+{
+"i": 146,
+"text": "CLIENTS,",
+"start": 56.03,
+"end": 56.7
+},
+{
+"i": 147,
+"text": "DEMANDE",
+"start": 56.7,
+"end": 56.99
+},
+{
+"i": 148,
+"text": "DE",
+"start": 56.99,
+"end": 57.2
+},
+{
+"i": 149,
+"text": "DEVIS",
+"start": 57.2,
+"end": 57.5
+},
+{
+"i": 150,
+"text": "ET",
+"start": 57.5,
+"end": 57.66
+},
+{
+"i": 151,
+"text": "PRISE",
+"start": 57.66,
+"end": 57.84
+},
+{
+"i": 152,
+"text": "DE",
+"start": 57.84,
+"end": 58.33
+},
+{
+"i": 153,
+"text": "CONTACT",
+"start": 58.33,
+"end": 58.42
+},
+{
+"i": 154,
+"text": "RAPIDE.",
+"start": 58.47,
+"end": 59.42
+},
+{
+"i": 155,
+"text": "ET",
+"start": 59.47,
+"end": 59.52
+},
+{
+"i": 156,
+"text": "LE",
+"start": 59.52,
+"end": 59.62
+},
+{
+"i": 157,
+"text": "PLUS",
+"start": 59.62,
+"end": 59.82
+},
+{
+"i": 158,
+"text": "INTÉRESSANT,",
+"start": 59.82,
+"end": 60.46
+},
+{
+"i": 159,
+"text": "C'EST",
+"start": 60.5,
+"end": 60.73
+},
+{
+"i": 160,
+"text": "QUE",
+"start": 60.73,
+"end": 60.81
+},
+{
+"i": 161,
+"text": "TU",
+"start": 60.88,
+"end": 60.97
+},
+{
+"i": 162,
+"text": "N'AS",
+"start": 60.99,
+"end": 61.18
+},
+{
+"i": 163,
+"text": "PAS",
+"start": 61.18,
+"end": 61.33
+},
+{
+"i": 164,
+"text": "BESOIN",
+"start": 61.33,
+"end": 61.62
+},
+{
+"i": 165,
+"text": "DE",
+"start": 61.63,
+"end": 61.73
+},
+{
+"i": 166,
+"text": "POSSÉDER",
+"start": 61.73,
+"end": 62.13
+},
+{
+"i": 167,
+"text": "CES",
+"start": 62.13,
+"end": 62.2
+},
+{
+"i": 168,
+"text": "ENTREPRISES",
+"start": 62.31,
+"end": 62.89
+},
+{
+"i": 169,
+"text": "POUR",
+"start": 62.9,
+"end": 63.02
+},
+{
+"i": 170,
+"text": "CRÉER",
+"start": 63.07,
+"end": 63.33
+},
+{
+"i": 171,
+"text": "LEURS",
+"start": 63.33,
+"end": 63.675
+},
+{
+"i": 172,
+"text": "SITES.",
+"start": 63.675,
+"end": 64.02
+},
+{
+"i": 173,
+"text": "TU",
+"start": 64.02,
+"end": 64.14
+},
+{
+"i": 174,
+"text": "PEUX",
+"start": 64.14,
+"end": 64.38
+},
+{
+"i": 175,
+"text": "UTILISER",
+"start": 64.38,
+"end": 64.89
+},
+{
+"i": 176,
+"text": "L'IA",
+"start": 64.89,
+"end": 65.13
+},
+{
+"i": 177,
+"text": "POUR",
+"start": 65.13,
+"end": 65.33
+},
+{
+"i": 178,
+"text": "LES",
+"start": 65.41,
+"end": 65.57
+},
+{
+"i": 179,
+"text": "CONCEVOIR,",
+"start": 65.57,
+"end": 66.3
+},
+{
+"i": 180,
+"text": "PUIS",
+"start": 66.3,
+"end": 66.49
+},
+{
+"i": 181,
+"text": "PROPOSER",
+"start": 66.5,
+"end": 66.87
+},
+{
+"i": 182,
+"text": "TES",
+"start": 66.87,
+"end": 67.083
+},
+{
+"i": 183,
+"text": "SERVICES",
+"start": 67.083,
+"end": 67.297
+},
+{
+"i": 184,
+"text": "À",
+"start": 67.297,
+"end": 67.51
+},
+{
+"i": 185,
+"text": "DES",
+"start": 67.51,
+"end": 67.66
+},
+{
+"i": 186,
+"text": "ENTREPRENEURS",
+"start": 67.66,
+"end": 68.31
+},
+{
+"i": 187,
+"text": "QUI",
+"start": 68.31,
+"end": 68.46
+},
+{
+"i": 188,
+"text": "ONT",
+"start": 68.46,
+"end": 68.61
+},
+{
+"i": 189,
+"text": "BESOIN",
+"start": 68.61,
+"end": 68.85
+},
+{
+"i": 190,
+"text": "D'UNE",
+"start": 68.92,
+"end": 69.12
+},
+{
+"i": 191,
+"text": "PRÉSENCE",
+"start": 69.19,
+"end": 69.56
+},
+{
+"i": 192,
+"text": "PROFESSIONNELLE",
+"start": 69.56,
+"end": 70.24
+},
+{
+"i": 193,
+"text": "SUR",
+"start": 70.35,
+"end": 70.45
+},
+{
+"i": 194,
+"text": "INTERNET.",
+"start": 70.46,
+"end": 71.06
+},
+{
+"i": 195,
+"text": "TON",
+"start": 71.11,
+"end": 71.21
+},
+{
+"i": 196,
+"text": "PROCHAIN",
+"start": 71.22,
+"end": 71.65
+},
+{
+"i": 197,
+"text": "BUSINESS",
+"start": 71.65,
+"end": 72.08
+},
+{
+"i": 198,
+"text": "SE",
+"start": 72.08,
+"end": 72.18
+},
+{
+"i": 199,
+"text": "TROUVE",
+"start": 72.18,
+"end": 72.45
+},
+{
+"i": 200,
+"text": "PEUT-ÊTRE",
+"start": 72.52,
+"end": 72.97
+},
+{
+"i": 201,
+"text": "DANS",
+"start": 72.97,
+"end": 73.18
+},
+{
+"i": 202,
+"text": "LE",
+"start": 73.18,
+"end": 73.27
+},
+{
+"i": 203,
+"text": "SITE",
+"start": 73.28,
+"end": 73.49
+},
+{
+"i": 204,
+"text": "WEB",
+"start": 73.49,
+"end": 73.65
+},
+{
+"i": 205,
+"text": "QUE",
+"start": 73.65,
+"end": 73.81
+},
+{
+"i": 206,
+"text": "TU",
+"start": 73.81,
+"end": 73.84
+},
+{
+"i": 207,
+"text": "VAS",
+"start": 73.95,
+"end": 74.07
+},
+{
+"i": 208,
+"text": "CRÉER.",
+"start": 74.07,
+"end": 74.46
+}
+]

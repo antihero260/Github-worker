@@ -1,0 +1,269 @@
+<title>Prompt Lefinancier</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;600&display=swap">
+<style>
+/* Une colonne : bouton Copier collé en haut, choix du sujet, prompt lisible dessous. Couleurs de la chaîne. */
+:root {
+  --nuit: #0B1220; --carte: #121C30; --ligne: #22324F;
+  --ciel: #38BDF8; --texte: #E6EEF8; --doux: #93A6C2;
+  --titre: "Space Grotesk", "Segoe UI", system-ui, sans-serif;
+  --corps: "Inter", "Segoe UI", system-ui, sans-serif;
+  color-scheme: dark;
+}
+body { background: var(--nuit); color: var(--texte); font-family: var(--corps); font-size: 15px; line-height: 1.55; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--nuit); }
+.page { max-width: 760px; margin: 0 auto; padding-block: 20px 40px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); display: flex; flex-direction: column; gap: 18px; }
+h1 { font-family: var(--titre); font-size: 26px; margin: 0; text-wrap: balance; }
+h1 span { color: var(--ciel); }
+.aide { color: var(--doux); margin: 4px 0 0; }
+.barre { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--nuit); padding-block: 10px; }
+#copier { width: 100%; font: 700 19px var(--titre); background: var(--ciel); color: var(--nuit); border: 0; border-radius: 12px; padding: 16px; cursor: pointer; }
+#copier:focus-visible { outline: 3px solid var(--texte); outline-offset: 3px; }
+#copier.ok { background: var(--texte); }
+.label { font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--doux); margin-bottom: 8px; }
+.sujets { display: flex; flex-wrap: wrap; gap: 8px; }
+.sujets button { font: 600 14px var(--corps); color: var(--texte); background: var(--carte); border: 1px solid var(--ligne); border-radius: 999px; padding: 8px 14px; cursor: pointer; text-align: left; }
+.sujets button[aria-pressed="true"] { border-color: var(--ciel); color: var(--ciel); }
+.sujets button:focus-visible { outline: 2px solid var(--ciel); outline-offset: 2px; }
+#prompt { background: var(--carte); border: 1px solid var(--ligne); border-radius: 12px; padding: 18px; white-space: pre-wrap; word-wrap: break-word; font: 14px/1.6 var(--corps); margin: 0; min-width: 0; }
+#prompt mark { background: none; color: var(--ciel); font-weight: 600; }
+@media (prefers-reduced-motion: no-preference) { #copier { transition: background .2s; } }
+</style>
+
+<div class="page">
+  <header>
+    <h1>Prompts <span>Lefinancier</span></h1>
+    <p class="aide">Choisis le format et le sujet, appuie sur le bouton, puis colle dans ChatGPT, Claude ou Gemini. Les deux formats finissent par « À retenir » et « À faire ».</p>
+  </header>
+
+  <div class="barre"><button id="copier" type="button">Copier le prompt</button></div>
+
+  <section>
+    <div class="label">Format</div>
+    <div class="sujets" id="formats"></div>
+  </section>
+
+  <section>
+    <div class="label">Sujet de la vidéo</div>
+    <div class="sujets" id="sujets"></div>
+  </section>
+
+  <pre id="prompt"></pre>
+</div>
+
+<script type="text/plain" id="modele">Tu es scénariste de vidéos courtes (TikTok, Reels) pour « Lefinancier », une chaîne qui explique l'argent aux jeunes de Côte d'Ivoire avec des histoires. Écris le texte d'une vidéo de 45 à 60 secondes (130 à 160 mots).
+
+SUJET : {{SUJET}}
+
+LE BUT : À LA FIN, LE SPECTATEUR SAIT EXACTEMENT QUOI RETENIR ET QUOI FAIRE
+Quelqu'un qui regarde seulement les 10 dernières secondes doit pouvoir répondre sans hésiter à deux questions :
+1. « Qu'est-ce que je retiens ? » → une règle en une phrase.
+2. « Qu'est-ce que je fais maintenant ? » → un geste simple à faire aujourd'hui ou cette semaine.
+Tout le texte sert à amener ces deux phrases. L'histoire est le chemin, la règle et le geste sont la destination.
+
+RÈGLE N° 1 : ON COMPREND LE SUJET EN 3 SECONDES
+- La première phrase dit clairement de quoi parle la vidéo, avec des mots de tous les jours, et pose une question ou un enjeu. Exemples : « Voici comment on vide ton compte Wave en 30 secondes. » ; « Ton salaire disparaît avant le 15 ? Voici pourquoi. »
+- Interdit de commencer par une histoire mystérieuse sans dire le sujet.
+
+RÈGLE N° 2 : LA FIN EST LA PARTIE LA PLUS CLAIRE DE LA VIDÉO
+Les 10 à 15 dernières secondes suivent toujours cet ordre, sans rien ajouter entre :
+a) La réponse à la question du début, en une phrase qui commence par « Donc » ou « La vraie raison : ».
+b) « Retiens ça : » puis LA RÈGLE.
+   - 12 mots au maximum, affirmative et nette.
+   - Interdit : « pas toujours », « parfois », « peut-être », « ce n'est pas X mais Y » (on dit directement ce qui est vrai).
+   - Elle se comprend seule, sans connaître l'histoire, et s'écrit sur un écran de téléphone.
+   - Exemple : « Retiens ça : ce sont les petites dépenses qui vident ton compte. »
+c) « À faire : » puis LE GESTE.
+   - 12 mots au maximum, commence par un verbe, gratuit, possible dès aujourd'hui, valable pour tout le monde.
+   - Exemples : « Ce soir, note tout ce que tu as dépensé aujourd'hui. » ; « Avant de renvoyer de l'argent, appelle d'abord ton opérateur. »
+   - Ce n'est pas un conseil d'investissement : pas de produit, pas de banque, pas de montant à placer.
+d) « Abonne-toi à Lefinancier » puis une question courte pour les commentaires, liée au geste ou à l'histoire. Rien après.
+
+RÈGLE N° 3 : PRESQUE PAS DE CHIFFRES
+- 3 chiffres au maximum dans tout le texte, ronds (5 000, 100 000, 1 million). Un seul chiffre « choc ».
+- Aucun calcul à suivre. Si un calcul est nécessaire, donne seulement le résultat.
+- Une seule idée par vidéo : celle de la règle.
+
+RÈGLE N° 4 : UN SUJET QUE LE SPECTATEUR VIT CETTE SEMAINE
+- Le spectateur doit se reconnaître : arnaques, fin du mois, salaire qui disparaît, petites dépenses, téléphone à crédit, tontine qui tourne mal, ami qui ne rembourse pas, économiser, deuxième revenu.
+
+C'EST UNE HISTOIRE, PAS UN COURS
+- Un personnage principal inventé avec un prénom non africain (Tom, Hugo, Emma, Julie, Léa, Lucas...). Un deuxième personnage seulement s'il sert à l'histoire.
+- Le personnage veut quelque chose de concret. Quelque chose se met en travers. On sent ce qu'il ressent (honte, panique, fierté) par ses actes, pas par des adjectifs.
+- Enchaîne avec « mais » et « donc », jamais « et puis ». La tension monte jusqu'à la chute.
+- La chute montre la règle en action : le spectateur voit l'erreur avant qu'on la nomme.
+- Le sujet se rappelle une fois au milieu, en une phrase.
+
+STRUCTURE (avec le temps visé)
+1. 0–3 s : le sujet et la question, en clair.
+2. 3–10 s : le personnage et ce qu'il veut.
+3. 10–35 s : deux rebondissements « mais / donc ».
+4. 35–42 s : la chute, ce qui s'est vraiment passé.
+5. 42–55 s : la fin claire (a, b, c, d de la règle n° 2).
+
+LES CHIFFRES ET LES FAITS
+- Réalistes pour la Côte d'Ivoire et vérifiables (BCEAO, INS, police, banques ou opérateurs). N'invente aucune statistique et donne la source de chaque chiffre.
+
+INTERDITS
+- Aucun jeu d'argent (paris, casino, loterie, tickets), même pour les critiquer.
+- Aucun conseil personnalisé ni nom de produit à acheter. On explique, on ne recommande pas.
+- Pour les arnaques : expliquer comment s'en protéger, jamais comment les faire.
+- Pas de morale lourde, pas de phrases creuses. Ne parle jamais du parcours ou des diplômes de l'auteur.
+
+CE QUE TU ME RENDS
+1. Le titre (6 mots maximum) : le sujet dit en clair.
+2. Trois premières phrases possibles. Dis laquelle est la meilleure.
+3. Le texte complet de la voix off en un seul bloc (130 à 160 mots), avec la meilleure première phrase.
+4. À ÉCRIRE À L'ÉCRAN À LA FIN :
+   - À RETENIR : la règle (12 mots maximum) ;
+   - À FAIRE : le geste (12 mots maximum).
+   Les deux phrases doivent être mot pour mot dans la voix off.
+5. Les chiffres utilisés (3 au maximum) avec leur source.
+6. Une description courte qui redit la règle, et 5 hashtags maximum.
+
+Avant de répondre, vérifie et corrige si besoin :
+- Quelqu'un qui n'entend que la première phrase sait-il de quoi parle la vidéo ?
+- Quelqu'un qui n'entend que les 10 dernières secondes sait-il quoi retenir ET quoi faire ?
+- La règle est-elle affirmative, sans « pas toujours », « parfois » ni « ce n'est pas X mais Y » ?
+- Le geste commence-t-il par un verbe et peut-il se faire aujourd'hui, gratuitement ?
+- Y a-t-il plus de 3 chiffres ? Une seule idée ? Entre 130 et 160 mots ?</script>
+
+<script type="text/plain" id="modele-liste">Tu es scénariste de vidéos courtes (TikTok, Reels) pour « Lefinancier », une chaîne qui explique l'argent aux jeunes de Côte d'Ivoire. Écris le texte d'une vidéo au FORMAT LISTE de 60 à 75 secondes (170 à 200 mots).
+
+SUJET : {{SUJET}}
+
+LE BUT : CHAQUE TECHNIQUE SE RETIENT, ET À LA FIN LE SPECTATEUR SAIT QUOI FAIRE
+Quelqu'un qui regarde seulement les 10 dernières secondes doit pouvoir répondre sans hésiter :
+1. « Qu'est-ce que je retiens ? » → une règle en une phrase.
+2. « Qu'est-ce que je fais maintenant ? » → une technique précise à commencer aujourd'hui.
+
+RÈGLE N° 1 : ON COMPREND LE SUJET EN 3 SECONDES
+- La première phrase annonce la liste et la promesse, avec des mots de tous les jours. Exemple : « 10 techniques pour dépenser moins sans te priver. La numéro 1, presque personne ne la fait. »
+- Pas d'introduction : on entre dans la liste dès la 2e ou la 3e phrase.
+
+RÈGLE N° 2 : UN COMPTE À REBOURS DE 10 À 1
+- On part de la numéro 10 et on finit par la numéro 1, la plus efficace et la plus surprenante. Les techniques montent en force.
+- Chaque technique suit TOUJOURS le même moule, très court :
+  « Numéro X : [nom de la technique, 5 mots maximum]. » + UNE phrase concrète de 15 mots maximum (un exemple de la vie de tous les jours en Côte d'Ivoire : mobile money, taxi, marché, maquis, crédit téléphone, livraison, tontine…).
+- Le nom de la technique commence par un verbe et s'écrit sur un écran de téléphone (exemples : « Attends 24 heures avant d'acheter », « Retire seulement ton budget de la semaine »).
+- Une seule idée par technique. Pas de technique vague (« fais attention », « sois raisonnable ») : chacune doit être un geste précis qu'on peut faire dès demain.
+- Un personnage fil rouge en une seule phrase au début (prénom non africain, par exemple Lucas) qui teste les techniques ; on peut le citer dans deux ou trois exemples, pas plus.
+
+RÈGLE N° 3 : GARDER LE SPECTATEUR JUSQU'AU BOUT
+- Après la numéro 6, une phrase courte de relance qui donne envie d'attendre la numéro 1 (exemple : « Et la numéro 1 change tout. »).
+- Pas de répétition, pas de remplissage entre les techniques.
+
+RÈGLE N° 4 : LA FIN EST LA PARTIE LA PLUS CLAIRE
+Juste après la numéro 1, dans cet ordre, sans rien ajouter entre :
+a) « Retiens ça : » puis LA RÈGLE, qui résume toute la liste. 12 mots au maximum, affirmative et nette. Interdit : « pas toujours », « parfois », « peut-être », « ce n'est pas X mais Y ».
+b) « À faire : » puis LE GESTE : une des techniques de la liste à commencer aujourd'hui. 12 mots au maximum, commence par un verbe, gratuit.
+c) « Abonne-toi à Lefinancier » puis une question courte pour les commentaires (exemple : « Laquelle tu fais déjà ? »). Rien après.
+
+RÈGLE N° 5 : PRESQUE PAS DE CHIFFRES
+- Les numéros de 10 à 1 ne comptent pas. En dehors d'eux : 2 chiffres au maximum dans tout le texte, ronds (5 000, 100 000).
+- Aucun calcul, aucun pourcentage.
+
+LES FAITS
+- Réalistes pour la Côte d'Ivoire et vérifiables. N'invente aucune statistique ; donne la source de chaque chiffre.
+
+INTERDITS
+- Aucun jeu d'argent (paris, casino, loterie, tickets), même pour les critiquer.
+- Aucun conseil d'investissement, aucun nom de produit, de banque, d'application ou de marque à acheter. Les techniques sont des gestes gratuits.
+- Rien d'illégal ou de dangereux pour la santé (ne pas sauter de repas, ne pas arrêter un traitement…).
+- Pas de morale lourde, pas de phrases creuses. Ne parle jamais du parcours ou des diplômes de l'auteur.
+
+CE QUE TU ME RENDS
+1. Le titre (6 mots maximum) : le sujet dit en clair.
+2. Trois premières phrases possibles. Dis laquelle est la meilleure.
+3. Le texte complet de la voix off en un seul bloc (170 à 200 mots), avec la meilleure première phrase.
+4. LA LISTE À ÉCRIRE À L'ÉCRAN : pour chaque numéro de 10 à 1, sur une ligne :
+   numéro | nom de la technique (5 mots maximum, mot pour mot comme dans la voix) | une idée de vraie vidéo pour l'illustrer, en 3 mots-clés anglais (pour chercher sur une banque de vidéos libres).
+5. À ÉCRIRE À L'ÉCRAN À LA FIN :
+   - À RETENIR : la règle (12 mots maximum) ;
+   - À FAIRE : le geste (12 mots maximum).
+   Les deux phrases doivent être mot pour mot dans la voix off.
+6. Les chiffres utilisés (2 au maximum hors numéros) avec leur source.
+7. Une description courte qui redit la règle, et 5 hashtags maximum.
+
+Avant de répondre, vérifie et corrige si besoin :
+- La première phrase annonce-t-elle clairement la liste et le sujet ?
+- Y a-t-il bien 10 techniques, de 10 à 1, chacune avec un nom de 5 mots maximum qui commence par un verbe ?
+- Chaque technique est-elle un geste précis, gratuit, faisable dès demain ?
+- La numéro 1 est-elle la plus forte ?
+- Quelqu'un qui n'entend que les 10 dernières secondes sait-il quoi retenir ET quoi faire ?
+- Le texte fait-il entre 170 et 200 mots ?</script>
+
+<script>
+(function () {
+  var FORMATS = [
+    { nom: "Histoire (storytelling) · v3", modele: document.getElementById("modele").textContent, sujets: [
+      ["Arnaques au mobile money", "Les arnaques au mobile money (le faux « je me suis trompé de numéro, renvoie-moi l'argent » et les faux agents) : comment elles marchent et comment s'en protéger."],
+      ["Le salaire qui disparaît", "Pourquoi ton salaire disparaît avant le 15 du mois (les petites dépenses invisibles qu'on ne compte pas)."],
+      ["La méthode des enveloppes", "La méthode des enveloppes : partager son argent dès qu'on le reçoit pour ne plus être à sec en fin de mois."],
+      ["« Investis 10 000, gagne 100 000 »", "Les fausses promesses « investis 10 000, gagne 100 000 en une semaine » (systèmes pyramidaux) : pourquoi ça finit toujours mal."],
+      ["L'iPhone à crédit", "Acheter un téléphone à crédit : pourquoi on paie bien plus que le prix affiché."],
+      ["La tontine qui disparaît", "Quand la personne qui garde la caisse de la tontine disparaît : comment se protéger avant de cotiser."],
+      ["Prêter à un ami", "Prêter de l'argent à un ami : comment perdre l'argent et l'ami, et comment l'éviter."],
+      ["Le défi des 52 semaines", "Le défi des 52 semaines : mettre un peu de côté chaque semaine et voir le total à la fin de l'année."]
+    ]},
+    { nom: "Liste « 10 techniques » · v1", modele: document.getElementById("modele-liste").textContent, sujets: [
+      ["Dépenser moins sans souffrir", "Dépenser moins sans souffrir : 10 techniques simples et gratuites pour dépenser moins chaque mois sans te priver de ce qui compte."],
+      ["Économiser avec un petit salaire", "10 techniques pour économiser chaque mois, même avec un petit salaire."],
+      ["Tenir jusqu'à la fin du mois", "10 techniques pour ne plus être à sec avant la fin du mois."],
+      ["Éviter les arnaques", "10 techniques pour ne jamais te faire arnaquer sur mobile money et sur les réseaux sociaux."],
+      ["Dire non sans gêne", "10 techniques pour refuser de prêter ou de dépenser sans te fâcher avec tes proches."],
+      ["Préparer un gros achat", "10 techniques pour préparer un gros achat (moto, téléphone, loyer d'avance) sans t'endetter."]
+    ]}
+  ];
+  var zone = document.getElementById("prompt");
+  var listeF = document.getElementById("formats");
+  var liste = document.getElementById("sujets");
+  var bouton = document.getElementById("copier");
+  var f = 1, choix = 0;
+
+  function texte() { return FORMATS[f].modele.replace("{{SUJET}}", FORMATS[f].sujets[choix][1]); }
+  function echapper(s) { return s.replace(/&/g, "&amp;").replace(/</g, "&lt;"); }
+  function marquer(conteneur, actif) {
+    Array.prototype.forEach.call(conteneur.children, function (b, i) { b.setAttribute("aria-pressed", i === actif ? "true" : "false"); });
+  }
+  function afficherSujets() {
+    liste.innerHTML = "";
+    FORMATS[f].sujets.forEach(function (s, i) {
+      var b = document.createElement("button");
+      b.type = "button"; b.textContent = s[0];
+      b.addEventListener("click", function () { choix = i; afficher(); });
+      liste.appendChild(b);
+    });
+  }
+  function afficher() {
+    var parties = FORMATS[f].modele.split("{{SUJET}}");
+    zone.innerHTML = echapper(parties[0]) + "<mark>" + echapper(FORMATS[f].sujets[choix][1]) + "</mark>" + echapper(parties[1]);
+    marquer(listeF, f); marquer(liste, choix);
+  }
+  FORMATS.forEach(function (fo, i) {
+    var b = document.createElement("button");
+    b.type = "button"; b.textContent = fo.nom;
+    b.addEventListener("click", function () { f = i; choix = 0; afficherSujets(); afficher(); });
+    listeF.appendChild(b);
+  });
+  afficherSujets();
+  afficher();
+
+  function reussi() {
+    bouton.textContent = "Copié ! Colle-le dans l'IA";
+    bouton.classList.add("ok");
+    setTimeout(function () { bouton.textContent = "Copier le prompt"; bouton.classList.remove("ok"); }, 2500);
+  }
+  function selectionner() {
+    var r = document.createRange(); r.selectNodeContents(zone);
+    var sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(r);
+    bouton.textContent = "Texte sélectionné : fais Copier";
+  }
+  bouton.addEventListener("click", function () {
+    var t = texte();
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(t).then(reussi, selectionner);
+    } else { selectionner(); }
+  });
+})();
+</script>

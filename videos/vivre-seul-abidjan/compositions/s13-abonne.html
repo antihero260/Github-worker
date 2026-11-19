@@ -1,0 +1,73 @@
+<!-- Abonne-toi à Lefinancier. Tu prévois combien pour ton premier logement ? (124.98 → 130.4 s). Écrit par tools/construire-scenes.py. -->
+<template>
+  <style>
+    #root { position: absolute; inset: 0; }
+  </style>
+  <div id="root" data-composition-id="s13-abonne" data-width="1080" data-height="1920">
+    <div class="sc">
+      <div id="s13-abonne-cam" class="sc-cam">
+        <div id="s13-abonne-cadre" class="sc-cadre">
+        <div class="decor"><div class="ciel" style="background: radial-gradient(ellipse 90% 60% at 50% 40%, #16346a 0%, #0b1220 78%)"></div></div>
+        <div id="a-carte" class="profil" style="left: 140px; top: 330px; opacity: 0"><img src="assets/img/profil.png" alt="" /><div><b>Lefinancier</b><span>L’argent expliqué simplement</span></div><div id="a-btn" class="btn">S’abonner</div><div id="a-ok" class="btn ok" style="opacity: 0">Abonné ✓</div></div>
+        <svg id="a-souris" class="souris" viewBox="0 0 40 52" style="left: 980px; top: 900px"><path d="M4 2 L4 40 L14 31 L21 48 L28 45 L21 29 L34 29 Z" fill="#fff" stroke="#0B1220" stroke-width="3" stroke-linejoin="round" /></svg>
+        <i id="a-cf-0" style="position: absolute; left: 720px; top: 620px; width: 14px; height: 14px; background: #38BDF8; opacity: 0"></i>
+        <i id="a-cf-1" style="position: absolute; left: 720px; top: 620px; width: 22px; height: 12px; background: #F2B705; opacity: 0"></i>
+        <i id="a-cf-2" style="position: absolute; left: 720px; top: 620px; width: 14px; height: 14px; background: #F1F5F9; opacity: 0"></i>
+        <i id="a-cf-3" style="position: absolute; left: 720px; top: 620px; width: 22px; height: 12px; background: #7DD3FC; opacity: 0"></i>
+        <i id="a-cf-4" style="position: absolute; left: 720px; top: 620px; width: 14px; height: 14px; background: #38BDF8; opacity: 0"></i>
+        <i id="a-cf-5" style="position: absolute; left: 720px; top: 620px; width: 22px; height: 12px; background: #F2B705; opacity: 0"></i>
+        <i id="a-cf-6" style="position: absolute; left: 720px; top: 620px; width: 14px; height: 14px; background: #F1F5F9; opacity: 0"></i>
+        <i id="a-cf-7" style="position: absolute; left: 720px; top: 620px; width: 22px; height: 12px; background: #7DD3FC; opacity: 0"></i>
+        <i id="a-cf-8" style="position: absolute; left: 720px; top: 620px; width: 14px; height: 14px; background: #38BDF8; opacity: 0"></i>
+        <i id="a-cf-9" style="position: absolute; left: 720px; top: 620px; width: 22px; height: 12px; background: #F2B705; opacity: 0"></i>
+        <i id="a-cf-10" style="position: absolute; left: 720px; top: 620px; width: 14px; height: 14px; background: #F1F5F9; opacity: 0"></i>
+        <i id="a-cf-11" style="position: absolute; left: 720px; top: 620px; width: 22px; height: 12px; background: #7DD3FC; opacity: 0"></i>
+        <i id="a-cf-12" style="position: absolute; left: 720px; top: 620px; width: 14px; height: 14px; background: #38BDF8; opacity: 0"></i>
+        <i id="a-cf-13" style="position: absolute; left: 720px; top: 620px; width: 22px; height: 12px; background: #F2B705; opacity: 0"></i>
+        <i id="a-cf-14" style="position: absolute; left: 720px; top: 620px; width: 14px; height: 14px; background: #F1F5F9; opacity: 0"></i>
+        <i id="a-cf-15" style="position: absolute; left: 720px; top: 620px; width: 22px; height: 12px; background: #7DD3FC; opacity: 0"></i>
+        <i id="a-cf-16" style="position: absolute; left: 720px; top: 620px; width: 14px; height: 14px; background: #38BDF8; opacity: 0"></i>
+        <i id="a-cf-17" style="position: absolute; left: 720px; top: 620px; width: 22px; height: 12px; background: #F2B705; opacity: 0"></i>
+        <div id="a-q" class="gros" style="left: 0px; top: 720px; font-size: 72px; color: #F1F5F9; width: 1080px; text-align: center; transform: rotate(0deg); opacity: 0">TU PRÉVOIS COMBIEN<br>POUR TON PREMIER<br>LOGEMENT ?</div>
+        <div id="a-h" class="maison" style="left: 400px; top: 1010px; width: 280px; height: 250px; --c: #38BDF8; opacity: 0"><em class="toit"></em><i style="left: 24px; top: 70px"></i><i style="left: 101px; top: 70px"></i><i style="left: 178px; top: 70px"></i><b>MOI</b><u class="porte"></u></div>
+        <div id="a-com" class="etiq" style="left: 300px; top: 1280px; font-size: 40px; background: #F1F5F9; color: #0B1220; transform: rotate(-2deg); opacity: 0">DIS-LE EN COMMENTAIRE</div>
+        </div>
+      </div>
+      <div id="s13-abonne-noir" style="position: absolute; inset: 0; background: #000; opacity: 0"></div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#s13-abonne-cam", { filter: "blur(14px)", scale: 1.12 }, { filter: "blur(0px)", scale: 1, duration: 0.18, ease: "power2.out" }, 0);
+    tl.to("#s13-abonne-cam", { scale: 1.04, duration: 5.02, ease: "none" }, 0.18);
+    tl.fromTo("#a-carte", { opacity: 0, y: 120, scale: 0.7 }, { opacity: 1, y: 0, scale: 1, duration: 0.3, ease: "back.out(1.8)", immediateRender: false }, 0.05);
+    tl.to("#a-souris", { x: -300, y: -330, duration: 0.4, ease: "power2.inOut" }, 0.7);
+    tl.to("#a-souris", { scale: 0.8, duration: 0.07, yoyo: true, repeat: 1 }, 1.08);
+    tl.set("#a-btn", { opacity: 0 }, 1.15);
+    tl.set("#a-ok", { opacity: 1 }, 1.15);
+    tl.fromTo("#a-cf-0", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: 153, y: 160, rotation: -270, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 1.18);
+    tl.fromTo("#a-cf-1", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: -168, y: 283, rotation: -173, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 1.18);
+    tl.fromTo("#a-cf-2", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: 26, y: -81, rotation: -76, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 1.18);
+    tl.fromTo("#a-cf-3", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: 104, y: 269, rotation: 21, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 1.18);
+    tl.fromTo("#a-cf-4", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: -243, y: 126, rotation: 118, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 1.18);
+    tl.fromTo("#a-cf-5", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: 271, y: 22, rotation: 215, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 1.18);
+    tl.fromTo("#a-cf-6", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: -49, y: 307, rotation: -228, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 1.18);
+    tl.fromTo("#a-cf-7", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: -122, y: -28, rotation: -131, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 1.18);
+    tl.fromTo("#a-cf-8", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: 319, y: 253, rotation: -34, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 1.18);
+    tl.fromTo("#a-cf-9", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: -193, y: 224, rotation: 63, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 1.18);
+    tl.fromTo("#a-cf-10", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: 120, y: -46, rotation: 160, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 1.18);
+    tl.fromTo("#a-cf-11", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: 46, y: 277, rotation: 257, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 1.18);
+    tl.fromTo("#a-cf-12", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: -197, y: 69, rotation: -186, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 1.18);
+    tl.fromTo("#a-cf-13", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: 296, y: 108, rotation: -89, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 1.18);
+    tl.fromTo("#a-cf-14", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: -99, y: 272, rotation: 8, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 1.18);
+    tl.fromTo("#a-cf-15", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: -32, y: -36, rotation: 105, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 1.18);
+    tl.fromTo("#a-cf-16", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: 246, y: 326, rotation: 202, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 1.18);
+    tl.fromTo("#a-cf-17", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: -190, y: 166, rotation: -241, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 1.18);
+    tl.to("#a-souris", { opacity: 0, duration: 0.15 }, 2.2);
+    tl.fromTo("#a-q", { opacity: 0, scale: 2.0 }, { opacity: 1, scale: 1, duration: 0.16, ease: "power4.in", immediateRender: false }, 2.2);
+    tl.fromTo("#a-h", { opacity: 0, y: 60, scale: 0.7 }, { opacity: 1, y: 0, scale: 1, duration: 0.24, ease: "back.out(1.8)", immediateRender: false }, 2.52);
+    tl.fromTo("#a-com", { opacity: 0, x: -80 }, { opacity: 1, x: 0, duration: 0.2, ease: "power4.out", immediateRender: false }, 3.08);
+    tl.fromTo("#s13-abonne-noir", { opacity: 0 }, { opacity: 1, duration: 0.6, ease: "power2.in" }, 4.82);
+    window.__timelines["s13-abonne"] = tl;
+  </script>
+</template>

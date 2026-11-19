@@ -1,0 +1,61 @@
+<!-- Il note chaque montant et s'interdit de piocher dans une enveloppe pour en financer une autre (28.12 → 32.84 s). Écrit par tools/construire-scenes.py. -->
+<template>
+  <style>
+    #root { position: absolute; inset: 0; }
+  </style>
+  <div id="root" data-composition-id="s07-regles" data-width="1080" data-height="1920">
+    <div class="sc">
+      <div id="s07-regles-cam" class="sc-cam">
+        <div id="s07-regles-cadre" class="sc-cadre">
+        <div class="decor"><div class="ciel" style="background: radial-gradient(ellipse 90% 60% at 50% 40%, #15305e 0%, #0b1220 78%)"></div></div>
+        <div id="g-car" class="carnet" style="left: 60px; top: 360px; width: 460px"><h3>MON CARNET</h3><p id="g-l0" style="opacity: 0"><i class="c" style="background: #38BDF8"></i><span class="trait" style="width: 220px"></span><b class="ok">✓</b></p><p id="g-l1" style="opacity: 0"><i class="c" style="background: #7DD3FC"></i><span class="trait" style="width: 170px"></span><b class="ok">✓</b></p><p id="g-l2" style="opacity: 0"><i class="c" style="background: #F2B705"></i><span class="trait" style="width: 250px"></span><b class="ok">✓</b></p><p id="g-l3" style="opacity: 0"><i class="c" style="background: #0284C7"></i><span class="trait" style="width: 140px"></span><b class="ok">✓</b></p></div>
+        <div id="g-ec" class="ecran ecran-tele" style="left: 560px; top: 380px; width: 460px; height: 340px; opacity: 0"><div class="ecran-in"><div id="g-ec-v-0" class="vplein" style="opacity: 0"><video id="g-ec-v-0-v" class="clip" src="assets/video/notes-stylo.mp4" data-start="0.0" data-duration="1.1" data-track-index="5" muted playsinline></video></div><div id="g-ec-v-1" class="vplein" style="opacity: 0"><video id="g-ec-v-1-v" class="clip" src="assets/video/todo-liste.mp4" data-start="1.0" data-duration="0.74" data-track-index="6" muted playsinline></video></div><div id="g-ec-v-2" class="vplein" style="opacity: 0"><video id="g-ec-v-2-v" class="clip" src="assets/video/compta-depenses.mp4" data-start="1.64" data-duration="3.18" data-track-index="7" muted playsinline></video></div></div><i class="tele-pied"></i></div>
+        <div id="g-ep" class="env petit " data-layout-allow-overlap style="left: 80px; top: 900px; width: 320px; height: 211px; --c: #F2B705; font-size: 42px; opacity: 1"><b style="color: #0B1220">ÉPARGNE</b></div><div id="g-lo" class="env petit " data-layout-allow-overlap style="left: 680px; top: 900px; width: 320px; height: 211px; --c: #0284C7; font-size: 42px; opacity: 1"><b style="color: #F1F5F9">LOISIRS</b></div>
+        <div id="g-pc" class="piece" style="left: 190px; top: 910px; width: 100px; height: 100px; font-size: 20px; opacity: 0"><span>F</span></div>
+        <svg id="g-x" viewBox="0 0 200 200" data-layout-allow-overlap style="position: absolute; left: 440px; top: 820px; width: 200px; height: 200px; opacity: 0"><path d="M30 30 L170 170 M170 30 L30 170" stroke="#FF6B6B" stroke-width="30" stroke-linecap="round" /></svg>
+        <div id="g-int" class="tampon" data-layout-allow-overlap style="left: 300px; top: 1150px; font-size: 96px; color: #FF6B6B; border-color: #FF6B6B; transform: rotate(-6deg); opacity: 0">INTERDIT</div>
+        <div id="g-k1" class="cadenas" style="left: 200px; top: 1000px; opacity: 0"><svg viewBox="0 0 120 150" width="54" height="68"><path d="M30 70 L30 42 Q30 12 60 12 Q90 12 90 42 L90 70" fill="none" stroke="#F1F5F9" stroke-width="14" stroke-linecap="round" /><rect x="14" y="66" width="92" height="76" rx="14" fill="#38BDF8" /></svg></div>
+        <div id="g-k2" class="cadenas" style="left: 800px; top: 1000px; opacity: 0"><svg viewBox="0 0 120 150" width="54" height="68"><path d="M30 70 L30 42 Q30 12 60 12 Q90 12 90 42 L90 70" fill="none" stroke="#F1F5F9" stroke-width="14" stroke-linecap="round" /><rect x="14" y="66" width="92" height="76" rx="14" fill="#38BDF8" /></svg></div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#s07-regles-cam", { filter: "blur(14px)", scale: 1.12 }, { filter: "blur(0px)", scale: 1, duration: 0.18, ease: "power2.out" }, 0);
+    tl.to("#s07-regles-cam", { scale: 1.04, duration: 4.32, ease: "none" }, 0.18);
+    tl.fromTo("#g-car", { opacity: 0, y: 80, scale: 0.7 }, { opacity: 1, y: 0, scale: 1, duration: 0.25, ease: "back.out(1.8)", immediateRender: false }, 0.05);
+    tl.fromTo("#g-l0", { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.14, immediateRender: false }, 0.7);
+    tl.fromTo("#g-l1", { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.14, immediateRender: false }, 1.02);
+    tl.fromTo("#g-l2", { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.14, immediateRender: false }, 1.34);
+    tl.fromTo("#g-l3", { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.14, immediateRender: false }, 1.66);
+    tl.set("#g-ec-v-0", { opacity: 1 }, 0.0);
+    tl.fromTo("#g-ec-v-0", { scale: 1.18 }, { scale: 1.02, duration: 1.0, ease: "power2.out", immediateRender: false }, 0.0);
+    tl.set("#g-ec-v-0", { opacity: 0 }, 1.02);
+    tl.set("#g-ec-v-1", { opacity: 1 }, 1.0);
+    tl.fromTo("#g-ec-v-1", { scale: 1.18 }, { scale: 1.02, duration: 0.64, ease: "power2.out", immediateRender: false }, 1.0);
+    tl.set("#g-ec-v-1", { opacity: 0 }, 1.66);
+    tl.set("#g-ec-v-2", { opacity: 1 }, 1.64);
+    tl.fromTo("#g-ec-v-2", { scale: 1.18 }, { scale: 1.02, duration: 3.08, ease: "power2.out", immediateRender: false }, 1.64);
+    tl.fromTo("#g-ec", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.22, ease: "back.out(1.8)", immediateRender: false }, 0.0);
+    tl.set("#s07-regles-cadre", { x: -475, y: 779, scale: 1.9 }, 0);
+    tl.to("#s07-regles-cadre", { x: 0, y: 299, scale: 1.15, duration: 0.3, ease: "power3.inOut" }, 0.55);
+    tl.to("#s07-regles-cadre", { keyframes: [{ filter: "blur(9px)", duration: 0.15 }, { filter: "blur(0px)", duration: 0.15 }] }, 0.55);
+    tl.fromTo("#g-ep", { opacity: 0, y: 80, scale: 0.7 }, { opacity: 1, y: 0, scale: 1, duration: 0.22, ease: "back.out(1.8)", immediateRender: false }, 1.54);
+    tl.fromTo("#g-lo", { opacity: 0, y: 80, scale: 0.7 }, { opacity: 1, y: 0, scale: 1, duration: 0.22, ease: "back.out(1.8)", immediateRender: false }, 1.6);
+    tl.to("#s07-regles-cadre", { x: 0, y: -45, scale: 1.12, duration: 0.3, ease: "power3.inOut" }, 1.7);
+    tl.to("#s07-regles-cadre", { keyframes: [{ filter: "blur(9px)", duration: 0.15 }, { filter: "blur(0px)", duration: 0.15 }] }, 1.7);
+    tl.set("#g-pc", { opacity: 1 }, 2.44);
+    tl.fromTo("#g-pc", { x: 0, y: 0 }, { keyframes: [{ x: 150, y: -160, duration: 0.3, ease: "power2.out" }, { x: 300, y: -60, duration: 0.25, ease: "power2.in" }] }, 2.44);
+    tl.fromTo("#g-x", { opacity: 0, scale: 2.2 }, { opacity: 1, scale: 1, duration: 0.16, ease: "power4.in", immediateRender: false }, 3.2);
+    tl.to("#g-pc", { x: 120, y: 260, opacity: 0, duration: 0.35, ease: "power2.in" }, 3.25);
+    tl.to("#s07-regles-cam", { keyframes: [{ x: -20, duration: 0.03 }, { x: 20, duration: 0.04 }, { x: -10, duration: 0.04 }, { x: 0, duration: 0.03 }] }, 3.25);
+    tl.fromTo("#g-int", { opacity: 0, scale: 2.4 }, { opacity: 1, scale: 1, duration: 0.14, ease: "power4.in", immediateRender: false }, 3.24);
+    tl.to("#s07-regles-cam", { keyframes: [{ x: -12, duration: 0.03 }, { x: 12, duration: 0.04 }, { x: -6, duration: 0.04 }, { x: 0, duration: 0.03 }] }, 3.38);
+    tl.fromTo("#g-k1", { opacity: 0, scale: 1.8 }, { opacity: 1, scale: 1, duration: 0.16, ease: "power4.in", immediateRender: false }, 3.8);
+    tl.fromTo("#g-k2", { opacity: 0, scale: 1.8 }, { opacity: 1, scale: 1, duration: 0.16, ease: "power4.in", immediateRender: false }, 3.8);
+    tl.to("#s07-regles-cam", { scale: 1.25, filter: "blur(14px)", duration: 0.2, ease: "power3.in" }, 4.52);
+    window.__timelines["s07-regles"] = tl;
+  </script>
+</template>

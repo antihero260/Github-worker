@@ -1,0 +1,80 @@
+<!-- Dans un quartier populaire, il vise 65 000 francs par mois ; à Cocody, autour de 110 000 (9.88 → 19.08 s). Écrit par tools/construire-scenes.py. -->
+<template>
+  <style>
+    #root { position: absolute; inset: 0; }
+  </style>
+  <div id="root" data-composition-id="s03-quartiers" data-width="1080" data-height="1920">
+    <div class="sc">
+      <div id="s03-quartiers-cam" class="sc-cam">
+        <div id="s03-quartiers-cadre" class="sc-cadre">
+        <div class="decor" style="left: -1080px; top: 0px; width: 3240px"><div style="position: absolute; left: 0px; top: 0; width: 3240px; height: 1920px"><div class="ciel" style="background: linear-gradient(180deg, #1d4ed8 0%, #38bdf8 55%, #bae6fd 100%)"></div><i class="soleil" style="left: 1880px; top: 320px"></i><div class="imm" style="left: -20px; top: 650px; width: 210px; height: 520px; background-color: #0f2347"></div><div class="imm" style="left: 170px; top: 790px; width: 170px; height: 380px; background-color: #122a52"></div><div class="imm" style="left: 320px; top: 560px; width: 240px; height: 610px; background-color: #0d1f40"></div><div class="imm" style="left: 540px; top: 730px; width: 190px; height: 440px; background-color: #11284e"></div><div class="imm" style="left: 710px; top: 610px; width: 230px; height: 560px; background-color: #0e2244"></div><div class="imm" style="left: 920px; top: 770px; width: 200px; height: 400px; background-color: #122a52"></div><div class="imm" style="left: 1060px; top: 650px; width: 210px; height: 520px; background-color: #0f2347"></div><div class="imm" style="left: 1250px; top: 790px; width: 170px; height: 380px; background-color: #122a52"></div><div class="imm" style="left: 1400px; top: 560px; width: 240px; height: 610px; background-color: #0d1f40"></div><div class="imm" style="left: 1620px; top: 730px; width: 190px; height: 440px; background-color: #11284e"></div><div class="imm" style="left: 1790px; top: 610px; width: 230px; height: 560px; background-color: #0e2244"></div><div class="imm" style="left: 2000px; top: 770px; width: 200px; height: 400px; background-color: #122a52"></div><div class="imm" style="left: 2140px; top: 650px; width: 210px; height: 520px; background-color: #0f2347"></div><div class="imm" style="left: 2330px; top: 790px; width: 170px; height: 380px; background-color: #122a52"></div><div class="imm" style="left: 2480px; top: 560px; width: 240px; height: 610px; background-color: #0d1f40"></div><div class="imm" style="left: 2700px; top: 730px; width: 190px; height: 440px; background-color: #11284e"></div><div class="imm" style="left: 2870px; top: 610px; width: 230px; height: 560px; background-color: #0e2244"></div><div class="imm" style="left: 3080px; top: 770px; width: 200px; height: 400px; background-color: #122a52"></div><div class="trottoir" style="top: 1170px"></div><div class="sol" style="top: 1290px"></div><i class="lampe" style="left: 2020px; top: 770px"></i></div></div>
+        <div id="q-p1" class="ecran ecran-panneau" style="left: 120px; top: 420px; width: 460px; height: 520px; opacity: 0"><div class="ecran-in"><div id="q-p1-v-0" class="vplein" style="opacity: 0"><video id="q-p1-v-0-v" class="clip" src="assets/video/ville-nuit-marche.mp4" data-start="0.0" data-duration="1.1" data-track-index="5" muted playsinline></video></div><div id="q-p1-v-1" class="vplein" style="opacity: 0"><video id="q-p1-v-1-v" class="clip" src="assets/video/marche-tomates.mp4" data-start="1.0" data-duration="1.7" data-track-index="6" muted playsinline></video></div><div id="q-p1-v-2" class="vplein" style="opacity: 0"><video id="q-p1-v-2-v" class="clip" src="assets/video/taxi-voie.mp4" data-start="2.6" data-duration="6.7" data-track-index="7" muted playsinline></video></div></div><b class="ecran-titre">QUARTIER POPULAIRE</b></div>
+        <div id="q-p2" class="ecran ecran-panneau" style="left: 1240px; top: 420px; width: 460px; height: 520px; opacity: 0"><div class="ecran-in"><div id="q-p2-v-0" class="vplein" style="opacity: 0"><video id="q-p2-v-0-v" class="clip" src="assets/video/immeuble-ville.mp4" data-start="0.0" data-duration="6.3" data-track-index="8" muted playsinline></video></div><div id="q-p2-v-1" class="vplein" style="opacity: 0"><video id="q-p2-v-1-v" class="clip" src="assets/video/immeubles-aerien.mp4" data-start="6.2" data-duration="1.22" data-track-index="9" muted playsinline></video></div><div id="q-p2-v-2" class="vplein" style="opacity: 0"><video id="q-p2-v-2-v" class="clip" src="assets/video/chambre-fenetre.mp4" data-start="7.32" data-duration="1.98" data-track-index="10" muted playsinline></video></div></div><b class="ecran-titre">COCODY</b></div>
+        <svg id="q-lucas" class="perso" viewBox="-30 -20 160 290" style="left: 506px; top: 772px; width: 309px; height: 560px"><g id="q-lucas-vie"><g id="q-lucas-corps"><g id="q-lucas-jg"><g class="c"><rect x="24" y="136" width="24" height="112" rx="8" /></g><g class="p" style="--pc: #38BDF8"><rect x="24" y="136" width="24" height="112" rx="8" /></g></g><g id="q-lucas-jd"><g class="c"><rect x="52" y="136" width="24" height="112" rx="8" /></g><g class="p" style="--pc: #38BDF8"><rect x="52" y="136" width="24" height="112" rx="8" /></g></g><g id="q-lucas-tronc"><g class="c"><rect x="22" y="52" width="56" height="94" rx="12" /></g><g class="p" style="--pc: #38BDF8"><rect x="22" y="52" width="56" height="94" rx="12" /></g><path d="M44 56 L56 56 L53 64 L57 104 L50 112 L43 104 L47 64 Z" fill="#0B1220" /></g><g id="q-lucas-bg"><g class="c"><rect x="2" y="54" width="18" height="86" rx="9" /></g><g class="p" style="--pc: #38BDF8"><rect x="2" y="54" width="18" height="86" rx="9" /></g></g><g id="q-lucas-bd"><g class="c"><rect x="80" y="54" width="18" height="86" rx="9" /></g><g class="p" style="--pc: #38BDF8"><rect x="80" y="54" width="18" height="86" rx="9" /></g></g><g id="q-lucas-tete"><g class="c"><circle cx="50" cy="24" r="22" /></g><g class="p" style="--pc: #38BDF8"><circle cx="50" cy="24" r="22" /></g><g><g id="q-lucas-yeux"><circle cx="41" cy="20" r="6.5" fill="#fff" /><circle cx="59" cy="20" r="6.5" fill="#fff" /><g id="q-lucas-pup"><circle cx="42" cy="21" r="3" fill="#0B1220" /><circle cx="60" cy="21" r="3" fill="#0B1220" /></g></g><path id="q-lucas-bouche" d="M41 32 Q50 40 59 32" fill="none" stroke="#0B1220" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" /><path d="M28 14 Q30 -4 50 -3 Q70 -4 72 14 Q66 6 58 8 Q50 2 42 8 Q34 6 28 14 Z" fill="#0B1220" /></g></g></g></g></svg>
+        <div id="q-x1" class="compte" style="left: 130px; top: 800px; width: 440px; border-color: #38BDF8; opacity: 0"><span>LOYER / MOIS</span><b style="font-size: 84px"><span id="q-x1-n" style="display: inline; font-size: inherit; color: inherit">65 000</span> F</b></div>
+        <div id="q-x2" class="compte" style="left: 1250px; top: 800px; width: 440px; border-color: #F2B705; opacity: 0"><span>LOYER / MOIS</span><b style="font-size: 84px"><span id="q-x2-n" style="display: inline; font-size: inherit; color: inherit">110 000</span> F</b></div>
+        <div id="q-t" class="tampon" data-layout-allow-overlap style="left: 1260px; top: 360px; font-size: 64px; color: #F2B705; border-color: #F2B705; transform: rotate(-6deg); opacity: 0">MÊME STUDIO</div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#s03-quartiers-cam", { filter: "blur(14px)", scale: 1.12 }, { filter: "blur(0px)", scale: 1, duration: 0.18, ease: "power2.out" }, 0);
+    tl.to("#s03-quartiers-cam", { scale: 1.04, duration: 8.8, ease: "none" }, 0.18);
+    tl.set("#q-p1-v-0", { opacity: 1 }, 0.0);
+    tl.fromTo("#q-p1-v-0", { scale: 1.18 }, { scale: 1.02, duration: 1.0, ease: "power2.out", immediateRender: false }, 0.0);
+    tl.set("#q-p1-v-0", { opacity: 0 }, 1.02);
+    tl.set("#q-p1-v-1", { opacity: 1 }, 1.0);
+    tl.fromTo("#q-p1-v-1", { scale: 1.18 }, { scale: 1.02, duration: 1.6, ease: "power2.out", immediateRender: false }, 1.0);
+    tl.set("#q-p1-v-1", { opacity: 0 }, 2.62);
+    tl.set("#q-p1-v-2", { opacity: 1 }, 2.6);
+    tl.fromTo("#q-p1-v-2", { scale: 1.18 }, { scale: 1.02, duration: 6.6, ease: "power2.out", immediateRender: false }, 2.6);
+    tl.fromTo("#q-p1", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.22, ease: "back.out(1.8)", immediateRender: false }, 0.0);
+    tl.set("#q-p2-v-0", { opacity: 1 }, 0.0);
+    tl.fromTo("#q-p2-v-0", { scale: 1.18 }, { scale: 1.02, duration: 6.2, ease: "power2.out", immediateRender: false }, 0.0);
+    tl.set("#q-p2-v-0", { opacity: 0 }, 6.22);
+    tl.set("#q-p2-v-1", { opacity: 1 }, 6.2);
+    tl.fromTo("#q-p2-v-1", { scale: 1.18 }, { scale: 1.02, duration: 1.12, ease: "power2.out", immediateRender: false }, 6.2);
+    tl.set("#q-p2-v-1", { opacity: 0 }, 7.34);
+    tl.set("#q-p2-v-2", { opacity: 1 }, 7.32);
+    tl.fromTo("#q-p2-v-2", { scale: 1.18 }, { scale: 1.02, duration: 1.88, ease: "power2.out", immediateRender: false }, 7.32);
+    tl.fromTo("#q-p2", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.22, ease: "back.out(1.8)", immediateRender: false }, 0.0);
+    tl.fromTo("#q-lucas-vie", { y: 0 }, { y: -5, duration: 0.42, repeat: 10, yoyo: true, ease: "sine.inOut", immediateRender: false }, 0.0);
+    tl.to("#q-lucas-yeux", { scaleY: 0.1, duration: 0.06, yoyo: true, repeat: 1, svgOrigin: "50 20" }, 0.7);
+    tl.to("#q-lucas-yeux", { scaleY: 0.1, duration: 0.06, yoyo: true, repeat: 1, svgOrigin: "50 20" }, 3.233);
+    tl.to("#q-lucas-pup", { x: -4, y: -3, duration: 0.15 }, 0.0);
+    tl.set("#s03-quartiers-cadre", { x: 120, y: 60, scale: 1.0 }, 0);
+    tl.to("#s03-quartiers-cadre", { x: 135, y: 325, scale: 1.25, duration: 0.28, ease: "power3.inOut" }, 0.52);
+    tl.to("#s03-quartiers-cadre", { keyframes: [{ filter: "blur(9px)", duration: 0.14 }, { filter: "blur(0px)", duration: 0.14 }] }, 0.52);
+    tl.fromTo("#q-x1", { opacity: 0, scale: 1.7 }, { opacity: 1, scale: 1, duration: 0.16, ease: "power4.in", immediateRender: false }, 2.6);
+    const p1 = { v: 0 };
+    tl.fromTo(p1, { v: 0 }, { v: 65000, duration: 0.6, ease: "power2.out", immediateRender: false, onUpdate: () => { document.querySelector("#q-x1-n").textContent = String(Math.round(p1.v)).replace(/\B(?=(\d{3})+(?!\d))/g, "\u202f") + ""; } }, 2.6);
+    tl.to("#s03-quartiers-cadre", { x: 0, y: 60, scale: 1.0, duration: 0.3, ease: "power3.inOut" }, 3.56);
+    tl.to("#s03-quartiers-cadre", { keyframes: [{ filter: "blur(9px)", duration: 0.15 }, { filter: "blur(0px)", duration: 0.15 }] }, 3.56);
+    tl.to("#q-lucas", { x: "+=700", duration: 1.92, ease: "none" }, 4.68);
+    tl.to("#q-lucas-jg", { svgOrigin: "36 142", keyframes: [{ rotation: 24, duration: 0.137 }, { rotation: -24, duration: 0.137 }, { rotation: 24, duration: 0.137 }, { rotation: -24, duration: 0.137 }, { rotation: 24, duration: 0.137 }, { rotation: -24, duration: 0.137 }, { rotation: 24, duration: 0.137 }, { rotation: -24, duration: 0.137 }, { rotation: 24, duration: 0.137 }, { rotation: -24, duration: 0.137 }, { rotation: 24, duration: 0.137 }, { rotation: -24, duration: 0.137 }, { rotation: 24, duration: 0.137 }, { rotation: 0, duration: 0.137 }] }, 4.68);
+    tl.to("#q-lucas-jd", { svgOrigin: "64 142", keyframes: [{ rotation: -24, duration: 0.137 }, { rotation: 24, duration: 0.137 }, { rotation: -24, duration: 0.137 }, { rotation: 24, duration: 0.137 }, { rotation: -24, duration: 0.137 }, { rotation: 24, duration: 0.137 }, { rotation: -24, duration: 0.137 }, { rotation: 24, duration: 0.137 }, { rotation: -24, duration: 0.137 }, { rotation: 24, duration: 0.137 }, { rotation: -24, duration: 0.137 }, { rotation: 24, duration: 0.137 }, { rotation: -24, duration: 0.137 }, { rotation: 0, duration: 0.137 }] }, 4.68);
+    tl.to("#q-lucas-bg", { svgOrigin: "11 62", keyframes: [{ rotation: -20, duration: 0.137 }, { rotation: 20, duration: 0.137 }, { rotation: -20, duration: 0.137 }, { rotation: 20, duration: 0.137 }, { rotation: -20, duration: 0.137 }, { rotation: 20, duration: 0.137 }, { rotation: -20, duration: 0.137 }, { rotation: 20, duration: 0.137 }, { rotation: -20, duration: 0.137 }, { rotation: 20, duration: 0.137 }, { rotation: -20, duration: 0.137 }, { rotation: 20, duration: 0.137 }, { rotation: -20, duration: 0.137 }, { rotation: 0, duration: 0.137 }] }, 4.68);
+    tl.to("#q-lucas-bd", { svgOrigin: "89 62", keyframes: [{ rotation: 20, duration: 0.137 }, { rotation: -20, duration: 0.137 }, { rotation: 20, duration: 0.137 }, { rotation: -20, duration: 0.137 }, { rotation: 20, duration: 0.137 }, { rotation: -20, duration: 0.137 }, { rotation: 20, duration: 0.137 }, { rotation: -20, duration: 0.137 }, { rotation: 20, duration: 0.137 }, { rotation: -20, duration: 0.137 }, { rotation: 20, duration: 0.137 }, { rotation: -20, duration: 0.137 }, { rotation: 20, duration: 0.137 }, { rotation: 0, duration: 0.137 }] }, 4.68);
+    tl.to("#q-lucas-corps", { keyframes: [{ y: -6, duration: 0.137 }, { y: 0, duration: 0.137 }, { y: -6, duration: 0.137 }, { y: 0, duration: 0.137 }, { y: -6, duration: 0.137 }, { y: 0, duration: 0.137 }, { y: -6, duration: 0.137 }, { y: 0, duration: 0.137 }, { y: -6, duration: 0.137 }, { y: 0, duration: 0.137 }, { y: -6, duration: 0.137 }, { y: 0, duration: 0.137 }, { y: -6, duration: 0.137 }, { y: 0, duration: 0.137 }] }, 4.68);
+    tl.to("#s03-quartiers-cadre", { x: -760, y: 60, scale: 1.0, duration: 0.8, ease: "power3.inOut" }, 4.78);
+    tl.to("#s03-quartiers-cadre", { keyframes: [{ filter: "blur(9px)", duration: 0.4 }, { filter: "blur(0px)", duration: 0.4 }] }, 4.78);
+    tl.to("#q-lucas-pup", { x: 4, y: -3, duration: 0.15 }, 6.6);
+    tl.fromTo("#q-lucas-vie", { y: 0 }, { y: -5, duration: 0.42, repeat: 4, yoyo: true, ease: "sine.inOut", immediateRender: false }, 6.6);
+    tl.to("#q-lucas-yeux", { scaleY: 0.1, duration: 0.06, yoyo: true, repeat: 1, svgOrigin: "50 20" }, 7.3);
+    tl.to("#s03-quartiers-cadre", { x: -1162, y: 325, scale: 1.25, duration: 0.28, ease: "power3.inOut" }, 7.32);
+    tl.to("#s03-quartiers-cadre", { keyframes: [{ filter: "blur(9px)", duration: 0.14 }, { filter: "blur(0px)", duration: 0.14 }] }, 7.32);
+    tl.fromTo("#q-x2", { opacity: 0, scale: 1.7 }, { opacity: 1, scale: 1, duration: 0.16, ease: "power4.in", immediateRender: false }, 8.12);
+    const p2 = { v: 65000 };
+    tl.fromTo(p2, { v: 65000 }, { v: 110000, duration: 0.6, ease: "power2.out", immediateRender: false, onUpdate: () => { document.querySelector("#q-x2-n").textContent = String(Math.round(p2.v)).replace(/\B(?=(\d{3})+(?!\d))/g, "\u202f") + ""; } }, 8.12);
+    tl.fromTo("#q-t", { opacity: 0, scale: 2.4 }, { opacity: 1, scale: 1, duration: 0.14, ease: "power4.in", immediateRender: false }, 6.2);
+    tl.to("#s03-quartiers-cam", { keyframes: [{ x: -12, duration: 0.03 }, { x: 12, duration: 0.04 }, { x: -6, duration: 0.04 }, { x: 0, duration: 0.03 }] }, 6.34);
+    tl.set("#q-lucas-bouche", { attr: { d: "M45 34 Q50 42 55 34 Q50 27 45 34", fill: "none" } }, 8.12);
+    tl.to("#s03-quartiers-cadre", { x: -560, y: 60, scale: 1.0, duration: 0.25, ease: "power3.inOut" }, 8.58);
+    tl.to("#s03-quartiers-cadre", { keyframes: [{ filter: "blur(9px)", duration: 0.125 }, { filter: "blur(0px)", duration: 0.125 }] }, 8.58);
+    tl.to("#s03-quartiers-cam", { scale: 1.25, filter: "blur(14px)", duration: 0.2, ease: "power3.in" }, 9.0);
+    window.__timelines["s03-quartiers"] = tl;
+  </script>
+</template>

@@ -1,0 +1,932 @@
+[
+  {
+    "text": "Tu",
+    "start": 0.08,
+    "end": 0.13,
+    "id": "w0"
+  },
+  {
+    "text": "viens",
+    "start": 0.13,
+    "end": 0.44,
+    "id": "w1"
+  },
+  {
+    "text": "de",
+    "start": 0.5,
+    "end": 0.58,
+    "id": "w2"
+  },
+  {
+    "text": "créer",
+    "start": 0.58,
+    "end": 0.9,
+    "id": "w3"
+  },
+  {
+    "text": "ton",
+    "start": 0.9,
+    "end": 1.03,
+    "id": "w4"
+  },
+  {
+    "text": "site",
+    "start": 1.09,
+    "end": 1.35,
+    "id": "w5"
+  },
+  {
+    "text": "avec",
+    "start": 1.35,
+    "end": 1.6,
+    "id": "w6"
+  },
+  {
+    "text": "l'IA.",
+    "start": 1.6,
+    "end": 1.92,
+    "id": "w7"
+  },
+  {
+    "text": "Il",
+    "start": 2,
+    "end": 2.05,
+    "id": "w8"
+  },
+  {
+    "text": "fonctionne,",
+    "start": 2.05,
+    "end": 2.84,
+    "id": "w9"
+  },
+  {
+    "text": "il",
+    "start": 2.84,
+    "end": 3.04,
+    "id": "w10"
+  },
+  {
+    "text": "est",
+    "start": 3.04,
+    "end": 3.34,
+    "id": "w11"
+  },
+  {
+    "text": "même",
+    "start": 3.34,
+    "end": 3.59,
+    "id": "w12"
+  },
+  {
+    "text": "joli,",
+    "start": 3.84,
+    "end": 4.16,
+    "id": "w13"
+  },
+  {
+    "text": "mais",
+    "start": 4.25,
+    "end": 4.43,
+    "id": "w14"
+  },
+  {
+    "text": "il",
+    "start": 4.43,
+    "end": 4.56,
+    "id": "w15"
+  },
+  {
+    "text": "ressemble",
+    "start": 4.56,
+    "end": 5.17,
+    "id": "w16"
+  },
+  {
+    "text": "à",
+    "start": 5.17,
+    "end": 5.19,
+    "id": "w17"
+  },
+  {
+    "text": "des",
+    "start": 5.25,
+    "end": 5.43,
+    "id": "w18"
+  },
+  {
+    "text": "milliers",
+    "start": 5.5,
+    "end": 5.84,
+    "id": "w19"
+  },
+  {
+    "text": "d'autres.",
+    "start": 6.05,
+    "end": 6.6,
+    "id": "w20"
+  },
+  {
+    "text": "Même",
+    "start": 6.69,
+    "end": 6.86,
+    "id": "w21"
+  },
+  {
+    "text": "structure,",
+    "start": 6.86,
+    "end": 7.6,
+    "id": "w22"
+  },
+  {
+    "text": "même",
+    "start": 7.6,
+    "end": 7.87,
+    "id": "w23"
+  },
+  {
+    "text": "carte,",
+    "start": 7.93,
+    "end": 8.49,
+    "id": "w24"
+  },
+  {
+    "text": "même",
+    "start": 8.58,
+    "end": 8.81,
+    "id": "w25"
+  },
+  {
+    "text": "dégradé.",
+    "start": 8.81,
+    "end": 9.66,
+    "id": "w26"
+  },
+  {
+    "text": "Résultat,",
+    "start": 9.73,
+    "end": 10.41,
+    "id": "w27"
+  },
+  {
+    "text": "ton",
+    "start": 10.41,
+    "end": 10.63,
+    "id": "w28"
+  },
+  {
+    "text": "site",
+    "start": 10.64,
+    "end": 10.93,
+    "id": "w29"
+  },
+  {
+    "text": "se",
+    "start": 11,
+    "end": 11.09,
+    "id": "w30"
+  },
+  {
+    "text": "noie",
+    "start": 11.09,
+    "end": 11.34,
+    "id": "w31"
+  },
+  {
+    "text": "dans",
+    "start": 11.64,
+    "end": 11.69,
+    "id": "w32"
+  },
+  {
+    "text": "la",
+    "start": 11.69,
+    "end": 11.84,
+    "id": "w33"
+  },
+  {
+    "text": "masse.",
+    "start": 11.84,
+    "end": 12.45,
+    "id": "w34"
+  },
+  {
+    "text": "Voici",
+    "start": 12.61,
+    "end": 12.96,
+    "id": "w35"
+  },
+  {
+    "text": "5",
+    "start": 13.02,
+    "end": 13.2,
+    "id": "w36"
+  },
+  {
+    "text": "skills",
+    "start": 13.26,
+    "end": 13.78,
+    "id": "w37"
+  },
+  {
+    "text": "GitHub",
+    "start": 13.79,
+    "end": 14.19,
+    "id": "w38"
+  },
+  {
+    "text": "pour",
+    "start": 14.5,
+    "end": 14.7,
+    "id": "w39"
+  },
+  {
+    "text": "éviter",
+    "start": 14.7,
+    "end": 15.24,
+    "id": "w40"
+  },
+  {
+    "text": "ça.",
+    "start": 15.24,
+    "end": 15.46,
+    "id": "w41"
+  },
+  {
+    "text": "1.",
+    "start": 15.55,
+    "end": 16.12,
+    "id": "w42"
+  },
+  {
+    "text": "Frontend",
+    "start": 16.12,
+    "end": 16.93,
+    "id": "w43"
+  },
+  {
+    "text": "Design",
+    "start": 16.93,
+    "end": 17.54,
+    "id": "w44"
+  },
+  {
+    "text": "Aide",
+    "start": 17.62,
+    "end": 17.82,
+    "id": "w45"
+  },
+  {
+    "text": "ton",
+    "start": 17.82,
+    "end": 18,
+    "id": "w46"
+  },
+  {
+    "text": "IA",
+    "start": 18.06,
+    "end": 18.14,
+    "id": "w47"
+  },
+  {
+    "text": "à",
+    "start": 18.14,
+    "end": 18.2,
+    "id": "w48"
+  },
+  {
+    "text": "créer",
+    "start": 18.2,
+    "end": 18.51,
+    "id": "w49"
+  },
+  {
+    "text": "une",
+    "start": 18.53,
+    "end": 18.73,
+    "id": "w50"
+  },
+  {
+    "text": "véritable",
+    "start": 18.73,
+    "end": 19.23,
+    "id": "w51"
+  },
+  {
+    "text": "direction",
+    "start": 19.54,
+    "end": 19.93,
+    "id": "w52"
+  },
+  {
+    "text": "artistique,",
+    "start": 19.93,
+    "end": 20.66,
+    "id": "w53"
+  },
+  {
+    "text": "avec",
+    "start": 20.75,
+    "end": 20.89,
+    "id": "w54"
+  },
+  {
+    "text": "une",
+    "start": 20.89,
+    "end": 21.06,
+    "id": "w55"
+  },
+  {
+    "text": "identité",
+    "start": 21.06,
+    "end": 21.52,
+    "id": "w56"
+  },
+  {
+    "text": "visuelle",
+    "start": 21.52,
+    "end": 21.99,
+    "id": "w57"
+  },
+  {
+    "text": "qui",
+    "start": 22,
+    "end": 22.16,
+    "id": "w58"
+  },
+  {
+    "text": "ne",
+    "start": 22.16,
+    "end": 22.26,
+    "id": "w59"
+  },
+  {
+    "text": "ressemble",
+    "start": 22.26,
+    "end": 22.76,
+    "id": "w60"
+  },
+  {
+    "text": "pas",
+    "start": 22.81,
+    "end": 22.96,
+    "id": "w61"
+  },
+  {
+    "text": "à",
+    "start": 22.96,
+    "end": 23.03,
+    "id": "w62"
+  },
+  {
+    "text": "un",
+    "start": 23.03,
+    "end": 23.18,
+    "id": "w63"
+  },
+  {
+    "text": "simple",
+    "start": 23.18,
+    "end": 23.64,
+    "id": "w64"
+  },
+  {
+    "text": "template.",
+    "start": 23.64,
+    "end": 24.35,
+    "id": "w65"
+  },
+  {
+    "text": "2.",
+    "start": 24.59,
+    "end": 25.41,
+    "id": "w66"
+  },
+  {
+    "text": "UI",
+    "start": 25.41,
+    "end": 25.71,
+    "id": "w67"
+  },
+  {
+    "text": "slash",
+    "start": 25.71,
+    "end": 26.17,
+    "id": "w68"
+  },
+  {
+    "text": "UX",
+    "start": 26.48,
+    "end": 26.76,
+    "id": "w69"
+  },
+  {
+    "text": "Pro",
+    "start": 26.78,
+    "end": 27.23,
+    "id": "w70"
+  },
+  {
+    "text": "Max",
+    "start": 27.23,
+    "end": 27.72,
+    "id": "w71"
+  },
+  {
+    "text": "Lui",
+    "start": 27.77,
+    "end": 27.88,
+    "id": "w72"
+  },
+  {
+    "text": "donne",
+    "start": 27.88,
+    "end": 28.15,
+    "id": "w73"
+  },
+  {
+    "text": "accès",
+    "start": 28.16,
+    "end": 28.4,
+    "id": "w74"
+  },
+  {
+    "text": "à",
+    "start": 28.46,
+    "end": 28.49,
+    "id": "w75"
+  },
+  {
+    "text": "des",
+    "start": 28.49,
+    "end": 28.65,
+    "id": "w76"
+  },
+  {
+    "text": "centaines",
+    "start": 28.66,
+    "end": 29.16,
+    "id": "w77"
+  },
+  {
+    "text": "de",
+    "start": 29.16,
+    "end": 29.27,
+    "id": "w78"
+  },
+  {
+    "text": "styles,",
+    "start": 29.27,
+    "end": 29.76,
+    "id": "w79"
+  },
+  {
+    "text": "de",
+    "start": 29.76,
+    "end": 29.84,
+    "id": "w80"
+  },
+  {
+    "text": "palettes",
+    "start": 29.87,
+    "end": 30.22,
+    "id": "w81"
+  },
+  {
+    "text": "de",
+    "start": 30.22,
+    "end": 30.31,
+    "id": "w82"
+  },
+  {
+    "text": "couleurs",
+    "start": 30.31,
+    "end": 30.7,
+    "id": "w83"
+  },
+  {
+    "text": "et",
+    "start": 30.78,
+    "end": 30.8,
+    "id": "w84"
+  },
+  {
+    "text": "de",
+    "start": 30.8,
+    "end": 30.9,
+    "id": "w85"
+  },
+  {
+    "text": "combinaisons",
+    "start": 30.9,
+    "end": 31.5,
+    "id": "w86"
+  },
+  {
+    "text": "de",
+    "start": 31.5,
+    "end": 31.6,
+    "id": "w87"
+  },
+  {
+    "text": "typographies",
+    "start": 31.6,
+    "end": 32.26,
+    "id": "w88"
+  },
+  {
+    "text": "pour",
+    "start": 32.26,
+    "end": 32.38,
+    "id": "w89"
+  },
+  {
+    "text": "construire",
+    "start": 32.68,
+    "end": 33.1,
+    "id": "w90"
+  },
+  {
+    "text": "des",
+    "start": 33.1,
+    "end": 33.28,
+    "id": "w91"
+  },
+  {
+    "text": "interfaces",
+    "start": 33.28,
+    "end": 33.89,
+    "id": "w92"
+  },
+  {
+    "text": "cohérentes.",
+    "start": 33.89,
+    "end": 34.6,
+    "id": "w93"
+  },
+  {
+    "text": "3.",
+    "start": 34.69,
+    "end": 35.55,
+    "id": "w94"
+  },
+  {
+    "text": "ShadCN",
+    "start": 35.57,
+    "end": 36.56,
+    "id": "w95"
+  },
+  {
+    "text": "L'aide",
+    "start": 36.62,
+    "end": 36.95,
+    "id": "w96"
+  },
+  {
+    "text": "à",
+    "start": 36.95,
+    "end": 37,
+    "id": "w97"
+  },
+  {
+    "text": "choisir,",
+    "start": 37.06,
+    "end": 37.59,
+    "id": "w98"
+  },
+  {
+    "text": "assembler",
+    "start": 37.65,
+    "end": 38.23,
+    "id": "w99"
+  },
+  {
+    "text": "et",
+    "start": 38.23,
+    "end": 38.27,
+    "id": "w100"
+  },
+  {
+    "text": "personnaliser",
+    "start": 38.54,
+    "end": 39.1,
+    "id": "w101"
+  },
+  {
+    "text": "des",
+    "start": 39.1,
+    "end": 39.22,
+    "id": "w102"
+  },
+  {
+    "text": "composants",
+    "start": 39.22,
+    "end": 39.66,
+    "id": "w103"
+  },
+  {
+    "text": "d'interface",
+    "start": 39.66,
+    "end": 40.25,
+    "id": "w104"
+  },
+  {
+    "text": "pour",
+    "start": 40.41,
+    "end": 40.56,
+    "id": "w105"
+  },
+  {
+    "text": "obtenir",
+    "start": 40.56,
+    "end": 40.98,
+    "id": "w106"
+  },
+  {
+    "text": "un",
+    "start": 40.98,
+    "end": 41.1,
+    "id": "w107"
+  },
+  {
+    "text": "design",
+    "start": 41.1,
+    "end": 41.46,
+    "id": "w108"
+  },
+  {
+    "text": "plus",
+    "start": 41.46,
+    "end": 41.7,
+    "id": "w109"
+  },
+  {
+    "text": "harmonieux.",
+    "start": 41.7,
+    "end": 42.52,
+    "id": "w110"
+  },
+  {
+    "text": "4.",
+    "start": 42.61,
+    "end": 43.2,
+    "id": "w111"
+  },
+  {
+    "text": "Taste",
+    "start": 43.26,
+    "end": 43.78,
+    "id": "w112"
+  },
+  {
+    "text": "Skill",
+    "start": 43.85,
+    "end": 44.19,
+    "id": "w113"
+  },
+  {
+    "text": "Pousse",
+    "start": 44.52,
+    "end": 44.83,
+    "id": "w114"
+  },
+  {
+    "text": "ton",
+    "start": 44.83,
+    "end": 45.01,
+    "id": "w115"
+  },
+  {
+    "text": "IA",
+    "start": 45.01,
+    "end": 45.13,
+    "id": "w116"
+  },
+  {
+    "text": "à",
+    "start": 45.13,
+    "end": 45.14,
+    "id": "w117"
+  },
+  {
+    "text": "sortir",
+    "start": 45.2,
+    "end": 45.56,
+    "id": "w118"
+  },
+  {
+    "text": "des",
+    "start": 45.56,
+    "end": 45.73,
+    "id": "w119"
+  },
+  {
+    "text": "designs",
+    "start": 45.79,
+    "end": 46.13,
+    "id": "w120"
+  },
+  {
+    "text": "génériques",
+    "start": 46.36,
+    "end": 46.86,
+    "id": "w121"
+  },
+  {
+    "text": "en",
+    "start": 46.94,
+    "end": 46.96,
+    "id": "w122"
+  },
+  {
+    "text": "travaillant",
+    "start": 46.96,
+    "end": 47.53,
+    "id": "w123"
+  },
+  {
+    "text": "davantage",
+    "start": 47.53,
+    "end": 47.99,
+    "id": "w124"
+  },
+  {
+    "text": "les",
+    "start": 47.99,
+    "end": 48.13,
+    "id": "w125"
+  },
+  {
+    "text": "choix",
+    "start": 48.2,
+    "end": 48.4,
+    "id": "w126"
+  },
+  {
+    "text": "esthétiques",
+    "start": 48.4,
+    "end": 49.02,
+    "id": "w127"
+  },
+  {
+    "text": "et",
+    "start": 49.02,
+    "end": 49.12,
+    "id": "w128"
+  },
+  {
+    "text": "les",
+    "start": 49.15,
+    "end": 49.3,
+    "id": "w129"
+  },
+  {
+    "text": "références",
+    "start": 49.3,
+    "end": 49.87,
+    "id": "w130"
+  },
+  {
+    "text": "visuelles.",
+    "start": 49.87,
+    "end": 50.55,
+    "id": "w131"
+  },
+  {
+    "text": "5.",
+    "start": 50.69,
+    "end": 51.22,
+    "id": "w132"
+  },
+  {
+    "text": "Emile",
+    "start": 51.22,
+    "end": 51.73,
+    "id": "w133"
+  },
+  {
+    "text": "Design",
+    "start": 51.73,
+    "end": 52.27,
+    "id": "w134"
+  },
+  {
+    "text": "Engineering",
+    "start": 52.58,
+    "end": 53.5,
+    "id": "w135"
+  },
+  {
+    "text": "Lui",
+    "start": 53.55,
+    "end": 53.66,
+    "id": "w136"
+  },
+  {
+    "text": "apprend",
+    "start": 53.66,
+    "end": 54.02,
+    "id": "w137"
+  },
+  {
+    "text": "à",
+    "start": 54.04,
+    "end": 54.09,
+    "id": "w138"
+  },
+  {
+    "text": "soigner",
+    "start": 54.09,
+    "end": 54.47,
+    "id": "w139"
+  },
+  {
+    "text": "les",
+    "start": 54.48,
+    "end": 54.64,
+    "id": "w140"
+  },
+  {
+    "text": "animations,",
+    "start": 54.64,
+    "end": 55.21,
+    "id": "w141"
+  },
+  {
+    "text": "les",
+    "start": 55.48,
+    "end": 55.54,
+    "id": "w142"
+  },
+  {
+    "text": "transitions",
+    "start": 55.54,
+    "end": 56.22,
+    "id": "w143"
+  },
+  {
+    "text": "et",
+    "start": 56.22,
+    "end": 56.3,
+    "id": "w144"
+  },
+  {
+    "text": "les",
+    "start": 56.38,
+    "end": 56.49,
+    "id": "w145"
+  },
+  {
+    "text": "micro-interactions",
+    "start": 56.49,
+    "end": 57.19,
+    "id": "w146"
+  },
+  {
+    "text": "qui",
+    "start": 57.58,
+    "end": 57.64,
+    "id": "w147"
+  },
+  {
+    "text": "donne",
+    "start": 57.64,
+    "end": 57.87,
+    "id": "w148"
+  },
+  {
+    "text": "une",
+    "start": 57.87,
+    "end": 57.94,
+    "id": "w149"
+  },
+  {
+    "text": "vraie",
+    "start": 58.01,
+    "end": 58.18,
+    "id": "w150"
+  },
+  {
+    "text": "impression",
+    "start": 58.24,
+    "end": 58.74,
+    "id": "w151"
+  },
+  {
+    "text": "de",
+    "start": 58.74,
+    "end": 58.76,
+    "id": "w152"
+  },
+  {
+    "text": "qualité",
+    "start": 58.83,
+    "end": 59.13,
+    "id": "w153"
+  },
+  {
+    "text": "professionnelle.",
+    "start": 59.13,
+    "end": 59.98,
+    "id": "w154"
+  }
+]

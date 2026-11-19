@@ -1,0 +1,998 @@
+[
+{
+"i": 0,
+"text": "TOM",
+"start": 0,
+"end": 0.24
+},
+{
+"i": 1,
+"text": "REÇOIT",
+"start": 0.48,
+"end": 1.227
+},
+{
+"i": 2,
+"text": "250_000",
+"start": 1.227,
+"end": 1.973
+},
+{
+"i": 3,
+"text": "FCFA",
+"start": 1.973,
+"end": 2.72
+},
+{
+"i": 4,
+"text": "D’UN",
+"start": 2.72,
+"end": 2.96
+},
+{
+"i": 5,
+"text": "COUP…",
+"start": 2.96,
+"end": 3.44
+},
+{
+"i": 6,
+"text": "MAIS",
+"start": 3.44,
+"end": 3.7
+},
+{
+"i": 7,
+"text": "NEUF",
+"start": 3.7,
+"end": 3.96
+},
+{
+"i": 8,
+"text": "MOIS",
+"start": 3.96,
+"end": 4.22
+},
+{
+"i": 9,
+"text": "PLUS",
+"start": 4.22,
+"end": 4.48
+},
+{
+"i": 10,
+"text": "TARD,",
+"start": 4.48,
+"end": 4.74
+},
+{
+"i": 11,
+"text": "IL",
+"start": 4.74,
+"end": 5.0
+},
+{
+"i": 12,
+"text": "VEND",
+"start": 5.0,
+"end": 5.26
+},
+{
+"i": 13,
+"text": "SON",
+"start": 5.26,
+"end": 5.52
+},
+{
+"i": 14,
+"text": "TÉLÉPHONE",
+"start": 5.52,
+"end": 5.92
+},
+{
+"i": 15,
+"text": "POUR",
+"start": 5.92,
+"end": 6.171
+},
+{
+"i": 16,
+"text": "PAYER",
+"start": 6.171,
+"end": 6.423
+},
+{
+"i": 17,
+"text": "SA",
+"start": 6.423,
+"end": 6.674
+},
+{
+"i": 18,
+"text": "TONTINE.",
+"start": 6.674,
+"end": 6.926
+},
+{
+"i": 19,
+"text": "IL",
+"start": 6.926,
+"end": 7.177
+},
+{
+"i": 20,
+"text": "VEUT",
+"start": 7.177,
+"end": 7.429
+},
+{
+"i": 21,
+"text": "UNE",
+"start": 7.429,
+"end": 7.68
+},
+{
+"i": 22,
+"text": "MOTO",
+"start": 7.68,
+"end": 8
+},
+{
+"i": 23,
+"text": "D’OCCASION",
+"start": 8,
+"end": 8.56
+},
+{
+"i": 24,
+"text": "AVANT",
+"start": 8.56,
+"end": 8.88
+},
+{
+"i": 25,
+"text": "SON",
+"start": 8.88,
+"end": 9.04
+},
+{
+"i": 26,
+"text": "NOUVEAU",
+"start": 9.04,
+"end": 9.28
+},
+{
+"i": 27,
+"text": "BOULOT.",
+"start": 9.28,
+"end": 9.84
+},
+{
+"i": 28,
+"text": "UN",
+"start": 9.84,
+"end": 10.048
+},
+{
+"i": 29,
+"text": "AMI",
+"start": 10.048,
+"end": 10.256
+},
+{
+"i": 30,
+"text": "LUI",
+"start": 10.256,
+"end": 10.464
+},
+{
+"i": 31,
+"text": "PROPOSE",
+"start": 10.464,
+"end": 10.672
+},
+{
+"i": 32,
+"text": "UNE",
+"start": 10.672,
+"end": 10.88
+},
+{
+"i": 33,
+"text": "TONTINE",
+"start": 10.88,
+"end": 11.44
+},
+{
+"i": 34,
+"text": "DE",
+"start": 11.44,
+"end": 11.849
+},
+{
+"i": 35,
+"text": "DIX",
+"start": 11.849,
+"end": 12.258
+},
+{
+"i": 36,
+"text": "PERSONNES :",
+"start": 12.258,
+"end": 12.667
+},
+{
+"i": 37,
+"text": "CHACUN",
+"start": 12.667,
+"end": 13.076
+},
+{
+"i": 38,
+"text": "VERSE",
+"start": 13.076,
+"end": 13.484
+},
+{
+"i": 39,
+"text": "25_000",
+"start": 13.484,
+"end": 13.893
+},
+{
+"i": 40,
+"text": "FCFA",
+"start": 13.893,
+"end": 14.302
+},
+{
+"i": 41,
+"text": "PAR",
+"start": 14.302,
+"end": 14.711
+},
+{
+"i": 42,
+"text": "MOIS.",
+"start": 14.711,
+"end": 15.12
+},
+{
+"i": 43,
+"text": "PREMIER",
+"start": 15.4,
+"end": 15.8
+},
+{
+"i": 44,
+"text": "MOIS,",
+"start": 15.8,
+"end": 16.2
+},
+{
+"i": 45,
+"text": "TOM",
+"start": 16.2,
+"end": 16.52
+},
+{
+"i": 46,
+"text": "REÇOIT",
+"start": 16.52,
+"end": 16.92
+},
+{
+"i": 47,
+"text": "LES",
+"start": 16.92,
+"end": 17.08
+},
+{
+"i": 48,
+"text": "250_000.",
+"start": 17.08,
+"end": 18.04
+},
+{
+"i": 49,
+"text": "IL",
+"start": 18.04,
+"end": 18.2
+},
+{
+"i": 50,
+"text": "ACHÈTE",
+"start": 18.2,
+"end": 18.52
+},
+{
+"i": 51,
+"text": "SA",
+"start": 18.24,
+"end": 19.04
+},
+{
+"i": 52,
+"text": "MOTO,",
+"start": 19.04,
+"end": 19.44
+},
+{
+"i": 53,
+"text": "FIER",
+"start": 19.52,
+"end": 19.867
+},
+{
+"i": 54,
+"text": "COMME",
+"start": 19.867,
+"end": 20.213
+},
+{
+"i": 55,
+"text": "JAMAIS.",
+"start": 20.213,
+"end": 20.56
+},
+{
+"i": 56,
+"text": "MAIS",
+"start": 20.76,
+"end": 21.08
+},
+{
+"i": 57,
+"text": "SON",
+"start": 21.08,
+"end": 21.32
+},
+{
+"i": 58,
+"text": "SALAIRE",
+"start": 21.32,
+"end": 21.8
+},
+{
+"i": 59,
+"text": "TARDE",
+"start": 21.8,
+"end": 22.12
+},
+{
+"i": 60,
+"text": "À",
+"start": 22.28,
+"end": 22.36
+},
+{
+"i": 61,
+"text": "TOMBER.",
+"start": 22.36,
+"end": 22.84
+},
+{
+"i": 62,
+"text": "LE",
+"start": 22.96,
+"end": 23.24
+},
+{
+"i": 63,
+"text": "GROUPE",
+"start": 23.24,
+"end": 23.52
+},
+{
+"i": 64,
+"text": "RÉCLAME",
+"start": 23.52,
+"end": 23.8
+},
+{
+"i": 65,
+"text": "SA",
+"start": 23.8,
+"end": 24.08
+},
+{
+"i": 66,
+"text": "COTISATION.",
+"start": 24.08,
+"end": 24.72
+},
+{
+"i": 67,
+"text": "DONC",
+"start": 24.88,
+"end": 25.12
+},
+{
+"i": 68,
+"text": "TOM",
+"start": 25.28,
+"end": 25.52
+},
+{
+"i": 69,
+"text": "VEND",
+"start": 25.76,
+"end": 26
+},
+{
+"i": 70,
+"text": "SON",
+"start": 26.16,
+"end": 26.32
+},
+{
+"i": 71,
+"text": "TÉLÉPHONE",
+"start": 26.32,
+"end": 26.72
+},
+{
+"i": 72,
+"text": "POUR",
+"start": 26.8,
+"end": 27.098
+},
+{
+"i": 73,
+"text": "PAYER",
+"start": 27.098,
+"end": 27.396
+},
+{
+"i": 74,
+"text": "LES",
+"start": 27.396,
+"end": 27.695
+},
+{
+"i": 75,
+"text": "25_000.",
+"start": 27.695,
+"end": 27.993
+},
+{
+"i": 76,
+"text": "IL",
+"start": 27.993,
+"end": 28.291
+},
+{
+"i": 77,
+"text": "ÉVITE",
+"start": 28.291,
+"end": 28.589
+},
+{
+"i": 78,
+"text": "MÊME",
+"start": 28.589,
+"end": 28.887
+},
+{
+"i": 79,
+"text": "LES",
+"start": 28.887,
+"end": 29.185
+},
+{
+"i": 80,
+"text": "APPELS",
+"start": 29.185,
+"end": 29.484
+},
+{
+"i": 81,
+"text": "DES",
+"start": 29.484,
+"end": 29.782
+},
+{
+"i": 82,
+"text": "AUTRES.",
+"start": 29.782,
+"end": 30.08
+},
+{
+"i": 83,
+"text": "SA",
+"start": 30.28,
+"end": 30.44
+},
+{
+"i": 84,
+"text": "SŒUR",
+"start": 30.52,
+"end": 30.84
+},
+{
+"i": 85,
+"text": "EMMA,",
+"start": 30.84,
+"end": 31.4
+},
+{
+"i": 86,
+"text": "ELLE,",
+"start": 31.4,
+"end": 31.64
+},
+{
+"i": 87,
+"text": "A",
+"start": 31.72,
+"end": 31.88
+},
+{
+"i": 88,
+"text": "ÉPARGNÉ",
+"start": 31.88,
+"end": 32.52
+},
+{
+"i": 89,
+"text": "LES",
+"start": 32.52,
+"end": 32.68
+},
+{
+"i": 90,
+"text": "MÊMES",
+"start": 32.68,
+"end": 32.84
+},
+{
+"i": 91,
+"text": "25_000",
+"start": 32.84,
+"end": 33.48
+},
+{
+"i": 92,
+"text": "CHAQUE",
+"start": 33.64,
+"end": 33.8
+},
+{
+"i": 93,
+"text": "MOIS",
+"start": 33.8,
+"end": 34.04
+},
+{
+"i": 94,
+"text": "SUR",
+"start": 34.04,
+"end": 34.2
+},
+{
+"i": 95,
+"text": "UN",
+"start": 34.2,
+"end": 34.36
+},
+{
+"i": 96,
+"text": "COMPTE",
+"start": 34.36,
+"end": 34.68
+},
+{
+"i": 97,
+"text": "RÉMUNÉRÉ",
+"start": 34.68,
+"end": 35.24
+},
+{
+"i": 98,
+"text": "À",
+"start": 35.24,
+"end": 35.4
+},
+{
+"i": 99,
+"text": "3,5",
+"start": 35.4,
+"end": 36.36
+},
+{
+"i": 100,
+"text": "%",
+"start": 36.36,
+"end": 36.52
+},
+{
+"i": 101,
+"text": "PAR",
+"start": 36.52,
+"end": 36.68
+},
+{
+"i": 102,
+"text": "AN,",
+"start": 36.68,
+"end": 37
+},
+{
+"i": 103,
+"text": "SANS",
+"start": 37,
+"end": 37.24
+},
+{
+"i": 104,
+"text": "FRAIS",
+"start": 37.24,
+"end": 37.56
+},
+{
+"i": 105,
+"text": "DE",
+"start": 37.56,
+"end": 37.64
+},
+{
+"i": 106,
+"text": "TENUE",
+"start": 37.64,
+"end": 38.04
+},
+{
+"i": 107,
+"text": "CHEZ",
+"start": 38.04,
+"end": 38.2
+},
+{
+"i": 108,
+"text": "NSIA.",
+"start": 38.2,
+"end": 39.16
+},
+{
+"i": 109,
+"text": "APRÈS",
+"start": 39.16,
+"end": 39.48
+},
+{
+"i": 110,
+"text": "DIX",
+"start": 39.48,
+"end": 39.88
+},
+{
+"i": 111,
+"text": "VERSEMENTS,",
+"start": 39.88,
+"end": 40.28
+},
+{
+"i": 112,
+"text": "ELLE",
+"start": 40.28,
+"end": 40.52
+},
+{
+"i": 113,
+"text": "A",
+"start": 40.52,
+"end": 40.6
+},
+{
+"i": 114,
+"text": "MIS",
+"start": 40.6,
+"end": 40.84
+},
+{
+"i": 115,
+"text": "DE",
+"start": 40.84,
+"end": 40.92
+},
+{
+"i": 116,
+"text": "CÔTÉ",
+"start": 40.92,
+"end": 41.32
+},
+{
+"i": 117,
+"text": "250_000…",
+"start": 41.32,
+"end": 42.52
+},
+{
+"i": 118,
+"text": "ET",
+"start": 42.52,
+"end": 42.68
+},
+{
+"i": 119,
+"text": "GAGNÉ",
+"start": 42.68,
+"end": 43
+},
+{
+"i": 120,
+"text": "ENVIRON",
+"start": 43.08,
+"end": 43.4
+},
+{
+"i": 121,
+"text": "4_000",
+"start": 43.4,
+"end": 43.96
+},
+{
+"i": 122,
+"text": "FCFA",
+"start": 43.96,
+"end": 44.52
+},
+{
+"i": 123,
+"text": "D’INTÉRÊTS",
+"start": 44.52,
+"end": 45.08
+},
+{
+"i": 124,
+"text": "BRUTS.",
+"start": 45.08,
+"end": 45.64
+},
+{
+"i": 125,
+"text": "TOM,",
+"start": 45.84,
+"end": 46.32
+},
+{
+"i": 126,
+"text": "LUI,",
+"start": 46.32,
+"end": 46.68
+},
+{
+"i": 127,
+"text": "A",
+"start": 46.68,
+"end": 46.84
+},
+{
+"i": 128,
+"text": "GAGNÉ",
+"start": 46.84,
+"end": 47.16
+},
+{
+"i": 129,
+"text": "ZÉRO",
+"start": 47.16,
+"end": 47.48
+},
+{
+"i": 130,
+"text": "INTÉRÊT :",
+"start": 47.44,
+"end": 47.933
+},
+{
+"i": 131,
+"text": "LES",
+"start": 47.933,
+"end": 48.427
+},
+{
+"i": 132,
+"text": "250_000",
+"start": 48.427,
+"end": 48.92
+},
+{
+"i": 133,
+"text": "ÉTAIENT",
+"start": 48.92,
+"end": 49.413
+},
+{
+"i": 134,
+"text": "SON",
+"start": 49.413,
+"end": 49.907
+},
+{
+"i": 135,
+"text": "PROPRE",
+"start": 49.907,
+"end": 50.4
+},
+{
+"i": 136,
+"text": "ARGENT,",
+"start": 50.4,
+"end": 50.72
+},
+{
+"i": 137,
+"text": "REÇU",
+"start": 50.8,
+"end": 51.088
+},
+{
+"i": 138,
+"text": "EN",
+"start": 51.088,
+"end": 51.376
+},
+{
+"i": 139,
+"text": "AVANCE.",
+"start": 51.376,
+"end": 51.664
+},
+{
+"i": 140,
+"text": "IL",
+"start": 51.664,
+"end": 51.952
+},
+{
+"i": 141,
+"text": "DOIT",
+"start": 51.952,
+"end": 52.24
+},
+{
+"i": 142,
+"text": "ENCORE",
+"start": 52.4,
+"end": 52.56
+},
+{
+"i": 143,
+"text": "NEUF",
+"start": 52.72,
+"end": 52.88
+},
+{
+"i": 144,
+"text": "COTISATIONS.",
+"start": 53.04,
+"end": 53.76
+},
+{
+"i": 145,
+"text": "LA",
+"start": 53.88,
+"end": 54.12
+},
+{
+"i": 146,
+"text": "TONTINE",
+"start": 54.12,
+"end": 54.76
+},
+{
+"i": 147,
+"text": "DONNE",
+"start": 54.76,
+"end": 55.08
+},
+{
+"i": 148,
+"text": "UNE",
+"start": 55.08,
+"end": 55.16
+},
+{
+"i": 149,
+"text": "GROSSE",
+"start": 55.16,
+"end": 55.4
+},
+{
+"i": 150,
+"text": "SOMME",
+"start": 55.4,
+"end": 55.8
+},
+{
+"i": 151,
+"text": "PLUS",
+"start": 55.8,
+"end": 55.88
+},
+{
+"i": 152,
+"text": "TÔT ;",
+"start": 55.96,
+"end": 56.28
+},
+{
+"i": 153,
+"text": "LE",
+"start": 56.44,
+"end": 56.6
+},
+{
+"i": 154,
+"text": "COMPTE",
+"start": 56.6,
+"end": 57.08
+},
+{
+"i": 155,
+"text": "FAIT",
+"start": 57.08,
+"end": 57.24
+},
+{
+"i": 156,
+"text": "TRAVAILLER",
+"start": 57.32,
+"end": 57.8
+},
+{
+"i": 157,
+"text": "DOUCEMENT",
+"start": 57.8,
+"end": 58.36
+},
+{
+"i": 158,
+"text": "TON",
+"start": 58.36,
+"end": 58.6
+},
+{
+"i": 159,
+"text": "ARGENT.",
+"start": 58.6,
+"end": 59.16
+},
+{
+"i": 160,
+"text": "ABONNE-TOI",
+"start": 59.35,
+"end": 59.91
+},
+{
+"i": 161,
+"text": "À",
+"start": 59.91,
+"end": 59.99
+},
+{
+"i": 162,
+"text": "LEFINANCIER :",
+"start": 59.99,
+"end": 60.71
+},
+{
+"i": 163,
+"text": "TU",
+"start": 60.79,
+"end": 61.03
+},
+{
+"i": 164,
+"text": "PRÉFÈRES",
+"start": 61.03,
+"end": 61.35
+},
+{
+"i": 165,
+"text": "QUOI ?",
+"start": 61.35,
+"end": 61.67
+}
+]

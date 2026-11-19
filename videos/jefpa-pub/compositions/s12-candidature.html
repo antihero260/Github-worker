@@ -1,0 +1,29 @@
+<!-- Tu es en Licence 3, Master 1 ou Master 2 Actuariat ? Ta place est à construire (70.33 → 75.69 s). Écrit par tools/construire.py. -->
+<template>
+  <style>
+    #root { position: absolute; inset: 0; }
+  </style>
+  <div id="root" data-composition-id="s12-candidature" data-width="1920" data-height="1080">
+    <div class="sc">
+      <div id="s12-candidature-cam" class="sc-cam">
+        <div id="s12-candidature-cadre" class="sc-cadre">
+        <div id="k-c" class="capt" style="z-index: 1"><video id="k-c-v" class="clip" src="assets/captures/c13-candidature.mp4" data-start="0.0" data-duration="5.36" data-media-start="0.53" data-track-index="5" muted playsinline></video></div>
+        </div>
+      </div>
+      <div id="k-bande" class="bande"><span>Ta place est</span><b>à construire.</b></div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#s12-candidature-cam", { filter: "blur(16px)", scale: 1.1 }, { filter: "blur(0px)", scale: 1, duration: 0.3, ease: "power3.out" }, 0);
+    tl.to("#s12-candidature-cam", { scale: 1.03, duration: 4.76, ease: "none" }, 0.3);
+    tl.to("#s12-candidature-cadre", { x: 240, y: 135, scale: 1.25, duration: 0.3, ease: "power2.out" }, 0.05);
+    tl.to("#s12-candidature-cadre", { x: 672, y: -272, scale: 1.7, duration: 0.5, ease: "power3.inOut" }, 0.4);
+    tl.to("#s12-candidature-cadre", { x: 367, y: -272, scale: 1.7, duration: 0.5, ease: "power3.inOut" }, 1.36);
+    tl.to("#s12-candidature-cadre", { x: -408, y: -272, scale: 1.7, duration: 0.5, ease: "power3.inOut" }, 2.24);
+    tl.to("#s12-candidature-cadre", { x: 0, y: 0, scale: 1.0, duration: 0.5, ease: "power3.inOut" }, 3.58);
+    tl.fromTo("#k-bande", { clipPath: "inset(0 100% 0 0)" }, { clipPath: "inset(0 0% 0 0)", duration: 0.55, ease: "expo.inOut", immediateRender: true }, 3.78);
+    tl.to("#s12-candidature-cam", { scale: 1.18, filter: "blur(16px)", duration: 0.24, ease: "power3.in" }, 5.12);
+    window.__timelines["s12-candidature"] = tl;
+  </script>
+</template>

@@ -1,0 +1,55 @@
+<!-- Scène 7 · « Et pour réaliser ça, tu peux combiner deux outils. » (23.19 → 26.05 s). Fichier écrit par un générateur, modifiable à la main. -->
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+    }
+
+  </style>
+  <div id="root" data-composition-id="s07-deux-outils" data-width="1920" data-height="1080">
+    <div class="pj-scene">
+      <div id="s07-deux-outils-cam" class="pj-cam">
+        <div id="s07-deux-outils-cadre" class="pj-cadre">
+        <div class="pj-horizon" style="top: 760px"></div>
+        <div id="s07-f-0" class="sx-plein" style="opacity: 0"><video id="s07-f-0-v" class="clip" src="assets/video/code-techno.mp4" data-start="0.0" data-duration="0.54" data-track-index="5" muted playsinline style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover"></video></div>
+        <div id="s07-f-1" class="sx-plein" style="opacity: 0"><video id="s07-f-1-v" class="clip" src="assets/video/lunettes-hex.mp4" data-start="0.44" data-duration="1.21" data-track-index="6" muted playsinline style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover"></video></div>
+        <div id="s07-f-2" class="sx-plein" style="opacity: 0"><video id="s07-f-2-v" class="clip" src="assets/video/hologramme-social.mp4" data-start="1.55" data-duration="0.92" data-track-index="7" muted playsinline style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover"></video></div>
+        <div id="s07-f-3" class="sx-plein" style="opacity: 0"><video id="s07-f-3-v" class="clip" src="assets/video/base-3d.mp4" data-start="2.37" data-duration="0.59" data-track-index="5" muted playsinline style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover"></video></div>
+        <div id="s07-f-voile" style="position: absolute; inset: 0; background: rgba(12, 12, 12, 0.6)"></div>
+        <div id="s07-fr" class="pj-logo" style="left: 520px; top: 330px; width: 300px; opacity: 0"><img src="assets/img/logo-framer.svg" alt="Framer" style="width: 204px; height: 204px" /><div class="pj-logo-nom">Framer</div></div>
+        <div id="s07-sp" class="pj-logo" style="left: 1100px; top: 330px; width: 300px; opacity: 0"><img src="assets/img/logo-spline.png" alt="Spline" style="width: 204px; height: 204px" /><div class="pj-logo-nom">Spline</div></div>
+        <div id="s07-plus" class="al-choc" style="left: 860px; width: 200px; top: 390px; font-size: 200px; opacity: 0">+</div>
+        <svg id="s07-toi" class="pj-perso pj-toi-perso" viewBox="-30 -20 160 290" style="left: 911px; top: 714px; width: 99px; height: 180px"><g id="s07-toi-vie"><g id="s07-toi-corps"><g id="s07-toi-jg"><g class="c"><rect x="24" y="136" width="24" height="112" rx="8" /></g><g class="p"><rect x="24" y="136" width="24" height="112" rx="8" /></g></g><g id="s07-toi-jd"><g class="c"><rect x="52" y="136" width="24" height="112" rx="8" /></g><g class="p"><rect x="52" y="136" width="24" height="112" rx="8" /></g></g><g id="s07-toi-tronc"><g class="c"><rect x="22" y="52" width="56" height="94" rx="12" /></g><g class="p"><rect x="22" y="52" width="56" height="94" rx="12" /></g></g><g id="s07-toi-bg"><g class="c"><rect x="2" y="54" width="18" height="86" rx="9" /></g><g class="p"><rect x="2" y="54" width="18" height="86" rx="9" /></g></g><g id="s07-toi-bd"><g class="c"><rect x="80" y="54" width="18" height="86" rx="9" /></g><g class="p"><rect x="80" y="54" width="18" height="86" rx="9" /></g></g><g id="s07-toi-tete"><g class="c"><circle cx="50" cy="24" r="22" /></g><g class="p"><circle cx="50" cy="24" r="22" /></g></g></g></g></svg>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#s07-deux-outils-cam", { scale: 1 }, { scale: 1.05, duration: 2.66, ease: "none" }, 0);
+    tl.fromTo("#s07-deux-outils-cam", { filter: "blur(14px)" }, { filter: "blur(0px)", duration: 0.16, ease: "power2.out" }, 0);
+    tl.set("#s07-f-0", { opacity: 1 }, 0.0);
+    tl.fromTo("#s07-f-0", { scale: 1.22, x: 0, rotation: 0 }, { scale: 1.02, x: 0, rotation: 0, duration: 0.44, ease: "power2.out", immediateRender: false }, 0.0);
+    tl.set("#s07-f-0", { opacity: 0 }, 0.46);
+    tl.set("#s07-f-1", { opacity: 1 }, 0.44);
+    tl.fromTo("#s07-f-1", { scale: 1.12, x: -60, rotation: 0 }, { scale: 1.02, x: 0, rotation: 0, duration: 1.11, ease: "power2.out", immediateRender: false }, 0.44);
+    tl.set("#s07-f-1", { opacity: 0 }, 1.57);
+    tl.set("#s07-f-2", { opacity: 1 }, 1.55);
+    tl.fromTo("#s07-f-2", { scale: 1.12, x: 0, rotation: 2 }, { scale: 1.02, x: 0, rotation: 0, duration: 0.82, ease: "power2.out", immediateRender: false }, 1.55);
+    tl.set("#s07-f-2", { opacity: 0 }, 2.39);
+    tl.set("#s07-f-3", { opacity: 1 }, 2.37);
+    tl.fromTo("#s07-f-3", { scale: 1.22, x: 0, rotation: 0 }, { scale: 1.02, x: 0, rotation: 0, duration: 0.49, ease: "power2.out", immediateRender: false }, 2.37);
+    tl.fromTo("#s07-fr", { opacity: 0, x: -900 }, { opacity: 1, x: 0, duration: 0.3, ease: "expo.out" }, 1.55);
+    tl.fromTo("#s07-sp", { opacity: 0, x: 900 }, { opacity: 1, x: 0, duration: 0.3, ease: "expo.out" }, 1.7);
+    tl.fromTo("#s07-plus", { opacity: 0, scale: 2 }, { opacity: 1, scale: 1, duration: 0.18, ease: "back.out(2.2)" }, 2.09);
+    tl.fromTo("#s07-deux-outils-cam", { x: 0, y: 0 }, { keyframes: [{ x: -14, y: 7, duration: 0.04 }, { x: 14, y: -7, duration: 0.04 }, { x: -7, y: 4, duration: 0.04 }, { x: 0, y: 0, duration: 0.05 }], immediateRender: false }, 2.09);
+    tl.fromTo("#s07-toi-vie", { y: 0 }, { y: -5, duration: 0.42, repeat: 5, yoyo: true, ease: "sine.inOut", immediateRender: false }, 0.0);
+    tl.to("#s07-toi-bg", { rotation: 150, svgOrigin: "11 62", duration: 0.16, ease: "back.out(2)" }, 1.55);
+    tl.to("#s07-toi-bd", { rotation: -150, svgOrigin: "89 62", duration: 0.16, ease: "back.out(2)" }, 1.55);
+    tl.to("#s07-toi-tete", { rotation: 0, svgOrigin: "50 50", duration: 0.16, ease: "back.out(2)" }, 1.55);
+    tl.to("#s07-deux-outils-cam", { scale: 1.3, filter: "blur(14px)", duration: 0.2, ease: "power3.in" }, 2.66);
+    window.__timelines["s07-deux-outils"] = tl;
+  </script>
+</template>

@@ -1,0 +1,2480 @@
+[
+  {
+    "id": "w0",
+    "text": "Alors",
+    "start": 0.24,
+    "end": 0.48
+  },
+  {
+    "id": "w1",
+    "text": "c'est",
+    "start": 0.56,
+    "end": 0.88
+  },
+  {
+    "id": "w2",
+    "text": "un",
+    "start": 0.88,
+    "end": 0.96
+  },
+  {
+    "id": "w3",
+    "text": "vous",
+    "start": 1.36,
+    "end": 1.44
+  },
+  {
+    "id": "w4",
+    "text": "m'a",
+    "start": 1.52,
+    "end": 1.68
+  },
+  {
+    "id": "w5",
+    "text": "contacté",
+    "start": 1.68,
+    "end": 2
+  },
+  {
+    "id": "w6",
+    "text": "pour",
+    "start": 2.16,
+    "end": 2.32
+  },
+  {
+    "id": "w7",
+    "text": "me",
+    "start": 2.32,
+    "end": 2.4
+  },
+  {
+    "id": "w8",
+    "text": "demander",
+    "start": 2.4,
+    "end": 2.64
+  },
+  {
+    "id": "w9",
+    "text": "comment",
+    "start": 2.8,
+    "end": 3.04
+  },
+  {
+    "id": "w10",
+    "text": "je",
+    "start": 3.04,
+    "end": 3.2
+  },
+  {
+    "id": "w11",
+    "text": "faisais",
+    "start": 3.2,
+    "end": 3.52
+  },
+  {
+    "id": "w12",
+    "text": "mes",
+    "start": 3.52,
+    "end": 3.68
+  },
+  {
+    "id": "w13",
+    "text": "vidéos",
+    "start": 3.68,
+    "end": 3.92
+  },
+  {
+    "id": "w14",
+    "text": "avec",
+    "start": 3.92,
+    "end": 4
+  },
+  {
+    "id": "w15",
+    "text": "l'IA.",
+    "start": 4.08,
+    "end": 4.88
+  },
+  {
+    "id": "w16",
+    "text": "Généralement",
+    "start": 5.12,
+    "end": 5.68
+  },
+  {
+    "id": "w17",
+    "text": "j'utilise",
+    "start": 5.76,
+    "end": 6.48
+  },
+  {
+    "id": "w18",
+    "text": "Cloud,",
+    "start": 6.48,
+    "end": 7.36
+  },
+  {
+    "id": "w19",
+    "text": "notamment",
+    "start": 7.36,
+    "end": 7.76
+  },
+  {
+    "id": "w20",
+    "text": "pour",
+    "start": 7.84,
+    "end": 8
+  },
+  {
+    "id": "w21",
+    "text": "le",
+    "start": 8,
+    "end": 8.08
+  },
+  {
+    "id": "w22",
+    "text": "modèle",
+    "start": 8.08,
+    "end": 8.4
+  },
+  {
+    "id": "w23",
+    "text": "Opus",
+    "start": 8.4,
+    "end": 8.64
+  },
+  {
+    "id": "w24",
+    "text": "5.5,",
+    "start": 8.88,
+    "end": 9.76
+  },
+  {
+    "id": "w25",
+    "text": "mais",
+    "start": 9.76,
+    "end": 10
+  },
+  {
+    "id": "w26",
+    "text": "il",
+    "start": 10,
+    "end": 10.08
+  },
+  {
+    "id": "w27",
+    "text": "n'y",
+    "start": 10.08,
+    "end": 10.24
+  },
+  {
+    "id": "w28",
+    "text": "a",
+    "start": 10.24,
+    "end": 10.32
+  },
+  {
+    "id": "w29",
+    "text": "pas",
+    "start": 10.32,
+    "end": 10.48
+  },
+  {
+    "id": "w30",
+    "text": "que",
+    "start": 10.48,
+    "end": 10.64
+  },
+  {
+    "id": "w31",
+    "text": "Chat",
+    "start": 11.04,
+    "end": 11.36
+  },
+  {
+    "id": "w32",
+    "text": "GPT,",
+    "start": 11.52,
+    "end": 12.16
+  },
+  {
+    "id": "w33",
+    "text": "Gemini,",
+    "start": 12.16,
+    "end": 12.88
+  },
+  {
+    "id": "w34",
+    "text": "Groc",
+    "start": 12.88,
+    "end": 13.44
+  },
+  {
+    "id": "w35",
+    "text": "et",
+    "start": 13.44,
+    "end": 13.52
+  },
+  {
+    "id": "w36",
+    "text": "bien",
+    "start": 13.52,
+    "end": 13.6
+  },
+  {
+    "id": "w37",
+    "text": "autre",
+    "start": 13.76,
+    "end": 13.92
+  },
+  {
+    "id": "w38",
+    "text": "modèle",
+    "start": 13.92,
+    "end": 14.24
+  },
+  {
+    "id": "w39",
+    "text": "peut",
+    "start": 14.24,
+    "end": 14.32
+  },
+  {
+    "id": "w40",
+    "text": "aussi",
+    "start": 14.56,
+    "end": 14.64
+  },
+  {
+    "id": "w41",
+    "text": "le",
+    "start": 14.8,
+    "end": 14.96
+  },
+  {
+    "id": "w42",
+    "text": "faire.",
+    "start": 14.96,
+    "end": 15.84
+  },
+  {
+    "id": "w43",
+    "text": "Le",
+    "start": 16.16,
+    "end": 16.4
+  },
+  {
+    "id": "w44",
+    "text": "veritable",
+    "start": 16.4,
+    "end": 16.88
+  },
+  {
+    "id": "w45",
+    "text": "game",
+    "start": 17.04,
+    "end": 17.36
+  },
+  {
+    "id": "w46",
+    "text": "le",
+    "start": 21.36,
+    "end": 21.68
+  },
+  {
+    "id": "w47",
+    "text": "veritable",
+    "start": 21.68,
+    "end": 22.32
+  },
+  {
+    "id": "w48",
+    "text": "game",
+    "start": 22.32,
+    "end": 22.64
+  },
+  {
+    "id": "w49",
+    "text": "changer.",
+    "start": 22.64,
+    "end": 27.92
+  },
+  {
+    "id": "w50",
+    "text": "Le",
+    "start": 28.24,
+    "end": 28.48
+  },
+  {
+    "id": "w51",
+    "text": "veritable",
+    "start": 28.48,
+    "end": 28.96
+  },
+  {
+    "id": "w52",
+    "text": "game",
+    "start": 29.12,
+    "end": 29.36
+  },
+  {
+    "id": "w53",
+    "text": "changer,",
+    "start": 29.36,
+    "end": 30.16
+  },
+  {
+    "id": "w54",
+    "text": "c'est",
+    "start": 30.16,
+    "end": 30.4
+  },
+  {
+    "id": "w55",
+    "text": "une",
+    "start": 30.4,
+    "end": 30.48
+  },
+  {
+    "id": "w56",
+    "text": "skills",
+    "start": 30.64,
+    "end": 31.04
+  },
+  {
+    "id": "w57",
+    "text": "appelé",
+    "start": 31.2,
+    "end": 31.52
+  },
+  {
+    "id": "w58",
+    "text": "hyperframe.",
+    "start": 31.68,
+    "end": 33.12
+  },
+  {
+    "id": "w59",
+    "text": "Alors",
+    "start": 33.44,
+    "end": 34.08
+  },
+  {
+    "id": "w60",
+    "text": "it",
+    "start": 41.44,
+    "end": 41.52
+  },
+  {
+    "id": "w61",
+    "text": "game",
+    "start": 41.84,
+    "end": 42.08
+  },
+  {
+    "id": "w62",
+    "text": "changer,",
+    "start": 42.08,
+    "end": 42.72
+  },
+  {
+    "id": "w63",
+    "text": "the",
+    "start": 42.88,
+    "end": 43.04
+  },
+  {
+    "id": "w64",
+    "text": "véritable",
+    "start": 43.04,
+    "end": 43.52
+  },
+  {
+    "id": "w65",
+    "text": "game",
+    "start": 43.68,
+    "end": 44.24
+  },
+  {
+    "id": "w66",
+    "text": "changer",
+    "start": 44.24,
+    "end": 44.88
+  },
+  {
+    "id": "w67",
+    "text": "est",
+    "start": 45.12,
+    "end": 45.28
+  },
+  {
+    "id": "w68",
+    "text": "une",
+    "start": 45.36,
+    "end": 45.44
+  },
+  {
+    "id": "w69",
+    "text": "skill",
+    "start": 45.6,
+    "end": 45.84
+  },
+  {
+    "id": "w70",
+    "text": "appelée",
+    "start": 45.92,
+    "end": 46.32
+  },
+  {
+    "id": "w71",
+    "text": "hyperframe.",
+    "start": 46.32,
+    "end": 47.52
+  },
+  {
+    "id": "w72",
+    "text": "Pourquoi?",
+    "start": 47.52,
+    "end": 48.48
+  },
+  {
+    "id": "w73",
+    "text": "Parce",
+    "start": 48.48,
+    "end": 48.8
+  },
+  {
+    "id": "w74",
+    "text": "que",
+    "start": 48.8,
+    "end": 48.96
+  },
+  {
+    "id": "w75",
+    "text": "la",
+    "start": 48.96,
+    "end": 49.04
+  },
+  {
+    "id": "w76",
+    "text": "modèle",
+    "start": 49.12,
+    "end": 49.36
+  },
+  {
+    "id": "w77",
+    "text": "que",
+    "start": 49.44,
+    "end": 49.52
+  },
+  {
+    "id": "w78",
+    "text": "je",
+    "start": 49.52,
+    "end": 49.6
+  },
+  {
+    "id": "w79",
+    "text": "viens",
+    "start": 49.68,
+    "end": 49.92
+  },
+  {
+    "id": "w80",
+    "text": "de",
+    "start": 49.92,
+    "end": 50.08
+  },
+  {
+    "id": "w81",
+    "text": "citer,",
+    "start": 50.08,
+    "end": 50.72
+  },
+  {
+    "id": "w82",
+    "text": "parce",
+    "start": 50.72,
+    "end": 50.88
+  },
+  {
+    "id": "w83",
+    "text": "que",
+    "start": 50.88,
+    "end": 51.04
+  },
+  {
+    "id": "w84",
+    "text": "la",
+    "start": 51.04,
+    "end": 51.12
+  },
+  {
+    "id": "w85",
+    "text": "modèle",
+    "start": 51.2,
+    "end": 51.44
+  },
+  {
+    "id": "w86",
+    "text": "que",
+    "start": 51.52,
+    "end": 51.6
+  },
+  {
+    "id": "w87",
+    "text": "je",
+    "start": 51.6,
+    "end": 51.68
+  },
+  {
+    "id": "w88",
+    "text": "viens",
+    "start": 51.76,
+    "end": 51.92
+  },
+  {
+    "id": "w89",
+    "text": "de",
+    "start": 51.92,
+    "end": 52
+  },
+  {
+    "id": "w90",
+    "text": "citer,",
+    "start": 52.24,
+    "end": 53.04
+  },
+  {
+    "id": "w91",
+    "text": "ils",
+    "start": 53.04,
+    "end": 53.28
+  },
+  {
+    "id": "w92",
+    "text": "sont...",
+    "start": 53.28,
+    "end": 56.08
+  },
+  {
+    "id": "w93",
+    "text": "Nous",
+    "start": 56.45,
+    "end": 56.61
+  },
+  {
+    "id": "w94",
+    "text": "sont",
+    "start": 56.77,
+    "end": 57.01
+  },
+  {
+    "id": "w95",
+    "text": "pas",
+    "start": 57.01,
+    "end": 57.25
+  },
+  {
+    "id": "w96",
+    "text": "spécialement",
+    "start": 57.25,
+    "end": 57.89
+  },
+  {
+    "id": "w97",
+    "text": "faits.",
+    "start": 57.89,
+    "end": 59.89
+  },
+  {
+    "id": "w98",
+    "text": "Ne",
+    "start": 60.15,
+    "end": 60.39
+  },
+  {
+    "id": "w99",
+    "text": "sont",
+    "start": 60.39,
+    "end": 60.71
+  },
+  {
+    "id": "w100",
+    "text": "pas",
+    "start": 60.71,
+    "end": 60.87
+  },
+  {
+    "id": "w101",
+    "text": "specialement",
+    "start": 60.87,
+    "end": 61.51
+  },
+  {
+    "id": "w102",
+    "text": "conçues",
+    "start": 61.51,
+    "end": 61.99
+  },
+  {
+    "id": "w103",
+    "text": "pour",
+    "start": 61.99,
+    "end": 62.15
+  },
+  {
+    "id": "w104",
+    "text": "creer",
+    "start": 62.15,
+    "end": 62.47
+  },
+  {
+    "id": "w105",
+    "text": "des",
+    "start": 62.47,
+    "end": 62.55
+  },
+  {
+    "id": "w106",
+    "text": "video",
+    "start": 62.55,
+    "end": 62.71
+  },
+  {
+    "id": "w107",
+    "text": "parce",
+    "start": 62.95,
+    "end": 63.19
+  },
+  {
+    "id": "w108",
+    "text": "que",
+    "start": 63.19,
+    "end": 63.27
+  },
+  {
+    "id": "w109",
+    "text": "le",
+    "start": 63.27,
+    "end": 63.43
+  },
+  {
+    "id": "w110",
+    "text": "modèle",
+    "start": 63.43,
+    "end": 63.75
+  },
+  {
+    "id": "w111",
+    "text": "que",
+    "start": 63.75,
+    "end": 63.83
+  },
+  {
+    "id": "w112",
+    "text": "je",
+    "start": 63.83,
+    "end": 63.91
+  },
+  {
+    "id": "w113",
+    "text": "viens",
+    "start": 63.99,
+    "end": 64.15
+  },
+  {
+    "id": "w114",
+    "text": "de",
+    "start": 64.15,
+    "end": 64.23
+  },
+  {
+    "id": "w115",
+    "text": "citer",
+    "start": 64.47,
+    "end": 64.79
+  },
+  {
+    "id": "w116",
+    "text": "ne",
+    "start": 64.95,
+    "end": 65.03
+  },
+  {
+    "id": "w117",
+    "text": "sont",
+    "start": 65.03,
+    "end": 65.11
+  },
+  {
+    "id": "w118",
+    "text": "pas",
+    "start": 65.27,
+    "end": 65.43
+  },
+  {
+    "id": "w119",
+    "text": "specialement",
+    "start": 65.43,
+    "end": 65.99
+  },
+  {
+    "id": "w120",
+    "text": "conçues",
+    "start": 65.99,
+    "end": 66.55
+  },
+  {
+    "id": "w121",
+    "text": "pour",
+    "start": 66.55,
+    "end": 66.71
+  },
+  {
+    "id": "w122",
+    "text": "creer",
+    "start": 66.71,
+    "end": 67.19
+  },
+  {
+    "id": "w123",
+    "text": "des",
+    "start": 67.19,
+    "end": 67.35
+  },
+  {
+    "id": "w124",
+    "text": "video.",
+    "start": 67.35,
+    "end": 67.91
+  },
+  {
+    "id": "w125",
+    "text": "On",
+    "start": 67.91,
+    "end": 68.15
+  },
+  {
+    "id": "w126",
+    "text": "revanche,",
+    "start": 68.15,
+    "end": 68.71
+  },
+  {
+    "id": "w127",
+    "text": "si",
+    "start": 68.71,
+    "end": 68.87
+  },
+  {
+    "id": "w128",
+    "text": "bien",
+    "start": 69.11,
+    "end": 69.27
+  },
+  {
+    "id": "w129",
+    "text": "une",
+    "start": 69.27,
+    "end": 69.43
+  },
+  {
+    "id": "w130",
+    "text": "chose",
+    "start": 69.43,
+    "end": 69.51
+  },
+  {
+    "id": "w131",
+    "text": "dans",
+    "start": 69.67,
+    "end": 69.75
+  },
+  {
+    "id": "w132",
+    "text": "laquelle",
+    "start": 69.75,
+    "end": 70.07
+  },
+  {
+    "id": "w133",
+    "text": "c'est",
+    "start": 70.71,
+    "end": 70.87
+  },
+  {
+    "id": "w134",
+    "text": "credique",
+    "start": 71.03,
+    "end": 71.35
+  },
+  {
+    "id": "w135",
+    "text": "code.",
+    "start": 71.43,
+    "end": 72.47
+  },
+  {
+    "id": "w136",
+    "text": "Et",
+    "start": 75.83,
+    "end": 76.15
+  },
+  {
+    "id": "w137",
+    "text": "c'est",
+    "start": 76.15,
+    "end": 76.39
+  },
+  {
+    "id": "w138",
+    "text": "exactement",
+    "start": 76.47,
+    "end": 76.87
+  },
+  {
+    "id": "w139",
+    "text": "là",
+    "start": 76.95,
+    "end": 77.03
+  },
+  {
+    "id": "w140",
+    "text": "que",
+    "start": 77.11,
+    "end": 77.35
+  },
+  {
+    "id": "w141",
+    "text": "hyperframe",
+    "start": 77.35,
+    "end": 78.47
+  },
+  {
+    "id": "w142",
+    "text": "interven.",
+    "start": 78.47,
+    "end": 79.03
+  },
+  {
+    "id": "w143",
+    "text": "Et",
+    "start": 79.19,
+    "end": 79.35
+  },
+  {
+    "id": "w144",
+    "text": "c'est",
+    "start": 79.35,
+    "end": 79.59
+  },
+  {
+    "id": "w145",
+    "text": "exactement",
+    "start": 79.59,
+    "end": 79.91
+  },
+  {
+    "id": "w146",
+    "text": "là",
+    "start": 79.91,
+    "end": 79.99
+  },
+  {
+    "id": "w147",
+    "text": "que",
+    "start": 80.07,
+    "end": 80.15
+  },
+  {
+    "id": "w148",
+    "text": "hyperframe",
+    "start": 80.31,
+    "end": 81.19
+  },
+  {
+    "id": "w149",
+    "text": "interven.",
+    "start": 81.35,
+    "end": 81.83
+  },
+  {
+    "id": "w150",
+    "text": "It",
+    "start": 88.23,
+    "end": 88.47
+  },
+  {
+    "id": "w151",
+    "text": "permanent",
+    "start": 88.47,
+    "end": 89.03
+  },
+  {
+    "id": "w152",
+    "text": "to",
+    "start": 89.03,
+    "end": 89.19
+  },
+  {
+    "id": "w153",
+    "text": "create",
+    "start": 89.19,
+    "end": 89.67
+  },
+  {
+    "id": "w154",
+    "text": "the",
+    "start": 89.67,
+    "end": 89.83
+  },
+  {
+    "id": "w155",
+    "text": "video",
+    "start": 89.83,
+    "end": 89.99
+  },
+  {
+    "id": "w156",
+    "text": "apart",
+    "start": 90.31,
+    "end": 90.63
+  },
+  {
+    "id": "w157",
+    "text": "of",
+    "start": 90.87,
+    "end": 91.11
+  },
+  {
+    "id": "w158",
+    "text": "reference",
+    "start": 91.11,
+    "end": 91.59
+  },
+  {
+    "id": "w159",
+    "text": "visual",
+    "start": 91.67,
+    "end": 92.15
+  },
+  {
+    "id": "w160",
+    "text": "and",
+    "start": 92.15,
+    "end": 92.31
+  },
+  {
+    "id": "w161",
+    "text": "code.",
+    "start": 92.47,
+    "end": 93.83
+  },
+  {
+    "id": "w162",
+    "text": "Il",
+    "start": 94.11,
+    "end": 94.43
+  },
+  {
+    "id": "w163",
+    "text": "permet",
+    "start": 94.43,
+    "end": 94.91
+  },
+  {
+    "id": "w164",
+    "text": "de",
+    "start": 94.91,
+    "end": 95.07
+  },
+  {
+    "id": "w165",
+    "text": "créer",
+    "start": 95.07,
+    "end": 95.39
+  },
+  {
+    "id": "w166",
+    "text": "des",
+    "start": 95.39,
+    "end": 95.55
+  },
+  {
+    "id": "w167",
+    "text": "vidéos",
+    "start": 95.55,
+    "end": 95.95
+  },
+  {
+    "id": "w168",
+    "text": "à",
+    "start": 95.95,
+    "end": 96.03
+  },
+  {
+    "id": "w169",
+    "text": "partir",
+    "start": 96.03,
+    "end": 96.35
+  },
+  {
+    "id": "w170",
+    "text": "de",
+    "start": 96.35,
+    "end": 96.51
+  },
+  {
+    "id": "w171",
+    "text": "références",
+    "start": 96.51,
+    "end": 97.07
+  },
+  {
+    "id": "w172",
+    "text": "visuelles",
+    "start": 97.07,
+    "end": 97.39
+  },
+  {
+    "id": "w173",
+    "text": "et",
+    "start": 97.47,
+    "end": 97.63
+  },
+  {
+    "id": "w174",
+    "text": "de",
+    "start": 97.63,
+    "end": 97.79
+  },
+  {
+    "id": "w175",
+    "text": "code.",
+    "start": 97.79,
+    "end": 98.43
+  },
+  {
+    "id": "w176",
+    "text": "With",
+    "start": 98.47,
+    "end": 98.71
+  },
+  {
+    "id": "w177",
+    "text": "installation,",
+    "start": 98.95,
+    "end": 99.51
+  },
+  {
+    "id": "w178",
+    "text": "you",
+    "start": 99.51,
+    "end": 99.59
+  },
+  {
+    "id": "w179",
+    "text": "have",
+    "start": 99.75,
+    "end": 99.91
+  },
+  {
+    "id": "w180",
+    "text": "plusie",
+    "start": 99.91,
+    "end": 100.15
+  },
+  {
+    "id": "w181",
+    "text": "possibility.",
+    "start": 100.31,
+    "end": 101.19
+  },
+  {
+    "id": "w182",
+    "text": "Tu",
+    "start": 102.43,
+    "end": 102.59
+  },
+  {
+    "id": "w183",
+    "text": "peux",
+    "start": 102.59,
+    "end": 102.75
+  },
+  {
+    "id": "w184",
+    "text": "l'installer",
+    "start": 102.75,
+    "end": 103.23
+  },
+  {
+    "id": "w185",
+    "text": "avec",
+    "start": 103.23,
+    "end": 103.39
+  },
+  {
+    "id": "w186",
+    "text": "Claude.",
+    "start": 103.47,
+    "end": 104.43
+  },
+  {
+    "id": "w187",
+    "text": "Tu",
+    "start": 104.75,
+    "end": 104.91
+  },
+  {
+    "id": "w188",
+    "text": "peux",
+    "start": 105.07,
+    "end": 105.23
+  },
+  {
+    "id": "w189",
+    "text": "l'installer",
+    "start": 105.23,
+    "end": 105.79
+  },
+  {
+    "id": "w190",
+    "text": "avec",
+    "start": 105.79,
+    "end": 106.03
+  },
+  {
+    "id": "w191",
+    "text": "Claude.",
+    "start": 106.03,
+    "end": 107.39
+  },
+  {
+    "id": "w192",
+    "text": "Tu",
+    "start": 109.51,
+    "end": 109.75
+  },
+  {
+    "id": "w193",
+    "text": "peux",
+    "start": 109.75,
+    "end": 109.91
+  },
+  {
+    "id": "w194",
+    "text": "installer",
+    "start": 109.99,
+    "end": 110.47
+  },
+  {
+    "id": "w195",
+    "text": "Claude",
+    "start": 110.47,
+    "end": 110.71
+  },
+  {
+    "id": "w196",
+    "text": "avec",
+    "start": 110.87,
+    "end": 111.03
+  },
+  {
+    "id": "w197",
+    "text": "l'abonnement",
+    "start": 111.03,
+    "end": 111.67
+  },
+  {
+    "id": "w198",
+    "text": "à",
+    "start": 111.67,
+    "end": 111.75
+  },
+  {
+    "id": "w199",
+    "text": "20",
+    "start": 111.75,
+    "end": 111.99
+  },
+  {
+    "id": "w200",
+    "text": "dollar",
+    "start": 111.99,
+    "end": 112.15
+  },
+  {
+    "id": "w201",
+    "text": "pour",
+    "start": 112.47,
+    "end": 112.63
+  },
+  {
+    "id": "w202",
+    "text": "commencer.",
+    "start": 112.63,
+    "end": 113.59
+  },
+  {
+    "id": "w203",
+    "text": "Ou",
+    "start": 113.59,
+    "end": 113.83
+  },
+  {
+    "id": "w204",
+    "text": "pour",
+    "start": 113.83,
+    "end": 113.99
+  },
+  {
+    "id": "w205",
+    "text": "opter.",
+    "start": 114.63,
+    "end": 115.27
+  },
+  {
+    "id": "w206",
+    "text": "Tu",
+    "start": 115.3,
+    "end": 115.46
+  },
+  {
+    "id": "w207",
+    "text": "peux",
+    "start": 115.46,
+    "end": 115.62
+  },
+  {
+    "id": "w208",
+    "text": "l'installer",
+    "start": 115.7,
+    "end": 116.18
+  },
+  {
+    "id": "w209",
+    "text": "avec",
+    "start": 116.26,
+    "end": 116.42
+  },
+  {
+    "id": "w210",
+    "text": "l'avant.",
+    "start": 116.42,
+    "end": 117.78
+  },
+  {
+    "id": "w211",
+    "text": "Tu",
+    "start": 118.02,
+    "end": 118.26
+  },
+  {
+    "id": "w212",
+    "text": "peux",
+    "start": 118.26,
+    "end": 118.5
+  },
+  {
+    "id": "w213",
+    "text": "utiliser",
+    "start": 118.5,
+    "end": 118.66
+  },
+  {
+    "id": "w214",
+    "text": "Claude",
+    "start": 118.9,
+    "end": 119.14
+  },
+  {
+    "id": "w215",
+    "text": "avec",
+    "start": 119.22,
+    "end": 119.3
+  },
+  {
+    "id": "w216",
+    "text": "l'abonnement",
+    "start": 119.38,
+    "end": 120.02
+  },
+  {
+    "id": "w217",
+    "text": "à",
+    "start": 120.02,
+    "end": 120.1
+  },
+  {
+    "id": "w218",
+    "text": "20",
+    "start": 120.1,
+    "end": 120.34
+  },
+  {
+    "id": "w219",
+    "text": "dollars",
+    "start": 120.34,
+    "end": 120.58
+  },
+  {
+    "id": "w220",
+    "text": "pour",
+    "start": 120.66,
+    "end": 120.74
+  },
+  {
+    "id": "w221",
+    "text": "commencer.",
+    "start": 120.74,
+    "end": 121.14
+  },
+  {
+    "id": "w222",
+    "text": "Ou",
+    "start": 121.14,
+    "end": 121.3
+  },
+  {
+    "id": "w223",
+    "text": "si",
+    "start": 121.3,
+    "end": 121.46
+  },
+  {
+    "id": "w224",
+    "text": "tu",
+    "start": 121.46,
+    "end": 121.54
+  },
+  {
+    "id": "w225",
+    "text": "veux",
+    "start": 121.54,
+    "end": 121.7
+  },
+  {
+    "id": "w226",
+    "text": "le",
+    "start": 121.78,
+    "end": 121.86
+  },
+  {
+    "id": "w227",
+    "text": "plus",
+    "start": 121.94,
+    "end": 122.02
+  },
+  {
+    "id": "w228",
+    "text": "loin,",
+    "start": 122.02,
+    "end": 122.26
+  },
+  {
+    "id": "w229",
+    "text": "tu",
+    "start": 122.26,
+    "end": 122.34
+  },
+  {
+    "id": "w230",
+    "text": "peux",
+    "start": 122.34,
+    "end": 122.42
+  },
+  {
+    "id": "w231",
+    "text": "prendre",
+    "start": 122.5,
+    "end": 122.66
+  },
+  {
+    "id": "w232",
+    "text": "Claude",
+    "start": 122.74,
+    "end": 122.98
+  },
+  {
+    "id": "w233",
+    "text": "Max.",
+    "start": 123.06,
+    "end": 124.1
+  },
+  {
+    "id": "w234",
+    "text": "Et",
+    "start": 126.26,
+    "end": 126.5
+  },
+  {
+    "id": "w235",
+    "text": "puis,",
+    "start": 126.5,
+    "end": 127.3
+  },
+  {
+    "id": "w236",
+    "text": "tu",
+    "start": 127.3,
+    "end": 127.62
+  },
+  {
+    "id": "w237",
+    "text": "peux",
+    "start": 127.62,
+    "end": 127.94
+  },
+  {
+    "id": "w238",
+    "text": "également",
+    "start": 127.94,
+    "end": 128.1
+  },
+  {
+    "id": "w239",
+    "text": "aussi",
+    "start": 128.58,
+    "end": 128.74
+  },
+  {
+    "id": "w240",
+    "text": "installer",
+    "start": 128.9,
+    "end": 129.38
+  },
+  {
+    "id": "w241",
+    "text": "la",
+    "start": 129.46,
+    "end": 129.62
+  },
+  {
+    "id": "w242",
+    "text": "skills",
+    "start": 129.7,
+    "end": 130.1
+  },
+  {
+    "id": "w243",
+    "text": "directement",
+    "start": 130.18,
+    "end": 130.42
+  },
+  {
+    "id": "w244",
+    "text": "dans",
+    "start": 130.58,
+    "end": 130.66
+  },
+  {
+    "id": "w245",
+    "text": "ton",
+    "start": 130.74,
+    "end": 130.82
+  },
+  {
+    "id": "w246",
+    "text": "environnement",
+    "start": 130.98,
+    "end": 131.3
+  },
+  {
+    "id": "w247",
+    "text": "de",
+    "start": 131.3,
+    "end": 131.38
+  },
+  {
+    "id": "w248",
+    "text": "chatbot.",
+    "start": 131.46,
+    "end": 132.42
+  },
+  {
+    "id": "w249",
+    "text": "Tu",
+    "start": 132.42,
+    "end": 132.66
+  },
+  {
+    "id": "w250",
+    "text": "peux",
+    "start": 132.66,
+    "end": 133.06
+  },
+  {
+    "id": "w251",
+    "text": "également.",
+    "start": 133.06,
+    "end": 134.1
+  },
+  {
+    "id": "w252",
+    "text": "Tu",
+    "start": 140.66,
+    "end": 140.98
+  },
+  {
+    "id": "w253",
+    "text": "peux",
+    "start": 140.98,
+    "end": 141.22
+  },
+  {
+    "id": "w254",
+    "text": "également",
+    "start": 141.22,
+    "end": 141.38
+  },
+  {
+    "id": "w255",
+    "text": "installer",
+    "start": 141.54,
+    "end": 141.94
+  },
+  {
+    "id": "w256",
+    "text": "la",
+    "start": 141.94,
+    "end": 142.1
+  },
+  {
+    "id": "w257",
+    "text": "skills",
+    "start": 142.26,
+    "end": 142.82
+  },
+  {
+    "id": "w258",
+    "text": "dans",
+    "start": 142.82,
+    "end": 142.98
+  },
+  {
+    "id": "w259",
+    "text": "un",
+    "start": 142.98,
+    "end": 143.14
+  },
+  {
+    "id": "w260",
+    "text": "environnement",
+    "start": 143.14,
+    "end": 143.46
+  },
+  {
+    "id": "w261",
+    "text": "de",
+    "start": 143.54,
+    "end": 143.62
+  },
+  {
+    "id": "w262",
+    "text": "chatbot.",
+    "start": 143.7,
+    "end": 144.9
+  },
+  {
+    "id": "w263",
+    "text": "Mais",
+    "start": 144.9,
+    "end": 145.06
+  },
+  {
+    "id": "w264",
+    "text": "attention,",
+    "start": 145.22,
+    "end": 145.78
+  },
+  {
+    "id": "w265",
+    "text": "l'outil",
+    "start": 145.78,
+    "end": 146.34
+  },
+  {
+    "id": "w266",
+    "text": "ne",
+    "start": 146.58,
+    "end": 146.66
+  },
+  {
+    "id": "w267",
+    "text": "fait",
+    "start": 146.66,
+    "end": 146.74
+  },
+  {
+    "id": "w268",
+    "text": "pas",
+    "start": 146.9,
+    "end": 147.14
+  },
+  {
+    "id": "w269",
+    "text": "tout.",
+    "start": 147.14,
+    "end": 147.7
+  },
+  {
+    "id": "w270",
+    "text": "Mais",
+    "start": 150.18,
+    "end": 150.42
+  },
+  {
+    "id": "w271",
+    "text": "attention,",
+    "start": 150.42,
+    "end": 150.9
+  },
+  {
+    "id": "w272",
+    "text": "l'outil",
+    "start": 150.9,
+    "end": 151.3
+  },
+  {
+    "id": "w273",
+    "text": "ne",
+    "start": 151.54,
+    "end": 151.62
+  },
+  {
+    "id": "w274",
+    "text": "fait",
+    "start": 151.62,
+    "end": 151.7
+  },
+  {
+    "id": "w275",
+    "text": "pas",
+    "start": 151.78,
+    "end": 151.94
+  },
+  {
+    "id": "w276",
+    "text": "tout.",
+    "start": 151.94,
+    "end": 152.26
+  },
+  {
+    "id": "w277",
+    "text": "Le",
+    "start": 152.26,
+    "end": 152.42
+  },
+  {
+    "id": "w278",
+    "text": "modèle",
+    "start": 152.42,
+    "end": 152.82
+  },
+  {
+    "id": "w279",
+    "text": "que",
+    "start": 152.82,
+    "end": 152.98
+  },
+  {
+    "id": "w280",
+    "text": "tu",
+    "start": 152.98,
+    "end": 153.06
+  },
+  {
+    "id": "w281",
+    "text": "vas",
+    "start": 153.06,
+    "end": 153.3
+  },
+  {
+    "id": "w282",
+    "text": "utiliser",
+    "start": 153.3,
+    "end": 153.62
+  },
+  {
+    "id": "w283",
+    "text": "va",
+    "start": 153.86,
+    "end": 154.1
+  },
+  {
+    "id": "w284",
+    "text": "extrêmement.",
+    "start": 154.26,
+    "end": 155.22
+  },
+  {
+    "id": "w285",
+    "text": "Le",
+    "start": 157.46,
+    "end": 157.7
+  },
+  {
+    "id": "w286",
+    "text": "modèle",
+    "start": 157.7,
+    "end": 158.1
+  },
+  {
+    "id": "w287",
+    "text": "que",
+    "start": 158.1,
+    "end": 158.26
+  },
+  {
+    "id": "w288",
+    "text": "tu",
+    "start": 158.26,
+    "end": 158.5
+  },
+  {
+    "id": "w289",
+    "text": "vois",
+    "start": 158.5,
+    "end": 158.98
+  },
+  {
+    "id": "w290",
+    "text": "va",
+    "start": 159.46,
+    "end": 159.78
+  },
+  {
+    "id": "w291",
+    "text": "extrêmement",
+    "start": 159.78,
+    "end": 160.42
+  },
+  {
+    "id": "w292",
+    "text": "impacter",
+    "start": 160.58,
+    "end": 161.06
+  },
+  {
+    "id": "w293",
+    "text": "le",
+    "start": 161.22,
+    "end": 161.46
+  },
+  {
+    "id": "w294",
+    "text": "resultat.",
+    "start": 161.46,
+    "end": 162.42
+  },
+  {
+    "id": "w295",
+    "text": "C'est",
+    "start": 162.42,
+    "end": 162.66
+  },
+  {
+    "id": "w296",
+    "text": "pour",
+    "start": 162.66,
+    "end": 162.74
+  },
+  {
+    "id": "w297",
+    "text": "ça",
+    "start": 162.82,
+    "end": 162.9
+  },
+  {
+    "id": "w298",
+    "text": "que",
+    "start": 162.98,
+    "end": 163.06
+  },
+  {
+    "id": "w299",
+    "text": "j'utilise...",
+    "start": 163.14,
+    "end": 163.7
+  },
+  {
+    "id": "w300",
+    "text": "C'est",
+    "start": 163.74,
+    "end": 163.9
+  },
+  {
+    "id": "w301",
+    "text": "en",
+    "start": 163.9,
+    "end": 164.06
+  },
+  {
+    "id": "w302",
+    "text": "fait",
+    "start": 164.06,
+    "end": 164.14
+  },
+  {
+    "id": "w303",
+    "text": "pour",
+    "start": 164.22,
+    "end": 164.3
+  },
+  {
+    "id": "w304",
+    "text": "ça",
+    "start": 164.38,
+    "end": 164.46
+  },
+  {
+    "id": "w305",
+    "text": "même",
+    "start": 164.54,
+    "end": 164.62
+  },
+  {
+    "id": "w306",
+    "text": "que",
+    "start": 164.78,
+    "end": 164.86
+  },
+  {
+    "id": "w307",
+    "text": "j'utilise",
+    "start": 164.86,
+    "end": 165.1
+  },
+  {
+    "id": "w308",
+    "text": "Opus",
+    "start": 165.18,
+    "end": 165.42
+  },
+  {
+    "id": "w309",
+    "text": "5.5",
+    "start": 165.58,
+    "end": 166.14
+  },
+  {
+    "id": "w310",
+    "text": "Parce",
+    "start": 166.5,
+    "end": 166.74
+  },
+  {
+    "id": "w311",
+    "text": "que",
+    "start": 166.74,
+    "end": 166.82
+  },
+  {
+    "id": "w312",
+    "text": "lui...",
+    "start": 166.98,
+    "end": 171.3
+  },
+  {
+    "id": "w313",
+    "text": "C'est",
+    "start": 169.02,
+    "end": 169.5
+  },
+  {
+    "id": "w314",
+    "text": "en",
+    "start": 169.5,
+    "end": 169.58
+  },
+  {
+    "id": "w315",
+    "text": "fait",
+    "start": 169.58,
+    "end": 169.74
+  },
+  {
+    "id": "w316",
+    "text": "pour",
+    "start": 169.82,
+    "end": 169.9
+  },
+  {
+    "id": "w317",
+    "text": "ça",
+    "start": 169.98,
+    "end": 170.14
+  },
+  {
+    "id": "w318",
+    "text": "que",
+    "start": 170.14,
+    "end": 170.3
+  },
+  {
+    "id": "w319",
+    "text": "j'ai",
+    "start": 170.3,
+    "end": 170.54
+  },
+  {
+    "id": "w320",
+    "text": "dit...",
+    "start": 170.54,
+    "end": 171.34
+  },
+  {
+    "id": "w321",
+    "text": "O",
+    "start": 172.41,
+    "end": 172.49
+  },
+  {
+    "id": "w322",
+    "text": "plus",
+    "start": 172.57,
+    "end": 172.65
+  },
+  {
+    "id": "w323",
+    "text": "5.5",
+    "start": 172.81,
+    "end": 173.29
+  },
+  {
+    "id": "w324",
+    "text": "est",
+    "start": 173.45,
+    "end": 173.61
+  },
+  {
+    "id": "w325",
+    "text": "très",
+    "start": 173.61,
+    "end": 173.85
+  },
+  {
+    "id": "w326",
+    "text": "intéressant.",
+    "start": 173.85,
+    "end": 175.05
+  },
+  {
+    "id": "w327",
+    "text": "Mais",
+    "start": 175.53,
+    "end": 175.77
+  },
+  {
+    "id": "w328",
+    "text": "je",
+    "start": 175.77,
+    "end": 175.93
+  },
+  {
+    "id": "w329",
+    "text": "pense",
+    "start": 175.93,
+    "end": 176.09
+  },
+  {
+    "id": "w330",
+    "text": "honnêtement",
+    "start": 176.25,
+    "end": 176.73
+  },
+  {
+    "id": "w331",
+    "text": "que",
+    "start": 176.73,
+    "end": 176.81
+  },
+  {
+    "id": "w332",
+    "text": "Fab",
+    "start": 176.97,
+    "end": 177.29
+  },
+  {
+    "id": "w333",
+    "text": "5.2",
+    "start": 177.37,
+    "end": 177.85
+  },
+  {
+    "id": "w334",
+    "text": "qui",
+    "start": 178.01,
+    "end": 178.09
+  },
+  {
+    "id": "w335",
+    "text": "vient",
+    "start": 178.09,
+    "end": 178.25
+  },
+  {
+    "id": "w336",
+    "text": "de",
+    "start": 178.25,
+    "end": 178.41
+  },
+  {
+    "id": "w337",
+    "text": "sortir",
+    "start": 178.41,
+    "end": 178.81
+  },
+  {
+    "id": "w338",
+    "text": "peut",
+    "start": 179.05,
+    "end": 179.29
+  },
+  {
+    "id": "w339",
+    "text": "faire",
+    "start": 179.29,
+    "end": 179.37
+  },
+  {
+    "id": "w340",
+    "text": "mieux",
+    "start": 179.53,
+    "end": 179.69
+  },
+  {
+    "id": "w341",
+    "text": "pour",
+    "start": 179.77,
+    "end": 179.85
+  },
+  {
+    "id": "w342",
+    "text": "certaines",
+    "start": 179.93,
+    "end": 180.25
+  },
+  {
+    "id": "w343",
+    "text": "créations.",
+    "start": 180.41,
+    "end": 181.37
+  },
+  {
+    "id": "w344",
+    "text": "Mais",
+    "start": 185.37,
+    "end": 185.61
+  },
+  {
+    "id": "w345",
+    "text": "je",
+    "start": 185.61,
+    "end": 185.69
+  },
+  {
+    "id": "w346",
+    "text": "pense",
+    "start": 185.85,
+    "end": 186.09
+  },
+  {
+    "id": "w347",
+    "text": "sincèrement",
+    "start": 186.73,
+    "end": 187.13
+  },
+  {
+    "id": "w348",
+    "text": "que",
+    "start": 187.29,
+    "end": 187.37
+  },
+  {
+    "id": "w349",
+    "text": "Fab",
+    "start": 187.45,
+    "end": 187.77
+  },
+  {
+    "id": "w350",
+    "text": "5.2",
+    "start": 187.93,
+    "end": 188.41
+  },
+  {
+    "id": "w351",
+    "text": "qui",
+    "start": 188.49,
+    "end": 188.57
+  },
+  {
+    "id": "w352",
+    "text": "vient",
+    "start": 188.57,
+    "end": 188.73
+  },
+  {
+    "id": "w353",
+    "text": "de",
+    "start": 188.73,
+    "end": 188.81
+  },
+  {
+    "id": "w354",
+    "text": "sortir",
+    "start": 188.89,
+    "end": 189.05
+  },
+  {
+    "id": "w355",
+    "text": "peut",
+    "start": 189.21,
+    "end": 189.29
+  },
+  {
+    "id": "w356",
+    "text": "faire",
+    "start": 189.37,
+    "end": 189.45
+  },
+  {
+    "id": "w357",
+    "text": "mieux",
+    "start": 189.61,
+    "end": 189.85
+  },
+  {
+    "id": "w358",
+    "text": "en",
+    "start": 190.01,
+    "end": 190.25
+  },
+  {
+    "id": "w359",
+    "text": "thème",
+    "start": 190.25,
+    "end": 190.73
+  },
+  {
+    "id": "w360",
+    "text": "de",
+    "start": 190.73,
+    "end": 190.97
+  },
+  {
+    "id": "w361",
+    "text": "création.",
+    "start": 190.97,
+    "end": 191.77
+  },
+  {
+    "id": "w362",
+    "text": "For",
+    "start": 191.77,
+    "end": 191.93
+  },
+  {
+    "id": "w363",
+    "text": "example,",
+    "start": 191.93,
+    "end": 192.25
+  },
+  {
+    "id": "w364",
+    "text": "je",
+    "start": 192.25,
+    "end": 192.33
+  },
+  {
+    "id": "w365",
+    "text": "peux",
+    "start": 192.41,
+    "end": 192.57
+  },
+  {
+    "id": "w366",
+    "text": "faire",
+    "start": 192.57,
+    "end": 192.65
+  },
+  {
+    "id": "w367",
+    "text": "de",
+    "start": 192.73,
+    "end": 192.81
+  },
+  {
+    "id": "w368",
+    "text": "la",
+    "start": 192.81,
+    "end": 192.97
+  },
+  {
+    "id": "w369",
+    "text": "3D,",
+    "start": 192.97,
+    "end": 193.77
+  },
+  {
+    "id": "w370",
+    "text": "des",
+    "start": 193.77,
+    "end": 193.85
+  },
+  {
+    "id": "w371",
+    "text": "vidéos",
+    "start": 193.93,
+    "end": 194.25
+  },
+  {
+    "id": "w372",
+    "text": "de",
+    "start": 194.25,
+    "end": 194.41
+  },
+  {
+    "id": "w373",
+    "text": "3D,",
+    "start": 194.41,
+    "end": 194.89
+  },
+  {
+    "id": "w374",
+    "text": "des",
+    "start": 194.97,
+    "end": 195.05
+  },
+  {
+    "id": "w375",
+    "text": "vidéos",
+    "start": 195.13,
+    "end": 195.37
+  },
+  {
+    "id": "w376",
+    "text": "en",
+    "start": 195.37,
+    "end": 195.53
+  },
+  {
+    "id": "w377",
+    "text": "DD,",
+    "start": 195.53,
+    "end": 195.93
+  },
+  {
+    "id": "w378",
+    "text": "des",
+    "start": 196.01,
+    "end": 196.17
+  },
+  {
+    "id": "w379",
+    "text": "vidéos",
+    "start": 196.17,
+    "end": 196.33
+  },
+  {
+    "id": "w380",
+    "text": "en",
+    "start": 196.33,
+    "end": 196.49
+  },
+  {
+    "id": "w381",
+    "text": "3D",
+    "start": 196.49,
+    "end": 196.73
+  },
+  {
+    "id": "w382",
+    "text": "isométrique,",
+    "start": 196.89,
+    "end": 197.77
+  },
+  {
+    "id": "w383",
+    "text": "et",
+    "start": 197.77,
+    "end": 197.93
+  },
+  {
+    "id": "w384",
+    "text": "j'en",
+    "start": 197.93,
+    "end": 198.17
+  },
+  {
+    "id": "w385",
+    "text": "passe.",
+    "start": 198.33,
+    "end": 199.13
+  },
+  {
+    "id": "w386",
+    "text": "Et",
+    "start": 199.77,
+    "end": 199.85
+  },
+  {
+    "id": "w387",
+    "text": "j'en",
+    "start": 200.17,
+    "end": 200.65
+  },
+  {
+    "id": "w388",
+    "text": "passe.",
+    "start": 200.65,
+    "end": 201.77
+  },
+  {
+    "id": "w389",
+    "text": "Abonne",
+    "start": 208.65,
+    "end": 209.21
+  },
+  {
+    "id": "w390",
+    "text": "toi,",
+    "start": 209.21,
+    "end": 209.53
+  },
+  {
+    "id": "w391",
+    "text": "parce",
+    "start": 209.53,
+    "end": 209.77
+  },
+  {
+    "id": "w392",
+    "text": "que",
+    "start": 209.77,
+    "end": 209.93
+  },
+  {
+    "id": "w393",
+    "text": "dans",
+    "start": 209.93,
+    "end": 210.09
+  },
+  {
+    "id": "w394",
+    "text": "la",
+    "start": 210.09,
+    "end": 210.17
+  },
+  {
+    "id": "w395",
+    "text": "prochaine",
+    "start": 210.17,
+    "end": 210.49
+  },
+  {
+    "id": "w396",
+    "text": "vidéo,",
+    "start": 210.49,
+    "end": 210.89
+  },
+  {
+    "id": "w397",
+    "text": "je",
+    "start": 210.89,
+    "end": 211.05
+  },
+  {
+    "id": "w398",
+    "text": "vais",
+    "start": 211.05,
+    "end": 211.45
+  },
+  {
+    "id": "w399",
+    "text": "te",
+    "start": 211.45,
+    "end": 211.69
+  },
+  {
+    "id": "w400",
+    "text": "montrer",
+    "start": 211.69,
+    "end": 212.17
+  },
+  {
+    "id": "w401",
+    "text": "comment",
+    "start": 212.17,
+    "end": 212.57
+  },
+  {
+    "id": "w402",
+    "text": "reproduit",
+    "start": 212.57,
+    "end": 212.97
+  },
+  {
+    "id": "w403",
+    "text": "le",
+    "start": 213.13,
+    "end": 213.21
+  },
+  {
+    "id": "w404",
+    "text": "style",
+    "start": 213.21,
+    "end": 213.53
+  },
+  {
+    "id": "w405",
+    "text": "visuel",
+    "start": 213.53,
+    "end": 213.85
+  },
+  {
+    "id": "w406",
+    "text": "d'un",
+    "start": 213.93,
+    "end": 214.17
+  },
+  {
+    "id": "w407",
+    "text": "autre",
+    "start": 214.17,
+    "end": 214.41
+  },
+  {
+    "id": "w408",
+    "text": "créateur",
+    "start": 214.41,
+    "end": 215.13
+  },
+  {
+    "id": "w409",
+    "text": "pour",
+    "start": 215.13,
+    "end": 215.37
+  },
+  {
+    "id": "w410",
+    "text": "faire",
+    "start": 215.37,
+    "end": 215.45
+  },
+  {
+    "id": "w411",
+    "text": "tes",
+    "start": 215.69,
+    "end": 215.85
+  },
+  {
+    "id": "w412",
+    "text": "vidéos.",
+    "start": 216.01,
+    "end": 216.89
+  }
+]

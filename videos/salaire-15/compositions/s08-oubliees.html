@@ -1,0 +1,73 @@
+<!-- Le pire ? Il n'a acheté aucun objet important : son argent est parti dans des dépenses oubliées (33.48 → 40.12 s). Écrit par tools/construire-scenes.py. -->
+<template>
+  <style>
+    #root { position: absolute; inset: 0; }
+  </style>
+  <div id="root" data-composition-id="s08-oubliees" data-width="1080" data-height="1920">
+    <div class="sc">
+      <div id="s08-oubliees-cam" class="sc-cam">
+        <div id="s08-oubliees-cadre" class="sc-cadre">
+        <div class="decor" style="left: -1080px; top: 0px; width: 3240px"><div class="mur"></div><div class="fenetre" style="left: 1150px; top: 380px"><i class="lune" style="left: 150px; top: 40px; width: 70px; height: 70px"></i></div><div class="plinthe" style="top: 1270px"></div><div class="parquet" style="top: 1290px"></div></div>
+        <svg id="p-lucas" class="perso" viewBox="-30 -20 160 290" style="left: 717px; top: 809px; width: 287px; height: 520px"><g id="p-lucas-vie"><g id="p-lucas-corps"><g id="p-lucas-jg"><g class="c"><rect x="24" y="136" width="24" height="112" rx="8" /></g><g class="p" style="--pc: #38BDF8"><rect x="24" y="136" width="24" height="112" rx="8" /></g></g><g id="p-lucas-jd"><g class="c"><rect x="52" y="136" width="24" height="112" rx="8" /></g><g class="p" style="--pc: #38BDF8"><rect x="52" y="136" width="24" height="112" rx="8" /></g></g><g id="p-lucas-tronc"><g class="c"><rect x="22" y="52" width="56" height="94" rx="12" /></g><g class="p" style="--pc: #38BDF8"><rect x="22" y="52" width="56" height="94" rx="12" /></g><path d="M44 56 L56 56 L53 64 L57 104 L50 112 L43 104 L47 64 Z" fill="#0B1220" /></g><g id="p-lucas-bg"><g class="c"><rect x="2" y="54" width="18" height="86" rx="9" /></g><g class="p" style="--pc: #38BDF8"><rect x="2" y="54" width="18" height="86" rx="9" /></g></g><g id="p-lucas-bd"><g class="c"><rect x="80" y="54" width="18" height="86" rx="9" /></g><g class="p" style="--pc: #38BDF8"><rect x="80" y="54" width="18" height="86" rx="9" /></g></g><g id="p-lucas-tete"><g class="c"><circle cx="50" cy="24" r="22" /></g><g class="p" style="--pc: #38BDF8"><circle cx="50" cy="24" r="22" /></g><g><g id="p-lucas-yeux"><circle cx="41" cy="20" r="6.5" fill="#fff" /><circle cx="59" cy="20" r="6.5" fill="#fff" /><g id="p-lucas-pup"><circle cx="42" cy="21" r="3" fill="#0B1220" /><circle cx="60" cy="21" r="3" fill="#0B1220" /></g></g><path id="p-lucas-bouche" d="M41 32 Q50 40 59 32" fill="none" stroke="#0B1220" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" /><path d="M28 14 Q30 -4 50 -3 Q70 -4 72 14 Q66 6 58 8 Q50 2 42 8 Q34 6 28 14 Z" fill="#0B1220" /></g></g></g></g></svg>
+        <div id="p-pire" class="gros" style="left: 0px; top: 380px; font-size: 150px; color: #F1F5F9; width: 1080px; text-align: center; transform: rotate(0deg); opacity: 0">LE PIRE ?</div>
+        <div id="p-moto" class="fantome" style="left: 60px; top: 720px; opacity: 0"><svg id="p-m" class="moto" viewBox="0 0 260 150" style="left: 0px; top: 0px; width: 560px; height: 323px; opacity: 1"><circle cx="52" cy="112" r="34" fill="#0B1220" stroke="#e2e8f0" stroke-width="8" /><circle cx="52" cy="112" r="10" fill="#94a3b8" /><circle cx="208" cy="112" r="34" fill="#0B1220" stroke="#e2e8f0" stroke-width="8" /><circle cx="208" cy="112" r="10" fill="#94a3b8" /><path d="M52 112 L96 70 L170 70 L208 112" fill="none" stroke="#0B1220" stroke-width="10" stroke-linejoin="round" /><path d="M84 64 Q120 40 170 52 L190 74 L104 82 Z" fill="#38BDF8" stroke="#0B1220" stroke-width="6" stroke-linejoin="round" /><path d="M70 58 L128 54 L124 66 L76 68 Z" fill="#0B1220" /><path d="M176 56 L196 22 L214 20" fill="none" stroke="#0B1220" stroke-width="9" stroke-linecap="round" /><circle cx="222" cy="58" r="11" fill="#F2B705" stroke="#0B1220" stroke-width="5" /><rect x="112" y="80" width="46" height="22" rx="6" fill="#64748b" stroke="#0B1220" stroke-width="5" /></svg></div>
+        <div id="p-aucun" class="tampon" data-layout-allow-overlap style="left: 110px; top: 820px; font-size: 92px; color: #FF6B6B; border-color: #FF6B6B; transform: rotate(-10deg); opacity: 0">AUCUN ACHAT</div>
+        <div id="p-recu" class="recu" style="left: 60px; top: 360px; opacity: 0"><h3>TES DÉPENSES</h3><p id="p-l0" style="opacity: 0"><svg class="ico" viewBox="0 0 100 100" width="48" height="48"><path d="M18 38 H70 V62 Q70 84 44 84 Q18 84 18 62 Z" fill="#F1F5F9" stroke="#0B1220" stroke-width="6" /><path d="M70 46 Q88 46 88 58 Q88 70 70 70" fill="none" stroke="#0B1220" stroke-width="6" /><path d="M32 12 Q38 20 32 28 M46 10 Q52 18 46 26 M60 12 Q66 20 60 28" fill="none" stroke="#38BDF8" stroke-width="5" stroke-linecap="round" /></svg><span>Petit déj</span><em>oubliée</em></p><p id="p-l1" style="opacity: 0"><svg class="ico" viewBox="0 0 100 100" width="48" height="48"><rect x="34" y="18" width="32" height="12" rx="3" fill="#F2B705" stroke="#0B1220" stroke-width="5" /><path d="M14 60 L24 36 H76 L86 60 Z" fill="#F2B705" stroke="#0B1220" stroke-width="6" stroke-linejoin="round" /><path d="M30 56 L36 42 H64 L70 56 Z" fill="#7DD3FC" stroke="#0B1220" stroke-width="4" /><rect x="8" y="58" width="84" height="20" rx="6" fill="#F2B705" stroke="#0B1220" stroke-width="6" /><circle cx="28" cy="80" r="9" fill="#0B1220" /><circle cx="72" cy="80" r="9" fill="#0B1220" /></svg><span>Taxi</span><em>oubliée</em></p><p id="p-l2" style="opacity: 0"><svg class="ico" viewBox="0 0 100 100" width="48" height="48"><rect x="28" y="8" width="44" height="84" rx="10" fill="#0B1220" stroke="#F1F5F9" stroke-width="4" /><rect x="34" y="20" width="32" height="56" rx="3" fill="#38BDF8" /><path d="M40 64 V58 M48 64 V50 M56 64 V42 M62 64 V34" stroke="#0B1220" stroke-width="5" stroke-linecap="round" /></svg><span>Crédit</span><em>oubliée</em></p><p id="p-l3" style="opacity: 0"><svg class="ico" viewBox="0 0 100 100" width="48" height="48"><path d="M14 34 L50 18 L86 34 L86 74 L50 90 L14 74 Z" fill="#c08a4a" stroke="#0B1220" stroke-width="6" stroke-linejoin="round" /><path d="M14 34 L50 50 L86 34 M50 50 V90" fill="none" stroke="#0B1220" stroke-width="6" /><path d="M32 26 L68 42" stroke="#F1F5F9" stroke-width="6" /></svg><span>Livraison</span><em>oubliée</em></p><p id="p-l4" style="opacity: 0"><svg class="ico" viewBox="0 0 100 100" width="48" height="48"><path d="M18 38 H70 V62 Q70 84 44 84 Q18 84 18 62 Z" fill="#F1F5F9" stroke="#0B1220" stroke-width="6" /><path d="M70 46 Q88 46 88 58 Q88 70 70 70" fill="none" stroke="#0B1220" stroke-width="6" /><path d="M32 12 Q38 20 32 28 M46 10 Q52 18 46 26 M60 12 Q66 20 60 28" fill="none" stroke="#38BDF8" stroke-width="5" stroke-linecap="round" /></svg><span>Café</span><em>oubliée</em></p><p id="p-l5" style="opacity: 0"><svg class="ico" viewBox="0 0 100 100" width="48" height="48"><rect x="34" y="18" width="32" height="12" rx="3" fill="#F2B705" stroke="#0B1220" stroke-width="5" /><path d="M14 60 L24 36 H76 L86 60 Z" fill="#F2B705" stroke="#0B1220" stroke-width="6" stroke-linejoin="round" /><path d="M30 56 L36 42 H64 L70 56 Z" fill="#7DD3FC" stroke="#0B1220" stroke-width="4" /><rect x="8" y="58" width="84" height="20" rx="6" fill="#F2B705" stroke="#0B1220" stroke-width="6" /><circle cx="28" cy="80" r="9" fill="#0B1220" /><circle cx="72" cy="80" r="9" fill="#0B1220" /></svg><span>Taxi</span><em>oubliée</em></p><p id="p-l6" style="opacity: 0"><svg class="ico" viewBox="0 0 100 100" width="48" height="48"><path d="M14 34 L50 18 L86 34 L86 74 L50 90 L14 74 Z" fill="#c08a4a" stroke="#0B1220" stroke-width="6" stroke-linejoin="round" /><path d="M14 34 L50 50 L86 34 M50 50 V90" fill="none" stroke="#0B1220" stroke-width="6" /><path d="M32 26 L68 42" stroke="#F1F5F9" stroke-width="6" /></svg><span>Livraison</span><em>oubliée</em></p><p id="p-l7" style="opacity: 0"><svg class="ico" viewBox="0 0 100 100" width="48" height="48"><rect x="28" y="8" width="44" height="84" rx="10" fill="#0B1220" stroke="#F1F5F9" stroke-width="4" /><rect x="34" y="20" width="32" height="56" rx="3" fill="#38BDF8" /><path d="M40 64 V58 M48 64 V50 M56 64 V42 M62 64 V34" stroke="#0B1220" stroke-width="5" stroke-linecap="round" /></svg><span>Crédit</span><em>oubliée</em></p></div>
+        <div id="p-ec" class="ecran ecran-tele" style="left: 660px; top: 360px; width: 380px; height: 400px; opacity: 0"><div class="ecran-in"><div id="p-ec-v-0" class="vplein" style="opacity: 0"><video id="p-ec-v-0-v" class="clip" src="assets/video/ticket-imprime.mp4" data-start="3.56" data-duration="0.66" data-track-index="5" muted playsinline></video></div><div id="p-ec-v-1" class="vplein" style="opacity: 0"><video id="p-ec-v-1-v" class="clip" src="assets/video/recus-calcul.mp4" data-start="4.12" data-duration="0.82" data-track-index="6" muted playsinline></video></div><div id="p-ec-v-2" class="vplein" style="opacity: 0"><video id="p-ec-v-2-v" class="clip" src="assets/video/comptage-billets.mp4" data-start="4.84" data-duration="0.42" data-track-index="7" muted playsinline></video></div><div id="p-ec-v-3" class="vplein" style="opacity: 0"><video id="p-ec-v-3-v" class="clip" src="assets/video/calculatrice.mp4" data-start="5.16" data-duration="1.58" data-track-index="8" muted playsinline></video></div></div><i class="tele-pied"></i></div>
+        <div id="p-oub" class="tampon" data-layout-allow-overlap style="left: 150px; top: 1000px; font-size: 110px; color: #FF6B6B; border-color: #FF6B6B; transform: rotate(-12deg); opacity: 0">OUBLIÉES</div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#s08-oubliees-cam", { filter: "blur(14px)", scale: 1.12 }, { filter: "blur(0px)", scale: 1, duration: 0.18, ease: "power2.out" }, 0);
+    tl.to("#s08-oubliees-cam", { scale: 1.04, duration: 6.24, ease: "none" }, 0.18);
+    tl.fromTo("#p-lucas-vie", { y: 0 }, { y: -5, duration: 0.42, repeat: 14, yoyo: true, ease: "sine.inOut", immediateRender: false }, 0.0);
+    tl.to("#p-lucas-yeux", { scaleY: 0.1, duration: 0.06, yoyo: true, repeat: 1, svgOrigin: "50 20" }, 0.7);
+    tl.to("#p-lucas-yeux", { scaleY: 0.1, duration: 0.06, yoyo: true, repeat: 1, svgOrigin: "50 20" }, 3.233);
+    tl.to("#p-lucas-yeux", { scaleY: 0.1, duration: 0.06, yoyo: true, repeat: 1, svgOrigin: "50 20" }, 5.767);
+    tl.set("#p-lucas-bouche", { attr: { d: "M41 38 Q50 30 59 38", fill: "none" } }, 0.0);
+    tl.to("#p-lucas-pup", { x: -4, y: 0, duration: 0.15 }, 0.0);
+    tl.fromTo("#p-pire", { opacity: 0, scale: 2.0 }, { opacity: 1, scale: 1, duration: 0.16, ease: "power4.in", immediateRender: false }, 0.12);
+    tl.to("#p-pire", { opacity: 0, duration: 0.15 }, 1.22);
+    tl.fromTo("#p-moto", { opacity: 0, y: 60, scale: 0.7 }, { opacity: 1, y: 0, scale: 1, duration: 0.25, ease: "back.out(1.8)", immediateRender: false }, 0.92);
+    tl.fromTo("#p-aucun", { opacity: 0, scale: 2.4 }, { opacity: 1, scale: 1, duration: 0.14, ease: "power4.in", immediateRender: false }, 1.88);
+    tl.to("#s08-oubliees-cam", { keyframes: [{ x: -12, duration: 0.03 }, { x: 12, duration: 0.04 }, { x: -6, duration: 0.04 }, { x: 0, duration: 0.03 }] }, 2.02);
+    tl.to("#p-lucas-bd", { rotation: -158, svgOrigin: "89 62", duration: 0.16, ease: "power2.out" }, 1.4);
+    tl.to("#p-lucas-tete", { rotation: -8, svgOrigin: "50 50", duration: 0.16, ease: "power2.out" }, 1.4);
+    tl.to("#p-lucas-bd", { rotation: -146, svgOrigin: "89 62", duration: 0.09, repeat: 5, yoyo: true }, 1.58);
+    tl.to("#p-moto, #p-aucun", { opacity: 0, scale: 0.6, duration: 0.2 }, 3.09);
+    tl.fromTo("#p-recu", { opacity: 0, y: -500 }, { opacity: 1, y: 0, duration: 0.3, ease: "power3.out", immediateRender: false }, 3.24);
+    tl.fromTo("#p-l0", { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.14, immediateRender: false }, 3.56);
+    tl.fromTo("#p-l1", { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.14, immediateRender: false }, 3.98);
+    tl.fromTo("#p-l2", { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.14, immediateRender: false }, 4.4);
+    tl.fromTo("#p-l3", { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.14, immediateRender: false }, 4.82);
+    tl.fromTo("#p-l4", { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.14, immediateRender: false }, 5.24);
+    tl.fromTo("#p-l5", { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.14, immediateRender: false }, 5.66);
+    tl.fromTo("#p-l6", { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.14, immediateRender: false }, 6.08);
+    tl.fromTo("#p-l7", { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.14, immediateRender: false }, 6.5);
+    tl.set("#p-ec-v-0", { opacity: 1 }, 3.56);
+    tl.fromTo("#p-ec-v-0", { scale: 1.18 }, { scale: 1.02, duration: 0.56, ease: "power2.out", immediateRender: false }, 3.56);
+    tl.set("#p-ec-v-0", { opacity: 0 }, 4.14);
+    tl.set("#p-ec-v-1", { opacity: 1 }, 4.12);
+    tl.fromTo("#p-ec-v-1", { scale: 1.18 }, { scale: 1.02, duration: 0.72, ease: "power2.out", immediateRender: false }, 4.12);
+    tl.set("#p-ec-v-1", { opacity: 0 }, 4.86);
+    tl.set("#p-ec-v-2", { opacity: 1 }, 4.84);
+    tl.fromTo("#p-ec-v-2", { scale: 1.18 }, { scale: 1.02, duration: 0.32, ease: "power2.out", immediateRender: false }, 4.84);
+    tl.set("#p-ec-v-2", { opacity: 0 }, 5.18);
+    tl.set("#p-ec-v-3", { opacity: 1 }, 5.16);
+    tl.fromTo("#p-ec-v-3", { scale: 1.18 }, { scale: 1.02, duration: 1.48, ease: "power2.out", immediateRender: false }, 5.16);
+    tl.fromTo("#p-ec", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.22, ease: "back.out(1.8)", immediateRender: false }, 3.46);
+    tl.to("#s08-oubliees-cadre", { x: -828, y: 1069, scale: 2.672, duration: 0.28, ease: "power3.inOut" }, 4.07);
+    tl.to("#s08-oubliees-cadre", { keyframes: [{ filter: "blur(9px)", duration: 0.14 }, { filter: "blur(0px)", duration: 0.14 }] }, 4.07);
+    tl.to("#s08-oubliees-cadre", { x: 0, y: 0, scale: 1.0, duration: 0.28, ease: "power3.inOut" }, 5.56);
+    tl.to("#s08-oubliees-cadre", { keyframes: [{ filter: "blur(9px)", duration: 0.14 }, { filter: "blur(0px)", duration: 0.14 }] }, 5.56);
+    tl.fromTo("#p-oub", { opacity: 0, scale: 2.4 }, { opacity: 1, scale: 1, duration: 0.14, ease: "power4.in", immediateRender: false }, 5.96);
+    tl.to("#s08-oubliees-cam", { keyframes: [{ x: -12, duration: 0.03 }, { x: 12, duration: 0.04 }, { x: -6, duration: 0.04 }, { x: 0, duration: 0.03 }] }, 6.1);
+    tl.set("#p-lucas-bouche", { attr: { d: "M45 34 Q50 42 55 34 Q50 27 45 34", fill: "none" } }, 5.96);
+    tl.to("#s08-oubliees-cam", { scale: 1.25, filter: "blur(14px)", duration: 0.2, ease: "power3.in" }, 6.44);
+    window.__timelines["s08-oubliees"] = tl;
+  </script>
+</template>

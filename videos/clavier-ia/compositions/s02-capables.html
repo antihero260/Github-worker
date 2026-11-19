@@ -1,0 +1,59 @@
+<!-- Scène 2 · « Des IA capables de répondre à nos questions, de rédiger des textes, ou même de créer des images. » (7.72 → 13.48 s). Fichier écrit par un générateur, modifiable à la main. -->
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+    }
+
+  </style>
+  <div id="root" data-composition-id="s02-capables" data-width="1920" data-height="1080">
+    <div class="pj-scene">
+      <div id="s02-capables-cam" class="pj-cam">
+        <div id="s02-capables-cadre" class="pj-cadre">
+        <div class="pj-horizon" style="top: 760px"></div>
+        <div class="pj-cone" style="left: 280px; height: 900px; opacity: 1.0"></div><div class="pj-sol" style="left: 250px; top: 740px; opacity: 1.0"></div>
+        <svg id="s02-ia" class="pj-perso pj-ia-perso" viewBox="-30 -20 160 290" style="left: 442px; top: 403px; width: 237px; height: 430px"><g id="s02-ia-vie"><g id="s02-ia-corps"><g id="s02-ia-jg"><g class="c"><rect x="24" y="136" width="24" height="112" rx="8" /></g><g class="p"><rect x="24" y="136" width="24" height="112" rx="8" /></g></g><g id="s02-ia-jd"><g class="c"><rect x="52" y="136" width="24" height="112" rx="8" /></g><g class="p"><rect x="52" y="136" width="24" height="112" rx="8" /></g></g><g id="s02-ia-tronc"><g class="c"><rect x="22" y="52" width="56" height="94" rx="12" /></g><g class="p"><rect x="22" y="52" width="56" height="94" rx="12" /></g></g><g id="s02-ia-bg"><g class="c"><rect x="2" y="54" width="18" height="86" rx="9" /></g><g class="p"><rect x="2" y="54" width="18" height="86" rx="9" /></g></g><g id="s02-ia-bd"><g class="c"><rect x="80" y="54" width="18" height="86" rx="9" /></g><g class="p"><rect x="80" y="54" width="18" height="86" rx="9" /></g></g><g id="s02-ia-tete"><g class="c"><rect x="25" y="0" width="50" height="46" rx="13" /></g><g class="p"><rect x="25" y="0" width="50" height="46" rx="13" /></g><g class="yeux"><circle cx="40" cy="22" r="5" /><circle cx="60" cy="22" r="5" /></g></g></g></g></svg>
+        <div id="s02-cap0" class="pj-carte" style="left: 960px; top: 170px; width: 820px; padding: 26px 30px; text-align: left; font-size: 56px; white-space: nowrap; opacity: 0"><b class="pj-icone">?</b>Répondre à tes questions</div>
+        <div id="s02-cap1" class="pj-carte" style="left: 960px; top: 375px; width: 820px; padding: 26px 30px; text-align: left; font-size: 56px; white-space: nowrap; opacity: 0"><b class="pj-icone" style="font-size: 44px">Aa</b>Rédiger des textes</div>
+        <div id="s02-cap2" class="pj-carte" style="left: 960px; top: 580px; width: 820px; padding: 26px 30px; text-align: left; font-size: 56px; white-space: nowrap; opacity: 0"><b class="pj-icone"><svg viewBox="0 0 60 48" style="width: 56px; height: 46px"><rect x="3" y="3" width="54" height="42" fill="none" stroke="#000" stroke-width="6" /><path d="M8 40 L24 20 L34 32 L42 24 L54 40 Z" fill="#000" /><circle cx="44" cy="14" r="5" fill="#000" /></svg></b>Créer des images</div>
+        </div>
+      </div>
+      <div id="s02-hud" class="pj-label" style="left: 113px; top: 107px; "><span class="pj-k">Les IA connues</span><span class="pj-d">Ce qu'elles savent faire</span></div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#s02-capables-cam", { scale: 1 }, { scale: 1.05, duration: 5.56, ease: "none" }, 0);
+    tl.fromTo("#s02-capables-cam", { filter: "blur(14px)" }, { filter: "blur(0px)", duration: 0.16, ease: "power2.out" }, 0);
+    tl.set("#s02-ia", { x: -760 }, 0);
+    tl.to("#s02-ia", { x: "+=760", duration: 0.87, ease: "power1.inOut" }, 0.05);
+    tl.to("#s02-ia-jg", { svgOrigin: "36 142", keyframes: [{ rotation: 38, duration: 0.087 }, { rotation: -38, duration: 0.087 }, { rotation: 38, duration: 0.087 }, { rotation: -38, duration: 0.087 }, { rotation: 38, duration: 0.087 }, { rotation: -38, duration: 0.087 }, { rotation: 38, duration: 0.087 }, { rotation: -38, duration: 0.087 }, { rotation: 38, duration: 0.087 }, { rotation: 0, duration: 0.087 }] }, 0.05);
+    tl.to("#s02-ia-jd", { svgOrigin: "64 142", keyframes: [{ rotation: -38, duration: 0.087 }, { rotation: 38, duration: 0.087 }, { rotation: -38, duration: 0.087 }, { rotation: 38, duration: 0.087 }, { rotation: -38, duration: 0.087 }, { rotation: 38, duration: 0.087 }, { rotation: -38, duration: 0.087 }, { rotation: 38, duration: 0.087 }, { rotation: -38, duration: 0.087 }, { rotation: 0, duration: 0.087 }] }, 0.05);
+    tl.to("#s02-ia-bg", { svgOrigin: "11 62", keyframes: [{ rotation: -40, duration: 0.087 }, { rotation: 40, duration: 0.087 }, { rotation: -40, duration: 0.087 }, { rotation: 40, duration: 0.087 }, { rotation: -40, duration: 0.087 }, { rotation: 40, duration: 0.087 }, { rotation: -40, duration: 0.087 }, { rotation: 40, duration: 0.087 }, { rotation: -40, duration: 0.087 }, { rotation: 0, duration: 0.087 }] }, 0.05);
+    tl.to("#s02-ia-bd", { svgOrigin: "89 62", keyframes: [{ rotation: 40, duration: 0.087 }, { rotation: -40, duration: 0.087 }, { rotation: 40, duration: 0.087 }, { rotation: -40, duration: 0.087 }, { rotation: 40, duration: 0.087 }, { rotation: -40, duration: 0.087 }, { rotation: 40, duration: 0.087 }, { rotation: -40, duration: 0.087 }, { rotation: 40, duration: 0.087 }, { rotation: 0, duration: 0.087 }] }, 0.05);
+    tl.to("#s02-ia-corps", { keyframes: [{ y: -12, duration: 0.087 }, { y: 0, duration: 0.087 }, { y: -12, duration: 0.087 }, { y: 0, duration: 0.087 }, { y: -12, duration: 0.087 }, { y: 0, duration: 0.087 }, { y: -12, duration: 0.087 }, { y: 0, duration: 0.087 }, { y: -12, duration: 0.087 }, { y: 0, duration: 0.087 }] }, 0.05);
+    tl.fromTo("#s02-ia-vie", { y: 0 }, { y: -5, duration: 0.42, repeat: 9, yoyo: true, ease: "sine.inOut", immediateRender: false }, 0.97);
+    tl.fromTo("#s02-cap0", { opacity: 0, x: 320 }, { opacity: 1, x: 0, duration: 0.24, ease: "power4.out" }, 1.4);
+    tl.to("#s02-ia-bd", { rotation: -100, svgOrigin: "89 62", duration: 0.14, ease: "back.out(2)" }, 1.4);
+    tl.to("#s02-ia-tete", { rotation: -6, svgOrigin: "50 50", duration: 0.14, ease: "back.out(2)" }, 1.4);
+    tl.fromTo("#s02-cap1", { opacity: 0, x: 320 }, { opacity: 1, x: 0, duration: 0.24, ease: "power4.out" }, 2.68);
+    tl.to("#s02-ia-bd", { rotation: -122, svgOrigin: "89 62", duration: 0.14, ease: "back.out(2)" }, 2.68);
+    tl.to("#s02-ia-tete", { rotation: -6, svgOrigin: "50 50", duration: 0.14, ease: "back.out(2)" }, 2.68);
+    tl.fromTo("#s02-cap2", { opacity: 0, x: 320 }, { opacity: 1, x: 0, duration: 0.24, ease: "power4.out" }, 4.44);
+    tl.to("#s02-ia-bd", { rotation: -144, svgOrigin: "89 62", duration: 0.14, ease: "back.out(2)" }, 4.44);
+    tl.to("#s02-ia-tete", { rotation: -6, svgOrigin: "50 50", duration: 0.14, ease: "back.out(2)" }, 4.44);
+    tl.to("#s02-ia-bg", { svgOrigin: "11 62", keyframes: [{ rotation: 62, duration: 0.24, ease: "sine.inOut" }, { rotation: 118, duration: 0.24, ease: "sine.inOut" }, { rotation: 62, duration: 0.24, ease: "sine.inOut" }, { rotation: 0, duration: 0.2 }] }, 1.72);
+    tl.to("#s02-ia-tete", { svgOrigin: "50 50", keyframes: [{ rotation: -6, duration: 0.36 }, { rotation: 6, duration: 0.36 }, { rotation: 0, duration: 0.2 }] }, 1.72);
+    tl.to("#s02-capables-cadre", { x: -213, y: 157, scale: 1.12, duration: 0.26, ease: "power3.inOut" }, 1.28);
+    tl.to("#s02-capables-cadre", { keyframes: [{ filter: "blur(10px)", duration: 0.13 }, { filter: "blur(0px)", duration: 0.13 }] }, 1.28);
+    tl.to("#s02-capables-cadre", { x: -213, y: 67, scale: 1.12, duration: 0.26, ease: "power3.inOut" }, 2.56);
+    tl.to("#s02-capables-cadre", { keyframes: [{ filter: "blur(10px)", duration: 0.13 }, { filter: "blur(0px)", duration: 0.13 }] }, 2.56);
+    tl.to("#s02-capables-cadre", { x: -218, y: -23, scale: 1.15, duration: 0.26, ease: "power3.inOut" }, 4.32);
+    tl.to("#s02-capables-cadre", { keyframes: [{ filter: "blur(10px)", duration: 0.13 }, { filter: "blur(0px)", duration: 0.13 }] }, 4.32);
+    tl.to("#s02-ia-corps", { keyframes: [{ y: -34, duration: 0.13, ease: "power2.out" }, { y: 0, duration: 0.15, ease: "power2.in" }] }, 4.44);
+    tl.to("#s02-ia-tete", { svgOrigin: "50 50", keyframes: [{ rotation: 14, duration: 0.11 }, { rotation: -2, duration: 0.11 }, { rotation: 14, duration: 0.11 }, { rotation: -2, duration: 0.11 }, { rotation: 0, duration: 0.11 }] }, 5.0);
+    tl.to("#s02-capables-cam", { scale: 1.3, filter: "blur(14px)", duration: 0.2, ease: "power3.in" }, 5.56);
+    window.__timelines["s02-capables"] = tl;
+  </script>
+</template>

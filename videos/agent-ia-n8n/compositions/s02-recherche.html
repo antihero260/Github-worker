@@ -1,0 +1,51 @@
+<!-- Scène 2 · « Et quelques instants plus tard, ton assistant va chercher les informations sur Internet, » (6.76 → 11.24 s). Fichier écrit par un générateur, modifiable à la main. -->
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+    }
+
+  </style>
+  <div id="root" data-composition-id="s02-recherche" data-width="1920" data-height="1080">
+    <div class="pj-scene">
+      <div id="s02-recherche-cam" class="pj-cam">
+        <div id="s02-recherche-cadre" class="pj-cadre">
+        <div class="pj-horizon" style="top: 760px"></div>
+        <div id="s02-vid" class="pj-panneau" style="left: 113px; top: 230px; width: 780px; height: 439px; opacity: 0"><video id="s02-vid-v" class="clip" src="assets/video/lunettes-ecran.mp4" data-start="0" data-duration="4.48" data-track-index="5" muted playsinline></video><div class="pj-equerres" style="left: -18px; top: -18px; right: -18px; bottom: -18px"><i></i><i></i><i></i><i></i></div><div id="s02-vid-tag" class="pj-panneau-tag">Ton assistant cherche</div></div>
+        <div id="s02-barre" class="pj-recherche" style="left: 990px; top: 210px; width: 820px; opacity: 0"><i class="pj-loupe"></i><span id="s02-q0" style="opacity: 0">actualités</span> <span id="s02-q1" style="opacity: 0">intelligence</span> <span id="s02-q2" style="opacity: 0">artificielle</span> </div>
+        <div id="s02-r-0" class="pj-resultat" style="left: 990px; top: 330px; width: 560px; opacity: 0"><i></i><div><b style="width: 60%"></b><b style="width: 80%"></b></div><span id="s02-r-0-m" class="pj-resultat-marque"></span></div><div id="s02-r-1" class="pj-resultat" style="left: 990px; top: 440px; width: 560px; opacity: 0"><i></i><div><b style="width: 83%"></b><b style="width: 63%"></b></div><span id="s02-r-1-m" class="pj-resultat-marque"></span></div><div id="s02-r-2" class="pj-resultat" style="left: 990px; top: 550px; width: 560px; opacity: 0"><i></i><div><b style="width: 76%"></b><b style="width: 71%"></b></div><span id="s02-r-2-m" class="pj-resultat-marque"></span></div>
+        <svg id="s02-ia" class="pj-perso pj-ia-perso" viewBox="-30 -20 160 290" style="left: 1637px; top: 523px; width: 166px; height: 300px"><g id="s02-ia-vie"><g id="s02-ia-corps"><g id="s02-ia-jg"><g class="c"><rect x="24" y="136" width="24" height="112" rx="8" /></g><g class="p"><rect x="24" y="136" width="24" height="112" rx="8" /></g></g><g id="s02-ia-jd"><g class="c"><rect x="52" y="136" width="24" height="112" rx="8" /></g><g class="p"><rect x="52" y="136" width="24" height="112" rx="8" /></g></g><g id="s02-ia-tronc"><g class="c"><rect x="22" y="52" width="56" height="94" rx="12" /></g><g class="p"><rect x="22" y="52" width="56" height="94" rx="12" /></g></g><g id="s02-ia-bg"><g class="c"><rect x="2" y="54" width="18" height="86" rx="9" /></g><g class="p"><rect x="2" y="54" width="18" height="86" rx="9" /></g></g><g id="s02-ia-bd"><g class="c"><rect x="80" y="54" width="18" height="86" rx="9" /></g><g class="p"><rect x="80" y="54" width="18" height="86" rx="9" /></g></g><g id="s02-ia-tete"><g class="c"><rect x="25" y="0" width="50" height="46" rx="13" /></g><g class="p"><rect x="25" y="0" width="50" height="46" rx="13" /></g><g class="yeux"><circle cx="40" cy="22" r="5" /><circle cx="60" cy="22" r="5" /></g></g></g></g></svg>
+        </div>
+      </div>
+      <div id="s02-hud" class="pj-label" style="left: 113px; top: 107px; "><span class="pj-k">Quelques instants plus tard</span><span class="pj-d">Il cherche sur Internet</span></div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#s02-recherche-cam", { scale: 1 }, { scale: 1.05, duration: 4.28, ease: "none" }, 0);
+    tl.fromTo("#s02-recherche-cam", { filter: "blur(14px)" }, { filter: "blur(0px)", duration: 0.16, ease: "power2.out" }, 0);
+    tl.fromTo("#s02-vid", { opacity: 0, x: -400 }, { opacity: 1, x: 0, duration: 0.24, ease: "power4.out" }, 0.05);
+    tl.set("#s02-ia", { x: 420 }, 0);
+    tl.to("#s02-ia", { x: "+=-420", duration: 1.76, ease: "power1.inOut" }, 0.2);
+    tl.to("#s02-ia-jg", { svgOrigin: "36 142", keyframes: [{ rotation: 38, duration: 0.088 }, { rotation: -38, duration: 0.088 }, { rotation: 38, duration: 0.088 }, { rotation: -38, duration: 0.088 }, { rotation: 38, duration: 0.088 }, { rotation: -38, duration: 0.088 }, { rotation: 38, duration: 0.088 }, { rotation: -38, duration: 0.088 }, { rotation: 38, duration: 0.088 }, { rotation: -38, duration: 0.088 }, { rotation: 38, duration: 0.088 }, { rotation: -38, duration: 0.088 }, { rotation: 38, duration: 0.088 }, { rotation: -38, duration: 0.088 }, { rotation: 38, duration: 0.088 }, { rotation: -38, duration: 0.088 }, { rotation: 38, duration: 0.088 }, { rotation: -38, duration: 0.088 }, { rotation: 38, duration: 0.088 }, { rotation: 0, duration: 0.088 }] }, 0.2);
+    tl.to("#s02-ia-jd", { svgOrigin: "64 142", keyframes: [{ rotation: -38, duration: 0.088 }, { rotation: 38, duration: 0.088 }, { rotation: -38, duration: 0.088 }, { rotation: 38, duration: 0.088 }, { rotation: -38, duration: 0.088 }, { rotation: 38, duration: 0.088 }, { rotation: -38, duration: 0.088 }, { rotation: 38, duration: 0.088 }, { rotation: -38, duration: 0.088 }, { rotation: 38, duration: 0.088 }, { rotation: -38, duration: 0.088 }, { rotation: 38, duration: 0.088 }, { rotation: -38, duration: 0.088 }, { rotation: 38, duration: 0.088 }, { rotation: -38, duration: 0.088 }, { rotation: 38, duration: 0.088 }, { rotation: -38, duration: 0.088 }, { rotation: 38, duration: 0.088 }, { rotation: -38, duration: 0.088 }, { rotation: 0, duration: 0.088 }] }, 0.2);
+    tl.to("#s02-ia-bg", { svgOrigin: "11 62", keyframes: [{ rotation: -40, duration: 0.088 }, { rotation: 40, duration: 0.088 }, { rotation: -40, duration: 0.088 }, { rotation: 40, duration: 0.088 }, { rotation: -40, duration: 0.088 }, { rotation: 40, duration: 0.088 }, { rotation: -40, duration: 0.088 }, { rotation: 40, duration: 0.088 }, { rotation: -40, duration: 0.088 }, { rotation: 40, duration: 0.088 }, { rotation: -40, duration: 0.088 }, { rotation: 40, duration: 0.088 }, { rotation: -40, duration: 0.088 }, { rotation: 40, duration: 0.088 }, { rotation: -40, duration: 0.088 }, { rotation: 40, duration: 0.088 }, { rotation: -40, duration: 0.088 }, { rotation: 40, duration: 0.088 }, { rotation: -40, duration: 0.088 }, { rotation: 0, duration: 0.088 }] }, 0.2);
+    tl.to("#s02-ia-bd", { svgOrigin: "89 62", keyframes: [{ rotation: 40, duration: 0.088 }, { rotation: -40, duration: 0.088 }, { rotation: 40, duration: 0.088 }, { rotation: -40, duration: 0.088 }, { rotation: 40, duration: 0.088 }, { rotation: -40, duration: 0.088 }, { rotation: 40, duration: 0.088 }, { rotation: -40, duration: 0.088 }, { rotation: 40, duration: 0.088 }, { rotation: -40, duration: 0.088 }, { rotation: 40, duration: 0.088 }, { rotation: -40, duration: 0.088 }, { rotation: 40, duration: 0.088 }, { rotation: -40, duration: 0.088 }, { rotation: 40, duration: 0.088 }, { rotation: -40, duration: 0.088 }, { rotation: 40, duration: 0.088 }, { rotation: -40, duration: 0.088 }, { rotation: 40, duration: 0.088 }, { rotation: 0, duration: 0.088 }] }, 0.2);
+    tl.to("#s02-ia-corps", { keyframes: [{ y: -12, duration: 0.088 }, { y: 0, duration: 0.088 }, { y: -12, duration: 0.088 }, { y: 0, duration: 0.088 }, { y: -12, duration: 0.088 }, { y: 0, duration: 0.088 }, { y: -12, duration: 0.088 }, { y: 0, duration: 0.088 }, { y: -12, duration: 0.088 }, { y: 0, duration: 0.088 }, { y: -12, duration: 0.088 }, { y: 0, duration: 0.088 }, { y: -12, duration: 0.088 }, { y: 0, duration: 0.088 }, { y: -12, duration: 0.088 }, { y: 0, duration: 0.088 }, { y: -12, duration: 0.088 }, { y: 0, duration: 0.088 }, { y: -12, duration: 0.088 }, { y: 0, duration: 0.088 }] }, 0.2);
+    tl.fromTo("#s02-ia-vie", { y: 0 }, { y: -5, duration: 0.42, repeat: 4, yoyo: true, ease: "sine.inOut", immediateRender: false }, 2.01);
+    tl.fromTo("#s02-barre", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.18, ease: "power3.out" }, 2.44);
+    tl.set("#s02-q0", { opacity: 1 }, 2.6);
+    tl.set("#s02-q1", { opacity: 1 }, 3.0);
+    tl.set("#s02-q2", { opacity: 1 }, 3.16);
+    tl.to("#s02-recherche-cadre", { x: -468, y: 192, scale: 1.2, duration: 0.26, ease: "power3.inOut" }, 2.5);
+    tl.to("#s02-recherche-cadre", { keyframes: [{ filter: "blur(10px)", duration: 0.13 }, { filter: "blur(0px)", duration: 0.13 }] }, 2.5);
+    tl.to("#s02-ia-bg", { rotation: 120, svgOrigin: "11 62", duration: 0.16, ease: "back.out(2)" }, 3.16);
+    tl.to("#s02-ia-tete", { rotation: 8, svgOrigin: "50 50", duration: 0.16, ease: "back.out(2)" }, 3.16);
+    tl.fromTo("#s02-r-0", { opacity: 0, x: 160 }, { opacity: 1, x: 0, duration: 0.24, ease: "power4.out" }, 3.88);
+    tl.fromTo("#s02-r-1", { opacity: 0, x: 160 }, { opacity: 1, x: 0, duration: 0.24, ease: "power4.out" }, 4.02);
+    tl.fromTo("#s02-r-2", { opacity: 0, x: 160 }, { opacity: 1, x: 0, duration: 0.24, ease: "power4.out" }, 4.16);
+    tl.to("#s02-recherche-cam", { scale: 1.3, filter: "blur(14px)", duration: 0.2, ease: "power3.in" }, 4.28);
+    window.__timelines["s02-recherche"] = tl;
+  </script>
+</template>

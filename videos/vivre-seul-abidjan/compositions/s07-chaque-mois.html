@@ -1,0 +1,77 @@
+<!-- Chaque mois, il faut manger, se déplacer, acheter du crédit internet, du savon, des produits d'entretien et garder une marge pour les imprévus (53.96 → 63.59 s). Écrit par tools/construire-scenes.py. -->
+<template>
+  <style>
+    #root { position: absolute; inset: 0; }
+  </style>
+  <div id="root" data-composition-id="s07-chaque-mois" data-width="1080" data-height="1920">
+    <div class="sc">
+      <div id="s07-chaque-mois-cam" class="sc-cam">
+        <div id="s07-chaque-mois-cadre" class="sc-cadre">
+        <div class="decor"><div class="ciel" style="background: radial-gradient(ellipse 90% 60% at 50% 40%, #16346a 0%, #0b1220 78%)"></div></div>
+        <div id="m-cal" class="page-cal" data-layout-allow-overlap style="left: 330px; top: 350px; width: 420px; height: 250px; opacity: 0"><span>CHAQUE MOIS</span><b style="font-size: 110px; line-height: 150px">↻</b></div>
+        <div id="m-ec" class="ecran ecran-panneau" style="left: 60px; top: 640px; width: 960px; height: 470px; opacity: 0"><div class="ecran-in"><div id="m-ec-v-0" class="vplein" style="opacity: 0"><video id="m-ec-v-0-v" class="clip" src="assets/video/marche-legumes.mp4" data-start="1.88" data-duration="0.82" data-track-index="5" muted playsinline></video></div><div id="m-ec-v-1" class="vplein" style="opacity: 0"><video id="m-ec-v-1-v" class="clip" src="assets/video/cuisine-legumes.mp4" data-start="2.6" data-duration="0.34" data-track-index="6" muted playsinline></video></div><div id="m-ec-v-2" class="vplein" style="opacity: 0"><video id="m-ec-v-2-v" class="clip" src="assets/video/taxi-voie.mp4" data-start="2.84" data-duration="1.54" data-track-index="7" muted playsinline></video></div><div id="m-ec-v-3" class="vplein" style="opacity: 0"><video id="m-ec-v-3-v" class="clip" src="assets/video/tel-tape.mp4" data-start="4.28" data-duration="1.54" data-track-index="8" muted playsinline></video></div><div id="m-ec-v-4" class="vplein" style="opacity: 0"><video id="m-ec-v-4-v" class="clip" src="assets/video/vaisselle-savon.mp4" data-start="5.72" data-duration="0.9" data-track-index="9" muted playsinline></video></div><div id="m-ec-v-5" class="vplein" style="opacity: 0"><video id="m-ec-v-5-v" class="clip" src="assets/video/menage-maison.mp4" data-start="6.52" data-duration="2.02" data-track-index="10" muted playsinline></video></div><div id="m-ec-v-6" class="vplein" style="opacity: 0"><video id="m-ec-v-6-v" class="clip" src="assets/video/myst-point-interro.mp4" data-start="8.44" data-duration="0.5" data-track-index="11" muted playsinline></video></div><div id="m-ec-v-7" class="vplein" style="opacity: 0"><video id="m-ec-v-7-v" class="clip" src="assets/video/choc-mains-tete.mp4" data-start="8.84" data-duration="0.89" data-track-index="12" muted playsinline></video></div></div></div>
+        <div id="m-e0" class="etiq" style="left: 70px; top: 620px; font-size: 56px; background: #38BDF8; color: #0B1220; transform: rotate(-3deg); opacity: 0">MANGER</div>
+        <div id="m-e1" class="etiq" style="left: 520px; top: 620px; font-size: 56px; background: #7DD3FC; color: #0B1220; transform: rotate(3deg); opacity: 0">SE DÉPLACER</div>
+        <div id="m-e2" class="etiq" style="left: 70px; top: 620px; font-size: 56px; background: #F2B705; color: #0B1220; transform: rotate(-3deg); opacity: 0">CRÉDIT INTERNET</div>
+        <div id="m-e3" class="etiq" style="left: 520px; top: 620px; font-size: 56px; background: #F1F5F9; color: #0B1220; transform: rotate(3deg); opacity: 0">SAVON</div>
+        <div id="m-e4" class="etiq" style="left: 70px; top: 620px; font-size: 56px; background: #7DD3FC; color: #0B1220; transform: rotate(-3deg); opacity: 0">ENTRETIEN</div>
+        <div id="m-e5" class="etiq" style="left: 520px; top: 620px; font-size: 56px; background: #FF6B6B; color: #0B1220; transform: rotate(3deg); opacity: 0">IMPRÉVUS</div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#s07-chaque-mois-cam", { filter: "blur(14px)", scale: 1.12 }, { filter: "blur(0px)", scale: 1, duration: 0.18, ease: "power2.out" }, 0);
+    tl.to("#s07-chaque-mois-cam", { scale: 1.04, duration: 9.23, ease: "none" }, 0.18);
+    tl.fromTo("#m-cal", { opacity: 0, y: 80, scale: 0.7 }, { opacity: 1, y: 0, scale: 1, duration: 0.24, ease: "back.out(1.8)", immediateRender: false }, 0.05);
+    tl.set("#m-ec-v-0", { opacity: 1 }, 1.88);
+    tl.fromTo("#m-ec-v-0", { scale: 1.18 }, { scale: 1.02, duration: 0.72, ease: "power2.out", immediateRender: false }, 1.88);
+    tl.set("#m-ec-v-0", { opacity: 0 }, 2.62);
+    tl.set("#m-ec-v-1", { opacity: 1 }, 2.6);
+    tl.fromTo("#m-ec-v-1", { scale: 1.18 }, { scale: 1.02, duration: 0.24, ease: "power2.out", immediateRender: false }, 2.6);
+    tl.set("#m-ec-v-1", { opacity: 0 }, 2.86);
+    tl.set("#m-ec-v-2", { opacity: 1 }, 2.84);
+    tl.fromTo("#m-ec-v-2", { scale: 1.18 }, { scale: 1.02, duration: 1.44, ease: "power2.out", immediateRender: false }, 2.84);
+    tl.set("#m-ec-v-2", { opacity: 0 }, 4.3);
+    tl.set("#m-ec-v-3", { opacity: 1 }, 4.28);
+    tl.fromTo("#m-ec-v-3", { scale: 1.18 }, { scale: 1.02, duration: 1.44, ease: "power2.out", immediateRender: false }, 4.28);
+    tl.set("#m-ec-v-3", { opacity: 0 }, 5.74);
+    tl.set("#m-ec-v-4", { opacity: 1 }, 5.72);
+    tl.fromTo("#m-ec-v-4", { scale: 1.18 }, { scale: 1.02, duration: 0.8, ease: "power2.out", immediateRender: false }, 5.72);
+    tl.set("#m-ec-v-4", { opacity: 0 }, 6.54);
+    tl.set("#m-ec-v-5", { opacity: 1 }, 6.52);
+    tl.fromTo("#m-ec-v-5", { scale: 1.18 }, { scale: 1.02, duration: 1.92, ease: "power2.out", immediateRender: false }, 6.52);
+    tl.set("#m-ec-v-5", { opacity: 0 }, 8.46);
+    tl.set("#m-ec-v-6", { opacity: 1 }, 8.44);
+    tl.fromTo("#m-ec-v-6", { scale: 1.18 }, { scale: 1.02, duration: 0.4, ease: "power2.out", immediateRender: false }, 8.44);
+    tl.set("#m-ec-v-6", { opacity: 0 }, 8.86);
+    tl.set("#m-ec-v-7", { opacity: 1 }, 8.84);
+    tl.fromTo("#m-ec-v-7", { scale: 1.18 }, { scale: 1.02, duration: 0.79, ease: "power2.out", immediateRender: false }, 8.84);
+    tl.fromTo("#m-ec", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.22, ease: "back.out(1.8)", immediateRender: false }, 1.83);
+    tl.fromTo("#m-e0", { opacity: 0, x: -80 }, { opacity: 1, x: 0, duration: 0.2, ease: "power4.out", immediateRender: false }, 1.88);
+    tl.to("#m-e0", { opacity: 0, duration: 0.15 }, 2.82);
+    tl.fromTo("#m-e1", { opacity: 0, x: -80 }, { opacity: 1, x: 0, duration: 0.2, ease: "power4.out", immediateRender: false }, 2.84);
+    tl.to("#m-e1", { opacity: 0, duration: 0.15 }, 4.26);
+    tl.fromTo("#m-e2", { opacity: 0, x: -80 }, { opacity: 1, x: 0, duration: 0.2, ease: "power4.out", immediateRender: false }, 4.28);
+    tl.to("#m-e2", { opacity: 0, duration: 0.15 }, 5.7);
+    tl.fromTo("#m-e3", { opacity: 0, x: -80 }, { opacity: 1, x: 0, duration: 0.2, ease: "power4.out", immediateRender: false }, 5.72);
+    tl.to("#m-e3", { opacity: 0, duration: 0.15 }, 6.5);
+    tl.fromTo("#m-e4", { opacity: 0, x: -80 }, { opacity: 1, x: 0, duration: 0.2, ease: "power4.out", immediateRender: false }, 6.52);
+    tl.to("#m-e4", { opacity: 0, duration: 0.15 }, 8.42);
+    tl.fromTo("#m-e5", { opacity: 0, x: -80 }, { opacity: 1, x: 0, duration: 0.2, ease: "power4.out", immediateRender: false }, 8.44);
+    tl.to("#s07-chaque-mois-cadre", { x: 0, y: 90, scale: 1.12, duration: 0.3, ease: "power3.inOut" }, 1.78);
+    tl.to("#s07-chaque-mois-cadre", { keyframes: [{ filter: "blur(9px)", duration: 0.15 }, { filter: "blur(0px)", duration: 0.15 }] }, 1.78);
+    tl.to("#s07-chaque-mois-cadre", { x: 0, y: 118, scale: 1.18, duration: 0.3, ease: "power3.inOut" }, 4.18);
+    tl.to("#s07-chaque-mois-cadre", { keyframes: [{ filter: "blur(9px)", duration: 0.15 }, { filter: "blur(0px)", duration: 0.15 }] }, 4.18);
+    tl.to("#s07-chaque-mois-cadre", { x: 0, y: 90, scale: 1.12, duration: 0.3, ease: "power3.inOut" }, 6.42);
+    tl.to("#s07-chaque-mois-cadre", { keyframes: [{ filter: "blur(9px)", duration: 0.15 }, { filter: "blur(0px)", duration: 0.15 }] }, 6.42);
+    tl.to("#s07-chaque-mois-cadre", { x: 0, y: 90, scale: 1.057, duration: 0.24, ease: "power3.inOut" }, 8.44);
+    tl.to("#s07-chaque-mois-cadre", { keyframes: [{ filter: "blur(9px)", duration: 0.12 }, { filter: "blur(0px)", duration: 0.12 }] }, 8.44);
+    tl.to("#s07-chaque-mois-cadre", { x: 0, y: 0, scale: 1.0, duration: 0.24, ease: "power3.inOut" }, 8.95);
+    tl.to("#s07-chaque-mois-cadre", { keyframes: [{ filter: "blur(9px)", duration: 0.12 }, { filter: "blur(0px)", duration: 0.12 }] }, 8.95);
+    tl.to("#s07-chaque-mois-cam", { scale: 1.25, filter: "blur(14px)", duration: 0.2, ease: "power3.in" }, 9.43);
+    window.__timelines["s07-chaque-mois"] = tl;
+  </script>
+</template>

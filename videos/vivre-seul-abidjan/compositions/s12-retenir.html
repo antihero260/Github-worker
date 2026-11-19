@@ -1,0 +1,49 @@
+<!-- Retiens ça : l'indépendance se prépare avec le budget complet, pas seulement le loyer. À faire : additionne tes dépenses d'entrée et tes dépenses mensuelles avant de chercher (112.71 → 124.98 s). Écrit par tools/construire-scenes.py. -->
+<template>
+  <style>
+    #root { position: absolute; inset: 0; }
+  </style>
+  <div id="root" data-composition-id="s12-retenir" data-width="1080" data-height="1920">
+    <div class="sc">
+      <div id="s12-retenir-cam" class="sc-cam">
+        <div id="s12-retenir-cadre" class="sc-cadre">
+        <div class="decor"><div class="ciel" style="background: radial-gradient(ellipse 90% 60% at 50% 40%, #16346a 0%, #0b1220 78%)"></div></div>
+        <div id="z-ec" class="ecran ecran-panneau" style="left: 60px; top: 340px; width: 960px; height: 300px; opacity: 0"><div class="ecran-in"><div id="z-ec-v-0" class="vplein" style="opacity: 0"><video id="z-ec-v-0-v" class="clip" src="assets/video/separe-budgets.mp4" data-start="0.0" data-duration="3.5" data-track-index="5" muted playsinline></video></div><div id="z-ec-v-1" class="vplein" style="opacity: 0"><video id="z-ec-v-1-v" class="clip" src="assets/video/calcul-depenses.mp4" data-start="3.4" data-duration="4.26" data-track-index="6" muted playsinline></video></div><div id="z-ec-v-2" class="vplein" style="opacity: 0"><video id="z-ec-v-2-v" class="clip" src="assets/video/notes-stylo.mp4" data-start="7.56" data-duration="2.66" data-track-index="7" muted playsinline></video></div><div id="z-ec-v-3" class="vplein" style="opacity: 0"><video id="z-ec-v-3-v" class="clip" src="assets/video/cle-remise.mp4" data-start="10.12" data-duration="2.25" data-track-index="8" muted playsinline></video></div></div></div>
+        <div id="z-carte" class="regle fin-carte" style="left: 60px; top: 680px; opacity: 0"><h3>À RETENIR</h3><p id="z-r" style="opacity: 0; font-size: 60px"><span id="z-sur" class="surl"></span><span class="txt">L’INDÉPENDANCE SE PRÉPARE AVEC LE BUDGET COMPLET, PAS SEULEMENT LE LOYER.</span></p><h3 id="z-h2" class="h-faire" style="opacity: 0">À FAIRE</h3><p id="z-f" class="faire" style="opacity: 0; font-size: 50px">ADDITIONNE TES DÉPENSES D’ENTRÉE ET TES DÉPENSES MENSUELLES AVANT DE CHERCHER.<b id="z-ok" class="coche-ok" style="opacity: 0">✓</b></p></div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#s12-retenir-cam", { filter: "blur(14px)", scale: 1.12 }, { filter: "blur(0px)", scale: 1, duration: 0.18, ease: "power2.out" }, 0);
+    tl.to("#s12-retenir-cam", { scale: 1.04, duration: 11.87, ease: "none" }, 0.18);
+    tl.set("#z-ec-v-0", { opacity: 1 }, 0.0);
+    tl.fromTo("#z-ec-v-0", { scale: 1.18 }, { scale: 1.02, duration: 3.4, ease: "power2.out", immediateRender: false }, 0.0);
+    tl.set("#z-ec-v-0", { opacity: 0 }, 3.42);
+    tl.set("#z-ec-v-1", { opacity: 1 }, 3.4);
+    tl.fromTo("#z-ec-v-1", { scale: 1.18 }, { scale: 1.02, duration: 4.16, ease: "power2.out", immediateRender: false }, 3.4);
+    tl.set("#z-ec-v-1", { opacity: 0 }, 7.58);
+    tl.set("#z-ec-v-2", { opacity: 1 }, 7.56);
+    tl.fromTo("#z-ec-v-2", { scale: 1.18 }, { scale: 1.02, duration: 2.56, ease: "power2.out", immediateRender: false }, 7.56);
+    tl.set("#z-ec-v-2", { opacity: 0 }, 10.14);
+    tl.set("#z-ec-v-3", { opacity: 1 }, 10.12);
+    tl.fromTo("#z-ec-v-3", { scale: 1.18 }, { scale: 1.02, duration: 2.15, ease: "power2.out", immediateRender: false }, 10.12);
+    tl.fromTo("#z-ec", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.22, ease: "back.out(1.8)", immediateRender: false }, 0.0);
+    tl.fromTo("#z-carte", { opacity: 0, y: 120, scale: 0.8 }, { opacity: 1, y: 0, scale: 1, duration: 0.28, ease: "back.out(1.8)", immediateRender: false }, 0.12);
+    tl.fromTo("#z-r", { opacity: 0, y: 30, scale: 0.7 }, { opacity: 1, y: 0, scale: 1, duration: 0.22, ease: "back.out(1.8)", immediateRender: false }, 1.4);
+    tl.fromTo("#z-sur", { scaleX: 0 }, { scaleX: 1, duration: 0.6, ease: "power2.out", immediateRender: false }, 3.4);
+    tl.to("#s12-retenir-cadre", { x: 0, y: 110, scale: 1.1, duration: 0.3, ease: "power3.inOut" }, 1.3);
+    tl.to("#s12-retenir-cadre", { keyframes: [{ filter: "blur(9px)", duration: 0.15 }, { filter: "blur(0px)", duration: 0.15 }] }, 1.3);
+    tl.to("#s12-retenir-cadre", { x: 0, y: -110, scale: 1.1, duration: 0.35, ease: "power3.inOut" }, 6.52);
+    tl.to("#s12-retenir-cadre", { keyframes: [{ filter: "blur(9px)", duration: 0.175 }, { filter: "blur(0px)", duration: 0.175 }] }, 6.52);
+    tl.fromTo("#z-h2", { opacity: 0, y: 30, scale: 0.7 }, { opacity: 1, y: 0, scale: 1, duration: 0.2, ease: "back.out(1.8)", immediateRender: false }, 6.52);
+    tl.fromTo("#z-f", { opacity: 0, y: 30, scale: 0.7 }, { opacity: 1, y: 0, scale: 1, duration: 0.22, ease: "back.out(1.8)", immediateRender: false }, 7.56);
+    tl.fromTo("#z-ok", { opacity: 0, scale: 2.4 }, { opacity: 1, scale: 1, duration: 0.18, ease: "back.out(2)", immediateRender: false }, 11.64);
+    tl.to("#s12-retenir-cadre", { x: 0, y: 0, scale: 1.0, duration: 0.35, ease: "power3.inOut" }, 11.16);
+    tl.to("#s12-retenir-cadre", { keyframes: [{ filter: "blur(9px)", duration: 0.175 }, { filter: "blur(0px)", duration: 0.175 }] }, 11.16);
+    tl.to("#s12-retenir-cam", { scale: 1.25, filter: "blur(14px)", duration: 0.2, ease: "power3.in" }, 12.07);
+    window.__timelines["s12-retenir"] = tl;
+  </script>
+</template>

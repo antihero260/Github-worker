@@ -1,0 +1,64 @@
+<!-- Scène 1 · « Quand on parle d'intelligence artificielle… ChatGPT, Claude ou Gemini. » (0 → 7.72 s). Fichier écrit par un générateur, modifiable à la main. -->
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+    }
+
+  </style>
+  <div id="root" data-composition-id="s01-ia-connues" data-width="1920" data-height="1080">
+    <div class="pj-scene">
+      <div id="s01-ia-connues-cam" class="pj-cam">
+        <div id="s01-ia-connues-cadre" class="pj-cadre">
+        <div class="pj-horizon" style="top: 760px"></div>
+        <div class="pj-cone" style="left: 420px; height: 900px; opacity: 1.0"></div><div class="pj-sol" style="left: 390px; top: 740px; opacity: 1.0"></div>
+        <svg id="s01-toi" class="pj-perso pj-toi-perso" viewBox="-30 -20 160 290" style="left: 444px; top: 412px; width: 232px; height: 420px"><g id="s01-toi-vie"><g id="s01-toi-corps"><g id="s01-toi-jg"><g class="c"><rect x="24" y="136" width="24" height="112" rx="8" /></g><g class="p"><rect x="24" y="136" width="24" height="112" rx="8" /></g></g><g id="s01-toi-jd"><g class="c"><rect x="52" y="136" width="24" height="112" rx="8" /></g><g class="p"><rect x="52" y="136" width="24" height="112" rx="8" /></g></g><g id="s01-toi-tronc"><g class="c"><rect x="22" y="52" width="56" height="94" rx="12" /></g><g class="p"><rect x="22" y="52" width="56" height="94" rx="12" /></g></g><g id="s01-toi-bg"><g class="c"><rect x="2" y="54" width="18" height="86" rx="9" /></g><g class="p"><rect x="2" y="54" width="18" height="86" rx="9" /></g></g><g id="s01-toi-bd"><g class="c"><rect x="80" y="54" width="18" height="86" rx="9" /></g><g class="p"><rect x="80" y="54" width="18" height="86" rx="9" /></g></g><g id="s01-toi-tete"><g class="c"><circle cx="50" cy="24" r="22" /></g><g class="p"><circle cx="50" cy="24" r="22" /></g></g></g></g></svg>
+        <div id="s01-dit" class="pj-serif" style="left: 113px; top: 200px; width: 980px; font-size: 84px"><span id="s01-dit-0">Quand</span> <span id="s01-dit-1">on</span> <span id="s01-dit-2">parle</span> <span id="s01-dit-3" style="color: #DCFC1C">d'intelligence</span> <span id="s01-dit-4" style="color: #DCFC1C">artificielle,</span></div>
+        <div id="s01-logo0" class="pj-logo" style="left: 930px; top: 250px; width: 230px; opacity: 0"><img src="assets/img/logo-openai.svg" alt="ChatGPT" style="width: 134px; height: 134px" /><div class="pj-logo-nom">ChatGPT</div></div>
+        <div id="s01-logo1" class="pj-logo" style="left: 1200px; top: 250px; width: 230px; opacity: 0"><img src="assets/img/logo-claude.svg" alt="Claude" style="width: 134px; height: 134px" /><div class="pj-logo-nom">Claude</div></div>
+        <div id="s01-logo2" class="pj-logo" style="left: 1470px; top: 250px; width: 230px; opacity: 0"><img src="assets/img/logo-gemini.svg" alt="Gemini" style="width: 134px; height: 134px" /><div class="pj-logo-nom">Gemini</div></div>
+        <div id="s01-pense" style="position: absolute; left: 800px; top: 250px; opacity: 0; transform-origin: 10% 100%"><div class="pj-serif pj-pensee" style="position: relative; font-size: 54px">Hmm… l'IA ?</div><i class="pj-bulle-rond" style="left: 30px; top: calc(100% + 14px); width: 34px; height: 34px"></i><i class="pj-bulle-rond" style="left: 6px; top: calc(100% + 58px); width: 20px; height: 20px"></i></div>
+        </div>
+      </div>
+      <div id="s01-hud" class="pj-label" style="left: 113px; top: 107px; "><span class="pj-k">Intelligence artificielle</span><span class="pj-d">Ce qui vient à l'esprit</span></div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#s01-ia-connues-cam", { scale: 1 }, { scale: 1.05, duration: 7.52, ease: "none" }, 0);
+    tl.set("#s01-dit-0", { opacity: 1 }, 0.0);
+    tl.set("#s01-dit-1", { opacity: 1 }, 0.24);
+    tl.set("#s01-dit-2", { opacity: 1 }, 0.4);
+    tl.set("#s01-dit-3", { opacity: 1 }, 0.64);
+    tl.set("#s01-dit-4", { opacity: 1 }, 1.44);
+    tl.fromTo("#s01-logo0", { opacity: 0, scale: 1.7 }, { opacity: 1, scale: 1, duration: 0.18, ease: "back.out(2.2)" }, 5.12);
+    tl.fromTo("#s01-logo1", { opacity: 0, scale: 1.7 }, { opacity: 1, scale: 1, duration: 0.18, ease: "back.out(2.2)" }, 6.24);
+    tl.fromTo("#s01-logo2", { opacity: 0, scale: 1.7 }, { opacity: 1, scale: 1, duration: 0.18, ease: "back.out(2.2)" }, 6.88);
+    tl.to("#s01-toi", { x: "+=180", duration: 1.2, ease: "none" }, 0.1);
+    tl.to("#s01-toi-jg", { svgOrigin: "36 142", keyframes: [{ rotation: 24, duration: 0.15 }, { rotation: -24, duration: 0.15 }, { rotation: 24, duration: 0.15 }, { rotation: -24, duration: 0.15 }, { rotation: 24, duration: 0.15 }, { rotation: -24, duration: 0.15 }, { rotation: 24, duration: 0.15 }, { rotation: 0, duration: 0.15 }] }, 0.1);
+    tl.to("#s01-toi-jd", { svgOrigin: "64 142", keyframes: [{ rotation: -24, duration: 0.15 }, { rotation: 24, duration: 0.15 }, { rotation: -24, duration: 0.15 }, { rotation: 24, duration: 0.15 }, { rotation: -24, duration: 0.15 }, { rotation: 24, duration: 0.15 }, { rotation: -24, duration: 0.15 }, { rotation: 0, duration: 0.15 }] }, 0.1);
+    tl.to("#s01-toi-bg", { svgOrigin: "11 62", keyframes: [{ rotation: -20, duration: 0.15 }, { rotation: 20, duration: 0.15 }, { rotation: -20, duration: 0.15 }, { rotation: 20, duration: 0.15 }, { rotation: -20, duration: 0.15 }, { rotation: 20, duration: 0.15 }, { rotation: -20, duration: 0.15 }, { rotation: 0, duration: 0.15 }] }, 0.1);
+    tl.to("#s01-toi-bd", { svgOrigin: "89 62", keyframes: [{ rotation: 20, duration: 0.15 }, { rotation: -20, duration: 0.15 }, { rotation: 20, duration: 0.15 }, { rotation: -20, duration: 0.15 }, { rotation: 20, duration: 0.15 }, { rotation: -20, duration: 0.15 }, { rotation: 20, duration: 0.15 }, { rotation: 0, duration: 0.15 }] }, 0.1);
+    tl.to("#s01-toi-corps", { keyframes: [{ y: -6, duration: 0.15 }, { y: 0, duration: 0.15 }, { y: -6, duration: 0.15 }, { y: 0, duration: 0.15 }, { y: -6, duration: 0.15 }, { y: 0, duration: 0.15 }, { y: -6, duration: 0.15 }, { y: 0, duration: 0.15 }] }, 0.1);
+    tl.fromTo("#s01-toi-vie", { y: 0 }, { y: -5, duration: 0.42, repeat: 13, yoyo: true, ease: "sine.inOut", immediateRender: false }, 1.35);
+    tl.to("#s01-toi-bd", { rotation: -158, svgOrigin: "89 62", duration: 0.16, ease: "power2.out" }, 2.4);
+    tl.to("#s01-toi-tete", { rotation: -8, svgOrigin: "50 50", duration: 0.16, ease: "power2.out" }, 2.4);
+    tl.to("#s01-toi-bd", { rotation: -146, svgOrigin: "89 62", duration: 0.09, repeat: 5, yoyo: true }, 2.58);
+    tl.fromTo("#s01-pense", { opacity: 0, scale: 0.4 }, { opacity: 1, scale: 1, duration: 0.22, ease: "back.out(2.2)" }, 2.96);
+    tl.to("#s01-pense", { opacity: 0, scale: 0.8, duration: 0.15 }, 4.56);
+    tl.to("#s01-dit", { opacity: 0, duration: 0.15 }, 2.84);
+    tl.to("#s01-toi-bd", { rotation: -100, svgOrigin: "89 62", duration: 0.16, ease: "back.out(2)" }, 4.88);
+    tl.to("#s01-toi-tete", { rotation: -8, svgOrigin: "50 50", duration: 0.16, ease: "back.out(2)" }, 4.88);
+    tl.to("#s01-ia-connues-cadre", { x: -342, y: 122, scale: 1.22, duration: 0.26, ease: "power3.inOut" }, 4.78);
+    tl.to("#s01-ia-connues-cadre", { keyframes: [{ filter: "blur(10px)", duration: 0.13 }, { filter: "blur(0px)", duration: 0.13 }] }, 4.78);
+    tl.to("#s01-toi-corps", { keyframes: [{ y: -26, duration: 0.13, ease: "power2.out" }, { y: 0, duration: 0.15, ease: "power2.in" }] }, 6.24);
+    tl.to("#s01-toi-bd", { rotation: -150, svgOrigin: "89 62", duration: 0.14, ease: "back.out(2)" }, 6.88);
+    tl.to("#s01-toi-corps", { keyframes: [{ y: -34, duration: 0.13, ease: "power2.out" }, { y: 0, duration: 0.15, ease: "power2.in" }] }, 6.88);
+    tl.to("#s01-ia-connues-cadre", { x: 0, y: 0, scale: 1.0, duration: 0.26, ease: "power3.inOut" }, 7.28);
+    tl.to("#s01-ia-connues-cadre", { keyframes: [{ filter: "blur(10px)", duration: 0.13 }, { filter: "blur(0px)", duration: 0.13 }] }, 7.28);
+    tl.to("#s01-toi-tete", { svgOrigin: "50 50", keyframes: [{ rotation: 14, duration: 0.11 }, { rotation: -2, duration: 0.11 }, { rotation: 14, duration: 0.11 }, { rotation: -2, duration: 0.11 }, { rotation: 0, duration: 0.11 }] }, 7.33);
+    tl.to("#s01-ia-connues-cam", { scale: 1.3, filter: "blur(14px)", duration: 0.2, ease: "power3.in" }, 7.52);
+    window.__timelines["s01-ia-connues"] = tl;
+  </script>
+</template>

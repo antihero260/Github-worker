@@ -1,0 +1,35 @@
+<!-- Scène 4 · « Ce n'est pas de la science-fiction. » (16.12 → 17.72 s). Fichier écrit par un générateur, modifiable à la main. -->
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+    }
+
+  </style>
+  <div id="root" data-composition-id="s04-science-fiction" data-width="1920" data-height="1080">
+    <div class="pj-scene">
+      <div id="s04-science-fiction-cam" class="pj-cam">
+        <div id="s04-science-fiction-cadre" class="pj-cadre">
+        <div class="pj-horizon" style="top: 760px"></div>
+        <div id="s04-plein" style="position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; overflow: hidden"><video id="s04-plein-v" class="clip" src="assets/video/ville-futur.mp4" data-start="0" data-duration="1.6" data-track-index="5" muted playsinline style="position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; object-fit: cover"></video><div style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,0.25000000000000006), rgba(0,0,0,0.75))"></div></div>
+        <div id="s04-t0" class="pj-serif" style="left: 0; width: 1920px; top: 230px; font-size: 90px; text-align: center; opacity: 0">Ce n'est pas de la</div>
+        <div id="s04-t1" class="pj-impact" style="position: absolute; left: 0; width: 1920px; top: 360px; text-align: center; font-size: 190px; color: #ECECE8; text-shadow: none; opacity: 0">Science-fiction<i id="s04-r" style="position: absolute; left: 330px; right: 330px; top: 46%; height: 18px; background: #DCFC1C"></i></div>
+        </div>
+      </div>
+      <div id="s04-hud" class="pj-label" style="left: 113px; top: 107px; "><span class="pj-k">Science-fiction ?</span><span class="pj-d">Non</span></div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#s04-science-fiction-cam", { scale: 1 }, { scale: 1.05, duration: 1.4, ease: "none" }, 0);
+    tl.fromTo("#s04-science-fiction-cam", { filter: "blur(14px)" }, { filter: "blur(0px)", duration: 0.16, ease: "power2.out" }, 0);
+    tl.fromTo("#s04-plein", { scale: 1.0 }, { scale: 1.1, duration: 1.6, ease: "none" }, 0);
+    tl.set("#s04-r", { scaleX: 0, transformOrigin: "0% 50%" }, 0);
+    tl.fromTo("#s04-t0", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.18, ease: "power3.out" }, 0.12);
+    tl.fromTo("#s04-t1", { opacity: 0, scale: 1.45 }, { opacity: 1, scale: 1, duration: 0.13, ease: "power4.out" }, 0.84);
+    tl.to("#s04-r", { scaleX: 1, duration: 0.16, ease: "power2.out" }, 1.29);
+    tl.to("#s04-science-fiction-cam", { scale: 1.3, filter: "blur(14px)", duration: 0.2, ease: "power3.in" }, 1.4);
+    window.__timelines["s04-science-fiction"] = tl;
+  </script>
+</template>

@@ -1,0 +1,854 @@
+[
+{
+"i": 0,
+"text": "TON",
+"start": 0.1,
+"end": 0.23
+},
+{
+"i": 1,
+"text": "SITE",
+"start": 0.23,
+"end": 0.48
+},
+{
+"i": 2,
+"text": "CRÉÉ",
+"start": 0.54,
+"end": 0.83
+},
+{
+"i": 3,
+"text": "AVEC",
+"start": 0.83,
+"end": 1.12
+},
+{
+"i": 4,
+"text": "L'IA",
+"start": 1.14,
+"end": 1.46
+},
+{
+"i": 5,
+"text": "EST",
+"start": 1.46,
+"end": 1.63
+},
+{
+"i": 6,
+"text": "ENFIN",
+"start": 1.68,
+"end": 1.99
+},
+{
+"i": 7,
+"text": "PRÊT",
+"start": 2.05,
+"end": 2.33
+},
+{
+"i": 8,
+"text": "À",
+"start": 2.33,
+"end": 2.37
+},
+{
+"i": 9,
+"text": "ÊTRE",
+"start": 2.4,
+"end": 2.69
+},
+{
+"i": 10,
+"text": "PUBLIÉ ?",
+"start": 2.69,
+"end": 3.38
+},
+{
+"i": 11,
+"text": "ATTENTION !",
+"start": 3.48,
+"end": 4.28
+},
+{
+"i": 12,
+"text": "AVANT",
+"start": 4.28,
+"end": 4.57
+},
+{
+"i": 13,
+"text": "DE",
+"start": 4.57,
+"end": 4.68
+},
+{
+"i": 14,
+"text": "LE",
+"start": 4.68,
+"end": 4.79
+},
+{
+"i": 15,
+"text": "METTRE",
+"start": 4.79,
+"end": 5.13
+},
+{
+"i": 16,
+"text": "EN",
+"start": 5.13,
+"end": 5.21
+},
+{
+"i": 17,
+"text": "LIGNE,",
+"start": 5.25,
+"end": 5.63
+},
+{
+"i": 18,
+"text": "VÉRIFIE",
+"start": 5.63,
+"end": 5.91
+},
+{
+"i": 19,
+"text": "CES",
+"start": 5.97,
+"end": 6.08
+},
+{
+"i": 20,
+"text": "CINQ",
+"start": 6.08,
+"end": 6.33
+},
+{
+"i": 21,
+"text": "POINTS",
+"start": 6.77,
+"end": 6.82
+},
+{
+"i": 22,
+"text": "POUR",
+"start": 6.82,
+"end": 7.01
+},
+{
+"i": 23,
+"text": "ÉVITER",
+"start": 7.01,
+"end": 7.29
+},
+{
+"i": 24,
+"text": "DE",
+"start": 7.29,
+"end": 7.33
+},
+{
+"i": 25,
+"text": "MAUVAISES",
+"start": 7.69,
+"end": 7.78
+},
+{
+"i": 26,
+"text": "SURPRISES.",
+"start": 7.78,
+"end": 8.88
+},
+{
+"i": 27,
+"text": "PREMIÈREMENT,",
+"start": 8.98,
+"end": 9.79
+},
+{
+"i": 28,
+"text": "LES",
+"start": 9.79,
+"end": 9.91
+},
+{
+"i": 29,
+"text": "MENTIONS",
+"start": 9.98,
+"end": 10.51
+},
+{
+"i": 30,
+"text": "LÉGALES :",
+"start": 10.51,
+"end": 11
+},
+{
+"i": 31,
+"text": "ELLES",
+"start": 11.1,
+"end": 11.28
+},
+{
+"i": 32,
+"text": "PERMETTENT",
+"start": 11.28,
+"end": 11.86
+},
+{
+"i": 33,
+"text": "D'IDENTIFIER",
+"start": 11.86,
+"end": 12.54
+},
+{
+"i": 34,
+"text": "LE",
+"start": 12.54,
+"end": 12.63
+},
+{
+"i": 35,
+"text": "PROPRIÉTAIRE",
+"start": 12.68,
+"end": 13.34
+},
+{
+"i": 36,
+"text": "DU",
+"start": 13.34,
+"end": 13.41
+},
+{
+"i": 37,
+"text": "SITE",
+"start": 13.46,
+"end": 13.68
+},
+{
+"i": 38,
+"text": "ET",
+"start": 13.68,
+"end": 13.79
+},
+{
+"i": 39,
+"text": "SON",
+"start": 13.79,
+"end": 13.94
+},
+{
+"i": 40,
+"text": "HÉBERGEUR.",
+"start": 13.94,
+"end": 14.8
+},
+{
+"i": 41,
+"text": "DEUXIÈMEMENT,",
+"start": 14.9,
+"end": 15.65
+},
+{
+"i": 42,
+"text": "LA",
+"start": 15.65,
+"end": 15.77
+},
+{
+"i": 43,
+"text": "POLITIQUE",
+"start": 15.77,
+"end": 16.34
+},
+{
+"i": 44,
+"text": "DE",
+"start": 16.34,
+"end": 16.43
+},
+{
+"i": 45,
+"text": "CONFIDENTIALITÉ :",
+"start": 16.48,
+"end": 17.68
+},
+{
+"i": 46,
+"text": "EXPLIQUE",
+"start": 17.78,
+"end": 18.07
+},
+{
+"i": 47,
+"text": "AUX",
+"start": 18.07,
+"end": 18.23
+},
+{
+"i": 48,
+"text": "VISITEURS",
+"start": 18.23,
+"end": 18.68
+},
+{
+"i": 49,
+"text": "QUELLES",
+"start": 18.68,
+"end": 19.03
+},
+{
+"i": 50,
+"text": "DONNÉES",
+"start": 19.03,
+"end": 19.38
+},
+{
+"i": 51,
+"text": "TU",
+"start": 19.38,
+"end": 19.48
+},
+{
+"i": 52,
+"text": "COLLECTES,",
+"start": 19.48,
+"end": 20.05
+},
+{
+"i": 53,
+"text": "POURQUOI",
+"start": 20.08,
+"end": 20.55
+},
+{
+"i": 54,
+"text": "ET",
+"start": 20.55,
+"end": 20.64
+},
+{
+"i": 55,
+"text": "COMBIEN",
+"start": 21.07,
+"end": 21.08
+},
+{
+"i": 56,
+"text": "DE",
+"start": 21.08,
+"end": 21.18
+},
+{
+"i": 57,
+"text": "TEMPS",
+"start": 21.24,
+"end": 21.48
+},
+{
+"i": 58,
+"text": "TU",
+"start": 21.48,
+"end": 21.63
+},
+{
+"i": 59,
+"text": "LES",
+"start": 21.63,
+"end": 22
+},
+{
+"i": 60,
+"text": "CONSERVES.",
+"start": 22,
+"end": 22.8
+},
+{
+"i": 61,
+"text": "TROISIÈMEMENT,",
+"start": 22.9,
+"end": 23.78
+},
+{
+"i": 62,
+"text": "LES",
+"start": 23.78,
+"end": 23.98
+},
+{
+"i": 63,
+"text": "COOKIES :",
+"start": 23.98,
+"end": 24.7
+},
+{
+"i": 64,
+"text": "CERTAINS",
+"start": 24.8,
+"end": 25.12
+},
+{
+"i": 65,
+"text": "TRACEURS",
+"start": 25.18,
+"end": 25.6
+},
+{
+"i": 66,
+"text": "NÉCESSITENT",
+"start": 25.6,
+"end": 26.22
+},
+{
+"i": 67,
+"text": "LE",
+"start": 26.22,
+"end": 26.33
+},
+{
+"i": 68,
+"text": "CONSENTEMENT",
+"start": 26.33,
+"end": 27.01
+},
+{
+"i": 69,
+"text": "DES",
+"start": 27.01,
+"end": 27.18
+},
+{
+"i": 70,
+"text": "VISITEURS",
+"start": 27.18,
+"end": 27.66
+},
+{
+"i": 71,
+"text": "AVANT",
+"start": 27.66,
+"end": 28.09
+},
+{
+"i": 72,
+"text": "LEUR",
+"start": 28.09,
+"end": 28.19
+},
+{
+"i": 73,
+"text": "ACTIVATION.",
+"start": 28.19,
+"end": 29
+},
+{
+"i": 74,
+"text": "QUATRIÈMEMENT,",
+"start": 29.1,
+"end": 29.84
+},
+{
+"i": 75,
+"text": "LES",
+"start": 29.84,
+"end": 30.01
+},
+{
+"i": 76,
+"text": "CONDITIONS",
+"start": 30.01,
+"end": 30.6
+},
+{
+"i": 77,
+"text": "GÉNÉRALES",
+"start": 30.6,
+"end": 31.12
+},
+{
+"i": 78,
+"text": "DE",
+"start": 31.12,
+"end": 31.23
+},
+{
+"i": 79,
+"text": "VENTE,",
+"start": 31.23,
+"end": 31.69
+},
+{
+"i": 80,
+"text": "SI",
+"start": 31.69,
+"end": 31.78
+},
+{
+"i": 81,
+"text": "TU",
+"start": 31.78,
+"end": 31.87
+},
+{
+"i": 82,
+"text": "PROPOSES",
+"start": 31.87,
+"end": 32.25
+},
+{
+"i": 83,
+"text": "DES",
+"start": 32.25,
+"end": 32.39
+},
+{
+"i": 84,
+"text": "PRODUITS",
+"start": 32.39,
+"end": 32.8
+},
+{
+"i": 85,
+"text": "OU",
+"start": 32.8,
+"end": 32.88
+},
+{
+"i": 86,
+"text": "SERVICES",
+"start": 32.88,
+"end": 33.4
+},
+{
+"i": 87,
+"text": "À",
+"start": 33.4,
+"end": 33.48
+},
+{
+"i": 88,
+"text": "ACHETER",
+"start": 33.48,
+"end": 34.03
+},
+{
+"i": 89,
+"text": "EN",
+"start": 34.03,
+"end": 34.19
+},
+{
+"i": 90,
+"text": "LIGNE.",
+"start": 34.19,
+"end": 34.6
+},
+{
+"i": 91,
+"text": "ET",
+"start": 34.7,
+"end": 34.73
+},
+{
+"i": 92,
+"text": "CINQUIÈMEMENT,",
+"start": 34.73,
+"end": 35.63
+},
+{
+"i": 93,
+"text": "LES",
+"start": 35.7,
+"end": 35.86
+},
+{
+"i": 94,
+"text": "DROITS",
+"start": 35.86,
+"end": 36.23
+},
+{
+"i": 95,
+"text": "D'AUTEUR :",
+"start": 36.28,
+"end": 36.97
+},
+{
+"i": 96,
+"text": "ASSURE-TOI",
+"start": 37.1,
+"end": 37.47
+},
+{
+"i": 97,
+"text": "D'AVOIR",
+"start": 37.47,
+"end": 37.8
+},
+{
+"i": 98,
+"text": "LES",
+"start": 37.8,
+"end": 37.95
+},
+{
+"i": 99,
+"text": "AUTORISATIONS",
+"start": 37.95,
+"end": 38.59
+},
+{
+"i": 100,
+"text": "NÉCESSAIRES",
+"start": 38.59,
+"end": 39.2
+},
+{
+"i": 101,
+"text": "POUR",
+"start": 39.2,
+"end": 39.41
+},
+{
+"i": 102,
+"text": "UTILISER",
+"start": 39.45,
+"end": 39.96
+},
+{
+"i": 103,
+"text": "TES",
+"start": 39.96,
+"end": 40.39
+},
+{
+"i": 104,
+"text": "IMAGES,",
+"start": 40.39,
+"end": 40.7
+},
+{
+"i": 105,
+"text": "TES",
+"start": 40.7,
+"end": 40.91
+},
+{
+"i": 106,
+"text": "VIDÉOS,",
+"start": 40.91,
+"end": 41.5
+},
+{
+"i": 107,
+"text": "TES",
+"start": 41.5,
+"end": 41.62
+},
+{
+"i": 108,
+"text": "POLICES",
+"start": 41.62,
+"end": 42.2
+},
+{
+"i": 109,
+"text": "ET",
+"start": 42.2,
+"end": 42.31
+},
+{
+"i": 110,
+"text": "TES",
+"start": 42.31,
+"end": 42.35
+},
+{
+"i": 111,
+"text": "RESSOURCES",
+"start": 42.48,
+"end": 43.03
+},
+{
+"i": 112,
+"text": "GRAPHIQUES.",
+"start": 43.04,
+"end": 43.79
+},
+{
+"i": 113,
+"text": "N'OUBLIE",
+"start": 43.85,
+"end": 44.21
+},
+{
+"i": 114,
+"text": "PAS",
+"start": 44.26,
+"end": 44.39
+},
+{
+"i": 115,
+"text": "NON",
+"start": 44.39,
+"end": 44.55
+},
+{
+"i": 116,
+"text": "PLUS",
+"start": 44.55,
+"end": 44.77
+},
+{
+"i": 117,
+"text": "DE",
+"start": 44.77,
+"end": 44.83
+},
+{
+"i": 118,
+"text": "SÉCURISER",
+"start": 44.9,
+"end": 45.37
+},
+{
+"i": 119,
+"text": "LES",
+"start": 45.37,
+"end": 45.53
+},
+{
+"i": 120,
+"text": "DONNÉES",
+"start": 45.53,
+"end": 45.91
+},
+{
+"i": 121,
+"text": "ET",
+"start": 45.91,
+"end": 46.02
+},
+{
+"i": 122,
+"text": "LES",
+"start": 46.02,
+"end": 46.17
+},
+{
+"i": 123,
+"text": "FORMULAIRES",
+"start": 46.2,
+"end": 46.74
+},
+{
+"i": 124,
+"text": "DE",
+"start": 46.74,
+"end": 46.965
+},
+{
+"i": 125,
+"text": "TON",
+"start": 46.965,
+"end": 47.19
+},
+{
+"i": 126,
+"text": "SITE.",
+"start": 47.19,
+"end": 47.5
+},
+{
+"i": 127,
+"text": "TON",
+"start": 47.6,
+"end": 47.68
+},
+{
+"i": 128,
+"text": "SITE",
+"start": 47.68,
+"end": 47.91
+},
+{
+"i": 129,
+"text": "PEUT",
+"start": 47.96,
+"end": 48.18
+},
+{
+"i": 130,
+"text": "ÊTRE",
+"start": 48.18,
+"end": 48.43
+},
+{
+"i": 131,
+"text": "MAGNIFIQUE,",
+"start": 48.43,
+"end": 49.2
+},
+{
+"i": 132,
+"text": "MAIS",
+"start": 49.2,
+"end": 49.44
+},
+{
+"i": 133,
+"text": "SA",
+"start": 49.44,
+"end": 49.56
+},
+{
+"i": 134,
+"text": "CONFORMITÉ",
+"start": 49.56,
+"end": 50.16
+},
+{
+"i": 135,
+"text": "EST",
+"start": 50.16,
+"end": 50.34
+},
+{
+"i": 136,
+"text": "TOUT",
+"start": 50.34,
+"end": 50.46
+},
+{
+"i": 137,
+"text": "AUSSI",
+"start": 50.46,
+"end": 50.89
+},
+{
+"i": 138,
+"text": "IMPORTANTE",
+"start": 50.89,
+"end": 51.44
+},
+{
+"i": 139,
+"text": "QUE",
+"start": 51.44,
+"end": 51.82
+},
+{
+"i": 140,
+"text": "SON",
+"start": 51.82,
+"end": 51.84
+},
+{
+"i": 141,
+"text": "DESIGN.",
+"start": 51.84,
+"end": 52.38
+}
+]

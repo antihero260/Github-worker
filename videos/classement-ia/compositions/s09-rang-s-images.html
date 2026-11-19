@@ -1,0 +1,49 @@
+<!-- Scène 9 · « En S, je mets Midjourney, Nano Banana et ChatGPT Images. » (52.38 → 57.24 s). Fichier écrit par un générateur, modifiable à la main. -->
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+    }
+
+  </style>
+  <div id="root" data-composition-id="s09-rang-s-images" data-width="1920" data-height="1080">
+    <div class="pj-scene">
+      <div id="s09-rang-s-images-cam" class="pj-cam">
+        <div id="s09-rang-s-images-cadre" class="pj-cadre">
+        <div class="pj-horizon" style="top: 760px"></div>
+        <div class="pj-cone" style="left: 100px; height: 900px; opacity: 1.0"></div><div class="pj-sol" style="left: 70px; top: 740px; opacity: 1.0"></div>
+        <svg id="s09-toi" class="pj-perso pj-toi-perso" viewBox="-30 -20 160 290" style="left: 270px; top: 430px; width: 221px; height: 400px"><g id="s09-toi-vie"><g id="s09-toi-corps"><g id="s09-toi-jg"><g class="c"><rect x="24" y="136" width="24" height="112" rx="8" /></g><g class="p"><rect x="24" y="136" width="24" height="112" rx="8" /></g></g><g id="s09-toi-jd"><g class="c"><rect x="52" y="136" width="24" height="112" rx="8" /></g><g class="p"><rect x="52" y="136" width="24" height="112" rx="8" /></g></g><g id="s09-toi-tronc"><g class="c"><rect x="22" y="52" width="56" height="94" rx="12" /></g><g class="p"><rect x="22" y="52" width="56" height="94" rx="12" /></g></g><g id="s09-toi-bg"><g class="c"><rect x="2" y="54" width="18" height="86" rx="9" /></g><g class="p"><rect x="2" y="54" width="18" height="86" rx="9" /></g></g><g id="s09-toi-bd"><g class="c"><rect x="80" y="54" width="18" height="86" rx="9" /></g><g class="p"><rect x="80" y="54" width="18" height="86" rx="9" /></g></g><g id="s09-toi-tete"><g class="c"><circle cx="50" cy="24" r="22" /></g><g class="p"><circle cx="50" cy="24" r="22" /></g></g></g></g></svg>
+        <div id="s09-t" class="pj-tableau" style="left: 700px; top: 220px; width: 1100px"><div id="s09-t-rS" class="pj-rang" style="height: 140px; margin-bottom: 10px"><b style="width: 130px; line-height: 140px; font-size: 86px; background: #DCFC1C; color: #000000">S</b><div id="s09-t-cS" class="pj-rang-corps"></div></div><div id="s09-t-rA" class="pj-rang" style="height: 140px; margin-bottom: 10px"><b style="width: 130px; line-height: 140px; font-size: 86px; background: #ECECE8; color: #000000">A</b><div id="s09-t-cA" class="pj-rang-corps"></div></div><div id="s09-t-rB" class="pj-rang" style="height: 140px; margin-bottom: 10px"><b style="width: 130px; line-height: 140px; font-size: 86px; background: #8a8a8a; color: #000000">B</b><div id="s09-t-cB" class="pj-rang-corps"></div></div><div id="s09-t-rC" class="pj-rang" style="height: 140px; margin-bottom: 10px"><b style="width: 130px; line-height: 140px; font-size: 86px; background: #333333; color: #ECECE8">C</b><div id="s09-t-cC" class="pj-rang-corps"></div></div></div>
+        <div id="s09-t-midjourney" class="pj-tuile" style="left: 844px; top: 230px; width: 150px; height: 120px; opacity: 0"><img src="assets/img/logo-midjourney.svg" alt="" style="width: 66px; height: 66px" /><span style="font-size: 26px">Midjourney</span></div>
+        <div id="s09-t-nanobanana" class="pj-tuile" style="left: 1004px; top: 230px; width: 150px; height: 120px; opacity: 0"><img src="assets/img/logo-gemini.svg" alt="" style="width: 66px; height: 66px" /><span style="font-size: 26px">Nano Banana</span></div>
+        <div id="s09-t-chatgptimg" class="pj-tuile" style="left: 1164px; top: 230px; width: 150px; height: 120px; opacity: 0"><img src="assets/img/logo-openai.svg" alt="" style="width: 66px; height: 66px" /><span style="font-size: 26px">ChatGPT Images</span></div>
+        </div>
+      </div>
+      <div id="s09-hud" class="pj-label" style="left: 113px; top: 107px; "><span class="pj-k">Rang S</span><span class="pj-d">Images</span></div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#s09-rang-s-images-cam", { scale: 1 }, { scale: 1.05, duration: 4.66, ease: "none" }, 0);
+    tl.fromTo("#s09-rang-s-images-cam", { filter: "blur(14px)" }, { filter: "blur(0px)", duration: 0.16, ease: "power2.out" }, 0);
+    tl.set(["#s09-t-rS", "#s09-t-rA", "#s09-t-rB", "#s09-t-rC"], { opacity: 1 }, 0);
+    tl.fromTo("#s09-toi-vie", { y: 0 }, { y: -5, duration: 0.42, repeat: 10, yoyo: true, ease: "sine.inOut", immediateRender: false }, 0.0);
+    tl.fromTo("#s09-t-cS", { boxShadow: "inset 0 0 0px rgba(220, 252, 28, 0)" }, { boxShadow: "inset 0 0 0 6px rgba(220, 252, 28, 0.9)", duration: 0.3, immediateRender: false }, 0.12);
+    tl.to("#s09-rang-s-images-cadre", { x: -362, y: 238, scale: 1.25, duration: 0.26, ease: "power3.inOut" }, 0.0);
+    tl.to("#s09-rang-s-images-cadre", { keyframes: [{ filter: "blur(10px)", duration: 0.13 }, { filter: "blur(0px)", duration: 0.13 }] }, 0.0);
+    tl.fromTo("#s09-t-midjourney", { opacity: 0, y: -360, rotation: -12 }, { opacity: 1, y: 0, rotation: 0, duration: 0.32, ease: "bounce.out" }, 1.1);
+    tl.fromTo("#s09-t-nanobanana", { opacity: 0, y: -360, rotation: -12 }, { opacity: 1, y: 0, rotation: 0, duration: 0.32, ease: "bounce.out" }, 1.823);
+    tl.fromTo("#s09-t-chatgptimg", { opacity: 0, y: -360, rotation: -12 }, { opacity: 1, y: 0, rotation: 0, duration: 0.32, ease: "bounce.out" }, 3.47);
+    tl.to("#s09-toi-bd", { rotation: -120, svgOrigin: "89 62", duration: 0.16, ease: "back.out(2)" }, 0.53);
+    tl.to("#s09-toi-tete", { rotation: -8, svgOrigin: "50 50", duration: 0.16, ease: "back.out(2)" }, 0.53);
+    tl.to("#s09-toi-corps", { keyframes: [{ y: -26, duration: 0.13, ease: "power2.out" }, { y: 0, duration: 0.15, ease: "power2.in" }] }, 1.1);
+    tl.to("#s09-toi-corps", { keyframes: [{ y: -26, duration: 0.13, ease: "power2.out" }, { y: 0, duration: 0.15, ease: "power2.in" }] }, 2.547);
+    tl.to("#s09-toi-bg", { rotation: 165, svgOrigin: "11 62", duration: 0.14, ease: "back.out(2)" }, 3.47);
+    tl.to("#s09-toi-bd", { rotation: -165, svgOrigin: "89 62", duration: 0.14, ease: "back.out(2)" }, 3.47);
+    tl.to("#s09-toi-tete", { rotation: -8, svgOrigin: "50 50", duration: 0.14, ease: "back.out(2)" }, 3.47);
+    tl.to("#s09-toi-corps", { keyframes: [{ y: -40, duration: 0.13, ease: "power2.out" }, { y: 0, duration: 0.15, ease: "power2.in" }] }, 3.52);
+    tl.to("#s09-rang-s-images-cam", { scale: 1.3, filter: "blur(14px)", duration: 0.2, ease: "power3.in" }, 4.66);
+    window.__timelines["s09-rang-s-images"] = tl;
+  </script>
+</template>

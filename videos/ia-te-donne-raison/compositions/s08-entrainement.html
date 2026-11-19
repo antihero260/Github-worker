@@ -1,0 +1,67 @@
+<!-- Scène 8 · « entraînés à produire des réponses utiles et à suivre les instructions » (46.6 → 52.12 s). Fichier écrit par un générateur, modifiable à la main. -->
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+    }
+
+  </style>
+  <div id="root" data-composition-id="s08-entrainement" data-width="1920" data-height="1080">
+    <div class="pj-scene">
+      <div id="s08-entrainement-cam" class="pj-cam">
+        <div id="s08-entrainement-cadre" class="pj-cadre">
+        <div class="pj-horizon" style="top: 760px"></div>
+        <div class="pj-cone" style="left: 360px; height: 900px; opacity: 1.0"></div><div class="pj-sol" style="left: 330px; top: 740px; opacity: 1.0"></div>
+        <svg id="s08-ia" class="pj-perso pj-ia-perso" viewBox="-30 -20 160 290" style="left: 524px; top: 412px; width: 232px; height: 420px"><g id="s08-ia-vie"><g id="s08-ia-corps"><g id="s08-ia-jg"><g class="c"><rect x="24" y="136" width="24" height="112" rx="8" /></g><g class="p"><rect x="24" y="136" width="24" height="112" rx="8" /></g></g><g id="s08-ia-jd"><g class="c"><rect x="52" y="136" width="24" height="112" rx="8" /></g><g class="p"><rect x="52" y="136" width="24" height="112" rx="8" /></g></g><g id="s08-ia-tronc"><g class="c"><rect x="22" y="52" width="56" height="94" rx="12" /></g><g class="p"><rect x="22" y="52" width="56" height="94" rx="12" /></g></g><g id="s08-ia-bg"><g class="c"><rect x="2" y="54" width="18" height="86" rx="9" /></g><g class="p"><rect x="2" y="54" width="18" height="86" rx="9" /></g></g><g id="s08-ia-bd"><g class="c"><rect x="80" y="54" width="18" height="86" rx="9" /></g><g class="p"><rect x="80" y="54" width="18" height="86" rx="9" /></g></g><g id="s08-ia-tete"><g class="c"><rect x="25" y="0" width="50" height="46" rx="13" /></g><g class="p"><rect x="25" y="0" width="50" height="46" rx="13" /></g><g class="yeux"><circle cx="40" cy="22" r="5" /><circle cx="60" cy="22" r="5" /></g></g></g></g></svg>
+        <div id="s08-train" style="position: absolute; left: 1080px; top: 200px; width: 640px"><div class="pj-label" style="position: static"><span class="pj-k">Entraînement</span></div><div style="display: flex; gap: 8px; margin-top: 12px"><i class="s08-train-seg" style="flex: 1; height: 34px; background: #2a2a2a"></i><i class="s08-train-seg" style="flex: 1; height: 34px; background: #2a2a2a"></i><i class="s08-train-seg" style="flex: 1; height: 34px; background: #2a2a2a"></i><i class="s08-train-seg" style="flex: 1; height: 34px; background: #2a2a2a"></i><i class="s08-train-seg" style="flex: 1; height: 34px; background: #2a2a2a"></i><i class="s08-train-seg" style="flex: 1; height: 34px; background: #2a2a2a"></i><i class="s08-train-seg" style="flex: 1; height: 34px; background: #2a2a2a"></i><i class="s08-train-seg" style="flex: 1; height: 34px; background: #2a2a2a"></i><i class="s08-train-seg" style="flex: 1; height: 34px; background: #2a2a2a"></i><i class="s08-train-seg" style="flex: 1; height: 34px; background: #2a2a2a"></i></div><div id="s08-train-pct" class="pj-stat" style="position: static; font-size: 64px; margin-top: 8px">0 %</div></div>
+        <div id="s08-liste" style="position: absolute; left: 1080px; top: 470px"><div class="pj-ligne-coche"><b id="s08-c0"></b>RÉPONSES UTILES</div><div class="pj-ligne-coche"><b id="s08-c1"></b>SUIT LES INSTRUCTIONS</div></div>
+        </div>
+      </div>
+      <div id="s08-hud" class="pj-label" style="left: 113px; top: 107px; "><span class="pj-k">Les modèles d'IA</span><span class="pj-d">Comment ils apprennent</span></div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#s08-entrainement-cam", { scale: 1 }, { scale: 1.05, duration: 5.32, ease: "none" }, 0);
+    tl.fromTo("#s08-entrainement-cam", { filter: "blur(14px)" }, { filter: "blur(0px)", duration: 0.16, ease: "power2.out" }, 0);
+    tl.fromTo("#s08-ia-vie", { y: 0 }, { y: -5, duration: 0.42, repeat: 11, yoyo: true, ease: "sine.inOut", immediateRender: false }, 0.0);
+    tl.to(".s08-train-seg", { backgroundColor: "#DCFC1C", duration: 0.04, stagger: 0.384 }, 1.24);
+    const p1 = { v: 0 };
+    tl.fromTo(p1, { v: 0 }, { v: 100, duration: 3.84, ease: "power2.out", immediateRender: false, onUpdate: () => { document.querySelector("#s08-train-pct").textContent = Math.round(p1.v) + " %"; } }, 1.24);
+    tl.to("#s08-ia-bg", { rotation: 160, svgOrigin: "11 62", duration: 0.12, ease: "power2.out" }, 1.4);
+    tl.to("#s08-ia-bd", { rotation: -160, svgOrigin: "89 62", duration: 0.12, ease: "power2.out" }, 1.4);
+    tl.to("#s08-ia-jg", { rotation: 14, svgOrigin: "36 142", duration: 0.12, ease: "power2.out" }, 1.4);
+    tl.to("#s08-ia-jd", { rotation: -14, svgOrigin: "64 142", duration: 0.12, ease: "power2.out" }, 1.4);
+    tl.to("#s08-ia-corps", { keyframes: [{ y: -22, duration: 0.13, ease: "power2.out" }, { y: 0, duration: 0.15, ease: "power2.in" }] }, 1.4);
+    tl.to("#s08-ia-bg", { rotation: 0, svgOrigin: "11 62", duration: 0.12, ease: "power2.out" }, 1.68);
+    tl.to("#s08-ia-bd", { rotation: 0, svgOrigin: "89 62", duration: 0.12, ease: "power2.out" }, 1.68);
+    tl.to("#s08-ia-jg", { rotation: 0, svgOrigin: "36 142", duration: 0.12, ease: "power2.out" }, 1.68);
+    tl.to("#s08-ia-jd", { rotation: 0, svgOrigin: "64 142", duration: 0.12, ease: "power2.out" }, 1.68);
+    tl.to("#s08-ia-bg", { rotation: 160, svgOrigin: "11 62", duration: 0.12, ease: "power2.out" }, 1.96);
+    tl.to("#s08-ia-bd", { rotation: -160, svgOrigin: "89 62", duration: 0.12, ease: "power2.out" }, 1.96);
+    tl.to("#s08-ia-jg", { rotation: 14, svgOrigin: "36 142", duration: 0.12, ease: "power2.out" }, 1.96);
+    tl.to("#s08-ia-jd", { rotation: -14, svgOrigin: "64 142", duration: 0.12, ease: "power2.out" }, 1.96);
+    tl.to("#s08-ia-corps", { keyframes: [{ y: -22, duration: 0.13, ease: "power2.out" }, { y: 0, duration: 0.15, ease: "power2.in" }] }, 1.96);
+    tl.to("#s08-ia-bg", { rotation: 0, svgOrigin: "11 62", duration: 0.12, ease: "power2.out" }, 2.24);
+    tl.to("#s08-ia-bd", { rotation: 0, svgOrigin: "89 62", duration: 0.12, ease: "power2.out" }, 2.24);
+    tl.to("#s08-ia-jg", { rotation: 0, svgOrigin: "36 142", duration: 0.12, ease: "power2.out" }, 2.24);
+    tl.to("#s08-ia-jd", { rotation: 0, svgOrigin: "64 142", duration: 0.12, ease: "power2.out" }, 2.24);
+    tl.to("#s08-ia-bg", { rotation: 160, svgOrigin: "11 62", duration: 0.12, ease: "power2.out" }, 2.52);
+    tl.to("#s08-ia-bd", { rotation: -160, svgOrigin: "89 62", duration: 0.12, ease: "power2.out" }, 2.52);
+    tl.to("#s08-ia-jg", { rotation: 14, svgOrigin: "36 142", duration: 0.12, ease: "power2.out" }, 2.52);
+    tl.to("#s08-ia-jd", { rotation: -14, svgOrigin: "64 142", duration: 0.12, ease: "power2.out" }, 2.52);
+    tl.to("#s08-ia-corps", { keyframes: [{ y: -22, duration: 0.13, ease: "power2.out" }, { y: 0, duration: 0.15, ease: "power2.in" }] }, 2.52);
+    tl.to("#s08-ia-bg", { rotation: 0, svgOrigin: "11 62", duration: 0.12, ease: "power2.out" }, 2.8);
+    tl.to("#s08-ia-bd", { rotation: 0, svgOrigin: "89 62", duration: 0.12, ease: "power2.out" }, 2.8);
+    tl.to("#s08-ia-jg", { rotation: 0, svgOrigin: "36 142", duration: 0.12, ease: "power2.out" }, 2.8);
+    tl.to("#s08-ia-jd", { rotation: 0, svgOrigin: "64 142", duration: 0.12, ease: "power2.out" }, 2.8);
+    tl.set("#s08-c0", { backgroundColor: "#DCFC1C", borderColor: "#DCFC1C" }, 3.42);
+    tl.set("#s08-c1", { backgroundColor: "#DCFC1C", borderColor: "#DCFC1C" }, 4.22);
+    tl.to("#s08-ia-bd", { rotation: -152, svgOrigin: "89 62", duration: 0.16, ease: "back.out(2.5)" }, 4.12);
+    tl.to("#s08-ia-bd", { rotation: "+=12", svgOrigin: "89 62", duration: 0.08, repeat: 3, yoyo: true }, 4.3);
+    tl.to("#s08-ia-tete", { svgOrigin: "50 50", keyframes: [{ rotation: 14, duration: 0.11 }, { rotation: -2, duration: 0.11 }, { rotation: 14, duration: 0.11 }, { rotation: -2, duration: 0.11 }, { rotation: 0, duration: 0.11 }] }, 4.84);
+    tl.to("#s08-entrainement-cam", { scale: 1.3, filter: "blur(14px)", duration: 0.2, ease: "power3.in" }, 5.32);
+    window.__timelines["s08-entrainement"] = tl;
+  </script>
+</template>

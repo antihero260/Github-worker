@@ -1,0 +1,80 @@
+<!-- Hook : tu veux quitter la maison familiale ? Voici combien coûte vraiment vivre seul à Abidjan (0 → 5.8 s). Écrit par tools/construire-scenes.py. -->
+<template>
+  <style>
+    #root { position: absolute; inset: 0; }
+  </style>
+  <div id="root" data-composition-id="s01-hook" data-width="1080" data-height="1920">
+    <div class="sc">
+      <div id="s01-hook-cam" class="sc-cam">
+        <div id="s01-hook-cadre" class="sc-cadre">
+        <div id="h-plein" class="plein"><div id="h-v-0" class="vplein" style="opacity: 0"><video id="h-v-0-v" class="clip" src="assets/video/cartons-couple.mp4" data-start="0.0" data-duration="0.34" data-track-index="5" muted playsinline></video></div><div id="h-v-1" class="vplein" style="opacity: 0"><video id="h-v-1-v" class="clip" src="assets/video/emmenagement.mp4" data-start="0.24" data-duration="0.26" data-track-index="6" muted playsinline></video></div><div id="h-v-2" class="vplein" style="opacity: 0"><video id="h-v-2-v" class="clip" src="assets/video/carton-vetements.mp4" data-start="0.4" data-duration="0.5" data-track-index="7" muted playsinline></video></div><div id="h-v-3" class="vplein" style="opacity: 0"><video id="h-v-3-v" class="clip" src="assets/video/cle-remise.mp4" data-start="0.8" data-duration="0.18" data-track-index="8" muted playsinline></video></div><div id="h-v-4" class="vplein" style="opacity: 0"><video id="h-v-4-v" class="clip" src="assets/video/studio-interieur.mp4" data-start="0.88" data-duration="1.54" data-track-index="9" muted playsinline></video></div><div id="h-v-5" class="vplein" style="opacity: 0"><video id="h-v-5-v" class="clip" src="assets/video/immeubles-aerien.mp4" data-start="2.32" data-duration="0.66" data-track-index="10" muted playsinline></video></div><div id="h-v-6" class="vplein" style="opacity: 0"><video id="h-v-6-v" class="clip" src="assets/video/billets-liasse.mp4" data-start="2.88" data-duration="0.58" data-track-index="11" muted playsinline></video></div><div id="h-v-7" class="vplein" style="opacity: 0"><video id="h-v-7-v" class="clip" src="assets/video/depenses-revenus.mp4" data-start="3.36" data-duration="0.5" data-track-index="12" muted playsinline></video></div><div id="h-v-8" class="vplein" style="opacity: 0"><video id="h-v-8-v" class="clip" src="assets/video/plus-un-sou.mp4" data-start="3.76" data-duration="0.34" data-track-index="13" muted playsinline></video></div><div id="h-v-9" class="vplein" style="opacity: 0"><video id="h-v-9-v" class="clip" src="assets/video/lit-telephone.mp4" data-start="4" data-duration="0.42" data-track-index="14" muted playsinline></video></div><div id="h-v-10" class="vplein" style="opacity: 0"><video id="h-v-10-v" class="clip" src="assets/video/ville-nuit-aerien.mp4" data-start="4.32" data-duration="0.34" data-track-index="15" muted playsinline></video></div><div id="h-v-11" class="vplein" style="opacity: 0"><video id="h-v-11-v" class="clip" src="assets/video/billets-tombent.mp4" data-start="4.56" data-duration="0.26" data-track-index="16" muted playsinline></video></div><div id="h-v-12" class="vplein" style="opacity: 0"><video id="h-v-12-v" class="clip" src="assets/video/immeuble-ville.mp4" data-start="4.72" data-duration="1.18" data-track-index="17" muted playsinline></video></div></div><div class="voile-bas"></div>
+        <div id="h-t1" class="gros" style="left: 0px; top: 560px; font-size: 120px; color: #F1F5F9; width: 1080px; text-align: center; transform: rotate(0deg); opacity: 0">QUITTER LA MAISON<br>DES PARENTS ?</div>
+        <div id="h-sujet" class="gros bande" style="left: 140px; top: 540px; font-size: 150px; color: #0B1220;  transform: rotate(-3deg); opacity: 0">VIVRE SEUL<br>À ABIDJAN</div>
+        <div id="h-q" class="gros" style="left: 0px; top: 900px; font-size: 104px; color: #F2B705; width: 1080px; text-align: center; transform: rotate(0deg); opacity: 0">COMBIEN ÇA COÛTE<br>VRAIMENT ?</div>
+        <div id="h-qq-0" class="gros" style="left: 760px; top: 380px; font-size: 90px; color: #F2B705; opacity: 0">?</div>
+        <div id="h-qq-1" class="gros" style="left: 830px; top: 340px; font-size: 110px; color: #F2B705; opacity: 0">?</div>
+        <div id="h-qq-2" class="gros" style="left: 900px; top: 380px; font-size: 130px; color: #F2B705; opacity: 0">?</div>
+        </div>
+      </div>
+      <div id="s01-hook-flash-3" style="position: absolute; inset: 0; background: #ffffff; opacity: 0"></div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#s01-hook-cam", { scale: 1 }, { scale: 1.04, duration: 5.6, ease: "none" }, 0);
+    tl.set("#h-v-0", { opacity: 1 }, 0.0);
+    tl.fromTo("#h-v-0", { scale: 1.18 }, { scale: 1.02, duration: 0.24, ease: "power2.out", immediateRender: false }, 0.0);
+    tl.set("#h-v-0", { opacity: 0 }, 0.26);
+    tl.set("#h-v-1", { opacity: 1 }, 0.24);
+    tl.fromTo("#h-v-1", { scale: 1.18 }, { scale: 1.02, duration: 0.2, ease: "power2.out", immediateRender: false }, 0.24);
+    tl.set("#h-v-1", { opacity: 0 }, 0.42);
+    tl.set("#h-v-2", { opacity: 1 }, 0.4);
+    tl.fromTo("#h-v-2", { scale: 1.18 }, { scale: 1.02, duration: 0.4, ease: "power2.out", immediateRender: false }, 0.4);
+    tl.set("#h-v-2", { opacity: 0 }, 0.82);
+    tl.set("#h-v-3", { opacity: 1 }, 0.8);
+    tl.fromTo("#h-v-3", { scale: 1.18 }, { scale: 1.02, duration: 0.2, ease: "power2.out", immediateRender: false }, 0.8);
+    tl.set("#h-v-3", { opacity: 0 }, 0.9);
+    tl.set("#h-v-4", { opacity: 1 }, 0.88);
+    tl.fromTo("#h-v-4", { scale: 1.18 }, { scale: 1.02, duration: 1.44, ease: "power2.out", immediateRender: false }, 0.88);
+    tl.set("#h-v-4", { opacity: 0 }, 2.34);
+    tl.set("#h-v-5", { opacity: 1 }, 2.32);
+    tl.fromTo("#h-v-5", { scale: 1.18 }, { scale: 1.02, duration: 0.56, ease: "power2.out", immediateRender: false }, 2.32);
+    tl.set("#h-v-5", { opacity: 0 }, 2.9);
+    tl.set("#h-v-6", { opacity: 1 }, 2.88);
+    tl.fromTo("#h-v-6", { scale: 1.18 }, { scale: 1.02, duration: 0.48, ease: "power2.out", immediateRender: false }, 2.88);
+    tl.set("#h-v-6", { opacity: 0 }, 3.38);
+    tl.set("#h-v-7", { opacity: 1 }, 3.36);
+    tl.fromTo("#h-v-7", { scale: 1.18 }, { scale: 1.02, duration: 0.4, ease: "power2.out", immediateRender: false }, 3.36);
+    tl.set("#h-v-7", { opacity: 0 }, 3.78);
+    tl.set("#h-v-8", { opacity: 1 }, 3.76);
+    tl.fromTo("#h-v-8", { scale: 1.18 }, { scale: 1.02, duration: 0.24, ease: "power2.out", immediateRender: false }, 3.76);
+    tl.set("#h-v-8", { opacity: 0 }, 4.02);
+    tl.set("#h-v-9", { opacity: 1 }, 4);
+    tl.fromTo("#h-v-9", { scale: 1.18 }, { scale: 1.02, duration: 0.32, ease: "power2.out", immediateRender: false }, 4);
+    tl.set("#h-v-9", { opacity: 0 }, 4.34);
+    tl.set("#h-v-10", { opacity: 1 }, 4.32);
+    tl.fromTo("#h-v-10", { scale: 1.18 }, { scale: 1.02, duration: 0.24, ease: "power2.out", immediateRender: false }, 4.32);
+    tl.set("#h-v-10", { opacity: 0 }, 4.58);
+    tl.set("#h-v-11", { opacity: 1 }, 4.56);
+    tl.fromTo("#h-v-11", { scale: 1.18 }, { scale: 1.02, duration: 0.2, ease: "power2.out", immediateRender: false }, 4.56);
+    tl.set("#h-v-11", { opacity: 0 }, 4.74);
+    tl.set("#h-v-12", { opacity: 1 }, 4.72);
+    tl.fromTo("#h-v-12", { scale: 1.18 }, { scale: 1.02, duration: 1.08, ease: "power2.out", immediateRender: false }, 4.72);
+    tl.fromTo("#h-t1", { opacity: 0, scale: 2.0 }, { opacity: 1, scale: 1, duration: 0.16, ease: "power4.in", immediateRender: false }, 0.02);
+    tl.to("#h-t1", { opacity: 0, duration: 0.15 }, 2.28);
+    tl.to("#s01-hook-cam", { keyframes: [{ x: -16, duration: 0.03 }, { x: 16, duration: 0.04 }, { x: -8, duration: 0.04 }, { x: 0, duration: 0.03 }] }, 0.88);
+    tl.fromTo("#h-sujet", { opacity: 0, scale: 2.0 }, { opacity: 1, scale: 1, duration: 0.16, ease: "power4.in", immediateRender: false }, 2.32);
+    tl.fromTo("#s01-hook-flash-3", { opacity: 0.9 }, { opacity: 0, duration: 0.2, immediateRender: false }, 2.32);
+    tl.fromTo("#h-q", { opacity: 0, scale: 2.0 }, { opacity: 1, scale: 1, duration: 0.16, ease: "power4.in", immediateRender: false }, 2.88);
+    tl.fromTo("#h-qq-0", { opacity: 0, y: 40, rotation: -20 }, { opacity: 1, y: 0, rotation: -10, duration: 0.25, ease: "back.out(2.5)", immediateRender: false }, 3.76);
+    tl.to("#h-qq-0", { y: -18, duration: 0.5, yoyo: true, repeat: 3, ease: "sine.inOut" }, 4.06);
+    tl.fromTo("#h-qq-1", { opacity: 0, y: 40, rotation: -20 }, { opacity: 1, y: 0, rotation: 8, duration: 0.25, ease: "back.out(2.5)", immediateRender: false }, 3.88);
+    tl.to("#h-qq-1", { y: -18, duration: 0.5, yoyo: true, repeat: 3, ease: "sine.inOut" }, 4.18);
+    tl.fromTo("#h-qq-2", { opacity: 0, y: 40, rotation: -20 }, { opacity: 1, y: 0, rotation: -4, duration: 0.25, ease: "back.out(2.5)", immediateRender: false }, 4.0);
+    tl.to("#h-qq-2", { y: -18, duration: 0.5, yoyo: true, repeat: 3, ease: "sine.inOut" }, 4.3);
+    tl.to("#s01-hook-cadre", { x: 0, y: 224, scale: 1.12, duration: 0.22, ease: "power3.inOut" }, 4.56);
+    tl.to("#s01-hook-cadre", { keyframes: [{ filter: "blur(9px)", duration: 0.11 }, { filter: "blur(0px)", duration: 0.11 }] }, 4.56);
+    tl.to("#s01-hook-cam", { scale: 1.25, filter: "blur(14px)", duration: 0.2, ease: "power3.in" }, 5.6);
+    window.__timelines["s01-hook"] = tl;
+  </script>
+</template>

@@ -1,0 +1,41 @@
+<!-- Entre un exercice corrigé en classe et une vraie question posée par une entreprise, il y a un pas (23.0 → 28.68 s). Écrit par tools/construire.py. -->
+<template>
+  <style>
+    #root { position: absolute; inset: 0; }
+  </style>
+  <div id="root" data-composition-id="s05-pas" data-width="1920" data-height="1080">
+    <div class="sc">
+      <div id="s05-pas-cam" class="sc-cam">
+        <div id="s05-pas-cadre" class="sc-cadre">
+        <div id="p-g" class="moitie" style="left: 0; background: #ffffff"></div><div id="p-d" class="moitie" style="left: 960px; background: #1f4bff"></div>
+        <div class="etiq-sc" style="left: 120px; top: 250px; color: #1f4bff">Entre</div>
+        <div id="p-1" class="titre" style="left: 120px; top: 310px; font-size: 86px; color: #05070d; font-weight: 800; line-height: 1.04; "><span class="m"><span id="p-1-0" class="mi">un exercice</span></span><span class="m"><span id="p-1-1" class="mi">corrigé en classe</span></span></div>
+        <div id="p-et" class="etiq-sc" style="left: 1080px; top: 250px; color: #dfe5ff; opacity: 0">et</div>
+        <div id="p-2" class="titre" style="left: 1080px; top: 310px; font-size: 86px; color: #fff; font-weight: 800; line-height: 1.04; "><span class="m"><span id="p-2-0" class="mi">une vraie question</span></span><span class="m"><span id="p-2-1" class="mi">posée par</span></span><span class="m"><span id="p-2-2" class="mi">une entreprise</span></span></div>
+        <div id="p-pas" class="pas" style="opacity: 0"><span>il y a</span><b>un pas.</b></div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#s05-pas-cam", { filter: "blur(16px)", scale: 1.1 }, { filter: "blur(0px)", scale: 1, duration: 0.3, ease: "power3.out" }, 0);
+    tl.to("#s05-pas-cam", { scale: 1.03, duration: 5.08, ease: "none" }, 0.3);
+    tl.fromTo("#p-g", { yPercent: -100 }, { yPercent: 0, duration: 0.6, ease: "expo.out", immediateRender: true }, 0);
+    tl.fromTo("#p-d", { yPercent: 100 }, { yPercent: 0, duration: 0.6, ease: "expo.out", immediateRender: true }, 1.7);
+    tl.fromTo("#p-1-0", { yPercent: 115 }, { yPercent: 0, duration: 0.55, ease: "expo.out", immediateRender: true }, 0.68);
+    tl.fromTo("#p-1-1", { yPercent: 115 }, { yPercent: 0, duration: 0.55, ease: "expo.out", immediateRender: true }, 0.8);
+    tl.to("#p-et", { opacity: 1, duration: 0.2 }, 2.0);
+    tl.fromTo("#p-2-0", { yPercent: 115 }, { yPercent: 0, duration: 0.55, ease: "expo.out", immediateRender: true }, 2.12);
+    tl.fromTo("#p-2-1", { yPercent: 115 }, { yPercent: 0, duration: 0.55, ease: "expo.out", immediateRender: true }, 2.24);
+    tl.fromTo("#p-2-2", { yPercent: 115 }, { yPercent: 0, duration: 0.55, ease: "expo.out", immediateRender: true }, 2.36);
+    tl.to("#p-g", { x: -480, duration: 0.7, ease: "expo.inOut" }, 4.083);
+    tl.to("#p-d", { x: 480, duration: 0.7, ease: "expo.inOut" }, 4.083);
+    tl.to("#p-1", { x: -480, duration: 0.7, ease: "expo.inOut" }, 4.083);
+    tl.to(["#p-2", "#p-et"], { x: 480, duration: 0.7, ease: "expo.inOut" }, 4.083);
+    tl.fromTo("#p-pas", { opacity: 0, scale: 0.7 }, { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(1.8)", immediateRender: false }, 4.333);
+    tl.to("#s05-pas-cam", { scale: 1.18, filter: "blur(16px)", duration: 0.24, ease: "power3.in" }, 5.44);
+    window.__timelines["s05-pas"] = tl;
+  </script>
+</template>

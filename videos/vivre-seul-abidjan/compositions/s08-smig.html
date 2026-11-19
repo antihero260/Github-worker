@@ -1,0 +1,82 @@
+<!-- En cuisinant et en prenant les transports collectifs, son budget dépasse largement le SMIG de 75 000 : il manque 135 000 / 225 000 (63.59 → 78.23 s). Écrit par tools/construire-scenes.py. -->
+<template>
+  <style>
+    #root { position: absolute; inset: 0; }
+  </style>
+  <div id="root" data-composition-id="s08-smig" data-width="1080" data-height="1920">
+    <div class="sc">
+      <div id="s08-smig-cam" class="sc-cam">
+        <div id="s08-smig-cadre" class="sc-cadre">
+        <div class="decor"><div class="ciel" style="background: radial-gradient(ellipse 90% 60% at 50% 40%, #15305e 0%, #0b1220 78%)"></div></div>
+        <div id="b-ec" class="ecran ecran-tele" style="left: 560px; top: 360px; width: 460px; height: 330px; opacity: 0"><div class="ecran-in"><div id="b-ec-v-0" class="vplein" style="opacity: 0"><video id="b-ec-v-0-v" class="clip" src="assets/video/couple-cuisine.mp4" data-start="0.0" data-duration="1.5" data-track-index="5" muted playsinline></video></div><div id="b-ec-v-1" class="vplein" style="opacity: 0"><video id="b-ec-v-1-v" class="clip" src="assets/video/bus-texto.mp4" data-start="1.4" data-duration="2.45" data-track-index="6" muted playsinline></video></div></div><i class="tele-pied"></i></div>
+        <svg id="b-lucas" class="perso" viewBox="-30 -20 160 290" style="left: 121px; top: 856px; width: 259px; height: 470px"><g id="b-lucas-vie"><g id="b-lucas-corps"><g id="b-lucas-jg"><g class="c"><rect x="24" y="136" width="24" height="112" rx="8" /></g><g class="p" style="--pc: #38BDF8"><rect x="24" y="136" width="24" height="112" rx="8" /></g></g><g id="b-lucas-jd"><g class="c"><rect x="52" y="136" width="24" height="112" rx="8" /></g><g class="p" style="--pc: #38BDF8"><rect x="52" y="136" width="24" height="112" rx="8" /></g></g><g id="b-lucas-tronc"><g class="c"><rect x="22" y="52" width="56" height="94" rx="12" /></g><g class="p" style="--pc: #38BDF8"><rect x="22" y="52" width="56" height="94" rx="12" /></g><path d="M44 56 L56 56 L53 64 L57 104 L50 112 L43 104 L47 64 Z" fill="#0B1220" /></g><g id="b-lucas-bg"><g class="c"><rect x="2" y="54" width="18" height="86" rx="9" /></g><g class="p" style="--pc: #38BDF8"><rect x="2" y="54" width="18" height="86" rx="9" /></g></g><g id="b-lucas-bd"><g class="c"><rect x="80" y="54" width="18" height="86" rx="9" /></g><g class="p" style="--pc: #38BDF8"><rect x="80" y="54" width="18" height="86" rx="9" /></g></g><g id="b-lucas-tete"><g class="c"><circle cx="50" cy="24" r="22" /></g><g class="p" style="--pc: #38BDF8"><circle cx="50" cy="24" r="22" /></g><g><g id="b-lucas-yeux"><circle cx="41" cy="20" r="6.5" fill="#fff" /><circle cx="59" cy="20" r="6.5" fill="#fff" /><g id="b-lucas-pup"><circle cx="42" cy="21" r="3" fill="#0B1220" /><circle cx="60" cy="21" r="3" fill="#0B1220" /></g></g><path id="b-lucas-bouche" d="M41 32 Q50 40 59 32" fill="none" stroke="#0B1220" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" /><path d="M28 14 Q30 -4 50 -3 Q70 -4 72 14 Q66 6 58 8 Q50 2 42 8 Q34 6 28 14 Z" fill="#0B1220" /></g></g></g></g></svg>
+        <div id="b-c" class="etiq" style="left: 90px; top: 420px; font-size: 54px; background: #38BDF8; color: #0B1220; transform: rotate(-3deg); opacity: 0">IL CUISINE</div>
+        <div id="b-t" class="etiq" style="left: 60px; top: 420px; font-size: 50px; background: #7DD3FC; color: #0B1220; transform: rotate(2deg); opacity: 0">TRANSPORTS COLLECTIFS</div>
+        <div id="b-bud" class="barre-v" style="left: 440px; top: 470px; width: 260px; height: 680px; opacity: 0"><i id="b-bud-i" style="background: linear-gradient(180deg, #FF6B6B, #b91c1c)"></i><b>?</b><span>BUDGET DU MOIS</span></div>
+        <div id="b-smig" class="barre-v" style="left: 750px; top: 910px; width: 260px; height: 240px; opacity: 0"><i id="b-smig-i" style="background: linear-gradient(180deg, #38BDF8, #0284C7)"></i><b>75 000 F</b><span>SMIG</span></div>
+        <i id="b-g-0" class="goutte" style="left: 330px; top: 420px; opacity: 0"></i>
+        <i id="b-g-1" class="goutte" style="left: 356px; top: 438px; opacity: 0"></i>
+        <i id="b-g-2" class="goutte" style="left: 382px; top: 420px; opacity: 0"></i>
+        <div id="b-ecart" class="ecart" data-layout-allow-overlap style="left: 750px; top: 470px; width: 260px; height: 440px; opacity: 0"></div>
+        <div id="b-man" class="gros" style="left: 70px; top: 350px; font-size: 84px; color: #FF6B6B;  transform: rotate(0deg); opacity: 0">IL MANQUE</div>
+        <div id="b-p1" class="compte" style="left: 60px; top: 470px; width: 360px; border-color: #FF6B6B; opacity: 0"><span>QUARTIER POPULAIRE</span><b style="font-size: 64px"><span id="b-p1-n" style="display: inline; font-size: inherit; color: inherit">-135 000</span> F</b></div>
+        <div id="b-p2" class="compte" style="left: 60px; top: 700px; width: 360px; border-color: #FF6B6B; opacity: 0"><span>COCODY</span><b style="font-size: 64px"><span id="b-p2-n" style="display: inline; font-size: inherit; color: inherit">-225 000</span> F</b></div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#s08-smig-cam", { filter: "blur(14px)", scale: 1.12 }, { filter: "blur(0px)", scale: 1, duration: 0.18, ease: "power2.out" }, 0);
+    tl.to("#s08-smig-cam", { scale: 1.04, duration: 14.24, ease: "none" }, 0.18);
+    tl.set("#b-ec-v-0", { opacity: 1 }, 0.0);
+    tl.fromTo("#b-ec-v-0", { scale: 1.18 }, { scale: 1.02, duration: 1.4, ease: "power2.out", immediateRender: false }, 0.0);
+    tl.set("#b-ec-v-0", { opacity: 0 }, 1.42);
+    tl.set("#b-ec-v-1", { opacity: 1 }, 1.4);
+    tl.fromTo("#b-ec-v-1", { scale: 1.18 }, { scale: 1.02, duration: 2.35, ease: "power2.out", immediateRender: false }, 1.4);
+    tl.set("#b-ec-v-1", { opacity: 0 }, 3.75);
+    tl.fromTo("#b-ec", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.22, ease: "back.out(1.8)", immediateRender: false }, 0.0);
+    tl.fromTo("#b-lucas-vie", { y: 0 }, { y: -5, duration: 0.42, repeat: 33, yoyo: true, ease: "sine.inOut", immediateRender: false }, 0.0);
+    tl.to("#b-lucas-yeux", { scaleY: 0.1, duration: 0.06, yoyo: true, repeat: 1, svgOrigin: "50 20" }, 0.7);
+    tl.to("#b-lucas-yeux", { scaleY: 0.1, duration: 0.06, yoyo: true, repeat: 1, svgOrigin: "50 20" }, 3.233);
+    tl.to("#b-lucas-yeux", { scaleY: 0.1, duration: 0.06, yoyo: true, repeat: 1, svgOrigin: "50 20" }, 5.767);
+    tl.to("#b-lucas-yeux", { scaleY: 0.1, duration: 0.06, yoyo: true, repeat: 1, svgOrigin: "50 20" }, 8.3);
+    tl.to("#b-lucas-yeux", { scaleY: 0.1, duration: 0.06, yoyo: true, repeat: 1, svgOrigin: "50 20" }, 10.833);
+    tl.to("#b-lucas-yeux", { scaleY: 0.1, duration: 0.06, yoyo: true, repeat: 1, svgOrigin: "50 20" }, 13.367);
+    tl.fromTo("#b-c", { opacity: 0, x: -80 }, { opacity: 1, x: 0, duration: 0.2, ease: "power4.out", immediateRender: false }, 0.36);
+    tl.to("#b-c", { opacity: 0, duration: 0.15 }, 1.35);
+    tl.fromTo("#b-t", { opacity: 0, x: -80 }, { opacity: 1, x: 0, duration: 0.2, ease: "power4.out", immediateRender: false }, 1.4);
+    tl.to("#b-t", { opacity: 0, duration: 0.15 }, 3.43);
+    tl.set("#s08-smig-cadre", { x: -184, y: 414, scale: 1.15 }, 0);
+    tl.to("#s08-smig-cadre", { x: 0, y: 60, scale: 1.0, duration: 0.3, ease: "power3.inOut" }, 3.48);
+    tl.to("#s08-smig-cadre", { keyframes: [{ filter: "blur(9px)", duration: 0.15 }, { filter: "blur(0px)", duration: 0.15 }] }, 3.48);
+    tl.to("#b-ec", { opacity: 0, duration: 0.15 }, 3.7);
+    tl.set("#b-bud", { opacity: 1 }, 3.8);
+    tl.fromTo("#b-bud-i", { scaleY: 0 }, { scaleY: 1, duration: 0.7, ease: "power3.out", immediateRender: false }, 3.8);
+    tl.set("#b-smig", { opacity: 1 }, 6.12);
+    tl.fromTo("#b-smig-i", { scaleY: 0 }, { scaleY: 1, duration: 0.5, ease: "power3.out", immediateRender: false }, 6.12);
+    tl.fromTo("#b-smig b", { scale: 1.6 }, { scale: 1, duration: 0.2, ease: "back.out(2)", immediateRender: false }, 6.92);
+    tl.set("#b-lucas-bouche", { attr: { d: "M45 34 Q50 42 55 34 Q50 27 45 34", fill: "none" } }, 4.92);
+    tl.fromTo("#b-g-0", { opacity: 0, y: -10 }, { opacity: 1, y: 30, duration: 0.5, repeat: 2, ease: "power1.in", immediateRender: false }, 4.92);
+    tl.to("#b-g-0", { opacity: 0, duration: 0.1 }, 6.42);
+    tl.fromTo("#b-g-1", { opacity: 0, y: -10 }, { opacity: 1, y: 30, duration: 0.5, repeat: 2, ease: "power1.in", immediateRender: false }, 5.07);
+    tl.to("#b-g-1", { opacity: 0, duration: 0.1 }, 6.57);
+    tl.fromTo("#b-g-2", { opacity: 0, y: -10 }, { opacity: 1, y: 30, duration: 0.5, repeat: 2, ease: "power1.in", immediateRender: false }, 5.22);
+    tl.to("#b-g-2", { opacity: 0, duration: 0.1 }, 6.72);
+    tl.fromTo("#b-ecart", { opacity: 0, scaleY: 0, transformOrigin: "50% 100%" }, { opacity: 1, scaleY: 1, duration: 0.3, ease: "power2.out", immediateRender: false }, 8.76);
+    tl.fromTo("#b-man", { opacity: 0, scale: 2.0 }, { opacity: 1, scale: 1, duration: 0.16, ease: "power4.in", immediateRender: false }, 8.76);
+    tl.fromTo("#b-p1", { opacity: 0, scale: 1.7 }, { opacity: 1, scale: 1, duration: 0.16, ease: "power4.in", immediateRender: false }, 9.16);
+    tl.fromTo("#b-p2", { opacity: 0, scale: 1.7 }, { opacity: 1, scale: 1, duration: 0.16, ease: "power4.in", immediateRender: false }, 12.36);
+    tl.to("#b-lucas-bg", { svgOrigin: "11 62", keyframes: [{ rotation: 150, duration: 0.08 }, { rotation: 95, duration: 0.08 }, { rotation: 150, duration: 0.08 }, { rotation: 95, duration: 0.08 }, { rotation: 150, duration: 0.08 }] }, 12.36);
+    tl.to("#b-lucas-bd", { svgOrigin: "89 62", keyframes: [{ rotation: -95, duration: 0.08 }, { rotation: -150, duration: 0.08 }, { rotation: -95, duration: 0.08 }, { rotation: -150, duration: 0.08 }, { rotation: -95, duration: 0.08 }] }, 12.36);
+    tl.to("#b-lucas-corps", { x: 5, duration: 0.05, repeat: 16, yoyo: true, ease: "none" }, 12.36);
+    tl.to("#b-lucas-corps", { x: 0, duration: 0.05 }, 13.22);
+    tl.to("#s08-smig-cadre", { x: 0, y: 216, scale: 1.08, duration: 0.26, ease: "power3.inOut" }, 9.06);
+    tl.to("#s08-smig-cadre", { keyframes: [{ filter: "blur(9px)", duration: 0.13 }, { filter: "blur(0px)", duration: 0.13 }] }, 9.06);
+    tl.to("#s08-smig-cadre", { x: 0, y: 60, scale: 1.0, duration: 0.28, ease: "power3.inOut" }, 13.64);
+    tl.to("#s08-smig-cadre", { keyframes: [{ filter: "blur(9px)", duration: 0.14 }, { filter: "blur(0px)", duration: 0.14 }] }, 13.64);
+    tl.to("#s08-smig-cam", { scale: 1.25, filter: "blur(14px)", duration: 0.2, ease: "power3.in" }, 14.44);
+    window.__timelines["s08-smig"] = tl;
+  </script>
+</template>

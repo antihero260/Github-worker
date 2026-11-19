@@ -1,0 +1,69 @@
+<!-- Scène 3 · « Mais quelque part dans cette vidéo, un mot apparaît pendant une demi-seconde. » (11.64 → 15.56 s). Fichier écrit par un générateur, modifiable à la main. -->
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+    }
+
+  </style>
+  <div id="root" data-composition-id="s03-rembobine" data-width="1920" data-height="1080">
+    <div class="pj-scene">
+      <div id="s03-rembobine-cam" class="pj-cam">
+        <div id="s03-rembobine-cadre" class="pj-cadre">
+        <div class="pj-horizon" style="top: 760px"></div>
+        <div id="s03-f-0" class="sx-plein" style="opacity: 0"><video id="s03-f-0-v" class="clip" src="assets/video/myst-fumee.mp4" data-start="0.0" data-duration="1.12" data-track-index="5" muted playsinline style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover"></video></div>
+        <div id="s03-f-1" class="sx-plein" style="opacity: 0"><video id="s03-f-1-v" class="clip" src="assets/video/myst-sablier.mp4" data-start="1.02" data-duration="0.64" data-track-index="6" muted playsinline style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover"></video></div>
+        <div id="s03-f-2" class="sx-plein" style="opacity: 0"><video id="s03-f-2-v" class="clip" src="assets/video/myst-point-interro.mp4" data-start="1.56" data-duration="0.98" data-track-index="7" muted playsinline style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover"></video></div>
+        <div id="s03-f-3" class="sx-plein" style="opacity: 0"><video id="s03-f-3-v" class="clip" src="assets/video/myst-danseur-noir.mp4" data-start="2.44" data-duration="0.86" data-track-index="5" muted playsinline style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover"></video></div>
+        <div id="s03-f-4" class="sx-plein" style="opacity: 0"><video id="s03-f-4-v" class="clip" src="assets/video/myst-oeil-laptop.mp4" data-start="3.2" data-duration="0.82" data-track-index="6" muted playsinline style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover"></video></div>
+        <div id="s03-f-voile" style="position: absolute; inset: 0; background: rgba(12, 12, 12, 0.6)"></div>
+        <div id="s03-bande" class="ms-bande"><i><img src="assets/img/vthumb0.jpg" alt="" /></i><i><img src="assets/img/vthumb1.jpg" alt="" /></i><i><img src="assets/img/vthumb2.jpg" alt="" /></i><i><img src="assets/img/vthumb3.jpg" alt="" /></i><i><img src="assets/img/vthumb4.jpg" alt="" /></i><i><img src="assets/img/vthumb5.jpg" alt="" /></i><i><img src="assets/img/vthumb0.jpg" alt="" /></i><i><img src="assets/img/vthumb1.jpg" alt="" /></i><i><img src="assets/img/vthumb2.jpg" alt="" /></i><i><img src="assets/img/vthumb3.jpg" alt="" /></i><i><img src="assets/img/vthumb4.jpg" alt="" /></i><i><img src="assets/img/vthumb5.jpg" alt="" /></i><i><img src="assets/img/vthumb0.jpg" alt="" /></i><i><img src="assets/img/vthumb1.jpg" alt="" /></i></div>
+        <div id="s03-frise" class="ms-frise"><b></b><i id="s03-tete"></i><span>Quelque part ici…</span></div>
+        <div id="s03-flou" class="ms-flou" style="opacity: 0"><span>? ? ? ?</span></div>
+        <div id="s03-chrono" class="ms-chrono" style="opacity: 0">0,5 s</div>
+        <svg id="s03-toi" class="pj-perso pj-toi-perso" viewBox="-30 -20 160 290" style="left: 1738px; top: 754px; width: 105px; height: 190px"><g id="s03-toi-vie"><g id="s03-toi-corps"><g id="s03-toi-jg"><g class="c"><rect x="24" y="136" width="24" height="112" rx="8" /></g><g class="p"><rect x="24" y="136" width="24" height="112" rx="8" /></g></g><g id="s03-toi-jd"><g class="c"><rect x="52" y="136" width="24" height="112" rx="8" /></g><g class="p"><rect x="52" y="136" width="24" height="112" rx="8" /></g></g><g id="s03-toi-tronc"><g class="c"><rect x="22" y="52" width="56" height="94" rx="12" /></g><g class="p"><rect x="22" y="52" width="56" height="94" rx="12" /></g></g><g id="s03-toi-bg"><g class="c"><rect x="2" y="54" width="18" height="86" rx="9" /></g><g class="p"><rect x="2" y="54" width="18" height="86" rx="9" /></g></g><g id="s03-toi-bd"><g class="c"><rect x="80" y="54" width="18" height="86" rx="9" /></g><g class="p"><rect x="80" y="54" width="18" height="86" rx="9" /></g></g><g id="s03-toi-tete"><g class="c"><circle cx="50" cy="24" r="22" /></g><g class="p"><circle cx="50" cy="24" r="22" /></g></g></g></g></svg>
+        </div>
+      </div>
+      <div id="s03-rembobine-eclair" class="pj-flash"></div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#s03-rembobine-cam", { scale: 1 }, { scale: 1.05, duration: 3.72, ease: "none" }, 0);
+    tl.fromTo("#s03-rembobine-cam", { filter: "blur(14px)" }, { filter: "blur(0px)", duration: 0.16, ease: "power2.out" }, 0);
+    tl.set("#s03-f-0", { opacity: 1 }, 0.0);
+    tl.fromTo("#s03-f-0", { scale: 1.22, x: 0, rotation: 0 }, { scale: 1.02, x: 0, rotation: 0, duration: 1.02, ease: "power2.out", immediateRender: false }, 0.0);
+    tl.set("#s03-f-0", { opacity: 0 }, 1.04);
+    tl.set("#s03-f-1", { opacity: 1 }, 1.02);
+    tl.fromTo("#s03-f-1", { scale: 1.12, x: -60, rotation: 0 }, { scale: 1.02, x: 0, rotation: 0, duration: 0.54, ease: "power2.out", immediateRender: false }, 1.02);
+    tl.set("#s03-f-1", { opacity: 0 }, 1.58);
+    tl.set("#s03-f-2", { opacity: 1 }, 1.56);
+    tl.fromTo("#s03-f-2", { scale: 1.12, x: 0, rotation: 2 }, { scale: 1.02, x: 0, rotation: 0, duration: 0.88, ease: "power2.out", immediateRender: false }, 1.56);
+    tl.set("#s03-f-2", { opacity: 0 }, 2.46);
+    tl.set("#s03-f-3", { opacity: 1 }, 2.44);
+    tl.fromTo("#s03-f-3", { scale: 1.22, x: 0, rotation: 0 }, { scale: 1.02, x: 0, rotation: 0, duration: 0.76, ease: "power2.out", immediateRender: false }, 2.44);
+    tl.set("#s03-f-3", { opacity: 0 }, 3.22);
+    tl.set("#s03-f-4", { opacity: 1 }, 3.2);
+    tl.fromTo("#s03-f-4", { scale: 1.12, x: 60, rotation: 0 }, { scale: 1.02, x: 0, rotation: 0, duration: 0.72, ease: "power2.out", immediateRender: false }, 3.2);
+    tl.fromTo("#s03-bande", { x: -2600 }, { x: 0, duration: 2.44, ease: "power2.out" }, 0.0);
+    tl.fromTo("#s03-tete", { x: 1408 }, { x: 0, duration: 2.34, ease: "power2.inOut" }, 0.05);
+    tl.fromTo("#s03-flou", { opacity: 0, scale: 1.6 }, { opacity: 1, scale: 1, duration: 0.14, ease: "power4.in" }, 2.44);
+    tl.to("#s03-flou", { keyframes: [{ x: -14, duration: 0.03 }, { x: 12, duration: 0.03 }, { x: -6, duration: 0.03 }, { x: 0, duration: 0.03 }] }, 2.59);
+    tl.set("#s03-rembobine-eclair", { opacity: 1 }, 2.44);
+    tl.set("#s03-rembobine-eclair", { opacity: 0 }, 2.507);
+    tl.fromTo("#s03-chrono", { opacity: 0, scale: 2 }, { opacity: 1, scale: 1, duration: 0.16, ease: "power4.in" }, 3.2);
+    tl.fromTo("#s03-toi-vie", { y: 0 }, { y: -5, duration: 0.42, repeat: 7, yoyo: true, ease: "sine.inOut", immediateRender: false }, 0.0);
+    tl.to("#s03-toi-bd", { rotation: -158, svgOrigin: "89 62", duration: 0.16, ease: "power2.out" }, 0.2);
+    tl.to("#s03-toi-tete", { rotation: -8, svgOrigin: "50 50", duration: 0.16, ease: "power2.out" }, 0.2);
+    tl.to("#s03-toi-bd", { rotation: -146, svgOrigin: "89 62", duration: 0.09, repeat: 5, yoyo: true }, 0.38);
+    tl.to("#s03-toi-bg", { rotation: 150, svgOrigin: "11 62", duration: 0.14, ease: "back.out(2)" }, 2.44);
+    tl.to("#s03-toi-bd", { rotation: -150, svgOrigin: "89 62", duration: 0.14, ease: "back.out(2)" }, 2.44);
+    tl.to("#s03-toi-tete", { rotation: -6, svgOrigin: "50 50", duration: 0.14, ease: "back.out(2)" }, 2.44);
+    tl.to("#s03-toi-corps", { keyframes: [{ y: -30, duration: 0.13, ease: "power2.out" }, { y: 0, duration: 0.15, ease: "power2.in" }] }, 3.2);
+    tl.to("#s03-rembobine-cadre", { x: 0, y: 44, scale: 1.1, duration: 0.2, ease: "power3.inOut" }, 2.39);
+    tl.to("#s03-rembobine-cadre", { keyframes: [{ filter: "blur(10px)", duration: 0.1 }, { filter: "blur(0px)", duration: 0.1 }] }, 2.39);
+    tl.to("#s03-rembobine-cam", { scale: 1.3, filter: "blur(14px)", duration: 0.2, ease: "power3.in" }, 3.72);
+    window.__timelines["s03-rembobine"] = tl;
+  </script>
+</template>

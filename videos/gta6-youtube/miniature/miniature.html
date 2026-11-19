@@ -1,0 +1,19 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><style>
+@font-face { font-family: "Anton"; src: url("Anton-Regular.woff2"); }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { width: 1280px; height: 720px; overflow: hidden; background: #000; font-family: "Anton"; }
+.fond { position: absolute; inset: 0; background: url("fond.jpg") 70% 30% / cover; }
+.ombre { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(10, 4, 20, 0.92) 0%, rgba(10, 4, 20, 0.7) 38%, rgba(10, 4, 20, 0) 62%); }
+.t1 { position: absolute; left: 44px; top: 34px; font-size: 200px; line-height: 0.92; color: #ffd23f; text-shadow: 8px 8px 0 #ff3d8b, 0 0 40px rgba(0,0,0,.7); transform: rotate(-3deg); }
+.t1 span { display: block; color: #fff; font-size: 150px; }
+.date { position: absolute; left: 50px; top: 470px; background: #ff2d55; color: #fff; font-size: 74px; padding: 4px 26px; border-radius: 12px; transform: rotate(-3deg); box-shadow: 0 12px 30px rgba(0,0,0,.6); }
+.gb { position: absolute; right: 36px; bottom: 34px; background: rgba(14, 10, 28, 0.9); border: 5px solid #ff2d55; color: #fff; font-size: 64px; padding: 6px 24px 4px; border-radius: 16px; display: flex; align-items: center; gap: 14px; transform: rotate(3deg); }
+.gb svg { width: 64px; height: 58px; }
+.gb b { color: #ff3d8b; font-weight: normal; }
+</style></head><body>
+<div class="fond"></div><div class="ombre"></div>
+<div class="t1">10 THINGS<span>TO KNOW</span></div>
+<div class="date">BEFORE NOV 19</div>
+<div class="gb"><svg viewBox="0 0 100 90"><path d="M50 6 L96 86 H4 Z" fill="#ff2d55" stroke="#ff2d55" stroke-width="6" stroke-linejoin="round"/><path d="M50 32 V58" stroke="#fff" stroke-width="10" stroke-linecap="round"/><circle cx="50" cy="72" r="6" fill="#fff"/></svg><b>212 GB</b>?!</div>
+</body></html>

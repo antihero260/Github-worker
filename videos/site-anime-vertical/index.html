@@ -1,0 +1,176 @@
+<!doctype html>
+<html
+  lang="fr"
+  data-resolution="portrait"
+  data-composition-variables='[
+    {"id":"titre","type":"string","label":"Titre-promesse (au-dessus du film)","default":"Un site qui a l’air de coûter des milliers d’euros","maxLength":90}
+  ]'
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+    <style>
+      /* Version TikTok / Shorts / Reels du style « Projecteur » (frame.md, format B) :
+         fond noir, titre blanc au-dessus, film 16:9 dans un bandeau 1080×608 centré. */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        width: 1080px;
+        height: 1920px;
+        overflow: hidden;
+        background: #000;
+      }
+      #fond {
+        position: absolute;
+        inset: 0;
+        background: #000;
+      }
+      /* Le bas du titre reste fixe à 581 px : un titre plus long monte, il ne descend jamais sur le film. */
+      #titre {
+        position: absolute;
+        left: 125px;
+        width: 830px;
+        bottom: 1339px;
+        color: #fff;
+        font-family: "Inter", sans-serif;
+        font-weight: 600;
+        font-size: 70px;
+        line-height: 1.2;
+        letter-spacing: -0.01em;
+        text-align: center;
+        text-wrap: balance;
+      }
+      #bandeau {
+        position: absolute;
+        left: 0;
+        top: 656px;
+        width: 1080px;
+        height: 608px;
+        overflow: hidden;
+      }
+      /* check : début */
+      @font-face {
+        font-family: "Anton";
+        src: url("assets/fonts/Anton-Regular.woff2") format("woff2");
+        font-weight: 400;
+      }
+      #ck-barre {
+        position: absolute;
+        left: 26px;
+        top: 1318px;
+        width: 1028px;
+      }
+      #ck-tete {
+        font-family: "JetBrains Mono", monospace;
+        font-weight: 700;
+        font-size: 30px;
+        letter-spacing: 0.15em;
+        color: #dcfc1c;
+        text-transform: uppercase;
+        text-align: center;
+        margin-bottom: 18px;
+      }
+      #ck-cases {
+        display: flex;
+        gap: 12px;
+      }
+      .ck-case {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 248px;
+        height: 132px;
+        border: 4px solid #3a4462;
+        background: #0c0c0c;
+        color: #ecece8;
+        font-family: "Anton", sans-serif;
+        text-transform: uppercase;
+      }
+      .ck-case b {
+        font-weight: 400;
+        font-size: 54px;
+        line-height: 1;
+      }
+      .ck-case span {
+        font-size: 30px;
+        line-height: 1.1;
+        white-space: nowrap;
+      }
+      .ck-case i {
+        position: absolute;
+        right: 8px;
+        top: 8px;
+        opacity: 0;
+      }
+      /* check : fin */
+      #film {
+        width: 1080px;
+        height: 608px;
+        object-fit: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="34.6"
+      data-width="1080"
+      data-height="1920"
+    >
+      <div id="fond" class="clip" data-start="0" data-duration="34.6" data-track-index="0"></div>
+      <h1 id="titre" class="clip" data-start="0" data-duration="34.6" data-track-index="1" data-var-text="titre">
+        Un site qui a l’air de coûter des milliers d’euros
+      </h1>
+      <div id="bandeau">
+        <video
+          id="film"
+          src="assets/site-anime-16x9.mp4"
+          data-start="0"
+          data-duration="34.6"
+          data-track-index="2"
+          data-has-audio="true"
+        ></video>
+      </div>
+      <!-- check : début -->
+      <div id="ck-barre" class="clip" data-start="0" data-duration="34.6" data-track-index="3" style="opacity: 0">
+        <div id="ck-tete">Ce que tu peux demander à ton IA</div>
+        <div id="ck-cases">
+          <div id="ck-0" class="ck-case"><b>1</b><span>Défilement</span><i id="ck-v0"><svg viewBox="0 0 40 40" width="40" height="40"><path d="M8 21 L17 30 L33 11" fill="none" stroke="#0C0C0C" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" /></svg></i></div>
+          <div id="ck-1" class="ck-case"><b>2</b><span>Parallaxe</span><i id="ck-v1"><svg viewBox="0 0 40 40" width="40" height="40"><path d="M8 21 L17 30 L33 11" fill="none" stroke="#0C0C0C" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" /></svg></i></div>
+          <div id="ck-2" class="ck-case"><b>3</b><span>Transitions</span><i id="ck-v2"><svg viewBox="0 0 40 40" width="40" height="40"><path d="M8 21 L17 30 L33 11" fill="none" stroke="#0C0C0C" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" /></svg></i></div>
+          <div id="ck-3" class="ck-case"><b>4</b><span>Survol</span><i id="ck-v3"><svg viewBox="0 0 40 40" width="40" height="40"><path d="M8 21 L17 30 L33 11" fill="none" stroke="#0C0C0C" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" /></svg></i></div>
+        </div>
+      </div>
+      <!-- check : fin -->
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      // check : début
+      tl.to("#ck-0", { borderColor: "#DCFC1C", backgroundColor: "rgba(220, 252, 28, 0.3)", scale: 1.08, duration: 0.18 }, 14.5);
+      tl.to("#ck-0", { borderColor: "#DCFC1C", backgroundColor: "#DCFC1C", color: "#0C0C0C", scale: 1, duration: 0.16 }, 15.9);
+      tl.fromTo("#ck-v0", { opacity: 0, scale: 2 }, { opacity: 1, scale: 1, duration: 0.14, ease: "power4.in", immediateRender: false }, 15.9);
+      tl.to("#ck-1", { borderColor: "#DCFC1C", backgroundColor: "rgba(220, 252, 28, 0.3)", scale: 1.08, duration: 0.18 }, 16.05);
+      tl.to("#ck-1", { borderColor: "#DCFC1C", backgroundColor: "#DCFC1C", color: "#0C0C0C", scale: 1, duration: 0.16 }, 16.9);
+      tl.fromTo("#ck-v1", { opacity: 0, scale: 2 }, { opacity: 1, scale: 1, duration: 0.14, ease: "power4.in", immediateRender: false }, 16.9);
+      tl.to("#ck-2", { borderColor: "#DCFC1C", backgroundColor: "rgba(220, 252, 28, 0.3)", scale: 1.08, duration: 0.18 }, 17.05);
+      tl.to("#ck-2", { borderColor: "#DCFC1C", backgroundColor: "#DCFC1C", color: "#0C0C0C", scale: 1, duration: 0.16 }, 18.95);
+      tl.fromTo("#ck-v2", { opacity: 0, scale: 2 }, { opacity: 1, scale: 1, duration: 0.14, ease: "power4.in", immediateRender: false }, 18.95);
+      tl.to("#ck-3", { borderColor: "#DCFC1C", backgroundColor: "rgba(220, 252, 28, 0.3)", scale: 1.08, duration: 0.18 }, 19.1);
+      tl.to("#ck-3", { borderColor: "#DCFC1C", backgroundColor: "#DCFC1C", color: "#0C0C0C", scale: 1, duration: 0.16 }, 21.51);
+      tl.fromTo("#ck-v3", { opacity: 0, scale: 2 }, { opacity: 1, scale: 1, duration: 0.14, ease: "power4.in", immediateRender: false }, 21.51);
+      tl.fromTo("#ck-barre", { opacity: 0, y: 80 }, { opacity: 1, y: 0, duration: 0.3, ease: "back.out(1.8)" }, 14.52);
+      tl.to(".ck-case", { keyframes: [{ scale: 1.12, duration: 0.12 }, { scale: 1, duration: 0.16 }], stagger: 0.06 }, 30.11);
+      // check : fin
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

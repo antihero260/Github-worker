@@ -1,0 +1,50 @@
+<!-- Volets de transition du style « Alerte » (écrit par tools/construire-scenes.py). -->
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+    .vo-bande {
+      position: absolute;
+      left: -2700px;
+      top: -300px;
+      width: 2300px;
+      height: 1680px;
+      display: flex;
+      transform: skewX(-18deg);
+    }
+    .vo-r {
+      width: 170px;
+      background: repeating-linear-gradient(-45deg, #dcfc1c 0 32px, #0c0c0c 32px 64px);
+    }
+    .vo-p {
+      flex: 1;
+      background: #0c0c0c;
+    }
+  </style>
+  <div id="root" data-composition-id="volets" data-width="1920" data-height="1080">
+    <div id="vo-0" class="vo-bande"><i class="vo-r"></i><i class="vo-p"></i><i class="vo-r"></i></div>
+    <div id="vo-1" class="vo-bande"><i class="vo-r"></i><i class="vo-p"></i><i class="vo-r"></i></div>
+    <div id="vo-2" class="vo-bande"><i class="vo-r"></i><i class="vo-p"></i><i class="vo-r"></i></div>
+    <div id="vo-3" class="vo-bande"><i class="vo-r"></i><i class="vo-p"></i><i class="vo-r"></i></div>
+    <div id="vo-4" class="vo-bande"><i class="vo-r"></i><i class="vo-p"></i><i class="vo-r"></i></div>
+    <div id="vo-5" class="vo-bande"><i class="vo-r"></i><i class="vo-p"></i><i class="vo-r"></i></div>
+    <div id="vo-6" class="vo-bande"><i class="vo-r"></i><i class="vo-p"></i><i class="vo-r"></i></div>
+    <div id="vo-7" class="vo-bande"><i class="vo-r"></i><i class="vo-p"></i><i class="vo-r"></i></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#vo-0", { x: 0 }, { x: 5100, duration: 0.46, ease: "power2.inOut", immediateRender: false }, 3.6);
+    tl.fromTo("#vo-1", { x: 0 }, { x: 5100, duration: 0.46, ease: "power2.inOut", immediateRender: false }, 14.4);
+    tl.fromTo("#vo-2", { x: 0 }, { x: 5100, duration: 0.46, ease: "power2.inOut", immediateRender: false }, 24.96);
+    tl.fromTo("#vo-3", { x: 0 }, { x: 5100, duration: 0.46, ease: "power2.inOut", immediateRender: false }, 37.0);
+    tl.fromTo("#vo-4", { x: 0 }, { x: 5100, duration: 0.46, ease: "power2.inOut", immediateRender: false }, 46.44);
+    tl.fromTo("#vo-5", { x: 0 }, { x: 5100, duration: 0.46, ease: "power2.inOut", immediateRender: false }, 59.12);
+    tl.fromTo("#vo-6", { x: 0 }, { x: 5100, duration: 0.46, ease: "power2.inOut", immediateRender: false }, 63.67);
+    tl.fromTo("#vo-7", { x: 0 }, { x: 5100, duration: 0.46, ease: "power2.inOut", immediateRender: false }, 70.76);
+    window.__timelines["volets"] = tl;
+  </script>
+</template>

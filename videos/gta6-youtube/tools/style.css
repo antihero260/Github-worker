@@ -1,0 +1,186 @@
+      /* Vidéo 20 — GTA 6 (YouTube 16:9). Palette Vice City : rose #ff3d8b, jaune #ffd23f, turquoise #26d6c8, orange #ff8a3d. */
+      @font-face { font-family: "Anton"; src: url("assets/fonts/Anton-Regular.woff2") format("woff2"); }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1920px; height: 1080px; overflow: hidden; background: #000; }
+      body { font-family: "Anton", sans-serif; color: #fff; }
+      #fond { position: absolute; inset: 0; background: #000; }
+      #cadre, #rgbw { position: absolute; inset: 0; }
+      #cam { position: absolute; left: -60px; top: -60px; width: 2040px; height: 1200px; overflow: hidden; transform-origin: 50% 50%; }
+      .pl { position: absolute; left: 60px; top: 60px; width: 1920px; height: 1080px; object-fit: cover; transform-origin: 50% 50%; }
+      #teinte { position: absolute; inset: 0; mix-blend-mode: soft-light; opacity: 0.35;
+        background: linear-gradient(160deg, rgba(255, 61, 139, 0.9) 0%, rgba(120, 40, 160, 0.4) 45%, rgba(38, 214, 200, 0.8) 100%); }
+      #voile { position: absolute; inset: 0; background: #07040f; opacity: 0; }
+      .flash { position: absolute; inset: 0; background: #fff; opacity: 0; }
+      .fuite { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; object-fit: cover; mix-blend-mode: screen; opacity: 0; }
+      .gx { position: absolute; inset: 0; transform-origin: 50% 45%; }
+      .o0 { opacity: 0; }
+      .logo { filter: brightness(0) invert(1); display: block; }
+      #bas { position: absolute; left: 0; bottom: 0; width: 1920px; height: 400px; background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.62) 100%); }
+      #vignette { position: absolute; inset: 0; background: radial-gradient(ellipse 75% 70% at 50% 50%, rgba(0, 0, 0, 0) 55%, rgba(0, 0, 0, 0.55) 100%); }
+      #fondu-fin { position: absolute; inset: 0; background: #000; opacity: 0; }
+      .ombre { text-shadow: 0 6px 0 #000, 0 0 30px rgba(0, 0, 0, 0.8); }
+
+      /* Sous-titres */
+      .sub { position: absolute; left: 0; top: 846px; width: 1920px; text-align: center; font-size: 86px; line-height: 1.1; letter-spacing: 1px;
+        text-shadow: 0 6px 0 #000, 4px 4px 0 #000, -2px -2px 0 #000, 0 0 22px rgba(0, 0, 0, 0.9); transform-origin: 50% 60%; }
+      .sub span { display: inline-block; color: #fff; transform-origin: 50% 70%; }
+      .sub span.k { color: #ff3d8b; }
+
+      /* Hook */
+      .slam { position: absolute; left: 0; top: 380px; width: 1920px; text-align: center; font-size: 150px; line-height: 1.05;
+        text-shadow: 0 10px 0 #000, 0 0 50px rgba(0, 0, 0, 0.85); white-space: nowrap; }
+
+      /* Cases mystère et titre du chapitre */
+      #cases { position: absolute; left: 40px; top: 34px; display: flex; gap: 10px; }
+      .case { position: relative; width: 56px; height: 56px; border: 3px solid rgba(255, 255, 255, 0.45); background: rgba(10, 8, 20, 0.65);
+        border-radius: 10px; font-size: 30px; color: #fff; }
+      .case span { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+      .case .q { color: rgba(255, 255, 255, 0.75); }
+      .case .n { opacity: 0; }
+      .titre-ch { position: absolute; left: 42px; top: 104px; font-size: 36px; letter-spacing: 1px; text-shadow: 0 3px 0 #000, 0 0 16px rgba(0, 0, 0, 0.9); }
+      .titre-ch b { color: #ff3d8b; font-weight: normal; }
+
+      /* Cartes de chapitre */
+      .ch-num { position: absolute; left: 0; top: 150px; width: 1920px; text-align: center; font-size: 320px; line-height: 1; color: #ff3d8b;
+        text-shadow: 12px 12px 0 #ffd23f, 0 0 80px rgba(255, 61, 139, 0.6); }
+      .ch-titre { position: absolute; left: 0; top: 540px; width: 1920px; text-align: center; font-size: 124px; line-height: 1.05;
+        text-shadow: 0 8px 0 #000, 0 0 40px rgba(0, 0, 0, 0.8); }
+
+      /* Éléments communs des graphiques */
+      .carte { position: absolute; background: rgba(14, 10, 28, 0.86); border: 3px solid #ff3d8b; border-radius: 22px;
+        box-shadow: 0 24px 70px rgba(0, 0, 0, 0.6); }
+      .gros { position: absolute; left: 0; top: 200px; width: 1920px; text-align: center; font-size: 220px; line-height: 1.05; color: #fff;
+        text-shadow: 10px 10px 0 #ff3d8b, 0 0 60px rgba(0, 0, 0, 0.7); }
+      .sous { position: absolute; left: 0; top: 480px; width: 1920px; text-align: center; font-size: 64px; color: #ffd23f; letter-spacing: 3px;
+        text-shadow: 0 5px 0 #000, 0 0 24px rgba(0, 0, 0, 0.8); }
+      .tampon { position: absolute; font-size: 110px; line-height: 1.1; color: #ff2d55; border: 8px solid #ff2d55; padding: 4px 30px;
+        border-radius: 14px; background: rgba(0, 0, 0, 0.45); white-space: nowrap; transform: rotate(-8deg); }
+      .mini { position: absolute; background: #ffd23f; color: #16101f; font-size: 30px; padding: 6px 18px; border-radius: 8px; letter-spacing: 2px; white-space: nowrap; }
+      .mini-rouge { position: absolute; width: 140px; background: #ff2d55; color: #fff; font-size: 30px; text-align: center; border-radius: 8px;
+        padding: 4px 0; transform: rotate(-4deg); }
+      .croix { position: absolute; width: 120px; height: 120px; }
+      .croix svg, .coche svg { width: 100%; height: 100%; display: block; filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.6)); }
+      .ico-alerte { width: 1em; height: 0.9em; vertical-align: -0.08em; margin-right: 0.25em; }
+
+      /* #1 frise */
+      .frise { left: 160px; top: 170px; width: 1600px; height: 420px; }
+      .frise-ligne, .frise-prog { position: absolute; left: 110px; top: 70px; width: 1290px; height: 8px; border-radius: 4px; background: rgba(255, 255, 255, 0.22); }
+      .frise-prog { width: 0; background: linear-gradient(90deg, #ff3d8b, #ffd23f); }
+      .noeud { position: absolute; top: 46px; width: 300px; margin-left: -150px; text-align: center; }
+      .noeud i { display: block; margin: 0 auto; width: 56px; height: 56px; border-radius: 50%; background: #fff; border: 7px solid #ff3d8b; }
+      .noeud b { display: block; margin-top: 16px; font-size: 52px; font-weight: normal; color: #fff; }
+      .noeud span { display: block; font-size: 28px; color: #bdb7d0; letter-spacing: 2px; }
+      .plateformes { position: absolute; top: 322px; display: flex; align-items: center; gap: 16px; font-size: 40px; }
+
+      /* #2 */
+      .date { left: 160px; top: 200px; padding: 18px 44px; font-size: 110px; line-height: 1.05; }
+      .date small { display: block; font-size: 36px; color: #ffd23f; letter-spacing: 4px; }
+      .badge-or { position: absolute; left: 510px; top: 610px; width: 900px; text-align: center; color: #1a1200; font-size: 58px; line-height: 1.1;
+        background: linear-gradient(180deg, #ffe58a, #d9a21b); border-radius: 18px; padding: 16px 30px; box-shadow: 0 18px 50px rgba(0, 0, 0, 0.6); }
+      .badge-or small { display: block; font-size: 30px; letter-spacing: 2px; }
+      .barres { left: 210px; top: 230px; width: 1500px; padding: 36px 50px; }
+      .b-titre { font-size: 46px; color: #ffd23f; letter-spacing: 2px; margin-bottom: 24px; }
+      .ligne { position: relative; height: 112px; margin-bottom: 22px; }
+      .ligne .nom { font-size: 36px; color: #fff; }
+      .barre { position: absolute; left: 0; top: 50px; height: 56px; width: 0; border-radius: 10px; }
+      .rose { background: linear-gradient(90deg, #ff3d8b, #ff8a3d); }
+      .gris { background: #8b879a; }
+      .jaune { background: linear-gradient(90deg, #ffd23f, #ff8a3d); }
+      .val { position: absolute; right: 0; top: 44px; font-size: 60px; color: #fff; }
+      .barres .mini { position: relative; display: inline-block; }
+
+      /* #3 */
+      .egal { position: absolute; left: 0; width: 1920px; display: flex; justify-content: center; gap: 44px; font-size: 130px;
+        text-shadow: 0 8px 0 #000, 0 0 40px rgba(0, 0, 0, 0.8); }
+      .egal b { font-weight: normal; color: #ff3d8b; }
+      .egal i { font-style: normal; color: #ffd23f; }
+      .liste { position: absolute; left: 120px; top: 165px; }
+      .item { display: flex; align-items: center; gap: 22px; margin-bottom: 12px; font-size: 64px; text-shadow: 0 5px 0 #000, 0 0 24px rgba(0, 0, 0, 0.85); }
+      .item i { display: block; width: 64px; height: 64px; }
+      .item i svg { width: 100%; height: 100%; display: block; }
+      .carte-postale { position: absolute; width: 560px; height: 315px; object-fit: cover; border: 10px solid #fff; border-radius: 6px;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7); }
+
+      /* #4 */
+      .carre { position: absolute; border-radius: 14px; display: flex; flex-direction: column; align-items: center; justify-content: center;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6); transform-origin: 50% 100%; }
+      .carre b { font-weight: normal; font-size: 50px; }
+      .carre span { font-size: 90px; line-height: 1; }
+
+      /* #5 */
+      .boite { position: absolute; width: 560px; height: 230px; border: 6px solid #26d6c8; border-radius: 22px; background: rgba(14, 10, 28, 0.88);
+        display: flex; align-items: center; justify-content: center; text-align: center; font-size: 72px; line-height: 1.05; }
+      .fleche { position: absolute; width: 200px; height: 100px; }
+      .fleche svg { width: 100%; height: 100%; }
+      .nom-tag { position: absolute; font-size: 110px; line-height: 1; background: rgba(255, 61, 139, 0.94); padding: 14px 40px 10px; border-radius: 14px;
+        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6); }
+      .nom-tag small { display: block; font-size: 34px; color: #16101f; letter-spacing: 8px; margin-top: 6px; }
+
+      /* #6 */
+      .prix { position: absolute; top: 230px; width: 580px; height: 400px; background: rgba(14, 10, 28, 0.9); border: 5px solid #26d6c8; border-radius: 26px;
+        display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 24px 70px rgba(0, 0, 0, 0.6); }
+      .prix small { font-size: 46px; color: #26d6c8; letter-spacing: 3px; }
+      .prix b { font-weight: normal; font-size: 150px; line-height: 1.1; }
+      .prix.or { border-color: #ffd23f; background: linear-gradient(180deg, rgba(60, 44, 6, 0.94), rgba(14, 10, 28, 0.94)); }
+      .prix.or small { color: #ffd23f; }
+      .boitier { position: absolute; left: 300px; top: 160px; width: 420px; height: 580px; background: #1f3fbf; border-radius: 14px; overflow: hidden;
+        box-shadow: 0 24px 70px rgba(0, 0, 0, 0.7); }
+      .boitier span { position: absolute; left: 0; top: 0; width: 100%; height: 56px; display: flex; align-items: center; justify-content: center;
+        font-size: 32px; letter-spacing: 3px; }
+      .boitier img { position: absolute; left: 0; top: 56px; width: 100%; height: 524px; object-fit: cover; }
+      .disque { position: absolute; left: 1010px; top: 230px; width: 300px; height: 300px; border-radius: 50%;
+        background: radial-gradient(circle at 50% 50%, #0d0d12 0 11%, #cfd3dc 12% 16%, rgba(0, 0, 0, 0) 17%),
+          conic-gradient(from 0deg, #e8e8ef, #b8c6ff, #ffc4f0, #c4fff1, #e8e8ef); box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6); }
+      .code { position: absolute; left: 960px; top: 300px; width: 720px; background: #fff; color: #16101f; font-size: 72px; padding: 24px 40px;
+        border-radius: 18px; border: 5px dashed #16101f; text-align: center; }
+      .code small { display: block; font-size: 32px; color: #ff3d8b; letter-spacing: 4px; }
+
+      /* #7 */
+      .ecart { position: absolute; left: 0; top: 700px; width: 1920px; text-align: center; font-size: 80px; color: #ffd23f;
+        text-shadow: 0 6px 0 #000, 0 0 30px rgba(0, 0, 0, 0.8); }
+
+      /* #8 */
+      .plateforme { position: absolute; top: 230px; width: 360px; height: 400px; display: flex; flex-direction: column; align-items: center;
+        justify-content: center; gap: 24px; background: rgba(14, 10, 28, 0.88); border: 4px solid rgba(255, 255, 255, 0.3); border-radius: 24px; }
+      .plateforme b { font-weight: normal; font-size: 56px; }
+      .coche { position: absolute; top: 560px; width: 120px; height: 120px; }
+
+      /* #9 et #10 */
+      .jauge { left: 260px; top: 300px; width: 1400px; padding: 40px 50px; }
+      .stock { left: 260px; top: 250px; width: 1400px; padding: 40px 50px; }
+      .jauge-fond { position: relative; height: 90px; margin-top: 10px; border-radius: 45px; background: rgba(255, 255, 255, 0.12); overflow: hidden; }
+      .jauge-plein { position: absolute; left: 0; top: 0; height: 100%; width: 0; background: linear-gradient(90deg, #26d6c8, #ffd23f, #ff2d55); }
+      .jauge-autres { position: absolute; left: 0; top: 0; height: 100%; width: 0; background: #8b879a; }
+      .jauge-gta { position: absolute; left: 640px; top: 0; height: 100%; width: 0; background: linear-gradient(90deg, #ff3d8b, #ff2d55); }
+      .leg { margin-top: 24px; font-size: 34px; display: flex; align-items: center; }
+      .pt { display: inline-block; width: 28px; height: 28px; border-radius: 6px; margin-right: 12px; }
+      .pt.gris { background: #8b879a; }
+      .pt.rose { background: #ff3d8b; }
+      .val-gb { position: absolute; right: 50px; top: 26px; font-size: 76px; color: #ff3d8b; }
+      .alerte { position: absolute; left: 0; top: 390px; width: 1920px; text-align: center; font-size: 150px; color: #ff2d55;
+        text-shadow: 0 8px 0 #000, 0 0 50px rgba(0, 0, 0, 0.8); }
+      .calendrier { position: absolute; left: 760px; top: 170px; width: 400px; height: 470px; background: #fff; border-radius: 24px; overflow: hidden;
+        box-shadow: 0 24px 70px rgba(0, 0, 0, 0.7); text-align: center; }
+      .cal-h { background: #ff3d8b; font-size: 52px; padding: 12px 0; letter-spacing: 3px; }
+      .cal-n { font-size: 240px; line-height: 1.12; color: #ff3d8b; }
+      .cal-b { font-size: 50px; color: #16101f; letter-spacing: 3px; }
+      .modal { position: absolute; left: 510px; top: 190px; width: 900px; background: #1d1d25; border: 2px solid #3d3d4a; border-radius: 22px;
+        padding: 44px 50px; box-shadow: 0 30px 90px rgba(0, 0, 0, 0.85); }
+      .m-t { font-size: 76px; color: #ff2d55; }
+      .m-s { font-family: "DejaVu Sans", "Liberation Sans", Arial, sans-serif; font-size: 38px; line-height: 1.35; color: #e8e8ef; margin: 18px 0 34px; }
+      .m-s b { color: #fff; }
+      .m-btn { display: inline-block; background: #fff; color: #16101f; font-size: 38px; padding: 12px 44px; border-radius: 40px; letter-spacing: 2px; }
+
+      /* BONUS et fin */
+      .trailer3 { position: absolute; left: 0; top: 150px; width: 1920px; text-align: center; font-size: 400px; line-height: 1;
+        text-shadow: 12px 12px 0 #ff3d8b, 0 0 70px rgba(0, 0, 0, 0.7); }
+      .trailer3 small { display: block; font-size: 90px; color: #ffd23f; letter-spacing: 14px; text-shadow: 0 6px 0 #000; }
+      .trailer3 b { display: inline-block; font-weight: normal; color: #ffd23f; margin-left: 20px; }
+      .vs { position: absolute; left: 895px; top: 380px; font-size: 120px; color: #ffd23f; text-shadow: 0 8px 0 #000; }
+      .bulle { position: absolute; left: 560px; top: 690px; width: 800px; background: #fff; color: #16101f; font-size: 54px; text-align: center;
+        padding: 16px 20px; border-radius: 30px; box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6); }
+      .abonne { position: absolute; left: 690px; top: 420px; width: 440px; height: 116px; background: #ff0033; border-radius: 14px;
+        display: flex; align-items: center; justify-content: center; font-size: 60px; letter-spacing: 2px; box-shadow: 0 18px 50px rgba(0, 0, 0, 0.6); }
+      .cloche { position: absolute; left: 1160px; top: 428px; width: 100px; height: 100px; border-radius: 50%; background: rgba(255, 255, 255, 0.18); padding: 18px; }
+      .cloche svg, .souris svg { width: 100%; height: 100%; display: block; }
+      .souris { position: absolute; left: 980px; top: 480px; width: 76px; height: 76px; filter: drop-shadow(0 6px 8px rgba(0, 0, 0, 0.6)); }

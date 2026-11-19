@@ -1,0 +1,49 @@
+<!-- Scène 25 · « Mais imagine maintenant tout ce que tu pourrais construire avec cette méthode : » (112.59 → 116.19 s). Fichier écrit par un générateur, modifiable à la main. -->
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+    }
+
+  </style>
+  <div id="root" data-composition-id="s25-imagine" data-width="1920" data-height="1080">
+    <div class="pj-scene">
+      <div id="s25-imagine-cam" class="pj-cam">
+        <div id="s25-imagine-cadre" class="pj-cadre">
+        <div class="pj-horizon" style="top: 760px"></div>
+        <div id="s25-plein" style="position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; overflow: hidden"><video id="s25-plein-v" class="clip" src="assets/video/interface-vr.mp4" data-start="0" data-duration="3.6" data-track-index="5" muted playsinline style="position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; object-fit: cover"></video><div style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,0.25000000000000006), rgba(0,0,0,0.75))"></div></div>
+        <div id="s25-dit" class="pj-serif" style="left: 113px; top: 220px; width: 1100px; font-size: 96px"><span id="s25-dit-322">imagine</span> <span id="s25-dit-323">maintenant</span> <span id="s25-dit-324">tout</span> <span id="s25-dit-325">ce</span> <span id="s25-dit-326">que</span> <span id="s25-dit-327">tu</span> <span id="s25-dit-328">pourrais</span> <span id="s25-dit-329">construire</span> <span id="s25-dit-330">avec</span> <span id="s25-dit-331">cette</span> <span id="s25-dit-332">méthode :</span></div>
+        <svg id="s25-toi" class="pj-perso pj-toi-perso" viewBox="-30 -20 160 290" style="left: 1450px; top: 430px; width: 221px; height: 400px"><g id="s25-toi-vie"><g id="s25-toi-corps"><g id="s25-toi-jg"><g class="c"><rect x="24" y="136" width="24" height="112" rx="8" /></g><g class="p"><rect x="24" y="136" width="24" height="112" rx="8" /></g></g><g id="s25-toi-jd"><g class="c"><rect x="52" y="136" width="24" height="112" rx="8" /></g><g class="p"><rect x="52" y="136" width="24" height="112" rx="8" /></g></g><g id="s25-toi-tronc"><g class="c"><rect x="22" y="52" width="56" height="94" rx="12" /></g><g class="p"><rect x="22" y="52" width="56" height="94" rx="12" /></g></g><g id="s25-toi-bg"><g class="c"><rect x="2" y="54" width="18" height="86" rx="9" /></g><g class="p"><rect x="2" y="54" width="18" height="86" rx="9" /></g></g><g id="s25-toi-bd"><g class="c"><rect x="80" y="54" width="18" height="86" rx="9" /></g><g class="p"><rect x="80" y="54" width="18" height="86" rx="9" /></g></g><g id="s25-toi-tete"><g class="c"><circle cx="50" cy="24" r="22" /></g><g class="p"><circle cx="50" cy="24" r="22" /></g></g></g></g></svg>
+        </div>
+      </div>
+      <div id="s25-hud" class="pj-label" style="left: 113px; top: 107px; "><span class="pj-k">Imagine</span><span class="pj-d">Tout ce que tu peux construire</span></div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#s25-imagine-cam", { scale: 1 }, { scale: 1.05, duration: 3.4, ease: "none" }, 0);
+    tl.fromTo("#s25-imagine-cam", { filter: "blur(14px)" }, { filter: "blur(0px)", duration: 0.16, ease: "power2.out" }, 0);
+    tl.fromTo("#s25-plein", { scale: 1.0 }, { scale: 1.1, duration: 3.6, ease: "none" }, 0);
+    tl.set("#s25-dit-322", { opacity: 1 }, 0.36);
+    tl.set("#s25-dit-323", { opacity: 1 }, 0.92);
+    tl.set("#s25-dit-324", { opacity: 1 }, 1.32);
+    tl.set("#s25-dit-325", { opacity: 1 }, 1.56);
+    tl.set("#s25-dit-326", { opacity: 1 }, 1.64);
+    tl.set("#s25-dit-327", { opacity: 1 }, 1.8);
+    tl.set("#s25-dit-328", { opacity: 1 }, 1.96);
+    tl.set("#s25-dit-329", { opacity: 1 }, 2.28);
+    tl.set("#s25-dit-330", { opacity: 1 }, 2.68);
+    tl.set("#s25-dit-331", { opacity: 1 }, 2.84);
+    tl.set("#s25-dit-332", { opacity: 1 }, 3.08);
+    tl.fromTo("#s25-toi-vie", { y: 0 }, { y: -5, duration: 0.42, repeat: 7, yoyo: true, ease: "sine.inOut", immediateRender: false }, 0.0);
+    tl.to("#s25-toi-bg", { rotation: 150, svgOrigin: "11 62", duration: 0.16, ease: "back.out(2)" }, 0.92);
+    tl.to("#s25-toi-bd", { rotation: -150, svgOrigin: "89 62", duration: 0.16, ease: "back.out(2)" }, 0.92);
+    tl.to("#s25-toi-tete", { rotation: -8, svgOrigin: "50 50", duration: 0.16, ease: "back.out(2)" }, 0.92);
+    tl.to("#s25-toi", { scale: 1.12, transformOrigin: "50% 92%", duration: 0.3, ease: "back.out(2)" }, 1.96);
+    tl.to("#s25-imagine-cadre", { x: 67, y: 134, scale: 1.12, duration: 0.26, ease: "power3.inOut" }, 1.64);
+    tl.to("#s25-imagine-cadre", { keyframes: [{ filter: "blur(10px)", duration: 0.13 }, { filter: "blur(0px)", duration: 0.13 }] }, 1.64);
+    tl.to("#s25-imagine-cam", { scale: 1.3, filter: "blur(14px)", duration: 0.2, ease: "power3.in" }, 3.4);
+    window.__timelines["s25-imagine"] = tl;
+  </script>
+</template>

@@ -1,0 +1,446 @@
+[
+  {
+    "text": "Ce",
+    "start": 0.06,
+    "end": 0.15,
+    "id": "w0"
+  },
+  {
+    "text": "site",
+    "start": 0.15,
+    "end": 0.45,
+    "id": "w1"
+  },
+  {
+    "text": "a",
+    "start": 0.46,
+    "end": 0.53,
+    "id": "w2"
+  },
+  {
+    "text": "été",
+    "start": 0.53,
+    "end": 0.74,
+    "id": "w3"
+  },
+  {
+    "text": "créé",
+    "start": 0.8,
+    "end": 1.06,
+    "id": "w4"
+  },
+  {
+    "text": "avec",
+    "start": 1.06,
+    "end": 1.37,
+    "id": "w5"
+  },
+  {
+    "text": "l'IA",
+    "start": 1.37,
+    "end": 1.7,
+    "id": "w6"
+  },
+  {
+    "text": "en",
+    "start": 1.72,
+    "end": 1.88,
+    "id": "w7"
+  },
+  {
+    "text": "moins",
+    "start": 1.88,
+    "end": 2.29,
+    "id": "w8"
+  },
+  {
+    "text": "d'une",
+    "start": 2.29,
+    "end": 2.65,
+    "id": "w9"
+  },
+  {
+    "text": "minute",
+    "start": 2.76,
+    "end": 2.85,
+    "id": "w10"
+  },
+  {
+    "text": "et",
+    "start": 3.24,
+    "end": 3.32,
+    "id": "w11"
+  },
+  {
+    "text": "il",
+    "start": 3.32,
+    "end": 3.44,
+    "id": "w12"
+  },
+  {
+    "text": "cache",
+    "start": 3.44,
+    "end": 3.74,
+    "id": "w13"
+  },
+  {
+    "text": "un",
+    "start": 3.74,
+    "end": 3.85,
+    "id": "w14"
+  },
+  {
+    "text": "mot",
+    "start": 3.86,
+    "end": 4.04,
+    "id": "w15"
+  },
+  {
+    "text": "secret.",
+    "start": 4.04,
+    "end": 4.51,
+    "id": "w16"
+  },
+  {
+    "text": "Regarde",
+    "start": 4.84,
+    "end": 5.15,
+    "id": "w17"
+  },
+  {
+    "text": "bien,",
+    "start": 5.15,
+    "end": 5.64,
+    "id": "w18"
+  },
+  {
+    "text": "le",
+    "start": 5.64,
+    "end": 5.87,
+    "id": "w19"
+  },
+  {
+    "text": "menu,",
+    "start": 5.88,
+    "end": 6.52,
+    "id": "w20"
+  },
+  {
+    "text": "les",
+    "start": 6.6,
+    "end": 6.82,
+    "id": "w21"
+  },
+  {
+    "text": "animations,",
+    "start": 6.82,
+    "end": 7.67,
+    "id": "w22"
+  },
+  {
+    "text": "les",
+    "start": 7.67,
+    "end": 8.04,
+    "id": "w23"
+  },
+  {
+    "text": "produits,",
+    "start": 8.04,
+    "end": 8.56,
+    "id": "w24"
+  },
+  {
+    "text": "le",
+    "start": 8.56,
+    "end": 8.7,
+    "id": "w25"
+  },
+  {
+    "text": "panier.",
+    "start": 8.7,
+    "end": 9.3,
+    "id": "w26"
+  },
+  {
+    "text": "Tout",
+    "start": 9.62,
+    "end": 9.66,
+    "id": "w27"
+  },
+  {
+    "text": "a",
+    "start": 9.66,
+    "end": 9.73,
+    "id": "w28"
+  },
+  {
+    "text": "été",
+    "start": 9.73,
+    "end": 9.96,
+    "id": "w29"
+  },
+  {
+    "text": "généré",
+    "start": 9.96,
+    "end": 10.4,
+    "id": "w30"
+  },
+  {
+    "text": "avec",
+    "start": 10.42,
+    "end": 10.72,
+    "id": "w31"
+  },
+  {
+    "text": "un",
+    "start": 10.72,
+    "end": 10.84,
+    "id": "w32"
+  },
+  {
+    "text": "seul",
+    "start": 10.92,
+    "end": 11.17,
+    "id": "w33"
+  },
+  {
+    "text": "prompt.",
+    "start": 11.17,
+    "end": 11.76,
+    "id": "w34"
+  },
+  {
+    "text": "Mais",
+    "start": 11.76,
+    "end": 12.02,
+    "id": "w35"
+  },
+  {
+    "text": "quelque",
+    "start": 12.02,
+    "end": 12.41,
+    "id": "w36"
+  },
+  {
+    "text": "part",
+    "start": 12.42,
+    "end": 12.66,
+    "id": "w37"
+  },
+  {
+    "text": "dans",
+    "start": 12.66,
+    "end": 12.9,
+    "id": "w38"
+  },
+  {
+    "text": "cette",
+    "start": 12.9,
+    "end": 13.2,
+    "id": "w39"
+  },
+  {
+    "text": "vidéo,",
+    "start": 13.2,
+    "end": 13.64,
+    "id": "w40"
+  },
+  {
+    "text": "un",
+    "start": 13.64,
+    "end": 13.8,
+    "id": "w41"
+  },
+  {
+    "text": "mot",
+    "start": 13.8,
+    "end": 14.08,
+    "id": "w42"
+  },
+  {
+    "text": "apparaît",
+    "start": 14.08,
+    "end": 14.44,
+    "id": "w43"
+  },
+  {
+    "text": "pendant",
+    "start": 14.44,
+    "end": 14.77,
+    "id": "w44"
+  },
+  {
+    "text": "une",
+    "start": 14.77,
+    "end": 14.84,
+    "id": "w45"
+  },
+  {
+    "text": "demi",
+    "start": 14.84,
+    "end": 15.2,
+    "id": "w46"
+  },
+  {
+    "text": "seconde.",
+    "start": 15.2,
+    "end": 15.68,
+    "id": "w47"
+  },
+  {
+    "text": "Le",
+    "start": 15.68,
+    "end": 15.94,
+    "id": "w48"
+  },
+  {
+    "text": "premier",
+    "start": 15.94,
+    "end": 16.23,
+    "id": "w49"
+  },
+  {
+    "text": "qui",
+    "start": 16.23,
+    "end": 16.41,
+    "id": "w50"
+  },
+  {
+    "text": "le",
+    "start": 16.41,
+    "end": 16.53,
+    "id": "w51"
+  },
+  {
+    "text": "trouve",
+    "start": 16.54,
+    "end": 16.92,
+    "id": "w52"
+  },
+  {
+    "text": "et",
+    "start": 16.92,
+    "end": 17,
+    "id": "w53"
+  },
+  {
+    "text": "l'écrit",
+    "start": 17,
+    "end": 17.32,
+    "id": "w54"
+  },
+  {
+    "text": "en",
+    "start": 17.32,
+    "end": 17.4,
+    "id": "w55"
+  },
+  {
+    "text": "commentaire",
+    "start": 17.66,
+    "end": 18,
+    "id": "w56"
+  },
+  {
+    "text": "reçoit",
+    "start": 18.06,
+    "end": 18.42,
+    "id": "w57"
+  },
+  {
+    "text": "le",
+    "start": 18.42,
+    "end": 18.54,
+    "id": "w58"
+  },
+  {
+    "text": "prompt",
+    "start": 18.54,
+    "end": 18.88,
+    "id": "w59"
+  },
+  {
+    "text": "complet.",
+    "start": 18.96,
+    "end": 19.52,
+    "id": "w60"
+  },
+  {
+    "text": "Petit",
+    "start": 19.52,
+    "end": 19.94,
+    "id": "w61"
+  },
+  {
+    "text": "indice,",
+    "start": 19.94,
+    "end": 20.49,
+    "id": "w62"
+  },
+  {
+    "text": "regarde",
+    "start": 20.84,
+    "end": 21.09,
+    "id": "w63"
+  },
+  {
+    "text": "bien",
+    "start": 21.17,
+    "end": 21.42,
+    "id": "w64"
+  },
+  {
+    "text": "les",
+    "start": 21.42,
+    "end": 21.63,
+    "id": "w65"
+  },
+  {
+    "text": "boutons.",
+    "start": 21.63,
+    "end": 22.2,
+    "id": "w66"
+  },
+  {
+    "text": "Abonne-toi",
+    "start": 22.4,
+    "end": 22.71,
+    "id": "w67"
+  },
+  {
+    "text": "à",
+    "start": 22.73,
+    "end": 22.77,
+    "id": "w68"
+  },
+  {
+    "text": "Ghostcode",
+    "start": 22.77,
+    "end": 23.24,
+    "id": "w69"
+  },
+  {
+    "text": "pour",
+    "start": 23.24,
+    "end": 23.45,
+    "id": "w70"
+  },
+  {
+    "text": "le",
+    "start": 23.45,
+    "end": 23.55,
+    "id": "w71"
+  },
+  {
+    "text": "prochain",
+    "start": 23.55,
+    "end": 23.97,
+    "id": "w72"
+  },
+  {
+    "text": "défi.",
+    "start": 23.97,
+    "end": 24.4,
+    "id": "w73"
+  }
+]

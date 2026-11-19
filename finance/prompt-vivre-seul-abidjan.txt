@@ -1,0 +1,71 @@
+PROMPT PRÊT À COPIER — sujet : combien ça coûte de vivre seul à Abidjan
+Version APPROFONDIE (18 nov. 2026 : « pas assez long ni assez profond ») : vidéo de 1 min 30 à 2 min, chiffres détaillés.
+==========================================================
+
+Tu es scénariste et documentaliste pour « Lefinancier », une chaîne TikTok / Reels qui explique l'argent aux jeunes de Côte d'Ivoire avec des histoires vraies de la vie quotidienne. Écris le texte d'une vidéo de 1 min 30 à 2 min (260 à 330 mots), complète, précise et approfondie.
+
+SUJET : « Combien ça coûte VRAIMENT de vivre seul à Abidjan ? »
+Le personnage principal (prénom non africain : Lucas, Tom, Emma, Léa...) quitte la maison familiale pour son premier studio. Il croit qu'il lui faut juste « le loyer ». La vidéo révèle, poste par poste, tout ce qu'il doit vraiment payer : d'abord pour ENTRER dans le logement, puis CHAQUE MOIS. Le spectateur doit sortir de la vidéo avec une idée précise et chiffrée de ce que coûte l'indépendance à Abidjan.
+
+1. FAIS D'ABORD LA RECHERCHE (avant d'écrire)
+Pour chaque poste, donne une fourchette réaliste en FCFA pour un studio ou une chambre-salon, en distinguant deux types de quartiers (par exemple un quartier populaire comme Yopougon, Abobo ou Koumassi, et un quartier plus cher comme Cocody ou la Riviera). Appuie-toi sur des sources vérifiables : annonces immobilières récentes (Coinafrique, Jumia Deals / sites d'annonces), tarifs officiels de la CIE (électricité) et de la SODECI (eau), prix du gaz, offres internet des opérateurs, INS, SMIG officiel (75 000 FCFA). Si tu n'es pas sûr d'un prix, dis-le et donne une fourchette prudente plutôt que d'inventer.
+
+A. LE COÛT D'ENTRÉE (une seule fois, le choc de départ)
+   - la caution (souvent plusieurs mois de loyer) et l'avance sur loyer ;
+   - les frais d'agence ou de démarcheur ;
+   - l'ouverture des compteurs ou abonnements CIE et SODECI ;
+   - l'équipement minimum : matelas, gaz et bouteille, marmites, ventilateur, rideaux...
+   → donne le TOTAL pour entrer dans le studio.
+B. LE COÛT DE CHAQUE MOIS
+   - loyer ; électricité ; eau ; gaz ; nourriture (manger dehors vs cuisiner) ; transport (woro-woro, gbaka, Yango) ; internet et crédit téléphone ; produits du quotidien ; imprévus.
+   → donne le TOTAL du mois, version « quartier populaire » et version « quartier plus cher ».
+C. LA COMPARAISON QUI FAIT RÉFLÉCHIR
+   - mets ce total en face du SMIG (75 000 FCFA) et d'un premier salaire courant pour un jeune diplômé ;
+   - montre ce qu'il reste (ou ce qui manque) à la fin du mois.
+
+2. L'HISTOIRE (le fil rouge, du début à la fin)
+- 0–5 s : l'accroche dit le sujet en clair et pose la question. Exemple de ton : « Tu veux quitter la maison de tes parents ? Voici ce que ça va VRAIMENT te coûter à Abidjan. »
+- Le personnage a un objectif concret (être indépendant, recevoir ses amis chez lui, se rapprocher de son travail).
+- Chaque poste arrive comme une petite surprise dans sa journée : le démarcheur qui annonce la caution, la première facture CIE, la bouteille de gaz vide un dimanche, la fin du mois qui arrive trop vite... On sent ce qu'il ressent par ses réactions, pas par des adjectifs.
+- Enchaîne avec « mais » et « donc », jamais « et puis ». Le rythme est rapide : une phrase courte par dépense.
+- Ton léger, un peu drôle, jamais moralisateur.
+- La chute : le vrai total révélé, et ce que Lucas comprend (ce qu'il aurait dû prévoir AVANT de signer).
+
+3. DES ASTUCES CONCRÈTES (2 ou 3, intégrées dans l'histoire)
+Des gestes que tout le monde peut faire, sans produit à acheter : par exemple négocier la caution, la colocation, cuisiner plutôt que manger dehors, surveiller le compteur prépayé, garder une réserve pour l'entrée. Ce ne sont pas des conseils d'investissement.
+
+4. LA FIN CLAIRE (les 15 dernières secondes, dans cet ordre)
+a) La réponse à la question du début, en une phrase qui commence par « Donc » (avec le total du mois).
+b) « Retiens ça : » puis LA RÈGLE : 12 mots au maximum, affirmative, sans « parfois », « pas toujours » ni « ce n'est pas X mais Y ». Exemple de style : « Retiens ça : avant le loyer, prévois trois fois le loyer pour entrer. »
+c) « À faire : » puis LE GESTE : 12 mots au maximum, commence par un verbe, gratuit, faisable aujourd'hui. Exemple de style : « Ce soir, liste toutes tes dépenses fixes du mois. »
+d) « Abonne-toi à Lefinancier » puis une question pour les commentaires (par exemple : « Ton loyer, c'est combien, et dans quel quartier ? »). Rien après.
+
+5. LES CHIFFRES À L'ÉCRAN
+Les chiffres sont nombreux dans cette version, donc ils doivent rester lisibles :
+- un chiffre = une dépense, rond (25 000, 50 000, 150 000...), annoncé seul dans sa phrase ;
+- jamais de calcul à suivre à l'oral : donne directement les totaux ;
+- maximum 12 chiffres en tout, dont 3 « chiffres forts » : le coût d'entrée, le total du mois, ce qui reste sur un SMIG.
+
+INTERDITS
+- Aucun jeu d'argent (paris, casino, loterie), même pour les critiquer.
+- Aucun nom de produit à acheter, aucun conseil d'investissement personnalisé.
+- Aucune statistique inventée. Pas de morale lourde, pas de phrases creuses.
+- Ne parle jamais du parcours ou des diplômes de l'auteur.
+
+CE QUE TU ME RENDS
+1. Le titre (6 mots maximum), le sujet dit en clair.
+2. Trois accroches possibles, et laquelle est la meilleure.
+3. Le TABLEAU DE RECHERCHE : chaque poste, fourchette quartier populaire / quartier plus cher, et la source (lien ou nom précis).
+4. Le texte complet de la voix off en un seul bloc (260 à 330 mots), avec la meilleure accroche.
+5. LE DÉCOUPAGE POUR LE MONTAGE : la liste des chiffres dans l'ordre où ils sont dits, avec le mot exact de la voix où chacun doit apparaître à l'écran.
+6. À ÉCRIRE À L'ÉCRAN À LA FIN :
+   - À RETENIR : la règle (mot pour mot comme dans la voix) ;
+   - À FAIRE : le geste (mot pour mot comme dans la voix).
+7. Une description TikTok qui redit la règle, avec 5 hashtags maximum.
+
+Avant de répondre, vérifie et corrige si besoin :
+- La première phrase dit-elle clairement le sujet ?
+- Chaque poste important est-il couvert (entrée ET mois) avec une fourchette et une source ?
+- Les totaux sont-ils cohérents avec les postes ?
+- La fin dit-elle clairement quoi retenir ET quoi faire ?
+- Le texte fait-il bien entre 260 et 330 mots ?

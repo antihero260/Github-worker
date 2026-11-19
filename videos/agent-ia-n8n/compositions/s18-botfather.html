@@ -1,0 +1,54 @@
+<!-- Scène 18 · « …crée un bot avec BotFather, récupère son jeton de connexion, puis renseigne les identifiants dans n8n… » (76.67 → 84.03 s). Fichier écrit par un générateur, modifiable à la main. -->
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+    }
+
+  </style>
+  <div id="root" data-composition-id="s18-botfather" data-width="1920" data-height="1080">
+    <div class="pj-scene">
+      <div id="s18-botfather-cam" class="pj-cam">
+        <div id="s18-botfather-cadre" class="pj-cadre">
+        <div class="pj-horizon" style="top: 760px"></div>
+        <div id="s18-tg" class="pj-tg" style="left: 150px; top: 100px; width: 420px; height: 740px"><div class="pj-tg-tete"><img src="assets/img/logo-telegram.svg" alt="" /><b>BotFather</b></div><div class="pj-tg-conv"><div id="s18-tg-m1" class="pj-tg-bulle pj-tg-moi" style="opacity: 0">/newbot</div><div id="s18-tg-m2" class="pj-tg-bulle pj-tg-bot" style="opacity: 0">Choisis un nom pour ton bot.</div><div id="s18-tg-m3" class="pj-tg-bulle pj-tg-moi" style="opacity: 0">MonAgentIA_bot</div><div id="s18-tg-m4" class="pj-tg-bulle pj-tg-bot" style="opacity: 0">Voici ton jeton :<br><code class="pj-jeton">7581••••:AAH••••••</code></div></div><div class="pj-tg-champ"><span>Message</span><i></i></div></div>
+        <div id="s18-jeton" class="pj-jeton-vol" style="left: 230px; top: 560px; opacity: 0">Jeton</div>
+        <div id="s18-fen" class="pj-fenetre" style="left: 780px; top: 170px; width: 1030px; height: 470px; opacity: 0"><div class="pj-fen-barre"><i></i><i></i><i></i><img src="assets/img/logo-n8n.svg" alt="" /><span>n8n · Identifiants Telegram</span></div><div class="pj-fen-corps"><div class="pj-fen-form"><label>Jeton d'accès</label><div class="pj-fen-champ"><span id="s18-pts" style="opacity: 0">••••••••••••••••</span></div><div class="pj-fen-ligne"><div id="s18-save" class="pj-fen-bouton" style="position: static">Enregistrer</div><div id="s18-ok" class="pj-fen-ok" style="opacity: 0">✓ Connecté</div></div></div></div></div>
+        <svg id="s18-toi" class="pj-perso pj-toi-perso" viewBox="-30 -20 160 290" style="left: 603px; top: 541px; width: 154px; height: 280px"><g id="s18-toi-vie"><g id="s18-toi-corps"><g id="s18-toi-jg"><g class="c"><rect x="24" y="136" width="24" height="112" rx="8" /></g><g class="p"><rect x="24" y="136" width="24" height="112" rx="8" /></g></g><g id="s18-toi-jd"><g class="c"><rect x="52" y="136" width="24" height="112" rx="8" /></g><g class="p"><rect x="52" y="136" width="24" height="112" rx="8" /></g></g><g id="s18-toi-tronc"><g class="c"><rect x="22" y="52" width="56" height="94" rx="12" /></g><g class="p"><rect x="22" y="52" width="56" height="94" rx="12" /></g></g><g id="s18-toi-bg"><g class="c"><rect x="2" y="54" width="18" height="86" rx="9" /></g><g class="p"><rect x="2" y="54" width="18" height="86" rx="9" /></g></g><g id="s18-toi-bd"><g class="c"><rect x="80" y="54" width="18" height="86" rx="9" /></g><g class="p"><rect x="80" y="54" width="18" height="86" rx="9" /></g></g><g id="s18-toi-tete"><g class="c"><circle cx="50" cy="24" r="22" /></g><g class="p"><circle cx="50" cy="24" r="22" /></g></g></g></g></svg>
+        </div>
+      </div>
+      <div id="s18-hud" class="pj-label" style="left: 113px; top: 107px; "><span class="pj-k">Telegram</span><span class="pj-d">Bot + jeton + n8n</span></div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#s18-botfather-cam", { scale: 1 }, { scale: 1.05, duration: 7.16, ease: "none" }, 0);
+    tl.fromTo("#s18-botfather-cam", { filter: "blur(14px)" }, { filter: "blur(0px)", duration: 0.16, ease: "power2.out" }, 0);
+    tl.fromTo("#s18-toi-vie", { y: 0 }, { y: -5, duration: 0.42, repeat: 16, yoyo: true, ease: "sine.inOut", immediateRender: false }, 0.0);
+    tl.fromTo("#s18-tg-m1", { opacity: 0, y: 30, scale: 0.9 }, { opacity: 1, y: 0, scale: 1, duration: 0.22, ease: "back.out(2)" }, 0.68);
+    tl.fromTo("#s18-tg-m2", { opacity: 0, y: 30, scale: 0.9 }, { opacity: 1, y: 0, scale: 1, duration: 0.22, ease: "back.out(2)" }, 1.64);
+    tl.fromTo("#s18-tg-m3", { opacity: 0, y: 30, scale: 0.9 }, { opacity: 1, y: 0, scale: 1, duration: 0.22, ease: "back.out(2)" }, 2.19);
+    tl.to("#s18-botfather-cadre", { x: 700, y: 200, scale: 1.25, duration: 0.26, ease: "power3.inOut" }, 0.56);
+    tl.to("#s18-botfather-cadre", { keyframes: [{ filter: "blur(10px)", duration: 0.13 }, { filter: "blur(0px)", duration: 0.13 }] }, 0.56);
+    tl.fromTo("#s18-tg-m4", { opacity: 0, y: 30, scale: 0.9 }, { opacity: 1, y: 0, scale: 1, duration: 0.22, ease: "back.out(2)" }, 2.68);
+    tl.to("#s18-toi-bg", { rotation: 110, svgOrigin: "11 62", duration: 0.16, ease: "back.out(2)" }, 2.68);
+    tl.to("#s18-toi-tete", { rotation: 6, svgOrigin: "50 50", duration: 0.16, ease: "back.out(2)" }, 2.68);
+    tl.to("#s18-botfather-cadre", { x: 552, y: 23, scale: 1.15, duration: 0.26, ease: "power3.inOut" }, 3.16);
+    tl.to("#s18-botfather-cadre", { keyframes: [{ filter: "blur(10px)", duration: 0.13 }, { filter: "blur(0px)", duration: 0.13 }] }, 3.16);
+    tl.fromTo("#s18-fen", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.18, ease: "power3.out" }, 3.5);
+    tl.fromTo("#s18-jeton", { opacity: 1, x: 0, y: 0, scale: 1 }, { x: 1050, y: -120, scale: 0.8, opacity: 1, duration: 0.6, ease: "power2.inOut", immediateRender: false }, 4.44);
+    tl.to("#s18-jeton", { opacity: 0, duration: 0.1 }, 5.04);
+    tl.to("#s18-toi-bg", { rotation: 0, svgOrigin: "11 62", duration: 0.14, ease: "power2.out" }, 4.44);
+    tl.to("#s18-toi-bd", { rotation: -110, svgOrigin: "89 62", duration: 0.14, ease: "power2.out" }, 4.44);
+    tl.to("#s18-toi-tete", { rotation: -6, svgOrigin: "50 50", duration: 0.14, ease: "power2.out" }, 4.44);
+    tl.to("#s18-botfather-cadre", { x: -379, y: 161, scale: 1.15, duration: 0.26, ease: "power3.inOut" }, 4.44);
+    tl.to("#s18-botfather-cadre", { keyframes: [{ filter: "blur(10px)", duration: 0.13 }, { filter: "blur(0px)", duration: 0.13 }] }, 4.44);
+    tl.set("#s18-pts", { opacity: 1 }, 4.78);
+    tl.to("#s18-save", { keyframes: [{ scale: 0.92, duration: 0.07 }, { scale: 1, duration: 0.12 }] }, 6.36);
+    tl.fromTo("#s18-ok", { opacity: 0, scale: 1.6 }, { opacity: 1, scale: 1, duration: 0.18, ease: "back.out(2.2)" }, 6.52);
+    tl.to("#s18-toi-corps", { keyframes: [{ y: -30, duration: 0.13, ease: "power2.out" }, { y: 0, duration: 0.15, ease: "power2.in" }] }, 6.52);
+    tl.to("#s18-botfather-cam", { scale: 1.3, filter: "blur(14px)", duration: 0.2, ease: "power3.in" }, 7.16);
+    window.__timelines["s18-botfather"] = tl;
+  </script>
+</template>

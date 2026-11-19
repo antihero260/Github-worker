@@ -1,0 +1,49 @@
+<!-- Scène 15 · « Runway se place en A, particulièrement intéressant pour les créateurs qui veulent davantage de contrôle sur leurs plans. » (84.34 → 90.58 s). Fichier écrit par un générateur, modifiable à la main. -->
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+    }
+
+  </style>
+  <div id="root" data-composition-id="s15-runway" data-width="1920" data-height="1080">
+    <div class="pj-scene">
+      <div id="s15-runway-cam" class="pj-cam">
+        <div id="s15-runway-cadre" class="pj-cadre">
+        <div class="pj-horizon" style="top: 760px"></div>
+        <div id="s15-vid" class="pj-panneau" style="left: 113px; top: 250px; width: 540px; height: 304px; opacity: 0"><video id="s15-vid-v" class="clip" src="assets/video/equipe-tournage.mp4" data-start="0" data-duration="6.24" data-track-index="5" muted playsinline></video><div class="pj-equerres" style="left: -18px; top: -18px; right: -18px; bottom: -18px"><i></i><i></i><i></i><i></i></div><div id="s15-vid-tag" class="pj-panneau-tag">Créateurs</div></div>
+        <div id="s15-t" class="pj-tableau" style="left: 700px; top: 220px; width: 1100px"><div id="s15-t-rS" class="pj-rang" style="height: 140px; margin-bottom: 10px"><b style="width: 130px; line-height: 140px; font-size: 86px; background: #DCFC1C; color: #000000">S</b><div id="s15-t-cS" class="pj-rang-corps"></div></div><div id="s15-t-rA" class="pj-rang" style="height: 140px; margin-bottom: 10px"><b style="width: 130px; line-height: 140px; font-size: 86px; background: #ECECE8; color: #000000">A</b><div id="s15-t-cA" class="pj-rang-corps"></div></div><div id="s15-t-rB" class="pj-rang" style="height: 140px; margin-bottom: 10px"><b style="width: 130px; line-height: 140px; font-size: 86px; background: #8a8a8a; color: #000000">B</b><div id="s15-t-cB" class="pj-rang-corps"></div></div><div id="s15-t-rC" class="pj-rang" style="height: 140px; margin-bottom: 10px"><b style="width: 130px; line-height: 140px; font-size: 86px; background: #333333; color: #ECECE8">C</b><div id="s15-t-cC" class="pj-rang-corps"></div></div></div>
+        <div id="s15-t-kling" class="pj-tuile" style="left: 844px; top: 230px; width: 150px; height: 120px; opacity: 0"><img src="assets/img/logo-kling.svg" alt="" style="width: 66px; height: 66px" /><span style="font-size: 26px">Kling</span></div>
+        <div id="s15-t-seedance" class="pj-tuile" style="left: 1004px; top: 230px; width: 150px; height: 120px; opacity: 0"><img src="assets/img/logo-bytedance.svg" alt="" style="width: 66px; height: 66px" /><span style="font-size: 26px">Seedance</span></div>
+        <div id="s15-t-runway" class="pj-tuile" style="left: 844px; top: 380px; width: 150px; height: 120px; opacity: 0"><img src="assets/img/logo-runway.svg" alt="" style="width: 66px; height: 66px" /><span style="font-size: 26px">Runway</span></div>
+        <div id="s15-p" style="position: absolute; left: 1400px; top: 440px; width: 0; height: 0; opacity: 0"><div class="pj-puce" style="font-size: 44px">Contrôle des plans</div></div>
+        <svg id="s15-toi" class="pj-perso pj-toi-perso" viewBox="-30 -20 160 290" style="left: 317px; top: 587px; width: 127px; height: 230px"><g id="s15-toi-vie"><g id="s15-toi-corps"><g id="s15-toi-jg"><g class="c"><rect x="24" y="136" width="24" height="112" rx="8" /></g><g class="p"><rect x="24" y="136" width="24" height="112" rx="8" /></g></g><g id="s15-toi-jd"><g class="c"><rect x="52" y="136" width="24" height="112" rx="8" /></g><g class="p"><rect x="52" y="136" width="24" height="112" rx="8" /></g></g><g id="s15-toi-tronc"><g class="c"><rect x="22" y="52" width="56" height="94" rx="12" /></g><g class="p"><rect x="22" y="52" width="56" height="94" rx="12" /></g></g><g id="s15-toi-bg"><g class="c"><rect x="2" y="54" width="18" height="86" rx="9" /></g><g class="p"><rect x="2" y="54" width="18" height="86" rx="9" /></g></g><g id="s15-toi-bd"><g class="c"><rect x="80" y="54" width="18" height="86" rx="9" /></g><g class="p"><rect x="80" y="54" width="18" height="86" rx="9" /></g></g><g id="s15-toi-tete"><g class="c"><circle cx="50" cy="24" r="22" /></g><g class="p"><circle cx="50" cy="24" r="22" /></g></g></g></g></svg>
+        </div>
+      </div>
+      <div id="s15-hud" class="pj-label" style="left: 113px; top: 107px; "><span class="pj-k">Rang A</span><span class="pj-d">Plus de contrôle</span></div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#s15-runway-cam", { scale: 1 }, { scale: 1.05, duration: 6.04, ease: "none" }, 0);
+    tl.fromTo("#s15-runway-cam", { filter: "blur(14px)" }, { filter: "blur(0px)", duration: 0.16, ease: "power2.out" }, 0);
+    tl.set(["#s15-t-rS", "#s15-t-rA", "#s15-t-rB", "#s15-t-rC"], { opacity: 1 }, 0);
+    tl.set("#s15-t-kling", { opacity: 1 }, 0);
+    tl.set("#s15-t-seedance", { opacity: 1 }, 0);
+    tl.fromTo("#s15-t-runway", { opacity: 0, y: -360, rotation: -12 }, { opacity: 1, y: 0, rotation: 0, duration: 0.32, ease: "bounce.out" }, 0.12);
+    tl.fromTo("#s15-p", { opacity: 0, scale: 0.3 }, { opacity: 1, scale: 1, duration: 0.2, ease: "back.out(2.4)" }, 5.22);
+    tl.fromTo("#s15-vid", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.18, ease: "power3.out" }, 0.05);
+    tl.fromTo("#s15-toi-vie", { y: 0 }, { y: -5, duration: 0.42, repeat: 13, yoyo: true, ease: "sine.inOut", immediateRender: false }, 0.0);
+    tl.fromTo("#s15-t-cA", { boxShadow: "inset 0 0 0px rgba(220, 252, 28, 0)" }, { boxShadow: "inset 0 0 0 6px rgba(220, 252, 28, 0.9)", duration: 0.3, immediateRender: false }, 0.56);
+    tl.to("#s15-runway-cadre", { x: -238, y: 125, scale: 1.25, duration: 0.26, ease: "power3.inOut" }, 0.0);
+    tl.to("#s15-runway-cadre", { keyframes: [{ filter: "blur(10px)", duration: 0.13 }, { filter: "blur(0px)", duration: 0.13 }] }, 0.0);
+    tl.to("#s15-toi-bd", { rotation: -120, svgOrigin: "89 62", duration: 0.16, ease: "back.out(2)" }, 0.44);
+    tl.to("#s15-toi-tete", { rotation: -6, svgOrigin: "50 50", duration: 0.16, ease: "back.out(2)" }, 0.44);
+    tl.to("#s15-runway-cadre", { x: -408, y: 120, scale: 1.2, duration: 0.26, ease: "power3.inOut" }, 5.19);
+    tl.to("#s15-runway-cadre", { keyframes: [{ filter: "blur(10px)", duration: 0.13 }, { filter: "blur(0px)", duration: 0.13 }] }, 5.19);
+    tl.to("#s15-toi-tete", { svgOrigin: "50 50", keyframes: [{ rotation: 14, duration: 0.11 }, { rotation: -2, duration: 0.11 }, { rotation: 14, duration: 0.11 }, { rotation: -2, duration: 0.11 }, { rotation: 0, duration: 0.11 }] }, 3.3);
+    tl.to("#s15-runway-cam", { scale: 1.3, filter: "blur(14px)", duration: 0.2, ease: "power3.in" }, 6.04);
+    window.__timelines["s15-runway"] = tl;
+  </script>
+</template>

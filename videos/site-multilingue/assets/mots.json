@@ -1,0 +1,620 @@
+[
+{
+"i": 0,
+"text": "TON",
+"start": 0.1,
+"end": 0.17
+},
+{
+"i": 1,
+"text": "SITE",
+"start": 0.17,
+"end": 0.39
+},
+{
+"i": 2,
+"text": "EST",
+"start": 0.45,
+"end": 0.57
+},
+{
+"i": 3,
+"text": "EN",
+"start": 0.57,
+"end": 0.67
+},
+{
+"i": 4,
+"text": "FRANÇAIS ?",
+"start": 0.67,
+"end": 1.34
+},
+{
+"i": 5,
+"text": "EN",
+"start": 1.44,
+"end": 1.51
+},
+{
+"i": 6,
+"text": "UN",
+"start": 1.51,
+"end": 1.68
+},
+{
+"i": 7,
+"text": "CLIC,",
+"start": 1.68,
+"end": 2.2
+},
+{
+"i": 8,
+"text": "TU",
+"start": 2.2,
+"end": 2.29
+},
+{
+"i": 9,
+"text": "PEUX",
+"start": 2.29,
+"end": 2.38
+},
+{
+"i": 10,
+"text": "LE",
+"start": 2.38,
+"end": 2.62
+},
+{
+"i": 11,
+"text": "RENDRE",
+"start": 2.62,
+"end": 2.86
+},
+{
+"i": 12,
+"text": "ACCESSIBLE",
+"start": 2.86,
+"end": 3.34
+},
+{
+"i": 13,
+"text": "AUX",
+"start": 3.34,
+"end": 3.46
+},
+{
+"i": 14,
+"text": "VISITEURS",
+"start": 3.46,
+"end": 3.84
+},
+{
+"i": 15,
+"text": "ANGLOPHONES",
+"start": 3.84,
+"end": 4.56
+},
+{
+"i": 16,
+"text": "ET",
+"start": 4.56,
+"end": 4.66
+},
+{
+"i": 17,
+"text": "HISPANOPHONES.",
+"start": 4.66,
+"end": 5.48
+},
+{
+"i": 18,
+"text": "REGARDE !",
+"start": 5.58,
+"end": 6.48
+},
+{
+"i": 19,
+"text": "ICI,",
+"start": 6.58,
+"end": 6.77
+},
+{
+"i": 20,
+"text": "J'AI",
+"start": 6.77,
+"end": 6.99
+},
+{
+"i": 21,
+"text": "SIMPLEMENT",
+"start": 6.99,
+"end": 7.51
+},
+{
+"i": 22,
+"text": "AJOUTÉ",
+"start": 7.7,
+"end": 7.92
+},
+{
+"i": 23,
+"text": "UN",
+"start": 8,
+"end": 8.04
+},
+{
+"i": 24,
+"text": "SÉLECTEUR",
+"start": 8.04,
+"end": 8.5
+},
+{
+"i": 25,
+"text": "DE",
+"start": 8.57,
+"end": 8.64
+},
+{
+"i": 26,
+"text": "LANGUES :",
+"start": 8.71,
+"end": 9.23
+},
+{
+"i": 27,
+"text": "FRANÇAIS,",
+"start": 9.23,
+"end": 9.96
+},
+{
+"i": 28,
+"text": "ANGLAIS",
+"start": 9.96,
+"end": 10.45
+},
+{
+"i": 29,
+"text": "ET",
+"start": 10.45,
+"end": 10.59
+},
+{
+"i": 30,
+"text": "ESPAGNOL.",
+"start": 10.59,
+"end": 11.24
+},
+{
+"i": 31,
+"text": "POUR",
+"start": 11.34,
+"end": 11.53
+},
+{
+"i": 32,
+"text": "LE",
+"start": 11.53,
+"end": 11.63
+},
+{
+"i": 33,
+"text": "FAIRE",
+"start": 11.69,
+"end": 12.04
+},
+{
+"i": 34,
+"text": "AVEC",
+"start": 12.04,
+"end": 12.27
+},
+{
+"i": 35,
+"text": "L'IA,",
+"start": 12.4,
+"end": 12.75
+},
+{
+"i": 36,
+"text": "DEMANDE-LUI :",
+"start": 12.76,
+"end": 13.62
+},
+{
+"i": 37,
+"text": "« AJOUTE",
+"start": 13.7,
+"end": 14.21
+},
+{
+"i": 38,
+"text": "UN",
+"start": 14.21,
+"end": 14.39
+},
+{
+"i": 39,
+"text": "SÉLECTEUR",
+"start": 14.39,
+"end": 15.08
+},
+{
+"i": 40,
+"text": "DE",
+"start": 15.17,
+"end": 15.34
+},
+{
+"i": 41,
+"text": "LANGUES",
+"start": 15.34,
+"end": 15.8
+},
+{
+"i": 42,
+"text": "FR,",
+"start": 15.88,
+"end": 16.21
+},
+{
+"i": 43,
+"text": "EN",
+"start": 16.21,
+"end": 16.34
+},
+{
+"i": 44,
+"text": "ET",
+"start": 16.39,
+"end": 16.63
+},
+{
+"i": 45,
+"text": "ES",
+"start": 16.64,
+"end": 17.18
+},
+{
+"i": 46,
+"text": "À",
+"start": 17.18,
+"end": 17.22
+},
+{
+"i": 47,
+"text": "MON",
+"start": 17.22,
+"end": 17.36
+},
+{
+"i": 48,
+"text": "SITE.",
+"start": 17.46,
+"end": 18.36
+},
+{
+"i": 49,
+"text": "TRADUIS",
+"start": 18.46,
+"end": 18.73
+},
+{
+"i": 50,
+"text": "AUTOMATIQUEMENT",
+"start": 18.73,
+"end": 19.4
+},
+{
+"i": 51,
+"text": "TOUS",
+"start": 19.53,
+"end": 19.69
+},
+{
+"i": 52,
+"text": "LES",
+"start": 19.88,
+"end": 19.91
+},
+{
+"i": 53,
+"text": "TEXTES,",
+"start": 19.91,
+"end": 20.32
+},
+{
+"i": 54,
+"text": "LES",
+"start": 20.32,
+"end": 20.48
+},
+{
+"i": 55,
+"text": "BOUTONS,",
+"start": 20.48,
+"end": 20.95
+},
+{
+"i": 56,
+"text": "LES",
+"start": 20.95,
+"end": 21.11
+},
+{
+"i": 57,
+"text": "MENUS",
+"start": 21.11,
+"end": 21.38
+},
+{
+"i": 58,
+"text": "ET",
+"start": 21.38,
+"end": 21.48
+},
+{
+"i": 59,
+"text": "LES",
+"start": 21.48,
+"end": 21.64
+},
+{
+"i": 60,
+"text": "FORMULAIRES",
+"start": 21.64,
+"end": 22.36
+},
+{
+"i": 61,
+"text": "SELON",
+"start": 22.36,
+"end": 22.57
+},
+{
+"i": 62,
+"text": "LA",
+"start": 22.74,
+"end": 22.75
+},
+{
+"i": 63,
+"text": "LANGUE",
+"start": 22.75,
+"end": 23.03
+},
+{
+"i": 64,
+"text": "CHOISIE,",
+"start": 23.09,
+"end": 23.48
+},
+{
+"i": 65,
+"text": "SANS",
+"start": 23.48,
+"end": 23.67
+},
+{
+"i": 66,
+"text": "MODIFIER",
+"start": 23.67,
+"end": 24.16
+},
+{
+"i": 67,
+"text": "LE",
+"start": 24.16,
+"end": 24.26
+},
+{
+"i": 68,
+"text": "DESIGN. »",
+"start": 24.26,
+"end": 24.8
+},
+{
+"i": 69,
+"text": "ET",
+"start": 25.9,
+"end": 26
+},
+{
+"i": 70,
+"text": "VOILÀ !",
+"start": 26,
+"end": 26.8
+},
+{
+"i": 71,
+"text": "UN",
+"start": 26.8,
+"end": 26.84
+},
+{
+"i": 72,
+"text": "SEUL",
+"start": 26.84,
+"end": 27.02
+},
+{
+"i": 73,
+"text": "SITE,",
+"start": 27.02,
+"end": 27.24
+},
+{
+"i": 74,
+"text": "TROIS",
+"start": 27.32,
+"end": 27.43
+},
+{
+"i": 75,
+"text": "LANGUES,",
+"start": 27.43,
+"end": 27.76
+},
+{
+"i": 76,
+"text": "SANS",
+"start": 27.76,
+"end": 27.9
+},
+{
+"i": 77,
+"text": "AVOIR",
+"start": 27.9,
+"end": 28.16
+},
+{
+"i": 78,
+"text": "BESOIN",
+"start": 28.16,
+"end": 28.48
+},
+{
+"i": 79,
+"text": "DE",
+"start": 28.48,
+"end": 28.58
+},
+{
+"i": 80,
+"text": "CRÉER",
+"start": 28.58,
+"end": 28.83
+},
+{
+"i": 81,
+"text": "TROIS",
+"start": 28.83,
+"end": 29.08
+},
+{
+"i": 82,
+"text": "SITES",
+"start": 29.08,
+"end": 29.33
+},
+{
+"i": 83,
+"text": "DIFFÉRENTS.",
+"start": 29.33,
+"end": 29.96
+},
+{
+"i": 84,
+"text": "ATTENTION",
+"start": 30.06,
+"end": 30.51
+},
+{
+"i": 85,
+"text": "TOUT",
+"start": 30.51,
+"end": 30.75
+},
+{
+"i": 86,
+"text": "DE",
+"start": 30.75,
+"end": 30.86
+},
+{
+"i": 87,
+"text": "MÊME :",
+"start": 30.86,
+"end": 31.23
+},
+{
+"i": 88,
+"text": "VÉRIFIE",
+"start": 31.41,
+"end": 31.65
+},
+{
+"i": 89,
+"text": "LES",
+"start": 31.65,
+"end": 31.83
+},
+{
+"i": 90,
+"text": "TRADUCTIONS",
+"start": 31.83,
+"end": 32.49
+},
+{
+"i": 91,
+"text": "AVANT",
+"start": 32.49,
+"end": 32.79
+},
+{
+"i": 92,
+"text": "DE",
+"start": 32.79,
+"end": 32.91
+},
+{
+"i": 93,
+"text": "PUBLIER.",
+"start": 32.91,
+"end": 33.6
+},
+{
+"i": 94,
+"text": "UN",
+"start": 33.7,
+"end": 33.73
+},
+{
+"i": 95,
+"text": "SITE,",
+"start": 33.73,
+"end": 34.11
+},
+{
+"i": 96,
+"text": "PLUSIEURS",
+"start": 34.11,
+"end": 34.63
+},
+{
+"i": 97,
+"text": "LANGUES,",
+"start": 34.98,
+"end": 35.31
+},
+{
+"i": 98,
+"text": "BEAUCOUP",
+"start": 35.31,
+"end": 35.84
+},
+{
+"i": 99,
+"text": "PLUS",
+"start": 35.84,
+"end": 36.1
+},
+{
+"i": 100,
+"text": "DE",
+"start": 36.1,
+"end": 36.22
+},
+{
+"i": 101,
+"text": "VISITEURS",
+"start": 36.24,
+"end": 36.83
+},
+{
+"i": 102,
+"text": "POTENTIELS.",
+"start": 36.83,
+"end": 37.6
+}
+]

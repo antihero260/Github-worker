@@ -1,0 +1,15 @@
+Tu as créé un site avec l'IA, mais sur Google, il est introuvable. En gros, tu as ouvert une boutique au milieu du désert.
+
+Pour éviter ça, voici trois skills GitHub pour optimiser ton référencement.
+
+Le premier, SEO Audit, permet à ton IA d'analyser ton site et de détecter les problèmes qui peuvent nuire à son référencement.
+
+Le deuxième, Schema, lui apprend à ajouter des données structurées pour aider Google à mieux comprendre tes pages.
+
+Et le troisième, Site Architecture, l'aide à organiser tes pages, tes URL et tes liens internes.
+
+Mais n'oublie pas : optimise les titres et descriptions de tes pages, crée du contenu original et génère un sitemap pour faciliter leur découverte par Google.
+
+Enfin, teste ton site avec Seobility pour détecter les erreurs.
+
+Abonne-toi à Gausscode pour découvrir tout ce que tu peux créer avec l'IA.

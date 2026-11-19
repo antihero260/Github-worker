@@ -1,0 +1,80 @@
+<!-- Abonne-toi à Lefinancier : tu dépenses dans quelle catégorie sans t'en rendre compte ? (48.2 → 53.4 s). Écrit par tools/construire-scenes.py. -->
+<template>
+  <style>
+    #root { position: absolute; inset: 0; }
+  </style>
+  <div id="root" data-composition-id="s11-abonne" data-width="1080" data-height="1920">
+    <div class="sc">
+      <div id="s11-abonne-cam" class="sc-cam">
+        <div id="s11-abonne-cadre" class="sc-cadre">
+        <div class="decor"><div class="ciel" style="background: radial-gradient(ellipse 80% 60% at 50% 40%, #16346a 0%, #0b1220 80%)"></div></div>
+        <div id="z-carte" class="profil" style="left: 140px; top: 330px; opacity: 0"><img src="assets/img/profil.png" alt="" /><div><b>Lefinancier</b><span>L’argent expliqué simplement</span></div><div id="z-btn" class="btn">S’abonner</div><div id="z-ok" class="btn ok" style="opacity: 0">Abonné ✓</div></div>
+        <svg id="z-souris" class="souris" viewBox="0 0 40 52" style="left: 980px; top: 900px"><path d="M4 2 L4 40 L14 31 L21 48 L28 45 L21 29 L34 29 Z" fill="#fff" stroke="#0B1220" stroke-width="3" stroke-linejoin="round" /></svg>
+        <i id="z-cf-0" style="position: absolute; left: 720px; top: 620px; width: 14px; height: 14px; background: #38BDF8; opacity: 0"></i>
+        <i id="z-cf-1" style="position: absolute; left: 720px; top: 620px; width: 22px; height: 12px; background: #F2B705; opacity: 0"></i>
+        <i id="z-cf-2" style="position: absolute; left: 720px; top: 620px; width: 14px; height: 14px; background: #F1F5F9; opacity: 0"></i>
+        <i id="z-cf-3" style="position: absolute; left: 720px; top: 620px; width: 22px; height: 12px; background: #7DD3FC; opacity: 0"></i>
+        <i id="z-cf-4" style="position: absolute; left: 720px; top: 620px; width: 14px; height: 14px; background: #38BDF8; opacity: 0"></i>
+        <i id="z-cf-5" style="position: absolute; left: 720px; top: 620px; width: 22px; height: 12px; background: #F2B705; opacity: 0"></i>
+        <i id="z-cf-6" style="position: absolute; left: 720px; top: 620px; width: 14px; height: 14px; background: #F1F5F9; opacity: 0"></i>
+        <i id="z-cf-7" style="position: absolute; left: 720px; top: 620px; width: 22px; height: 12px; background: #7DD3FC; opacity: 0"></i>
+        <i id="z-cf-8" style="position: absolute; left: 720px; top: 620px; width: 14px; height: 14px; background: #38BDF8; opacity: 0"></i>
+        <i id="z-cf-9" style="position: absolute; left: 720px; top: 620px; width: 22px; height: 12px; background: #F2B705; opacity: 0"></i>
+        <i id="z-cf-10" style="position: absolute; left: 720px; top: 620px; width: 14px; height: 14px; background: #F1F5F9; opacity: 0"></i>
+        <i id="z-cf-11" style="position: absolute; left: 720px; top: 620px; width: 22px; height: 12px; background: #7DD3FC; opacity: 0"></i>
+        <i id="z-cf-12" style="position: absolute; left: 720px; top: 620px; width: 14px; height: 14px; background: #38BDF8; opacity: 0"></i>
+        <i id="z-cf-13" style="position: absolute; left: 720px; top: 620px; width: 22px; height: 12px; background: #F2B705; opacity: 0"></i>
+        <i id="z-cf-14" style="position: absolute; left: 720px; top: 620px; width: 14px; height: 14px; background: #F1F5F9; opacity: 0"></i>
+        <i id="z-cf-15" style="position: absolute; left: 720px; top: 620px; width: 22px; height: 12px; background: #7DD3FC; opacity: 0"></i>
+        <i id="z-cf-16" style="position: absolute; left: 720px; top: 620px; width: 14px; height: 14px; background: #38BDF8; opacity: 0"></i>
+        <i id="z-cf-17" style="position: absolute; left: 720px; top: 620px; width: 22px; height: 12px; background: #F2B705; opacity: 0"></i>
+        <div id="z-q" class="gros" style="left: 0px; top: 700px; font-size: 66px; color: #F1F5F9; width: 1080px; text-align: center; transform: rotate(0deg); opacity: 0">TU DÉPENSES DANS QUELLE<br>CATÉGORIE SANS T’EN<br>RENDRE COMPTE ?</div>
+        <div id="z-e0" class="env petit" data-layout-allow-overlap style="left: 70px; top: 960px; width: 230px; height: 152px; --c: #38BDF8; font-size: 30px; opacity: 0"><b style="color: #0B1220">LOYER</b></div>
+        <div id="z-e1" class="env petit" data-layout-allow-overlap style="left: 570px; top: 960px; width: 230px; height: 152px; --c: #7DD3FC; font-size: 30px; opacity: 0"><b style="color: #0B1220">VIVRE</b></div>
+        <div id="z-e2" class="env petit" data-layout-allow-overlap style="left: 70px; top: 1135px; width: 230px; height: 152px; --c: #F2B705; font-size: 30px; opacity: 0"><b style="color: #0B1220">ÉPARGNE</b></div>
+        <div id="z-e3" class="env petit" data-layout-allow-overlap style="left: 570px; top: 1135px; width: 230px; height: 152px; --c: #0284C7; font-size: 30px; opacity: 0"><b style="color: #F1F5F9">LOISIRS</b></div>
+        <div id="z-com" class="etiq" style="left: 300px; top: 1310px; font-size: 40px; background: #F1F5F9; color: #0B1220; transform: rotate(-2deg); opacity: 0">DIS-LE EN COMMENTAIRE</div>
+        </div>
+      </div>
+      <div id="s11-abonne-noir" style="position: absolute; inset: 0; background: #000; opacity: 0"></div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#s11-abonne-cam", { filter: "blur(14px)", scale: 1.12 }, { filter: "blur(0px)", scale: 1, duration: 0.18, ease: "power2.out" }, 0);
+    tl.to("#s11-abonne-cam", { scale: 1.04, duration: 4.8, ease: "none" }, 0.18);
+    tl.fromTo("#z-carte", { opacity: 0, y: 120, scale: 0.7 }, { opacity: 1, y: 0, scale: 1, duration: 0.3, ease: "back.out(1.8)", immediateRender: false }, 0.05);
+    tl.to("#z-souris", { x: -300, y: -330, duration: 0.4, ease: "power2.inOut" }, 0.46);
+    tl.to("#z-souris", { scale: 0.8, duration: 0.07, yoyo: true, repeat: 1 }, 0.84);
+    tl.set("#z-btn", { opacity: 0 }, 0.91);
+    tl.set("#z-ok", { opacity: 1 }, 0.91);
+    tl.fromTo("#z-cf-0", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: 153, y: 160, rotation: -270, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 0.94);
+    tl.fromTo("#z-cf-1", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: -168, y: 283, rotation: -173, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 0.94);
+    tl.fromTo("#z-cf-2", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: 26, y: -81, rotation: -76, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 0.94);
+    tl.fromTo("#z-cf-3", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: 104, y: 269, rotation: 21, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 0.94);
+    tl.fromTo("#z-cf-4", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: -243, y: 126, rotation: 118, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 0.94);
+    tl.fromTo("#z-cf-5", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: 271, y: 22, rotation: 215, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 0.94);
+    tl.fromTo("#z-cf-6", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: -49, y: 307, rotation: -228, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 0.94);
+    tl.fromTo("#z-cf-7", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: -122, y: -28, rotation: -131, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 0.94);
+    tl.fromTo("#z-cf-8", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: 319, y: 253, rotation: -34, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 0.94);
+    tl.fromTo("#z-cf-9", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: -193, y: 224, rotation: 63, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 0.94);
+    tl.fromTo("#z-cf-10", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: 120, y: -46, rotation: 160, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 0.94);
+    tl.fromTo("#z-cf-11", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: 46, y: 277, rotation: 257, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 0.94);
+    tl.fromTo("#z-cf-12", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: -197, y: 69, rotation: -186, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 0.94);
+    tl.fromTo("#z-cf-13", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: 296, y: 108, rotation: -89, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 0.94);
+    tl.fromTo("#z-cf-14", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: -99, y: 272, rotation: 8, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 0.94);
+    tl.fromTo("#z-cf-15", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: -32, y: -36, rotation: 105, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 0.94);
+    tl.fromTo("#z-cf-16", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: 246, y: 326, rotation: 202, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 0.94);
+    tl.fromTo("#z-cf-17", { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: -190, y: 166, rotation: -241, opacity: 0, duration: 1.4, ease: "power2.out", immediateRender: false }, 0.94);
+    tl.to("#z-souris", { opacity: 0, duration: 0.15 }, 1.8);
+    tl.fromTo("#z-q", { opacity: 0, scale: 2.0 }, { opacity: 1, scale: 1, duration: 0.16, ease: "power4.in", immediateRender: false }, 1.8);
+    tl.fromTo("#z-e0", { opacity: 0, scale: 1.6 }, { opacity: 1, scale: 1, duration: 0.16, ease: "power4.in", immediateRender: false }, 1.96);
+    tl.fromTo("#z-e1", { opacity: 0, scale: 1.6 }, { opacity: 1, scale: 1, duration: 0.16, ease: "power4.in", immediateRender: false }, 2.21);
+    tl.fromTo("#z-e2", { opacity: 0, scale: 1.6 }, { opacity: 1, scale: 1, duration: 0.16, ease: "power4.in", immediateRender: false }, 2.46);
+    tl.fromTo("#z-e3", { opacity: 0, scale: 1.6 }, { opacity: 1, scale: 1, duration: 0.16, ease: "power4.in", immediateRender: false }, 2.71);
+    tl.to("#z-e3", { rotation: 5, duration: 0.08, yoyo: true, repeat: 5 }, 3.32);
+    tl.fromTo("#z-com", { opacity: 0, x: -80 }, { opacity: 1, x: 0, duration: 0.2, ease: "power4.out", immediateRender: false }, 3.32);
+    tl.fromTo("#s11-abonne-noir", { opacity: 0 }, { opacity: 1, duration: 0.6, ease: "power2.in" }, 4.6);
+    window.__timelines["s11-abonne"] = tl;
+  </script>
+</template>

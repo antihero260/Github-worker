@@ -1,0 +1,71 @@
+{
+ "claude-code": {
+  "Essayer Claude": {
+   "x": 1234.140625,
+   "y": 24,
+   "width": 141.859375,
+   "height": 36
+  },
+  "Web": {
+   "x": 666.59375,
+   "y": 189,
+   "width": 79.125,
+   "height": 22.5
+  },
+  "Lire la documentation": {
+   "x": 64,
+   "y": 570.359375,
+   "width": 421.328125,
+   "height": 40
+  }
+ },
+ "elevenlabs-tts": {
+  "Generate speech": null,
+  "Henry": null,
+  "Select a voice": null
+ },
+ "mixkit-musique": {
+  "Hip Hop 02": {
+   "x": 42.453125,
+   "y": 567.09375,
+   "width": 405.03125,
+   "height": 20
+  },
+  "Music": {
+   "x": 199,
+   "y": 61.953125,
+   "width": 75.90625,
+   "height": 36.09375
+  }
+ },
+ "mixkit-video": {
+  "Download free stock video": {
+   "x": 22.453125,
+   "y": 195.5,
+   "width": 1395.09375,
+   "height": 40
+  }
+ },
+ "mixkit-sons": {
+  "Sound Effects": {
+   "x": 199,
+   "y": 61.953125,
+   "width": 125.078125,
+   "height": 36.09375
+  }
+ },
+ "tiktok-upload": {
+  "Continuer avec Google": {
+   "x": 587.5,
+   "y": 441.125,
+   "width": 269,
+   "height": 18.75
+  },
+  "Utiliser un code QR": {
+   "x": 587.5,
+   "y": 267.125,
+   "width": 269,
+   "height": 18.75
+  }
+ }
+}

@@ -1,0 +1,494 @@
+[
+  {
+    "text": "Ce",
+    "start": 0.06,
+    "end": 0.11,
+    "id": "w0"
+  },
+  {
+    "text": "site,",
+    "start": 0.11,
+    "end": 0.41,
+    "id": "w1"
+  },
+  {
+    "text": "je",
+    "start": 0.49,
+    "end": 0.54,
+    "id": "w2"
+  },
+  {
+    "text": "l'ai",
+    "start": 0.61,
+    "end": 0.77,
+    "id": "w3"
+  },
+  {
+    "text": "fait",
+    "start": 0.77,
+    "end": 0.92,
+    "id": "w4"
+  },
+  {
+    "text": "avec",
+    "start": 1.02,
+    "end": 1.23,
+    "id": "w5"
+  },
+  {
+    "text": "un",
+    "start": 1.23,
+    "end": 1.32,
+    "id": "w6"
+  },
+  {
+    "text": "seul",
+    "start": 1.42,
+    "end": 1.57,
+    "id": "w7"
+  },
+  {
+    "text": "prompt,",
+    "start": 1.57,
+    "end": 2.15,
+    "id": "w8"
+  },
+  {
+    "text": "zéro",
+    "start": 2.3,
+    "end": 2.5,
+    "id": "w9"
+  },
+  {
+    "text": "ligne",
+    "start": 2.5,
+    "end": 2.84,
+    "id": "w10"
+  },
+  {
+    "text": "de",
+    "start": 2.84,
+    "end": 2.97,
+    "id": "w11"
+  },
+  {
+    "text": "code.",
+    "start": 2.97,
+    "end": 3.43,
+    "id": "w12"
+  },
+  {
+    "text": "Regarde,",
+    "start": 3.72,
+    "end": 4.2,
+    "id": "w13"
+  },
+  {
+    "text": "je",
+    "start": 4.2,
+    "end": 4.35,
+    "id": "w14"
+  },
+  {
+    "text": "colle",
+    "start": 4.35,
+    "end": 4.73,
+    "id": "w15"
+  },
+  {
+    "text": "le",
+    "start": 4.73,
+    "end": 4.88,
+    "id": "w16"
+  },
+  {
+    "text": "prompt",
+    "start": 4.88,
+    "end": 5.33,
+    "id": "w17"
+  },
+  {
+    "text": "dans",
+    "start": 5.33,
+    "end": 5.62,
+    "id": "w18"
+  },
+  {
+    "text": "l'IA",
+    "start": 5.63,
+    "end": 5.83,
+    "id": "w19"
+  },
+  {
+    "text": "et",
+    "start": 6.06,
+    "end": 6.36,
+    "id": "w20"
+  },
+  {
+    "text": "en",
+    "start": 6.36,
+    "end": 6.44,
+    "id": "w21"
+  },
+  {
+    "text": "quelques",
+    "start": 6.44,
+    "end": 6.79,
+    "id": "w22"
+  },
+  {
+    "text": "secondes,",
+    "start": 6.79,
+    "end": 7.37,
+    "id": "w23"
+  },
+  {
+    "text": "j'ai",
+    "start": 7.39,
+    "end": 7.55,
+    "id": "w24"
+  },
+  {
+    "text": "un",
+    "start": 7.55,
+    "end": 7.65,
+    "id": "w25"
+  },
+  {
+    "text": "site",
+    "start": 7.65,
+    "end": 7.77,
+    "id": "w26"
+  },
+  {
+    "text": "complet.",
+    "start": 8.17,
+    "end": 8.36,
+    "id": "w27"
+  },
+  {
+    "text": "Une",
+    "start": 8.36,
+    "end": 8.62,
+    "id": "w28"
+  },
+  {
+    "text": "page",
+    "start": 8.62,
+    "end": 8.76,
+    "id": "w29"
+  },
+  {
+    "text": "d'accueil",
+    "start": 8.76,
+    "end": 9.25,
+    "id": "w30"
+  },
+  {
+    "text": "qui",
+    "start": 9.25,
+    "end": 9.42,
+    "id": "w31"
+  },
+  {
+    "text": "claque,",
+    "start": 9.42,
+    "end": 9.87,
+    "id": "w32"
+  },
+  {
+    "text": "des",
+    "start": 9.98,
+    "end": 10.11,
+    "id": "w33"
+  },
+  {
+    "text": "animations,",
+    "start": 10.11,
+    "end": 10.88,
+    "id": "w34"
+  },
+  {
+    "text": "des",
+    "start": 10.94,
+    "end": 11.08,
+    "id": "w35"
+  },
+  {
+    "text": "sections,",
+    "start": 11.08,
+    "end": 11.75,
+    "id": "w36"
+  },
+  {
+    "text": "un",
+    "start": 11.75,
+    "end": 12.02,
+    "id": "w37"
+  },
+  {
+    "text": "formulaire",
+    "start": 12.02,
+    "end": 12.49,
+    "id": "w38"
+  },
+  {
+    "text": "de",
+    "start": 12.49,
+    "end": 12.5,
+    "id": "w39"
+  },
+  {
+    "text": "contact",
+    "start": 12.62,
+    "end": 13.04,
+    "id": "w40"
+  },
+  {
+    "text": "et",
+    "start": 13.04,
+    "end": 13.16,
+    "id": "w41"
+  },
+  {
+    "text": "il",
+    "start": 13.16,
+    "end": 13.28,
+    "id": "w42"
+  },
+  {
+    "text": "s'adapte",
+    "start": 13.34,
+    "end": 13.71,
+    "id": "w43"
+  },
+  {
+    "text": "même",
+    "start": 13.76,
+    "end": 14.01,
+    "id": "w44"
+  },
+  {
+    "text": "au",
+    "start": 14.01,
+    "end": 14.11,
+    "id": "w45"
+  },
+  {
+    "text": "téléphone.",
+    "start": 14.34,
+    "end": 14.96,
+    "id": "w46"
+  },
+  {
+    "text": "Le",
+    "start": 14.96,
+    "end": 15.22,
+    "id": "w47"
+  },
+  {
+    "text": "secret,",
+    "start": 15.22,
+    "end": 15.53,
+    "id": "w48"
+  },
+  {
+    "text": "ce",
+    "start": 15.53,
+    "end": 15.58,
+    "id": "w49"
+  },
+  {
+    "text": "n'est",
+    "start": 15.65,
+    "end": 15.91,
+    "id": "w50"
+  },
+  {
+    "text": "pas",
+    "start": 15.91,
+    "end": 16.08,
+    "id": "w51"
+  },
+  {
+    "text": "l'outil,",
+    "start": 16.08,
+    "end": 16.68,
+    "id": "w52"
+  },
+  {
+    "text": "c'est",
+    "start": 16.68,
+    "end": 17.01,
+    "id": "w53"
+  },
+  {
+    "text": "le",
+    "start": 17.03,
+    "end": 17.17,
+    "id": "w54"
+  },
+  {
+    "text": "prompt.",
+    "start": 17.17,
+    "end": 17.84,
+    "id": "w55"
+  },
+  {
+    "text": "Il",
+    "start": 17.84,
+    "end": 18.1,
+    "id": "w56"
+  },
+  {
+    "text": "dit",
+    "start": 18.1,
+    "end": 18.22,
+    "id": "w57"
+  },
+  {
+    "text": "à",
+    "start": 18.22,
+    "end": 18.29,
+    "id": "w58"
+  },
+  {
+    "text": "l'IA",
+    "start": 18.29,
+    "end": 18.58,
+    "id": "w59"
+  },
+  {
+    "text": "exactement",
+    "start": 18.58,
+    "end": 19.36,
+    "id": "w60"
+  },
+  {
+    "text": "quoi",
+    "start": 19.46,
+    "end": 19.65,
+    "id": "w61"
+  },
+  {
+    "text": "faire,",
+    "start": 19.67,
+    "end": 20.12,
+    "id": "w62"
+  },
+  {
+    "text": "le",
+    "start": 20.12,
+    "end": 20.38,
+    "id": "w63"
+  },
+  {
+    "text": "style,",
+    "start": 20.38,
+    "end": 20.67,
+    "id": "w64"
+  },
+  {
+    "text": "les",
+    "start": 20.67,
+    "end": 20.86,
+    "id": "w65"
+  },
+  {
+    "text": "couleurs,",
+    "start": 20.86,
+    "end": 21.47,
+    "id": "w66"
+  },
+  {
+    "text": "les",
+    "start": 21.48,
+    "end": 21.63,
+    "id": "w67"
+  },
+  {
+    "text": "sections",
+    "start": 21.74,
+    "end": 22.17,
+    "id": "w68"
+  },
+  {
+    "text": "et",
+    "start": 22.17,
+    "end": 22.29,
+    "id": "w69"
+  },
+  {
+    "text": "les",
+    "start": 22.29,
+    "end": 22.46,
+    "id": "w70"
+  },
+  {
+    "text": "animations.",
+    "start": 22.7,
+    "end": 23.36,
+    "id": "w71"
+  },
+  {
+    "text": "Tu",
+    "start": 23.36,
+    "end": 23.62,
+    "id": "w72"
+  },
+  {
+    "text": "veux",
+    "start": 23.62,
+    "end": 23.69,
+    "id": "w73"
+  },
+  {
+    "text": "le",
+    "start": 23.69,
+    "end": 23.8,
+    "id": "w74"
+  },
+  {
+    "text": "même?",
+    "start": 23.8,
+    "end": 24.1,
+    "id": "w75"
+  },
+  {
+    "text": "Commente",
+    "start": 24.22,
+    "end": 24.68,
+    "id": "w76"
+  },
+  {
+    "text": "prompt",
+    "start": 24.68,
+    "end": 25.04,
+    "id": "w77"
+  },
+  {
+    "text": "et",
+    "start": 25.04,
+    "end": 25.14,
+    "id": "w78"
+  },
+  {
+    "text": "je",
+    "start": 25.16,
+    "end": 25.27,
+    "id": "w79"
+  },
+  {
+    "text": "te",
+    "start": 25.27,
+    "end": 25.38,
+    "id": "w80"
+  },
+  {
+    "text": "l'envoie.",
+    "start": 25.39,
+    "end": 26.08,
+    "id": "w81"
+  }
+]

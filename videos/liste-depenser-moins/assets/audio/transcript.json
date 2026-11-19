@@ -1,0 +1,1046 @@
+[
+  {
+    "id": "w0",
+    "text": "10",
+    "start": 0,
+    "end": 0.32
+  },
+  {
+    "id": "w1",
+    "text": "techniques",
+    "start": 0.4,
+    "end": 0.8
+  },
+  {
+    "id": "w2",
+    "text": "pour",
+    "start": 0.8,
+    "end": 1.04
+  },
+  {
+    "id": "w3",
+    "text": "dépenser",
+    "start": 1.04,
+    "end": 1.52
+  },
+  {
+    "id": "w4",
+    "text": "moins",
+    "start": 1.52,
+    "end": 1.84
+  },
+  {
+    "id": "w5",
+    "text": "sans",
+    "start": 1.84,
+    "end": 2.16
+  },
+  {
+    "id": "w6",
+    "text": "te",
+    "start": 2.16,
+    "end": 2.32
+  },
+  {
+    "id": "w7",
+    "text": "priver",
+    "start": 2.32,
+    "end": 2.64
+  },
+  {
+    "id": "w8",
+    "text": "Lucas",
+    "start": 2.88,
+    "end": 3.28
+  },
+  {
+    "id": "w9",
+    "text": "les",
+    "start": 3.36,
+    "end": 3.6
+  },
+  {
+    "id": "w10",
+    "text": "test",
+    "start": 3.6,
+    "end": 3.84
+  },
+  {
+    "id": "w11",
+    "text": "cette",
+    "start": 4,
+    "end": 4.08
+  },
+  {
+    "id": "w12",
+    "text": "semaine",
+    "start": 4.24,
+    "end": 4.72
+  },
+  {
+    "id": "w13",
+    "text": "Numéro",
+    "start": 4.96,
+    "end": 5.44
+  },
+  {
+    "id": "w14",
+    "text": "10",
+    "start": 5.44,
+    "end": 5.76
+  },
+  {
+    "id": "w15",
+    "text": "Vérifie",
+    "start": 6,
+    "end": 6.64
+  },
+  {
+    "id": "w16",
+    "text": "ton",
+    "start": 6.64,
+    "end": 6.8
+  },
+  {
+    "id": "w17",
+    "text": "trajet",
+    "start": 6.8,
+    "end": 7.2
+  },
+  {
+    "id": "w18",
+    "text": "Avant",
+    "start": 7.44,
+    "end": 7.76
+  },
+  {
+    "id": "w19",
+    "text": "le",
+    "start": 7.76,
+    "end": 7.92
+  },
+  {
+    "id": "w20",
+    "text": "taxi",
+    "start": 7.92,
+    "end": 8.32
+  },
+  {
+    "id": "w21",
+    "text": "regarde",
+    "start": 8.48,
+    "end": 8.88
+  },
+  {
+    "id": "w22",
+    "text": "si",
+    "start": 8.88,
+    "end": 9.12
+  },
+  {
+    "id": "w23",
+    "text": "marché",
+    "start": 9.12,
+    "end": 9.44
+  },
+  {
+    "id": "w24",
+    "text": "suffit",
+    "start": 9.6,
+    "end": 10
+  },
+  {
+    "id": "w25",
+    "text": "numéro",
+    "start": 10.24,
+    "end": 10.64
+  },
+  {
+    "id": "w26",
+    "text": "9",
+    "start": 10.64,
+    "end": 10.96
+  },
+  {
+    "id": "w27",
+    "text": "Regroupe",
+    "start": 11.2,
+    "end": 11.84
+  },
+  {
+    "id": "w28",
+    "text": "tes",
+    "start": 11.84,
+    "end": 12
+  },
+  {
+    "id": "w29",
+    "text": "courses",
+    "start": 12,
+    "end": 12.4
+  },
+  {
+    "id": "w30",
+    "text": "achète",
+    "start": 12.56,
+    "end": 12.96
+  },
+  {
+    "id": "w31",
+    "text": "tout",
+    "start": 13.04,
+    "end": 13.28
+  },
+  {
+    "id": "w32",
+    "text": "au",
+    "start": 13.28,
+    "end": 13.44
+  },
+  {
+    "id": "w33",
+    "text": "marché",
+    "start": 13.44,
+    "end": 13.76
+  },
+  {
+    "id": "w34",
+    "text": "en",
+    "start": 13.76,
+    "end": 14
+  },
+  {
+    "id": "w35",
+    "text": "un",
+    "start": 14,
+    "end": 14.24
+  },
+  {
+    "id": "w36",
+    "text": "déplacement",
+    "start": 14.24,
+    "end": 14.88
+  },
+  {
+    "id": "w37",
+    "text": "Numéro",
+    "start": 15.04,
+    "end": 15.44
+  },
+  {
+    "id": "w38",
+    "text": "8",
+    "start": 15.44,
+    "end": 15.76
+  },
+  {
+    "id": "w39",
+    "text": "Emporte",
+    "start": 16.08,
+    "end": 16.64
+  },
+  {
+    "id": "w40",
+    "text": "ta",
+    "start": 16.64,
+    "end": 16.8
+  },
+  {
+    "id": "w41",
+    "text": "bouteille",
+    "start": 16.8,
+    "end": 17.28
+  },
+  {
+    "id": "w42",
+    "text": "Évite",
+    "start": 17.44,
+    "end": 17.76
+  },
+  {
+    "id": "w43",
+    "text": "d'acheter",
+    "start": 17.76,
+    "end": 18.24
+  },
+  {
+    "id": "w44",
+    "text": "à",
+    "start": 18.24,
+    "end": 18.32
+  },
+  {
+    "id": "w45",
+    "text": "boire",
+    "start": 18.32,
+    "end": 18.64
+  },
+  {
+    "id": "w46",
+    "text": "à",
+    "start": 18.64,
+    "end": 18.72
+  },
+  {
+    "id": "w47",
+    "text": "chaque",
+    "start": 18.72,
+    "end": 18.96
+  },
+  {
+    "id": "w48",
+    "text": "sortie",
+    "start": 18.96,
+    "end": 19.36
+  },
+  {
+    "id": "w49",
+    "text": "Numéro",
+    "start": 19.6,
+    "end": 20
+  },
+  {
+    "id": "w50",
+    "text": "7",
+    "start": 20,
+    "end": 20.32
+  },
+  {
+    "id": "w51",
+    "text": "Prépare",
+    "start": 20.56,
+    "end": 20.96
+  },
+  {
+    "id": "w52",
+    "text": "tes",
+    "start": 21.12,
+    "end": 21.28
+  },
+  {
+    "id": "w53",
+    "text": "repas",
+    "start": 21.28,
+    "end": 21.6
+  },
+  {
+    "id": "w54",
+    "text": "Cuisiner",
+    "start": 21.84,
+    "end": 22.32
+  },
+  {
+    "id": "w55",
+    "text": "chez",
+    "start": 22.4,
+    "end": 22.56
+  },
+  {
+    "id": "w56",
+    "text": "toi",
+    "start": 22.56,
+    "end": 22.72
+  },
+  {
+    "id": "w57",
+    "text": "évite",
+    "start": 22.88,
+    "end": 23.12
+  },
+  {
+    "id": "w58",
+    "text": "les",
+    "start": 23.2,
+    "end": 23.28
+  },
+  {
+    "id": "w59",
+    "text": "livraisons",
+    "start": 23.28,
+    "end": 23.92
+  },
+  {
+    "id": "w60",
+    "text": "improvisées",
+    "start": 23.92,
+    "end": 24.48
+  },
+  {
+    "id": "w61",
+    "text": "Numéro",
+    "start": 24.64,
+    "end": 25.12
+  },
+  {
+    "id": "w62",
+    "text": "6",
+    "start": 25.12,
+    "end": 25.36
+  },
+  {
+    "id": "w63",
+    "text": "Coupe",
+    "start": 25.68,
+    "end": 26.08
+  },
+  {
+    "id": "w64",
+    "text": "les",
+    "start": 26.08,
+    "end": 26.24
+  },
+  {
+    "id": "w65",
+    "text": "achats",
+    "start": 26.24,
+    "end": 26.64
+  },
+  {
+    "id": "w66",
+    "text": "automatiques",
+    "start": 26.64,
+    "end": 27.2
+  },
+  {
+    "id": "w67",
+    "text": "Repère",
+    "start": 27.36,
+    "end": 27.92
+  },
+  {
+    "id": "w68",
+    "text": "les",
+    "start": 27.92,
+    "end": 28
+  },
+  {
+    "id": "w69",
+    "text": "petits",
+    "start": 28,
+    "end": 28.32
+  },
+  {
+    "id": "w70",
+    "text": "prélèvements",
+    "start": 28.32,
+    "end": 28.88
+  },
+  {
+    "id": "w71",
+    "text": "oubliés",
+    "start": 28.88,
+    "end": 29.28
+  },
+  {
+    "id": "w72",
+    "text": "Et",
+    "start": 29.44,
+    "end": 29.6
+  },
+  {
+    "id": "w73",
+    "text": "attends",
+    "start": 29.6,
+    "end": 30
+  },
+  {
+    "id": "w74",
+    "text": "la",
+    "start": 30,
+    "end": 30.16
+  },
+  {
+    "id": "w75",
+    "text": "numéro",
+    "start": 30.16,
+    "end": 30.4
+  },
+  {
+    "id": "w76",
+    "text": "1",
+    "start": 30.56,
+    "end": 30.8
+  },
+  {
+    "id": "w77",
+    "text": "Elle",
+    "start": 31.04,
+    "end": 31.28
+  },
+  {
+    "id": "w78",
+    "text": "change",
+    "start": 31.28,
+    "end": 31.68
+  },
+  {
+    "id": "w79",
+    "text": "ta",
+    "start": 31.68,
+    "end": 31.84
+  },
+  {
+    "id": "w80",
+    "text": "façon",
+    "start": 31.84,
+    "end": 32.16
+  },
+  {
+    "id": "w81",
+    "text": "de",
+    "start": 32.16,
+    "end": 32.32
+  },
+  {
+    "id": "w82",
+    "text": "dépenser",
+    "start": 32.32,
+    "end": 32.88
+  },
+  {
+    "id": "w83",
+    "text": "Numéro",
+    "start": 33.12,
+    "end": 33.6
+  },
+  {
+    "id": "w84",
+    "text": "5",
+    "start": 33.6,
+    "end": 33.92
+  },
+  {
+    "id": "w85",
+    "text": "Emprunte",
+    "start": 34.24,
+    "end": 34.96
+  },
+  {
+    "id": "w86",
+    "text": "avant",
+    "start": 34.96,
+    "end": 35.2
+  },
+  {
+    "id": "w87",
+    "text": "d'acheter",
+    "start": 35.2,
+    "end": 35.68
+  },
+  {
+    "id": "w88",
+    "text": "Pour",
+    "start": 35.92,
+    "end": 36.08
+  },
+  {
+    "id": "w89",
+    "text": "un",
+    "start": 36.08,
+    "end": 36.24
+  },
+  {
+    "id": "w90",
+    "text": "objet",
+    "start": 36.24,
+    "end": 36.56
+  },
+  {
+    "id": "w91",
+    "text": "rarement",
+    "start": 36.56,
+    "end": 36.96
+  },
+  {
+    "id": "w92",
+    "text": "utilisé",
+    "start": 36.96,
+    "end": 37.36
+  },
+  {
+    "id": "w93",
+    "text": "Demande",
+    "start": 37.52,
+    "end": 38
+  },
+  {
+    "id": "w94",
+    "text": "autour",
+    "start": 38,
+    "end": 38.32
+  },
+  {
+    "id": "w95",
+    "text": "de",
+    "start": 38.32,
+    "end": 38.4
+  },
+  {
+    "id": "w96",
+    "text": "toi",
+    "start": 38.4,
+    "end": 38.64
+  },
+  {
+    "id": "w97",
+    "text": "Numéro",
+    "start": 38.88,
+    "end": 39.28
+  },
+  {
+    "id": "w98",
+    "text": "4",
+    "start": 39.28,
+    "end": 39.6
+  },
+  {
+    "id": "w99",
+    "text": "Compare",
+    "start": 39.84,
+    "end": 40.32
+  },
+  {
+    "id": "w100",
+    "text": "les",
+    "start": 40.32,
+    "end": 40.48
+  },
+  {
+    "id": "w101",
+    "text": "prix",
+    "start": 40.48,
+    "end": 40.72
+  },
+  {
+    "id": "w102",
+    "text": "Au",
+    "start": 40.96,
+    "end": 41.12
+  },
+  {
+    "id": "w103",
+    "text": "marché",
+    "start": 41.12,
+    "end": 41.44
+  },
+  {
+    "id": "w104",
+    "text": "interroge",
+    "start": 41.68,
+    "end": 42.32
+  },
+  {
+    "id": "w105",
+    "text": "plusieurs",
+    "start": 42.32,
+    "end": 42.56
+  },
+  {
+    "id": "w106",
+    "text": "vendres",
+    "start": 42.64,
+    "end": 43.2
+  },
+  {
+    "id": "w107",
+    "text": "Numéro",
+    "start": 43.36,
+    "end": 43.84
+  },
+  {
+    "id": "w108",
+    "text": "3",
+    "start": 43.84,
+    "end": 44.08
+  },
+  {
+    "id": "w109",
+    "text": "Attends",
+    "start": 44.4,
+    "end": 44.88
+  },
+  {
+    "id": "w110",
+    "text": "avant",
+    "start": 44.88,
+    "end": 45.12
+  },
+  {
+    "id": "w111",
+    "text": "d'acheter",
+    "start": 45.12,
+    "end": 45.6
+  },
+  {
+    "id": "w112",
+    "text": "Laisse",
+    "start": 45.84,
+    "end": 46.16
+  },
+  {
+    "id": "w113",
+    "text": "passer",
+    "start": 46.16,
+    "end": 46.4
+  },
+  {
+    "id": "w114",
+    "text": "une",
+    "start": 46.4,
+    "end": 46.56
+  },
+  {
+    "id": "w115",
+    "text": "nuit",
+    "start": 46.56,
+    "end": 46.8
+  },
+  {
+    "id": "w116",
+    "text": "avant",
+    "start": 46.8,
+    "end": 47.04
+  },
+  {
+    "id": "w117",
+    "text": "un",
+    "start": 47.04,
+    "end": 47.2
+  },
+  {
+    "id": "w118",
+    "text": "achat",
+    "start": 47.2,
+    "end": 47.52
+  },
+  {
+    "id": "w119",
+    "text": "non",
+    "start": 47.52,
+    "end": 47.68
+  },
+  {
+    "id": "w120",
+    "text": "urgent",
+    "start": 47.76,
+    "end": 48.24
+  },
+  {
+    "id": "w121",
+    "text": "Numéro",
+    "start": 48.4,
+    "end": 48.8
+  },
+  {
+    "id": "w122",
+    "text": "2",
+    "start": 48.8,
+    "end": 49.04
+  },
+  {
+    "id": "w123",
+    "text": "Ecris",
+    "start": 49.28,
+    "end": 49.68
+  },
+  {
+    "id": "w124",
+    "text": "ta",
+    "start": 49.76,
+    "end": 50
+  },
+  {
+    "id": "w125",
+    "text": "liste",
+    "start": 50,
+    "end": 50.24
+  },
+  {
+    "id": "w126",
+    "text": "Au",
+    "start": 50.48,
+    "end": 50.56
+  },
+  {
+    "id": "w127",
+    "text": "magasin",
+    "start": 50.64,
+    "end": 51.12
+  },
+  {
+    "id": "w128",
+    "text": "prend",
+    "start": 51.2,
+    "end": 51.44
+  },
+  {
+    "id": "w129",
+    "text": "seulement",
+    "start": 51.52,
+    "end": 51.84
+  },
+  {
+    "id": "w130",
+    "text": "ce",
+    "start": 51.84,
+    "end": 52
+  },
+  {
+    "id": "w131",
+    "text": "qui",
+    "start": 52,
+    "end": 52.16
+  },
+  {
+    "id": "w132",
+    "text": "est",
+    "start": 52.16,
+    "end": 52.32
+  },
+  {
+    "id": "w133",
+    "text": "noté",
+    "start": 52.32,
+    "end": 52.72
+  },
+  {
+    "id": "w134",
+    "text": "Numéro",
+    "start": 52.88,
+    "end": 53.28
+  },
+  {
+    "id": "w135",
+    "text": "1",
+    "start": 53.28,
+    "end": 53.52
+  },
+  {
+    "id": "w136",
+    "text": "Fixe",
+    "start": 53.76,
+    "end": 54.24
+  },
+  {
+    "id": "w137",
+    "text": "ton",
+    "start": 54.24,
+    "end": 54.4
+  },
+  {
+    "id": "w138",
+    "text": "plafond",
+    "start": 54.4,
+    "end": 54.96
+  },
+  {
+    "id": "w139",
+    "text": "avant",
+    "start": 54.96,
+    "end": 55.2
+  },
+  {
+    "id": "w140",
+    "text": "de",
+    "start": 55.2,
+    "end": 55.36
+  },
+  {
+    "id": "w141",
+    "text": "sortir",
+    "start": 55.36,
+    "end": 55.68
+  },
+  {
+    "id": "w142",
+    "text": "Décide",
+    "start": 56,
+    "end": 56.48
+  },
+  {
+    "id": "w143",
+    "text": "combien",
+    "start": 56.48,
+    "end": 56.88
+  },
+  {
+    "id": "w144",
+    "text": "dépenser",
+    "start": 56.88,
+    "end": 57.28
+  },
+  {
+    "id": "w145",
+    "text": "au",
+    "start": 57.28,
+    "end": 57.44
+  },
+  {
+    "id": "w146",
+    "text": "maquis",
+    "start": 57.44,
+    "end": 57.92
+  },
+  {
+    "id": "w147",
+    "text": "Retiens",
+    "start": 58.16,
+    "end": 58.64
+  },
+  {
+    "id": "w148",
+    "text": "ça,",
+    "start": 58.64,
+    "end": 59.04
+  },
+  {
+    "id": "w149",
+    "text": "chaque",
+    "start": 59.04,
+    "end": 59.28
+  },
+  {
+    "id": "w150",
+    "text": "dépense",
+    "start": 59.36,
+    "end": 59.84
+  },
+  {
+    "id": "w151",
+    "text": "doit",
+    "start": 59.84,
+    "end": 60.16
+  },
+  {
+    "id": "w152",
+    "text": "avoir",
+    "start": 60.16,
+    "end": 60.4
+  },
+  {
+    "id": "w153",
+    "text": "une",
+    "start": 60.4,
+    "end": 60.48
+  },
+  {
+    "id": "w154",
+    "text": "place",
+    "start": 60.48,
+    "end": 60.72
+  },
+  {
+    "id": "w155",
+    "text": "dans",
+    "start": 60.72,
+    "end": 60.88
+  },
+  {
+    "id": "w156",
+    "text": "ton",
+    "start": 60.88,
+    "end": 61.04
+  },
+  {
+    "id": "w157",
+    "text": "budget",
+    "start": 61.04,
+    "end": 61.44
+  },
+  {
+    "id": "w158",
+    "text": "Affaire,",
+    "start": 61.75,
+    "end": 62.39
+  },
+  {
+    "id": "w159",
+    "text": "fixe",
+    "start": 62.55,
+    "end": 63.03
+  },
+  {
+    "id": "w160",
+    "text": "ton",
+    "start": 63.03,
+    "end": 63.19
+  },
+  {
+    "id": "w161",
+    "text": "plafond",
+    "start": 63.19,
+    "end": 63.67
+  },
+  {
+    "id": "w162",
+    "text": "avant",
+    "start": 63.75,
+    "end": 63.99
+  },
+  {
+    "id": "w163",
+    "text": "ta",
+    "start": 63.99,
+    "end": 64.15
+  },
+  {
+    "id": "w164",
+    "text": "prochaine",
+    "start": 64.15,
+    "end": 64.55
+  },
+  {
+    "id": "w165",
+    "text": "sortie.",
+    "start": 64.55,
+    "end": 65.11
+  },
+  {
+    "id": "w166",
+    "text": "Abonne-toi",
+    "start": 65.11,
+    "end": 65.67
+  },
+  {
+    "id": "w167",
+    "text": "à",
+    "start": 65.67,
+    "end": 65.83
+  },
+  {
+    "id": "w168",
+    "text": "Le",
+    "start": 65.83,
+    "end": 65.99
+  },
+  {
+    "id": "w169",
+    "text": "Financier.",
+    "start": 65.99,
+    "end": 66.55
+  },
+  {
+    "id": "w170",
+    "text": "Laquelle",
+    "start": 66.63,
+    "end": 67.03
+  },
+  {
+    "id": "w171",
+    "text": "vas-tu",
+    "start": 67.03,
+    "end": 67.43
+  },
+  {
+    "id": "w172",
+    "text": "tester",
+    "start": 67.43,
+    "end": 67.75
+  },
+  {
+    "id": "w173",
+    "text": "?",
+    "start": 67.75,
+    "end": 67.83
+  }
+]

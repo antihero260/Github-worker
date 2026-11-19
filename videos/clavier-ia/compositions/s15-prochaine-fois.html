@@ -1,0 +1,54 @@
+<!-- Scène 15 · « La prochaine fois que ton clavier te proposera un mot avant même que tu l'aies écrit, » (85.07 → 89.07 s). Fichier écrit par un générateur, modifiable à la main. -->
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+    }
+
+  </style>
+  <div id="root" data-composition-id="s15-prochaine-fois" data-width="1920" data-height="1080">
+    <div class="pj-scene">
+      <div id="s15-prochaine-fois-cam" class="pj-cam">
+        <div id="s15-prochaine-fois-cadre" class="pj-cadre">
+        <div class="pj-horizon" style="top: 760px"></div>
+        <div id="s15-vid" class="pj-panneau" style="left: 400px; top: 214px; width: 980px; height: 551px; opacity: 0"><video id="s15-vid-v" class="clip" src="assets/video/mains-tapent.mp4" data-start="0" data-duration="4.0" data-track-index="5" muted playsinline></video><div class="pj-equerres" style="left: -18px; top: -18px; right: -18px; bottom: -18px"><i></i><i></i><i></i><i></i></div><div id="s15-vid-tag" class="pj-panneau-tag">La prochaine fois</div></div>
+        <div id="s15-sugg" class="pj-barre-sugg" style="left: 400px; top: 701px; width: 980px; opacity: 0"><span>pleuvoir</span><span style="background: #DCFC1C; color: #000">demain</span><span>bientôt</span></div>
+        <svg id="s15-toi" class="pj-perso pj-toi-perso" viewBox="-30 -20 160 290" style="left: 1535px; top: 449px; width: 210px; height: 380px"><g id="s15-toi-vie"><g id="s15-toi-corps"><g id="s15-toi-jg"><g class="c"><rect x="24" y="136" width="24" height="112" rx="8" /></g><g class="p"><rect x="24" y="136" width="24" height="112" rx="8" /></g></g><g id="s15-toi-jd"><g class="c"><rect x="52" y="136" width="24" height="112" rx="8" /></g><g class="p"><rect x="52" y="136" width="24" height="112" rx="8" /></g></g><g id="s15-toi-tronc"><g class="c"><rect x="22" y="52" width="56" height="94" rx="12" /></g><g class="p"><rect x="22" y="52" width="56" height="94" rx="12" /></g></g><g id="s15-toi-bg"><g class="c"><rect x="2" y="54" width="18" height="86" rx="9" /></g><g class="p"><rect x="2" y="54" width="18" height="86" rx="9" /></g></g><g id="s15-toi-bd"><g class="c"><rect x="80" y="54" width="18" height="86" rx="9" /></g><g class="p"><rect x="80" y="54" width="18" height="86" rx="9" /></g></g><g id="s15-toi-tete"><g class="c"><circle cx="50" cy="24" r="22" /></g><g class="p"><circle cx="50" cy="24" r="22" /></g></g></g></g></svg>
+        <div id="s15-avant" class="pj-sticker" style="left: 1060px; top: 270px; font-size: 84px; background: #DCFC1C; transform: rotate(6deg); opacity: 0">Avant toi !</div>
+        </div>
+      </div>
+      <div id="s15-hud" class="pj-label" style="left: 113px; top: 107px; "><span class="pj-k">Bientôt</span><span class="pj-d">Dans ta poche</span></div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#s15-prochaine-fois-cam", { scale: 1 }, { scale: 1.05, duration: 3.8, ease: "none" }, 0);
+    tl.fromTo("#s15-prochaine-fois-cam", { filter: "blur(14px)" }, { filter: "blur(0px)", duration: 0.16, ease: "power2.out" }, 0);
+    tl.fromTo("#s15-avant", { opacity: 0, scale: 2.2 }, { opacity: 1, scale: 1, duration: 0.14, ease: "power4.in" }, 2.6);
+    tl.fromTo("#s15-avant", { x: 0 }, { keyframes: [{ x: -10, duration: 0.03 }, { x: 8, duration: 0.03 }, { x: 0, duration: 0.03 }] }, 2.74);
+    tl.fromTo("#s15-vid", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.18, ease: "power3.out" }, 0.02);
+    tl.set("#s15-toi", { x: 360 }, 0);
+    tl.to("#s15-toi", { x: "+=-360", duration: 0.71, ease: "none" }, 0.05);
+    tl.to("#s15-toi-jg", { svgOrigin: "36 142", keyframes: [{ rotation: 24, duration: 0.118 }, { rotation: -24, duration: 0.118 }, { rotation: 24, duration: 0.118 }, { rotation: -24, duration: 0.118 }, { rotation: 24, duration: 0.118 }, { rotation: 0, duration: 0.118 }] }, 0.05);
+    tl.to("#s15-toi-jd", { svgOrigin: "64 142", keyframes: [{ rotation: -24, duration: 0.118 }, { rotation: 24, duration: 0.118 }, { rotation: -24, duration: 0.118 }, { rotation: 24, duration: 0.118 }, { rotation: -24, duration: 0.118 }, { rotation: 0, duration: 0.118 }] }, 0.05);
+    tl.to("#s15-toi-bg", { svgOrigin: "11 62", keyframes: [{ rotation: -20, duration: 0.118 }, { rotation: 20, duration: 0.118 }, { rotation: -20, duration: 0.118 }, { rotation: 20, duration: 0.118 }, { rotation: -20, duration: 0.118 }, { rotation: 0, duration: 0.118 }] }, 0.05);
+    tl.to("#s15-toi-bd", { svgOrigin: "89 62", keyframes: [{ rotation: 20, duration: 0.118 }, { rotation: -20, duration: 0.118 }, { rotation: 20, duration: 0.118 }, { rotation: -20, duration: 0.118 }, { rotation: 20, duration: 0.118 }, { rotation: 0, duration: 0.118 }] }, 0.05);
+    tl.to("#s15-toi-corps", { keyframes: [{ y: -6, duration: 0.118 }, { y: 0, duration: 0.118 }, { y: -6, duration: 0.118 }, { y: 0, duration: 0.118 }, { y: -6, duration: 0.118 }, { y: 0, duration: 0.118 }] }, 0.05);
+    tl.fromTo("#s15-toi-vie", { y: 0 }, { y: -5, duration: 0.42, repeat: 6, yoyo: true, ease: "sine.inOut", immediateRender: false }, 0.81);
+    tl.fromTo("#s15-sugg", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.18, ease: "power3.out" }, 1.72);
+    tl.to("#s15-toi-bg", { rotation: 105, svgOrigin: "11 62", duration: 0.16, ease: "back.out(2)" }, 1.72);
+    tl.to("#s15-toi-tete", { rotation: 6, svgOrigin: "50 50", duration: 0.16, ease: "back.out(2)" }, 1.72);
+    tl.to("#s15-prochaine-fois-cadre", { x: 88, y: -75, scale: 1.25, duration: 0.26, ease: "power3.inOut" }, 1.6);
+    tl.to("#s15-prochaine-fois-cadre", { keyframes: [{ filter: "blur(10px)", duration: 0.13 }, { filter: "blur(0px)", duration: 0.13 }] }, 1.6);
+    tl.to("#s15-prochaine-fois-cadre", { x: 0, y: 0, scale: 1.0, duration: 0.26, ease: "power3.inOut" }, 2.92);
+    tl.to("#s15-prochaine-fois-cadre", { keyframes: [{ filter: "blur(10px)", duration: 0.13 }, { filter: "blur(0px)", duration: 0.13 }] }, 2.92);
+    tl.to("#s15-toi-corps", { keyframes: [{ y: -30, duration: 0.13, ease: "power2.out" }, { y: 0, duration: 0.15, ease: "power2.in" }] }, 2.6);
+    tl.to("#s15-toi-bg", { rotation: 48, svgOrigin: "11 62", duration: 0.16, ease: "back.out(2)" }, 3.24);
+    tl.to("#s15-toi-bd", { rotation: -48, svgOrigin: "89 62", duration: 0.16, ease: "back.out(2)" }, 3.24);
+    tl.to("#s15-toi-tete", { rotation: 8, svgOrigin: "50 50", duration: 0.16, ease: "back.out(2)" }, 3.24);
+    tl.to("#s15-toi-corps", { keyframes: [{ y: -14, duration: 0.13, ease: "power2.out" }, { y: 0, duration: 0.15, ease: "power2.in" }] }, 3.24);
+    tl.to("#s15-prochaine-fois-cam", { scale: 1.3, filter: "blur(14px)", duration: 0.2, ease: "power3.in" }, 3.8);
+    window.__timelines["s15-prochaine-fois"] = tl;
+  </script>
+</template>

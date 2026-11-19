@@ -1,0 +1,53 @@
+<!-- Scène 4 · « Sauf que tu viens peut-être de tomber dans un piège. Regarde. » (12.6 → 16.68 s). Fichier écrit par un générateur, modifiable à la main. -->
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+    }
+
+  </style>
+  <div id="root" data-composition-id="s04-piege" data-width="1920" data-height="1080">
+    <div class="pj-scene">
+      <div id="s04-piege-cam" class="pj-cam">
+        <div id="s04-piege-cadre" class="pj-cadre">
+        <div class="pj-horizon" style="top: 760px"></div>
+        <div class="pj-cone" style="left: 680px; height: 900px; opacity: 1.0"></div><div class="pj-sol" style="left: 650px; top: 740px; opacity: 1.0"></div>
+        <div id="s04-trou" style="position: absolute; left: 770px; top: 755px; width: 380px; height: 90px; border-radius: 50%; background: #000; box-shadow: 0 0 0 5px #DCFC1C"></div>
+        <svg id="s04-toi" class="pj-perso pj-toi-perso" viewBox="-30 -20 160 290" style="left: 844px; top: 412px; width: 232px; height: 420px"><g id="s04-toi-vie"><g id="s04-toi-corps"><g id="s04-toi-jg"><g class="c"><rect x="24" y="136" width="24" height="112" rx="8" /></g><g class="p"><rect x="24" y="136" width="24" height="112" rx="8" /></g></g><g id="s04-toi-jd"><g class="c"><rect x="52" y="136" width="24" height="112" rx="8" /></g><g class="p"><rect x="52" y="136" width="24" height="112" rx="8" /></g></g><g id="s04-toi-tronc"><g class="c"><rect x="22" y="52" width="56" height="94" rx="12" /></g><g class="p"><rect x="22" y="52" width="56" height="94" rx="12" /></g></g><g id="s04-toi-bg"><g class="c"><rect x="2" y="54" width="18" height="86" rx="9" /></g><g class="p"><rect x="2" y="54" width="18" height="86" rx="9" /></g></g><g id="s04-toi-bd"><g class="c"><rect x="80" y="54" width="18" height="86" rx="9" /></g><g class="p"><rect x="80" y="54" width="18" height="86" rx="9" /></g></g><g id="s04-toi-tete"><g class="c"><circle cx="50" cy="24" r="22" /></g><g class="p"><circle cx="50" cy="24" r="22" /></g></g></g></g></svg>
+        </div>
+      </div>
+      <div id="s04-hud" class="pj-label" style="left: 113px; top: 107px; "><span class="pj-k">Attention</span><span class="pj-d">Sol instable</span></div>
+      <div id="s04-mot-noir" style="position: absolute; inset: 0; background: #000; opacity: 0"></div><div id="s04-mot" class="pj-impact" style="position: absolute; left: 0; width: 1920px; top: 360px; text-align: center; font-size: 320px; opacity: 0">Piège.</div>
+      <div id="s04-piege-eclair" class="pj-flash"></div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#s04-piege-cam", { scale: 1 }, { scale: 1.05, duration: 3.88, ease: "none" }, 0);
+    tl.fromTo("#s04-piege-cam", { filter: "blur(14px)" }, { filter: "blur(0px)", duration: 0.16, ease: "power2.out" }, 0);
+    tl.set("#s04-trou", { scaleX: 0 }, 0);
+    tl.fromTo("#s04-toi-vie", { y: 0 }, { y: -5, duration: 0.42, repeat: 3, yoyo: true, ease: "sine.inOut", immediateRender: false }, 0.0);
+    tl.to("#s04-toi-bg", { rotation: 0, svgOrigin: "11 62", duration: 0.1, ease: "power2.out" }, 0.12);
+    tl.to("#s04-toi-bd", { rotation: 0, svgOrigin: "89 62", duration: 0.1, ease: "power2.out" }, 0.12);
+    tl.to("#s04-toi-tete", { rotation: 0, svgOrigin: "50 50", duration: 0.1, ease: "power2.out" }, 0.12);
+    tl.to("#s04-toi-corps", { x: 5, duration: 0.05, repeat: 10, yoyo: true, ease: "none" }, 0.6);
+    tl.to("#s04-toi-corps", { x: 0, duration: 0.05 }, 1.16);
+    tl.to("#s04-piege-cadre", { x: 0, y: -75, scale: 1.25, duration: 0.24, ease: "power3.inOut" }, 0.76);
+    tl.to("#s04-piege-cadre", { keyframes: [{ filter: "blur(10px)", duration: 0.12 }, { filter: "blur(0px)", duration: 0.12 }] }, 0.76);
+    tl.to("#s04-trou", { scaleX: 1, duration: 0.25, ease: "back.out(2)" }, 1.32);
+    tl.to("#s04-toi-bg", { rotation: 150, svgOrigin: "11 62", duration: 0.12, ease: "back.out(2)" }, 1.72);
+    tl.to("#s04-toi-bd", { rotation: -150, svgOrigin: "89 62", duration: 0.12, ease: "back.out(2)" }, 1.72);
+    tl.to("#s04-toi-tete", { rotation: -12, svgOrigin: "50 50", duration: 0.12, ease: "back.out(2)" }, 1.72);
+    tl.to("#s04-toi", { y: 560, rotation: 28, transformOrigin: "50% 90%", duration: 0.42, ease: "power2.in" }, 1.88);
+    tl.to("#s04-piege-cadre", { x: 0, y: 0, scale: 1, duration: 0.24, ease: "power3.inOut" }, 2.28);
+    tl.to("#s04-piege-cadre", { keyframes: [{ filter: "blur(10px)", duration: 0.12 }, { filter: "blur(0px)", duration: 0.12 }] }, 2.28);
+    tl.set("#s04-mot-noir", { opacity: 1 }, 2.6);
+    tl.fromTo("#s04-mot", { opacity: 0, scale: 1.45 }, { opacity: 1, scale: 1, duration: 0.13, ease: "power4.out" }, 2.6);
+    tl.set("#s04-piege-eclair", { opacity: 1 }, 2.6);
+    tl.set("#s04-piege-eclair", { opacity: 0 }, 2.667);
+    tl.set(["#s04-mot-noir", "#s04-mot"], { opacity: 0 }, 3.32);
+    tl.to("#s04-piege-cam", { scale: 1.3, filter: "blur(14px)", duration: 0.2, ease: "power3.in" }, 3.88);
+    window.__timelines["s04-piege"] = tl;
+  </script>
+</template>

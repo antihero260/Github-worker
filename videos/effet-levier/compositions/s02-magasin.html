@@ -1,0 +1,63 @@
+<!-- Il veut ouvrir un deuxième magasin à Abidjan sans vider sa réserve (4.84 → 8.76 s). Écrit par tools/construire-scenes.py. -->
+<template>
+  <style>
+    #root { position: absolute; inset: 0; }
+  </style>
+  <div id="root" data-composition-id="s02-magasin" data-width="1080" data-height="1920">
+    <div class="sc">
+      <div id="s02-magasin-cam" class="sc-cam">
+        <div id="s02-magasin-cadre" class="sc-cadre">
+        <div class="decor" style="left: -1080px; top: 0px; width: 3240px"><div style="position: absolute; left: 0px; top: 0; width: 3240px; height: 1920px"><div class="ciel" style="background: linear-gradient(180deg, #1d4ed8 0%, #38bdf8 55%, #bae6fd 100%)"></div><i class="soleil" style="left: 1880px; top: 320px"></i><div class="imm" style="left: -20px; top: 650px; width: 210px; height: 520px; background-color: #0f2347"></div><div class="imm" style="left: 170px; top: 790px; width: 170px; height: 380px; background-color: #122a52"></div><div class="imm" style="left: 320px; top: 560px; width: 240px; height: 610px; background-color: #0d1f40"></div><div class="imm" style="left: 540px; top: 730px; width: 190px; height: 440px; background-color: #11284e"></div><div class="imm" style="left: 710px; top: 610px; width: 230px; height: 560px; background-color: #0e2244"></div><div class="imm" style="left: 920px; top: 770px; width: 200px; height: 400px; background-color: #122a52"></div><div class="imm" style="left: 1060px; top: 650px; width: 210px; height: 520px; background-color: #0f2347"></div><div class="imm" style="left: 1250px; top: 790px; width: 170px; height: 380px; background-color: #122a52"></div><div class="imm" style="left: 1400px; top: 560px; width: 240px; height: 610px; background-color: #0d1f40"></div><div class="imm" style="left: 1620px; top: 730px; width: 190px; height: 440px; background-color: #11284e"></div><div class="imm" style="left: 1790px; top: 610px; width: 230px; height: 560px; background-color: #0e2244"></div><div class="imm" style="left: 2000px; top: 770px; width: 200px; height: 400px; background-color: #122a52"></div><div class="imm" style="left: 2140px; top: 650px; width: 210px; height: 520px; background-color: #0f2347"></div><div class="imm" style="left: 2330px; top: 790px; width: 170px; height: 380px; background-color: #122a52"></div><div class="imm" style="left: 2480px; top: 560px; width: 240px; height: 610px; background-color: #0d1f40"></div><div class="imm" style="left: 2700px; top: 730px; width: 190px; height: 440px; background-color: #11284e"></div><div class="imm" style="left: 2870px; top: 610px; width: 230px; height: 560px; background-color: #0e2244"></div><div class="imm" style="left: 3080px; top: 770px; width: 200px; height: 400px; background-color: #122a52"></div><div class="trottoir" style="top: 1170px"></div><div class="sol" style="top: 1290px"></div><i class="lampe" style="left: 2020px; top: 770px"></i></div></div>
+        <svg id="m-lucas" class="perso" viewBox="-30 -20 160 290" style="left: 154px; top: 699px; width: 353px; height: 640px"><g id="m-lucas-vie"><g id="m-lucas-corps"><g id="m-lucas-jg"><g class="c"><rect x="24" y="136" width="24" height="112" rx="8" /></g><g class="p" style="--pc: #38BDF8"><rect x="24" y="136" width="24" height="112" rx="8" /></g></g><g id="m-lucas-jd"><g class="c"><rect x="52" y="136" width="24" height="112" rx="8" /></g><g class="p" style="--pc: #38BDF8"><rect x="52" y="136" width="24" height="112" rx="8" /></g></g><g id="m-lucas-tronc"><g class="c"><rect x="22" y="52" width="56" height="94" rx="12" /></g><g class="p" style="--pc: #38BDF8"><rect x="22" y="52" width="56" height="94" rx="12" /></g><path d="M44 56 L56 56 L53 64 L57 104 L50 112 L43 104 L47 64 Z" fill="#0B1220" /></g><g id="m-lucas-bg"><g class="c"><rect x="2" y="54" width="18" height="86" rx="9" /></g><g class="p" style="--pc: #38BDF8"><rect x="2" y="54" width="18" height="86" rx="9" /></g></g><g id="m-lucas-bd"><g class="c"><rect x="80" y="54" width="18" height="86" rx="9" /></g><g class="p" style="--pc: #38BDF8"><rect x="80" y="54" width="18" height="86" rx="9" /></g></g><g id="m-lucas-tete"><g class="c"><circle cx="50" cy="24" r="22" /></g><g class="p" style="--pc: #38BDF8"><circle cx="50" cy="24" r="22" /></g><g><g id="m-lucas-yeux"><circle cx="41" cy="20" r="6.5" fill="#fff" /><circle cx="59" cy="20" r="6.5" fill="#fff" /><g id="m-lucas-pup"><circle cx="42" cy="21" r="3" fill="#0B1220" /><circle cx="60" cy="21" r="3" fill="#0B1220" /></g></g><path id="m-lucas-bouche" d="M41 32 Q50 40 59 32" fill="none" stroke="#0B1220" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" /><path d="M28 14 Q30 -4 50 -3 Q70 -4 72 14 Q66 6 58 8 Q50 2 42 8 Q34 6 28 14 Z" fill="#0B1220" /></g></g></g></g></svg>
+        <i class="rond" id="m-pen-r0" style="left: 425px; top: 776px; width: 84px; height: 84px; opacity: 0"></i><i class="rond" id="m-pen-r1" style="left: 484px; top: 788px; width: 56px; height: 56px; opacity: 0"></i><i class="rond" id="m-pen-r2" style="left: 552px; top: 799px; width: 28px; height: 28px; opacity: 0"></i><div id="m-pen" class="pensee-video" style="left: 370px; top: 310px; width: 500px; height: 500px; opacity: 0"><div id="m-pen-v-0" class="vplein" style="opacity: 0"><video id="m-pen-v-0-v" class="clip" src="assets/video/boutique-vetements.mp4" data-start="0.46" data-duration="0.96" data-track-index="5" muted playsinline></video></div><div id="m-pen-v-1" class="vplein" style="opacity: 0"><video id="m-pen-v-1-v" class="clip" src="assets/video/caisse-boutique.mp4" data-start="1.32" data-duration="0.66" data-track-index="6" muted playsinline></video></div><div id="m-pen-v-2" class="vplein" style="opacity: 0"><video id="m-pen-v-2-v" class="clip" src="assets/video/epicerie-sourire.mp4" data-start="1.88" data-duration="0.7" data-track-index="7" muted playsinline></video></div></div>
+        <div id="m-2e" class="etiq" style="left: 380px; top: 380px; font-size: 58px; background: #F2B705; color: #0B1220; transform: rotate(-3deg); opacity: 0">2<sup>e</sup> MAGASIN · ABIDJAN</div>
+        <div id="m-coffre" class="coffre" style="left: 600px; top: 760px; opacity: 0"><span>RÉSERVE</span><b>10 000 000 F</b><i class="coffre-roue"></i></div>
+        <div id="m-int" class="tampon" data-layout-allow-overlap style="left: 640px; top: 1090px; font-size: 70px; color: #38BDF8; border-color: #38BDF8; transform: rotate(-8deg); opacity: 0">INTACTE</div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#s02-magasin-cam", { filter: "blur(14px)", scale: 1.12 }, { filter: "blur(0px)", scale: 1, duration: 0.18, ease: "power2.out" }, 0);
+    tl.to("#s02-magasin-cam", { scale: 1.04, duration: 3.52, ease: "none" }, 0.18);
+    tl.fromTo("#m-lucas-vie", { y: 0 }, { y: -5, duration: 0.42, repeat: 7, yoyo: true, ease: "sine.inOut", immediateRender: false }, 0.0);
+    tl.to("#m-lucas-yeux", { scaleY: 0.1, duration: 0.06, yoyo: true, repeat: 1, svgOrigin: "50 20" }, 0.7);
+    tl.to("#m-lucas-yeux", { scaleY: 0.1, duration: 0.06, yoyo: true, repeat: 1, svgOrigin: "50 20" }, 3.233);
+    tl.to("#m-lucas-pup", { x: 3, y: -4, duration: 0.15 }, 0.0);
+    tl.set("#m-pen-v-0", { opacity: 1 }, 0.46);
+    tl.fromTo("#m-pen-v-0", { scale: 1.18 }, { scale: 1.02, duration: 0.86, ease: "power2.out", immediateRender: false }, 0.46);
+    tl.set("#m-pen-v-0", { opacity: 0 }, 1.34);
+    tl.set("#m-pen-v-1", { opacity: 1 }, 1.32);
+    tl.fromTo("#m-pen-v-1", { scale: 1.18 }, { scale: 1.02, duration: 0.56, ease: "power2.out", immediateRender: false }, 1.32);
+    tl.set("#m-pen-v-1", { opacity: 0 }, 1.9);
+    tl.set("#m-pen-v-2", { opacity: 1 }, 1.88);
+    tl.fromTo("#m-pen-v-2", { scale: 1.18 }, { scale: 1.02, duration: 0.6, ease: "power2.out", immediateRender: false }, 1.88);
+    tl.set("#m-pen-v-2", { opacity: 0 }, 2.48);
+    tl.fromTo("#m-pen-r0", { opacity: 0, scale: 0 }, { opacity: 1, scale: 1, duration: 0.12, ease: "back.out(3)", immediateRender: false }, 0.26);
+    tl.to("#m-pen-r0", { opacity: 0, duration: 0.12 }, 2.48);
+    tl.fromTo("#m-pen-r1", { opacity: 0, scale: 0 }, { opacity: 1, scale: 1, duration: 0.12, ease: "back.out(3)", immediateRender: false }, 0.32);
+    tl.to("#m-pen-r1", { opacity: 0, duration: 0.12 }, 2.48);
+    tl.fromTo("#m-pen-r2", { opacity: 0, scale: 0 }, { opacity: 1, scale: 1, duration: 0.12, ease: "back.out(3)", immediateRender: false }, 0.38);
+    tl.to("#m-pen-r2", { opacity: 0, duration: 0.12 }, 2.48);
+    tl.fromTo("#m-pen", { opacity: 0, scale: 0.2 }, { opacity: 1, scale: 1, duration: 0.26, ease: "back.out(1.9)", immediateRender: false }, 0.41);
+    tl.to("#m-pen", { opacity: 0, scale: 0.5, duration: 0.16 }, 2.48);
+    tl.to("#s02-magasin-cadre", { x: -162, y: 812, scale: 2.03, duration: 0.32, ease: "power3.inOut" }, 0.87);
+    tl.to("#s02-magasin-cadre", { keyframes: [{ filter: "blur(9px)", duration: 0.16 }, { filter: "blur(0px)", duration: 0.16 }] }, 0.87);
+    tl.to("#s02-magasin-cadre", { x: 0, y: 0, scale: 1.0, duration: 0.32, ease: "power3.inOut" }, 2.08);
+    tl.to("#s02-magasin-cadre", { keyframes: [{ filter: "blur(9px)", duration: 0.16 }, { filter: "blur(0px)", duration: 0.16 }] }, 2.08);
+    tl.to("#m-lucas-bd", { rotation: -150, svgOrigin: "89 62", duration: 0.2, ease: "power2.out" }, 0.66);
+    tl.to("#m-lucas-bd", { rotation: 0, svgOrigin: "89 62", duration: 0.2, ease: "power2.out" }, 1.88);
+    tl.fromTo("#m-2e", { opacity: 0, x: -80 }, { opacity: 1, x: 0, duration: 0.2, ease: "power4.out", immediateRender: false }, 2.08);
+    tl.to("#m-2e", { opacity: 0, duration: 0.15 }, 3.68);
+    tl.fromTo("#m-coffre", { opacity: 0, y: 120, scale: 0.7 }, { opacity: 1, y: 0, scale: 1, duration: 0.3, ease: "back.out(1.8)", immediateRender: false }, 2.68);
+    tl.fromTo("#m-int", { opacity: 0, scale: 2.4 }, { opacity: 1, scale: 1, duration: 0.14, ease: "power4.in", immediateRender: false }, 3.48);
+    tl.to("#s02-magasin-cam", { keyframes: [{ x: -12, duration: 0.03 }, { x: 12, duration: 0.04 }, { x: -6, duration: 0.04 }, { x: 0, duration: 0.03 }] }, 3.62);
+    tl.to("#m-lucas-bd", { rotation: -152, svgOrigin: "89 62", duration: 0.16, ease: "back.out(2.5)" }, 3.32);
+    tl.to("#m-lucas-bd", { rotation: "+=12", svgOrigin: "89 62", duration: 0.08, repeat: 3, yoyo: true }, 3.5);
+    tl.set("#m-lucas-bouche", { attr: { d: "M39 30 Q50 46 61 30 Z", fill: "#0B1220" } }, 3.32);
+    tl.to("#s02-magasin-cam", { scale: 1.25, filter: "blur(14px)", duration: 0.2, ease: "power3.in" }, 3.72);
+    window.__timelines["s02-magasin"] = tl;
+  </script>
+</template>

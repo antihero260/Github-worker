@@ -1,0 +1,15 @@
+Ton site est magnifique, mais personne ne va attendre 10 secondes pour le voir.
+
+Heureusement, tu peux utiliser l'IA pour résoudre ce problème.
+
+Voici deux skills GitHub à connaître.
+
+Le premier, Web Perf de Cloudflare, permet à ton IA d'auditer ton site, de détecter les problèmes de chargement et de proposer des corrections.
+
+Le deuxième, React Best Practices de Vercel, aide à optimiser le code, réduire les scripts inutiles et améliorer les performances de ton application.
+
+Mais voici trois astuces : compresse tes images, évite de charger toutes les ressources immédiatement et réduis le JavaScript inutile.
+
+Enfin, pour tester ton site, utilise Google PageSpeed Insights. Tu colles ton lien et tu obtiens un rapport avec les problèmes à corriger.
+
+Abonne-toi à Gausscode pour découvrir tout ce que l'IA peut faire pour tes sites web.

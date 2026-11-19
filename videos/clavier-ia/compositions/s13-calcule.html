@@ -1,0 +1,81 @@
+<!-- Scène 13 · « Il ne sait pas ce que tu veux dire. Il calcule simplement la suite la plus probable… » (67.47 → 74.51 s). Fichier écrit par un générateur, modifiable à la main. -->
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+    }
+
+  </style>
+  <div id="root" data-composition-id="s13-calcule" data-width="1920" data-height="1080">
+    <div class="pj-scene">
+      <div id="s13-calcule-cam" class="pj-cam">
+        <div id="s13-calcule-cadre" class="pj-cadre">
+        <div class="pj-horizon" style="top: 760px"></div>
+        <div class="pj-cone" style="left: 280px; height: 900px; opacity: 1.0"></div><div class="pj-sol" style="left: 250px; top: 740px; opacity: 1.0"></div>
+        <svg id="s13-ia" class="pj-perso pj-ia-perso" viewBox="-30 -20 160 290" style="left: 447px; top: 421px; width: 226px; height: 410px"><g id="s13-ia-vie"><g id="s13-ia-corps"><g id="s13-ia-jg"><g class="c"><rect x="24" y="136" width="24" height="112" rx="8" /></g><g class="p"><rect x="24" y="136" width="24" height="112" rx="8" /></g></g><g id="s13-ia-jd"><g class="c"><rect x="52" y="136" width="24" height="112" rx="8" /></g><g class="p"><rect x="52" y="136" width="24" height="112" rx="8" /></g></g><g id="s13-ia-tronc"><g class="c"><rect x="22" y="52" width="56" height="94" rx="12" /></g><g class="p"><rect x="22" y="52" width="56" height="94" rx="12" /></g></g><g id="s13-ia-bg"><g class="c"><rect x="2" y="54" width="18" height="86" rx="9" /></g><g class="p"><rect x="2" y="54" width="18" height="86" rx="9" /></g></g><g id="s13-ia-bd"><g class="c"><rect x="80" y="54" width="18" height="86" rx="9" /></g><g class="p"><rect x="80" y="54" width="18" height="86" rx="9" /></g></g><g id="s13-ia-tete"><g class="c"><rect x="25" y="0" width="50" height="46" rx="13" /></g><g class="p"><rect x="25" y="0" width="50" height="46" rx="13" /></g><g class="yeux"><circle cx="40" cy="22" r="5" /><circle cx="60" cy="22" r="5" /></g></g></g></g></svg>
+        <div id="s13-b-0" class="pj-barre" style="left: 1060px; top: 200px; width: 760px; opacity: 0"><div class="pj-barre-mot">pleuvoir</div><div class="pj-barre-piste"><i id="s13-b-0-f"></i></div><div id="s13-b-0-p" class="pj-barre-pct">0 %</div></div><div id="s13-b-1" class="pj-barre" style="left: 1060px; top: 328px; width: 760px; opacity: 0"><div class="pj-barre-mot">neiger</div><div class="pj-barre-piste"><i id="s13-b-1-f"></i></div><div id="s13-b-1-p" class="pj-barre-pct">0 %</div></div><div id="s13-b-2" class="pj-barre" style="left: 1060px; top: 456px; width: 760px; opacity: 0"><div class="pj-barre-mot">danser</div><div class="pj-barre-piste"><i id="s13-b-2-f"></i></div><div id="s13-b-2-p" class="pj-barre-pct">0 %</div></div>
+        <div id="s13-top" class="pj-sticker" style="left: 1250px; top: 548px; font-size: 50px; opacity: 0">↑ La plus probable</div>
+        <div id="s13-i0" style="position: absolute; left: 1170px; top: 730px; width: 0; height: 0; opacity: 0"><div class="pj-puce" style="font-size: 38px">Mots d'avant</div></div>
+        <div id="s13-i1" style="position: absolute; left: 1440px; top: 730px; width: 0; height: 0; opacity: 0"><div class="pj-puce" style="font-size: 38px">Contexte</div></div>
+        <div id="s13-i2" style="position: absolute; left: 1710px; top: 730px; width: 0; height: 0; opacity: 0"><div class="pj-puce" style="font-size: 38px">Tes habitudes</div></div>
+        <div id="s13-b1" class="pj-serif" style="left: 700px; top: 230px; font-size: 50px; color: #0a0a06; background: #ECECE8; padding: 10px 26px; opacity: 0; transform-origin: 0% 100%">Ce que tu veux dire ?</div>
+        </div>
+      </div>
+      <div id="s13-hud" class="pj-label" style="left: 113px; top: 107px; "><span class="pj-k">Calcul</span><span class="pj-d">La suite probable</span></div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#s13-calcule-cam", { scale: 1 }, { scale: 1.05, duration: 6.84, ease: "none" }, 0);
+    tl.fromTo("#s13-calcule-cam", { filter: "blur(14px)" }, { filter: "blur(0px)", duration: 0.16, ease: "power2.out" }, 0);
+    tl.fromTo("#s13-b-0", { opacity: 0, x: 140 }, { opacity: 1, x: 0, duration: 0.24, ease: "power4.out" }, 3.06);
+    tl.fromTo("#s13-b-0-f", { scaleX: 0 }, { scaleX: 0.87, duration: 0.6, ease: "power2.out" }, 3.16);
+    const p1 = { v: 0 };
+    tl.fromTo(p1, { v: 0 }, { v: 87, duration: 0.6, ease: "power2.out", immediateRender: false, onUpdate: () => { document.querySelector("#s13-b-0-p").textContent = Math.round(p1.v) + " %"; } }, 3.16);
+    tl.fromTo("#s13-b-1", { opacity: 0, x: 140 }, { opacity: 1, x: 0, duration: 0.24, ease: "power4.out" }, 3.34);
+    tl.fromTo("#s13-b-1-f", { scaleX: 0 }, { scaleX: 0.09, duration: 0.6, ease: "power2.out" }, 3.44);
+    const p2 = { v: 0 };
+    tl.fromTo(p2, { v: 0 }, { v: 9, duration: 0.6, ease: "power2.out", immediateRender: false, onUpdate: () => { document.querySelector("#s13-b-1-p").textContent = Math.round(p2.v) + " %"; } }, 3.44);
+    tl.fromTo("#s13-b-2", { opacity: 0, x: 140 }, { opacity: 1, x: 0, duration: 0.24, ease: "power4.out" }, 3.62);
+    tl.fromTo("#s13-b-2-f", { scaleX: 0 }, { scaleX: 0.04, duration: 0.6, ease: "power2.out" }, 3.72);
+    const p3 = { v: 0 };
+    tl.fromTo(p3, { v: 0 }, { v: 4, duration: 0.6, ease: "power2.out", immediateRender: false, onUpdate: () => { document.querySelector("#s13-b-2-p").textContent = Math.round(p3.v) + " %"; } }, 3.72);
+    tl.fromTo("#s13-i0", { opacity: 0, scale: 0.3 }, { opacity: 1, scale: 1, duration: 0.2, ease: "back.out(2.4)" }, 5.72);
+    tl.fromTo("#s13-i1", { opacity: 0, scale: 0.3 }, { opacity: 1, scale: 1, duration: 0.2, ease: "back.out(2.4)" }, 5.86);
+    tl.fromTo("#s13-i2", { opacity: 0, scale: 0.3 }, { opacity: 1, scale: 1, duration: 0.2, ease: "back.out(2.4)" }, 6.0);
+    tl.fromTo("#s13-ia-vie", { y: 0 }, { y: -5, duration: 0.42, repeat: 15, yoyo: true, ease: "sine.inOut", immediateRender: false }, 0.0);
+    tl.fromTo("#s13-b1", { opacity: 0, scale: 0.4 }, { opacity: 1, scale: 1, duration: 0.2, ease: "back.out(2.4)" }, 0.68);
+    tl.to("#s13-b1", { opacity: 0, scale: 0.8, duration: 0.15 }, 2.6);
+    tl.to("#s13-ia-bg", { rotation: 48, svgOrigin: "11 62", duration: 0.16, ease: "back.out(2)" }, 0.92);
+    tl.to("#s13-ia-bd", { rotation: -48, svgOrigin: "89 62", duration: 0.16, ease: "back.out(2)" }, 0.92);
+    tl.to("#s13-ia-tete", { rotation: 8, svgOrigin: "50 50", duration: 0.16, ease: "back.out(2)" }, 0.92);
+    tl.to("#s13-ia-corps", { keyframes: [{ y: -14, duration: 0.13, ease: "power2.out" }, { y: 0, duration: 0.15, ease: "power2.in" }] }, 0.92);
+    tl.to("#s13-ia-tete", { svgOrigin: "50 50", keyframes: [{ rotation: -14, duration: 0.08 }, { rotation: 14, duration: 0.1 }, { rotation: -10, duration: 0.1 }, { rotation: 0, duration: 0.08 }] }, 1.56);
+    tl.to("#s13-calcule-cadre", { x: 260, y: 208, scale: 1.3, duration: 0.26, ease: "power3.inOut" }, 0.34);
+    tl.to("#s13-calcule-cadre", { keyframes: [{ filter: "blur(10px)", duration: 0.13 }, { filter: "blur(0px)", duration: 0.13 }] }, 0.34);
+    tl.to("#s13-calcule-cadre", { x: 0, y: 0, scale: 1.0, duration: 0.26, ease: "power3.inOut" }, 2.6);
+    tl.to("#s13-calcule-cadre", { keyframes: [{ filter: "blur(10px)", duration: 0.13 }, { filter: "blur(0px)", duration: 0.13 }] }, 2.6);
+    tl.to("#s13-ia-bg", { rotation: -28, svgOrigin: "11 62", duration: 0.15, ease: "power2.out" }, 2.96);
+    tl.to("#s13-ia-bd", { rotation: 28, svgOrigin: "89 62", duration: 0.15, ease: "power2.out" }, 2.96);
+    tl.to("#s13-ia-tete", { rotation: 10, svgOrigin: "50 50", duration: 0.15, ease: "power2.out" }, 2.96);
+    tl.to("#s13-ia-bg", { rotation: -18, svgOrigin: "11 62", duration: 0.11, repeat: 11, yoyo: true, ease: "sine.inOut" }, 3.11);
+    tl.to("#s13-ia-bd", { rotation: 38, svgOrigin: "89 62", duration: 0.11, repeat: 11, yoyo: true, ease: "sine.inOut" }, 3.165);
+    tl.to("#s13-ia-bg", { rotation: 0, svgOrigin: "11 62", duration: 0.2, ease: "power2.out" }, 4.6);
+    tl.to("#s13-ia-bd", { rotation: 0, svgOrigin: "89 62", duration: 0.2, ease: "power2.out" }, 4.6);
+    tl.to("#s13-ia-jg", { rotation: 0, svgOrigin: "36 142", duration: 0.2, ease: "power2.out" }, 4.6);
+    tl.to("#s13-ia-jd", { rotation: 0, svgOrigin: "64 142", duration: 0.2, ease: "power2.out" }, 4.6);
+    tl.to("#s13-ia-tete", { rotation: 0, svgOrigin: "50 50", duration: 0.2, ease: "power2.out" }, 4.6);
+    tl.fromTo("#s13-top", { opacity: 0, scale: 1.8 }, { opacity: 1, scale: 1, duration: 0.18, ease: "back.out(2.2)" }, 4.6);
+    tl.to("#s13-b-0", { keyframes: [{ scale: 1.06, duration: 0.1 }, { scale: 1, duration: 0.14 }] }, 4.6);
+    tl.to("#s13-calcule-cadre", { x: -528, y: 192, scale: 1.2, duration: 0.26, ease: "power3.inOut" }, 4.26);
+    tl.to("#s13-calcule-cadre", { keyframes: [{ filter: "blur(10px)", duration: 0.13 }, { filter: "blur(0px)", duration: 0.13 }] }, 4.26);
+    tl.to("#s13-calcule-cadre", { x: -374, y: 0, scale: 1.1, duration: 0.26, ease: "power3.inOut" }, 5.38);
+    tl.to("#s13-calcule-cadre", { keyframes: [{ filter: "blur(10px)", duration: 0.13 }, { filter: "blur(0px)", duration: 0.13 }] }, 5.38);
+    tl.to("#s13-ia-bd", { rotation: -110, svgOrigin: "89 62", duration: 0.16, ease: "back.out(2)" }, 5.72);
+    tl.to("#s13-ia-tete", { rotation: -8, svgOrigin: "50 50", duration: 0.16, ease: "back.out(2)" }, 5.72);
+    tl.to("#s13-ia-corps", { keyframes: [{ y: -26, duration: 0.13, ease: "power2.out" }, { y: 0, duration: 0.15, ease: "power2.in" }] }, 6.2);
+    tl.to("#s13-calcule-cam", { scale: 1.3, filter: "blur(14px)", duration: 0.2, ease: "power3.in" }, 6.84);
+    window.__timelines["s13-calcule"] = tl;
+  </script>
+</template>

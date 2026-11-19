@@ -1,0 +1,57 @@
+<!-- Scène 16 · « Je vais donc lui ajouter un outil de recherche sur Internet… au lieu de dépendre de ce qu'il connaît déjà. » (66.51 → 73.87 s). Fichier écrit par un générateur, modifiable à la main. -->
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+    }
+
+  </style>
+  <div id="root" data-composition-id="s16-outil" data-width="1920" data-height="1080">
+    <div class="pj-scene">
+      <div id="s16-outil-cam" class="pj-cam">
+        <div id="s16-outil-cadre" class="pj-cadre">
+        <div class="pj-horizon" style="top: 760px"></div>
+        <div id="s16-agent" class="pj-noeud pj-noeud-agent" style="left: 630px; top: 275px; width: 460px; height: 110px; opacity: 0"><b class="pj-noeud-ico">IA</b><div><b>Agent IA</b><span>Assistant de recherche</span></div></div>
+        <div id="s16-mod" class="pj-noeud" style="left: 475px; top: 565px; width: 330px; height: 110px; opacity: 0"><img src="assets/img/logo-openai.svg" alt="" /><div><b>Modèle d'IA</b><span>OpenAI</span></div></div>
+        <div id="s16-out" class="pj-noeud" style="left: 915px; top: 565px; width: 330px; height: 110px; opacity: 0"><b class="pj-noeud-ico"><svg viewBox="0 0 40 40" style="width: 34px; height: 34px; margin-top: 11px"><circle cx="16" cy="16" r="11" fill="none" stroke="#000" stroke-width="5" /><path d="M24 24 L36 36" stroke="#000" stroke-width="6" stroke-linecap="round" /></svg></b><div><b>Outil</b><span>Recherche web</span></div></div>
+        <svg id="s16-l" style="position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; overflow: visible" viewBox="0 0 1920 1080"><path id="s16-l-0" d="M800 385 C800 455 640 495 640 565" pathLength="100" fill="none" stroke="#DCFC1C" stroke-width="5" stroke-dasharray="100" stroke-dashoffset="100" /><path id="s16-l-1" d="M920 385 C920 455 1080 495 1080 565" pathLength="100" fill="none" stroke="#DCFC1C" stroke-width="5" stroke-dasharray="100" stroke-dashoffset="100" /></svg>
+        <div id="s16-vid" class="pj-panneau" style="left: 1340px; top: 220px; width: 480px; height: 270px; opacity: 0"><video id="s16-vid-v" class="clip" src="assets/video/tablette-web.mp4" data-start="0" data-duration="7.36" data-track-index="5" muted playsinline></video><div class="pj-equerres" style="left: -18px; top: -18px; right: -18px; bottom: -18px"><i></i><i></i><i></i><i></i></div><div id="s16-vid-tag" class="pj-panneau-tag">Internet</div></div>
+        <div id="s16-mem" style="position: absolute; left: 1580px; top: 640px; width: 0; height: 0; opacity: 0"><div class="pj-puce" style="color: #9a9a9a; border-color: #6a6a6a">Seulement sa mémoire<i id="s16-mem-r" style="position: absolute; left: -8px; right: -8px; top: 46%; height: 8px; background: #DCFC1C"></i></div></div>
+        <svg id="s16-ia" class="pj-perso pj-ia-perso" viewBox="-30 -20 160 290" style="left: 139px; top: 495px; width: 182px; height: 330px"><g id="s16-ia-vie"><g id="s16-ia-corps"><g id="s16-ia-jg"><g class="c"><rect x="24" y="136" width="24" height="112" rx="8" /></g><g class="p"><rect x="24" y="136" width="24" height="112" rx="8" /></g></g><g id="s16-ia-jd"><g class="c"><rect x="52" y="136" width="24" height="112" rx="8" /></g><g class="p"><rect x="52" y="136" width="24" height="112" rx="8" /></g></g><g id="s16-ia-tronc"><g class="c"><rect x="22" y="52" width="56" height="94" rx="12" /></g><g class="p"><rect x="22" y="52" width="56" height="94" rx="12" /></g></g><g id="s16-ia-bg"><g class="c"><rect x="2" y="54" width="18" height="86" rx="9" /></g><g class="p"><rect x="2" y="54" width="18" height="86" rx="9" /></g></g><g id="s16-ia-bd"><g class="c"><rect x="80" y="54" width="18" height="86" rx="9" /></g><g class="p"><rect x="80" y="54" width="18" height="86" rx="9" /></g></g><g id="s16-ia-tete"><g class="c"><rect x="25" y="0" width="50" height="46" rx="13" /></g><g class="p"><rect x="25" y="0" width="50" height="46" rx="13" /></g><g class="yeux"><circle cx="40" cy="22" r="5" /><circle cx="60" cy="22" r="5" /></g></g></g></g></svg>
+        </div>
+      </div>
+      <div id="s16-hud" class="pj-label" style="left: 113px; top: 107px; "><span class="pj-k">Son outil</span><span class="pj-d">La recherche web</span></div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#s16-outil-cam", { scale: 1 }, { scale: 1.05, duration: 7.16, ease: "none" }, 0);
+    tl.fromTo("#s16-outil-cam", { filter: "blur(14px)" }, { filter: "blur(0px)", duration: 0.16, ease: "power2.out" }, 0);
+    tl.set("#s16-l-0", { attr: { "stroke-dashoffset": 0 } }, 0);
+    tl.to("#s16-l-1", { attr: { "stroke-dashoffset": 0 }, duration: 0.35, ease: "power2.out" }, 1.4);
+    tl.fromTo("#s16-mem", { opacity: 0, scale: 0.3 }, { opacity: 1, scale: 1, duration: 0.2, ease: "back.out(2.4)" }, 5.16);
+    tl.fromTo("#s16-mem-r", { scaleX: 0, transformOrigin: "0% 50%" }, { scaleX: 1, duration: 0.16 }, 6.28);
+    tl.set(["#s16-agent", "#s16-mod"], { opacity: 1 }, 0);
+    tl.fromTo("#s16-ia-vie", { y: 0 }, { y: -5, duration: 0.42, repeat: 16, yoyo: true, ease: "sine.inOut", immediateRender: false }, 0.0);
+    tl.to("#s16-ia-bd", { svgOrigin: "89 62", keyframes: [{ rotation: -62, duration: 0.24, ease: "sine.inOut" }, { rotation: -118, duration: 0.24, ease: "sine.inOut" }, { rotation: -62, duration: 0.24, ease: "sine.inOut" }, { rotation: 0, duration: 0.2 }] }, 0.12);
+    tl.to("#s16-ia-tete", { svgOrigin: "50 50", keyframes: [{ rotation: -6, duration: 0.36 }, { rotation: 6, duration: 0.36 }, { rotation: 0, duration: 0.2 }] }, 0.12);
+    tl.fromTo("#s16-out", { opacity: 0, scale: 1.6 }, { opacity: 1, scale: 1, duration: 0.18, ease: "back.out(2.2)" }, 1.4);
+    tl.fromTo("#s16-out", { boxShadow: "0 0 0px rgba(220, 252, 28, 0)" }, { boxShadow: "0 0 50px rgba(220, 252, 28, 0.9)", duration: 0.25, repeat: 1, yoyo: true, immediateRender: false }, 1.8);
+    tl.to("#s16-outil-cadre", { x: 0, y: 24, scale: 1.18, duration: 0.26, ease: "power3.inOut" }, 1.2);
+    tl.to("#s16-outil-cadre", { keyframes: [{ filter: "blur(10px)", duration: 0.13 }, { filter: "blur(0px)", duration: 0.13 }] }, 1.2);
+    tl.to("#s16-ia-bd", { rotation: -100, svgOrigin: "89 62", duration: 0.16, ease: "back.out(2)" }, 1.4);
+    tl.to("#s16-ia-tete", { rotation: -8, svgOrigin: "50 50", duration: 0.16, ease: "back.out(2)" }, 1.4);
+    tl.fromTo("#s16-vid", { opacity: 0, x: 300 }, { opacity: 1, x: 0, duration: 0.24, ease: "power4.out" }, 2.44);
+    tl.to("#s16-outil-cadre", { x: -506, y: 138, scale: 1.15, duration: 0.26, ease: "power3.inOut" }, 2.32);
+    tl.to("#s16-outil-cadre", { keyframes: [{ filter: "blur(10px)", duration: 0.13 }, { filter: "blur(0px)", duration: 0.13 }] }, 2.32);
+    tl.to("#s16-ia-tete", { svgOrigin: "50 50", keyframes: [{ rotation: 14, duration: 0.11 }, { rotation: -2, duration: 0.11 }, { rotation: 14, duration: 0.11 }, { rotation: -2, duration: 0.11 }, { rotation: 0, duration: 0.11 }] }, 3.56);
+    tl.to("#s16-outil-cadre", { x: -381, y: -22, scale: 1.12, duration: 0.26, ease: "power3.inOut" }, 5.04);
+    tl.to("#s16-outil-cadre", { keyframes: [{ filter: "blur(10px)", duration: 0.13 }, { filter: "blur(0px)", duration: 0.13 }] }, 5.04);
+    tl.to("#s16-ia-bd", { rotation: 0, svgOrigin: "89 62", duration: 0.14, ease: "power2.out" }, 5.16);
+    tl.to("#s16-ia-tete", { rotation: 0, svgOrigin: "50 50", duration: 0.14, ease: "power2.out" }, 5.16);
+    tl.to("#s16-ia-tete", { svgOrigin: "50 50", keyframes: [{ rotation: -14, duration: 0.08 }, { rotation: 14, duration: 0.1 }, { rotation: -10, duration: 0.1 }, { rotation: 0, duration: 0.08 }] }, 6.28);
+    tl.to("#s16-outil-cam", { scale: 1.3, filter: "blur(14px)", duration: 0.2, ease: "power3.in" }, 7.16);
+    window.__timelines["s16-outil"] = tl;
+  </script>
+</template>

@@ -1,0 +1,54 @@
+<!-- Scène 14 · « Quatrième étape : donne-lui des outils. C'est une étape essentielle. » (58.43 → 62.51 s). Fichier écrit par un générateur, modifiable à la main. -->
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+    }
+
+  </style>
+  <div id="root" data-composition-id="s14-etape4" data-width="1920" data-height="1080">
+    <div class="pj-scene">
+      <div id="s14-etape4-cam" class="pj-cam">
+        <div id="s14-etape4-cadre" class="pj-cadre">
+        <div class="pj-horizon" style="top: 760px"></div>
+        <div id="s14-et" class="pj-etape" style="left: 1440px; top: 128px; opacity: 0"><span>Étape</span><b>4</b><i>/5</i></div>
+        <div id="s14-vid" class="pj-panneau" style="left: 113px; top: 230px; width: 860px; height: 484px; opacity: 0"><video id="s14-vid-v" class="clip" src="assets/video/atelier-outils.mp4" data-start="0" data-duration="4.08" data-track-index="5" muted playsinline></video><div class="pj-equerres" style="left: -18px; top: -18px; right: -18px; bottom: -18px"><i></i><i></i><i></i><i></i></div><div id="s14-vid-tag" class="pj-panneau-tag">Des outils</div></div>
+        <div class="pj-cone" style="left: 1220px; height: 900px; opacity: 1.0"></div><div class="pj-sol" style="left: 1190px; top: 740px; opacity: 1.0"></div>
+        <svg id="s14-ia" class="pj-perso pj-ia-perso" viewBox="-30 -20 160 290" style="left: 1395px; top: 449px; width: 210px; height: 380px"><g id="s14-ia-vie"><g id="s14-ia-corps"><g id="s14-ia-jg"><g class="c"><rect x="24" y="136" width="24" height="112" rx="8" /></g><g class="p"><rect x="24" y="136" width="24" height="112" rx="8" /></g></g><g id="s14-ia-jd"><g class="c"><rect x="52" y="136" width="24" height="112" rx="8" /></g><g class="p"><rect x="52" y="136" width="24" height="112" rx="8" /></g></g><g id="s14-ia-tronc"><g class="c"><rect x="22" y="52" width="56" height="94" rx="12" /></g><g class="p"><rect x="22" y="52" width="56" height="94" rx="12" /></g></g><g id="s14-ia-bg"><g class="c"><rect x="2" y="54" width="18" height="86" rx="9" /></g><g class="p"><rect x="2" y="54" width="18" height="86" rx="9" /></g></g><g id="s14-ia-bd"><g class="c"><rect x="80" y="54" width="18" height="86" rx="9" /></g><g class="p"><rect x="80" y="54" width="18" height="86" rx="9" /></g></g><g id="s14-ia-tete"><g class="c"><rect x="25" y="0" width="50" height="46" rx="13" /></g><g class="p"><rect x="25" y="0" width="50" height="46" rx="13" /></g><g class="yeux"><circle cx="40" cy="22" r="5" /><circle cx="60" cy="22" r="5" /></g></g></g></g></svg>
+        <div id="s14-o0" style="position: absolute; left: 1330px; top: 300px; width: 0; height: 0; opacity: 0"><div class="pj-puce" style="font-size: 40px">Recherche web</div></div>
+        <div id="s14-o1" style="position: absolute; left: 1700px; top: 360px; width: 0; height: 0; opacity: 0"><div class="pj-puce" style="font-size: 40px">Calendrier</div></div>
+        <div id="s14-o2" style="position: absolute; left: 1270px; top: 470px; width: 0; height: 0; opacity: 0"><div class="pj-puce" style="font-size: 40px">E-mail</div></div>
+        <div id="s14-ess" class="pj-sticker" style="left: 560px; top: 600px; font-size: 84px; background: #DCFC1C; transform: rotate(-6deg); opacity: 0">Essentiel</div>
+        </div>
+      </div>
+      <div id="s14-hud" class="pj-label" style="left: 113px; top: 107px; "><span class="pj-k">Étape 4</span><span class="pj-d">Des outils</span></div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#s14-etape4-cam", { scale: 1 }, { scale: 1.05, duration: 3.88, ease: "none" }, 0);
+    tl.fromTo("#s14-etape4-cam", { filter: "blur(14px)" }, { filter: "blur(0px)", duration: 0.16, ease: "power2.out" }, 0);
+    tl.fromTo("#s14-et", { opacity: 0, scale: 1.9 }, { opacity: 1, scale: 1, duration: 0.18, ease: "back.out(2.2)" }, 0.12);
+    tl.fromTo("#s14-o0", { opacity: 0, scale: 0.3 }, { opacity: 1, scale: 1, duration: 0.2, ease: "back.out(2.4)" }, 1.96);
+    tl.fromTo("#s14-o1", { opacity: 0, scale: 0.3 }, { opacity: 1, scale: 1, duration: 0.2, ease: "back.out(2.4)" }, 2.12);
+    tl.fromTo("#s14-o2", { opacity: 0, scale: 0.3 }, { opacity: 1, scale: 1, duration: 0.2, ease: "back.out(2.4)" }, 2.28);
+    tl.fromTo("#s14-ess", { opacity: 0, scale: 2.2 }, { opacity: 1, scale: 1, duration: 0.14, ease: "power4.in" }, 3.32);
+    tl.fromTo("#s14-ess", { x: 0 }, { keyframes: [{ x: -10, duration: 0.03 }, { x: 8, duration: 0.03 }, { x: 0, duration: 0.03 }] }, 3.46);
+    tl.fromTo("#s14-vid", { opacity: 0, x: -420 }, { opacity: 1, x: 0, duration: 0.24, ease: "power4.out" }, 0.05);
+    tl.fromTo("#s14-ia-vie", { y: 0 }, { y: -5, duration: 0.42, repeat: 8, yoyo: true, ease: "sine.inOut", immediateRender: false }, 0.0);
+    tl.to("#s14-ia-bg", { rotation: 165, svgOrigin: "11 62", duration: 0.14, ease: "back.out(2)" }, 1.96);
+    tl.to("#s14-ia-bd", { rotation: -165, svgOrigin: "89 62", duration: 0.14, ease: "back.out(2)" }, 1.96);
+    tl.to("#s14-ia-tete", { rotation: -8, svgOrigin: "50 50", duration: 0.14, ease: "back.out(2)" }, 1.96);
+    tl.to("#s14-ia-corps", { keyframes: [{ y: -40, duration: 0.13, ease: "power2.out" }, { y: 0, duration: 0.15, ease: "power2.in" }] }, 2.01);
+    tl.to("#s14-etape4-cadre", { x: -637, y: 142, scale: 1.18, duration: 0.26, ease: "power3.inOut" }, 1.62);
+    tl.to("#s14-etape4-cadre", { keyframes: [{ filter: "blur(10px)", duration: 0.13 }, { filter: "blur(0px)", duration: 0.13 }] }, 1.62);
+    tl.to("#s14-etape4-cadre", { x: 224, y: 22, scale: 1.12, duration: 0.26, ease: "power3.inOut" }, 3.2);
+    tl.to("#s14-etape4-cadre", { keyframes: [{ filter: "blur(10px)", duration: 0.13 }, { filter: "blur(0px)", duration: 0.13 }] }, 3.2);
+    tl.to("#s14-ia-bg", { rotation: 0, svgOrigin: "11 62", duration: 0.16, ease: "back.out(2)" }, 3.32);
+    tl.to("#s14-ia-bd", { rotation: -110, svgOrigin: "89 62", duration: 0.16, ease: "back.out(2)" }, 3.32);
+    tl.to("#s14-ia-tete", { rotation: -6, svgOrigin: "50 50", duration: 0.16, ease: "back.out(2)" }, 3.32);
+    tl.to("#s14-etape4-cam", { scale: 1.3, filter: "blur(14px)", duration: 0.2, ease: "power3.in" }, 3.88);
+    window.__timelines["s14-etape4"] = tl;
+  </script>
+</template>

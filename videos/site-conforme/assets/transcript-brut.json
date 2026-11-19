@@ -1,0 +1,854 @@
+[
+  {
+    "text": "Ton",
+    "start": 0.1,
+    "end": 0.23,
+    "id": "w0"
+  },
+  {
+    "text": "site",
+    "start": 0.23,
+    "end": 0.48,
+    "id": "w1"
+  },
+  {
+    "text": "créé",
+    "start": 0.54,
+    "end": 0.83,
+    "id": "w2"
+  },
+  {
+    "text": "avec",
+    "start": 0.83,
+    "end": 1.12,
+    "id": "w3"
+  },
+  {
+    "text": "l'IA",
+    "start": 1.14,
+    "end": 1.46,
+    "id": "w4"
+  },
+  {
+    "text": "est",
+    "start": 1.46,
+    "end": 1.63,
+    "id": "w5"
+  },
+  {
+    "text": "enfin",
+    "start": 1.68,
+    "end": 1.99,
+    "id": "w6"
+  },
+  {
+    "text": "prêt",
+    "start": 2.05,
+    "end": 2.33,
+    "id": "w7"
+  },
+  {
+    "text": "à",
+    "start": 2.33,
+    "end": 2.37,
+    "id": "w8"
+  },
+  {
+    "text": "être",
+    "start": 2.4,
+    "end": 2.69,
+    "id": "w9"
+  },
+  {
+    "text": "publié?",
+    "start": 2.69,
+    "end": 3.38,
+    "id": "w10"
+  },
+  {
+    "text": "Attention!",
+    "start": 3.48,
+    "end": 4.28,
+    "id": "w11"
+  },
+  {
+    "text": "Avant",
+    "start": 4.28,
+    "end": 4.57,
+    "id": "w12"
+  },
+  {
+    "text": "de",
+    "start": 4.57,
+    "end": 4.68,
+    "id": "w13"
+  },
+  {
+    "text": "le",
+    "start": 4.68,
+    "end": 4.79,
+    "id": "w14"
+  },
+  {
+    "text": "mettre",
+    "start": 4.79,
+    "end": 5.13,
+    "id": "w15"
+  },
+  {
+    "text": "en",
+    "start": 5.13,
+    "end": 5.21,
+    "id": "w16"
+  },
+  {
+    "text": "ligne,",
+    "start": 5.25,
+    "end": 5.63,
+    "id": "w17"
+  },
+  {
+    "text": "vérifie",
+    "start": 5.63,
+    "end": 5.91,
+    "id": "w18"
+  },
+  {
+    "text": "ces",
+    "start": 5.97,
+    "end": 6.08,
+    "id": "w19"
+  },
+  {
+    "text": "cinq",
+    "start": 6.08,
+    "end": 6.33,
+    "id": "w20"
+  },
+  {
+    "text": "points",
+    "start": 6.77,
+    "end": 6.82,
+    "id": "w21"
+  },
+  {
+    "text": "pour",
+    "start": 6.82,
+    "end": 7.01,
+    "id": "w22"
+  },
+  {
+    "text": "éviter",
+    "start": 7.01,
+    "end": 7.29,
+    "id": "w23"
+  },
+  {
+    "text": "de",
+    "start": 7.29,
+    "end": 7.33,
+    "id": "w24"
+  },
+  {
+    "text": "mauvaises",
+    "start": 7.69,
+    "end": 7.78,
+    "id": "w25"
+  },
+  {
+    "text": "surprises.",
+    "start": 7.78,
+    "end": 8.88,
+    "id": "w26"
+  },
+  {
+    "text": "Premièrement,",
+    "start": 8.98,
+    "end": 9.79,
+    "id": "w27"
+  },
+  {
+    "text": "les",
+    "start": 9.79,
+    "end": 9.91,
+    "id": "w28"
+  },
+  {
+    "text": "mentions",
+    "start": 9.98,
+    "end": 10.51,
+    "id": "w29"
+  },
+  {
+    "text": "légales.",
+    "start": 10.51,
+    "end": 11,
+    "id": "w30"
+  },
+  {
+    "text": "Elles",
+    "start": 11.1,
+    "end": 11.28,
+    "id": "w31"
+  },
+  {
+    "text": "permettent",
+    "start": 11.28,
+    "end": 11.86,
+    "id": "w32"
+  },
+  {
+    "text": "d'identifier",
+    "start": 11.86,
+    "end": 12.54,
+    "id": "w33"
+  },
+  {
+    "text": "le",
+    "start": 12.54,
+    "end": 12.63,
+    "id": "w34"
+  },
+  {
+    "text": "propriétaire",
+    "start": 12.68,
+    "end": 13.34,
+    "id": "w35"
+  },
+  {
+    "text": "du",
+    "start": 13.34,
+    "end": 13.41,
+    "id": "w36"
+  },
+  {
+    "text": "site",
+    "start": 13.46,
+    "end": 13.68,
+    "id": "w37"
+  },
+  {
+    "text": "et",
+    "start": 13.68,
+    "end": 13.79,
+    "id": "w38"
+  },
+  {
+    "text": "son",
+    "start": 13.79,
+    "end": 13.94,
+    "id": "w39"
+  },
+  {
+    "text": "hébergeur.",
+    "start": 13.94,
+    "end": 14.8,
+    "id": "w40"
+  },
+  {
+    "text": "Deuxièmement,",
+    "start": 14.9,
+    "end": 15.65,
+    "id": "w41"
+  },
+  {
+    "text": "la",
+    "start": 15.65,
+    "end": 15.77,
+    "id": "w42"
+  },
+  {
+    "text": "politique",
+    "start": 15.77,
+    "end": 16.34,
+    "id": "w43"
+  },
+  {
+    "text": "de",
+    "start": 16.34,
+    "end": 16.43,
+    "id": "w44"
+  },
+  {
+    "text": "confidentialité.",
+    "start": 16.48,
+    "end": 17.68,
+    "id": "w45"
+  },
+  {
+    "text": "Explique",
+    "start": 17.78,
+    "end": 18.07,
+    "id": "w46"
+  },
+  {
+    "text": "aux",
+    "start": 18.07,
+    "end": 18.23,
+    "id": "w47"
+  },
+  {
+    "text": "visiteurs",
+    "start": 18.23,
+    "end": 18.68,
+    "id": "w48"
+  },
+  {
+    "text": "quelles",
+    "start": 18.68,
+    "end": 19.03,
+    "id": "w49"
+  },
+  {
+    "text": "données",
+    "start": 19.03,
+    "end": 19.38,
+    "id": "w50"
+  },
+  {
+    "text": "tu",
+    "start": 19.38,
+    "end": 19.48,
+    "id": "w51"
+  },
+  {
+    "text": "collectes,",
+    "start": 19.48,
+    "end": 20.05,
+    "id": "w52"
+  },
+  {
+    "text": "pourquoi",
+    "start": 20.08,
+    "end": 20.55,
+    "id": "w53"
+  },
+  {
+    "text": "et",
+    "start": 20.55,
+    "end": 20.64,
+    "id": "w54"
+  },
+  {
+    "text": "combien",
+    "start": 21.07,
+    "end": 21.08,
+    "id": "w55"
+  },
+  {
+    "text": "de",
+    "start": 21.08,
+    "end": 21.18,
+    "id": "w56"
+  },
+  {
+    "text": "temps",
+    "start": 21.24,
+    "end": 21.48,
+    "id": "w57"
+  },
+  {
+    "text": "tu",
+    "start": 21.48,
+    "end": 21.63,
+    "id": "w58"
+  },
+  {
+    "text": "les",
+    "start": 21.63,
+    "end": 22,
+    "id": "w59"
+  },
+  {
+    "text": "conserves.",
+    "start": 22,
+    "end": 22.8,
+    "id": "w60"
+  },
+  {
+    "text": "Troisièmement,",
+    "start": 22.9,
+    "end": 23.78,
+    "id": "w61"
+  },
+  {
+    "text": "les",
+    "start": 23.78,
+    "end": 23.98,
+    "id": "w62"
+  },
+  {
+    "text": "cookies.",
+    "start": 23.98,
+    "end": 24.7,
+    "id": "w63"
+  },
+  {
+    "text": "Certains",
+    "start": 24.8,
+    "end": 25.12,
+    "id": "w64"
+  },
+  {
+    "text": "traceurs",
+    "start": 25.18,
+    "end": 25.6,
+    "id": "w65"
+  },
+  {
+    "text": "nécessitent",
+    "start": 25.6,
+    "end": 26.22,
+    "id": "w66"
+  },
+  {
+    "text": "le",
+    "start": 26.22,
+    "end": 26.33,
+    "id": "w67"
+  },
+  {
+    "text": "consentement",
+    "start": 26.33,
+    "end": 27.01,
+    "id": "w68"
+  },
+  {
+    "text": "des",
+    "start": 27.01,
+    "end": 27.18,
+    "id": "w69"
+  },
+  {
+    "text": "visiteurs",
+    "start": 27.18,
+    "end": 27.66,
+    "id": "w70"
+  },
+  {
+    "text": "avant",
+    "start": 27.66,
+    "end": 28.09,
+    "id": "w71"
+  },
+  {
+    "text": "leur",
+    "start": 28.09,
+    "end": 28.19,
+    "id": "w72"
+  },
+  {
+    "text": "activation.",
+    "start": 28.19,
+    "end": 29,
+    "id": "w73"
+  },
+  {
+    "text": "Quatrièmement,",
+    "start": 29.1,
+    "end": 29.84,
+    "id": "w74"
+  },
+  {
+    "text": "les",
+    "start": 29.84,
+    "end": 30.01,
+    "id": "w75"
+  },
+  {
+    "text": "conditions",
+    "start": 30.01,
+    "end": 30.6,
+    "id": "w76"
+  },
+  {
+    "text": "générales",
+    "start": 30.6,
+    "end": 31.12,
+    "id": "w77"
+  },
+  {
+    "text": "de",
+    "start": 31.12,
+    "end": 31.23,
+    "id": "w78"
+  },
+  {
+    "text": "vente,",
+    "start": 31.23,
+    "end": 31.69,
+    "id": "w79"
+  },
+  {
+    "text": "si",
+    "start": 31.69,
+    "end": 31.78,
+    "id": "w80"
+  },
+  {
+    "text": "tu",
+    "start": 31.78,
+    "end": 31.87,
+    "id": "w81"
+  },
+  {
+    "text": "proposes",
+    "start": 31.87,
+    "end": 32.25,
+    "id": "w82"
+  },
+  {
+    "text": "des",
+    "start": 32.25,
+    "end": 32.39,
+    "id": "w83"
+  },
+  {
+    "text": "produits",
+    "start": 32.39,
+    "end": 32.8,
+    "id": "w84"
+  },
+  {
+    "text": "ou",
+    "start": 32.8,
+    "end": 32.88,
+    "id": "w85"
+  },
+  {
+    "text": "services",
+    "start": 32.88,
+    "end": 33.4,
+    "id": "w86"
+  },
+  {
+    "text": "à",
+    "start": 33.4,
+    "end": 33.48,
+    "id": "w87"
+  },
+  {
+    "text": "acheter",
+    "start": 33.48,
+    "end": 34.03,
+    "id": "w88"
+  },
+  {
+    "text": "en",
+    "start": 34.03,
+    "end": 34.19,
+    "id": "w89"
+  },
+  {
+    "text": "ligne.",
+    "start": 34.19,
+    "end": 34.6,
+    "id": "w90"
+  },
+  {
+    "text": "Et",
+    "start": 34.7,
+    "end": 34.73,
+    "id": "w91"
+  },
+  {
+    "text": "cinquièmement,",
+    "start": 34.73,
+    "end": 35.63,
+    "id": "w92"
+  },
+  {
+    "text": "les",
+    "start": 35.7,
+    "end": 35.86,
+    "id": "w93"
+  },
+  {
+    "text": "droits",
+    "start": 35.86,
+    "end": 36.23,
+    "id": "w94"
+  },
+  {
+    "text": "d'auteur.",
+    "start": 36.28,
+    "end": 36.97,
+    "id": "w95"
+  },
+  {
+    "text": "Assure-toi",
+    "start": 37.1,
+    "end": 37.47,
+    "id": "w96"
+  },
+  {
+    "text": "d'avoir",
+    "start": 37.47,
+    "end": 37.8,
+    "id": "w97"
+  },
+  {
+    "text": "les",
+    "start": 37.8,
+    "end": 37.95,
+    "id": "w98"
+  },
+  {
+    "text": "autorisations",
+    "start": 37.95,
+    "end": 38.59,
+    "id": "w99"
+  },
+  {
+    "text": "nécessaires",
+    "start": 38.59,
+    "end": 39.2,
+    "id": "w100"
+  },
+  {
+    "text": "pour",
+    "start": 39.2,
+    "end": 39.41,
+    "id": "w101"
+  },
+  {
+    "text": "utiliser",
+    "start": 39.45,
+    "end": 39.96,
+    "id": "w102"
+  },
+  {
+    "text": "tes",
+    "start": 39.96,
+    "end": 40.39,
+    "id": "w103"
+  },
+  {
+    "text": "images,",
+    "start": 40.39,
+    "end": 40.7,
+    "id": "w104"
+  },
+  {
+    "text": "tes",
+    "start": 40.7,
+    "end": 40.91,
+    "id": "w105"
+  },
+  {
+    "text": "vidéos,",
+    "start": 40.91,
+    "end": 41.5,
+    "id": "w106"
+  },
+  {
+    "text": "tes",
+    "start": 41.5,
+    "end": 41.62,
+    "id": "w107"
+  },
+  {
+    "text": "polices",
+    "start": 41.62,
+    "end": 42.2,
+    "id": "w108"
+  },
+  {
+    "text": "et",
+    "start": 42.2,
+    "end": 42.31,
+    "id": "w109"
+  },
+  {
+    "text": "tes",
+    "start": 42.31,
+    "end": 42.35,
+    "id": "w110"
+  },
+  {
+    "text": "ressources",
+    "start": 42.48,
+    "end": 43.03,
+    "id": "w111"
+  },
+  {
+    "text": "graphiques.",
+    "start": 43.04,
+    "end": 43.79,
+    "id": "w112"
+  },
+  {
+    "text": "N'oublie",
+    "start": 43.85,
+    "end": 44.21,
+    "id": "w113"
+  },
+  {
+    "text": "pas",
+    "start": 44.26,
+    "end": 44.39,
+    "id": "w114"
+  },
+  {
+    "text": "non",
+    "start": 44.39,
+    "end": 44.55,
+    "id": "w115"
+  },
+  {
+    "text": "plus",
+    "start": 44.55,
+    "end": 44.77,
+    "id": "w116"
+  },
+  {
+    "text": "de",
+    "start": 44.77,
+    "end": 44.83,
+    "id": "w117"
+  },
+  {
+    "text": "sécuriser",
+    "start": 44.9,
+    "end": 45.37,
+    "id": "w118"
+  },
+  {
+    "text": "les",
+    "start": 45.37,
+    "end": 45.53,
+    "id": "w119"
+  },
+  {
+    "text": "données",
+    "start": 45.53,
+    "end": 45.91,
+    "id": "w120"
+  },
+  {
+    "text": "et",
+    "start": 45.91,
+    "end": 46.02,
+    "id": "w121"
+  },
+  {
+    "text": "les",
+    "start": 46.02,
+    "end": 46.17,
+    "id": "w122"
+  },
+  {
+    "text": "formulaires",
+    "start": 46.2,
+    "end": 46.74,
+    "id": "w123"
+  },
+  {
+    "text": "de",
+    "start": 46.74,
+    "end": 46.965,
+    "id": "w124"
+  },
+  {
+    "text": "ton",
+    "start": 46.965,
+    "end": 47.19,
+    "id": "w125"
+  },
+  {
+    "text": "site.",
+    "start": 47.19,
+    "end": 47.5,
+    "id": "w126"
+  },
+  {
+    "text": "Ton",
+    "start": 47.6,
+    "end": 47.68,
+    "id": "w127"
+  },
+  {
+    "text": "site",
+    "start": 47.68,
+    "end": 47.91,
+    "id": "w128"
+  },
+  {
+    "text": "peut",
+    "start": 47.96,
+    "end": 48.18,
+    "id": "w129"
+  },
+  {
+    "text": "être",
+    "start": 48.18,
+    "end": 48.43,
+    "id": "w130"
+  },
+  {
+    "text": "magnifique,",
+    "start": 48.43,
+    "end": 49.2,
+    "id": "w131"
+  },
+  {
+    "text": "mais",
+    "start": 49.2,
+    "end": 49.44,
+    "id": "w132"
+  },
+  {
+    "text": "sa",
+    "start": 49.44,
+    "end": 49.56,
+    "id": "w133"
+  },
+  {
+    "text": "conformité",
+    "start": 49.56,
+    "end": 50.16,
+    "id": "w134"
+  },
+  {
+    "text": "est",
+    "start": 50.16,
+    "end": 50.34,
+    "id": "w135"
+  },
+  {
+    "text": "tout",
+    "start": 50.34,
+    "end": 50.46,
+    "id": "w136"
+  },
+  {
+    "text": "aussi",
+    "start": 50.46,
+    "end": 50.89,
+    "id": "w137"
+  },
+  {
+    "text": "importante",
+    "start": 50.89,
+    "end": 51.44,
+    "id": "w138"
+  },
+  {
+    "text": "que",
+    "start": 51.44,
+    "end": 51.82,
+    "id": "w139"
+  },
+  {
+    "text": "son",
+    "start": 51.82,
+    "end": 51.84,
+    "id": "w140"
+  },
+  {
+    "text": "design.",
+    "start": 51.84,
+    "end": 52.38,
+    "id": "w141"
+  }
+]

@@ -1,0 +1,50 @@
+<!-- Scène 20 · « Enfin, publie ton agent et teste-le. » (86.11 → 88.75 s). Fichier écrit par un générateur, modifiable à la main. -->
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+    }
+
+  </style>
+  <div id="root" data-composition-id="s20-publier" data-width="1920" data-height="1080">
+    <div class="pj-scene">
+      <div id="s20-publier-cam" class="pj-cam">
+        <div id="s20-publier-cadre" class="pj-cadre">
+        <div class="pj-horizon" style="top: 760px"></div>
+        <div class="pj-cone" style="left: 190px; height: 900px; opacity: 1.0"></div><div class="pj-sol" style="left: 160px; top: 740px; opacity: 1.0"></div><div class="pj-cone" style="left: 500px; height: 900px; opacity: 0.8"></div><div class="pj-sol" style="left: 470px; top: 740px; opacity: 0.8"></div>
+        <svg id="s20-toi" class="pj-perso pj-toi-perso" viewBox="-30 -20 160 290" style="left: 360px; top: 430px; width: 221px; height: 400px"><g id="s20-toi-vie"><g id="s20-toi-corps"><g id="s20-toi-jg"><g class="c"><rect x="24" y="136" width="24" height="112" rx="8" /></g><g class="p"><rect x="24" y="136" width="24" height="112" rx="8" /></g></g><g id="s20-toi-jd"><g class="c"><rect x="52" y="136" width="24" height="112" rx="8" /></g><g class="p"><rect x="52" y="136" width="24" height="112" rx="8" /></g></g><g id="s20-toi-tronc"><g class="c"><rect x="22" y="52" width="56" height="94" rx="12" /></g><g class="p"><rect x="22" y="52" width="56" height="94" rx="12" /></g></g><g id="s20-toi-bg"><g class="c"><rect x="2" y="54" width="18" height="86" rx="9" /></g><g class="p"><rect x="2" y="54" width="18" height="86" rx="9" /></g></g><g id="s20-toi-bd"><g class="c"><rect x="80" y="54" width="18" height="86" rx="9" /></g><g class="p"><rect x="80" y="54" width="18" height="86" rx="9" /></g></g><g id="s20-toi-tete"><g class="c"><circle cx="50" cy="24" r="22" /></g><g class="p"><circle cx="50" cy="24" r="22" /></g></g></g></g></svg>
+        <svg id="s20-ia" class="pj-perso pj-ia-perso" viewBox="-30 -20 160 290" style="left: 684px; top: 477px; width: 193px; height: 350px"><g id="s20-ia-vie"><g id="s20-ia-corps"><g id="s20-ia-jg"><g class="c"><rect x="24" y="136" width="24" height="112" rx="8" /></g><g class="p"><rect x="24" y="136" width="24" height="112" rx="8" /></g></g><g id="s20-ia-jd"><g class="c"><rect x="52" y="136" width="24" height="112" rx="8" /></g><g class="p"><rect x="52" y="136" width="24" height="112" rx="8" /></g></g><g id="s20-ia-tronc"><g class="c"><rect x="22" y="52" width="56" height="94" rx="12" /></g><g class="p"><rect x="22" y="52" width="56" height="94" rx="12" /></g></g><g id="s20-ia-bg"><g class="c"><rect x="2" y="54" width="18" height="86" rx="9" /></g><g class="p"><rect x="2" y="54" width="18" height="86" rx="9" /></g></g><g id="s20-ia-bd"><g class="c"><rect x="80" y="54" width="18" height="86" rx="9" /></g><g class="p"><rect x="80" y="54" width="18" height="86" rx="9" /></g></g><g id="s20-ia-tete"><g class="c"><rect x="25" y="0" width="50" height="46" rx="13" /></g><g class="p"><rect x="25" y="0" width="50" height="46" rx="13" /></g><g class="yeux"><circle cx="40" cy="22" r="5" /><circle cx="60" cy="22" r="5" /></g></g></g></g></svg>
+        <div id="s20-pub" class="pj-publier" style="left: 1100px; top: 300px"><span>Publier</span><div id="s20-int" class="pj-inter"><i id="s20-bouton"></i></div></div>
+        <div id="s20-actif" class="pj-sticker" style="left: 1300px; top: 520px; font-size: 90px; background: #DCFC1C; transform: rotate(-6deg); opacity: 0">Actif</div>
+        </div>
+      </div>
+      <div id="s20-hud" class="pj-label" style="left: 113px; top: 107px; "><span class="pj-k">Enfin</span><span class="pj-d">Publier, puis tester</span></div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#s20-publier-cam", { scale: 1 }, { scale: 1.05, duration: 2.44, ease: "none" }, 0);
+    tl.fromTo("#s20-publier-cam", { filter: "blur(14px)" }, { filter: "blur(0px)", duration: 0.16, ease: "power2.out" }, 0);
+    tl.fromTo("#s20-actif", { opacity: 0, scale: 2.2 }, { opacity: 1, scale: 1, duration: 0.14, ease: "power4.in" }, 1.03);
+    tl.fromTo("#s20-actif", { x: 0 }, { keyframes: [{ x: -10, duration: 0.03 }, { x: 8, duration: 0.03 }, { x: 0, duration: 0.03 }] }, 1.17);
+    tl.fromTo("#s20-toi-vie", { y: 0 }, { y: -5, duration: 0.42, repeat: 4, yoyo: true, ease: "sine.inOut", immediateRender: false }, 0.0);
+    tl.fromTo("#s20-ia-vie", { y: 0 }, { y: -5, duration: 0.42, repeat: 4, yoyo: true, ease: "sine.inOut", immediateRender: false }, 0.0);
+    tl.to("#s20-toi-bd", { rotation: -100, svgOrigin: "89 62", duration: 0.16, ease: "back.out(2)" }, 0.12);
+    tl.to("#s20-toi-tete", { rotation: -6, svgOrigin: "50 50", duration: 0.16, ease: "back.out(2)" }, 0.12);
+    tl.to("#s20-bouton", { x: 96, duration: 0.18, ease: "back.out(2)" }, 0.68);
+    tl.to("#s20-int", { backgroundColor: "#DCFC1C", duration: 0.12 }, 0.68);
+    tl.to("#s20-publier-cadre", { x: -348, y: 144, scale: 1.2, duration: 0.26, ease: "power3.inOut" }, 0.56);
+    tl.to("#s20-publier-cadre", { keyframes: [{ filter: "blur(10px)", duration: 0.13 }, { filter: "blur(0px)", duration: 0.13 }] }, 0.56);
+    tl.to("#s20-ia-bg", { rotation: 165, svgOrigin: "11 62", duration: 0.14, ease: "back.out(2)" }, 1.03);
+    tl.to("#s20-ia-bd", { rotation: -165, svgOrigin: "89 62", duration: 0.14, ease: "back.out(2)" }, 1.03);
+    tl.to("#s20-ia-tete", { rotation: -8, svgOrigin: "50 50", duration: 0.14, ease: "back.out(2)" }, 1.03);
+    tl.to("#s20-ia-corps", { keyframes: [{ y: -40, duration: 0.13, ease: "power2.out" }, { y: 0, duration: 0.15, ease: "power2.in" }] }, 1.08);
+    tl.to("#s20-toi-bd", { rotation: -152, svgOrigin: "89 62", duration: 0.16, ease: "back.out(2.5)" }, 1.96);
+    tl.to("#s20-toi-bd", { rotation: "+=12", svgOrigin: "89 62", duration: 0.08, repeat: 3, yoyo: true }, 2.14);
+    tl.to("#s20-publier-cadre", { x: 0, y: 20, scale: 1.0, duration: 0.26, ease: "power3.inOut" }, 1.86);
+    tl.to("#s20-publier-cadre", { keyframes: [{ filter: "blur(10px)", duration: 0.13 }, { filter: "blur(0px)", duration: 0.13 }] }, 1.86);
+    tl.to("#s20-publier-cam", { scale: 1.3, filter: "blur(14px)", duration: 0.2, ease: "power3.in" }, 2.44);
+    window.__timelines["s20-publier"] = tl;
+  </script>
+</template>

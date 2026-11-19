@@ -1,0 +1,35 @@
+[
+ {"nom":"c01-accueil","url":"/","prechauffe":0.3,"curseur":[1250,880],"actions":[
+   {"t":"attente","d":0.8},{"t":"souris","x":1000,"y":615,"d":1.4},{"t":"attente","d":1.6},
+   {"t":"souris","x":1240,"y":615,"d":1.0},{"t":"attente","d":1.0},{"t":"defile","to":180,"d":4.8}]},
+ {"nom":"c02-article","url":"/pages/articles/l-actuariat-comprendre-le-risque-preparer-demain.html","prechauffe":0.3,"curseur":[760,880],"actions":[
+   {"t":"attente","d":1.4},{"t":"souris","x":185,"y":759,"d":1.2},{"t":"attente","d":2.0}]},
+ {"nom":"c03-conviction","url":"/","prechauffe":1.2,"depart":{"sel":"#manifeste","offset":-620},"actions":[
+   {"t":"defile","sel":"#manifeste","offset":380,"d":7.6,"ease":"inout"}]},
+ {"nom":"c04-apropos","url":"/pages/apropos.html","prechauffe":0.3,"actions":[
+   {"t":"attente","d":1.6},{"t":"defile","texte":"Faire le lien entre","offset":230,"d":1.6},{"t":"attente","d":2.4}]},
+ {"nom":"c05-poles","url":"/pages/poles.html","prechauffe":0.3,"actions":[
+   {"t":"attente","d":0.8},{"t":"defile","to":140,"d":2.6,"ease":"lin"}]},
+ {"nom":"c06-actuariat","url":"/pages/poles/actuariat.html","prechauffe":0.3,"curseur":[1300,880],"actions":[
+   {"t":"souris","x":760,"y":560,"d":2.0},{"t":"attente","d":2.2}]},
+ {"nom":"c07-data","url":"/pages/poles/data-science.html","prechauffe":0.3,"actions":[
+   {"t":"attente","d":0.5},{"t":"defile","to":120,"d":3.0,"ease":"lin"}]},
+ {"nom":"c08-projets","url":"/pages/projets.html","prechauffe":0.3,"actions":[
+   {"t":"attente","d":0.6},{"t":"defile","to":150,"d":2.7,"ease":"lin"}]},
+ {"nom":"c09-rdv","url":"/pages/evenements.html","prechauffe":0.3,"actions":[
+   {"t":"attente","d":0.6},{"t":"defile","to":150,"d":2.4,"ease":"lin"}]},
+ {"nom":"c10-journal","url":"/pages/articles.html","prechauffe":0.3,"actions":[
+   {"t":"attente","d":0.6},{"t":"defile","to":150,"d":3.4,"ease":"lin"}]},
+ {"nom":"c11-bureaux","url":"/pages/apropos.html","prechauffe":0.6,"depart":{"texte":"Des bureaux qui se","offset":-420},"actions":[
+   {"t":"defile","texte":"Des bureaux qui se","offset":-120,"d":2.5},{"t":"attente","d":7.2}]},
+ {"nom":"c12-collectif","url":"/pages/apropos.html","prechauffe":0.6,"depart":{"texte":"au fil des générations","offset":-420},"actions":[
+   {"t":"defile","texte":"au fil des générations","offset":40,"d":4.1,"ease":"lin"}]},
+ {"nom":"c13-candidature","url":"/pages/candidature.html","prechauffe":0.3,"actions":[
+   {"t":"attente","d":0.6},{"t":"defile","texte":"De la Licence 3","offset":-140,"d":0.7},{"t":"attente","d":5.1}]},
+ {"nom":"c14-clic","url":"/","prechauffe":1.2,"curseur":[880,520],"actions":[
+   {"t":"souris","x":1252,"y":48,"d":1.0,"arc":60},{"t":"clic","d":0.4},{"t":"attente","d":0.8}]},
+ {"nom":"c15-contact","url":"/pages/contact.html","prechauffe":0.3,"actions":[
+   {"t":"attente","d":0.8},{"t":"defile","sel":"#contact-form","offset":-150,"d":1.0},
+   {"t":"tape","sel":"input[name=organisation]","texte":"Votre organisation","d":1.0},
+   {"t":"tape","sel":"#contact-subject","texte":"Une question sur vos données","d":1.2}]}
+]

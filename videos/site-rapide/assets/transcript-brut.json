@@ -1,0 +1,794 @@
+[
+  {
+    "text": "Ton",
+    "start": 0.11,
+    "end": 0.22,
+    "id": "w0"
+  },
+  {
+    "text": "site",
+    "start": 0.22,
+    "end": 0.51,
+    "id": "w1"
+  },
+  {
+    "text": "est",
+    "start": 0.53,
+    "end": 0.74,
+    "id": "w2"
+  },
+  {
+    "text": "magnifique,",
+    "start": 0.74,
+    "end": 1.56,
+    "id": "w3"
+  },
+  {
+    "text": "mais",
+    "start": 1.61,
+    "end": 1.71,
+    "id": "w4"
+  },
+  {
+    "text": "personne",
+    "start": 1.83,
+    "end": 2.18,
+    "id": "w5"
+  },
+  {
+    "text": "ne",
+    "start": 2.18,
+    "end": 2.28,
+    "id": "w6"
+  },
+  {
+    "text": "va",
+    "start": 2.28,
+    "end": 2.37,
+    "id": "w7"
+  },
+  {
+    "text": "attendre",
+    "start": 2.37,
+    "end": 2.8,
+    "id": "w8"
+  },
+  {
+    "text": "10",
+    "start": 2.8,
+    "end": 3.05,
+    "id": "w9"
+  },
+  {
+    "text": "secondes",
+    "start": 3.05,
+    "end": 3.4,
+    "id": "w10"
+  },
+  {
+    "text": "pour",
+    "start": 3.4,
+    "end": 3.7,
+    "id": "w11"
+  },
+  {
+    "text": "le",
+    "start": 3.7,
+    "end": 3.85,
+    "id": "w12"
+  },
+  {
+    "text": "voir.",
+    "start": 3.85,
+    "end": 4.32,
+    "id": "w13"
+  },
+  {
+    "text": "Heureusement,",
+    "start": 4.43,
+    "end": 5.11,
+    "id": "w14"
+  },
+  {
+    "text": "tu",
+    "start": 5.11,
+    "end": 5.22,
+    "id": "w15"
+  },
+  {
+    "text": "peux",
+    "start": 5.22,
+    "end": 5.45,
+    "id": "w16"
+  },
+  {
+    "text": "utiliser",
+    "start": 5.45,
+    "end": 5.88,
+    "id": "w17"
+  },
+  {
+    "text": "l'IA",
+    "start": 5.92,
+    "end": 6.02,
+    "id": "w18"
+  },
+  {
+    "text": "pour",
+    "start": 6.15,
+    "end": 6.35,
+    "id": "w19"
+  },
+  {
+    "text": "résoudre",
+    "start": 6.35,
+    "end": 6.8,
+    "id": "w20"
+  },
+  {
+    "text": "ce",
+    "start": 6.8,
+    "end": 6.91,
+    "id": "w21"
+  },
+  {
+    "text": "problème.",
+    "start": 6.91,
+    "end": 7.6,
+    "id": "w22"
+  },
+  {
+    "text": "Voici",
+    "start": 7.71,
+    "end": 7.95,
+    "id": "w23"
+  },
+  {
+    "text": "deux",
+    "start": 7.99,
+    "end": 8.25,
+    "id": "w24"
+  },
+  {
+    "text": "skills",
+    "start": 8.25,
+    "end": 8.69,
+    "id": "w25"
+  },
+  {
+    "text": "GitHub",
+    "start": 8.69,
+    "end": 8.96,
+    "id": "w26"
+  },
+  {
+    "text": "à",
+    "start": 9.15,
+    "end": 9.16,
+    "id": "w27"
+  },
+  {
+    "text": "connaître.",
+    "start": 9.21,
+    "end": 9.92,
+    "id": "w28"
+  },
+  {
+    "text": "Le",
+    "start": 10.03,
+    "end": 10.07,
+    "id": "w29"
+  },
+  {
+    "text": "premier,",
+    "start": 10.07,
+    "end": 10.76,
+    "id": "w30"
+  },
+  {
+    "text": "Webperf",
+    "start": 10.76,
+    "end": 11.29,
+    "id": "w31"
+  },
+  {
+    "text": "de",
+    "start": 11.29,
+    "end": 11.31,
+    "id": "w32"
+  },
+  {
+    "text": "Cloudflare",
+    "start": 11.47,
+    "end": 12.24,
+    "id": "w33"
+  },
+  {
+    "text": "permet",
+    "start": 12.24,
+    "end": 12.56,
+    "id": "w34"
+  },
+  {
+    "text": "à",
+    "start": 12.56,
+    "end": 12.64,
+    "id": "w35"
+  },
+  {
+    "text": "ton",
+    "start": 12.64,
+    "end": 12.89,
+    "id": "w36"
+  },
+  {
+    "text": "IA",
+    "start": 12.89,
+    "end": 13.08,
+    "id": "w37"
+  },
+  {
+    "text": "d'auditer",
+    "start": 13.08,
+    "end": 13.52,
+    "id": "w38"
+  },
+  {
+    "text": "ton",
+    "start": 13.52,
+    "end": 13.78,
+    "id": "w39"
+  },
+  {
+    "text": "site,",
+    "start": 13.78,
+    "end": 14.16,
+    "id": "w40"
+  },
+  {
+    "text": "de",
+    "start": 14.16,
+    "end": 14.27,
+    "id": "w41"
+  },
+  {
+    "text": "détecter",
+    "start": 14.27,
+    "end": 14.61,
+    "id": "w42"
+  },
+  {
+    "text": "les",
+    "start": 14.69,
+    "end": 14.81,
+    "id": "w43"
+  },
+  {
+    "text": "problèmes",
+    "start": 14.81,
+    "end": 15.27,
+    "id": "w44"
+  },
+  {
+    "text": "de",
+    "start": 15.27,
+    "end": 15.35,
+    "id": "w45"
+  },
+  {
+    "text": "chargement",
+    "start": 15.43,
+    "end": 15.87,
+    "id": "w46"
+  },
+  {
+    "text": "et",
+    "start": 15.99,
+    "end": 16.03,
+    "id": "w47"
+  },
+  {
+    "text": "de",
+    "start": 16.03,
+    "end": 16.14,
+    "id": "w48"
+  },
+  {
+    "text": "proposer",
+    "start": 16.14,
+    "end": 16.6,
+    "id": "w49"
+  },
+  {
+    "text": "des",
+    "start": 16.6,
+    "end": 16.77,
+    "id": "w50"
+  },
+  {
+    "text": "corrections.",
+    "start": 16.77,
+    "end": 17.58,
+    "id": "w51"
+  },
+  {
+    "text": "Le",
+    "start": 17.75,
+    "end": 17.79,
+    "id": "w52"
+  },
+  {
+    "text": "deuxième,",
+    "start": 17.79,
+    "end": 18.57,
+    "id": "w53"
+  },
+  {
+    "text": "React",
+    "start": 18.57,
+    "end": 18.96,
+    "id": "w54"
+  },
+  {
+    "text": "Best",
+    "start": 18.96,
+    "end": 19.27,
+    "id": "w55"
+  },
+  {
+    "text": "Practices",
+    "start": 19.27,
+    "end": 19.97,
+    "id": "w56"
+  },
+  {
+    "text": "de",
+    "start": 19.97,
+    "end": 20.12,
+    "id": "w57"
+  },
+  {
+    "text": "Versel",
+    "start": 20.12,
+    "end": 20.64,
+    "id": "w58"
+  },
+  {
+    "text": "aide",
+    "start": 20.64,
+    "end": 20.86,
+    "id": "w59"
+  },
+  {
+    "text": "à",
+    "start": 20.86,
+    "end": 20.91,
+    "id": "w60"
+  },
+  {
+    "text": "optimiser",
+    "start": 20.91,
+    "end": 21.44,
+    "id": "w61"
+  },
+  {
+    "text": "le",
+    "start": 21.44,
+    "end": 21.58,
+    "id": "w62"
+  },
+  {
+    "text": "code,",
+    "start": 21.58,
+    "end": 22.04,
+    "id": "w63"
+  },
+  {
+    "text": "réduire",
+    "start": 22.15,
+    "end": 22.37,
+    "id": "w64"
+  },
+  {
+    "text": "les",
+    "start": 22.42,
+    "end": 22.58,
+    "id": "w65"
+  },
+  {
+    "text": "scripts",
+    "start": 22.58,
+    "end": 22.97,
+    "id": "w66"
+  },
+  {
+    "text": "inutiles",
+    "start": 22.97,
+    "end": 23.4,
+    "id": "w67"
+  },
+  {
+    "text": "et",
+    "start": 23.45,
+    "end": 23.5,
+    "id": "w68"
+  },
+  {
+    "text": "améliorer",
+    "start": 23.59,
+    "end": 24.04,
+    "id": "w69"
+  },
+  {
+    "text": "les",
+    "start": 24.04,
+    "end": 24.2,
+    "id": "w70"
+  },
+  {
+    "text": "performances",
+    "start": 24.2,
+    "end": 24.87,
+    "id": "w71"
+  },
+  {
+    "text": "de",
+    "start": 24.87,
+    "end": 24.98,
+    "id": "w72"
+  },
+  {
+    "text": "ton",
+    "start": 24.98,
+    "end": 25.14,
+    "id": "w73"
+  },
+  {
+    "text": "application.",
+    "start": 25.14,
+    "end": 25.94,
+    "id": "w74"
+  },
+  {
+    "text": "Mais",
+    "start": 26.07,
+    "end": 26.26,
+    "id": "w75"
+  },
+  {
+    "text": "voici",
+    "start": 26.26,
+    "end": 26.63,
+    "id": "w76"
+  },
+  {
+    "text": "trois",
+    "start": 26.63,
+    "end": 27,
+    "id": "w77"
+  },
+  {
+    "text": "astuces.",
+    "start": 27,
+    "end": 27.56,
+    "id": "w78"
+  },
+  {
+    "text": "Compresse",
+    "start": 27.67,
+    "end": 28,
+    "id": "w79"
+  },
+  {
+    "text": "tes",
+    "start": 28.09,
+    "end": 28.18,
+    "id": "w80"
+  },
+  {
+    "text": "images,",
+    "start": 28.18,
+    "end": 28.59,
+    "id": "w81"
+  },
+  {
+    "text": "évite",
+    "start": 28.59,
+    "end": 28.84,
+    "id": "w82"
+  },
+  {
+    "text": "de",
+    "start": 28.84,
+    "end": 28.94,
+    "id": "w83"
+  },
+  {
+    "text": "charger",
+    "start": 29.11,
+    "end": 29.27,
+    "id": "w84"
+  },
+  {
+    "text": "toutes",
+    "start": 29.39,
+    "end": 29.61,
+    "id": "w85"
+  },
+  {
+    "text": "les",
+    "start": 29.61,
+    "end": 29.76,
+    "id": "w86"
+  },
+  {
+    "text": "ressources",
+    "start": 29.76,
+    "end": 30.36,
+    "id": "w87"
+  },
+  {
+    "text": "immédiatement",
+    "start": 30.36,
+    "end": 31.16,
+    "id": "w88"
+  },
+  {
+    "text": "et",
+    "start": 31.27,
+    "end": 31.29,
+    "id": "w89"
+  },
+  {
+    "text": "réduis",
+    "start": 31.29,
+    "end": 31.68,
+    "id": "w90"
+  },
+  {
+    "text": "le",
+    "start": 31.69,
+    "end": 31.82,
+    "id": "w91"
+  },
+  {
+    "text": "JavaScript",
+    "start": 31.82,
+    "end": 32.49,
+    "id": "w92"
+  },
+  {
+    "text": "inutile.",
+    "start": 32.49,
+    "end": 33.2,
+    "id": "w93"
+  },
+  {
+    "text": "Enfin,",
+    "start": 33.31,
+    "end": 33.64,
+    "id": "w94"
+  },
+  {
+    "text": "pour",
+    "start": 33.73,
+    "end": 33.89,
+    "id": "w95"
+  },
+  {
+    "text": "tester",
+    "start": 33.89,
+    "end": 34.24,
+    "id": "w96"
+  },
+  {
+    "text": "ton",
+    "start": 34.24,
+    "end": 34.39,
+    "id": "w97"
+  },
+  {
+    "text": "site,",
+    "start": 34.47,
+    "end": 34.88,
+    "id": "w98"
+  },
+  {
+    "text": "utilise",
+    "start": 34.88,
+    "end": 35.38,
+    "id": "w99"
+  },
+  {
+    "text": "Google",
+    "start": 35.38,
+    "end": 35.81,
+    "id": "w100"
+  },
+  {
+    "text": "PageSpeed",
+    "start": 35.81,
+    "end": 36.44,
+    "id": "w101"
+  },
+  {
+    "text": "Insights.",
+    "start": 36.45,
+    "end": 37.2,
+    "id": "w102"
+  },
+  {
+    "text": "Tu",
+    "start": 37.2,
+    "end": 37.39,
+    "id": "w103"
+  },
+  {
+    "text": "colles",
+    "start": 37.39,
+    "end": 37.69,
+    "id": "w104"
+  },
+  {
+    "text": "ton",
+    "start": 37.69,
+    "end": 37.85,
+    "id": "w105"
+  },
+  {
+    "text": "lien",
+    "start": 37.85,
+    "end": 38.06,
+    "id": "w106"
+  },
+  {
+    "text": "et",
+    "start": 38.06,
+    "end": 38.16,
+    "id": "w107"
+  },
+  {
+    "text": "tu",
+    "start": 38.16,
+    "end": 38.26,
+    "id": "w108"
+  },
+  {
+    "text": "obtiens",
+    "start": 38.26,
+    "end": 38.63,
+    "id": "w109"
+  },
+  {
+    "text": "un",
+    "start": 38.63,
+    "end": 38.7,
+    "id": "w110"
+  },
+  {
+    "text": "rapport",
+    "start": 38.83,
+    "end": 39.2,
+    "id": "w111"
+  },
+  {
+    "text": "avec",
+    "start": 39.2,
+    "end": 39.41,
+    "id": "w112"
+  },
+  {
+    "text": "les",
+    "start": 39.41,
+    "end": 39.56,
+    "id": "w113"
+  },
+  {
+    "text": "problèmes",
+    "start": 39.56,
+    "end": 40.03,
+    "id": "w114"
+  },
+  {
+    "text": "à",
+    "start": 40.03,
+    "end": 40.08,
+    "id": "w115"
+  },
+  {
+    "text": "corriger.",
+    "start": 40.08,
+    "end": 40.68,
+    "id": "w116"
+  },
+  {
+    "text": "Abonne-toi",
+    "start": 40.79,
+    "end": 41.22,
+    "id": "w117"
+  },
+  {
+    "text": "à",
+    "start": 41.22,
+    "end": 41.27,
+    "id": "w118"
+  },
+  {
+    "text": "Ghostcode",
+    "start": 41.27,
+    "end": 41.8,
+    "id": "w119"
+  },
+  {
+    "text": "pour",
+    "start": 41.8,
+    "end": 42,
+    "id": "w120"
+  },
+  {
+    "text": "découvrir",
+    "start": 42,
+    "end": 42.39,
+    "id": "w121"
+  },
+  {
+    "text": "tout",
+    "start": 42.51,
+    "end": 42.67,
+    "id": "w122"
+  },
+  {
+    "text": "ce",
+    "start": 42.67,
+    "end": 42.75,
+    "id": "w123"
+  },
+  {
+    "text": "que",
+    "start": 42.77,
+    "end": 42.9,
+    "id": "w124"
+  },
+  {
+    "text": "l'IA",
+    "start": 42.9,
+    "end": 43.12,
+    "id": "w125"
+  },
+  {
+    "text": "peut",
+    "start": 43.12,
+    "end": 43.29,
+    "id": "w126"
+  },
+  {
+    "text": "faire",
+    "start": 43.29,
+    "end": 43.52,
+    "id": "w127"
+  },
+  {
+    "text": "pour",
+    "start": 43.52,
+    "end": 43.69,
+    "id": "w128"
+  },
+  {
+    "text": "tes",
+    "start": 43.69,
+    "end": 43.82,
+    "id": "w129"
+  },
+  {
+    "text": "sites",
+    "start": 43.82,
+    "end": 44.04,
+    "id": "w130"
+  },
+  {
+    "text": "web.",
+    "start": 44.04,
+    "end": 44.32,
+    "id": "w131"
+  }
+]

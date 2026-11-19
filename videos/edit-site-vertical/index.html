@@ -1,0 +1,169 @@
+<!doctype html>
+<html
+  lang="fr"
+  data-resolution="portrait"
+  data-composition-variables='[
+    {"id":"titre","type":"string","label":"Titre-promesse (au-dessus du film)","default":"POV : tu crées des sites avec l’IA","maxLength":90}
+  ]'
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+    <style>
+      /* Version TikTok / Shorts / Reels du style « Projecteur » (frame.md, format B) :
+         fond noir, titre blanc au-dessus, film 16:9 dans un bandeau 1080×608 centré. */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        width: 1080px;
+        height: 1920px;
+        overflow: hidden;
+        background: #000;
+      }
+      #fond {
+        position: absolute;
+        inset: 0;
+        background: #000;
+      }
+      /* Le bas du titre reste fixe à 581 px : un titre plus long monte, il ne descend jamais sur le film. */
+      #titre {
+        position: absolute;
+        left: 125px;
+        width: 830px;
+        bottom: 1339px;
+        color: #fff;
+        font-family: "Inter", sans-serif;
+        font-weight: 600;
+        font-size: 70px;
+        line-height: 1.2;
+        letter-spacing: -0.01em;
+        text-align: center;
+        text-wrap: balance;
+      }
+      #bandeau {
+        position: absolute;
+        left: 0;
+        top: 656px;
+        width: 1080px;
+        height: 608px;
+        overflow: hidden;
+      }
+      /* check : début */
+      @font-face {
+        font-family: "Anton";
+        src: url("assets/fonts/Anton-Regular.woff2") format("woff2");
+        font-weight: 400;
+      }
+      #ck-barre {
+        position: absolute;
+        left: 26px;
+        top: 1318px;
+        width: 1028px;
+      }
+      #ck-tete {
+        font-family: "JetBrains Mono", monospace;
+        font-weight: 700;
+        font-size: 30px;
+        letter-spacing: 0.15em;
+        color: #dcfc1c;
+        text-transform: uppercase;
+        text-align: center;
+        margin-bottom: 18px;
+      }
+      #ck-cases {
+        display: flex;
+        gap: 12px;
+      }
+      .ck-case {
+        position: relative;
+        width: 161px;
+        height: 150px;
+        border: 4px solid #3a4462;
+        background: repeating-linear-gradient(-45deg, #141414 0 14px, #0c0c0c 14px 28px);
+        color: #ecece8;
+        font-family: "Anton", sans-serif;
+        text-transform: uppercase;
+        box-sizing: border-box;
+      }
+      .ck-case b {
+        position: absolute;
+        left: 12px;
+        top: 6px;
+        font-weight: 400;
+        font-size: 40px;
+        line-height: 1;
+      }
+      .ck-q {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 22px;
+        text-align: center;
+        font-size: 76px;
+        line-height: 1;
+        color: #dcfc1c;
+      }
+      .ck-nom {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 16px;
+        text-align: center;
+        font-size: 27px;
+        line-height: 1;
+        white-space: nowrap;
+      }
+      .ck-c {
+        position: absolute;
+        right: 8px;
+        top: 8px;
+      }
+      .ck-v {
+        position: absolute;
+        right: 8px;
+        top: 8px;
+        opacity: 0;
+      }
+      /* check : fin */
+      #film {
+        width: 1080px;
+        height: 608px;
+        object-fit: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="29.82"
+      data-width="1080"
+      data-height="1920"
+    >
+      <div id="fond" class="clip" data-start="0" data-duration="29.82" data-track-index="0"></div>
+      <h1 id="titre" class="clip" data-start="0" data-duration="29.82" data-track-index="1" data-var-text="titre">
+        POV : tu crées des sites avec l’IA
+      </h1>
+      <div id="bandeau">
+        <video
+          id="film"
+          src="assets/edit-site-16x9.mp4"
+          data-start="0"
+          data-duration="29.82"
+          data-track-index="2"
+          data-has-audio="true"
+        ></video>
+      </div>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>
