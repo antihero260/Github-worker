@@ -392,6 +392,7 @@ body.touch .bossname .tt{display:none}
 <div id="loadErr" hidden>Le moteur 3D n'a pas pu se charger. Vérifie ta connexion puis recharge la page.</div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
 <script>
 (function () {
 'use strict';
@@ -1515,7 +1516,7 @@ function resetPlayerStats() {
 /* ---------- joueur ---------- */
 function startAttack(name) {
   const p = player, A = ATK[name];
-  p.state = 'attack'; p.atk = A; p.st = 0; p.hitSet.clear(); p.fxDone = false; p.queued = null;
+  p.state = 'attack'; p.atk = A; p.st = 0; p.atkSeq = (p.atkSeq || 0) + 1; p.hitSet.clear(); p.fxDone = false; p.queued = null;
   if (name === 'slam') { p.vy = -24; p.slamLanded = false; }
   if (A.float) { p.vy = Math.max(p.vy, 1.6); p.airAtks++; }
 }
@@ -1658,6 +1659,7 @@ function physPlayer(dt) {
 }
 function animatePlayer(dt) {
   const p = player, rig = p.rig;
+  if (rig.model) { animateModel(p, dt); finishPlayerAnim(p, rig, dt); return; }
   let P;
   if (p.state === 'dead' || p.state === 'hurt') P = Pose.hurt();
   else if (p.state === 'attack') P = attackPose(p.atk, p.st);
@@ -1669,16 +1671,160 @@ function animatePlayer(dt) {
   const A = p.atk;
   if (p.state === 'attack' && A.anim === 'spin') { const s = clamp((p.st - A.act[0]) / (A.act[1] - A.act[0]), 0, 1); rig.body.rotation.y = -ease(s) * Math.PI * 2; }
   else rig.body.rotation.y = 0;
+  finishPlayerAnim(p, rig, dt);
+}
+function finishPlayerAnim(p, rig, dt) {
   const yawT = p.face > 0 ? -0.4 : -2.74;
   rig.yaw = rig.yaw === undefined ? yawT : damp(rig.yaw, yawT, 20, dt);
   rig.root.rotation.y = rig.yaw;
-  rig.root.rotation.z = p.state === 'dead' ? Math.min(1.45, p.deadT * 4) : 0;
-  rig.root.position.set(p.x, p.y + (p.state === 'dead' ? -Math.min(0.2, p.deadT) : 0), 0);
+  rig.root.rotation.z = p.state === 'dead' && !rig.model ? Math.min(1.45, p.deadT * 4) : 0;
+  rig.root.position.set(p.x, p.y + (p.state === 'dead' && !rig.model ? -Math.min(0.2, p.deadT) : 0), 0);
   rig.root.visible = !(p.blinkT > 0 && Math.floor(p.blinkT * 16) % 2 === 0);
   const aw = p.awaken > 0;
   if (aw) { const pul = 0.5 + 0.5 * Math.sin(p.t * 10); tmpCol.setRGB(0.28 + 0.18 * pul, 0.01, 0.06); applyEmissive(rig, dt, tmpCol); } else applyEmissive(rig, dt, null);
   rig.eyeMat.color.setHex(aw || p.cor >= 100 ? 0xff2244 : 0x1a0d10);
   p.aura.material.opacity = aw ? 0.35 + 0.15 * Math.sin(p.t * 8) : 0;
+}
+
+
+/* ================= modèle 3D animé du joueur (assets/lin-ye.glb, facultatif) ================= */
+/* Clip de Mixamo par attaque du jeu. Le moment d'impact de chaque clip est détecté automatiquement. */
+const MODEL_CLIPS = { s1: 'slash1', s2: 'slash2', s3: 'slash3', heavy: 'heavy', air: 'slash2', air2: 'slash1', slam: 'air', cast: 'cast', devour: 'powerup' };
+const MODEL_HEIGHT = 1.95;
+function findHitTime(clip) {
+  const bones = /(RightArm|RightForeArm|RightHand|LeftArm|LeftForeArm|RightUpLeg|RightLeg|LeftUpLeg|LeftLeg|Spine1)\.quaternion$/;
+  const tracks = clip.tracks.filter((t) => bones.test(t.name));
+  if (!tracks.length) return clip.duration * 0.4;
+  const times = tracks[0].times, speed = new Float32Array(times.length);
+  const qa = new THREE.Quaternion(), qb = new THREE.Quaternion();
+  for (const t of tracks) {
+    if (t.times.length !== times.length) continue;
+    const v = t.values;
+    for (let i = 1; i < times.length; i++) {
+      qa.fromArray(v, (i - 1) * 4); qb.fromArray(v, i * 4);
+      speed[i] += qa.angleTo(qb) / Math.max(1e-3, times[i] - times[i - 1]);
+    }
+  }
+  let best = 0, bi = 0;
+  for (let i = 0; i < times.length; i++) { const tt = times[i]; if (tt < clip.duration * 0.12 || tt > clip.duration * 0.85) continue; if (speed[i] > best) { best = speed[i]; bi = i; } }
+  return times[bi] || clip.duration * 0.4;
+}
+function makeOutlineMat(thick) {
+  const m = new THREE.MeshBasicMaterial({ color: 0x06040a, side: THREE.BackSide, skinning: true });
+  m.onBeforeCompile = (sh) => { sh.vertexShader = sh.vertexShader.replace('#include <begin_vertex>', 'vec3 transformed = vec3( position ) + normal * ' + thick.toFixed(5) + ';'); };
+  return m;
+}
+function buildModelRig(gltf) {
+  const root = new THREE.Group(), body = new THREE.Group(); root.add(body);
+  const model = gltf.scene;
+  model.rotation.y = Math.PI / 2;
+  body.add(model);
+  model.updateMatrixWorld(true);
+  const box = new THREE.Box3().setFromObject(model);
+  const h = Math.max(0.1, box.max.y - box.min.y);
+  const k = MODEL_HEIGHT / h;
+  model.scale.setScalar(k); model.position.y = -box.min.y * k;
+  const mats = [];
+  const skinned = [];
+  model.traverse((o) => { if (o.isSkinnedMesh) skinned.push(o); });
+  for (const o of skinned) {
+    const old = o.material;
+    const map = old.map || null;
+    if (map) { map.encoding = THREE.LinearEncoding; map.needsUpdate = true; }
+    const m = new THREE.MeshToonMaterial({ color: 0xe8e0f4, map, gradientMap: gradMap, skinning: true });
+    old.dispose(); o.material = m; mats.push(m);
+    o.castShadow = true; o.frustumCulled = false;
+    o.geometry.computeBoundingBox();
+    const gb = o.geometry.boundingBox, gh = Math.max(1e-3, gb.max.y - gb.min.y);
+    const ol = new THREE.SkinnedMesh(o.geometry, makeOutlineMat(0.022 * gh / MODEL_HEIGHT));
+    ol.bind(o.skeleton, o.bindMatrix); ol.frustumCulled = false;
+    o.parent.add(ol);
+  }
+  const clips = {};
+  for (const c of gltf.animations) {
+    for (const t of c.tracks) {
+      if (/Hips\.position$/.test(t.name) && c.name !== 'death') {
+        const v = t.values; const x0 = v[0], z0 = v[2];
+        for (let i = 0; i < v.length; i += 3) { v[i] = x0; v[i + 2] = z0; }
+      }
+    }
+    clips[c.name] = c;
+  }
+  const mixer = new THREE.AnimationMixer(model);
+  const actions = {}, hits = {};
+  for (const n in clips) {
+    const a = mixer.clipAction(clips[n]);
+    if (n !== 'idle' && n !== 'run') { a.setLoop(THREE.LoopOnce, 1); a.clampWhenFinished = true; }
+    actions[n] = a; hits[n] = findHitTime(clips[n]);
+  }
+  let hand = null;
+  model.traverse((o) => { if (o.isBone && /RightHand$/.test(o.name)) hand = o; });
+  if (hand) {
+    const w = new THREE.Group();
+    const wm = toon(0x2e2636, { emissive: new THREE.Color(0x6a0a1c) }), hm = toon(0x2a1c14), gm = toon(0x9a1d30);
+    mats.push(wm, hm, gm);
+    part(w, G.hilt, hm, { pos: [0, 0.05, 0], outline: 0 });
+    part(w, G.guard, gm, { pos: [0, -0.08, 0], outline: 0 });
+    part(w, G.saber, wm, { pos: [0, -0.6, 0], outline: 1.05 });
+    const ws = new THREE.Vector3(); hand.getWorldScale(ws);
+    const holder = new THREE.Group(); holder.add(w); hand.add(holder);
+    holder.scale.setScalar(k / Math.max(1e-6, ws.x) * 0.95);
+    holder.position.set(0, 0.08 / Math.max(1e-6, ws.x) * k, 0.02 / Math.max(1e-6, ws.x) * k);
+    w.rotation.set(Math.PI / 2, 0, Math.PI);
+  }
+  actions.idle.play();
+  return { root, body, mats, baseEm: mats.map((m) => m.emissive.clone()), eyeMat: new THREE.MeshBasicMaterial(), flashT: 0, emDirty: false, model: true, mixer, actions, hits, clips, cur: 'idle', airT: 0 };
+}
+function modelPlay(rig, name, fade) {
+  if (rig.cur === name) return rig.actions[name];
+  const prev = rig.actions[rig.cur], next = rig.actions[name];
+  if (!next) return prev;
+  next.reset(); next.paused = false; next.timeScale = 1; next.setEffectiveWeight(1); next.play();
+  if (prev) prev.crossFadeTo(next, fade, false);
+  rig.cur = name;
+  return next;
+}
+function attackClipTime(rig, name, A, st) {
+  const clip = rig.clips[name], D = clip.duration, h = rig.hits[name];
+  const a0 = Math.max(0.05, A.act[0]), d = A.dur;
+  const wind = Math.min(h, a0 * 2.4);
+  if (A.untilLand && !player.slamLanded) return Math.max(0, h - wind * 0.35);
+  if (st < a0) return h - wind + (st / a0) * wind;
+  const rec = Math.min(D - h, (d - a0) * 1.7);
+  return Math.min(D - 0.001, h + ((st - a0) / Math.max(0.05, d - a0)) * rec);
+}
+function animateModel(p, dt) {
+  const rig = p.rig;
+  let name = 'idle', manual = null, fade = 0.14, speed = 1;
+  if (p.state === 'dead') { name = 'death'; fade = 0.1; speed = 1.7; }
+  else if (p.state === 'hurt') { name = 'hurt'; fade = 0.05; speed = 2.2; }
+  else if (p.state === 'attack') {
+    const key = Object.keys(ATK).find((k) => ATK[k] === p.atk);
+    name = MODEL_CLIPS[key] || 'slash1'; fade = 0.05;
+    if (rig.cur === name && rig.lastAtk !== p.atkSeq) { rig.cur = ''; }
+    rig.lastAtk = p.atkSeq;
+    manual = attackClipTime(rig, name, p.atk, p.st);
+  }
+  else if (p.state === 'dash') { name = 'run'; speed = 2.2; fade = 0.06; }
+  else if (!p.onGround) { name = 'jump'; fade = 0.1; rig.airT += dt; const D = rig.clips.jump.duration; manual = clamp(D * 0.28 + rig.airT * 0.8, 0, D * 0.62); }
+  else if (Math.abs(p.vx) > 0.8) { name = 'run'; speed = clamp(Math.abs(p.vx) / 6.4, 0.6, 1.4) * 1.15; }
+  if (p.onGround) rig.airT = 0;
+  const act = modelPlay(rig, name, fade);
+  if (manual !== null) { act.paused = true; act.time = manual; } else { act.paused = false; act.timeScale = speed; }
+  rig.mixer.update(dt);
+}
+let playerModelReady = false;
+function loadPlayerModel() {
+  if (!THREE.GLTFLoader) return;
+  new THREE.GLTFLoader().load('assets/lin-ye.glb', (gltf) => {
+    try {
+      const rig = buildModelRig(gltf);
+      const old = player.rig;
+      old.root.remove(player.aura); rig.root.add(player.aura);
+      scene.remove(old.root); scene.add(rig.root);
+      rig.yaw = old.yaw; player.rig = rig; playerModelReady = true;
+    } catch (e) { console.warn('Modèle 3D ignoré :', e); }
+  }, undefined, () => { /* pas de modèle : on garde le personnage procédural */ });
 }
 
 /* ---------- techniques ---------- */
@@ -2669,6 +2815,7 @@ function boot() {
   whenImage('title', (im) => { const t = $('title'); t.style.setProperty('--title-art', 'url("' + im.src + '")'); t.classList.add('has-art'); });
   if (isTouch) document.body.classList.add('touch');
   player = makePlayer();
+  loadPlayerModel();
   setMuted(AU.muted);
   resize();
   buildLevel(0);
@@ -2683,6 +2830,7 @@ window.__sd = {
   goto: (ci, realm) => startGame(ci, realm || 0, 0),
   tp: (x) => { player.x = x; },
   god: () => { player.maxHp = 99999; player.hp = 99999; },
+  modelReady: () => playerModelReady,
   setCor: (v) => { player.cor = v; }, setQi: (v) => { player.qi = v; },
   advance: () => advanceDialog(),
   hurt: (d) => hurtPlayer(d, 1),

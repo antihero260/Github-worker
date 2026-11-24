@@ -32,8 +32,14 @@ Ouvre `index.html` dans un navigateur récent. Une connexion est nécessaire pou
 
 Le jeu peut afficher des décors peints, des portraits de dialogue, une illustration d'écran titre et des textures de sol. Les prompts et les noms de fichiers sont dans [`PROMPTS-IMAGES.md`](PROMPTS-IMAGES.md). Dépose les images dans `assets/` : chaque image absente laisse le rendu procédural en place.
 
+## Modèle 3D du joueur
+
+`assets/lin-ye.glb` contient le personnage « Ninja » de Mixamo et 12 animations du pack Sword And Shield (repos, course, saut, 3 coups d'épée, coup de pied, attaque sautée, coup reçu, mort, sort, montée en puissance). Les textures ont été réduites à 1024 px, ce qui donne un fichier de 1,5 Mo. Le jeu lui applique le rendu dessin animé avec contours, fixe le sabre dans sa main droite et cale automatiquement le moment d'impact de chaque coup sur la fenêtre de dégâts. Sans ce fichier, le personnage procédural reprend sa place.
+
+Les personnages et animations Mixamo sont utilisables gratuitement dans un jeu, même commercial, mais les conditions d'Adobe interdisent de les redistribuer seuls, comme fichiers bruts.
+
 ## Technique
 
-Un seul fichier HTML. Three.js r128 pour le rendu toon avec contours, les ombres et les particules. Les personnages sont construits à partir de primitives et animés de façon procédurale. Les sons et la musique pentatonique sont synthétisés avec Web Audio. Aucun fichier image ou son externe.
+Un seul fichier HTML. Three.js r128 pour le rendu toon avec contours, les ombres et les particules. Les personnages sont construits à partir de primitives et animés de façon procédurale. Les sons et la musique pentatonique sont synthétisés avec Web Audio. Aucun son externe. Les images et le modèle 3D du dossier `assets/` sont facultatifs.
 
 Le bloc entre `<!-- ARTIFACT-START -->` et `<!-- ARTIFACT-END -->` est le contenu publié tel quel comme page Artifact.
