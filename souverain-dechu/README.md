@@ -34,7 +34,7 @@ Le jeu peut afficher des décors peints, des portraits de dialogue, une illustra
 
 ## Modèle 3D du joueur
 
-`assets/lin-ye.glb` contient le personnage « Ninja » de Mixamo et 12 animations du pack Sword And Shield (repos, course, saut, 3 coups d'épée, coup de pied, attaque sautée, coup reçu, mort, sort, montée en puissance). Les textures ont été réduites à 1024 px, ce qui donne un fichier de 1,5 Mo. Le jeu lui applique le rendu dessin animé avec contours, fixe le sabre dans sa main droite et cale automatiquement le moment d'impact de chaque coup sur la fenêtre de dégâts. Sans ce fichier, le personnage procédural reprend sa place.
+`assets/lin-ye.glb` contient le personnage « Ninja » de Mixamo et 23 animations (2 Mo) : course épée en main, entailles vers l'extérieur et vers l'intérieur, coup de pied tournoyant en salto pour finir le combo, coup de pied sauté pour l'attaque lourde, ciseau volant en l'air, réception lourde pour le plongeon, salto avant au double saut, roulade d'esquive, projection en arrière sur un gros coup, salto vers une pose de super-héros pour l'Éveil, plus les animations du pack Sword And Shield (repos, saut, sort, montée en puissance, coup reçu, mort). Les textures ont été réduites à 1024 px. Le jeu lui applique le rendu dessin animé avec contours, fixe le sabre dans sa main droite et cale automatiquement le moment d'impact de chaque coup sur la fenêtre de dégâts. Sans ce fichier, le personnage procédural reprend sa place.
 
 Les personnages et animations Mixamo sont utilisables gratuitement dans un jeu, même commercial, mais les conditions d'Adobe interdisent de les redistribuer seuls, comme fichiers bruts.
 
