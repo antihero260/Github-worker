@@ -1816,7 +1816,8 @@ function animateModel(p, dt) {
 let playerModelReady = false;
 function loadPlayerModel() {
   if (!THREE.GLTFLoader) return;
-  new THREE.GLTFLoader().load('assets/lin-ye.glb', (gltf) => {
+  const loader = new THREE.GLTFLoader();
+  const onLoad = (gltf) => {
     try {
       const rig = buildModelRig(gltf);
       const old = player.rig;
@@ -1824,7 +1825,9 @@ function loadPlayerModel() {
       scene.remove(old.root); scene.add(rig.root);
       rig.yaw = old.yaw; player.rig = rig; playerModelReady = true;
     } catch (e) { console.warn('Modèle 3D ignoré :', e); }
-  }, undefined, () => { /* pas de modèle : on garde le personnage procédural */ });
+  };
+  /* .glb en local ; variante .json (glTF texte) sur la page Artifact, qui ne sert pas les .glb */
+  loader.load('assets/lin-ye.glb', onLoad, undefined, () => loader.load('assets/lin-ye.json', onLoad, undefined, () => { /* pas de modèle : personnage procédural */ }));
 }
 
 /* ---------- techniques ---------- */
