@@ -195,6 +195,12 @@ body.touch .bossname .tt{display:none}
 /* ---------- Dialogue ---------- */
 .dialog{align-items:flex-end;justify-content:center;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 calc(18px + env(safe-area-inset-bottom,0px));background:linear-gradient(0deg,rgba(6,4,10,.75),transparent 45%)}
 .dlg-box{--spk:var(--bone-dim);position:relative;width:min(860px,100%);display:flex;gap:16px;align-items:flex-start;padding:18px 22px 22px;background:rgba(18,12,23,.94);border:1px solid rgba(242,233,216,.14);border-top:2px solid var(--spk);border-radius:3px;cursor:pointer;box-shadow:0 16px 40px rgba(0,0,0,.55)}
+/* images générées facultatives */
+.dlg-portrait{flex:none;width:132px;height:132px;margin-top:-74px;object-fit:cover;border-radius:4px;border:2px solid var(--spk);background:var(--lacquer);box-shadow:0 10px 30px rgba(0,0,0,.6)}
+.dlg-portrait + .dlg-seal{position:absolute;left:112px;top:-14px;width:34px;height:34px;font-size:24px}
+.boss-img{width:44px;height:44px;margin-top:-18px;object-fit:cover;border-radius:50%;border:2px solid var(--blood);align-self:flex-end}
+.title.has-art{background:linear-gradient(90deg,rgba(11,9,16,.94) 0%,rgba(11,9,16,.72) 36%,rgba(11,9,16,.05) 66%),var(--title-art) right center/cover no-repeat}
+.title.has-art .title-glyph{opacity:.12}
 .dlg-seal{flex:none;width:58px;height:58px;display:grid;place-items:center;font-family:var(--f-brush);font-size:40px;line-height:1;color:var(--ink);background:var(--spk);border-radius:4px;transform:rotate(-3deg)}
 .dlg-body{min-width:0;flex:1}
 .dlg-name{font-family:var(--f-display);font-size:20px;color:var(--spk);margin-bottom:6px;min-height:1em}
@@ -213,9 +219,14 @@ body.touch .bossname .tt{display:none}
   .combo b{font-size:44px}
   .title{background:linear-gradient(0deg,rgba(11,9,16,.95) 30%,rgba(11,9,16,.55) 75%,rgba(11,9,16,.2))}
   .title{align-items:flex-end}
+  .title.has-art{background:linear-gradient(0deg,rgba(11,9,16,.96) 38%,rgba(11,9,16,.35) 70%,rgba(11,9,16,.1)),var(--title-art) 70% top/cover no-repeat}
+  .dlg-portrait{width:96px;height:96px;margin-top:-52px}
+  .dlg-portrait + .dlg-seal{left:82px}
   .title-glyph{top:28%;left:50%;transform:translate(-50%,-50%);font-size:min(56vh,90vw)}
 }
 @media (max-height:480px){
+  .dlg-portrait{width:88px;height:88px;margin-top:-44px}
+  .dlg-portrait + .dlg-seal{left:76px}
   .title-inner{gap:10px}
   .title h1{font-size:clamp(38px,8vh,64px)}
   .lede{font-size:14px}
@@ -255,7 +266,7 @@ body.touch .bossname .tt{display:none}
   <div class="combo" id="combo"><b id="comboNum">0</b><span>coups</span><em id="comboRank"></em></div>
   <div id="goArrow">Avance <span>→</span></div>
   <div id="bossBar" hidden>
-    <div class="bossname"><span class="zh" id="bossZh">虎</span><span class="nm" id="bossName"></span><span class="tt" id="bossTitle"></span></div>
+    <div class="bossname"><img id="bossImg" class="boss-img" alt="" hidden><span class="zh" id="bossZh">虎</span><span class="nm" id="bossName"></span><span class="tt" id="bossTitle"></span></div>
     <div class="meter boss"><i id="bossFill"></i><span class="mark"></span></div>
   </div>
   <div id="skills">
@@ -320,6 +331,7 @@ body.touch .bossname .tt{display:none}
 
 <section id="dialog" class="screen dialog" hidden>
   <div class="dlg-box" id="dlgBox" role="button" tabindex="0" aria-label="Continuer le dialogue">
+    <img class="dlg-portrait" id="dlgPortrait" alt="" hidden>
     <div class="dlg-seal" id="dlgSeal">魔</div>
     <div class="dlg-body">
       <div class="dlg-name" id="dlgName"></div>
@@ -1149,6 +1161,89 @@ const moonMat = new THREE.MeshBasicMaterial({ color: 0xffe6c4, fog: false });
 const moon = new THREE.Mesh(new THREE.SphereGeometry(1, 24, 16), moonMat); moon.position.set(34, 36, -232); skyGroup.add(moon);
 const moonHalo = glowSprite(0xffe6c4, 80, 0.5); moonHalo.position.copy(moon.position); skyGroup.add(moonHalo);
 
+/* ================= images générées (facultatives) ================= */
+/* Dépose les fichiers dans assets/ (voir PROMPTS-IMAGES.md). Une image absente garde le rendu procédural. */
+const ASSET_FILES = {
+  'bg-courtyard': 'bg-cour', 'bg-bamboo': 'bg-foret', 'bg-peak': 'bg-pic',
+  'tex-courtyard': 'texture-pierre', 'tex-bamboo': 'texture-mousse', 'tex-peak': 'texture-neige',
+  'p-mo': 'portrait-mo', 'p-voice': 'portrait-linye', 'p-su': 'portrait-su', 'p-hu': 'portrait-hu', 'p-mei': 'portrait-mei', 'p-yan': 'portrait-yan',
+  'title': 'titre',
+};
+const IMG = {}, imgWaiters = {}, texCache = {};
+function loadAsset(key) {
+  const exts = ['.webp', '.png', '.jpg'];
+  let i = 0;
+  const tryNext = () => {
+    if (i >= exts.length) return;
+    const im = new Image();
+    im.onload = () => { IMG[key] = im; const w = imgWaiters[key] || []; imgWaiters[key] = []; w.forEach((f) => f(im)); };
+    im.onerror = () => { i++; tryNext(); };
+    im.src = 'assets/' + ASSET_FILES[key] + exts[i];
+  };
+  tryNext();
+}
+function whenImage(key, cb) { if (IMG[key]) cb(IMG[key]); else (imgWaiters[key] || (imgWaiters[key] = [])).push(cb); }
+function readable(im) { try { const c = document.createElement('canvas'); c.width = c.height = 1; const g = c.getContext('2d'); g.drawImage(im, 0, 0, 1, 1); g.getImageData(0, 0, 1, 1); return true; } catch (e) { return false; } }
+function imgTex(key, repeat) {
+  if (texCache[key]) return texCache[key];
+  const im = IMG[key]; if (!im || !readable(im)) return null;
+  const t = new THREE.Texture(im); t.anisotropy = 4;
+  if (repeat) t.wrapS = t.wrapT = THREE.RepeatWrapping;
+  t.needsUpdate = true; t.sdKeep = true; texCache[key] = t;
+  return t;
+}
+function bandColor(im, y0, y1) {
+  try {
+    const c = document.createElement('canvas'); c.width = 32; c.height = 32; const g = c.getContext('2d');
+    g.drawImage(im, 0, im.height * y0, im.width, im.height * (y1 - y0), 0, 0, 32, 32);
+    const d = g.getImageData(0, 0, 32, 32).data; let r = 0, gg = 0, b = 0;
+    for (let i = 0; i < d.length; i += 4) { r += d[i]; gg += d[i + 1]; b += d[i + 2]; }
+    const n = d.length / 4; return [r / n / 255, gg / n / 255, b / n / 255];
+  } catch (e) { return null; }
+}
+Object.keys(ASSET_FILES).forEach(loadAsset);
+
+/* décor peint : plan lointain qui suit la caméra, ligne d'horizon de l'image à 60 % depuis le haut */
+const BD_DIST = 260, BD_HORIZON = 0.6;
+const backdrop = new THREE.Mesh(new THREE.PlaneGeometry(1, 1), new THREE.MeshBasicMaterial({ fog: false, depthWrite: false }));
+backdrop.visible = false; backdrop.renderOrder = -1; backdrop.position.z = -BD_DIST; skyGroup.add(backdrop);
+let backdropAspect = 1.5;
+function setProcSky(on) {
+  stars.visible = on; moon.visible = on; moonHalo.visible = on;
+  if (envGroup) envGroup.children.forEach((c) => { if (c.userData.ridge) c.visible = on; });
+}
+function applyBackdrop(key) {
+  backdrop.visible = false; setProcSky(true);
+  whenImage('bg-' + key, (im) => {
+    if (curTheme !== key) return;
+    const t = imgTex('bg-' + key, false); if (!t) return;
+    backdrop.material.map = t; backdrop.material.needsUpdate = true; backdropAspect = im.width / im.height;
+    const c = bandColor(im, 0.56, 0.64);
+    if (c) { scene.fog.color.setRGB(c[0], c[1], c[2]); skyMat.uniforms.bot.value.setRGB(c[0], c[1], c[2]); skyMat.uniforms.mid.value.setRGB(c[0], c[1], c[2]); }
+    const top = bandColor(im, 0, 0.08); if (top) skyMat.uniforms.top.value.setRGB(top[0], top[1], top[2]);
+    backdrop.visible = true; setProcSky(false);
+  });
+}
+function layoutBackdrop() {
+  if (!backdrop.visible) return;
+  const visH = BD_DIST * FOV_T, visW = visH * camera.aspect;
+  const W = Math.max(visW * 2 * 1.18, (visH * 1.4 / BD_HORIZON) * backdropAspect), H = W / backdropAspect;
+  backdrop.scale.set(W, H, 1);
+  const margin = (W - visW * 2) / 2;
+  const len = level ? level.ch.len : 80;
+  backdrop.position.x = -clamp(camLook.x / len - 0.5, -0.5, 0.5) * 2 * margin * 0.9;
+  backdrop.position.y = H * (BD_HORIZON - 0.5) - BD_DIST * 0.02;
+}
+function applyGroundTex(mesh, key, tile) {
+  whenImage('tex-' + key, () => {
+    if (!mesh.parent || curTheme !== key) return;
+    const t = imgTex('tex-' + key, true); if (!t) return;
+    const g = mesh.geometry.parameters;
+    t.repeat.set(g.width / tile, g.height / tile);
+    mesh.material.map = t; mesh.material.color.setHex(0xffffff); mesh.material.needsUpdate = true;
+  });
+}
+
 /* ================= décors ================= */
 let envGroup = null, curTheme = 'courtyard', ambientMode = 'petals', swayers = [], mists = [];
 let matCache = new Map();
@@ -1171,7 +1266,7 @@ function disposeTree(root) {
   });
   geos.forEach((g) => { if (!Object.values(G).includes(g)) g.dispose(); });
   mats.forEach((m) => { if (m !== OUTLINE) m.dispose(); });
-  texs.forEach((t) => t.dispose());
+  texs.forEach((t) => { if (!t.sdKeep) t.dispose(); });
 }
 function noiseSpeckle(g, w, h, n, colors, r, smin, smax) { for (let i = 0; i < n; i++) { g.fillStyle = colors[(r() * colors.length) | 0]; const s = smin + r() * (smax - smin); g.globalAlpha = 0.25 + r() * 0.5; g.beginPath(); g.arc(r() * w, r() * h, s, 0, Math.PI * 2); g.fill(); } g.globalAlpha = 1; }
 function texStone() { const r = mulberry(7); return canvasTex(256, 256, (g) => { g.fillStyle = '#1d1a24'; g.fillRect(0, 0, 256, 256); for (let y = 0; y < 4; y++) for (let x = -1; x < 5; x++) { const off = (y % 2) * 32, v = 44 + ((r() * 16) | 0); g.fillStyle = 'rgb(' + v + ',' + (v - 5) + ',' + (v + 9) + ')'; g.fillRect(x * 64 + off + 2, y * 64 + 2, 60, 60); } noiseSpeckle(g, 256, 256, 260, ['#17141d', '#4e4859', '#3a3444'], r, 0.5, 2.2); }, true); }
@@ -1187,6 +1282,7 @@ function groundPlane(g, len, tex, tile, pathTex, color) {
   tex.repeat.set(W / tile, D / tile);
   const gm = new THREE.Mesh(new THREE.PlaneGeometry(W, D), new THREE.MeshLambertMaterial({ map: tex, color: color || 0xffffff }));
   gm.rotation.x = -Math.PI / 2; gm.position.set(len / 2, 0, -D / 2 + 34); gm.receiveShadow = true; g.add(gm);
+  applyGroundTex(gm, curTheme, 6);
   if (pathTex) {
     pathTex.repeat.set(W / 4, 1);
     const pm = new THREE.Mesh(new THREE.PlaneGeometry(W, 3.8), new THREE.MeshLambertMaterial({ map: pathTex, transparent: true, depthWrite: false }));
@@ -1198,7 +1294,7 @@ function ridge(g, len, z, base, amp, color, seed, step) {
   shape.moveTo(x0, -8); let x = x0;
   while (x <= x1) { const h = base + amp * (0.5 * Math.sin(x * 0.045 + seed) + 0.32 * Math.sin(x * 0.12 + seed * 2) + 0.18 * (r() * 2 - 1)); shape.lineTo(x, Math.max(1, h)); x += step * (0.6 + r() * 0.8); }
   shape.lineTo(x1, -8); shape.lineTo(x0, -8);
-  const m = new THREE.Mesh(new THREE.ShapeGeometry(shape), new THREE.MeshBasicMaterial({ color })); m.position.z = z; g.add(m);
+  const m = new THREE.Mesh(new THREE.ShapeGeometry(shape), new THREE.MeshBasicMaterial({ color })); m.position.z = z; m.userData.ridge = true; g.add(m);
 }
 let roofGeoShared = null;
 function roofGeo() { if (!roofGeoShared) { roofGeoShared = new THREE.CylinderGeometry(0.42, 1, 1, 4, 1); roofGeoShared.rotateY(Math.PI / 4); } return roofGeoShared; }
@@ -1371,6 +1467,7 @@ function buildEnvironment(ch) {
   if (ch.key === 'courtyard') buildCourtyard(envGroup, len, r);
   else if (ch.key === 'bamboo') buildBamboo(envGroup, len, r);
   else buildPeak(envGroup, len, r);
+  applyBackdrop(ch.key);
 }
 let ambAcc = 0, ambAcc2 = 0;
 function ambientUpdate(dt) {
@@ -2280,6 +2377,7 @@ function startBossFight(retry) {
   const go = () => {
     const e = spawnEnemy(ch.boss.type, bx + 4.5, 0);
     L.boss = e; e.state = 'intro'; e.st = 0; e.face = -1;
+    { const bi = $('bossImg'), im = IMG['p-' + e.type]; if (im) { bi.src = im.src; bi.hidden = false; } else bi.hidden = true; }
     $('bossZh').textContent = e.T.zh; $('bossName').textContent = e.T.name; $('bossTitle').textContent = e.T.title; $('bossBar').hidden = false;
     $('waveLabel').textContent = '';
     setMusic(ch.music - 2, true); SFX.gong();
@@ -2353,6 +2451,7 @@ function updateCamera(rdt) {
   camera.position.set(camPos.x + (Math.random() - 0.5) * s * 0.9, camPos.y + (Math.random() - 0.5) * s * 0.7, camPos.z);
   camera.lookAt(camLook.x, camLook.y, 0);
   skyGroup.position.copy(camera.position);
+  layoutBackdrop();
   sun.position.set(camLook.x - 7, 17, 11); sun.target.position.set(camLook.x, 0, 0);
   rim.position.set(camLook.x + 9, 6, -12); rim.target.position.set(camLook.x, 1, 0);
 }
@@ -2413,6 +2512,8 @@ function renderDlg() {
   const L = dlg.lines[dlg.i], s = SPK[L.who];
   $('dlgBox').style.setProperty('--spk', s.color);
   $('dlgSeal').textContent = s.seal;
+  const pi = $('dlgPortrait'), im = IMG['p-' + L.who];
+  if (im) { pi.src = im.src; pi.hidden = false; } else pi.hidden = true;
   const nm = $('dlgName'); nm.textContent = s.name;
   if (s.sub) { const sm = document.createElement('small'); sm.textContent = s.sub; nm.appendChild(sm); }
   const tx = $('dlgText'); tx.className = 'dlg-text' + (s.cls ? ' ' + s.cls : ''); tx.textContent = '';
@@ -2565,6 +2666,7 @@ function enableTouch() {
 addEventListener('touchstart', () => { if (!isTouch) enableTouch(); }, { passive: true });
 function boot() {
   if (boot.done) return; boot.done = true;
+  whenImage('title', (im) => { const t = $('title'); t.style.setProperty('--title-art', 'url("' + im.src + '")'); t.classList.add('has-art'); });
   if (isTouch) document.body.classList.add('touch');
   player = makePlayer();
   setMuted(AU.muted);

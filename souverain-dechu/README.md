@@ -28,6 +28,10 @@ Ouvre `index.html` dans un navigateur récent. Une connexion est nécessaire pou
 - Jauge du Démon intérieur : elle se remplit au combat et déclenche l'Éveil du Souverain (dégâts ×1,8, armure, vagues de sang).
 - Sauvegarde locale du chapitre atteint (bouton Continuer) et reprise au boss après une défaite.
 
+## Images générées (facultatif)
+
+Le jeu peut afficher des décors peints, des portraits de dialogue, une illustration d'écran titre et des textures de sol. Les prompts et les noms de fichiers sont dans [`PROMPTS-IMAGES.md`](PROMPTS-IMAGES.md). Dépose les images dans `assets/` : chaque image absente laisse le rendu procédural en place.
+
 ## Technique
 
 Un seul fichier HTML. Three.js r128 pour le rendu toon avec contours, les ombres et les particules. Les personnages sont construits à partir de primitives et animés de façon procédurale. Les sons et la musique pentatonique sont synthétisés avec Web Audio. Aucun fichier image ou son externe.

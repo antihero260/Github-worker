@@ -1,0 +1,1 @@
+Dépose ici les images décrites dans ../PROMPTS-IMAGES.md (bg-cour.png, portrait-mo.png, ...).
